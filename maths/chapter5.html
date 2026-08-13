@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 5 - Coordinate Geometry | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/maths.html"
+        class="back">
+
+        ← Mathematics
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📍 Chapter 5: Coordinate Geometry
+    </h1>
+
+    <p>
+        Learn coordinate geometry through points,
+        distance formula, midpoint, section formula,
+        slope, area of triangles and coordinate-based
+        numerical problems from TN 10th Standard
+        Mathematics.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the coordinate geometry concepts and
+        solved numerical examples before attempting
+        the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_MATHS_CHAPTER5_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_MATHS_CHAPTER5_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Cartesian Coordinate System
+    </div>
+
+    <div class="topic">
+        ✓ Coordinate Axes
+    </div>
+
+    <div class="topic">
+        ✓ Quadrants
+    </div>
+
+    <div class="topic">
+        ✓ Plotting Points
+    </div>
+
+    <div class="topic">
+        ✓ Distance Between Two Points
+    </div>
+
+    <div class="topic">
+        ✓ Midpoint of a Line Segment
+    </div>
+
+    <div class="topic">
+        ✓ Section Formula
+    </div>
+
+    <div class="topic">
+        ✓ Internal Division of a Line Segment
+    </div>
+
+    <div class="topic">
+        ✓ Slope of a Line
+    </div>
+
+    <div class="topic">
+        ✓ Parallel Lines
+    </div>
+
+    <div class="topic">
+        ✓ Area of a Triangle Using Coordinates
+    </div>
+
+    <div class="topic">
+        ✓ Collinearity of Points
+    </div>
+
+    <div class="topic">
+        ✓ Coordinate Geometry Numerical Problems
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT FORMULAS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Coordinate Geometry Formulas
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Distance Formula
+            </strong>
+
+            <br><br>
+
+            Distance between
+            A(x₁,y₁) and B(x₂,y₂):
+
+            <br><br>
+
+            d =
+            √[(x₂ − x₁)² + (y₂ − y₁)²]
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Midpoint Formula
+            </strong>
+
+            <br><br>
+
+            M =
+            ((x₁+x₂)/2 , (y₁+y₂)/2)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Section Formula
+            </strong>
+
+            <br><br>
+
+            If P divides AB internally
+            in the ratio m:n:
+
+            <br><br>
+
+            P =
+            ((mx₂+nx₁)/(m+n),
+            (my₂+ny₁)/(m+n))
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Slope Formula
+            </strong>
+
+            <br><br>
+
+            m =
+            (y₂−y₁)/(x₂−x₁)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Area of Triangle
+            </strong>
+
+            <br><br>
+
+            Area =
+            ½ |x₁(y₂−y₃)
+            + x₂(y₃−y₁)
+            + x₃(y₁−y₂)|
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Parallel Lines
+            </strong>
+
+            <br><br>
+
+            For parallel lines:
+
+            <br>
+
+            m₁ = m₂
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Horizontal Line
+            </strong>
+
+            <br><br>
+
+            Slope = 0
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Vertical Line
+            </strong>
+
+            <br><br>
+
+            Slope is undefined.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Collinear Points
+            </strong>
+
+            <br><br>
+
+            Three points are collinear when
+            the area of the triangle formed
+            by them is zero.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     VISUAL FORMULA
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📐 Coordinate Geometry Visualization
+    </h2>
+
+    <p class="description">
+
+        The coordinate plane below helps visualize
+        the distance between two points.
+
+    </p>
+
+    
+
+
+
+</div>
+
+
+<!-- =====================================================
+     SOLVED EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✏️ Solved Numerical Examples
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Find the distance between
+        A(2,3) and B(6,6).
+
+        <br><br>
+
+        d = √[(6−2)² + (6−3)²]
+
+        <br>
+
+        d = √[4² + 3²]
+
+        <br>
+
+        d = √25
+
+        <br>
+
+        d = <b>5 units</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Find the midpoint of A(2,4)
+        and B(8,10).
+
+        <br><br>
+
+        M = ((2+8)/2 , (4+10)/2)
+
+        <br>
+
+        M = (10/2 , 14/2)
+
+        <br>
+
+        M = <b>(5,7)</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Find the distance between
+        A(0,0) and B(3,4).
+
+        <br><br>
+
+        d = √[(3−0)² + (4−0)²]
+
+        <br>
+
+        d = √(9+16)
+
+        <br>
+
+        d = √25
+
+        <br>
+
+        d = <b>5 units</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Find the midpoint of
+        A(-4,2) and B(6,8).
+
+        <br><br>
+
+        M = ((−4+6)/2 , (2+8)/2)
+
+        <br>
+
+        M = (2/2 , 10/2)
+
+        <br>
+
+        M = <b>(1,5)</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        Find the slope of the line
+        joining A(2,3) and B(6,11).
+
+        <br><br>
+
+        m = (11−3)/(6−2)
+
+        <br>
+
+        m = 8/4
+
+        <br>
+
+        m = <b>2</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        Find the area of the triangle
+        whose vertices are
+        (0,0), (4,0), and (0,3).
+
+        <br><br>
+
+        Area = ½ × base × height
+
+        <br>
+
+        = ½ × 4 × 3
+
+        <br>
+
+        = <b>6 square units</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 7:
+        </strong>
+
+        Find the point dividing the line
+        joining A(2,4) and B(8,10)
+        internally in the ratio 1:2.
+
+        <br><br>
+
+        x = (1×8 + 2×2)/(1+2)
+
+        <br>
+
+        x = 12/3 = 4
+
+        <br><br>
+
+        y = (1×10 + 2×4)/(1+2)
+
+        <br>
+
+        y = 18/3 = 6
+
+        <br>
+
+        Point = <b>(4,6)</b>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 5 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        This assessment contains numerical,
+        calculation-based and application-based
+        Coordinate Geometry questions.
+        Answer all 50 questions.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter6.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 6
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 5 QUESTIONS
+   COORDINATE GEOMETRY
+===================================================== */
+
+const questions = [
+
+{
+q:"Find the distance between A(0,0) and B(3,4).",
+a:["3 units","4 units","5 units","7 units"],
+correct:2
+},
+
+{
+q:"Find the distance between A(1,2) and B(4,6).",
+a:["4 units","5 units","6 units","7 units"],
+correct:1
+},
+
+{
+q:"Find the distance between A(2,3) and B(6,6).",
+a:["4 units","5 units","6 units","7 units"],
+correct:1
+},
+
+{
+q:"Find the distance between A(0,0) and B(5,12).",
+a:["12 units","13 units","14 units","17 units"],
+correct:1
+},
+
+{
+q:"Find the distance between A(1,1) and B(7,9).",
+a:["8 units","9 units","10 units","12 units"],
+correct:2
+},
+
+{
+q:"Find the distance between A(-1,-2) and B(2,2).",
+a:["4 units","5 units","6 units","7 units"],
+correct:1
+},
+
+{
+q:"Find the distance between A(-2,3) and B(4,3).",
+a:["4 units","5 units","6 units","7 units"],
+correct:2
+},
+
+{
+q:"Find the distance between A(3,-2) and B(3,6).",
+a:["6 units","7 units","8 units","9 units"],
+correct:2
+},
+
+{
+q:"Find the midpoint of A(2,4) and B(8,10).",
+a:["(4,6)","(5,7)","(6,8)","(7,9)"],
+correct:1
+},
+
+{
+q:"Find the midpoint of A(0,0) and B(6,8).",
+a:["(2,3)","(3,4)","(4,3)","(6,4)"],
+correct:1
+},
+
+{
+q:"Find the midpoint of A(-4,2) and B(6,8).",
+a:["(1,5)","(2,5)","(1,6)","(2,6)"],
+correct:0
+},
+
+{
+q:"Find the midpoint of A(-6,-4) and B(2,8).",
+a:["(-2,2)","(-4,2)","(-2,4)","(2,2)"],
+correct:0
+},
+
+{
+q:"The midpoint of A(2,4) and B(x,8) is (5,6). Find x.",
+a:["6","7","8","9"],
+correct:2
+},
+
+{
+q:"The midpoint of A(4,2) and B(10,y) is (7,5). Find y.",
+a:["6","7","8","9"],
+correct:2
+},
+
+{
+q:"The midpoint of A(-2,4) and B(6,y) is (2,7). Find y.",
+a:["8","9","10","12"],
+correct:2
+},
+
+{
+q:"Find the slope of the line joining (2,3) and (6,11).",
+a:["1","2","3","4"],
+correct:1
+},
+
+{
+q:"Find the slope of the line joining (1,2) and (5,10).",
+a:["1","2","3","4"],
+correct:1
+},
+
+{
+q:"Find the slope of the line joining (0,0) and (4,12).",
+a:["2","3","4","6"],
+correct:1
+},
+
+{
+q:"Find the slope of the line joining (-2,3) and (4,9).",
+a:["1","2","3","4"],
+correct:0
+},
+
+{
+q:"Find the slope of the line joining (3,7) and (8,17).",
+a:["1","2","3","4"],
+correct:1
+},
+
+{
+q:"What is the slope of a horizontal line?",
+a:["0","1","Undefined","-1"],
+correct:0
+},
+
+{
+q:"What is the slope of a vertical line?",
+a:["0","1","-1","Undefined"],
+correct:3
+},
+
+{
+q:"Find the slope of the line joining (2,5) and (6,5).",
+a:["0","1","2","Undefined"],
+correct:0
+},
+
+{
+q:"Find the slope of the line joining (4,2) and (4,10).",
+a:["0","1","2","Undefined"],
+correct:3
+},
+
+{
+q:"Find the point dividing A(2,4) and B(8,10) internally in ratio 1:2.",
+a:["(3,5)","(4,6)","(5,7)","(6,8)"],
+correct:1
+},
+
+{
+q:"Find the point dividing A(0,0) and B(6,9) internally in ratio 1:2.",
+a:["(1,2)","(2,3)","(3,4)","(4,6)"],
+correct:1
+},
+
+{
+q:"Find the point dividing A(2,3) and B(8,9) internally in ratio 2:1.",
+a:["(4,5)","(5,6)","(6,7)","(7,8)"],
+correct:2
+},
+
+{
+q:"Find the point dividing A(0,0) and B(10,15) in ratio 2:3.",
+a:["(2,3)","(4,6)","(5,7)","(6,9)"],
+correct:1
+},
+
+{
+q:"Find the area of triangle with vertices (0,0), (4,0), (0,3).",
+a:["4 sq units","5 sq units","6 sq units","12 sq units"],
+correct:2
+},
+
+{
+q:"Find the area of triangle with vertices (0,0), (6,0), (0,4).",
+a:["10 sq units","12 sq units","18 sq units","24 sq units"],
+correct:1
+},
+
+{
+q:"Find the area of triangle with vertices (1,1), (5,1), (1,4).",
+a:["4 sq units","5 sq units","6 sq units","8 sq units"],
+correct:2
+},
+
+{
+q:"Find the area of triangle with vertices (2,2), (6,2), (2,8).",
+a:["10 sq units","12 sq units","14 sq units","16 sq units"],
+correct:1
+},
+
+{
+q:"If the area of a triangle formed by three points is zero, the points are:",
+a:[
+"Perpendicular",
+"Collinear",
+"Parallel",
+"Opposite"
+],
+correct:1
+},
+
+{
+q:"Which point lies on the x-axis?",
+a:["(3,4)","(0,5)","(7,0)","(2,6)"],
+correct:2
+},
+
+{
+q:"Which point lies on the y-axis?",
+a:["(5,0)","(0,7)","(3,4)","(6,2)"],
+correct:1
+},
+
+{
+q:"The point (−3,5) lies in which quadrant?",
+a:["I","II","III","IV"],
+correct:1
+},
+
+{
+q:"The point (4,−7) lies in which quadrant?",
+a:["I","II","III","IV"],
+correct:3
+},
+
+{
+q:"The point (−6,−2) lies in which quadrant?",
+a:["I","II","III","IV"],
+correct:2
+},
+
+{
+q:"The point (5,8) lies in which quadrant?",
+a:["I","II","III","IV"],
+correct:0
+},
+
+{
+q:"If two lines have equal slopes, they are:",
+a:[
+"Always perpendicular",
+"Parallel or coincident",
+"Always intersecting",
+"Vertical only"
+],
+correct:1
+},
+
+{
+q:"Find the slope of a line passing through (2,1) and (6,9).",
+a:["1","2","3","4"],
+correct:1
+},
+
+{
+q:"Find the distance between (-3,0) and (3,0).",
+a:["3 units","6 units","9 units","12 units"],
+correct:1
+},
+
+{
+q:"Find the distance between (0,-4) and (0,5).",
+a:["5 units","7 units","9 units","10 units"],
+correct:2
+},
+
+{
+q:"Find the midpoint of (-8,2) and (4,10).",
+a:[
+"(-2,6)",
+"(-4,6)",
+"(2,6)",
+"(-2,4)"
+],
+correct:0
+},
+
+{
+q:"Find the midpoint of (5,-3) and (9,7).",
+a:[
+"(6,2)",
+"(7,2)",
+"(8,2)",
+"(7,3)"
+],
+correct:1
+},
+
+{
+q:"The distance between (0,0) and (6,8) is:",
+a:["8","10","12","14"],
+correct:1
+},
+
+{
+q:"The points (1,2), (3,4), and (5,6) are:",
+a:[
+"Collinear",
+"Non-collinear",
+"Perpendicular",
+"Parallel"
+],
+correct:0
+},
+
+{
+q:"The points (0,0), (3,3), and (6,6) are:",
+a:[
+"Collinear",
+"Non-collinear",
+"Perpendicular",
+"None"
+],
+correct:0
+},
+
+{
+q:"If the slope of a line is 3, what is the slope of a parallel line?",
+a:["-3","1/3","3","0"],
+correct:2
+},
+
+{
+q:"The midpoint of a line segment is (4,5). One endpoint is (2,3). Find the other endpoint.",
+a:[
+"(5,6)",
+"(6,7)",
+"(7,8)",
+"(8,9)"
+],
+correct:1
+},
+
+{
+q:"The midpoint of A(3,5) and B(x,9) is (6,7). Find x.",
+a:["7","8","9","10"],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_maths_ch5_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_maths_ch5_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Coordinate Geometry assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 5 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Mathematics",
+
+        chapter:
+            "Chapter 5 - Coordinate Geometry",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_maths_chapter5",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter5"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Mathematics Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Maths_Chapter5_Coordinate_Geometry_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter5"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START QUIZ
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 7 - Mensuration | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   FORMULAS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/maths.html"
+        class="back">
+
+        ← Mathematics
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📐 Chapter 7: Mensuration
+    </h1>
+
+    <p>
+        Learn areas, perimeters, surface areas,
+        volumes and practical applications of
+        mensuration through concepts, formulas,
+        solved examples and numerical problems.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the important mensuration formulas
+        and solved examples before attempting
+        the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_MATHS_CHAPTER7_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_MATHS_CHAPTER7_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Area and Perimeter
+    </div>
+
+    <div class="topic">
+        ✓ Surface Area
+    </div>
+
+    <div class="topic">
+        ✓ Volume
+    </div>
+
+    <div class="topic">
+        ✓ Cuboid
+    </div>
+
+    <div class="topic">
+        ✓ Cube
+    </div>
+
+    <div class="topic">
+        ✓ Cylinder
+    </div>
+
+    <div class="topic">
+        ✓ Cone
+    </div>
+
+    <div class="topic">
+        ✓ Sphere
+    </div>
+
+    <div class="topic">
+        ✓ Hemisphere
+    </div>
+
+    <div class="topic">
+        ✓ Combination of Solids
+    </div>
+
+    <div class="topic">
+        ✓ Practical Numerical Problems
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT FORMULAS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Mensuration Formulas
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Cuboid
+            </strong>
+
+            <br><br>
+
+            Volume = l × b × h
+
+            <br>
+
+            Total Surface Area =
+            2(lb + bh + hl)
+
+            <br>
+
+            Lateral Surface Area =
+            2h(l + b)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Cube
+            </strong>
+
+            <br><br>
+
+            Volume = a³
+
+            <br>
+
+            Total Surface Area = 6a²
+
+            <br>
+
+            Lateral Surface Area = 4a²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Cylinder
+            </strong>
+
+            <br><br>
+
+            Volume = πr²h
+
+            <br>
+
+            Curved Surface Area = 2πrh
+
+            <br>
+
+            Total Surface Area =
+            2πr(r + h)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Cone
+            </strong>
+
+            <br><br>
+
+            Volume = 1/3 πr²h
+
+            <br>
+
+            Slant Height:
+            l = √(r² + h²)
+
+            <br>
+
+            Curved Surface Area = πrl
+
+            <br>
+
+            Total Surface Area =
+            πr(l + r)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Sphere
+            </strong>
+
+            <br><br>
+
+            Volume = 4/3 πr³
+
+            <br>
+
+            Surface Area = 4πr²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Hemisphere
+            </strong>
+
+            <br><br>
+
+            Volume = 2/3 πr³
+
+            <br>
+
+            Curved Surface Area = 2πr²
+
+            <br>
+
+            Total Surface Area = 3πr²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Circle
+            </strong>
+
+            <br><br>
+
+            Area = πr²
+
+            <br>
+
+            Circumference = 2πr
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Rectangle
+            </strong>
+
+            <br><br>
+
+            Area = l × b
+
+            <br>
+
+            Perimeter = 2(l + b)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Triangle
+            </strong>
+
+            <br><br>
+
+            Area = 1/2 × base × height
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SOLVED EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✏️ Solved Numerical Examples
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Find the area of a rectangle
+        whose length is 12 cm and breadth
+        is 8 cm.
+
+        <br><br>
+
+        Area = l × b
+
+        <br>
+
+        = 12 × 8
+
+        <br>
+
+        <b>Answer = 96 cm²</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Find the volume of a cuboid
+        with length 10 cm, breadth 5 cm
+        and height 4 cm.
+
+        <br><br>
+
+        Volume = l × b × h
+
+        <br>
+
+        = 10 × 5 × 4
+
+        <br>
+
+        <b>Answer = 200 cm³</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Find the volume of a cylinder
+        with radius 7 cm and height 10 cm.
+
+        Take π = 22/7.
+
+        <br><br>
+
+        Volume = πr²h
+
+        <br>
+
+        = 22/7 × 7 × 7 × 10
+
+        <br>
+
+        <b>Answer = 1540 cm³</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Find the volume of a sphere
+        with radius 3 cm.
+
+        <br><br>
+
+        Volume = 4/3 πr³
+
+        <br>
+
+        = 4/3 × π × 3³
+
+        <br>
+
+        = 36π
+
+        <br>
+
+        <b>Answer = 36π cm³</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        A cube has side 6 cm.
+        Find its total surface area.
+
+        <br><br>
+
+        TSA = 6a²
+
+        <br>
+
+        = 6 × 6²
+
+        <br>
+
+        = 6 × 36
+
+        <br>
+
+        <b>Answer = 216 cm²</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        Find the curved surface area
+        of a cylinder with radius 7 cm
+        and height 10 cm.
+
+        Take π = 22/7.
+
+        <br><br>
+
+        CSA = 2πrh
+
+        <br>
+
+        = 2 × 22/7 × 7 × 10
+
+        <br>
+
+        <b>Answer = 440 cm²</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 7:
+        </strong>
+
+        A cone has radius 3 cm and
+        height 4 cm. Find its slant height.
+
+        <br><br>
+
+        l = √(r² + h²)
+
+        <br>
+
+        = √(3² + 4²)
+
+        <br>
+
+        = √25
+
+        <br>
+
+        <b>Answer = 5 cm</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 8:
+        </strong>
+
+        Find the circumference of a circle
+        with radius 7 cm.
+
+        Take π = 22/7.
+
+        <br><br>
+
+        C = 2πr
+
+        <br>
+
+        = 2 × 22/7 × 7
+
+        <br>
+
+        <b>Answer = 44 cm</b>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 7 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        This assessment contains numerical,
+        calculation-based and application-based
+        Mensuration questions.
+        Answer all 50 questions.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter8.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 8
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 7 QUESTIONS
+   MENSURATION
+===================================================== */
+
+const questions = [
+
+{
+q:"Find the area of a rectangle with length 12 cm and breadth 8 cm.",
+a:["80 cm²","96 cm²","100 cm²","120 cm²"],
+correct:1
+},
+
+{
+q:"Find the perimeter of a rectangle with length 15 cm and breadth 10 cm.",
+a:["40 cm","45 cm","50 cm","60 cm"],
+correct:2
+},
+
+{
+q:"A square has side 8 cm. Find its area.",
+a:["32 cm²","48 cm²","64 cm²","72 cm²"],
+correct:2
+},
+
+{
+q:"A square has side 12 cm. Find its perimeter.",
+a:["24 cm","36 cm","48 cm","144 cm"],
+correct:2
+},
+
+{
+q:"Find the area of a triangle with base 10 cm and height 8 cm.",
+a:["20 cm²","40 cm²","80 cm²","100 cm²"],
+correct:1
+},
+
+{
+q:"Find the area of a circle with radius 7 cm. Take π = 22/7.",
+a:["44 cm²","154 cm²","308 cm²","49 cm²"],
+correct:1
+},
+
+{
+q:"Find the circumference of a circle with radius 7 cm. Take π = 22/7.",
+a:["22 cm","44 cm","88 cm","154 cm"],
+correct:1
+},
+
+{
+q:"A rectangle has length 20 cm and breadth 5 cm. Find its area.",
+a:["25 cm²","50 cm²","100 cm²","200 cm²"],
+correct:2
+},
+
+{
+q:"A square has an area of 144 cm². Find its side.",
+a:["10 cm","11 cm","12 cm","14 cm"],
+correct:2
+},
+
+{
+q:"Find the perimeter of a square whose side is 15 cm.",
+a:["30 cm","45 cm","60 cm","225 cm"],
+correct:2
+},
+
+{
+q:"Find the volume of a cube with side 5 cm.",
+a:["25 cm³","75 cm³","100 cm³","125 cm³"],
+correct:3
+},
+
+{
+q:"Find the total surface area of a cube with side 6 cm.",
+a:["36 cm²","144 cm²","216 cm²","256 cm²"],
+correct:2
+},
+
+{
+q:"Find the lateral surface area of a cube with side 5 cm.",
+a:["25 cm²","50 cm²","100 cm²","125 cm²"],
+correct:2
+},
+
+{
+q:"Find the volume of a cuboid with l = 10 cm, b = 5 cm and h = 4 cm.",
+a:["100 cm³","150 cm³","200 cm³","250 cm³"],
+correct:2
+},
+
+{
+q:"Find the total surface area of a cuboid with l = 5 cm, b = 4 cm and h = 3 cm.",
+a:["47 cm²","84 cm²","94 cm²","120 cm²"],
+correct:2
+},
+
+{
+q:"Find the volume of a cuboid measuring 8 cm × 6 cm × 5 cm.",
+a:["180 cm³","220 cm³","240 cm³","260 cm³"],
+correct:2
+},
+
+{
+q:"Find the volume of a cylinder with r = 7 cm and h = 10 cm. Take π = 22/7.",
+a:["770 cm³","1540 cm³","3080 cm³","440 cm³"],
+correct:1
+},
+
+{
+q:"Find the curved surface area of a cylinder with r = 7 cm and h = 10 cm. Take π = 22/7.",
+a:["220 cm²","440 cm²","770 cm²","1540 cm²"],
+correct:1
+},
+
+{
+q:"Find the total surface area of a cylinder with r = 7 cm and h = 10 cm. Take π = 22/7.",
+a:["440 cm²","748 cm²","880 cm²","1540 cm²"],
+correct:1
+},
+
+{
+q:"A cylinder has radius 3 cm and height 5 cm. Find its volume.",
+a:["15π cm³","30π cm³","45π cm³","60π cm³"],
+correct:2
+},
+
+{
+q:"A cylinder has diameter 14 cm and height 10 cm. Find its volume using π = 22/7.",
+a:["770 cm³","1540 cm³","3080 cm³","440 cm³"],
+correct:1
+},
+
+{
+q:"Find the slant height of a cone with radius 3 cm and height 4 cm.",
+a:["4 cm","5 cm","6 cm","7 cm"],
+correct:1
+},
+
+{
+q:"Find the volume of a cone with r = 3 cm and h = 4 cm.",
+a:["9π cm³","12π cm³","18π cm³","36π cm³"],
+correct:1
+},
+
+{
+q:"Find the curved surface area of a cone with r = 7 cm and slant height 10 cm.",
+a:["70π cm²","140π cm²","490π cm²","700π cm²"],
+correct:0
+},
+
+{
+q:"Find the total surface area of a cone with radius 7 cm and slant height 10 cm.",
+a:["119π cm²","140π cm²","170π cm²","490π cm²"],
+correct:0
+},
+
+{
+q:"Find the volume of a sphere with radius 3 cm.",
+a:["9π cm³","18π cm³","36π cm³","54π cm³"],
+correct:2
+},
+
+{
+q:"Find the surface area of a sphere with radius 7 cm.",
+a:["49π cm²","98π cm²","196π cm²","343π cm²"],
+correct:2
+},
+
+{
+q:"Find the volume of a sphere with radius 6 cm.",
+a:["144π cm³","288π cm³","576π cm³","864π cm³"],
+correct:2
+},
+
+{
+q:"Find the curved surface area of a hemisphere with radius 7 cm.",
+a:["49π cm²","98π cm²","147π cm²","196π cm²"],
+correct:1
+},
+
+{
+q:"Find the total surface area of a hemisphere with radius 7 cm.",
+a:["98π cm²","147π cm²","196π cm²","294π cm²"],
+correct:1
+},
+
+{
+q:"Find the volume of a hemisphere with radius 3 cm.",
+a:["9π cm³","18π cm³","27π cm³","36π cm³"],
+correct:1
+},
+
+{
+q:"A cube has volume 216 cm³. Find its side.",
+a:["4 cm","5 cm","6 cm","8 cm"],
+correct:2
+},
+
+{
+q:"A cuboid has volume 240 cm³. If l = 10 cm and b = 6 cm, find its height.",
+a:["2 cm","3 cm","4 cm","5 cm"],
+correct:2
+},
+
+{
+q:"A cylinder has volume 1540 cm³, radius 7 cm. Find its height. Take π = 22/7.",
+a:["5 cm","10 cm","15 cm","20 cm"],
+correct:1
+},
+
+{
+q:"A rectangle has area 120 cm² and length 15 cm. Find its breadth.",
+a:["6 cm","8 cm","10 cm","12 cm"],
+correct:1
+},
+
+{
+q:"A triangle has area 60 cm² and base 12 cm. Find its height.",
+a:["5 cm","8 cm","10 cm","12 cm"],
+correct:2
+},
+
+{
+q:"The circumference of a circle is 44 cm. Find its radius. Take π = 22/7.",
+a:["5 cm","6 cm","7 cm","8 cm"],
+correct:2
+},
+
+{
+q:"The area of a circle is 154 cm². Find its radius. Take π = 22/7.",
+a:["5 cm","6 cm","7 cm","8 cm"],
+correct:2
+},
+
+{
+q:"A cube has side 10 cm. Find its volume.",
+a:["100 cm³","500 cm³","1000 cm³","2000 cm³"],
+correct:2
+},
+
+{
+q:"A cube has side 10 cm. Find its total surface area.",
+a:["100 cm²","400 cm²","600 cm²","1000 cm²"],
+correct:2
+},
+
+{
+q:"A cuboid measures 10 cm × 8 cm × 5 cm. Find its volume.",
+a:["200 cm³","300 cm³","400 cm³","500 cm³"],
+correct:2
+},
+
+{
+q:"A cylinder has radius 5 cm and height 8 cm. Find its volume.",
+a:["40π cm³","100π cm³","200π cm³","400π cm³"],
+correct:2
+},
+
+{
+q:"A cone has radius 6 cm and height 8 cm. Find its slant height.",
+a:["8 cm","9 cm","10 cm","12 cm"],
+correct:2
+},
+
+{
+q:"A cone has radius 6 cm and height 8 cm. Find its volume.",
+a:["48π cm³","72π cm³","96π cm³","144π cm³"],
+correct:2
+},
+
+{
+q:"A sphere has diameter 14 cm. Find its radius.",
+a:["5 cm","6 cm","7 cm","14 cm"],
+correct:2
+},
+
+{
+q:"A hemisphere has diameter 14 cm. Find its radius.",
+a:["5 cm","6 cm","7 cm","14 cm"],
+correct:2
+},
+
+{
+q:"A rectangular field is 50 m long and 30 m wide. Find its area.",
+a:["800 m²","1000 m²","1500 m²","2000 m²"],
+correct:2
+},
+
+{
+q:"A square garden has side 20 m. Find the length of fencing required around it.",
+a:["40 m","60 m","80 m","100 m"],
+correct:2
+},
+
+{
+q:"A cylindrical tank has radius 7 m and height 5 m. Find its volume using π = 22/7.",
+a:["550 m³","770 m³","1100 m³","1540 m³"],
+correct:2
+},
+
+{
+q:"A cube-shaped box has side 4 cm. How much space does it occupy?",
+a:["16 cm³","32 cm³","64 cm³","128 cm³"],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_maths_ch7_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_maths_ch7_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Mensuration assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 7 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Mathematics",
+
+        chapter:
+            "Chapter 7 - Mensuration",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_maths_chapter7",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter7"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Mathematics Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Maths_Chapter7_Mensuration_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter7"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START QUIZ
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

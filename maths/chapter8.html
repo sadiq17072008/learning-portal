@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 8 - Statistics and Probability | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   FORMULAS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/maths.html"
+        class="back">
+
+        ← Mathematics
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📊 Chapter 8: Statistics and Probability
+    </h1>
+
+    <p>
+        Learn statistical measures, frequency
+        distributions, mean, median, mode,
+        probability and numerical applications
+        through concepts, formulas, examples
+        and assessment questions.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the important statistical formulas
+        and probability concepts before attempting
+        the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_MATHS_CHAPTER8_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_MATHS_CHAPTER8_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Collection and Presentation of Data
+    </div>
+
+    <div class="topic">
+        ✓ Frequency Distribution
+    </div>
+
+    <div class="topic">
+        ✓ Mean
+    </div>
+
+    <div class="topic">
+        ✓ Median
+    </div>
+
+    <div class="topic">
+        ✓ Mode
+    </div>
+
+    <div class="topic">
+        ✓ Grouped Data
+    </div>
+
+    <div class="topic">
+        ✓ Cumulative Frequency
+    </div>
+
+    <div class="topic">
+        ✓ Measures of Central Tendency
+    </div>
+
+    <div class="topic">
+        ✓ Probability
+    </div>
+
+    <div class="topic">
+        ✓ Experimental Probability
+    </div>
+
+    <div class="topic">
+        ✓ Theoretical Probability
+    </div>
+
+    <div class="topic">
+        ✓ Coins, Dice and Cards
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT FORMULAS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Formulas
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Arithmetic Mean
+            </strong>
+
+            <br><br>
+
+            Mean =
+            Sum of observations /
+            Number of observations
+
+            <br><br>
+
+            x̄ = Σx / n
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Mean with Frequency
+            </strong>
+
+            <br><br>
+
+            Mean =
+            Σfx / Σf
+
+            <br><br>
+
+            where f = frequency
+            and x = observation.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Median
+            </strong>
+
+            <br><br>
+
+            Arrange the observations
+            in ascending order.
+
+            <br><br>
+
+            If n is odd:
+
+            <br>
+
+            Median =
+            value of (n + 1) / 2 th observation
+
+            <br><br>
+
+            If n is even:
+
+            <br>
+
+            Median =
+            average of n/2 th and
+            (n/2 + 1) th observations.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Mode
+            </strong>
+
+            <br><br>
+
+            Mode is the observation
+            that occurs most frequently.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Probability
+            </strong>
+
+            <br><br>
+
+            P(E) =
+            Number of favourable outcomes /
+            Total number of equally likely outcomes
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Probability Range
+            </strong>
+
+            <br><br>
+
+            0 ≤ P(E) ≤ 1
+
+            <br><br>
+
+            Impossible event → P(E) = 0
+
+            <br>
+
+            Certain event → P(E) = 1
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Complementary Event
+            </strong>
+
+            <br><br>
+
+            P(not E) = 1 - P(E)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Sum of Frequencies
+            </strong>
+
+            <br><br>
+
+            N = Σf
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Range
+            </strong>
+
+            <br><br>
+
+            Range =
+            Largest observation -
+            Smallest observation
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SOLVED EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✏️ Solved Numerical Examples
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Find the mean of 5, 10, 15, 20 and 25.
+
+        <br><br>
+
+        Mean = (5 + 10 + 15 + 20 + 25) / 5
+
+        <br>
+
+        = 75 / 5
+
+        <br>
+
+        <b>Answer = 15</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Find the median of 4, 7, 2, 9 and 5.
+
+        <br><br>
+
+        Arranged data:
+
+        <br>
+
+        2, 4, 5, 7, 9
+
+        <br><br>
+
+        Middle value = 5
+
+        <br>
+
+        <b>Answer = 5</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Find the mode of:
+
+        <br>
+
+        2, 3, 4, 3, 5, 3, 6
+
+        <br><br>
+
+        3 occurs most frequently.
+
+        <br>
+
+        <b>Answer = 3</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        A die is thrown once.
+        Find the probability of getting
+        an even number.
+
+        <br><br>
+
+        Even outcomes = 2, 4, 6
+
+        <br>
+
+        Favourable outcomes = 3
+
+        <br>
+
+        Total outcomes = 6
+
+        <br>
+
+        P(E) = 3/6
+
+        <br>
+
+        <b>Answer = 1/2</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        A coin is tossed once.
+        Find the probability of getting
+        a head.
+
+        <br><br>
+
+        Favourable outcomes = 1
+
+        <br>
+
+        Total outcomes = 2
+
+        <br>
+
+        <b>Answer = 1/2</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        Find the range of:
+
+        <br>
+
+        12, 18, 25, 9, 30
+
+        <br><br>
+
+        Range = 30 - 9
+
+        <br>
+
+        <b>Answer = 21</b>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 8 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        This assessment contains numerical,
+        calculation-based and application-based
+        Statistics and Probability questions.
+        Answer all 50 questions.
+        You need at least 30 correct answers
+        to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter9.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 9
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 8 QUESTIONS
+   STATISTICS AND PROBABILITY
+===================================================== */
+
+const questions = [
+
+{
+q:"Find the mean of 5, 10, 15, 20 and 25.",
+a:["10","12","15","20"],
+correct:2
+},
+
+{
+q:"Find the mean of 8, 12, 16 and 20.",
+a:["12","14","16","18"],
+correct:1
+},
+
+{
+q:"Find the median of 2, 4, 6, 8 and 10.",
+a:["4","5","6","8"],
+correct:2
+},
+
+{
+q:"Find the median of 3, 7, 9, 12, 15, 18 and 20.",
+a:["9","12","15","18"],
+correct:1
+},
+
+{
+q:"Find the median of 4, 8, 10, 12, 16 and 20.",
+a:["9","10","11","12"],
+correct:2
+},
+
+{
+q:"Find the mode of 2, 3, 3, 4, 5, 3 and 6.",
+a:["2","3","4","5"],
+correct:1
+},
+
+{
+q:"Find the range of 12, 18, 25, 9 and 30.",
+a:["18","21","25","30"],
+correct:1
+},
+
+{
+q:"The mean of 5 numbers is 12. Find their total.",
+a:["48","50","60","72"],
+correct:2
+},
+
+{
+q:"The mean of 6 numbers is 15. Find their sum.",
+a:["60","75","90","120"],
+correct:2
+},
+
+{
+q:"The sum of 8 observations is 96. Find the mean.",
+a:["10","12","14","16"],
+correct:1
+},
+
+{
+q:"The mean of 10 observations is 18. If one observation is 28, find the sum of the remaining observations.",
+a:["142","152","162","172"],
+correct:1
+},
+
+{
+q:"The mean of 5 observations is 20. Four observations are 12, 18, 22 and 24. Find the fifth observation.",
+a:["20","22","24","26"],
+correct:2
+},
+
+{
+q:"Find the mean of 10, 20, 30, 40 and 50.",
+a:["20","25","30","35"],
+correct:2
+},
+
+{
+q:"Find the median of 11, 5, 8, 3 and 9.",
+a:["5","8","9","11"],
+correct:1
+},
+
+{
+q:"Find the mode of 7, 8, 7, 9, 10, 7 and 8.",
+a:["7","8","9","10"],
+correct:0
+},
+
+{
+q:"Find the range of 4, 9, 15, 22 and 30.",
+a:["24","26","28","30"],
+correct:1
+},
+
+{
+q:"If the observations are 2, 4, 6, 8, 10, what is their mean?",
+a:["5","6","7","8"],
+correct:1
+},
+
+{
+q:"If the mean of 4 numbers is 25, what is their sum?",
+a:["50","75","100","125"],
+correct:2
+},
+
+{
+q:"If the sum of 12 observations is 240, find their mean.",
+a:["15","20","25","30"],
+correct:1
+},
+
+{
+q:"Find the median of 10, 20, 30, 40, 50, 60.",
+a:["25","30","35","40"],
+correct:2
+},
+
+{
+q:"A die is thrown once. What is the probability of getting 6?",
+a:["0","1/6","1/3","1/2"],
+correct:1
+},
+
+{
+q:"A die is thrown once. What is the probability of getting an even number?",
+a:["1/6","1/3","1/2","2/3"],
+correct:2
+},
+
+{
+q:"A die is thrown once. What is the probability of getting an odd number?",
+a:["1/6","1/3","1/2","2/3"],
+correct:2
+},
+
+{
+q:"A die is thrown once. What is the probability of getting a number greater than 4?",
+a:["1/6","1/3","1/2","2/3"],
+correct:1
+},
+
+{
+q:"A die is thrown once. What is the probability of getting a number less than 5?",
+a:["1/6","1/3","1/2","2/3"],
+correct:3
+},
+
+{
+q:"A coin is tossed once. What is the probability of getting a head?",
+a:["0","1/4","1/2","1"],
+correct:2
+},
+
+{
+q:"A coin is tossed once. What is the probability of getting a tail?",
+a:["0","1/4","1/2","1"],
+correct:2
+},
+
+{
+q:"Two coins are tossed. What is the probability of getting two heads?",
+a:["1/4","1/3","1/2","3/4"],
+correct:0
+},
+
+{
+q:"Two coins are tossed. What is the probability of getting two tails?",
+a:["1/4","1/3","1/2","3/4"],
+correct:0
+},
+
+{
+q:"Two coins are tossed. What is the probability of getting exactly one head?",
+a:["1/4","1/2","3/4","1"],
+correct:1
+},
+
+{
+q:"A die is thrown once. What is the probability of getting a prime number?",
+a:["1/6","1/3","1/2","2/3"],
+correct:2
+},
+
+{
+q:"A die is thrown once. What is the probability of getting a number divisible by 3?",
+a:["1/6","1/3","1/2","2/3"],
+correct:1
+},
+
+{
+q:"A die is thrown once. What is the probability of getting a number divisible by 2?",
+a:["1/6","1/3","1/2","2/3"],
+correct:2
+},
+
+{
+q:"A die is thrown once. What is the probability of getting a number less than or equal to 6?",
+a:["0","1/6","1/2","1"],
+correct:3
+},
+
+{
+q:"A die is thrown once. What is the probability of getting a number greater than 6?",
+a:["0","1/6","1/2","1"],
+correct:0
+},
+
+{
+q:"A bag contains 3 red balls and 2 blue balls. One ball is chosen at random. Find the probability of choosing a red ball.",
+a:["2/5","3/5","1/2","4/5"],
+correct:1
+},
+
+{
+q:"A bag contains 4 white balls and 6 black balls. Find the probability of choosing a white ball.",
+a:["1/5","2/5","3/5","4/5"],
+correct:1
+},
+
+{
+q:"A box contains 5 red balls, 3 green balls and 2 blue balls. Find the probability of choosing a blue ball.",
+a:["1/10","1/5","3/10","1/2"],
+correct:1
+},
+
+{
+q:"A bag contains 7 red balls and 3 blue balls. Find the probability of NOT choosing a blue ball.",
+a:["3/10","7/10","1/2","1"],
+correct:1
+},
+
+{
+q:"If P(E) = 0.3, find P(not E).",
+a:["0.3","0.5","0.7","1"],
+correct:2
+},
+
+{
+q:"If the probability of an event is 1, the event is:",
+a:["Impossible","Unlikely","Certain","Random"],
+correct:2
+},
+
+{
+q:"If the probability of an event is 0, the event is:",
+a:["Certain","Impossible","Likely","Possible"],
+correct:1
+},
+
+{
+q:"A card is selected from a standard deck of 52 cards. Find the probability of getting an ace.",
+a:["1/52","1/26","1/13","4/13"],
+correct:2
+},
+
+{
+q:"A card is selected from a standard deck of 52 cards. Find the probability of getting a king.",
+a:["1/52","1/26","1/13","4/13"],
+correct:2
+},
+
+{
+q:"A card is selected from a standard deck of 52 cards. Find the probability of getting a red card.",
+a:["1/4","1/3","1/2","3/4"],
+correct:2
+},
+
+{
+q:"A card is selected from a standard deck of 52 cards. Find the probability of getting a black card.",
+a:["1/4","1/3","1/2","3/4"],
+correct:2
+},
+
+{
+q:"A card is selected from a standard deck of 52 cards. Find the probability of getting a heart.",
+a:["1/13","1/4","1/2","13/52"],
+correct:1
+},
+
+{
+q:"A card is selected from a standard deck of 52 cards. Find the probability of getting a queen.",
+a:["1/52","1/26","1/13","1/4"],
+correct:2
+},
+
+{
+q:"The probability of an event is 2/5. Find the probability that the event does not occur.",
+a:["1/5","2/5","3/5","4/5"],
+correct:2
+},
+
+{
+q:"The probability of an event is 3/8. Find the probability that it does not occur.",
+a:["3/8","4/8","5/8","6/8"],
+correct:2
+},
+
+{
+q:"A die is thrown 60 times and a 6 appears 10 times. Find the experimental probability of getting 6.",
+a:["1/6","1/5","1/4","1/3"],
+correct:1
+},
+
+{
+q:"A coin is tossed 100 times and heads appear 56 times. Find the experimental probability of getting a head.",
+a:["0.44","0.50","0.56","0.60"],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_maths_ch8_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_maths_ch8_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Statistics and Probability assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 8 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Mathematics",
+
+        chapter:
+            "Chapter 8 - Statistics and Probability",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_maths_chapter8",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter8"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Mathematics Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Maths_Chapter8_Statistics_Probability_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter8"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START QUIZ
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

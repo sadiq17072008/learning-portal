@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 3 - Algebra | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/maths.html"
+        class="back">
+
+        ← Mathematics
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📘 Chapter 3: Algebra
+    </h1>
+
+    <p>
+        Learn algebraic expressions, identities,
+        factorisation, equations, quadratic
+        equations and numerical applications
+        from TN 10th Standard Mathematics.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting
+        the numerical assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_MATHS_CHAPTER3_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_MATHS_CHAPTER3_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Algebraic Expressions
+    </div>
+
+    <div class="topic">
+        ✓ Terms, Coefficients and Constants
+    </div>
+
+    <div class="topic">
+        ✓ Algebraic Identities
+    </div>
+
+    <div class="topic">
+        ✓ Expansion of Expressions
+    </div>
+
+    <div class="topic">
+        ✓ Factorisation
+    </div>
+
+    <div class="topic">
+        ✓ Linear Equations
+    </div>
+
+    <div class="topic">
+        ✓ Simultaneous Equations
+    </div>
+
+    <div class="topic">
+        ✓ Quadratic Equations
+    </div>
+
+    <div class="topic">
+        ✓ Roots of Quadratic Equations
+    </div>
+
+    <div class="topic">
+        ✓ Discriminant
+    </div>
+
+    <div class="topic">
+        ✓ Algebraic Numerical Problems
+    </div>
+
+    <div class="topic">
+        ✓ Word Problems
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT FORMULAS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Algebra Formulas
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Square of a Sum
+            </strong>
+
+            <br>
+
+            (a + b)² = a² + 2ab + b²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Square of a Difference
+            </strong>
+
+            <br>
+
+            (a − b)² = a² − 2ab + b²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Difference of Squares
+            </strong>
+
+            <br>
+
+            a² − b² = (a − b)(a + b)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Product of Sum and Difference
+            </strong>
+
+            <br>
+
+            (a + b)(a − b) = a² − b²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Cube of a Sum
+            </strong>
+
+            <br>
+
+            (a + b)³ =
+            a³ + 3a²b + 3ab² + b³
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Cube of a Difference
+            </strong>
+
+            <br>
+
+            (a − b)³ =
+            a³ − 3a²b + 3ab² − b³
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Sum of Cubes
+            </strong>
+
+            <br>
+
+            a³ + b³ =
+            (a + b)(a² − ab + b²)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Difference of Cubes
+            </strong>
+
+            <br>
+
+            a³ − b³ =
+            (a − b)(a² + ab + b²)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Quadratic Equation
+            </strong>
+
+            <br>
+
+            ax² + bx + c = 0
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Quadratic Formula
+            </strong>
+
+            <br>
+
+            x =
+            [−b ± √(b² − 4ac)] / 2a
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Discriminant
+            </strong>
+
+            <br>
+
+            D = b² − 4ac
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Sum of Roots
+            </strong>
+
+            <br>
+
+            α + β = −b/a
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Product of Roots
+            </strong>
+
+            <br>
+
+            αβ = c/a
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SOLVED EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✏️ Solved Numerical Examples
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Expand:
+
+        <b>
+            (x + 5)²
+        </b>
+
+        <br><br>
+
+        (x + 5)²
+
+        <br>
+
+        = x² + 2(x)(5) + 5²
+
+        <br>
+
+        = <b>x² + 10x + 25</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Factorise:
+
+        <b>
+            x² − 25
+        </b>
+
+        <br><br>
+
+        x² − 5²
+
+        <br>
+
+        = <b>(x − 5)(x + 5)</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Solve:
+
+        <b>
+            2x + 7 = 19
+        </b>
+
+        <br><br>
+
+        2x = 19 − 7
+
+        <br>
+
+        2x = 12
+
+        <br>
+
+        x = <b>6</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Solve:
+
+        <b>
+            x² − 5x + 6 = 0
+        </b>
+
+        <br><br>
+
+        (x − 2)(x − 3) = 0
+
+        <br>
+
+        Therefore,
+
+        <br>
+
+        x = <b>2 or 3</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        Solve:
+
+        <b>
+            x² − 9 = 0
+        </b>
+
+        <br><br>
+
+        x² = 9
+
+        <br>
+
+        x = <b>±3</b>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 3 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        This assessment contains numerical,
+        calculation-based and application-based
+        questions. Answer all 50 questions.
+        You need at least 30 correct answers
+        to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter4.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 4
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 3 QUESTIONS
+   ALGEBRA
+===================================================== */
+
+const questions = [
+
+{
+q:"Simplify: 5x + 3x − 2x",
+a:["4x","5x","6x","7x"],
+correct:2
+},
+
+{
+q:"Simplify: 7a − 3a + 5a",
+a:["7a","8a","9a","10a"],
+correct:2
+},
+
+{
+q:"Find the value of 2x + 5 when x = 4.",
+a:["11","12","13","14"],
+correct:2
+},
+
+{
+q:"Find the value of 3x² when x = 4.",
+a:["24","36","48","54"],
+correct:2
+},
+
+{
+q:"Find the value of x² + 2x + 1 when x = 5.",
+a:["25","30","36","40"],
+correct:2
+},
+
+{
+q:"Expand: (x + 3)².",
+a:[
+"x² + 3x + 9",
+"x² + 6x + 9",
+"x² + 9x + 3",
+"x² + 6x + 3"
+],
+correct:1
+},
+
+{
+q:"Expand: (x − 4)².",
+a:[
+"x² − 4x + 16",
+"x² − 8x + 16",
+"x² + 8x + 16",
+"x² − 16"
+],
+correct:1
+},
+
+{
+q:"Expand: (x + 5)(x − 5).",
+a:[
+"x² + 25",
+"x² − 25",
+"x² − 10x + 25",
+"x² + 10x + 25"
+],
+correct:1
+},
+
+{
+q:"Factorise: x² − 16.",
+a:[
+"(x − 4)(x + 4)",
+"(x − 8)(x + 2)",
+"(x − 16)(x + 1)",
+"(x − 2)(x + 8)"
+],
+correct:0
+},
+
+{
+q:"Factorise: x² + 7x + 12.",
+a:[
+"(x + 2)(x + 6)",
+"(x + 3)(x + 4)",
+"(x + 1)(x + 12)",
+"(x + 5)(x + 2)"
+],
+correct:1
+},
+
+{
+q:"Factorise: x² + 9x + 20.",
+a:[
+"(x + 4)(x + 5)",
+"(x + 2)(x + 10)",
+"(x + 1)(x + 20)",
+"(x + 8)(x + 2)"
+],
+correct:0
+},
+
+{
+q:"Factorise: x² − 9x + 20.",
+a:[
+"(x − 2)(x − 10)",
+"(x − 4)(x − 5)",
+"(x − 1)(x − 20)",
+"(x + 4)(x + 5)"
+],
+correct:1
+},
+
+{
+q:"Solve: x + 7 = 15.",
+a:["6","7","8","9"],
+correct:2
+},
+
+{
+q:"Solve: 2x = 18.",
+a:["6","7","8","9"],
+correct:3
+},
+
+{
+q:"Solve: 3x + 5 = 20.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"Solve: 5x − 7 = 18.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"Solve: 4x + 3 = 27.",
+a:["5","6","7","8"],
+correct:1
+},
+
+{
+q:"Solve: 7x − 4 = 31.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"Solve: 2x + 9 = 25.",
+a:["6","7","8","9"],
+correct:2
+},
+
+{
+q:"Solve: 6x − 5 = 31.",
+a:["5","6","7","8"],
+correct:1
+},
+
+{
+q:"Solve: x² − 9 = 0.",
+a:[
+"x = 3",
+"x = −3",
+"x = ±3",
+"x = 9"
+],
+correct:2
+},
+
+{
+q:"Solve: x² − 16 = 0.",
+a:[
+"x = ±2",
+"x = ±3",
+"x = ±4",
+"x = ±8"
+],
+correct:2
+},
+
+{
+q:"Solve: x² − 25 = 0.",
+a:[
+"x = ±3",
+"x = ±4",
+"x = ±5",
+"x = ±6"
+],
+correct:2
+},
+
+{
+q:"Solve: x² − 5x + 6 = 0.",
+a:[
+"x = 1, 6",
+"x = 2, 3",
+"x = 3, 4",
+"x = 2, 4"
+],
+correct:1
+},
+
+{
+q:"Solve: x² − 7x + 12 = 0.",
+a:[
+"x = 2, 6",
+"x = 3, 4",
+"x = 1, 12",
+"x = 4, 5"
+],
+correct:1
+},
+
+{
+q:"Solve: x² − 9x + 20 = 0.",
+a:[
+"x = 2, 10",
+"x = 4, 5",
+"x = 3, 6",
+"x = 1, 20"
+],
+correct:1
+},
+
+{
+q:"Solve: x² + 5x + 6 = 0.",
+a:[
+"x = −2, −3",
+"x = 2, 3",
+"x = −1, −6",
+"x = 1, 6"
+],
+correct:0
+},
+
+{
+q:"Solve: x² + 7x + 12 = 0.",
+a:[
+"x = −2, −6",
+"x = 2, 6",
+"x = −3, −4",
+"x = 3, 4"
+],
+correct:2
+},
+
+{
+q:"Find the discriminant of x² + 5x + 6 = 0.",
+a:["1","2","3","4"],
+correct:0
+},
+
+{
+q:"Find the discriminant of x² − 6x + 9 = 0.",
+a:["0","1","3","9"],
+correct:0
+},
+
+{
+q:"Find the discriminant of x² − 5x + 6 = 0.",
+a:["1","2","3","4"],
+correct:0
+},
+
+{
+q:"For x² + 4x + 4 = 0, the roots are:",
+a:[
+"2, 2",
+"−2, −2",
+"2, −2",
+"4, 4"
+],
+correct:1
+},
+
+{
+q:"For x² − 4x + 4 = 0, the root is:",
+a:[
+"−2",
+"2",
+"4",
+"−4"
+],
+correct:1
+},
+
+{
+q:"The sum of roots of x² − 7x + 10 = 0 is:",
+a:["5","7","10","−7"],
+correct:1
+},
+
+{
+q:"The product of roots of x² − 7x + 10 = 0 is:",
+a:["5","7","10","−10"],
+correct:2
+},
+
+{
+q:"The sum of roots of 2x² − 8x + 6 = 0 is:",
+a:["2","3","4","6"],
+correct:2
+},
+
+{
+q:"The product of roots of 2x² − 8x + 6 = 0 is:",
+a:["2","3","4","6"],
+correct:1
+},
+
+{
+q:"If x = 3, find 2x² + 4x − 5.",
+a:["19","21","23","25"],
+correct:2
+},
+
+{
+q:"If x = −2, find x² + 3x + 4.",
+a:["2","3","4","5"],
+correct:2
+},
+
+{
+q:"If a = 3 and b = 4, find a² + b².",
+a:["12","20","25","49"],
+correct:2
+},
+
+{
+q:"If a = 5 and b = 2, find (a + b)².",
+a:["25","35","49","50"],
+correct:2
+},
+
+{
+q:"If x + y = 10 and xy = 21, find x² + y².",
+a:["42","58","79","100"],
+correct:1
+},
+
+{
+q:"If x + y = 8 and xy = 15, find x² + y².",
+a:["34","49","64","79"],
+correct:0
+},
+
+{
+q:"Solve: 3(x + 2) = 21.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"Solve: 5(x − 2) = 30.",
+a:["6","7","8","9"],
+correct:2
+},
+
+{
+q:"Solve: 2(x + 4) = 18.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"Solve: 4(x − 3) = 28.",
+a:["8","9","10","11"],
+correct:2
+},
+
+{
+q:"The length of a rectangle is x + 3 and width is x. If its area is 40 cm², find x.",
+a:["4","5","6","8"],
+correct:0
+},
+
+{
+q:"The product of two consecutive positive integers is 42. The integers are:",
+a:[
+"5 and 6",
+"6 and 7",
+"7 and 8",
+"4 and 5"
+],
+correct:0
+},
+
+{
+q:"A number increased by 8 is 20. Find the number.",
+a:["10","11","12","13"],
+correct:2
+},
+
+{
+q:"The square of a number is 49. The possible values are:",
+a:[
+"7 only",
+"−7 only",
+"±7",
+"49"
+],
+correct:2
+},
+
+{
+q:"If the roots of x² − 10x + 21 = 0 are α and β, find αβ.",
+a:["10","21","31","−21"],
+correct:1
+},
+
+{
+q:"If the roots of 3x² − 12x + 9 = 0 are α and β, find α + β.",
+a:["3","4","9","12"],
+correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_maths_ch3_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_maths_ch3_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Algebra assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 3 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Mathematics",
+
+        chapter:
+            "Chapter 3 - Algebra",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_maths_chapter3",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter3"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Mathematics Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Maths_Chapter3_Algebra_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter3"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START QUIZ
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

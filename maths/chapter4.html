@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 4 - Geometry | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/maths.html"
+        class="back">
+
+        ← Mathematics
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📐 Chapter 4: Geometry
+    </h1>
+
+    <p>
+        Learn important geometric concepts including
+        similarity, Pythagoras theorem, triangles,
+        circles, tangents, constructions and
+        numerical applications from TN 10th Standard
+        Mathematics.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter concepts and solved examples
+        before attempting the numerical assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_MATHS_CHAPTER4_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_MATHS_CHAPTER4_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Similar Triangles
+    </div>
+
+    <div class="topic">
+        ✓ Similarity Criteria
+    </div>
+
+    <div class="topic">
+        ✓ Basic Proportionality Theorem
+    </div>
+
+    <div class="topic">
+        ✓ Pythagoras Theorem
+    </div>
+
+    <div class="topic">
+        ✓ Converse of Pythagoras Theorem
+    </div>
+
+    <div class="topic">
+        ✓ Geometric Mean
+    </div>
+
+    <div class="topic">
+        ✓ Properties of Triangles
+    </div>
+
+    <div class="topic">
+        ✓ Circles
+    </div>
+
+    <div class="topic">
+        ✓ Tangents to a Circle
+    </div>
+
+    <div class="topic">
+        ✓ Properties of Tangents
+    </div>
+
+    <div class="topic">
+        ✓ Chord and Radius
+    </div>
+
+    <div class="topic">
+        ✓ Numerical Geometry Problems
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT FORMULAS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Geometry Formulas
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Pythagoras Theorem
+            </strong>
+
+            <br>
+
+            In a right-angled triangle:
+
+            <br>
+
+            Hypotenuse² =
+            Base² + Perpendicular²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Hypotenuse
+            </strong>
+
+            <br>
+
+            c = √(a² + b²)
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Similar Triangles
+            </strong>
+
+            <br>
+
+            Corresponding sides of similar
+            triangles are proportional.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Area of Triangle
+            </strong>
+
+            <br>
+
+            Area = ½ × Base × Height
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Area Ratio of Similar Triangles
+            </strong>
+
+            <br>
+
+            Area₁ / Area₂ =
+            (Corresponding Side₁ /
+            Corresponding Side₂)²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Tangent Property
+            </strong>
+
+            <br>
+
+            Radius is perpendicular to
+            the tangent at the point of contact.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Tangents from an External Point
+            </strong>
+
+            <br>
+
+            Tangents drawn from the same
+            external point are equal.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Circle Circumference
+            </strong>
+
+            <br>
+
+            C = 2πr
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Circle Area
+            </strong>
+
+            <br>
+
+            A = πr²
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Diameter
+            </strong>
+
+            <br>
+
+            d = 2r
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SOLVED EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✏️ Solved Numerical Examples
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Find the hypotenuse of a right triangle
+        whose sides are 6 cm and 8 cm.
+
+        <br><br>
+
+        c² = 6² + 8²
+
+        <br>
+
+        c² = 36 + 64
+
+        <br>
+
+        c² = 100
+
+        <br>
+
+        c = <b>10 cm</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Find the area of a triangle with
+        base 12 cm and height 8 cm.
+
+        <br><br>
+
+        Area = ½ × 12 × 8
+
+        <br>
+
+        Area = <b>48 cm²</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        A circle has radius 7 cm.
+        Find its circumference.
+
+        <br><br>
+
+        C = 2πr
+
+        <br>
+
+        = 2 × 22/7 × 7
+
+        <br>
+
+        = <b>44 cm</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Two similar triangles have corresponding
+        sides 4 cm and 8 cm. Find their area ratio.
+
+        <br><br>
+
+        Area ratio =
+        (4/8)²
+
+        <br>
+
+        = (1/2)²
+
+        <br>
+
+        = <b>1 : 4</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        A tangent from an external point has
+        length 12 cm. Find the length of the
+        other tangent from the same point.
+
+        <br><br>
+
+        Tangents from the same external point
+        are equal.
+
+        <br>
+
+        Therefore, other tangent =
+        <b>12 cm</b>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 4 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        This assessment contains numerical,
+        calculation-based and application-based
+        geometry questions. Answer all 50 questions.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter5.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 5
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 4 QUESTIONS
+   GEOMETRY
+===================================================== */
+
+const questions = [
+
+{
+q:"A right triangle has sides 3 cm and 4 cm. Find the hypotenuse.",
+a:["4 cm","5 cm","6 cm","7 cm"],
+correct:1
+},
+
+{
+q:"A right triangle has legs 5 cm and 12 cm. Find the hypotenuse.",
+a:["11 cm","12 cm","13 cm","14 cm"],
+correct:2
+},
+
+{
+q:"A right triangle has legs 8 cm and 15 cm. Find the hypotenuse.",
+a:["16 cm","17 cm","18 cm","19 cm"],
+correct:1
+},
+
+{
+q:"A right triangle has hypotenuse 13 cm and one side 5 cm. Find the other side.",
+a:["8 cm","10 cm","12 cm","14 cm"],
+correct:2
+},
+
+{
+q:"A right triangle has hypotenuse 10 cm and one side 6 cm. Find the other side.",
+a:["6 cm","7 cm","8 cm","9 cm"],
+correct:2
+},
+
+{
+q:"Find the area of a triangle with base 10 cm and height 8 cm.",
+a:["30 cm²","40 cm²","50 cm²","80 cm²"],
+correct:1
+},
+
+{
+q:"Find the area of a triangle with base 15 cm and height 6 cm.",
+a:["30 cm²","40 cm²","45 cm²","60 cm²"],
+correct:2
+},
+
+{
+q:"Find the area of a triangle with base 20 cm and height 9 cm.",
+a:["80 cm²","90 cm²","100 cm²","180 cm²"],
+correct:1
+},
+
+{
+q:"A triangle has area 60 cm² and base 12 cm. Find its height.",
+a:["5 cm","8 cm","10 cm","12 cm"],
+correct:2
+},
+
+{
+q:"A triangle has area 48 cm² and height 8 cm. Find its base.",
+a:["10 cm","12 cm","14 cm","16 cm"],
+correct:1
+},
+
+{
+q:"The sides of two similar triangles are in the ratio 2:3. What is their area ratio?",
+a:["2:3","3:2","4:9","9:4"],
+correct:2
+},
+
+{
+q:"The corresponding sides of two similar triangles are 3 cm and 6 cm. Find their area ratio.",
+a:["1:2","1:3","1:4","2:3"],
+correct:2
+},
+
+{
+q:"Two similar triangles have side ratio 4:5. Find their area ratio.",
+a:["4:5","8:10","16:25","25:16"],
+correct:2
+},
+
+{
+q:"Two similar triangles have side ratio 3:4. Find their area ratio.",
+a:["3:4","6:8","9:16","16:9"],
+correct:2
+},
+
+{
+q:"Two similar triangles have corresponding sides 5 cm and 10 cm. If the smaller area is 20 cm², find the larger area.",
+a:["40 cm²","60 cm²","80 cm²","100 cm²"],
+correct:2
+},
+
+{
+q:"Two similar triangles have corresponding sides in the ratio 2:5. If the smaller area is 16 cm², find the larger area.",
+a:["40 cm²","80 cm²","100 cm²","120 cm²"],
+correct:2
+},
+
+{
+q:"If the sides of two similar triangles are in the ratio 1:3, their areas are in the ratio:",
+a:["1:3","1:6","1:9","3:1"],
+correct:2
+},
+
+{
+q:"A circle has radius 7 cm. Using π = 22/7, find its circumference.",
+a:["22 cm","44 cm","49 cm","154 cm"],
+correct:1
+},
+
+{
+q:"A circle has radius 14 cm. Using π = 22/7, find its circumference.",
+a:["44 cm","66 cm","88 cm","154 cm"],
+correct:2
+},
+
+{
+q:"A circle has diameter 14 cm. Using π = 22/7, find its circumference.",
+a:["22 cm","44 cm","66 cm","88 cm"],
+correct:1
+},
+
+{
+q:"A circle has radius 7 cm. Using π = 22/7, find its area.",
+a:["44 cm²","88 cm²","154 cm²","308 cm²"],
+correct:2
+},
+
+{
+q:"A circle has radius 14 cm. Using π = 22/7, find its area.",
+a:["308 cm²","616 cm²","728 cm²","154 cm²"],
+correct:1
+},
+
+{
+q:"A circle has diameter 28 cm. Find its radius.",
+a:["7 cm","12 cm","14 cm","28 cm"],
+correct:2
+},
+
+{
+q:"A circle has circumference 44 cm. Using π = 22/7, find its radius.",
+a:["5 cm","7 cm","11 cm","14 cm"],
+correct:1
+},
+
+{
+q:"A circle has area 154 cm². Using π = 22/7, find its radius.",
+a:["5 cm","7 cm","11 cm","14 cm"],
+correct:1
+},
+
+{
+q:"If the radius of a circle is doubled, its area becomes:",
+a:[
+"2 times",
+"3 times",
+"4 times",
+"8 times"
+],
+correct:2
+},
+
+{
+q:"If the radius of a circle is tripled, its area becomes:",
+a:[
+"3 times",
+"6 times",
+"9 times",
+"12 times"
+],
+correct:2
+},
+
+{
+q:"If the radius of a circle is doubled, its circumference becomes:",
+a:[
+"2 times",
+"3 times",
+"4 times",
+"8 times"
+],
+correct:0
+},
+
+{
+q:"A tangent to a circle at point P is perpendicular to which line?",
+a:[
+"Diameter through P",
+"Any chord",
+"Any tangent",
+"Any secant"
+],
+correct:0
+},
+
+{
+q:"Two tangents are drawn from an external point to a circle. If one tangent is 15 cm, the other is:",
+a:["10 cm","12 cm","15 cm","30 cm"],
+correct:2
+},
+
+{
+q:"Two tangents from an external point have lengths x and 18 cm. Find x.",
+a:["9 cm","12 cm","18 cm","36 cm"],
+correct:2
+},
+
+{
+q:"A tangent from an external point has length 24 cm. Find the length of the second tangent.",
+a:["12 cm","18 cm","24 cm","48 cm"],
+correct:2
+},
+
+{
+q:"A radius drawn to the point of contact of a tangent makes an angle of:",
+a:["30°","45°","60°","90°"],
+correct:3
+},
+
+{
+q:"The sides of a right triangle are 9 cm and 12 cm. Find the hypotenuse.",
+a:["13 cm","14 cm","15 cm","16 cm"],
+correct:2
+},
+
+{
+q:"The sides of a right triangle are 7 cm and 24 cm. Find the hypotenuse.",
+a:["23 cm","24 cm","25 cm","26 cm"],
+correct:2
+},
+
+{
+q:"The hypotenuse of a right triangle is 25 cm and one side is 7 cm. Find the other side.",
+a:["18 cm","20 cm","24 cm","26 cm"],
+correct:2
+},
+
+{
+q:"The hypotenuse of a right triangle is 17 cm and one side is 8 cm. Find the other side.",
+a:["9 cm","12 cm","15 cm","16 cm"],
+correct:2
+},
+
+{
+q:"A triangle has sides 6 cm, 8 cm and 10 cm. What type of triangle is it?",
+a:[
+"Equilateral",
+"Isosceles",
+"Right-angled",
+"Obtuse"
+],
+correct:2
+},
+
+{
+q:"A triangle has sides 5 cm, 12 cm and 13 cm. It is:",
+a:[
+"Right-angled",
+"Equilateral",
+"Obtuse only",
+"Impossible"
+],
+correct:0
+},
+
+{
+q:"If two corresponding sides of similar triangles are 6 cm and 9 cm, the scale factor from smaller to larger is:",
+a:["1/2","2/3","3/2","2"],
+correct:2
+},
+
+{
+q:"If a side of a triangle is 8 cm and the corresponding side of a similar triangle is 12 cm, a corresponding side of 10 cm will become:",
+a:["12 cm","15 cm","16 cm","18 cm"],
+correct:1
+},
+
+{
+q:"Two similar triangles have corresponding sides 4 cm and 10 cm. If another side of the smaller triangle is 6 cm, find the corresponding larger side.",
+a:["12 cm","15 cm","18 cm","20 cm"],
+correct:1
+},
+
+{
+q:"The area of a triangle is 72 cm² and its base is 12 cm. Find its height.",
+a:["6 cm","8 cm","10 cm","12 cm"],
+correct:1
+},
+
+{
+q:"The area of a triangle is 90 cm² and its height is 15 cm. Find its base.",
+a:["10 cm","12 cm","15 cm","18 cm"],
+correct:1
+},
+
+{
+q:"A circle has radius 21 cm. Using π = 22/7, find its circumference.",
+a:["66 cm","88 cm","132 cm","154 cm"],
+correct:2
+},
+
+{
+q:"A circle has radius 21 cm. Using π = 22/7, find its area.",
+a:["924 cm²","1323 cm²","1386 cm²","1540 cm²"],
+correct:2
+},
+
+{
+q:"A circle has diameter 20 cm. Using π = 3.14, find its circumference.",
+a:["31.4 cm","62.8 cm","125.6 cm","40 cm"],
+correct:1
+},
+
+{
+q:"A circle has radius 10 cm. Using π = 3.14, find its area.",
+a:["31.4 cm²","62.8 cm²","314 cm²","628 cm²"],
+correct:2
+},
+
+{
+q:"If two similar triangles have side ratio 5:7, their area ratio is:",
+a:["5:7","10:14","25:49","49:25"],
+correct:2
+},
+
+{
+q:"A right triangle has base 20 cm and hypotenuse 29 cm. Find its perpendicular side.",
+a:["19 cm","20 cm","21 cm","22 cm"],
+correct:2
+},
+
+{
+q:"A right triangle has sides 12 cm and 35 cm. Find its hypotenuse.",
+a:["36 cm","37 cm","38 cm","39 cm"],
+correct:1
+},
+
+{
+q:"A tangent is drawn from point A to a circle. If AP = 13 cm, where P is the point of contact, the length of another tangent AQ is:",
+a:["6.5 cm","10 cm","13 cm","26 cm"],
+correct:2
+},
+
+{
+q:"The radius of a circle is 10 cm. Its diameter is:",
+a:["5 cm","10 cm","20 cm","30 cm"],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_maths_ch4_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_maths_ch4_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Geometry assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 4 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Mathematics",
+
+        chapter:
+            "Chapter 4 - Geometry",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_maths_chapter4",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter4"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Mathematics Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Maths_Chapter4_Geometry_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter4"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START QUIZ
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+
