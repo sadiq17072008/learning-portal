@@ -1,0 +1,2200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 1 - Relations and Functions | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/maths.html"
+        class="back">
+
+        ← Mathematics
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📘 Chapter 1: Relations and Functions
+    </h1>
+
+    <p>
+        Learn relations, functions, domain, range,
+        ordered pairs, mappings and important
+        mathematical concepts from TN 10th Standard
+        Mathematics.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the
+        assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_MATHS_CHAPTER1_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_MATHS_CHAPTER1_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Ordered Pairs
+    </div>
+
+    <div class="topic">
+        ✓ Cartesian Product
+    </div>
+
+    <div class="topic">
+        ✓ Relations
+    </div>
+
+    <div class="topic">
+        ✓ Domain and Range
+    </div>
+
+    <div class="topic">
+        ✓ Types of Relations
+    </div>
+
+    <div class="topic">
+        ✓ Functions
+    </div>
+
+    <div class="topic">
+        ✓ Domain of a Function
+    </div>
+
+    <div class="topic">
+        ✓ Range of a Function
+    </div>
+
+    <div class="topic">
+        ✓ One-One Functions
+    </div>
+
+    <div class="topic">
+        ✓ Many-One Functions
+    </div>
+
+    <div class="topic">
+        ✓ Into and Onto Functions
+    </div>
+
+    <div class="topic">
+        ✓ Numerical Problems
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Ordered Pair
+            </strong>
+
+            <br>
+
+            An ordered pair is written as
+
+            <b>(a,b)</b>.
+
+            <br>
+
+            The first element is called the
+            first coordinate and the second element
+            is called the second coordinate.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Cartesian Product
+            </strong>
+
+            <br>
+
+            If A and B are two sets, then
+
+            <br><br>
+
+            <b>
+                A × B = {(a,b) : a ∈ A and b ∈ B}
+            </b>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Number of Elements
+            </strong>
+
+            <br>
+
+            If n(A) = m and n(B) = n, then
+
+            <br><br>
+
+            <b>
+                n(A × B) = mn
+            </b>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Relation
+            </strong>
+
+            <br>
+
+            A relation from A to B is a subset
+            of A × B.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Domain
+            </strong>
+
+            <br>
+
+            The set of all first components of
+            ordered pairs in a relation is called
+            its domain.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Range
+            </strong>
+
+            <br>
+
+            The set of all second components of
+            ordered pairs in a relation is called
+            its range.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Function
+            </strong>
+
+            <br>
+
+            A relation from A to B is a function
+            if every element of A is associated
+            with exactly one element of B.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. One-One Function
+            </strong>
+
+            <br>
+
+            Different elements of the domain have
+            different images.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Many-One Function
+            </strong>
+
+            <br>
+
+            Two or more elements of the domain may
+            have the same image.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Onto Function
+            </strong>
+
+            <br>
+
+            Every element of the codomain has
+            at least one pre-image.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SOLVED NUMERICAL EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✏️ Solved Numerical Examples
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        If A = {1,2,3} and B = {4,5},
+        find n(A × B).
+
+        <br><br>
+
+        n(A) = 3
+
+        <br>
+
+        n(B) = 2
+
+        <br>
+
+        Therefore,
+
+        <br>
+
+        n(A × B) = 3 × 2 = <b>6</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        If A = {1,2} and B = {3,4,5},
+        find A × B.
+
+        <br><br>
+
+        A × B =
+
+        <b>
+        {(1,3),(1,4),(1,5),(2,3),(2,4),(2,5)}
+        </b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        If
+
+        R = {(1,2),(2,4),(3,6)},
+
+        find the domain and range.
+
+        <br><br>
+
+        Domain = {1,2,3}
+
+        <br>
+
+        Range = {2,4,6}
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        If f(x) = 2x + 3,
+        find f(5).
+
+        <br><br>
+
+        f(5) = 2(5) + 3
+
+        <br>
+
+        = 10 + 3
+
+        <br>
+
+        = <b>13</b>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        If f(x) = x² + 2,
+        find f(3).
+
+        <br><br>
+
+        f(3) = 3² + 2
+
+        <br>
+
+        = 9 + 2
+
+        <br>
+
+        = <b>11</b>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 1 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        This assessment contains numerical and
+        application-based questions. Answer all
+        50 questions. You need at least 30 correct
+        answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter2.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 2
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 1 QUESTIONS
+   RELATIONS AND FUNCTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"If A = {1,2,3} and B = {4,5}, find n(A × B).",
+a:["5","6","7","8"],
+correct:1
+},
+
+{
+q:"If n(A) = 4 and n(B) = 3, find n(A × B).",
+a:["7","12","1","16"],
+correct:1
+},
+
+{
+q:"If A = {1,2} and B = {3,4}, which is A × B?",
+a:[
+"{(1,3),(1,4),(2,3),(2,4)}",
+"{(1,2),(3,4)}",
+"{(3,1),(4,2)}",
+"{(1,3),(2,4)}"
+],
+correct:0
+},
+
+{
+q:"If n(A) = 5 and n(B) = 2, how many ordered pairs are in A × B?",
+a:["7","10","3","25"],
+correct:1
+},
+
+{
+q:"If A has 3 elements and B has 4 elements, n(A × B) is:",
+a:["7","12","1","9"],
+correct:1
+},
+
+{
+q:"If A = {2,4,6} and B = {1,3}, how many elements are in A × B?",
+a:["5","6","7","8"],
+correct:1
+},
+
+{
+q:"If n(A) = 6 and n(B) = 5, find n(A × B).",
+a:["11","30","25","1"],
+correct:1
+},
+
+{
+q:"If A = {1,2,3} and B = {4}, find n(A × B).",
+a:["3","4","7","12"],
+correct:0
+},
+
+{
+q:"If A has 2 elements and B has 5 elements, how many ordered pairs are possible?",
+a:["7","10","3","25"],
+correct:1
+},
+
+{
+q:"If n(A × B) = 20 and n(A) = 4, find n(B).",
+a:["4","5","16","24"],
+correct:1
+},
+
+{
+q:"If n(A × B) = 30 and n(A) = 5, find n(B).",
+a:["5","6","25","35"],
+correct:1
+},
+
+{
+q:"If n(A × B) = 24 and n(B) = 6, find n(A).",
+a:["4","5","6","18"],
+correct:0
+},
+
+{
+q:"If n(A) = 7 and n(B) = 3, find n(A × B).",
+a:["10","21","4","14"],
+correct:1
+},
+
+{
+q:"If A = {1,2,3,4} and B = {5,6}, how many ordered pairs are in A × B?",
+a:["6","8","10","12"],
+correct:1
+},
+
+{
+q:"If n(A) = 8 and n(B) = 2, find n(A × B).",
+a:["10","16","6","4"],
+correct:1
+},
+
+{
+q:"If R = {(1,2),(2,4),(3,6)}, what is the number of elements in the domain?",
+a:["2","3","6","1"],
+correct:1
+},
+
+{
+q:"For R = {(1,2),(2,4),(3,6)}, find the number of elements in the range.",
+a:["2","3","6","1"],
+correct:1
+},
+
+{
+q:"For R = {(1,5),(2,5),(3,5)}, how many elements are in the range?",
+a:["1","2","3","5"],
+correct:0
+},
+
+{
+q:"If f(x) = 2x + 3, find f(4).",
+a:["9","10","11","12"],
+correct:2
+},
+
+{
+q:"If f(x) = 3x + 2, find f(5).",
+a:["15","17","18","20"],
+correct:1
+},
+
+{
+q:"If f(x) = 4x - 1, find f(3).",
+a:["10","11","12","13"],
+correct:1
+},
+
+{
+q:"If f(x) = 5x + 2, find f(6).",
+a:["30","32","35","28"],
+correct:1
+},
+
+{
+q:"If f(x) = x² + 1, find f(4).",
+a:["15","16","17","18"],
+correct:2
+},
+
+{
+q:"If f(x) = x² - 3, find f(5).",
+a:["20","22","25","28"],
+correct:1
+},
+
+{
+q:"If f(x) = 2x², find f(3).",
+a:["6","12","18","20"],
+correct:2
+},
+
+{
+q:"If f(x) = x² + 2x, find f(3).",
+a:["12","15","18","9"],
+correct:0
+},
+
+{
+q:"If f(x) = 3x² - 1, find f(2).",
+a:["10","11","12","13"],
+correct:1
+},
+
+{
+q:"If f(x) = 2x - 5, find f(7).",
+a:["7","8","9","10"],
+correct:2
+},
+
+{
+q:"If f(x) = x + 10, find f(15).",
+a:["20","25","30","35"],
+correct:1
+},
+
+{
+q:"If f(x) = 3x - 4, find f(8).",
+a:["18","20","22","24"],
+correct:1
+},
+
+{
+q:"If f(x) = 5x - 10, find f(6).",
+a:["15","20","25","30"],
+correct:1
+},
+
+{
+q:"If f(x) = 2x + 7 and f(x) = 15, find x.",
+a:["3","4","5","6"],
+correct:1
+},
+
+{
+q:"If f(x) = 3x + 1 and f(x) = 16, find x.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"If f(x) = 4x - 2 and f(x) = 18, find x.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"If f(x) = 5x + 5 and f(x) = 30, find x.",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"If f(x) = 2x² and f(x) = 18, a positive value of x is:",
+a:["2","3","4","9"],
+correct:1
+},
+
+{
+q:"If f(x) = x² and f(x) = 49, a positive value of x is:",
+a:["5","6","7","8"],
+correct:2
+},
+
+{
+q:"If f(x) = x² + 1 and f(x) = 26, a positive value of x is:",
+a:["4","5","6","7"],
+correct:1
+},
+
+{
+q:"If A has 10 elements and B has 4 elements, n(A × B) is:",
+a:["14","40","6","24"],
+correct:1
+},
+
+{
+q:"If n(A × B) = 36 and n(A) = 9, find n(B).",
+a:["3","4","5","6"],
+correct:1
+},
+
+{
+q:"If n(A × B) = 42 and n(A) = 7, find n(B).",
+a:["5","6","7","8"],
+correct:1
+},
+
+{
+q:"If n(A × B) = 56 and n(B) = 8, find n(A).",
+a:["6","7","8","9"],
+correct:1
+},
+
+{
+q:"If A has 12 elements and B has 3 elements, how many ordered pairs are in A × B?",
+a:["15","36","9","24"],
+correct:1
+},
+
+{
+q:"If f(x) = 7x - 2, find f(4).",
+a:["24","25","26","27"],
+correct:1
+},
+
+{
+q:"If f(x) = 6x + 1, find f(5).",
+a:["30","31","32","33"],
+correct:1
+},
+
+{
+q:"If f(x) = 8x - 3, find f(4).",
+a:["27","28","29","30"],
+correct:1
+},
+
+{
+q:"If f(x) = x² + 3, find f(5).",
+a:["25","26","27","28"],
+correct:2
+},
+
+{
+q:"If f(x) = 2x² + 1, find f(4).",
+a:["31","32","33","34"],
+correct:2
+},
+
+{
+q:"If f(x) = x² - 2x, find f(6).",
+a:["20","24","28","30"],
+correct:0
+},
+
+{
+q:"If f(x) = 3x² + 2, find f(3).",
+a:["27","28","29","30"],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_maths_ch1_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_maths_ch1_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Relations and Functions assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 1 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Mathematics",
+
+        chapter:
+            "Chapter 1 - Relations and Functions",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_maths_chapter1",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter1"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Mathematics Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Maths_Chapter1_Relations_and_Functions_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_maths_chapter1"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+
+
