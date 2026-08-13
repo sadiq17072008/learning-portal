@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit 6 - English | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/english.html"
+        class="back">
+
+        ← English
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <h1>
+        📖 Unit 6: English
+    </h1>
+
+    <p>
+
+        Study The Last Lesson, No Men Are
+        Foreign and The Little Hero of Holland,
+        together with vocabulary, grammar,
+        comprehension and language skills.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STUDY RESOURCES -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Unit 6 contains prose, poetry,
+        supplementary reading, vocabulary,
+        grammar and language practice.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ENGLISH_UNIT6_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_ENGLISH_UNIT6_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- TOPICS -->
+
+<div class="card">
+
+    <h2>
+        📖 Unit 6 Topics
+    </h2>
+
+    <div class="topic">
+        ✓ Prose – The Last Lesson
+    </div>
+
+    <div class="topic">
+        ✓ Poem – No Men Are Foreign
+    </div>
+
+    <div class="topic">
+        ✓ Supplementary – The Little Hero of Holland
+    </div>
+
+    <div class="topic">
+        ✓ Vocabulary
+    </div>
+
+    <div class="topic">
+        ✓ Grammar
+    </div>
+
+    <div class="topic">
+        ✓ Reading Comprehension
+    </div>
+
+    <div class="topic">
+        ✓ Writing Skills
+    </div>
+
+    <div class="topic">
+        ✓ Synonyms and Antonyms
+    </div>
+
+    <div class="topic">
+        ✓ Phrasal Verbs
+    </div>
+
+    <div class="topic">
+        ✓ Sentence Construction
+    </div>
+
+</div>
+
+
+<!-- PROSE -->
+
+<div class="card">
+
+    <h2>
+        📘 Prose – The Last Lesson
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                About the Lesson
+            </strong>
+
+            <br><br>
+
+            The Last Lesson presents the emotional
+            experience of attending a final lesson
+            in the French language after an order
+            that German would be taught in the
+            schools of Alsace and Lorraine.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Franz
+            </strong>
+
+            <br><br>
+
+            Franz is a schoolboy who initially
+            does not want to attend his lesson.
+            The final lesson makes him realise
+            the importance of learning and
+            language.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                M. Hamel
+            </strong>
+
+            <br><br>
+
+            M. Hamel is Franz's French teacher.
+            He conducts the final French lesson
+            with dignity and deep emotion.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Importance of Language
+            </strong>
+
+            <br><br>
+
+            The lesson presents language as
+            an important part of identity,
+            culture and freedom.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Message
+            </strong>
+
+            <br><br>
+
+            We should value education and our
+            language instead of realising their
+            importance only after losing them.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POEM -->
+
+<div class="card">
+
+    <h2>
+        🎵 Poem – No Men Are Foreign
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                Poet
+            </strong>
+
+            <br><br>
+
+            James Falconer Kirkup wrote
+            the poem No Men Are Foreign.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Central Idea
+            </strong>
+
+            <br><br>
+
+            The poem teaches that human beings
+            are essentially alike, regardless of
+            country, language or outward identity.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Brotherhood
+            </strong>
+
+            <br><br>
+
+            All people share the same earth,
+            breathe the same air and depend
+            upon the same basic elements of life.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Against War
+            </strong>
+
+            <br><br>
+
+            The poet warns that hatred and war
+            ultimately harm humanity itself.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Message
+            </strong>
+
+            <br><br>
+
+            No person should be treated as a
+            stranger or enemy merely because
+            they belong to another country.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SUPPLEMENTARY -->
+
+<div class="card">
+
+    <h2>
+        📗 Supplementary – The Little Hero of Holland
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                About the Story
+            </strong>
+
+            <br><br>
+
+            The story tells about a young Dutch
+            boy who notices water leaking through
+            a hole in a dike.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                The Boy's Action
+            </strong>
+
+            <br><br>
+
+            The boy puts his finger into the hole
+            and remains there to prevent the water
+            from entering until help arrives.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Courage
+            </strong>
+
+            <br><br>
+
+            Although he is only a child, he shows
+            courage and responsibility when his
+            community is in danger.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Theme
+            </strong>
+
+            <br><br>
+
+            Courage, presence of mind,
+            responsibility and selflessness
+            are the central ideas of the story.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- GRAMMAR -->
+
+<div class="card">
+
+    <h2>
+        ✍️ Grammar and Language Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Tense:
+        </strong>
+
+        <br><br>
+
+        "Franz walked to school."
+
+        <br><br>
+
+        Answer:
+        <strong>Simple Past Tense</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Modal:
+        </strong>
+
+        We ___ respect every language.
+
+        <br><br>
+
+        Answer:
+        <strong>should</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Article:
+        </strong>
+
+        He saw ___ unusual situation.
+
+        <br><br>
+
+        Answer:
+        <strong>an</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Preposition:
+        </strong>
+
+        The boy stood ___ the wall.
+
+        <br><br>
+
+        Answer:
+        <strong>near</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Subject-Verb Agreement:
+        </strong>
+
+        <br><br>
+
+        The teacher ___ the lesson.
+
+        <br><br>
+
+        Answer:
+        <strong>teaches</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Active and Passive Voice:
+        </strong>
+
+        <br><br>
+
+        Active:
+        "The boy saved the people."
+
+        <br><br>
+
+        Passive:
+        "The people were saved by the boy."
+
+    </div>
+
+</div>
+
+
+<!-- QUIZ -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Unit 6 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        50 questions covering prose,
+        poem, supplementary story,
+        vocabulary, grammar and
+        numerical/application questions.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/english.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="card">
+
+    <h2>
+        📊 My Unit Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   UNIT 6 QUESTIONS
+===================================================== */
+
+const questions = [
+
+/* =========================
+   THE LAST LESSON
+========================= */
+
+{
+q:"Who is the narrator of The Last Lesson?",
+a:[
+"Franz",
+"M. Hamel",
+"Wachter",
+"Hauser"
+],
+correct:0
+},
+
+{
+q:"Who is Franz's teacher?",
+a:[
+"M. Hamel",
+"M. Wachter",
+"Hauser",
+"Old Hauser"
+],
+correct:0
+},
+
+{
+q:"What language is being taught in the final lesson?",
+a:[
+"French",
+"English",
+"German",
+"Spanish"
+],
+correct:0
+},
+
+{
+q:"Why is the lesson called The Last Lesson?",
+a:[
+"It is the final French lesson",
+"It is the first school lesson",
+"It is a holiday lesson",
+"It is a sports lesson"
+],
+correct:0
+},
+
+{
+q:"What does Franz initially dislike?",
+a:[
+"Studying and going to school",
+"Playing outside",
+"Meeting his friends",
+"Walking home"
+],
+correct:0
+},
+
+{
+q:"What does Franz realise during the final lesson?",
+a:[
+"The value of his language and education",
+"That school is unnecessary",
+"That books are useless",
+"That teachers are unimportant"
+],
+correct:0
+},
+
+{
+q:"What does M. Hamel represent?",
+a:[
+"Dedication to language and education",
+"Carelessness",
+"War",
+"Wealth"
+],
+correct:0
+},
+
+{
+q:"What does the lesson emphasise?",
+a:[
+"The importance of language and education",
+"The importance of sports",
+"The importance of money",
+"The importance of machines"
+],
+correct:0
+},
+
+{
+q:"What emotion is strongly present in the final lesson?",
+a:[
+"Sadness",
+"Jealousy",
+"Comedy",
+"Excitement"
+],
+correct:0
+},
+
+{
+q:"What should students learn from Franz's experience?",
+a:[
+"Value education before the opportunity is lost",
+"Avoid school",
+"Ignore teachers",
+"Stop learning languages"
+],
+correct:0
+},
+
+{
+q:"Language in the story is closely connected with:",
+a:[
+"Identity and freedom",
+"Sports",
+"Technology",
+"Food"
+],
+correct:0
+},
+
+{
+q:"M. Hamel teaches French with:",
+a:[
+"Dedication",
+"Anger only",
+"Carelessness",
+"Indifference"
+],
+correct:0
+},
+
+
+/* =========================
+   NO MEN ARE FOREIGN
+========================= */
+
+{
+q:"Who wrote No Men Are Foreign?",
+a:[
+"James Falconer Kirkup",
+"Rudyard Kipling",
+"Robert Frost",
+"William Wordsworth"
+],
+correct:0
+},
+
+{
+q:"What is the central idea of the poem?",
+a:[
+"All human beings are essentially alike",
+"War is always good",
+"Countries should remain enemies",
+"People are completely different"
+],
+correct:0
+},
+
+{
+q:"What does the poet say is beneath all uniforms?",
+a:[
+"A single human body",
+"A machine",
+"A different species",
+"An animal"
+],
+correct:0
+},
+
+{
+q:"What do all people share?",
+a:[
+"Sun, air and water",
+"Only language",
+"Only clothing",
+"Only food"
+],
+correct:0
+},
+
+{
+q:"The people of different countries perform:",
+a:[
+"Similar human labour",
+"Completely unrelated activities",
+"No work",
+"Only military work"
+],
+correct:0
+},
+
+{
+q:"What can be won by love?",
+a:[
+"Strength",
+"Wealth",
+"Land",
+"War"
+],
+correct:0
+},
+
+{
+q:"What happens when we hate our brothers?",
+a:[
+"We ultimately harm ourselves",
+"We become stronger",
+"Nothing happens",
+"We gain peace"
+],
+correct:0
+},
+
+{
+q:"What does war defile?",
+a:[
+"The human earth",
+"Only buildings",
+"Only weapons",
+"Only uniforms"
+],
+correct:0
+},
+
+{
+q:"What does the poet ask us to remember?",
+a:[
+"No men are foreign",
+"War is necessary",
+"Countries must fight",
+"People are strangers"
+],
+correct:0
+},
+
+{
+q:"The poem promotes:",
+a:[
+"Peace and brotherhood",
+"Hatred",
+"War",
+"Division"
+],
+correct:0
+},
+
+{
+q:"The word 'labour' means:",
+a:[
+"Hard work",
+"Rest",
+"Sleep",
+"Play"
+],
+correct:0
+},
+
+{
+q:"The word 'defile' means:",
+a:[
+"Damage purity",
+"Improve",
+"Protect",
+"Celebrate"
+],
+correct:0
+},
+
+
+/* =========================
+   LITTLE HERO OF HOLLAND
+========================= */
+
+{
+q:"What is the central idea of The Little Hero of Holland?",
+a:[
+"Courage and responsibility",
+"Wealth",
+"Technology",
+"School competition"
+],
+correct:0
+},
+
+{
+q:"What problem does the boy notice?",
+a:[
+"Water leaking through a dike",
+"A fire in a school",
+"A broken bridge",
+"A lost boat"
+],
+correct:0
+},
+
+{
+q:"What does the boy use to stop the water?",
+a:[
+"His finger",
+"A stone",
+"A wooden plank",
+"A rope"
+],
+correct:0
+},
+
+{
+q:"Why does the boy remain at the dike?",
+a:[
+"To prevent water from entering",
+"To play",
+"To sleep",
+"To fish"
+],
+correct:0
+},
+
+{
+q:"What quality does the boy show?",
+a:[
+"Presence of mind",
+"Carelessness",
+"Laziness",
+"Dishonesty"
+],
+correct:0
+},
+
+{
+q:"The story mainly teaches:",
+a:[
+"Even a child can show great courage",
+"Children cannot help anyone",
+"Problems should be ignored",
+"Only adults can be brave"
+],
+correct:0
+},
+
+{
+q:"Why is the boy called a hero?",
+a:[
+"He protects the community",
+"He wins a race",
+"He becomes rich",
+"He travels abroad"
+],
+correct:0
+},
+
+{
+q:"The dike is important because it:",
+a:[
+"Protects the land from water",
+"Provides electricity",
+"Is a school",
+"Is a railway"
+],
+correct:0
+},
+
+{
+q:"The boy's action is:",
+a:[
+"Selfless",
+"Selfish",
+"Careless",
+"Dishonest"
+],
+correct:0
+},
+
+{
+q:"The story encourages people to:",
+a:[
+"Act responsibly during danger",
+"Run away from every problem",
+"Ignore warnings",
+"Wait without helping"
+],
+correct:0
+},
+
+
+/* =========================
+   VOCABULARY
+========================= */
+
+{
+q:"Choose the synonym of 'courage'.",
+a:[
+"Bravery",
+"Fear",
+"Weakness",
+"Laziness"
+],
+correct:0
+},
+
+{
+q:"Choose the antonym of 'foreign'.",
+a:[
+"Native",
+"Strange",
+"Unknown",
+"External"
+],
+correct:0
+},
+
+{
+q:"Choose the synonym of 'condemn'.",
+a:[
+"Disapprove",
+"Approve",
+"Support",
+"Accept"
+],
+correct:0
+},
+
+{
+q:"Choose the antonym of 'peace'.",
+a:[
+"War",
+"Calm",
+"Friendship",
+"Harmony"
+],
+correct:0
+},
+
+{
+q:"Choose the synonym of 'labour'.",
+a:[
+"Work",
+"Rest",
+"Sleep",
+"Holiday"
+],
+correct:0
+},
+
+
+/* =========================
+   GRAMMAR
+========================= */
+
+{
+q:"Identify the tense: 'Franz walked to school.'",
+a:[
+"Simple Past",
+"Simple Present",
+"Simple Future",
+"Present Continuous"
+],
+correct:0
+},
+
+{
+q:"Choose the correct modal: We ___ respect every language.",
+a:[
+"should",
+"was",
+"did",
+"has"
+],
+correct:0
+},
+
+{
+q:"Choose the correct article: He saw ___ unusual situation.",
+a:[
+"an",
+"a",
+"the",
+"no article"
+],
+correct:0
+},
+
+{
+q:"Choose the correct preposition: The boy stood ___ the wall.",
+a:[
+"near",
+"at",
+"into",
+"by"
+],
+correct:0
+},
+
+{
+q:"Choose the correct sentence.",
+a:[
+"The teacher teaches the lesson.",
+"The teacher teach the lesson.",
+"The teacher teaching the lesson.",
+"The teacher are teach the lesson."
+],
+correct:0
+},
+
+{
+q:"Choose the passive voice: 'The boy saved the people.'",
+a:[
+"The people were saved by the boy.",
+"The people saved the boy.",
+"The boy was saved by the people.",
+"The people are saving the boy."
+],
+correct:0
+},
+
+
+/* =========================
+   NUMERICAL / APPLICATION
+========================= */
+
+{
+q:"A student studies 4 pages of The Last Lesson each day for 5 days. How many pages are studied?",
+a:[
+"15",
+"20",
+"25",
+"30"
+],
+correct:1
+},
+
+{
+q:"A quiz has 50 questions. A student answers 40 correctly. What percentage is correct?",
+a:[
+"70%",
+"75%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A student gets 35 correct answers out of 50. How many are incorrect?",
+a:[
+"10",
+"15",
+"20",
+"25"
+],
+correct:1
+},
+
+{
+q:"A student reads 6 pages each day for 7 days. How many pages are read?",
+a:[
+"36",
+"42",
+"48",
+"54"
+],
+correct:1
+},
+
+{
+q:"There are 20 grammar questions. A student gets 16 correct. What percentage is correct?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A student has 10 vocabulary questions and answers 8 correctly. How many are wrong?",
+a:[
+"1",
+"2",
+"3",
+"4"
+],
+correct:1
+},
+
+{
+q:"A student spends 30 minutes studying each day for 6 days. How many minutes are spent?",
+a:[
+"120",
+"150",
+"180",
+"210"
+],
+correct:2
+},
+
+{
+q:"A student scores 45 out of 50. What percentage is the score?",
+a:[
+"80%",
+"85%",
+"90%",
+"95%"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_english_unit6_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_english_unit6_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Unit 6 Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Unit 6 English assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Unit 6 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard English",
+
+        unit:
+            "Unit 6",
+
+        prose:
+            "The Last Lesson",
+
+        poem:
+            "No Men Are Foreign",
+
+        supplementary:
+            "The Little Hero of Holland",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_english_unit6",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Unit Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit6"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere English Unit 6 Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Unit",
+            "Prose",
+            "Poem",
+            "Supplementary",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.unit,
+            data.prose,
+            data.poem,
+            data.supplementary,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_English_Unit6_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit6"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

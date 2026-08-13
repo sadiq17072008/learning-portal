@@ -1,0 +1,2494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit 7 - English | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/english.html"
+        class="back">
+
+        ← English
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <h1>
+        📖 Unit 7: English
+    </h1>
+
+    <p>
+
+        Study The Dying Detective, The House on
+        Elm Street and A Dilemma, together with
+        vocabulary, grammar, comprehension and
+        language skills.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STUDY RESOURCES -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Unit 7 contains prose, poetry,
+        supplementary reading, vocabulary,
+        grammar and language practice.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ENGLISH_UNIT7_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_ENGLISH_UNIT7_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- TOPICS -->
+
+<div class="card">
+
+    <h2>
+        📖 Unit 7 Topics
+    </h2>
+
+    <div class="topic">
+        ✓ Prose – The Dying Detective
+    </div>
+
+    <div class="topic">
+        ✓ Poem – The House on Elm Street
+    </div>
+
+    <div class="topic">
+        ✓ Supplementary – A Dilemma
+    </div>
+
+    <div class="topic">
+        ✓ Vocabulary
+    </div>
+
+    <div class="topic">
+        ✓ Grammar
+    </div>
+
+    <div class="topic">
+        ✓ Reading Comprehension
+    </div>
+
+    <div class="topic">
+        ✓ Writing Skills
+    </div>
+
+    <div class="topic">
+        ✓ Synonyms and Antonyms
+    </div>
+
+    <div class="topic">
+        ✓ Phrasal Verbs
+    </div>
+
+    <div class="topic">
+        ✓ Sentence Construction
+    </div>
+
+</div>
+
+
+<!-- PROSE -->
+
+<div class="card">
+
+    <h2>
+        📘 Prose – The Dying Detective
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                About the Story
+            </strong>
+
+            <br><br>
+
+            The Dying Detective is a detective story
+            involving Sherlock Holmes, Dr Watson
+            and a dangerous criminal mystery.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Sherlock Holmes
+            </strong>
+
+            <br><br>
+
+            Sherlock Holmes uses observation,
+            intelligence and careful planning to
+            solve the mystery.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Dr Watson
+            </strong>
+
+            <br><br>
+
+            Dr Watson is Holmes's close friend.
+            He becomes deeply concerned when
+            Holmes appears to be seriously ill.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Culverton Smith
+            </strong>
+
+            <br><br>
+
+            Culverton Smith is associated with
+            the mysterious disease and becomes
+            an important part of Holmes's plan.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Idea
+            </strong>
+
+            <br><br>
+
+            The story demonstrates the power of
+            intelligence, observation, courage and
+            careful investigation.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POEM -->
+
+<div class="card">
+
+    <h2>
+        🎵 Poem – The House on Elm Street
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                Central Idea
+            </strong>
+
+            <br><br>
+
+            The poem describes a mysterious house
+            and the feelings and questions it creates
+            in the minds of people.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Mystery
+            </strong>
+
+            <br><br>
+
+            The house is presented as unusual and
+            mysterious, creating curiosity about
+            what happens inside it.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Imagination
+            </strong>
+
+            <br><br>
+
+            The poem encourages the reader to
+            imagine the unknown and think beyond
+            what can immediately be seen.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Atmosphere
+            </strong>
+
+            <br><br>
+
+            The descriptions create a mysterious
+            and slightly unsettling atmosphere.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Message
+            </strong>
+
+            <br><br>
+
+            The unknown can create curiosity,
+            imagination and different interpretations
+            in people's minds.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SUPPLEMENTARY -->
+
+<div class="card">
+
+    <h2>
+        📗 Supplementary – A Dilemma
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                About the Story
+            </strong>
+
+            <br><br>
+
+            A Dilemma is a story involving Tom,
+            his father, Uncle Philip and Professor
+            Clinch. The story presents a difficult
+            moral and personal decision.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Uncle Philip
+            </strong>
+
+            <br><br>
+
+            Uncle Philip presents Tom with a
+            challenging situation that forces him
+            to think carefully about his decision.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Tom
+            </strong>
+
+            <br><br>
+
+            Tom has to deal with an unexpected
+            problem and must decide how to respond
+            to the situation.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                The Dilemma
+            </strong>
+
+            <br><br>
+
+            The central conflict involves choosing
+            between difficult alternatives and
+            understanding their consequences.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Theme
+            </strong>
+
+            <br><br>
+
+            The story highlights decision-making,
+            responsibility, consequences and
+            moral conflict.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- GRAMMAR -->
+
+<div class="card">
+
+    <h2>
+        ✍️ Grammar and Language Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Tense:
+        </strong>
+
+        <br><br>
+
+        "Holmes examined the evidence."
+
+        <br><br>
+
+        Answer:
+        <strong>Simple Past Tense</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Modal:
+        </strong>
+
+        Watson ___ help Holmes.
+
+        <br><br>
+
+        Answer:
+        <strong>must</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Article:
+        </strong>
+
+        Holmes was ___ intelligent detective.
+
+        <br><br>
+
+        Answer:
+        <strong>an</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Preposition:
+        </strong>
+
+        The house stood ___ Elm Street.
+
+        <br><br>
+
+        Answer:
+        <strong>on</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Subject-Verb Agreement:
+        </strong>
+
+        <br><br>
+
+        The detective ___ the evidence.
+
+        <br><br>
+
+        Answer:
+        <strong>examines</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Active and Passive Voice:
+        </strong>
+
+        <br><br>
+
+        Active:
+        "Holmes solved the mystery."
+
+        <br><br>
+
+        Passive:
+        "The mystery was solved by Holmes."
+
+    </div>
+
+</div>
+
+
+<!-- QUIZ -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Unit 7 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        50 questions covering prose,
+        poem, supplementary story,
+        vocabulary, grammar and
+        numerical/application questions.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/english.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="card">
+
+    <h2>
+        📊 My Unit Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   UNIT 7 QUESTIONS
+===================================================== */
+
+const questions = [
+
+/* =========================
+   THE DYING DETECTIVE
+========================= */
+
+{
+q:"Who is the famous detective in The Dying Detective?",
+a:[
+"Sherlock Holmes",
+"Professor Clinch",
+"Tom",
+"Uncle Philip"
+],
+correct:0
+},
+
+{
+q:"Who is Sherlock Holmes's close friend?",
+a:[
+"Dr Watson",
+"Tom",
+"Culverton Smith",
+"Uncle Philip"
+],
+correct:0
+},
+
+{
+q:"What does Watson believe about Holmes at first?",
+a:[
+"That Holmes is seriously ill",
+"That Holmes is travelling",
+"That Holmes is sleeping",
+"That Holmes is joking"
+],
+correct:0
+},
+
+{
+q:"What is one major quality of Sherlock Holmes?",
+a:[
+"Observation",
+"Carelessness",
+"Laziness",
+"Fear"
+],
+correct:0
+},
+
+{
+q:"Why is Watson deeply concerned?",
+a:[
+"Holmes appears to be dying",
+"Holmes lost his book",
+"Holmes missed school",
+"Holmes went shopping"
+],
+correct:0
+},
+
+{
+q:"What does Holmes use to solve mysteries?",
+a:[
+"Observation and reasoning",
+"Guessing only",
+"Luck only",
+"Physical strength only"
+],
+correct:0
+},
+
+{
+q:"Who is associated with the mysterious disease?",
+a:[
+"Culverton Smith",
+"Tom",
+"Dr Watson",
+"Professor Clinch"
+],
+correct:0
+},
+
+{
+q:"What kind of story is The Dying Detective?",
+a:[
+"Detective mystery",
+"Travel story",
+"Historical poem",
+"Comedy"
+],
+correct:0
+},
+
+{
+q:"What does Holmes demonstrate through his investigation?",
+a:[
+"Intelligence and careful planning",
+"Carelessness",
+"Fear",
+"Indifference"
+],
+correct:0
+},
+
+{
+q:"What is important in solving a mystery?",
+a:[
+"Evidence and reasoning",
+"Rumours only",
+"Guesswork only",
+"Money"
+],
+correct:0
+},
+
+{
+q:"Watson is mainly presented as Holmes's:",
+a:[
+"Friend and companion",
+"Enemy",
+"Teacher",
+"Brother"
+],
+correct:0
+},
+
+{
+q:"The story mainly highlights:",
+a:[
+"Intelligence and investigation",
+"Sports",
+"Travel",
+"Cooking"
+],
+correct:0
+},
+
+
+/* =========================
+   THE HOUSE ON ELM STREET
+========================= */
+
+{
+q:"What is the central setting of the poem?",
+a:[
+"A mysterious house",
+"A school",
+"A railway station",
+"A marketplace"
+],
+correct:0
+},
+
+{
+q:"What feeling does the house create?",
+a:[
+"Curiosity",
+"Complete boredom",
+"Happiness only",
+"Anger only"
+],
+correct:0
+},
+
+{
+q:"The poem creates an atmosphere of:",
+a:[
+"Mystery",
+"Celebration",
+"Comedy",
+"Victory"
+],
+correct:0
+},
+
+{
+q:"What does the mysterious house encourage?",
+a:[
+"Imagination",
+"Carelessness",
+"Sleep",
+"Competition"
+],
+correct:0
+},
+
+{
+q:"The poem deals with the:",
+a:[
+"Unknown",
+"Sports",
+"Science experiment",
+"School timetable"
+],
+correct:0
+},
+
+{
+q:"The house can be viewed as a symbol of:",
+a:[
+"Mystery and the unknown",
+"Food",
+"Technology",
+"Education"
+],
+correct:0
+},
+
+{
+q:"Why are people curious about the house?",
+a:[
+"Because it appears unusual",
+"Because it is a school",
+"Because it sells food",
+"Because it is a railway"
+],
+correct:0
+},
+
+{
+q:"The poem encourages the reader to:",
+a:[
+"Think beyond the obvious",
+"Ignore everything",
+"Stop imagining",
+"Fear learning"
+],
+correct:0
+},
+
+{
+q:"The atmosphere of the poem is mainly:",
+a:[
+"Mysterious",
+"Completely humorous",
+"Festive",
+"Romantic"
+],
+correct:0
+},
+
+{
+q:"The poem shows that the unknown can create:",
+a:[
+"Curiosity",
+"Certainty",
+"Boredom only",
+"Sleep"
+],
+correct:0
+},
+
+
+/* =========================
+   A DILEMMA
+========================= */
+
+{
+q:"What is the title of Unit 7 supplementary story?",
+a:[
+"A Dilemma",
+"The Tempest",
+"Zigzag",
+"The Aged Mother"
+],
+correct:0
+},
+
+{
+q:"Who is one of the important characters in A Dilemma?",
+a:[
+"Uncle Philip",
+"Sherlock Holmes",
+"Dr Watson",
+"Franz"
+],
+correct:0
+},
+
+{
+q:"Who is Tom?",
+a:[
+"A character facing a difficult situation",
+"A detective",
+"A teacher",
+"A poet"
+],
+correct:0
+},
+
+{
+q:"What does the word 'dilemma' mean?",
+a:[
+"A difficult choice between alternatives",
+"A celebration",
+"A journey",
+"A victory"
+],
+correct:0
+},
+
+{
+q:"What does Uncle Philip create for Tom?",
+a:[
+"A challenging situation",
+"A holiday",
+"A competition",
+"A school lesson"
+],
+correct:0
+},
+
+{
+q:"The story mainly deals with:",
+a:[
+"Decision-making and consequences",
+"Sports",
+"Travel",
+"Cooking"
+],
+correct:0
+},
+
+{
+q:"What should a person consider before making a difficult decision?",
+a:[
+"The consequences",
+"Only money",
+"Only popularity",
+"Nothing"
+],
+correct:0
+},
+
+{
+q:"A difficult choice can be called a:",
+a:[
+"Dilemma",
+"Victory",
+"Festival",
+"Journey"
+],
+correct:0
+},
+
+{
+q:"The story encourages readers to think about:",
+a:[
+"Responsibility",
+"Carelessness",
+"Laziness",
+"Dishonesty"
+],
+correct:0
+},
+
+{
+q:"The characters in A Dilemma have to deal with:",
+a:[
+"A difficult decision",
+"A sports match",
+"A school exam",
+"A holiday"
+],
+correct:0
+},
+
+
+/* =========================
+   VOCABULARY
+========================= */
+
+{
+q:"Choose the synonym of 'detective'.",
+a:[
+"Investigator",
+"Farmer",
+"Teacher",
+"Driver"
+],
+correct:0
+},
+
+{
+q:"Choose the antonym of 'mysterious'.",
+a:[
+"Clear",
+"Unknown",
+"Strange",
+"Secret"
+],
+correct:0
+},
+
+{
+q:"Choose the synonym of 'dilemma'.",
+a:[
+"Predicament",
+"Victory",
+"Celebration",
+"Journey"
+],
+correct:0
+},
+
+{
+q:"Choose the antonym of 'brave'.",
+a:[
+"Cowardly",
+"Strong",
+"Courageous",
+"Bold"
+],
+correct:0
+},
+
+{
+q:"Choose the synonym of 'evidence'.",
+a:[
+"Proof",
+"Guess",
+"Rumour",
+"Story"
+],
+correct:0
+},
+
+
+/* =========================
+   GRAMMAR
+========================= */
+
+{
+q:"Identify the tense: 'Holmes examined the evidence.'",
+a:[
+"Simple Past",
+"Simple Present",
+"Simple Future",
+"Present Continuous"
+],
+correct:0
+},
+
+{
+q:"Choose the correct modal: Watson ___ help Holmes.",
+a:[
+"must",
+"was",
+"did",
+"has"
+],
+correct:0
+},
+
+{
+q:"Choose the correct article: Holmes was ___ intelligent detective.",
+a:[
+"an",
+"a",
+"the",
+"no article"
+],
+correct:0
+},
+
+{
+q:"Choose the correct preposition: The house stood ___ Elm Street.",
+a:[
+"on",
+"into",
+"under",
+"between"
+],
+correct:0
+},
+
+{
+q:"Choose the correct sentence.",
+a:[
+"The detective examines the evidence.",
+"The detective examine the evidence.",
+"The detective examining the evidence.",
+"The detective are examine the evidence."
+],
+correct:0
+},
+
+{
+q:"Choose the passive voice: 'Holmes solved the mystery.'",
+a:[
+"The mystery was solved by Holmes.",
+"Holmes was solved by the mystery.",
+"The mystery solved Holmes.",
+"Holmes is solving the mystery."
+],
+correct:0
+},
+
+
+/* =========================
+   NUMERICAL / APPLICATION
+========================= */
+
+{
+q:"A student reads 4 pages about The Dying Detective each day for 5 days. How many pages are read?",
+a:[
+"15",
+"20",
+"25",
+"30"
+],
+correct:1
+},
+
+{
+q:"A quiz contains 50 questions. A student answers 40 correctly. What percentage is correct?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A student gets 35 correct answers out of 50. How many answers are wrong?",
+a:[
+"10",
+"15",
+"20",
+"25"
+],
+correct:1
+},
+
+{
+q:"A student studies 6 vocabulary words each day for 7 days. How many words are studied?",
+a:[
+"36",
+"42",
+"48",
+"54"
+],
+correct:1
+},
+
+{
+q:"There are 20 grammar questions. A student gets 16 correct. What percentage is correct?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A student has 10 poem questions and answers 8 correctly. How many are wrong?",
+a:[
+"1",
+"2",
+"3",
+"4"
+],
+correct:1
+},
+
+{
+q:"A student studies 30 minutes per day for 6 days. How many minutes are spent?",
+a:[
+"120",
+"150",
+"180",
+"210"
+],
+correct:2
+},
+
+{
+q:"A student scores 45 out of 50. What percentage is the score?",
+a:[
+"80%",
+"85%",
+"90%",
+"95%"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_english_unit7_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_english_unit7_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Unit 7 Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Unit 7 English assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Unit 7 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard English",
+
+        unit:
+            "Unit 7",
+
+        prose:
+            "The Dying Detective",
+
+        poem:
+            "The House on Elm Street",
+
+        supplementary:
+            "A Dilemma",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_english_unit7",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Unit Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit7"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere English Unit 7 Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Unit",
+            "Prose",
+            "Poem",
+            "Supplementary",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.unit,
+            data.prose,
+            data.poem,
+            data.supplementary,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_English_Unit7_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit7"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

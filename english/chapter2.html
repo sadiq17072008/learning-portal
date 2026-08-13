@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit 2 - English | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/english.html"
+        class="back">
+
+        ← English
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📖 Unit 2: English
+    </h1>
+
+    <p>
+
+        Study The Night the Ghost Got In,
+        The Grumble Family and Zigzag,
+        together with vocabulary, grammar,
+        comprehension and writing skills.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Unit 2 contains prose, poetry,
+        supplementary reading and language
+        practice.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ENGLISH_UNIT2_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_ENGLISH_UNIT2_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Unit 2 Topics
+    </h2>
+
+
+    <div class="topic">
+        ✓ Prose – The Night the Ghost Got In
+    </div>
+
+    <div class="topic">
+        ✓ Poem – The Grumble Family
+    </div>
+
+    <div class="topic">
+        ✓ Supplementary – Zigzag
+    </div>
+
+    <div class="topic">
+        ✓ Vocabulary
+    </div>
+
+    <div class="topic">
+        ✓ Grammar
+    </div>
+
+    <div class="topic">
+        ✓ Reading Comprehension
+    </div>
+
+    <div class="topic">
+        ✓ Writing Skills
+    </div>
+
+    <div class="topic">
+        ✓ Synonyms and Antonyms
+    </div>
+
+    <div class="topic">
+        ✓ Prefixes and Suffixes
+    </div>
+
+    <div class="topic">
+        ✓ Phrasal Verbs
+    </div>
+
+    <div class="topic">
+        ✓ Sentence Construction
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROSE
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📘 Prose – The Night the Ghost Got In
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                About the Prose
+            </strong>
+
+            <br><br>
+
+            The lesson is a humorous account
+            by James Thurber. The narrator hears
+            noises in the house at night and
+            believes that a ghost has entered.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Important Characters
+            </strong>
+
+            <br><br>
+
+            The narrator, his brother,
+            Mother, and the police are
+            important characters in the
+            humorous incident.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Idea
+            </strong>
+
+            <br><br>
+
+            The lesson uses humour and
+            misunderstanding to show how
+            an ordinary night can turn into
+            a confusing and amusing event.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Literary Feature
+            </strong>
+
+            <br><br>
+
+            Humour, exaggeration,
+            misunderstanding and unexpected
+            situations make the narrative
+            entertaining.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     POEM
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🎵 Poem – The Grumble Family
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                Central Idea
+            </strong>
+
+            <br><br>
+
+            The poem humorously describes
+            people who complain constantly
+            and suggests that a negative
+            attitude can spread from one
+            person to another.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Theme
+            </strong>
+
+            <br><br>
+
+            The poem highlights the effect
+            of habitual complaining and
+            encourages a more positive
+            attitude towards life.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Poetic Style
+            </strong>
+
+            <br><br>
+
+            The poem uses humour,
+            repetition and playful language
+            to communicate its message.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SUPPLEMENTARY
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📗 Supplementary – Zigzag
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                About Zigzag
+            </strong>
+
+            <br><br>
+
+            Zigzag is a humorous supplementary
+            story involving a family and a
+            surprising bird.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Dr. Krishnan
+            </strong>
+
+            <br><br>
+
+            Dr. Krishnan is the doctor in
+            the story and reacts to the
+            unusual events surrounding
+            Zigzag.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Maya and Arvind
+            </strong>
+
+            <br><br>
+
+            Maya and Arvind are children
+            who become interested in
+            Zigzag and its unusual abilities.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Zigzag
+            </strong>
+
+            <br><br>
+
+            Zigzag is the unusual bird
+            whose behaviour and abilities
+            create the central humour
+            of the story.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                Main Idea
+            </strong>
+
+            <br><br>
+
+            The story develops humour through
+            the family's expectations and
+            Zigzag's unexpected behaviour.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     GRAMMAR
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✍️ Grammar and Language Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Synonym:
+        </strong>
+
+        Choose the word closest in meaning
+        to <b>complain</b>.
+
+        <br><br>
+
+        Answer:
+        <strong>grumble</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Antonym:
+        </strong>
+
+        Choose the opposite of
+        <b>positive</b>.
+
+        <br><br>
+
+        Answer:
+        <strong>negative</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Phrasal Verb:
+        </strong>
+
+        "Look after" means:
+
+        <br><br>
+
+        Answer:
+        <strong>take care of</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Sentence:
+        </strong>
+
+        Identify the tense:
+
+        <br><br>
+
+        "The family heard a strange noise."
+
+        <br><br>
+
+        Answer:
+        <strong>Simple Past Tense</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Sentence Transformation:
+        </strong>
+
+        Change the sentence into negative:
+
+        <br><br>
+
+        "He likes the bird."
+
+        <br><br>
+
+        Answer:
+        <strong>
+            He does not like the bird.
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Unit 2 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        50 questions covering the prose,
+        poem, supplementary story and
+        grammar of Unit 2.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/english.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Unit Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   UNIT 2 QUESTIONS
+===================================================== */
+
+const questions = [
+
+/* PROSE */
+
+{
+q:"Who wrote 'The Night the Ghost Got In'?",
+a:[
+"James Thurber",
+"William Shakespeare",
+"Henry Van Dyke",
+"Robert Frost"
+],
+correct:0
+},
+
+{
+q:"What kind of story is 'The Night the Ghost Got In'?",
+a:[
+"Humorous",
+"Historical",
+"Scientific",
+"Biographical"
+],
+correct:0
+},
+
+{
+q:"What causes confusion in the story?",
+a:[
+"Strange noises during the night",
+"A school examination",
+"A train journey",
+"A storm at sea"
+],
+correct:0
+},
+
+{
+q:"The narrator believes that the strange noise may be caused by:",
+a:[
+"A ghost",
+"A teacher",
+"A bird",
+"A train"
+],
+correct:0
+},
+
+{
+q:"What is an important feature of the prose?",
+a:[
+"Humour",
+"Scientific explanation",
+"Historical dates",
+"Geographical description"
+],
+correct:0
+},
+
+{
+q:"The story creates humour mainly through:",
+a:[
+"Misunderstanding and unexpected situations",
+"Mathematical calculations",
+"War scenes",
+"Travel descriptions"
+],
+correct:0
+},
+
+{
+q:"The setting of the main incident is:",
+a:[
+"The narrator's house at night",
+"A railway station",
+"A classroom",
+"A forest"
+],
+correct:0
+},
+
+{
+q:"Why does the incident become confusing?",
+a:[
+"Different people interpret the situation differently",
+"Nobody hears anything",
+"The house is empty",
+"It happens during a festival"
+],
+correct:0
+},
+
+{
+q:"The narrator's reaction to the noises is best described as:",
+a:[
+"Alarmed and curious",
+"Completely indifferent",
+"Happy",
+"Sleepy only"
+],
+correct:0
+},
+
+{
+q:"What makes the story entertaining?",
+a:[
+"The humorous treatment of a frightening situation",
+"The scientific experiment",
+"The historical information",
+"The geographical facts"
+],
+correct:0
+},
+
+{
+q:"Which literary device is strongly used in the story?",
+a:[
+"Humour",
+"Epic narration",
+"Scientific notation",
+"Rhyme scheme"
+],
+correct:0
+},
+
+{
+q:"The story demonstrates how fear can:",
+a:[
+"Make people interpret ordinary events differently",
+"Always disappear immediately",
+"Improve mathematics",
+"Teach geography"
+],
+correct:0
+},
+
+/* POEM */
+
+{
+q:"Who wrote 'The Grumble Family'?",
+a:[
+"Lucy Maud Montgomery",
+"James Thurber",
+"Robert Frost",
+"Henry Van Dyke"
+],
+correct:0
+},
+
+{
+q:"What is the main subject of 'The Grumble Family'?",
+a:[
+"People who complain constantly",
+"A family travelling abroad",
+"A historical war",
+"A school examination"
+],
+correct:0
+},
+
+{
+q:"What does the word 'grumble' mean?",
+a:[
+"Complain",
+"Celebrate",
+"Sing",
+"Sleep"
+],
+correct:0
+},
+
+{
+q:"What attitude does the poem criticise?",
+a:[
+"Constant complaining",
+"Kindness",
+"Hard work",
+"Friendship"
+],
+correct:0
+},
+
+{
+q:"The poem uses humour to:",
+a:[
+"Show the effects of habitual complaining",
+"Explain a scientific law",
+"Describe a war",
+"Teach mathematics"
+],
+correct:0
+},
+
+{
+q:"What can a negative attitude do?",
+a:[
+"Spread to others",
+"Always make everyone happy",
+"Improve health automatically",
+"Teach grammar"
+],
+correct:0
+},
+
+{
+q:"The poem encourages readers to avoid:",
+a:[
+"Constant grumbling",
+"Kindness",
+"Positive thinking",
+"Helping others"
+],
+correct:0
+},
+
+{
+q:"Which literary feature is noticeable in the poem?",
+a:[
+"Repetition",
+"Scientific formula",
+"Historical chronology",
+"Dialogue only"
+],
+correct:0
+},
+
+{
+q:"The tone of the poem is mainly:",
+a:[
+"Humorous and playful",
+"Strictly scientific",
+"Tragic throughout",
+"Historical"
+],
+correct:0
+},
+
+{
+q:"The central message of the poem is related to:",
+a:[
+"Attitude towards life",
+"Geography",
+"Technology",
+"Mathematics"
+],
+correct:0
+},
+
+/* SUPPLEMENTARY */
+
+{
+q:"What is the title of Unit 2 supplementary story?",
+a:[
+"Zigzag",
+"The Tempest",
+"The Story of Mulan",
+"The Aged Mother"
+],
+correct:0
+},
+
+{
+q:"Who is Dr. Krishnan?",
+a:[
+"A doctor",
+"A teacher",
+"A policeman",
+"A farmer"
+],
+correct:0
+},
+
+{
+q:"Who is Zigzag?",
+a:[
+"A bird",
+"A dog",
+"A cat",
+"A horse"
+],
+correct:0
+},
+
+{
+q:"Who are Maya and Arvind?",
+a:[
+"Children in the story",
+"Doctors",
+"Police officers",
+"Teachers"
+],
+correct:0
+},
+
+{
+q:"Who is Visu?",
+a:[
+"The old cook",
+"A doctor",
+"A policeman",
+"A teacher"
+],
+correct:0
+},
+
+{
+q:"Who gives Zigzag to the family?",
+a:[
+"Somu",
+"Visu",
+"Arvind",
+"Maya"
+],
+correct:0
+},
+
+{
+q:"What is unusual about Zigzag?",
+a:[
+"The bird has remarkable abilities and behaviour",
+"It cannot move",
+"It is a fish",
+"It is a dog"
+],
+correct:0
+},
+
+{
+q:"What type of story is Zigzag?",
+a:[
+"Humorous",
+"Historical",
+"Scientific",
+"Tragic"
+],
+correct:0
+},
+
+{
+q:"What does Zigzag do when he sleeps?",
+a:[
+"He snores",
+"He sings continuously",
+"He runs",
+"He flies away"
+],
+correct:0
+},
+
+{
+q:"Who becomes interested in Zigzag?",
+a:[
+"Maya and Arvind",
+"Only the police",
+"Only the neighbours",
+"No one"
+],
+correct:0
+},
+
+{
+q:"The humour in Zigzag mainly comes from:",
+a:[
+"The bird's unexpected behaviour",
+"A war",
+"A mathematical problem",
+"A journey"
+],
+correct:0
+},
+
+{
+q:"Who says, 'Come in, Zigzag, come in dear!'?",
+a:[
+"Visu",
+"Dr. Krishnan",
+"Arvind",
+"Somu"
+],
+correct:0
+},
+
+/* VOCABULARY */
+
+{
+q:"Choose the synonym of 'grumble'.",
+a:[
+"Complain",
+"Celebrate",
+"Smile",
+"Agree"
+],
+correct:0
+},
+
+{
+q:"Choose the antonym of 'positive'.",
+a:[
+"Negative",
+"Happy",
+"Helpful",
+"Kind"
+],
+correct:0
+},
+
+{
+q:"Choose the synonym of 'strange'.",
+a:[
+"Unusual",
+"Normal",
+"Common",
+"Ordinary"
+],
+correct:0
+},
+
+{
+q:"Choose the antonym of 'noisy'.",
+a:[
+"Quiet",
+"Loud",
+"Busy",
+"Active"
+],
+correct:0
+},
+
+{
+q:"Choose the synonym of 'frightened'.",
+a:[
+"Afraid",
+"Brave",
+"Happy",
+"Calm"
+],
+correct:0
+},
+
+/* GRAMMAR */
+
+{
+q:"Identify the tense: 'The family heard a noise.'",
+a:[
+"Simple Past",
+"Simple Present",
+"Simple Future",
+"Present Continuous"
+],
+correct:0
+},
+
+{
+q:"Identify the tense: 'They are discussing the incident.'",
+a:[
+"Present Continuous",
+"Simple Past",
+"Simple Future",
+"Past Perfect"
+],
+correct:0
+},
+
+{
+q:"Choose the correct sentence.",
+a:[
+"She heard a strange noise.",
+"She hear a strange noise.",
+"She hearing a strange noise.",
+"She hears yesterday a strange noise."
+],
+correct:0
+},
+
+{
+q:"Choose the correct form: 'He ___ to the house yesterday.'",
+a:[
+"went",
+"go",
+"will go",
+"going"
+],
+correct:0
+},
+
+{
+q:"Choose the correct form: 'They ___ the story tomorrow.'",
+a:[
+"will read",
+"read yesterday",
+"reading",
+"reads yesterday"
+],
+correct:0
+},
+
+{
+q:"What does the phrasal verb 'look after' mean?",
+a:[
+"Take care of",
+"Look at",
+"Run away",
+"Search"
+],
+correct:0
+},
+
+{
+q:"Choose the correct negative form: 'He likes the bird.'",
+a:[
+"He does not like the bird.",
+"He not likes the bird.",
+"He did not likes the bird.",
+"He no like the bird."
+],
+correct:0
+},
+
+{
+q:"Which sentence is in the simple present tense?",
+a:[
+"They complain often.",
+"They complained yesterday.",
+"They will complain tomorrow.",
+"They are complaining now."
+],
+correct:0
+},
+
+{
+q:"Which sentence is in the simple future tense?",
+a:[
+"We will visit them tomorrow.",
+"We visited them yesterday.",
+"We visit them every day.",
+"We are visiting them now."
+],
+correct:0
+},
+
+{
+q:"A quiz has 50 questions. A student answers 40 correctly. What percentage is correct?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A student gets 30 correct answers out of 50. What percentage is correct?",
+a:[
+"40%",
+"50%",
+"60%",
+"70%"
+],
+correct:2
+},
+
+{
+q:"A vocabulary exercise contains 20 questions. A student gets 16 correct. How many are wrong?",
+a:[
+"2",
+"3",
+"4",
+"5"
+],
+correct:2
+},
+
+{
+q:"A student learns 5 new English words each day for 6 days. How many words are learned?",
+a:[
+"20",
+"25",
+"30",
+"35"
+],
+correct:2
+},
+
+{
+q:"A student reads 4 pages of the lesson each day for 5 days. How many pages are read?",
+a:[
+"15",
+"20",
+"25",
+"30"
+],
+correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_english_unit2_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_english_unit2_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Unit 2 Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Unit 2 English assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Unit 2 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard English",
+
+        chapter:
+            "Unit 2",
+
+        prose:
+            "The Night the Ghost Got In",
+
+        poem:
+            "The Grumble Family",
+
+        supplementary:
+            "Zigzag",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_english_unit2",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Unit Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit2"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere English Unit 2 Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Unit",
+            "Prose",
+            "Poem",
+            "Supplementary",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.prose,
+            data.poem,
+            data.supplementary,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_English_Unit2_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit2"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

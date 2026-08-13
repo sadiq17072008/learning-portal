@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduSphere | Class 10 English | Unit 5</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#e0e7ff;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#67e8f9;
+    margin:20px 0 10px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+.study-btn:hover{
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #06b6d4;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#67e8f9;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#22d3ee;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,td{
+    border:1px solid #475569;
+    padding:12px;
+    text-align:left;
+    line-height:1.5;
+}
+
+th{
+    background:#0f172a;
+    color:#38bdf8;
+}
+
+td{
+    background:#1e293b;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#22d3ee;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#06b6d4;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#22d3ee;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../english.html"
+        class="back">
+
+        ← English
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <h1>
+        📚 Unit 5: English
+    </h1>
+
+    <p>
+
+        Class 10 English — Tamil Nadu State Board.
+        Unit 5 focuses on technology and its role in
+        empowering people with special needs. The unit
+        includes the prose lesson Tech Bloomers, the poem
+        The Secret of the Machines and the supplementary
+        lesson A Day in 2889 of an American Journalist.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+100</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STUDY RESOURCES -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study all three sections of Unit 5 before
+        attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ENGLISH_UNIT5_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_ENGLISH_UNIT5_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- TOPICS -->
+
+<div class="card">
+
+    <h2>
+        📖 Unit 5 Topics
+    </h2>
+
+    <div class="topic">
+        ✓ Prose — Tech Bloomers
+    </div>
+
+    <div class="topic">
+        ✓ Poem — The Secret of the Machines
+    </div>
+
+    <div class="topic">
+        ✓ Supplementary — A Day in 2889 of an American Journalist
+    </div>
+
+    <div class="topic">
+        ✓ Technology and Accessibility
+    </div>
+
+    <div class="topic">
+        ✓ Assistive Technology
+    </div>
+
+    <div class="topic">
+        ✓ Communication and Independence
+    </div>
+
+    <div class="topic">
+        ✓ Technology and Human Life
+    </div>
+
+    <div class="topic">
+        ✓ Future Technology
+    </div>
+
+</div>
+
+
+<!-- PROSE -->
+
+<div class="card">
+
+    <h2>
+        💻 Prose — Tech Bloomers
+    </h2>
+
+    <p class="description">
+
+        The prose lesson highlights how modern technology
+        can empower people with disabilities and help them
+        communicate, study, work and become more independent.
+
+    </p>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>Central idea:</strong>
+            Technology can remove barriers and provide
+            opportunities for people with special needs.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>David:</strong>
+            David uses assistive technology to communicate,
+            control devices and participate more independently
+            in daily activities.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Communication:</strong>
+            Assistive communication devices can allow a person
+            who cannot speak normally to communicate through
+            technology.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Eye-gaze technology:</strong>
+            Eye movements can be used to control a computer
+            interface and select required icons.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Independence:</strong>
+            Technology can help people perform activities,
+            access education and communicate with others.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TECHNOLOGY -->
+
+<div class="card">
+
+    <h2>
+        ⚙️ Technology and Accessibility
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>Assistive technology</strong>
+            refers to devices and systems that help people
+            overcome physical or communication difficulties.
+
+        </div>
+
+        <div class="concept-item">
+
+            Technology can provide access to education,
+            entertainment, communication and employment.
+
+        </div>
+
+        <div class="concept-item">
+
+            The lesson demonstrates that technology is not
+            merely entertainment; it can become a powerful
+            tool for inclusion.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PROSE REVISION -->
+
+<div class="card">
+
+    <h2>
+        📝 Tech Bloomers — Quick Revision
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+            <strong>Theme:</strong> Technology and empowerment.
+        </div>
+
+        <div class="concept-item">
+            <strong>Important idea:</strong> Technology can
+            reduce barriers faced by people with disabilities.
+        </div>
+
+        <div class="concept-item">
+            <strong>Communication:</strong> Special devices can
+            help users communicate using alternative methods.
+        </div>
+
+        <div class="concept-item">
+            <strong>Education:</strong> Technology can provide
+            access to learning materials and curriculum.
+        </div>
+
+        <div class="concept-item">
+            <strong>Independence:</strong> Assistive devices can
+            increase confidence and self-reliance.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POEM -->
+
+<div class="card">
+
+    <h2>
+        🤖 Poem — The Secret of the Machines
+    </h2>
+
+    <p class="description">
+
+        The poem presents machines as powerful creations of
+        human beings. It describes what machines can do and
+        reminds readers that machines depend upon their
+        creators.
+
+    </p>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>Theme:</strong>
+            The power and usefulness of machines.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Human creation:</strong>
+            Machines are created by human intelligence,
+            knowledge and engineering.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Power:</strong>
+            Machines can perform difficult tasks quickly
+            and efficiently.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Dependence:</strong>
+            Machines require human knowledge, control and
+            maintenance.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Message:</strong>
+            Technology is powerful, but humans remain the
+            creators and controllers of machines.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- POEM REVISION -->
+
+<div class="card">
+
+    <h2>
+        📖 The Secret of the Machines — Quick Revision
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+            <strong>Subject:</strong> Machines and their abilities.
+        </div>
+
+        <div class="concept-item">
+            <strong>Creator:</strong> Human beings create machines.
+        </div>
+
+        <div class="concept-item">
+            <strong>Purpose:</strong> Machines are designed to
+            perform useful tasks.
+        </div>
+
+        <div class="concept-item">
+            <strong>Important message:</strong> Machines may be
+            powerful, but they remain dependent on humans.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SUPPLEMENTARY -->
+
+<div class="card">
+
+    <h2>
+        📰 Supplementary — A Day in 2889 of an American Journalist
+    </h2>
+
+    <p class="description">
+
+        The supplementary lesson presents an imaginative
+        vision of life in the future. It describes advanced
+        technology and the way communication and daily life
+        could change in a technologically developed society.
+
+    </p>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>Future society:</strong>
+            The story imagines a technologically advanced
+            world.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Communication:</strong>
+            Future technology makes communication extremely
+            fast and convenient.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Transportation:</strong>
+            Advanced technology changes the way people travel.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Journalism:</strong>
+            The journalist observes and reports the features
+            of the imagined future society.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Science fiction:</strong>
+            The story combines imaginative future technology
+            with human life.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- UNIT THEME -->
+
+<div class="card">
+
+    <h2>
+        🌟 Unit 5 — Overall Theme
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>Technology:</strong>
+            The three lessons explore different aspects
+            of technology and machines.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Accessibility:</strong>
+            Technology can help people with special needs
+            participate more fully in society.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Machines:</strong>
+            Machines are human creations designed to perform
+            useful functions.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Future:</strong>
+            Scientific and technological development can
+            transform everyday life.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- IMPORTANT WORDS -->
+
+<div class="card">
+
+    <h2>
+        📌 Important Vocabulary
+    </h2>
+
+    <table>
+
+        <tr>
+            <th>Word</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Technology</td>
+            <td>Application of scientific knowledge for practical purposes.</td>
+        </tr>
+
+        <tr>
+            <td>Assistive</td>
+            <td>Helping a person perform a task more easily.</td>
+        </tr>
+
+        <tr>
+            <td>Communicator</td>
+            <td>A person or device used for communication.</td>
+        </tr>
+
+        <tr>
+            <td>Accessible</td>
+            <td>Easy to reach, use or access.</td>
+        </tr>
+
+        <tr>
+            <td>Independent</td>
+            <td>Able to act or function without depending on others.</td>
+        </tr>
+
+        <tr>
+            <td>Competent</td>
+            <td>Having the necessary ability or skill.</td>
+        </tr>
+
+        <tr>
+            <td>Innovation</td>
+            <td>A new idea, method or invention.</td>
+        </tr>
+
+        <tr>
+            <td>Automation</td>
+            <td>Use of machines or technology to perform tasks automatically.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- QUICK REVISION -->
+
+<div class="card">
+
+    <h2>
+        📚 Quick Revision
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>Prose:</strong>
+            Tech Bloomers — technology empowers people
+            with special needs.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Poem:</strong>
+            The Secret of the Machines — machines are powerful
+            human creations.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Supplementary:</strong>
+            A Day in 2889 of an American Journalist — an
+            imaginative vision of technologically advanced
+            future life.
+
+        </div>
+
+        <div class="concept-item">
+
+            <strong>Unit theme:</strong>
+            Technology, machines, accessibility and the future.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- QUIZ -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Unit 5 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Questions cover the prose,
+        poem and supplementary lesson of Unit 5.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <!-- SUBMIT APPEARS ONLY AFTER LAST QUESTION -->
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../Unit_6/chapter6.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Unit 6
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere | Class 10 English | Unit 5
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   UNIT 5 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is the prose lesson of Unit 5?",
+a:[
+"Tech Bloomers",
+"The Last Lesson",
+"The Attic",
+"His First Flight"
+],
+correct:0
+},
+
+{
+q:"What is the poem of Unit 5?",
+a:[
+"The Secret of the Machines",
+"No Men Are Foreign",
+"Life",
+"The Grumble Family"
+],
+correct:0
+},
+
+{
+q:"What is the supplementary lesson of Unit 5?",
+a:[
+"A Day in 2889 of an American Journalist",
+"Zigzag",
+"The Tempest",
+"The Aged Mother"
+],
+correct:0
+},
+
+{
+q:"What is the major theme of Tech Bloomers?",
+a:[
+"Technology empowering people",
+"War",
+"Nature",
+"Adventure"
+],
+correct:0
+},
+
+{
+q:"What does assistive technology mainly do?",
+a:[
+"Helps people overcome difficulties",
+"Creates sports competitions",
+"Stops communication",
+"Removes education"
+],
+correct:0
+},
+
+{
+q:"Technology can help people with disabilities become more:",
+a:[
+"Independent",
+"Dependent",
+"Silent",
+"Inactive"
+],
+correct:0
+},
+
+{
+q:"What type of technology can help a person communicate?",
+a:[
+"Assistive communication technology",
+"Cooking equipment",
+"Sports equipment",
+"Musical instruments"
+],
+correct:0
+},
+
+{
+q:"Eye-gaze technology can be controlled using:",
+a:[
+"Eye movements",
+"Feet only",
+"Paper",
+"Water"
+],
+correct:0
+},
+
+{
+q:"Technology can provide people with disabilities better access to:",
+a:[
+"Education",
+"Only games",
+"Only food",
+"Only transport"
+],
+correct:0
+},
+
+{
+q:"The word 'assistive' means:",
+a:[
+"Helping",
+"Harming",
+"Stopping",
+"Destroying"
+],
+correct:0
+},
+
+{
+q:"The main purpose of a communication device is to:",
+a:[
+"Help people communicate",
+"Cook food",
+"Play cricket",
+"Build houses"
+],
+correct:0
+},
+
+{
+q:"Technology can help a person participate in:",
+a:[
+"Society",
+"Nothing",
+"Only sleep",
+"Only travel"
+],
+correct:0
+},
+
+{
+q:"Which quality can technology improve in a person?",
+a:[
+"Confidence",
+"Fear",
+"Confusion",
+"Laziness"
+],
+correct:0
+},
+
+{
+q:"The prose lesson shows technology as a:",
+a:[
+"Tool for empowerment",
+"Problem only",
+"Toy only",
+"Luxury only"
+],
+correct:0
+},
+
+{
+q:"Which is an example of assistive technology?",
+a:[
+"Communication device",
+"Notebook only",
+"Chair without support",
+"Ordinary pencil"
+],
+correct:0
+},
+
+{
+q:"Technology can help students with special needs to:",
+a:[
+"Access the curriculum",
+"Avoid education",
+"Stop learning",
+"Leave school"
+],
+correct:0
+},
+
+{
+q:"A person who communicates effectively is a:",
+a:[
+"Communicator",
+"Passenger",
+"Farmer",
+"Mechanic"
+],
+correct:0
+},
+
+{
+q:"The word 'competent' means:",
+a:[
+"Capable",
+"Unable",
+"Confused",
+"Uncertain"
+],
+correct:0
+},
+
+{
+q:"The poem 'The Secret of the Machines' mainly describes:",
+a:[
+"Machines and their abilities",
+"Animals",
+"Rain",
+"School life"
+],
+correct:0
+},
+
+{
+q:"Who creates machines?",
+a:[
+"Human beings",
+"Machines themselves",
+"Animals",
+"Trees"
+],
+correct:0
+},
+
+{
+q:"Machines are created using human:",
+a:[
+"Knowledge and skill",
+"Sleep",
+"Fear",
+"Silence"
+],
+correct:0
+},
+
+{
+q:"Machines are useful because they can:",
+a:[
+"Perform tasks",
+"Think exactly like humans",
+"Replace all humans",
+"Live independently"
+],
+correct:0
+},
+
+{
+q:"The poem reminds us that machines depend on:",
+a:[
+"Human beings",
+"Trees",
+"Animals",
+"Rain"
+],
+correct:0
+},
+
+{
+q:"The machines in the poem are presented as:",
+a:[
+"Powerful creations",
+"Natural animals",
+"Plants",
+"Birds"
+],
+correct:0
+},
+
+{
+q:"The poem deals mainly with:",
+a:[
+"Technology",
+"Sports",
+"History",
+"Travel"
+],
+correct:0
+},
+
+{
+q:"Machines are the products of:",
+a:[
+"Human invention",
+"Natural growth",
+"Animal behaviour",
+"Weather"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a machine?",
+a:[
+"Computer",
+"Tree",
+"River",
+"Cloud"
+],
+correct:0
+},
+
+{
+q:"A machine normally needs humans for:",
+a:[
+"Creation and control",
+"Birth",
+"Growth",
+"Sleep"
+],
+correct:0
+},
+
+{
+q:"The poem encourages readers to understand the:",
+a:[
+"Power of machines",
+"Beauty of flowers",
+"History of kings",
+"Life of birds"
+],
+correct:0
+},
+
+{
+q:"Technology and machines are closely connected with:",
+a:[
+"Human innovation",
+"Natural rainfall",
+"Animal migration",
+"Seasonal changes"
+],
+correct:0
+},
+
+{
+q:"The supplementary lesson of Unit 5 is a form of:",
+a:[
+"Science fiction",
+"Biography",
+"Historical record",
+"Drama"
+],
+correct:0
+},
+
+{
+q:"The supplementary lesson imagines life in the:",
+a:[
+"Future",
+"Past",
+"Stone Age",
+"Middle Ages"
+],
+correct:0
+},
+
+{
+q:"The year mentioned in the supplementary lesson is:",
+a:[
+"2889",
+"2020",
+"1947",
+"1900"
+],
+correct:0
+},
+
+{
+q:"The supplementary lesson is about an imagined:",
+a:[
+"Future society",
+"Ancient kingdom",
+"Village festival",
+"War"
+],
+correct:0
+},
+
+{
+q:"The story presents advanced:",
+a:[
+"Technology",
+"Agriculture only",
+"Fishing",
+"Handicrafts"
+],
+correct:0
+},
+
+{
+q:"The journalist in the title is an:",
+a:[
+"American journalist",
+"Indian scientist",
+"British soldier",
+"French teacher"
+],
+correct:0
+},
+
+{
+q:"The story explores how technology may change:",
+a:[
+"Human life",
+"Only farming",
+"Only sports",
+"Only clothing"
+],
+correct:0
+},
+
+{
+q:"Science fiction usually combines science with:",
+a:[
+"Imagination",
+"Silence",
+"Cooking",
+"Grammar"
+],
+correct:0
+},
+
+{
+q:"Future technology may make communication:",
+a:[
+"Faster",
+"Impossible",
+"Slower always",
+"Unnecessary"
+],
+correct:0
+},
+
+{
+q:"Technology can change methods of:",
+a:[
+"Transportation",
+"Only sleeping",
+"Only eating",
+"Only reading"
+],
+correct:0
+},
+
+{
+q:"The Unit 5 lessons together focus strongly on:",
+a:[
+"Technology",
+"Ancient wars",
+"Wildlife",
+"Farming"
+],
+correct:0
+},
+
+{
+q:"Which lesson focuses especially on empowering people with disabilities?",
+a:[
+"Tech Bloomers",
+"The Secret of the Machines",
+"A Day in 2889",
+"None"
+],
+correct:0
+},
+
+{
+q:"Which lesson focuses on machines as human creations?",
+a:[
+"The Secret of the Machines",
+"Tech Bloomers",
+"A Day in 2889",
+"The Attic"
+],
+correct:0
+},
+
+{
+q:"Which lesson imagines an advanced future?",
+a:[
+"A Day in 2889 of an American Journalist",
+"Tech Bloomers",
+"The Secret of the Machines",
+"His First Flight"
+],
+correct:0
+},
+
+{
+q:"Which word means 'easy to reach or use'?",
+a:[
+"Accessible",
+"Ancient",
+"Fragile",
+"Remote"
+],
+correct:0
+},
+
+{
+q:"Which word means 'able to function without depending on others'?",
+a:[
+"Independent",
+"Dependent",
+"Fragile",
+"Limited"
+],
+correct:0
+},
+
+{
+q:"Which word means 'a new idea or method'?",
+a:[
+"Innovation",
+"Tradition",
+"Failure",
+"Barrier"
+],
+correct:0
+},
+
+{
+q:"Technology can reduce barriers for:",
+a:[
+"People with special needs",
+"Machines only",
+"Buildings only",
+"Roads only"
+],
+correct:0
+},
+
+{
+q:"A major benefit of assistive technology is:",
+a:[
+"Greater independence",
+"Less communication",
+"Less education",
+"More isolation"
+],
+correct:0
+},
+
+{
+q:"What connects all three Unit 5 lessons?",
+a:[
+"Technology and its impact on life",
+"Ancient history",
+"Nature poetry",
+"Village life"
+],
+correct:0
+},
+
+{
+q:"What is one important message of Unit 5?",
+a:[
+"Technology should be used to improve human life",
+"Machines should never be used",
+"Education is unnecessary",
+"Communication is impossible"
+],
+correct:0
+},
+
+{
+q:"What can technology provide to people with special needs?",
+a:[
+"Greater access and independence",
+"More barriers",
+"Less opportunity",
+"Isolation"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_10english_unit5_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_10english_unit5_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Unit 5 Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Class 10 English Unit 5 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +100 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Unit 5 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "English",
+
+        unit:
+            "Unit 5",
+
+        prose:
+            "Tech Bloomers",
+
+        poem:
+            "The Secret of the Machines",
+
+        supplementary:
+            "A Day in 2889 of an American Journalist",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 100
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_10english_unit5",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Unit 5 Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +100 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   CSV / EXCEL DOWNLOAD
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_10english_unit5"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere - Class 10 English Unit 5"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Unit",
+            "Prose",
+            "Poem",
+            "Supplementary",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.unit,
+            data.prose,
+            data.poem,
+            data.supplementary,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_English_Unit_5.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_10english_unit5"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
