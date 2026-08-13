@@ -1,0 +1,2483 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 21 - Health and Diseases | EduSphere</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= CONCEPT BOX ================= */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* ================= FACTS ================= */
+
+.fact{
+    padding:15px;
+    margin:10px 0;
+    background:#0f172a;
+    border-radius:10px;
+    line-height:1.7;
+    color:#e2e8f0;
+}
+
+.fact strong{
+    color:#a78bfa;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        ❤️ Chapter 21: Health and Diseases
+    </h1>
+
+    <p>
+        Learn about health, diseases and disorders,
+        substance abuse, lifestyle diseases, diabetes,
+        obesity, heart disease, cancer and AIDS.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER21_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER21_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Health and Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Drug Abuse
+    </div>
+
+    <div class="topic">
+        ✓ Tobacco Addiction
+    </div>
+
+    <div class="topic">
+        ✓ Alcohol Addiction
+    </div>
+
+    <div class="topic">
+        ✓ Effects of Alcohol on Health
+    </div>
+
+    <div class="topic">
+        ✓ De-addiction and Rehabilitation
+    </div>
+
+    <div class="topic">
+        ✓ Lifestyle Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Diabetes Mellitus
+    </div>
+
+    <div class="topic">
+        ✓ Type 1 Diabetes
+    </div>
+
+    <div class="topic">
+        ✓ Type 2 Diabetes
+    </div>
+
+    <div class="topic">
+        ✓ Obesity
+    </div>
+
+    <div class="topic">
+        ✓ Body Mass Index
+    </div>
+
+    <div class="topic">
+        ✓ Coronary Heart Disease
+    </div>
+
+    <div class="topic">
+        ✓ Atherosclerosis
+    </div>
+
+    <div class="topic">
+        ✓ Cancer
+    </div>
+
+    <div class="topic">
+        ✓ Types of Cancer
+    </div>
+
+    <div class="topic">
+        ✓ Cancer Prevention
+    </div>
+
+    <div class="topic">
+        ✓ AIDS and HIV
+    </div>
+
+    <div class="topic">
+        ✓ Prevention and Control
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT CONCEPTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🔬 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                1. Health
+            </strong>
+
+            <br>
+
+            Health refers to a state of physical,
+            mental and social well-being. Maintaining
+            a healthy lifestyle helps prevent many
+            diseases and disorders.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Drug Abuse
+            </strong>
+
+            <br>
+
+            Repeated or excessive use of drugs can
+            lead to dependence and harmful physical
+            and psychological effects.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Tobacco Addiction
+            </strong>
+
+            <br>
+
+            Nicotine in tobacco can cause dependence
+            and has harmful effects on the cardiovascular
+            and respiratory systems.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Alcohol Abuse
+            </strong>
+
+            <br>
+
+            Prolonged excessive alcohol consumption can
+            affect the nervous system and damage organs
+            including the liver.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. De-addiction
+            </strong>
+
+            <br>
+
+            De-addiction involves appropriate medical,
+            psychological and social support to help a
+            person overcome substance dependence.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Diabetes Mellitus
+            </strong>
+
+            <br>
+
+            Diabetes mellitus is a chronic metabolic
+            disorder associated with elevated blood
+            glucose levels.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Type 1 Diabetes
+            </strong>
+
+            <br>
+
+            Type 1 diabetes is associated with inadequate
+            insulin production and generally requires
+            insulin treatment.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Type 2 Diabetes
+            </strong>
+
+            <br>
+
+            Type 2 diabetes is commonly associated with
+            insulin resistance and lifestyle-related risk
+            factors.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Obesity
+            </strong>
+
+            <br>
+
+            Obesity occurs when energy intake over time
+            exceeds energy expenditure, leading to
+            excessive accumulation of body fat.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Body Mass Index
+            </strong>
+
+            <br>
+
+            BMI is calculated as:
+
+            <br><br>
+
+            <b>
+                BMI = Weight (kg) / Height² (m²)
+            </b>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Coronary Heart Disease
+            </strong>
+
+            <br>
+
+            Coronary heart disease can occur when the
+            blood supply to heart muscles is insufficient.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Atherosclerosis
+            </strong>
+
+            <br>
+
+            Atherosclerosis involves the buildup of
+            fatty deposits in arterial walls, which can
+            reduce blood flow.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Cancer
+            </strong>
+
+            <br>
+
+            Cancer involves abnormal and uncontrolled
+            cell growth. Different types are classified
+            according to the tissues or cells involved.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Carcinoma
+            </strong>
+
+            <br>
+
+            Carcinoma is a cancer arising from epithelial
+            cells.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Leukemia
+            </strong>
+
+            <br>
+
+            Leukemia is a cancer involving blood-forming
+            tissues and abnormal blood cell production.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. HIV and AIDS
+            </strong>
+
+            <br>
+
+            HIV is a virus that attacks the immune system.
+            AIDS is the advanced condition associated with
+            severe damage to immune function.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Disease Prevention
+            </strong>
+
+            <br>
+
+            Healthy diet, physical activity, avoiding
+            tobacco and harmful substance use, appropriate
+            medical care and awareness can help reduce
+            health risks.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT FACTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Facts
+    </h2>
+
+    <div class="fact">
+
+        <strong>Nicotine:</strong>
+
+        Nicotine is the addictive component of tobacco
+        and can stimulate adrenaline secretion.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>No Tobacco Day:</strong>
+
+        World No Tobacco Day is observed on May 31.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Alcohol:</strong>
+
+        Excessive alcohol consumption can cause serious
+        health problems including liver damage and
+        cirrhosis.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Diabetes:</strong>
+
+        Diabetes mellitus is a chronic metabolic disorder
+        involving abnormal blood glucose regulation.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Obesity:</strong>
+
+        Obesity is associated with excessive accumulation
+        of body fat.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>BMI:</strong>
+
+        BMI is calculated using body weight and height.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Heart Disease:</strong>
+
+        Coronary heart disease can result from insufficient
+        blood supply to the heart muscles.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Carcinoma:</strong>
+
+        Cancer of epithelial cells is called carcinoma.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Cancer Cells:</strong>
+
+        Rapidly dividing cancer cells can be particularly
+        sensitive to radiation treatment.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>HIV:</strong>
+
+        HIV attacks cells of the immune system and can
+        lead to AIDS if the infection progresses.
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Health and Diseases Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter22.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 22
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 21 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"Which component of tobacco stimulates adrenaline secretion?",
+a:[
+"Nicotine",
+"Tannic acid",
+"Curcumin",
+"Leptin"
+],
+correct:0
+},
+
+{
+q:"World No Tobacco Day is observed on:",
+a:[
+"May 31",
+"June 6",
+"April 22",
+"October 2"
+],
+correct:0
+},
+
+{
+q:"Why are rapidly dividing cancer cells more sensitive to radiation?",
+a:[
+"They are undergoing rapid division",
+"They never divide",
+"They contain chlorophyll",
+"They are normal cells"
+],
+correct:0
+},
+
+{
+q:"Cancer of epithelial cells is called:",
+a:[
+"Carcinoma",
+"Sarcoma",
+"Leukemia",
+"Lipoma"
+],
+correct:0
+},
+
+{
+q:"Which disease involves abnormal blood-forming tissues?",
+a:[
+"Leukemia",
+"Obesity",
+"Diabetes",
+"Atherosclerosis"
+],
+correct:0
+},
+
+{
+q:"Excessive consumption of alcohol can lead to:",
+a:[
+"Cirrhosis of liver",
+"Improved vision",
+"Stronger bones",
+"Better memory"
+],
+correct:0
+},
+
+{
+q:"Coronary heart disease may occur due to:",
+a:[
+"Insufficient blood supply to heart muscles",
+"Improved blood supply",
+"Stronger heart valves",
+"Excess oxygen only"
+],
+correct:0
+},
+
+{
+q:"What is a major feature of diabetes mellitus?",
+a:[
+"Abnormal regulation of blood glucose",
+"Improved digestion",
+"Reduced body temperature only",
+"Stronger bones"
+],
+correct:0
+},
+
+{
+q:"Which hormone is important in regulating blood glucose?",
+a:[
+"Insulin",
+"Adrenaline only",
+"Thyroxine only",
+"Melatonin"
+],
+correct:0
+},
+
+{
+q:"Type 1 diabetes is generally associated with:",
+a:[
+"Inadequate insulin production",
+"Excess bone formation",
+"Improved insulin action",
+"Only high body temperature"
+],
+correct:0
+},
+
+{
+q:"Type 2 diabetes is commonly associated with:",
+a:[
+"Insulin resistance",
+"Complete absence of bones",
+"Improved vision",
+"Reduced blood volume"
+],
+correct:0
+},
+
+{
+q:"Obesity occurs when:",
+a:[
+"Energy intake exceeds energy expenditure over time",
+"Energy expenditure always exceeds intake",
+"No energy is consumed",
+"Water intake becomes zero"
+],
+correct:0
+},
+
+{
+q:"BMI stands for:",
+a:[
+"Body Mass Index",
+"Blood Muscle Indicator",
+"Body Metabolism Intake",
+"Bone Mass Indicator"
+],
+correct:0
+},
+
+{
+q:"Which formula is used to calculate BMI?",
+a:[
+"Weight (kg) / Height² (m²)",
+"Height / Weight",
+"Weight × Height",
+"Weight + Height"
+],
+correct:0
+},
+
+{
+q:"Atherosclerosis involves:",
+a:[
+"Fatty deposits in arterial walls",
+"Growth of bones",
+"Increase in lung size",
+"Improved blood flow"
+],
+correct:0
+},
+
+{
+q:"Coronary heart disease primarily affects:",
+a:[
+"Blood supply to heart muscles",
+"Hair follicles",
+"Teeth",
+"Skin colour"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a lifestyle-related disease?",
+a:[
+"Obesity",
+"Fracture caused by an accident",
+"Cut on the skin",
+"Temporary thirst"
+],
+correct:0
+},
+
+{
+q:"Which habit increases the risk of many diseases?",
+a:[
+"Tobacco consumption",
+"Regular exercise",
+"Balanced diet",
+"Adequate sleep"
+],
+correct:0
+},
+
+{
+q:"Nicotine is mainly associated with:",
+a:[
+"Tobacco dependence",
+"Vitamin production",
+"Bone formation",
+"Digestion"
+],
+correct:0
+},
+
+{
+q:"Prolonged alcohol use can affect the:",
+a:[
+"Nervous system",
+"Only hair",
+"Only nails",
+"Only teeth"
+],
+correct:0
+},
+
+{
+q:"One harmful effect of prolonged alcohol consumption is:",
+a:[
+"Liver damage",
+"Improved liver function",
+"Stronger eyesight",
+"Improved memory"
+],
+correct:0
+},
+
+{
+q:"Cirrhosis is associated with damage to the:",
+a:[
+"Liver",
+"Eye",
+"Ear",
+"Skin"
+],
+correct:0
+},
+
+{
+q:"What is de-addiction?",
+a:[
+"Helping a person overcome substance dependence",
+"Starting substance use",
+"Increasing tobacco consumption",
+"Increasing alcohol intake"
+],
+correct:0
+},
+
+{
+q:"Which can support recovery from substance dependence?",
+a:[
+"Medical and psychological support",
+"More substance use",
+"Avoiding all help",
+"Increasing dosage"
+],
+correct:0
+},
+
+{
+q:"Cancer is characterized by:",
+a:[
+"Uncontrolled abnormal cell growth",
+"Normal controlled cell growth only",
+"Only increased height",
+"Improved digestion"
+],
+correct:0
+},
+
+{
+q:"Cancer of epithelial tissue is called:",
+a:[
+"Carcinoma",
+"Leukemia",
+"Sarcoma",
+"Diabetes"
+],
+correct:0
+},
+
+{
+q:"Which type of cancer involves blood-forming tissues?",
+a:[
+"Leukemia",
+"Carcinoma",
+"Lipoma",
+"Obesity"
+],
+correct:0
+},
+
+{
+q:"Which type of cancer is associated with connective tissues?",
+a:[
+"Sarcoma",
+"Carcinoma",
+"Diabetes",
+"Leukemia"
+],
+correct:0
+},
+
+{
+q:"Radiation treatment for cancer can target:",
+a:[
+"Rapidly dividing cancer cells",
+"Only healthy skin",
+"Only bones",
+"Only hair"
+],
+correct:0
+},
+
+{
+q:"Which factor can increase the risk of cancer?",
+a:[
+"Tobacco use",
+"Regular exercise",
+"Balanced nutrition",
+"Healthy sleep"
+],
+correct:0
+},
+
+{
+q:"HIV primarily attacks the:",
+a:[
+"Immune system",
+"Digestive system only",
+"Skeletal system only",
+"Hair follicles"
+],
+correct:0
+},
+
+{
+q:"AIDS is associated with:",
+a:[
+"Severe damage to immune function",
+"Improved immunity",
+"Stronger bones",
+"Improved digestion"
+],
+correct:0
+},
+
+{
+q:"HIV is:",
+a:[
+"A virus",
+"A bacterium",
+"A fungus",
+"A vitamin"
+],
+correct:0
+},
+
+{
+q:"Which is important for preventing HIV transmission?",
+a:[
+"Following safe and medically recommended preventive practices",
+"Sharing needles",
+"Sharing blood-contaminated instruments",
+"Ignoring medical advice"
+],
+correct:0
+},
+
+{
+q:"Which practice helps maintain good health?",
+a:[
+"Balanced diet and physical activity",
+"Regular tobacco use",
+"Excessive alcohol consumption",
+"Drug abuse"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a non-communicable lifestyle-related disorder?",
+a:[
+"Obesity",
+"Common cold",
+"Flu",
+"Some bacterial infections"
+],
+correct:0
+},
+
+{
+q:"Which activity helps control body weight?",
+a:[
+"Regular physical activity",
+"Excessive overeating",
+"Continuous inactivity",
+"Smoking"
+],
+correct:0
+},
+
+{
+q:"Which food habit can help reduce lifestyle disease risk?",
+a:[
+"Balanced diet",
+"Excessive consumption of unhealthy foods",
+"Skipping all meals",
+"Only consuming sugary drinks"
+],
+correct:0
+},
+
+{
+q:"Why is awareness important in disease prevention?",
+a:[
+"It helps people understand risks and adopt healthier behaviour",
+"It increases disease risk",
+"It causes addiction",
+"It prevents exercise"
+],
+correct:0
+},
+
+{
+q:"Which substance in tobacco is addictive?",
+a:[
+"Nicotine",
+"Water",
+"Calcium",
+"Glucose"
+],
+correct:0
+},
+
+{
+q:"Which organ is especially affected by long-term excessive alcohol consumption?",
+a:[
+"Liver",
+"Hair",
+"Nails",
+"Teeth only"
+],
+correct:0
+},
+
+{
+q:"Which condition involves excessive accumulation of body fat?",
+a:[
+"Obesity",
+"Anemia",
+"Fracture",
+"Dehydration"
+],
+correct:0
+},
+
+{
+q:"Which condition can result from insufficient blood supply to heart muscles?",
+a:[
+"Coronary heart disease",
+"Diabetes only",
+"Obesity only",
+"Common cold"
+],
+correct:0
+},
+
+{
+q:"Which factor is important in controlling diabetes?",
+a:[
+"Diet, physical activity and appropriate treatment",
+"Excessive sugar intake",
+"Tobacco use",
+"Alcohol abuse"
+],
+correct:0
+},
+
+{
+q:"Which statement about Type 2 diabetes is correct?",
+a:[
+"It is commonly associated with insulin resistance",
+"It is caused only by broken bones",
+"It improves with tobacco use",
+"It is a viral disease"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a major risk factor for cardiovascular disease?",
+a:[
+"Unhealthy lifestyle",
+"Regular exercise",
+"Balanced diet",
+"Adequate rest"
+],
+correct:0
+},
+
+{
+q:"Which statement about cancer is correct?",
+a:[
+"Abnormal cells can grow and divide uncontrollably",
+"All cancer cells divide normally",
+"Cancer always affects only the skin",
+"Cancer is always caused by bacteria"
+],
+correct:0
+},
+
+{
+q:"Which statement about HIV is correct?",
+a:[
+"It affects the immune system",
+"It is a vitamin",
+"It strengthens immunity",
+"It is a type of bone"
+],
+correct:0
+},
+
+{
+q:"Which is an important method for preventing lifestyle diseases?",
+a:[
+"Healthy diet, exercise and avoiding harmful substances",
+"Smoking regularly",
+"Excessive alcohol use",
+"Physical inactivity"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a healthy lifestyle choice?",
+a:[
+"Regular exercise",
+"Tobacco consumption",
+"Drug abuse",
+"Excessive alcohol consumption"
+],
+correct:0
+},
+
+{
+q:"What is one important purpose of health education?",
+a:[
+"To create awareness about prevention and healthy living",
+"To encourage addiction",
+"To increase disease risk",
+"To discourage medical care"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch21_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch21_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Health and Diseases assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 21 - Health and Diseases",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter21",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter21"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter21_Health_and_Diseases_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter21"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+```

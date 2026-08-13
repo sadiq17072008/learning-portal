@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 7 - Atoms and Molecules | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#0891b2,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#e0f2fe;
+    line-height:1.7;
+}
+
+/* ================= INFO ================= */
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        ⚛️ Chapter 7: Atoms and Molecules
+    </h1>
+
+    <p>
+        Learn about atoms, molecules, atomic structure,
+        atomic mass, molecular mass, ions, chemical formulae,
+        valency, mole concept and basic chemical calculations.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter using the PDF notes and video
+        before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER7_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER7_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Atoms
+    </div>
+
+    <div class="topic">
+        ✓ Molecules
+    </div>
+
+    <div class="topic">
+        ✓ Atomic Structure
+    </div>
+
+    <div class="topic">
+        ✓ Protons, Neutrons and Electrons
+    </div>
+
+    <div class="topic">
+        ✓ Atomic Number
+    </div>
+
+    <div class="topic">
+        ✓ Mass Number
+    </div>
+
+    <div class="topic">
+        ✓ Isotopes
+    </div>
+
+    <div class="topic">
+        ✓ Ions
+    </div>
+
+    <div class="topic">
+        ✓ Cations and Anions
+    </div>
+
+    <div class="topic">
+        ✓ Valency
+    </div>
+
+    <div class="topic">
+        ✓ Chemical Symbols
+    </div>
+
+    <div class="topic">
+        ✓ Chemical Formulae
+    </div>
+
+    <div class="topic">
+        ✓ Atomic Mass
+    </div>
+
+    <div class="topic">
+        ✓ Molecular Mass
+    </div>
+
+    <div class="topic">
+        ✓ Relative Atomic Mass
+    </div>
+
+    <div class="topic">
+        ✓ Mole Concept
+    </div>
+
+    <div class="topic">
+        ✓ Avogadro Constant
+    </div>
+
+    <div class="topic">
+        ✓ Molar Mass
+    </div>
+
+    <div class="topic">
+        ✓ Chemical Calculations
+    </div>
+
+</div>
+
+
+<!-- ================= ATOM VISUALIZER ================= -->
+
+<div class="card">
+
+    <h2>
+        ⚛️ Atom Explorer
+    </h2>
+
+    <p class="description">
+
+        Explore how proton, neutron and electron numbers
+        determine the basic composition of an atom.
+
+    </p>
+
+    <div style="
+        background:#0f172a;
+        padding:20px;
+        border-radius:15px;
+        text-align:center;
+    ">
+
+        <div style="
+            font-size:70px;
+            margin-bottom:15px;
+        ">
+            ⚛️
+        </div>
+
+        <p style="
+            color:#94a3b8;
+            line-height:1.7;
+        ">
+            An atom contains a nucleus made of protons
+            and neutrons, surrounded by electrons.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Atoms and Molecules Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter8.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 8
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   50 ATOMS AND MOLECULES QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"The smallest unit of an element that retains the chemical properties of that element is called an:",
+    a:["Atom","Molecule","Ion","Compound"],
+    correct:0
+},
+
+{
+    q:"A molecule is made up of:",
+    a:["Only electrons","Two or more atoms chemically bonded","Only neutrons","Only protons"],
+    correct:1
+},
+
+{
+    q:"The positively charged particle in an atom is:",
+    a:["Electron","Neutron","Proton","Photon"],
+    correct:2
+},
+
+{
+    q:"The particle having no electric charge is:",
+    a:["Proton","Electron","Neutron","Ion"],
+    correct:2
+},
+
+{
+    q:"The negatively charged particle in an atom is:",
+    a:["Proton","Neutron","Electron","Nucleus"],
+    correct:2
+},
+
+{
+    q:"The central part of an atom is called the:",
+    a:["Electron shell","Nucleus","Orbit","Molecule"],
+    correct:1
+},
+
+{
+    q:"The nucleus contains:",
+    a:["Only electrons","Protons and neutrons","Only neutrons","Only electrons and photons"],
+    correct:1
+},
+
+{
+    q:"The atomic number of an element is equal to the number of:",
+    a:["Neutrons","Protons","Protons and neutrons","Electrons and neutrons"],
+    correct:1
+},
+
+{
+    q:"In a neutral atom, the number of electrons is equal to the number of:",
+    a:["Neutrons","Protons","Nucleons","Shells"],
+    correct:1
+},
+
+{
+    q:"The mass number of an atom is the sum of:",
+    a:["Protons and neutrons","Protons and electrons","Electrons and neutrons","Only electrons"],
+    correct:0
+},
+
+{
+    q:"The total number of protons and neutrons in a nucleus is called:",
+    a:["Atomic number","Mass number","Valency","Molecular number"],
+    correct:1
+},
+
+{
+    q:"Atoms of the same element having different numbers of neutrons are called:",
+    a:["Ions","Isotopes","Molecules","Compounds"],
+    correct:1
+},
+
+{
+    q:"Isotopes have the same:",
+    a:["Mass number","Atomic number","Number of neutrons","Physical mass"],
+    correct:1
+},
+
+{
+    q:"Isotopes differ in their:",
+    a:["Number of protons","Atomic number","Number of neutrons","Chemical symbol"],
+    correct:2
+},
+
+{
+    q:"An electrically charged atom or group of atoms is called an:",
+    a:["Isotope","Ion","Molecule","Element"],
+    correct:1
+},
+
+{
+    q:"A positively charged ion is called a:",
+    a:["Anion","Cation","Isotope","Molecule"],
+    correct:1
+},
+
+{
+    q:"A negatively charged ion is called an:",
+    a:["Cation","Anion","Proton","Nucleus"],
+    correct:1
+},
+
+{
+    q:"A sodium ion is represented as:",
+    a:["Na−","Na+","Na2−","Na2+"],
+    correct:1
+},
+
+{
+    q:"A chloride ion is represented as:",
+    a:["Cl+","Cl−","Cl2+","Cl2−"],
+    correct:1
+},
+
+{
+    q:"The combining capacity of an atom is called its:",
+    a:["Atomic mass","Valency","Mass number","Density"],
+    correct:1
+},
+
+{
+    q:"The valency of sodium is:",
+    a:["1","2","3","4"],
+    correct:0
+},
+
+{
+    q:"The valency of oxygen is generally:",
+    a:["1","2","3","4"],
+    correct:1
+},
+
+{
+    q:"The valency of nitrogen in ammonia is:",
+    a:["1","2","3","4"],
+    correct:2
+},
+
+{
+    q:"The chemical formula of water is:",
+    a:["CO2","H2O","O2","H2"],
+    correct:1
+},
+
+{
+    q:"The chemical formula of carbon dioxide is:",
+    a:["CO","CO2","C2O","CaO"],
+    correct:1
+},
+
+{
+    q:"The chemical formula of oxygen gas is:",
+    a:["O","O2","O3 only","OH"],
+    correct:1
+},
+
+{
+    q:"The chemical formula of hydrogen gas is:",
+    a:["H","H2","H2O","HO"],
+    correct:1
+},
+
+{
+    q:"The chemical formula of sodium chloride is:",
+    a:["NaCl","Na2Cl","NaCl2","Na2Cl2"],
+    correct:0
+},
+
+{
+    q:"The formula of calcium chloride is:",
+    a:["CaCl","CaCl2","Ca2Cl","Ca2Cl2"],
+    correct:1
+},
+
+{
+    q:"The formula of magnesium oxide is:",
+    a:["MgO","Mg2O","MgO2","Mg2O2"],
+    correct:0
+},
+
+{
+    q:"The formula of aluminium oxide is:",
+    a:["AlO","Al2O","AlO2","Al2O3"],
+    correct:3
+},
+
+{
+    q:"The relative atomic mass of an element is based on comparison with:",
+    a:["Hydrogen only","Carbon-12 standard","Oxygen only","Electron mass"],
+    correct:1
+},
+
+{
+    q:"The approximate relative atomic mass of hydrogen is:",
+    a:["1","4","12","16"],
+    correct:0
+},
+
+{
+    q:"The approximate relative atomic mass of carbon is:",
+    a:["1","8","12","16"],
+    correct:2
+},
+
+{
+    q:"The approximate relative atomic mass of oxygen is:",
+    a:["8","12","16","32"],
+    correct:2
+},
+
+{
+    q:"The molecular mass of water (H2O) is approximately:",
+    a:["16 u","17 u","18 u","20 u"],
+    correct:2
+},
+
+{
+    q:"The molecular mass of carbon dioxide (CO2) is approximately:",
+    a:["28 u","32 u","44 u","48 u"],
+    correct:2
+},
+
+{
+    q:"The molecular mass of oxygen gas (O2) is approximately:",
+    a:["16 u","18 u","32 u","44 u"],
+    correct:2
+},
+
+{
+    q:"The molecular mass of hydrogen gas (H2) is approximately:",
+    a:["1 u","2 u","16 u","18 u"],
+    correct:1
+},
+
+{
+    q:"One mole of a substance contains approximately:",
+    a:["6.022 × 10²³ particles","6.022 × 10² particles","3.011 × 10²³ particles","1.602 × 10¹⁹ particles"],
+    correct:0
+},
+
+{
+    q:"The number 6.022 × 10²³ is called:",
+    a:["Atomic number","Avogadro constant","Mass number","Molar mass"],
+    correct:1
+},
+
+{
+    q:"The SI unit commonly used for amount of substance is:",
+    a:["Gram","Mole","Kilogram only","Litre"],
+    correct:1
+},
+
+{
+    q:"The mass of one mole of a substance is called its:",
+    a:["Atomic number","Molar mass","Mass number","Density"],
+    correct:1
+},
+
+{
+    q:"The molar mass of water is approximately:",
+    a:["10 g/mol","16 g/mol","18 g/mol","20 g/mol"],
+    correct:2
+},
+
+{
+    q:"The molar mass of carbon dioxide is approximately:",
+    a:["28 g/mol","32 g/mol","44 g/mol","48 g/mol"],
+    correct:2
+},
+
+{
+    q:"The number of moles in a substance can be calculated using:",
+    a:["Mass ÷ molar mass","Mass × molar mass","Molar mass ÷ mass only","Mass + molar mass"],
+    correct:0
+},
+
+{
+    q:"A molecule of oxygen contains:",
+    a:["One oxygen atom","Two oxygen atoms","Three oxygen atoms","Four oxygen atoms"],
+    correct:1
+},
+
+{
+    q:"A molecule of water contains:",
+    a:["One hydrogen and one oxygen","Two hydrogen and one oxygen","One hydrogen and two oxygen","Two oxygen and two hydrogen"],
+    correct:1
+},
+
+{
+    q:"The smallest particle of a compound that can exist independently is generally called a:",
+    a:["Molecule","Proton","Electron","Neutron"],
+    correct:0
+},
+
+{
+    q:"Which of the following is a molecule of an element?",
+    a:["H2","H2O","CO2","NaCl"],
+    correct:0
+},
+
+{
+    q:"Which of the following is a compound?",
+    a:["O2","N2","H2O","He"],
+    correct:2
+},
+
+{
+    q:"A chemical formula represents:",
+    a:["Only the colour of a substance","The elements and their relative numbers in a substance","Only the mass of a substance","Only its temperature"],
+    correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch7_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch7_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Atoms and Molecules assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY QUIZ
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 7 - Atoms and Molecules",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter7",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter7"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter7_Atoms_and_Molecules_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter7"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

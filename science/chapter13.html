@@ -1,0 +1,2328 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 13 - Structural Organisation of Animals | EduSphere</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#f5f3ff;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= ANIMAL BOX ================= */
+
+.animal-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.animal-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #a855f7;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.animal-item strong{
+    color:#c084fc;
+}
+
+/* ================= FACTS ================= */
+
+.fact{
+    padding:15px;
+    margin:10px 0;
+    background:#0f172a;
+    border-radius:10px;
+    line-height:1.7;
+    color:#e2e8f0;
+}
+
+.fact strong{
+    color:#c084fc;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#c084fc;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#a855f7;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#c084fc;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        🐾 Chapter 13: Structural Organisation of Animals
+    </h1>
+
+    <p>
+        Learn about animal tissues, epithelial tissue,
+        connective tissue, muscular tissue, nervous tissue,
+        organ systems and the structural organisation of
+        animals.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER13_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER13_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Structural Organisation of Animals
+    </div>
+
+    <div class="topic">
+        ✓ Animal Tissues
+    </div>
+
+    <div class="topic">
+        ✓ Epithelial Tissue
+    </div>
+
+    <div class="topic">
+        ✓ Connective Tissue
+    </div>
+
+    <div class="topic">
+        ✓ Muscular Tissue
+    </div>
+
+    <div class="topic">
+        ✓ Nervous Tissue
+    </div>
+
+    <div class="topic">
+        ✓ Simple Epithelium
+    </div>
+
+    <div class="topic">
+        ✓ Compound Epithelium
+    </div>
+
+    <div class="topic">
+        ✓ Areolar Tissue
+    </div>
+
+    <div class="topic">
+        ✓ Adipose Tissue
+    </div>
+
+    <div class="topic">
+        ✓ Blood
+    </div>
+
+    <div class="topic">
+        ✓ Bone and Cartilage
+    </div>
+
+    <div class="topic">
+        ✓ Muscles
+    </div>
+
+    <div class="topic">
+        ✓ Nervous Tissue
+    </div>
+
+    <div class="topic">
+        ✓ Neurons
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT CONCEPTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🔬 Important Concepts
+    </h2>
+
+    <div class="animal-box">
+
+        <div class="animal-item">
+
+            <strong>
+                1. Animal Tissue
+            </strong>
+
+            <br>
+
+            A tissue is a group of cells that are
+            structurally and functionally similar and
+            perform a specific function.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                2. Epithelial Tissue
+            </strong>
+
+            <br>
+
+            Epithelial tissue forms the covering or
+            lining of many body surfaces and organs.
+            It also performs protective, absorptive
+            and secretory functions.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                3. Connective Tissue
+            </strong>
+
+            <br>
+
+            Connective tissue connects, supports,
+            protects and binds different parts of
+            the body.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                4. Muscular Tissue
+            </strong>
+
+            <br>
+
+            Muscular tissue is specialised for
+            contraction and helps in movement
+            of body parts.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                5. Nervous Tissue
+            </strong>
+
+            <br>
+
+            Nervous tissue receives and transmits
+            electrical signals and helps coordinate
+            activities of the body.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                6. Blood
+            </strong>
+
+            <br>
+
+            Blood is a fluid connective tissue that
+            transports gases, nutrients, hormones
+            and waste materials.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                7. Bone
+            </strong>
+
+            <br>
+
+            Bone is a hard connective tissue that
+            provides support, protection and a
+            framework for the body.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                8. Neuron
+            </strong>
+
+            <br>
+
+            A neuron is the structural and functional
+            unit of nervous tissue. It receives and
+            transmits nerve impulses.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT FACTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Facts
+    </h2>
+
+    <div class="fact">
+
+        <strong>Epithelial Tissue:</strong>
+
+        Covers body surfaces and lines internal
+        organs and cavities.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Connective Tissue:</strong>
+
+        Supports, connects and protects different
+        tissues and organs.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Blood:</strong>
+
+        A fluid connective tissue containing
+        plasma and blood cells.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Cartilage:</strong>
+
+        A flexible connective tissue that provides
+        support in various parts of the body.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Muscular Tissue:</strong>
+
+        Responsible for movement through contraction.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Nervous Tissue:</strong>
+
+        Responsible for receiving and transmitting
+        nerve impulses.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Neuron:</strong>
+
+        The basic structural and functional unit
+        of the nervous system.
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Structural Organisation of Animals Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter14.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 14
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 13 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is a tissue?",
+a:[
+"A group of similar cells performing a specific function",
+"A single organ",
+"A complete organism",
+"A group of bones only"
+],
+correct:0
+},
+
+{
+q:"Animal tissues are broadly classified into how many major types?",
+a:[
+"Four",
+"Two",
+"Six",
+"Eight"
+],
+correct:0
+},
+
+{
+q:"Which of the following is an animal tissue?",
+a:[
+"Epithelial tissue",
+"Xylem",
+"Phloem",
+"Meristem"
+],
+correct:0
+},
+
+{
+q:"Which tissue covers the external surface of the body?",
+a:[
+"Epithelial tissue",
+"Nervous tissue",
+"Muscular tissue",
+"Blood"
+],
+correct:0
+},
+
+{
+q:"The main function of epithelial tissue is:",
+a:[
+"Protection and covering",
+"Movement only",
+"Impulse transmission only",
+"Bone formation only"
+],
+correct:0
+},
+
+{
+q:"Which epithelial tissue consists of a single layer of cells?",
+a:[
+"Simple epithelium",
+"Compound epithelium",
+"Connective tissue",
+"Muscular tissue"
+],
+correct:0
+},
+
+{
+q:"Which epithelial tissue consists of more than one layer of cells?",
+a:[
+"Compound epithelium",
+"Simple epithelium",
+"Blood",
+"Cartilage"
+],
+correct:0
+},
+
+{
+q:"Which tissue lines many internal organs and body cavities?",
+a:[
+"Epithelial tissue",
+"Bone",
+"Muscle",
+"Nervous tissue"
+],
+correct:0
+},
+
+{
+q:"Which type of epithelium is specialised for absorption?",
+a:[
+"Simple columnar epithelium",
+"Stratified squamous epithelium",
+"Transitional epithelium",
+"Bone"
+],
+correct:0
+},
+
+{
+q:"Which epithelial tissue is commonly associated with diffusion?",
+a:[
+"Simple squamous epithelium",
+"Compound epithelium",
+"Bone",
+"Adipose tissue"
+],
+correct:0
+},
+
+{
+q:"Connective tissue mainly functions to:",
+a:[
+"Connect, support and protect body parts",
+"Produce nerve impulses only",
+"Cover the skin only",
+"Perform digestion only"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a connective tissue?",
+a:[
+"Blood",
+"Neuron",
+"Muscle fibre",
+"Epithelial tissue"
+],
+correct:0
+},
+
+{
+q:"Blood is classified as:",
+a:[
+"Fluid connective tissue",
+"Epithelial tissue",
+"Muscular tissue",
+"Nervous tissue"
+],
+correct:0
+},
+
+{
+q:"The fluid part of blood is called:",
+a:[
+"Plasma",
+"Platelet",
+"Haemoglobin",
+"Bone"
+],
+correct:0
+},
+
+{
+q:"Which blood cells carry oxygen?",
+a:[
+"Red blood cells",
+"White blood cells",
+"Platelets",
+"Plasma cells only"
+],
+correct:0
+},
+
+{
+q:"Which blood cells help defend the body against infections?",
+a:[
+"White blood cells",
+"Red blood cells",
+"Platelets",
+"Bone cells"
+],
+correct:0
+},
+
+{
+q:"Which blood component helps in clotting?",
+a:[
+"Platelets",
+"Red blood cells",
+"Plasma only",
+"Neurons"
+],
+correct:0
+},
+
+{
+q:"Haemoglobin is mainly present in:",
+a:[
+"Red blood cells",
+"White blood cells",
+"Platelets",
+"Plasma"
+],
+correct:0
+},
+
+{
+q:"Which connective tissue stores fat?",
+a:[
+"Adipose tissue",
+"Bone",
+"Cartilage",
+"Blood"
+],
+correct:0
+},
+
+{
+q:"The main function of adipose tissue is:",
+a:[
+"Fat storage",
+"Nerve impulse transmission",
+"Bone formation",
+"Blood clotting"
+],
+correct:0
+},
+
+{
+q:"Which connective tissue provides a framework and support to the body?",
+a:[
+"Bone",
+"Blood",
+"Adipose tissue",
+"Areolar tissue"
+],
+correct:0
+},
+
+{
+q:"Bone is a:",
+a:[
+"Hard connective tissue",
+"Muscular tissue",
+"Nervous tissue",
+"Epithelial tissue"
+],
+correct:0
+},
+
+{
+q:"Cartilage is generally:",
+a:[
+"Flexible connective tissue",
+"Fluid tissue",
+"Muscular tissue",
+"Nervous tissue"
+],
+correct:0
+},
+
+{
+q:"Which tissue provides flexible support?",
+a:[
+"Cartilage",
+"Blood",
+"Muscle",
+"Nervous tissue"
+],
+correct:0
+},
+
+{
+q:"Areolar tissue is mainly found:",
+a:[
+"Between and around organs and tissues",
+"Only inside bones",
+"Only in the brain",
+"Only in the blood"
+],
+correct:0
+},
+
+{
+q:"Which tissue fills spaces between organs?",
+a:[
+"Areolar tissue",
+"Bone",
+"Blood",
+"Muscle"
+],
+correct:0
+},
+
+{
+q:"Muscular tissue is specialised for:",
+a:[
+"Contraction",
+"Photosynthesis",
+"Water transport",
+"Food storage"
+],
+correct:0
+},
+
+{
+q:"Which tissue enables movement of body parts?",
+a:[
+"Muscular tissue",
+"Epithelial tissue",
+"Blood",
+"Adipose tissue"
+],
+correct:0
+},
+
+{
+q:"Which muscle is generally under voluntary control?",
+a:[
+"Skeletal muscle",
+"Smooth muscle",
+"Cardiac muscle",
+"None"
+],
+correct:0
+},
+
+{
+q:"Skeletal muscles are mainly attached to:",
+a:[
+"Bones",
+"Blood vessels",
+"Skin only",
+"Brain"
+],
+correct:0
+},
+
+{
+q:"Smooth muscles are also called:",
+a:[
+"Involuntary muscles",
+"Voluntary muscles",
+"Skeletal muscles",
+"Striated muscles only"
+],
+correct:0
+},
+
+{
+q:"Smooth muscles are commonly found in:",
+a:[
+"Walls of internal organs",
+"Attached directly to bones",
+"Hair only",
+"Teeth only"
+],
+correct:0
+},
+
+{
+q:"Cardiac muscle is found in:",
+a:[
+"Heart",
+"Stomach only",
+"Arms",
+"Legs"
+],
+correct:0
+},
+
+{
+q:"Cardiac muscles are responsible for:",
+a:[
+"Contraction of the heart",
+"Movement of bones",
+"Digestion only",
+"Skin protection"
+],
+correct:0
+},
+
+{
+q:"Cardiac muscle is generally:",
+a:[
+"Involuntary",
+"Voluntary",
+"Non-contractile",
+"Found only in bones"
+],
+correct:0
+},
+
+{
+q:"Which tissue receives and transmits nerve impulses?",
+a:[
+"Nervous tissue",
+"Connective tissue",
+"Epithelial tissue",
+"Adipose tissue"
+],
+correct:0
+},
+
+{
+q:"The structural and functional unit of nervous tissue is:",
+a:[
+"Neuron",
+"Platelet",
+"Muscle fibre",
+"RBC"
+],
+correct:0
+},
+
+{
+q:"The long extension of a neuron that carries impulses away from the cell body is:",
+a:[
+"Axon",
+"Dendrite",
+"Nucleus",
+"Cell wall"
+],
+correct:0
+},
+
+{
+q:"The extensions of a neuron that generally receive impulses are:",
+a:[
+"Dendrites",
+"Axons",
+"Platelets",
+"Muscle fibres"
+],
+correct:0
+},
+
+{
+q:"The cell body of a neuron contains:",
+a:[
+"Nucleus",
+"Haemoglobin",
+"Platelets",
+"Bone matrix"
+],
+correct:0
+},
+
+{
+q:"Which tissue helps coordinate activities of the body?",
+a:[
+"Nervous tissue",
+"Adipose tissue",
+"Bone",
+"Cartilage"
+],
+correct:0
+},
+
+{
+q:"Which tissue provides protection and covering?",
+a:[
+"Epithelial tissue",
+"Muscular tissue",
+"Blood",
+"Adipose tissue"
+],
+correct:0
+},
+
+{
+q:"Which tissue is responsible for body movement?",
+a:[
+"Muscular tissue",
+"Epithelial tissue",
+"Blood",
+"Cartilage"
+],
+correct:0
+},
+
+{
+q:"Which tissue connects different parts of the body?",
+a:[
+"Connective tissue",
+"Nervous tissue",
+"Muscular tissue",
+"Epithelial tissue"
+],
+correct:0
+},
+
+{
+q:"Which tissue acts as a protective covering over the body?",
+a:[
+"Epithelial tissue",
+"Blood",
+"Bone",
+"Muscle"
+],
+correct:0
+},
+
+{
+q:"Which of the following is NOT a connective tissue?",
+a:[
+"Nervous tissue",
+"Bone",
+"Blood",
+"Cartilage"
+],
+correct:0
+},
+
+{
+q:"Which tissue is responsible for transmitting information as nerve impulses?",
+a:[
+"Nervous tissue",
+"Adipose tissue",
+"Bone",
+"Cartilage"
+],
+correct:0
+},
+
+{
+q:"Which type of muscle is present in the walls of the intestine?",
+a:[
+"Smooth muscle",
+"Skeletal muscle",
+"Cardiac muscle",
+"Bone"
+],
+correct:0
+},
+
+{
+q:"Which type of muscle is present in the heart?",
+a:[
+"Cardiac muscle",
+"Smooth muscle",
+"Skeletal muscle",
+"Adipose tissue"
+],
+correct:0
+},
+
+{
+q:"Which tissue stores energy in the form of fat?",
+a:[
+"Adipose tissue",
+"Nervous tissue",
+"Muscular tissue",
+"Epithelial tissue"
+],
+correct:0
+},
+
+{
+q:"Which tissue transports oxygen and nutrients throughout the body?",
+a:[
+"Blood",
+"Cartilage",
+"Bone",
+"Epithelial tissue"
+],
+correct:0
+},
+
+{
+q:"Which tissue forms the framework that supports the body?",
+a:[
+"Bone",
+"Blood",
+"Adipose tissue",
+"Epithelial tissue"
+],
+correct:0
+},
+
+{
+q:"The four major types of animal tissues are:",
+a:[
+"Epithelial, connective, muscular and nervous",
+"Xylem, phloem, epidermis and cortex",
+"Root, stem, leaf and flower",
+"Bone, blood, xylem and muscle"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch13_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch13_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Structural Organisation of Animals assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 13 - Structural Organisation of Animals",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter13",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter13"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter13_Structural_Organisation_of_Animals_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter13"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+```
+s

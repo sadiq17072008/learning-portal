@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 23 - Visual Communication | EduSphere</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= CONCEPT BOX ================= */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* ================= FACTS ================= */
+
+.fact{
+    padding:15px;
+    margin:10px 0;
+    background:#0f172a;
+    border-radius:10px;
+    line-height:1.7;
+    color:#e2e8f0;
+}
+
+.fact strong{
+    color:#a78bfa;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        👁️ Chapter 23: Visual Communication
+    </h1>
+
+    <p>
+        Learn how information is communicated through
+        images, symbols, signs, colours, charts, graphs,
+        diagrams and other visual methods.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the
+        assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER23_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER23_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Meaning of Visual Communication
+    </div>
+
+    <div class="topic">
+        ✓ Importance of Visual Communication
+    </div>
+
+    <div class="topic">
+        ✓ Visual Symbols
+    </div>
+
+    <div class="topic">
+        ✓ Signs and Signals
+    </div>
+
+    <div class="topic">
+        ✓ Colours in Communication
+    </div>
+
+    <div class="topic">
+        ✓ Images and Pictures
+    </div>
+
+    <div class="topic">
+        ✓ Charts and Graphs
+    </div>
+
+    <div class="topic">
+        ✓ Diagrams
+    </div>
+
+    <div class="topic">
+        ✓ Maps
+    </div>
+
+    <div class="topic">
+        ✓ Posters
+    </div>
+
+    <div class="topic">
+        ✓ Infographics
+    </div>
+
+    <div class="topic">
+        ✓ Visual Media
+    </div>
+
+    <div class="topic">
+        ✓ Digital Communication
+    </div>
+
+    <div class="topic">
+        ✓ Advantages of Visual Communication
+    </div>
+
+    <div class="topic">
+        ✓ Limitations of Visual Communication
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT CONCEPTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🔬 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                1. Visual Communication
+            </strong>
+
+            <br>
+
+            Visual communication is the process of
+            conveying information or ideas through
+            visual elements such as images, symbols,
+            signs, diagrams and graphics.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Visual Symbols
+            </strong>
+
+            <br>
+
+            Visual symbols represent an idea, object
+            or instruction using a simple visual form.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Signs
+            </strong>
+
+            <br>
+
+            Signs communicate specific information
+            through recognizable visual forms.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Signals
+            </strong>
+
+            <br>
+
+            Signals provide information or warnings
+            that guide people's actions or behaviour.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Images
+            </strong>
+
+            <br>
+
+            Images can communicate information quickly
+            and can make ideas easier to understand.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Colours
+            </strong>
+
+            <br>
+
+            Colours can communicate meanings, highlight
+            information and attract attention.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Charts
+            </strong>
+
+            <br>
+
+            Charts present information in a visual form
+            that makes comparison and understanding easier.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Graphs
+            </strong>
+
+            <br>
+
+            Graphs represent numerical or statistical
+            information visually.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Diagrams
+            </strong>
+
+            <br>
+
+            Diagrams represent structures, processes
+            or relationships using visual elements.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Maps
+            </strong>
+
+            <br>
+
+            Maps communicate geographical information
+            through visual representation.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Posters
+            </strong>
+
+            <br>
+
+            Posters combine text and visual elements
+            to communicate a message effectively.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Infographics
+            </strong>
+
+            <br>
+
+            Infographics combine graphics, text and
+            data to communicate information clearly.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Visual Media
+            </strong>
+
+            <br>
+
+            Visual media includes photographs, diagrams,
+            charts, videos, animations and graphics.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Digital Visual Communication
+            </strong>
+
+            <br>
+
+            Digital devices allow visual information to
+            be created, edited, stored and shared easily.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Importance of Visual Communication
+            </strong>
+
+            <br>
+
+            Visual communication can make complex
+            information easier to understand and remember.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Universal Symbols
+            </strong>
+
+            <br>
+
+            Common symbols can communicate information
+            across language barriers.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Road Signs
+            </strong>
+
+            <br>
+
+            Road signs provide information, warnings,
+            directions and instructions to road users.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. Data Visualization
+            </strong>
+
+            <br>
+
+            Data visualization represents data using
+            charts, graphs and other visual methods.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Visual Design
+            </strong>
+
+            <br>
+
+            Visual design involves arranging text,
+            images, shapes, colours and space to
+            communicate information effectively.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Effective Visual Communication
+            </strong>
+
+            <br>
+
+            Effective visual communication should be
+            clear, simple, accurate and appropriate
+            for its intended audience.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT FACTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Facts
+    </h2>
+
+    <div class="fact">
+
+        <strong>Visual Communication:</strong>
+
+        It communicates information mainly through
+        visual elements.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Symbols:</strong>
+
+        Symbols can represent information using
+        simple visual forms.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Charts and Graphs:</strong>
+
+        They help present and compare information
+        visually.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Diagrams:</strong>
+
+        Diagrams can make structures and processes
+        easier to understand.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Maps:</strong>
+
+        Maps are used to represent geographical
+        information.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Posters:</strong>
+
+        Posters use text and visual elements to
+        attract attention and communicate messages.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Infographics:</strong>
+
+        Infographics combine information and graphics
+        in a compact visual format.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Colour:</strong>
+
+        Colour can help highlight important
+        information and communicate meaning.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Digital Media:</strong>
+
+        Digital technology makes it easier to create,
+        edit and share visual information.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Clarity:</strong>
+
+        A good visual message should be simple,
+        clear and easy to understand.
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Visual Communication Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter24.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 24
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 23 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is visual communication?",
+a:[
+"Communication through visual elements",
+"Communication only through sound",
+"Communication only through writing",
+"Communication without information"
+],
+correct:0
+},
+
+{
+q:"Which of the following is an example of visual communication?",
+a:[
+"Road sign",
+"Telephone conversation",
+"Spoken speech",
+"Audio recording"
+],
+correct:0
+},
+
+{
+q:"What is the main purpose of a visual symbol?",
+a:[
+"To represent an idea or information visually",
+"To produce sound",
+"To store electricity",
+"To measure temperature"
+],
+correct:0
+},
+
+{
+q:"Which of the following can communicate information without words?",
+a:[
+"Symbol",
+"Paragraph",
+"Essay",
+"Letter"
+],
+correct:0
+},
+
+{
+q:"Road signs are mainly used to:",
+a:[
+"Provide information and instructions",
+"Decorate roads",
+"Increase traffic",
+"Produce electricity"
+],
+correct:0
+},
+
+{
+q:"Which visual element can be used to attract attention?",
+a:[
+"Colour",
+"Silence",
+"Sound only",
+"Smell"
+],
+correct:0
+},
+
+{
+q:"Charts are useful for:",
+a:[
+"Presenting information visually",
+"Producing sound",
+"Measuring temperature",
+"Creating electricity"
+],
+correct:0
+},
+
+{
+q:"Graphs are commonly used to represent:",
+a:[
+"Data",
+"Sound waves only",
+"Smells",
+"Food"
+],
+correct:0
+},
+
+{
+q:"A diagram can be used to show:",
+a:[
+"Structure or process",
+"Only sound",
+"Only taste",
+"Only smell"
+],
+correct:0
+},
+
+{
+q:"Maps are mainly used to represent:",
+a:[
+"Geographical information",
+"Chemical reactions only",
+"Sound",
+"Taste"
+],
+correct:0
+},
+
+{
+q:"A poster usually combines:",
+a:[
+"Text and visual elements",
+"Only sound",
+"Only smell",
+"Only numbers"
+],
+correct:0
+},
+
+{
+q:"What is an infographic?",
+a:[
+"A visual presentation of information and data",
+"An audio recording",
+"A type of engine",
+"A musical instrument"
+],
+correct:0
+},
+
+{
+q:"Which is an example of digital visual communication?",
+a:[
+"Digital infographic",
+"Spoken conversation",
+"Telephone call",
+"Audio-only recording"
+],
+correct:0
+},
+
+{
+q:"Which device can be used to display visual information?",
+a:[
+"Computer",
+"Microphone only",
+"Speaker only",
+"Thermometer only"
+],
+correct:0
+},
+
+{
+q:"A photograph is an example of:",
+a:[
+"Visual media",
+"Audio media",
+"Chemical media",
+"Thermal media"
+],
+correct:0
+},
+
+{
+q:"Which of the following can help explain a complex process?",
+a:[
+"Diagram",
+"Noise",
+"Smell",
+"Taste"
+],
+correct:0
+},
+
+{
+q:"Why is visual communication useful?",
+a:[
+"It can make information easier to understand",
+"It always makes information more complicated",
+"It prevents understanding",
+"It removes all information"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a visual symbol?",
+a:[
+"Warning sign",
+"Spoken sentence",
+"Telephone conversation",
+"Sound recording"
+],
+correct:0
+},
+
+{
+q:"What can colours help communicate?",
+a:[
+"Meaning and emphasis",
+"Only temperature",
+"Only weight",
+"Only sound"
+],
+correct:0
+},
+
+{
+q:"A red colour is commonly used in many warning systems to indicate:",
+a:[
+"Danger or stop",
+"Silence",
+"Food",
+"Sleep"
+],
+correct:0
+},
+
+{
+q:"Which visual tool is particularly useful for comparing quantities?",
+a:[
+"Bar graph",
+"Audio recording",
+"Telephone",
+"Microphone"
+],
+correct:0
+},
+
+{
+q:"A line graph is useful for showing:",
+a:[
+"Changes or trends",
+"Only photographs",
+"Only road signs",
+"Only sounds"
+],
+correct:0
+},
+
+{
+q:"Which visual representation is useful for showing location?",
+a:[
+"Map",
+"Audio file",
+"Telephone call",
+"Speech"
+],
+correct:0
+},
+
+{
+q:"What is the purpose of a traffic signal?",
+a:[
+"To control and guide traffic",
+"To provide entertainment",
+"To produce electricity",
+"To display advertisements only"
+],
+correct:0
+},
+
+{
+q:"Which is an advantage of visual communication?",
+a:[
+"Information can be understood quickly",
+"It always requires long explanations",
+"It cannot communicate data",
+"It cannot use symbols"
+],
+correct:0
+},
+
+{
+q:"Visual communication can be especially useful when:",
+a:[
+"Information needs to be understood quickly",
+"No information is available",
+"Nothing needs to be communicated",
+"Only sound is required"
+],
+correct:0
+},
+
+{
+q:"Which of the following can help overcome language barriers?",
+a:[
+"Universal visual symbols",
+"Long paragraphs",
+"Complex sentences",
+"Audio-only messages"
+],
+correct:0
+},
+
+{
+q:"What should an effective visual message be?",
+a:[
+"Clear and simple",
+"Confusing",
+"Unnecessarily complicated",
+"Unreadable"
+],
+correct:0
+},
+
+{
+q:"What does data visualization mean?",
+a:[
+"Representing data visually",
+"Deleting data",
+"Hiding information",
+"Speaking data aloud"
+],
+correct:0
+},
+
+{
+q:"Which is a common data visualization method?",
+a:[
+"Pie chart",
+"Telephone call",
+"Audio tape",
+"Microphone"
+],
+correct:0
+},
+
+{
+q:"A pie chart is useful for showing:",
+a:[
+"Parts of a whole",
+"Only geographical locations",
+"Only road directions",
+"Only photographs"
+],
+correct:0
+},
+
+{
+q:"Which visual medium can combine text, images and data?",
+a:[
+"Infographic",
+"Telephone call",
+"Audio recording",
+"Voice message"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a form of visual media?",
+a:[
+"Video",
+"Audio-only recording",
+"Telephone conversation",
+"Voice call"
+],
+correct:0
+},
+
+{
+q:"Animation is useful because it can:",
+a:[
+"Show movement and processes visually",
+"Only produce smell",
+"Only measure mass",
+"Only produce electricity"
+],
+correct:0
+},
+
+{
+q:"Which of the following is important in visual design?",
+a:[
+"Arrangement of visual elements",
+"Making everything unreadable",
+"Removing all images",
+"Using random information"
+],
+correct:0
+},
+
+{
+q:"Why should visual information be simple?",
+a:[
+"To improve understanding",
+"To create confusion",
+"To hide information",
+"To prevent communication"
+],
+correct:0
+},
+
+{
+q:"Which is an example of a public information visual?",
+a:[
+"Safety sign",
+"Private telephone call",
+"Audio conversation",
+"Voice recording"
+],
+correct:0
+},
+
+{
+q:"Which visual element can separate or organize information?",
+a:[
+"Shapes and lines",
+"Sound only",
+"Smell",
+"Taste"
+],
+correct:0
+},
+
+{
+q:"Which of the following can be used to show directions?",
+a:[
+"Arrow",
+"Paragraph",
+"Audio recording",
+"Voice message"
+],
+correct:0
+},
+
+{
+q:"A warning symbol is designed mainly to:",
+a:[
+"Alert people to possible danger",
+"Provide food",
+"Measure distance",
+"Produce electricity"
+],
+correct:0
+},
+
+{
+q:"Which visual communication method is useful for presenting statistics?",
+a:[
+"Graph",
+"Telephone",
+"Microphone",
+"Voice recording"
+],
+correct:0
+},
+
+{
+q:"Which visual representation is useful for showing a sequence of steps?",
+a:[
+"Flow diagram",
+"Audio recording",
+"Photograph only",
+"Telephone call"
+],
+correct:0
+},
+
+{
+q:"Visual communication is commonly used in:",
+a:[
+"Education, advertising, media and public information",
+"Only agriculture",
+"Only cooking",
+"Only sports"
+],
+correct:0
+},
+
+{
+q:"Which is an advantage of symbols?",
+a:[
+"They can communicate information quickly",
+"They always require long sentences",
+"They cannot be recognized",
+"They cannot represent ideas"
+],
+correct:0
+},
+
+{
+q:"Which factor can affect the effectiveness of a visual message?",
+a:[
+"Clarity",
+"Confusion",
+"Poor arrangement",
+"Unreadable text"
+],
+correct:0
+},
+
+{
+q:"Which is important when designing a poster?",
+a:[
+"Clear message and suitable visual elements",
+"Making the message impossible to read",
+"Using unrelated information",
+"Removing the main message"
+],
+correct:0
+},
+
+{
+q:"Which technology is commonly used to create digital graphics?",
+a:[
+"Computer",
+"Stone",
+"Wood only",
+"Paper only"
+],
+correct:0
+},
+
+{
+q:"Which visual method can present a large amount of information in a compact form?",
+a:[
+"Infographic",
+"Telephone conversation",
+"Audio-only message",
+"Spoken conversation"
+],
+correct:0
+},
+
+{
+q:"What is the main goal of visual communication?",
+a:[
+"To communicate information effectively through visuals",
+"To hide information",
+"To create confusion",
+"To prevent understanding"
+],
+correct:0
+},
+
+{
+q:"Which statement about visual communication is correct?",
+a:[
+"It can make information easier to understand and remember",
+"It can never communicate information",
+"It is useful only for decoration",
+"It cannot represent data"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch23_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch23_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Visual Communication assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 23 - Visual Communication",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter23",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter23"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter23_Visual_Communication_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter23"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

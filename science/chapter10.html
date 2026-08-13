@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 10 - Types of Chemical Reactions | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#f5f3ff;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= REACTION BOX ================= */
+
+.reaction-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.reaction{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.6;
+}
+
+.reaction strong{
+    color:#38bdf8;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        ⚗️ Chapter 10: Types of Chemical Reactions
+    </h1>
+
+    <p>
+        Learn about chemical reactions, chemical equations,
+        combination reactions, decomposition reactions,
+        displacement reactions, double displacement
+        reactions, oxidation, reduction and redox reactions.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER10_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER10_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Chemical Reactions
+    </div>
+
+    <div class="topic">
+        ✓ Chemical Equations
+    </div>
+
+    <div class="topic">
+        ✓ Balanced Chemical Equations
+    </div>
+
+    <div class="topic">
+        ✓ Combination Reactions
+    </div>
+
+    <div class="topic">
+        ✓ Decomposition Reactions
+    </div>
+
+    <div class="topic">
+        ✓ Thermal Decomposition
+    </div>
+
+    <div class="topic">
+        ✓ Electrolytic Decomposition
+    </div>
+
+    <div class="topic">
+        ✓ Photochemical Decomposition
+    </div>
+
+    <div class="topic">
+        ✓ Displacement Reactions
+    </div>
+
+    <div class="topic">
+        ✓ Double Displacement Reactions
+    </div>
+
+    <div class="topic">
+        ✓ Precipitation Reactions
+    </div>
+
+    <div class="topic">
+        ✓ Oxidation
+    </div>
+
+    <div class="topic">
+        ✓ Reduction
+    </div>
+
+    <div class="topic">
+        ✓ Redox Reactions
+    </div>
+
+    <div class="topic">
+        ✓ Corrosion
+    </div>
+
+    <div class="topic">
+        ✓ Rancidity
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT REACTIONS ================= -->
+
+<div class="card">
+
+    <h2>
+        ⚗️ Important Chemical Reactions
+    </h2>
+
+    <div class="reaction-box">
+
+        <div class="reaction">
+
+            <strong>
+                1. Combination Reaction
+            </strong>
+
+            <br><br>
+
+            CaO + H₂O → Ca(OH)₂
+
+            <br><br>
+
+            Two or more substances combine to form
+            a single product.
+
+        </div>
+
+
+        <div class="reaction">
+
+            <strong>
+                2. Decomposition Reaction
+            </strong>
+
+            <br><br>
+
+            CaCO₃ → CaO + CO₂
+
+            <br><br>
+
+            A single compound breaks down into
+            two or more simpler substances.
+
+        </div>
+
+
+        <div class="reaction">
+
+            <strong>
+                3. Displacement Reaction
+            </strong>
+
+            <br><br>
+
+            Zn + CuSO₄ → ZnSO₄ + Cu
+
+            <br><br>
+
+            A more reactive element displaces a
+            less reactive element.
+
+        </div>
+
+
+        <div class="reaction">
+
+            <strong>
+                4. Double Displacement Reaction
+            </strong>
+
+            <br><br>
+
+            Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl
+
+            <br><br>
+
+            Two compounds exchange their ions.
+
+        </div>
+
+
+        <div class="reaction">
+
+            <strong>
+                5. Oxidation
+            </strong>
+
+            <br><br>
+
+            2Cu + O₂ → 2CuO
+
+            <br><br>
+
+            Oxidation commonly involves addition
+            of oxygen or removal of hydrogen.
+
+        </div>
+
+
+        <div class="reaction">
+
+            <strong>
+                6. Reduction
+            </strong>
+
+            <br><br>
+
+            CuO + H₂ → Cu + H₂O
+
+            <br><br>
+
+            Reduction commonly involves removal
+            of oxygen or addition of hydrogen.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chemical Reactions Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter11.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 11
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 10 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is a chemical reaction?",
+a:[
+"A process in which new substances are formed",
+"A process in which only physical state changes",
+"A process in which no substance changes",
+"Only mixing two substances"
+],
+correct:0
+},
+
+{
+q:"Which of the following is evidence of a chemical reaction?",
+a:[
+"Formation of a new substance",
+"Only cutting paper",
+"Melting ice",
+"Breaking glass"
+],
+correct:0
+},
+
+{
+q:"A chemical equation represents:",
+a:[
+"A chemical reaction using symbols and formulae",
+"Only a physical change",
+"Only temperature",
+"Only pressure"
+],
+correct:0
+},
+
+{
+q:"Why are chemical equations balanced?",
+a:[
+"To obey the law of conservation of mass",
+"To make them longer",
+"To change the products",
+"To increase temperature"
+],
+correct:0
+},
+
+{
+q:"Which law is followed when chemical equations are balanced?",
+a:[
+"Law of conservation of mass",
+"Law of gravity",
+"Law of reflection",
+"Boyle's law"
+],
+correct:0
+},
+
+{
+q:"A reaction in which two or more substances combine to form one product is:",
+a:[
+"Combination reaction",
+"Decomposition reaction",
+"Displacement reaction",
+"Double displacement reaction"
+],
+correct:0
+},
+
+{
+q:"Which is a combination reaction?",
+a:[
+"CaO + H₂O → Ca(OH)₂",
+"CaCO₃ → CaO + CO₂",
+"Zn + CuSO₄ → ZnSO₄ + Cu",
+"AgNO₃ + NaCl → AgCl + NaNO₃"
+],
+correct:0
+},
+
+{
+q:"In a combination reaction, the number of products is generally:",
+a:[
+"One",
+"Two",
+"Three",
+"Four"
+],
+correct:0
+},
+
+{
+q:"A reaction in which one compound breaks into two or more simpler substances is:",
+a:[
+"Decomposition reaction",
+"Combination reaction",
+"Displacement reaction",
+"Neutralization reaction"
+],
+correct:0
+},
+
+{
+q:"Which is an example of decomposition?",
+a:[
+"CaCO₃ → CaO + CO₂",
+"CaO + H₂O → Ca(OH)₂",
+"Zn + CuSO₄ → ZnSO₄ + Cu",
+"NaOH + HCl → NaCl + H₂O"
+],
+correct:0
+},
+
+{
+q:"Thermal decomposition occurs due to:",
+a:[
+"Heat",
+"Light only",
+"Electricity only",
+"Pressure only"
+],
+correct:0
+},
+
+{
+q:"Electrolytic decomposition occurs due to:",
+a:[
+"Electricity",
+"Heat only",
+"Light only",
+"Sound"
+],
+correct:0
+},
+
+{
+q:"Photochemical decomposition occurs due to:",
+a:[
+"Light",
+"Sound",
+"Pressure",
+"Magnetism"
+],
+correct:0
+},
+
+{
+q:"Silver chloride decomposes in sunlight to form:",
+a:[
+"Silver and chlorine",
+"Silver oxide and chlorine",
+"Silver nitrate and chlorine",
+"Silver and oxygen"
+],
+correct:0
+},
+
+{
+q:"A reaction in which one element displaces another element from its compound is:",
+a:[
+"Displacement reaction",
+"Combination reaction",
+"Decomposition reaction",
+"Double displacement reaction"
+],
+correct:0
+},
+
+{
+q:"Which is a displacement reaction?",
+a:[
+"Zn + CuSO₄ → ZnSO₄ + Cu",
+"CaCO₃ → CaO + CO₂",
+"CaO + H₂O → Ca(OH)₂",
+"Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl"
+],
+correct:0
+},
+
+{
+q:"In Zn + CuSO₄ → ZnSO₄ + Cu, which element is displaced?",
+a:[
+"Copper",
+"Zinc",
+"Sulfur",
+"Oxygen"
+],
+correct:0
+},
+
+{
+q:"A more reactive element can displace:",
+a:[
+"A less reactive element",
+"A more reactive element",
+"Only a noble gas",
+"Only oxygen"
+],
+correct:0
+},
+
+{
+q:"A reaction involving exchange of ions between two compounds is:",
+a:[
+"Double displacement reaction",
+"Combination reaction",
+"Decomposition reaction",
+"Single displacement only"
+],
+correct:0
+},
+
+{
+q:"Which is a double displacement reaction?",
+a:[
+"Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl",
+"Zn + CuSO₄ → ZnSO₄ + Cu",
+"CaCO₃ → CaO + CO₂",
+"CaO + H₂O → Ca(OH)₂"
+],
+correct:0
+},
+
+{
+q:"In a precipitation reaction, an insoluble:",
+a:[
+"Precipitate is formed",
+"Gas is always formed",
+"Element disappears",
+"Solvent disappears"
+],
+correct:0
+},
+
+{
+q:"BaSO₄ formed in the reaction between BaCl₂ and Na₂SO₄ is:",
+a:[
+"A precipitate",
+"A gas",
+"An acid",
+"A solvent"
+],
+correct:0
+},
+
+{
+q:"Oxidation commonly involves:",
+a:[
+"Addition of oxygen",
+"Removal of oxygen",
+"Addition of nitrogen only",
+"Removal of carbon only"
+],
+correct:0
+},
+
+{
+q:"Reduction commonly involves:",
+a:[
+"Removal of oxygen",
+"Addition of oxygen",
+"Addition of carbon dioxide",
+"Formation of a precipitate only"
+],
+correct:0
+},
+
+{
+q:"A reaction in which oxidation and reduction occur together is called:",
+a:[
+"Redox reaction",
+"Combination reaction only",
+"Decomposition only",
+"Precipitation only"
+],
+correct:0
+},
+
+{
+q:"In the reaction 2Cu + O₂ → 2CuO, copper is:",
+a:[
+"Oxidised",
+"Reduced",
+"Unchanged",
+"Dissolved"
+],
+correct:0
+},
+
+{
+q:"In CuO + H₂ → Cu + H₂O, CuO is:",
+a:[
+"Reduced",
+"Oxidised",
+"Unchanged",
+"Evaporated"
+],
+correct:0
+},
+
+{
+q:"The substance that gets oxidised acts as a:",
+a:[
+"Reducing agent",
+"Solvent",
+"Precipitate",
+"Catalyst only"
+],
+correct:0
+},
+
+{
+q:"The substance that gets reduced acts as an:",
+a:[
+"Oxidising agent",
+"Solvent",
+"Indicator",
+"Precipitate"
+],
+correct:0
+},
+
+{
+q:"Rusting of iron is an example of:",
+a:[
+"Oxidation",
+"Reduction only",
+"Combination only",
+"Decomposition only"
+],
+correct:0
+},
+
+{
+q:"Rusting of iron requires oxygen and:",
+a:[
+"Moisture",
+"Only nitrogen",
+"Only carbon dioxide",
+"Only sunlight"
+],
+correct:0
+},
+
+{
+q:"The slow destruction of metals by environmental reactions is called:",
+a:[
+"Corrosion",
+"Combustion",
+"Neutralisation",
+"Precipitation"
+],
+correct:0
+},
+
+{
+q:"Rancidity is mainly caused by:",
+a:[
+"Oxidation of fats and oils",
+"Reduction of water",
+"Melting of salt",
+"Decomposition of glass"
+],
+correct:0
+},
+
+{
+q:"Which method helps prevent rancidity?",
+a:[
+"Adding antioxidants",
+"Adding water",
+"Heating continuously",
+"Adding sand"
+],
+correct:0
+},
+
+{
+q:"Food packets are sometimes filled with nitrogen to:",
+a:[
+"Prevent oxidation",
+"Increase oxidation",
+"Increase water content",
+"Make food acidic"
+],
+correct:0
+},
+
+{
+q:"Painting iron articles helps prevent:",
+a:[
+"Corrosion",
+"Boiling",
+"Melting",
+"Decomposition"
+],
+correct:0
+},
+
+{
+q:"Galvanisation is used to protect iron from:",
+a:[
+"Corrosion",
+"Freezing",
+"Evaporation",
+"Distillation"
+],
+correct:0
+},
+
+{
+q:"Which gas is often evolved when an acid reacts with a metal?",
+a:[
+"Hydrogen",
+"Oxygen",
+"Nitrogen",
+"Carbon monoxide"
+],
+correct:0
+},
+
+{
+q:"A reaction in which heat is released is called:",
+a:[
+"Exothermic reaction",
+"Endothermic reaction",
+"Decomposition",
+"Precipitation"
+],
+correct:0
+},
+
+{
+q:"A reaction in which heat is absorbed is called:",
+a:[
+"Endothermic reaction",
+"Exothermic reaction",
+"Displacement",
+"Redox only"
+],
+correct:0
+},
+
+{
+q:"Burning of a substance is generally:",
+a:[
+"Exothermic",
+"Endothermic",
+"Always neutral",
+"Not a chemical reaction"
+],
+correct:0
+},
+
+{
+q:"Respiration is generally considered:",
+a:[
+"Exothermic",
+"Endothermic",
+"Only physical",
+"Only decomposition"
+],
+correct:0
+},
+
+{
+q:"Which symbol is commonly used to show a precipitate?",
+a:[
+"(s)",
+"(g)",
+"(aq)",
+"(l)"
+],
+correct:0
+},
+
+{
+q:"The symbol (aq) in a chemical equation represents:",
+a:[
+"Aqueous solution",
+"Solid",
+"Gas",
+"Liquid metal"
+],
+correct:0
+},
+
+{
+q:"The symbol (g) represents:",
+a:[
+"Gas",
+"Solid",
+"Liquid",
+"Aqueous solution"
+],
+correct:0
+},
+
+{
+q:"The symbol (s) represents:",
+a:[
+"Solid",
+"Solution",
+"Steam",
+"Salt water"
+],
+correct:0
+},
+
+{
+q:"The symbol (l) represents:",
+a:[
+"Liquid",
+"Light",
+"Low pressure",
+"Layer"
+],
+correct:0
+},
+
+{
+q:"Which reaction has the general form AB → A + B?",
+a:[
+"Decomposition",
+"Combination",
+"Displacement",
+"Double displacement"
+],
+correct:0
+},
+
+{
+q:"Which reaction has the general form A + B → AB?",
+a:[
+"Combination",
+"Decomposition",
+"Displacement",
+"Double displacement"
+],
+correct:0
+},
+
+{
+q:"Which reaction has the general form A + BC → AC + B?",
+a:[
+"Displacement",
+"Combination",
+"Decomposition",
+"Double displacement"
+],
+correct:0
+},
+
+{
+q:"Which reaction has the general form AB + CD → AD + CB?",
+a:[
+"Double displacement",
+"Combination",
+"Decomposition",
+"Displacement"
+],
+correct:0
+},
+
+{
+q:"Which statement is correct about a balanced chemical equation?",
+a:[
+"The number of atoms of each element is equal on both sides",
+"The number of molecules must always be equal",
+"The products must weigh more",
+"The reactants must disappear completely"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch10_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch10_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Types of Chemical Reactions assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 10 - Types of Chemical Reactions",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter10",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter10"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter10_Chemical_Reactions_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter10"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

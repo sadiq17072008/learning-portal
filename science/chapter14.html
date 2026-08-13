@@ -1,0 +1,2323 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 14 - Transportation in Plants and Circulation in Animals | EduSphere</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#059669,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ecfdf5;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= CONCEPT BOX ================= */
+
+.animal-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.animal-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #10b981;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.animal-item strong{
+    color:#34d399;
+}
+
+/* ================= FACTS ================= */
+
+.fact{
+    padding:15px;
+    margin:10px 0;
+    background:#0f172a;
+    border-radius:10px;
+    line-height:1.7;
+    color:#e2e8f0;
+}
+
+.fact strong{
+    color:#34d399;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#34d399;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#10b981;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#34d399;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        🌱 Chapter 14: Transportation in Plants and Circulation in Animals
+    </h1>
+
+    <p>
+        Learn how water, minerals and food are transported
+        in plants and understand blood circulation,
+        blood vessels, the heart and the circulatory system
+        in animals.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER14_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER14_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Transportation in Plants
+    </div>
+
+    <div class="topic">
+        ✓ Transport of Water
+    </div>
+
+    <div class="topic">
+        ✓ Transport of Minerals
+    </div>
+
+    <div class="topic">
+        ✓ Xylem
+    </div>
+
+    <div class="topic">
+        ✓ Phloem
+    </div>
+
+    <div class="topic">
+        ✓ Transpiration
+    </div>
+
+    <div class="topic">
+        ✓ Translocation
+    </div>
+
+    <div class="topic">
+        ✓ Circulation in Animals
+    </div>
+
+    <div class="topic">
+        ✓ Blood
+    </div>
+
+    <div class="topic">
+        ✓ Blood Vessels
+    </div>
+
+    <div class="topic">
+        ✓ Heart
+    </div>
+
+    <div class="topic">
+        ✓ Pulmonary Circulation
+    </div>
+
+    <div class="topic">
+        ✓ Systemic Circulation
+    </div>
+
+    <div class="topic">
+        ✓ Double Circulation
+    </div>
+
+    <div class="topic">
+        ✓ Lymphatic System
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT CONCEPTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🔬 Important Concepts
+    </h2>
+
+    <div class="animal-box">
+
+        <div class="animal-item">
+
+            <strong>
+                1. Xylem
+            </strong>
+
+            <br>
+
+            Xylem is the vascular tissue responsible
+            mainly for transporting water and dissolved
+            minerals from the roots to the aerial parts
+            of the plant.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                2. Phloem
+            </strong>
+
+            <br>
+
+            Phloem transports prepared food from the
+            leaves to different parts of the plant.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                3. Transpiration
+            </strong>
+
+            <br>
+
+            Transpiration is the loss of water in the
+            form of water vapour mainly through the
+            stomata of leaves.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                4. Translocation
+            </strong>
+
+            <br>
+
+            Translocation is the transport of food
+            materials through the phloem from source
+            regions to other parts of the plant.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                5. Blood
+            </strong>
+
+            <br>
+
+            Blood is a fluid connective tissue that
+            transports oxygen, nutrients, hormones
+            and waste materials.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                6. Heart
+            </strong>
+
+            <br>
+
+            The heart is a muscular organ that pumps
+            blood throughout the body.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                7. Blood Vessels
+            </strong>
+
+            <br>
+
+            Arteries, veins and capillaries are the
+            major types of blood vessels involved
+            in circulation.
+
+        </div>
+
+
+        <div class="animal-item">
+
+            <strong>
+                8. Double Circulation
+            </strong>
+
+            <br>
+
+            In double circulation, blood passes through
+            the heart twice during one complete cycle
+            of circulation.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT FACTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Facts
+    </h2>
+
+    <div class="fact">
+
+        <strong>Xylem:</strong>
+
+        Transports water and minerals mainly from
+        roots towards the aerial parts of plants.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Phloem:</strong>
+
+        Transports food produced during photosynthesis
+        to different parts of the plant.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Transpiration:</strong>
+
+        Loss of water vapour from the aerial parts
+        of plants, mainly through stomata.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Arteries:</strong>
+
+        Blood vessels that generally carry blood
+        away from the heart.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Veins:</strong>
+
+        Blood vessels that generally carry blood
+        towards the heart.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Capillaries:</strong>
+
+        Very small blood vessels where exchange of
+        materials between blood and tissues occurs.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Heart:</strong>
+
+        Pumps blood through the circulatory system.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Circulation:</strong>
+
+        The continuous movement of blood through
+        the heart and blood vessels.
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Transportation and Circulation Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter15.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 15
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 14 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is transportation in plants?",
+a:[
+"Movement of water, minerals and food within the plant",
+"Only movement of leaves",
+"Only movement of roots",
+"Production of flowers"
+],
+correct:0
+},
+
+{
+q:"Which tissue transports water in plants?",
+a:[
+"Xylem",
+"Phloem",
+"Parenchyma",
+"Collenchyma"
+],
+correct:0
+},
+
+{
+q:"Which tissue transports food in plants?",
+a:[
+"Phloem",
+"Xylem",
+"Meristem",
+"Epidermis"
+],
+correct:0
+},
+
+{
+q:"Water is mainly absorbed by plants through:",
+a:[
+"Root hairs",
+"Flowers",
+"Fruits",
+"Leaves"
+],
+correct:0
+},
+
+{
+q:"Root hairs are mainly involved in:",
+a:[
+"Absorption of water and minerals",
+"Photosynthesis",
+"Food storage only",
+"Flower formation"
+],
+correct:0
+},
+
+{
+q:"The upward movement of water through xylem is helped by:",
+a:[
+"Transpiration pull",
+"Photosynthesis only",
+"Digestion",
+"Respiration only"
+],
+correct:0
+},
+
+{
+q:"What is transpiration?",
+a:[
+"Loss of water vapour from plant surfaces",
+"Absorption of food",
+"Production of oxygen only",
+"Transport of food through phloem"
+],
+correct:0
+},
+
+{
+q:"Transpiration mainly occurs through:",
+a:[
+"Stomata",
+"Roots",
+"Seeds",
+"Fruits"
+],
+correct:0
+},
+
+{
+q:"The tiny openings present mainly on leaves are called:",
+a:[
+"Stomata",
+"Nephrons",
+"Alveoli",
+"Villi"
+],
+correct:0
+},
+
+{
+q:"Which cells control the opening and closing of stomata?",
+a:[
+"Guard cells",
+"Root cells",
+"Xylem cells",
+"Blood cells"
+],
+correct:0
+},
+
+{
+q:"The main function of stomata is:",
+a:[
+"Gas exchange and transpiration",
+"Food storage",
+"Water absorption from soil",
+"Seed formation"
+],
+correct:0
+},
+
+{
+q:"Which tissue mainly carries water from roots to leaves?",
+a:[
+"Xylem",
+"Phloem",
+"Stomata",
+"Guard cells"
+],
+correct:0
+},
+
+{
+q:"Which tissue carries food from leaves to other parts?",
+a:[
+"Phloem",
+"Xylem",
+"Root hairs",
+"Stomata"
+],
+correct:0
+},
+
+{
+q:"The movement of food through phloem is called:",
+a:[
+"Translocation",
+"Transpiration",
+"Diffusion",
+"Filtration"
+],
+correct:0
+},
+
+{
+q:"Which process helps create a pull for water movement in plants?",
+a:[
+"Transpiration",
+"Digestion",
+"Blood circulation",
+"Excretion"
+],
+correct:0
+},
+
+{
+q:"Which mineral nutrient is commonly absorbed by plant roots?",
+a:[
+"Nitrate",
+"Oxygen only",
+"Carbon dioxide",
+"Glucose"
+],
+correct:0
+},
+
+{
+q:"Water and minerals are transported mainly through:",
+a:[
+"Xylem",
+"Phloem",
+"Flowers",
+"Fruits"
+],
+correct:0
+},
+
+{
+q:"Food transported through phloem is mainly produced in:",
+a:[
+"Leaves",
+"Roots only",
+"Flowers only",
+"Seeds only"
+],
+correct:0
+},
+
+{
+q:"The food produced by plants during photosynthesis is mainly:",
+a:[
+"Carbohydrates",
+"Proteins only",
+"Minerals",
+"Water"
+],
+correct:0
+},
+
+{
+q:"Which structure increases the absorbing surface of roots?",
+a:[
+"Root hairs",
+"Stomata",
+"Flowers",
+"Fruits"
+],
+correct:0
+},
+
+{
+q:"What is circulation?",
+a:[
+"Movement of blood through the circulatory system",
+"Movement of food through phloem",
+"Loss of water from leaves",
+"Absorption of minerals"
+],
+correct:0
+},
+
+{
+q:"Which organ pumps blood throughout the body?",
+a:[
+"Heart",
+"Lung",
+"Kidney",
+"Stomach"
+],
+correct:0
+},
+
+{
+q:"The heart is mainly made of:",
+a:[
+"Cardiac muscle",
+"Smooth muscle only",
+"Bone",
+"Cartilage"
+],
+correct:0
+},
+
+{
+q:"Which blood vessels carry blood away from the heart?",
+a:[
+"Arteries",
+"Veins",
+"Capillaries",
+"Lymph vessels"
+],
+correct:0
+},
+
+{
+q:"Which blood vessels generally carry blood towards the heart?",
+a:[
+"Veins",
+"Arteries",
+"Capillaries",
+"Aorta only"
+],
+correct:0
+},
+
+{
+q:"Which are the smallest blood vessels?",
+a:[
+"Capillaries",
+"Arteries",
+"Veins",
+"Aorta"
+],
+correct:0
+},
+
+{
+q:"Exchange of materials between blood and tissues mainly occurs through:",
+a:[
+"Capillaries",
+"Arteries",
+"Veins",
+"Heart chambers"
+],
+correct:0
+},
+
+{
+q:"Which blood component transports oxygen?",
+a:[
+"Red blood cells",
+"White blood cells",
+"Platelets",
+"Plasma only"
+],
+correct:0
+},
+
+{
+q:"The pigment that carries oxygen in red blood cells is:",
+a:[
+"Haemoglobin",
+"Chlorophyll",
+"Insulin",
+"Keratin"
+],
+correct:0
+},
+
+{
+q:"Which blood cells help protect the body from infections?",
+a:[
+"White blood cells",
+"Red blood cells",
+"Platelets",
+"Plasma"
+],
+correct:0
+},
+
+{
+q:"Which blood component helps in clotting?",
+a:[
+"Platelets",
+"Red blood cells",
+"White blood cells",
+"Plasma only"
+],
+correct:0
+},
+
+{
+q:"The liquid part of blood is called:",
+a:[
+"Plasma",
+"Haemoglobin",
+"Platelet",
+"RBC"
+],
+correct:0
+},
+
+{
+q:"Which chamber of the heart receives oxygenated blood from the lungs?",
+a:[
+"Left atrium",
+"Right atrium",
+"Right ventricle",
+"Left ventricle"
+],
+correct:0
+},
+
+{
+q:"Which chamber receives deoxygenated blood from the body?",
+a:[
+"Right atrium",
+"Left atrium",
+"Left ventricle",
+"Right ventricle"
+],
+correct:0
+},
+
+{
+q:"Which chamber pumps oxygenated blood to the body?",
+a:[
+"Left ventricle",
+"Right ventricle",
+"Left atrium",
+"Right atrium"
+],
+correct:0
+},
+
+{
+q:"Which chamber pumps deoxygenated blood towards the lungs?",
+a:[
+"Right ventricle",
+"Left ventricle",
+"Right atrium",
+"Left atrium"
+],
+correct:0
+},
+
+{
+q:"The largest artery in the human body is:",
+a:[
+"Aorta",
+"Vena cava",
+"Pulmonary vein",
+"Capillary"
+],
+correct:0
+},
+
+{
+q:"The pulmonary artery carries:",
+a:[
+"Deoxygenated blood from heart to lungs",
+"Oxygenated blood from lungs to heart",
+"Oxygenated blood to the body",
+"Food to the heart"
+],
+correct:0
+},
+
+{
+q:"The pulmonary vein carries:",
+a:[
+"Oxygenated blood from lungs to heart",
+"Deoxygenated blood from heart to lungs",
+"Blood from body to lungs",
+"Food from liver"
+],
+correct:0
+},
+
+{
+q:"Pulmonary circulation is circulation between:",
+a:[
+"Heart and lungs",
+"Heart and legs only",
+"Roots and leaves",
+"Brain and stomach only"
+],
+correct:0
+},
+
+{
+q:"Systemic circulation is circulation between:",
+a:[
+"Heart and the rest of the body",
+"Heart and lungs only",
+"Roots and leaves",
+"Stomach and intestine only"
+],
+correct:0
+},
+
+{
+q:"In double circulation, blood passes through the heart:",
+a:[
+"Twice in one complete cycle",
+"Once in two cycles",
+"Three times",
+"Never"
+],
+correct:0
+},
+
+{
+q:"Double circulation helps maintain:",
+a:[
+"Efficient separation of oxygenated and deoxygenated blood",
+"Only digestion",
+"Only water absorption",
+"Only transpiration"
+],
+correct:0
+},
+
+{
+q:"Which side of the human heart mainly contains oxygenated blood?",
+a:[
+"Left side",
+"Right side",
+"Both sides equally",
+"Neither side"
+],
+correct:0
+},
+
+{
+q:"Which side of the human heart mainly contains deoxygenated blood?",
+a:[
+"Right side",
+"Left side",
+"Both sides equally",
+"Neither side"
+],
+correct:0
+},
+
+{
+q:"The valve between the left atrium and left ventricle is:",
+a:[
+"Bicuspid valve",
+"Tricuspid valve",
+"Pulmonary valve",
+"Aortic valve"
+],
+correct:0
+},
+
+{
+q:"The valve between the right atrium and right ventricle is:",
+a:[
+"Tricuspid valve",
+"Bicuspid valve",
+"Aortic valve",
+"Pulmonary valve"
+],
+correct:0
+},
+
+{
+q:"What is the main function of heart valves?",
+a:[
+"Prevent backflow of blood",
+"Produce blood",
+"Absorb oxygen",
+"Digest food"
+],
+correct:0
+},
+
+{
+q:"Which system helps return excess tissue fluid to the blood?",
+a:[
+"Lymphatic system",
+"Digestive system",
+"Respiratory system",
+"Skeletal system"
+],
+correct:0
+},
+
+{
+q:"Lymph is generally:",
+a:[
+"A colourless fluid involved in tissue fluid drainage and transport",
+"A red pigment",
+"A type of bone",
+"A digestive enzyme"
+],
+correct:0
+},
+
+{
+q:"Which process moves prepared food through phloem?",
+a:[
+"Translocation",
+"Transpiration",
+"Respiration",
+"Filtration"
+],
+correct:0
+},
+
+{
+q:"Which statement is correct?",
+a:[
+"Xylem transports water and phloem transports food",
+"Xylem transports food and phloem transports water",
+"Both transport only oxygen",
+"Neither transports materials"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch14_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch14_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Transportation in Plants and Circulation in Animals assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 14 - Transportation in Plants and Circulation in Animals",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter14",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter14"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter14_Transportation_and_Circulation_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter14"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+```

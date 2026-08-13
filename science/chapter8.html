@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 8 - Periodic Classification of Elements | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#059669,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ecfdf5;
+    line-height:1.7;
+}
+
+/* ================= INFO ================= */
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= PERIODIC TABLE ================= */
+
+.periodic-table{
+    display:grid;
+    grid-template-columns:repeat(18,1fr);
+    gap:5px;
+    margin-top:20px;
+    overflow-x:auto;
+}
+
+.element{
+    min-width:48px;
+    min-height:58px;
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:7px;
+    padding:5px;
+    text-align:center;
+}
+
+.element strong{
+    display:block;
+    color:#38bdf8;
+    font-size:15px;
+}
+
+.element small{
+    color:#94a3b8;
+    font-size:9px;
+}
+
+.empty{
+    visibility:hidden;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .periodic-table{
+        grid-template-columns:repeat(18,48px);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        🧪 Chapter 8: Periodic Classification of Elements
+    </h1>
+
+    <p>
+        Learn how elements are classified and arranged in
+        the periodic table. Study the development of periodic
+        classification, Mendeleev's periodic table, the modern
+        periodic law, groups, periods and periodic properties.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER8_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER8_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Need for Classification of Elements
+    </div>
+
+    <div class="topic">
+        ✓ Early Attempts of Classification
+    </div>
+
+    <div class="topic">
+        ✓ Dobereiner's Triads
+    </div>
+
+    <div class="topic">
+        ✓ Newlands' Law of Octaves
+    </div>
+
+    <div class="topic">
+        ✓ Mendeleev's Periodic Table
+    </div>
+
+    <div class="topic">
+        ✓ Mendeleev's Periodic Law
+    </div>
+
+    <div class="topic">
+        ✓ Merits of Mendeleev's Table
+    </div>
+
+    <div class="topic">
+        ✓ Limitations of Mendeleev's Table
+    </div>
+
+    <div class="topic">
+        ✓ Modern Periodic Law
+    </div>
+
+    <div class="topic">
+        ✓ Modern Periodic Table
+    </div>
+
+    <div class="topic">
+        ✓ Groups and Periods
+    </div>
+
+    <div class="topic">
+        ✓ Valence Electrons
+    </div>
+
+    <div class="topic">
+        ✓ Atomic Size
+    </div>
+
+    <div class="topic">
+        ✓ Metallic Character
+    </div>
+
+    <div class="topic">
+        ✓ Non-Metallic Character
+    </div>
+
+    <div class="topic">
+        ✓ Ionisation Energy
+    </div>
+
+    <div class="topic">
+        ✓ Electron Affinity
+    </div>
+
+    <div class="topic">
+        ✓ Electronegativity
+    </div>
+
+    <div class="topic">
+        ✓ Periodic Trends
+    </div>
+
+</div>
+
+
+<!-- ================= PERIODIC TABLE ================= -->
+
+<div class="card">
+
+    <h2>
+        🧩 Periodic Table Explorer
+    </h2>
+
+    <p class="description">
+
+        The modern periodic table arranges elements according
+        to increasing atomic number. Elements are organized
+        into groups and periods.
+
+    </p>
+
+    <div class="periodic-table">
+
+        <!-- Period 1 -->
+
+        <div class="element">
+            <strong>H</strong>
+            <small>1<br>Hydrogen</small>
+        </div>
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <div class="element">
+            <strong>He</strong>
+            <small>2<br>Helium</small>
+        </div>
+
+
+        <!-- Period 2 -->
+
+        <div class="element">
+            <strong>Li</strong>
+            <small>3<br>Lithium</small>
+        </div>
+
+        <div class="element">
+            <strong>Be</strong>
+            <small>4<br>Beryllium</small>
+        </div>
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="element">
+            <strong>B</strong>
+            <small>5<br>Boron</small>
+        </div>
+
+        <div class="element">
+            <strong>C</strong>
+            <small>6<br>Carbon</small>
+        </div>
+
+        <div class="element">
+            <strong>N</strong>
+            <small>7<br>Nitrogen</small>
+        </div>
+
+        <div class="element">
+            <strong>O</strong>
+            <small>8<br>Oxygen</small>
+        </div>
+
+        <div class="element">
+            <strong>F</strong>
+            <small>9<br>Fluorine</small>
+        </div>
+
+        <div class="element">
+            <strong>Ne</strong>
+            <small>10<br>Neon</small>
+        </div>
+
+
+        <!-- Period 3 -->
+
+        <div class="element">
+            <strong>Na</strong>
+            <small>11<br>Sodium</small>
+        </div>
+
+        <div class="element">
+            <strong>Mg</strong>
+            <small>12<br>Magnesium</small>
+        </div>
+
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <div class="element">
+            <strong>Al</strong>
+            <small>13<br>Aluminium</small>
+        </div>
+
+        <div class="element">
+            <strong>Si</strong>
+            <small>14<br>Silicon</small>
+        </div>
+
+        <div class="element">
+            <strong>P</strong>
+            <small>15<br>Phosphorus</small>
+        </div>
+
+        <div class="element">
+            <strong>S</strong>
+            <small>16<br>Sulfur</small>
+        </div>
+
+        <div class="element">
+            <strong>Cl</strong>
+            <small>17<br>Chlorine</small>
+        </div>
+
+        <div class="element">
+            <strong>Ar</strong>
+            <small>18<br>Argon</small>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Periodic Classification Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter9.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 9
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   50 PERIODIC CLASSIFICATION QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"Why is it necessary to classify elements?",
+    a:[
+        "To make the study of elements systematic and easier",
+        "To increase their atomic masses",
+        "To change their physical state",
+        "To remove their chemical properties"
+    ],
+    correct:0
+},
+
+{
+    q:"Dobereiner classified elements into groups of:",
+    a:[
+        "Two",
+        "Three",
+        "Five",
+        "Eight"
+    ],
+    correct:1
+},
+
+{
+    q:"Dobereiner's groups of three elements were called:",
+    a:[
+        "Octaves",
+        "Triads",
+        "Periods",
+        "Groups"
+    ],
+    correct:1
+},
+
+{
+    q:"In a Dobereiner triad, the atomic mass of the middle element was approximately:",
+    a:[
+        "Double the first element",
+        "The average of the other two elements",
+        "Equal to the last element",
+        "Zero"
+    ],
+    correct:1
+},
+
+{
+    q:"Newlands proposed the:",
+    a:[
+        "Law of Octaves",
+        "Modern Periodic Law",
+        "Law of Triads",
+        "Law of Conservation"
+    ],
+    correct:0
+},
+
+{
+    q:"Newlands arranged elements in increasing order of:",
+    a:[
+        "Atomic number",
+        "Atomic mass",
+        "Density",
+        "Valency only"
+    ],
+    correct:1
+},
+
+{
+    q:"Newlands observed that every eighth element had properties similar to the:",
+    a:[
+        "First element",
+        "Second element",
+        "Third element",
+        "Last element"
+    ],
+    correct:0
+},
+
+{
+    q:"Who proposed the periodic table based mainly on atomic masses?",
+    a:[
+        "Dmitri Mendeleev",
+        "J.J. Thomson",
+        "Rutherford",
+        "Bohr"
+    ],
+    correct:0
+},
+
+{
+    q:"Mendeleev's periodic law was based on:",
+    a:[
+        "Atomic number",
+        "Atomic mass",
+        "Number of electrons only",
+        "Number of neutrons only"
+    ],
+    correct:1
+},
+
+{
+    q:"According to Mendeleev's periodic law, properties of elements are periodic functions of their:",
+    a:[
+        "Atomic masses",
+        "Atomic volumes only",
+        "Number of neutrons",
+        "Melting points"
+    ],
+    correct:0
+},
+
+{
+    q:"Mendeleev left gaps in his periodic table for:",
+    a:[
+        "Undiscovered elements",
+        "Electrons",
+        "Neutrons",
+        "Compounds"
+    ],
+    correct:0
+},
+
+{
+    q:"Mendeleev predicted the properties of:",
+    a:[
+        "Some undiscovered elements",
+        "Only gases",
+        "Only metals",
+        "Only noble gases"
+    ],
+    correct:0
+},
+
+{
+    q:"One major advantage of Mendeleev's table was that it:",
+    a:[
+        "Predicted properties of undiscovered elements",
+        "Contained no gaps",
+        "Used atomic number",
+        "Had only eight elements"
+    ],
+    correct:0
+},
+
+{
+    q:"A limitation of Mendeleev's table was the position of:",
+    a:[
+        "Isotopes",
+        "Hydrogen",
+        "All noble gases",
+        "Oxygen"
+    ],
+    correct:1
+},
+
+{
+    q:"Mendeleev could not satisfactorily explain the position of:",
+    a:[
+        "Isotopes",
+        "Metals",
+        "Non-metals",
+        "Halogens"
+    ],
+    correct:0
+},
+
+{
+    q:"The modern periodic law is based on:",
+    a:[
+        "Atomic mass",
+        "Atomic number",
+        "Density",
+        "Atomic volume"
+    ],
+    correct:1
+},
+
+{
+    q:"The modern periodic law was proposed after the discovery of:",
+    a:[
+        "Atomic number",
+        "Molecules",
+        "Compounds",
+        "Chemical reactions"
+    ],
+    correct:0
+},
+
+{
+    q:"The modern periodic table contains how many groups?",
+    a:[
+        "8",
+        "18",
+        "7",
+        "16"
+    ],
+    correct:1
+},
+
+{
+    q:"The modern periodic table contains how many periods?",
+    a:[
+        "5",
+        "6",
+        "7",
+        "8"
+    ],
+    correct:2
+},
+
+{
+    q:"The vertical columns in the periodic table are called:",
+    a:[
+        "Periods",
+        "Groups",
+        "Series",
+        "Blocks"
+    ],
+    correct:1
+},
+
+{
+    q:"The horizontal rows in the periodic table are called:",
+    a:[
+        "Groups",
+        "Periods",
+        "Families",
+        "Columns"
+    ],
+    correct:1
+},
+
+{
+    q:"Elements in the same group generally have similar:",
+    a:[
+        "Chemical properties",
+        "Atomic masses",
+        "Number of shells",
+        "Atomic sizes only"
+    ],
+    correct:0
+},
+
+{
+    q:"The first period contains:",
+    a:[
+        "2 elements",
+        "8 elements",
+        "18 elements",
+        "32 elements"
+    ],
+    correct:0
+},
+
+{
+    q:"The second period contains:",
+    a:[
+        "2 elements",
+        "8 elements",
+        "18 elements",
+        "32 elements"
+    ],
+    correct:1
+},
+
+{
+    q:"The third period contains:",
+    a:[
+        "2 elements",
+        "8 elements",
+        "18 elements",
+        "32 elements"
+    ],
+    correct:1
+},
+
+{
+    q:"The fourth period contains:",
+    a:[
+        "8 elements",
+        "18 elements",
+        "32 elements",
+        "2 elements"
+    ],
+    correct:1
+},
+
+{
+    q:"Group 1 elements are commonly known as:",
+    a:[
+        "Alkali metals",
+        "Halogens",
+        "Noble gases",
+        "Transition elements"
+    ],
+    correct:0
+},
+
+{
+    q:"Group 2 elements are known as:",
+    a:[
+        "Alkali metals",
+        "Alkaline earth metals",
+        "Halogens",
+        "Noble gases"
+    ],
+    correct:1
+},
+
+{
+    q:"Group 17 elements are called:",
+    a:[
+        "Noble gases",
+        "Halogens",
+        "Alkali metals",
+        "Alkaline earth metals"
+    ],
+    correct:1
+},
+
+{
+    q:"Group 18 elements are called:",
+    a:[
+        "Halogens",
+        "Noble gases",
+        "Alkali metals",
+        "Transition metals"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following is a noble gas?",
+    a:[
+        "Sodium",
+        "Chlorine",
+        "Neon",
+        "Magnesium"
+    ],
+    correct:2
+},
+
+{
+    q:"Which of the following is a halogen?",
+    a:[
+        "Fluorine",
+        "Sodium",
+        "Neon",
+        "Calcium"
+    ],
+    correct:0
+},
+
+{
+    q:"The number of valence electrons generally determines an element's:",
+    a:[
+        "Chemical behaviour",
+        "Nuclear size only",
+        "Atomic mass only",
+        "Number of neutrons"
+    ],
+    correct:0
+},
+
+{
+    q:"Across a period, atomic size generally:",
+    a:[
+        "Increases",
+        "Decreases",
+        "Remains exactly the same",
+        "Becomes zero"
+    ],
+    correct:1
+},
+
+{
+    q:"Down a group, atomic size generally:",
+    a:[
+        "Decreases",
+        "Increases",
+        "Remains exactly the same",
+        "Disappears"
+    ],
+    correct:1
+},
+
+{
+    q:"Across a period, metallic character generally:",
+    a:[
+        "Increases",
+        "Decreases",
+        "Does not change",
+        "Becomes zero immediately"
+    ],
+    correct:1
+},
+
+{
+    q:"Down a group, metallic character generally:",
+    a:[
+        "Decreases",
+        "Increases",
+        "Remains constant",
+        "Disappears"
+    ],
+    correct:1
+},
+
+{
+    q:"Across a period, non-metallic character generally:",
+    a:[
+        "Decreases",
+        "Increases",
+        "Remains constant",
+        "Becomes zero"
+    ],
+    correct:1
+},
+
+{
+    q:"The energy required to remove an electron from an isolated gaseous atom is called:",
+    a:[
+        "Ionisation energy",
+        "Electron affinity",
+        "Electronegativity",
+        "Atomic energy"
+    ],
+    correct:0
+},
+
+{
+    q:"Electronegativity is the tendency of an atom to:",
+    a:[
+        "Attract shared electrons towards itself",
+        "Lose all neutrons",
+        "Increase its atomic mass",
+        "Remove protons"
+    ],
+    correct:0
+},
+
+{
+    q:"Which element has a very high electronegativity?",
+    a:[
+        "Fluorine",
+        "Sodium",
+        "Potassium",
+        "Calcium"
+    ],
+    correct:0
+},
+
+{
+    q:"Electron affinity refers to the energy change associated with:",
+    a:[
+        "Addition of an electron to a gaseous atom",
+        "Removal of a proton",
+        "Removal of a neutron",
+        "Increasing temperature"
+    ],
+    correct:0
+},
+
+{
+    q:"Elements in the same period have the same number of:",
+    a:[
+        "Electron shells",
+        "Valence electrons",
+        "Protons",
+        "Neutrons"
+    ],
+    correct:0
+},
+
+{
+    q:"Elements in the same group generally have the same number of:",
+    a:[
+        "Valence electrons",
+        "Electron shells",
+        "Neutrons",
+        "Protons"
+    ],
+    correct:0
+},
+
+{
+    q:"The atomic number of sodium is:",
+    a:[
+        "10",
+        "11",
+        "12",
+        "13"
+    ],
+    correct:1
+},
+
+{
+    q:"The atomic number of chlorine is:",
+    a:[
+        "15",
+        "16",
+        "17",
+        "18"
+    ],
+    correct:2
+},
+
+{
+    q:"The atomic number of oxygen is:",
+    a:[
+        "6",
+        "7",
+        "8",
+        "9"
+    ],
+    correct:2
+},
+
+{
+    q:"Which element belongs to Group 1 and Period 3?",
+    a:[
+        "Lithium",
+        "Sodium",
+        "Potassium",
+        "Magnesium"
+    ],
+    correct:1
+},
+
+{
+    q:"Which element belongs to Group 17 and Period 3?",
+    a:[
+        "Fluorine",
+        "Chlorine",
+        "Bromine",
+        "Sulfur"
+    ],
+    correct:1
+},
+
+{
+    q:"Which element belongs to Group 18 and Period 2?",
+    a:[
+        "Helium",
+        "Neon",
+        "Argon",
+        "Krypton"
+    ],
+    correct:1
+},
+
+{
+    q:"The periodic table is useful because elements with similar properties are:",
+    a:[
+        "Placed in related positions",
+        "Placed randomly",
+        "Removed from the table",
+        "Given the same atomic number"
+    ],
+    correct:0
+},
+
+{
+    q:"The modern periodic table arranges elements in increasing order of:",
+    a:[
+        "Atomic mass",
+        "Atomic number",
+        "Density",
+        "Melting point"
+    ],
+    correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch8_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch8_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Periodic Classification of Elements assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY QUIZ
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 8 - Periodic Classification of Elements",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter8",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter8"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter8_Periodic_Classification_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter8"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

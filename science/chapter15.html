@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 15 - Nervous System | EduSphere</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= CONCEPT BOX ================= */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* ================= FACTS ================= */
+
+.fact{
+    padding:15px;
+    margin:10px 0;
+    background:#0f172a;
+    border-radius:10px;
+    line-height:1.7;
+    color:#e2e8f0;
+}
+
+.fact strong{
+    color:#a78bfa;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        🧠 Chapter 15: Nervous System
+    </h1>
+
+    <p>
+        Learn about the nervous system, neurons,
+        brain, spinal cord, sense organs, reflex actions
+        and how the body receives and responds to stimuli.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER15_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER15_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Nervous System
+    </div>
+
+    <div class="topic">
+        ✓ Stimulus and Response
+    </div>
+
+    <div class="topic">
+        ✓ Neuron
+    </div>
+
+    <div class="topic">
+        ✓ Structure of a Neuron
+    </div>
+
+    <div class="topic">
+        ✓ Types of Neurons
+    </div>
+
+    <div class="topic">
+        ✓ Nerve Impulse
+    </div>
+
+    <div class="topic">
+        ✓ Central Nervous System
+    </div>
+
+    <div class="topic">
+        ✓ Peripheral Nervous System
+    </div>
+
+    <div class="topic">
+        ✓ Brain
+    </div>
+
+    <div class="topic">
+        ✓ Cerebrum
+    </div>
+
+    <div class="topic">
+        ✓ Cerebellum
+    </div>
+
+    <div class="topic">
+        ✓ Medulla Oblongata
+    </div>
+
+    <div class="topic">
+        ✓ Spinal Cord
+    </div>
+
+    <div class="topic">
+        ✓ Reflex Action
+    </div>
+
+    <div class="topic">
+        ✓ Reflex Arc
+    </div>
+
+    <div class="topic">
+        ✓ Autonomic Nervous System
+    </div>
+
+    <div class="topic">
+        ✓ Sense Organs
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT CONCEPTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🔬 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>
+                1. Nervous System
+            </strong>
+
+            <br>
+
+            The nervous system controls and coordinates
+            various activities of the body and helps an
+            organism respond to changes in its surroundings.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Neuron
+            </strong>
+
+            <br>
+
+            A neuron is the structural and functional unit
+            of the nervous system. It receives and transmits
+            nerve impulses.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Dendrites
+            </strong>
+
+            <br>
+
+            Dendrites are branched structures that mainly
+            receive signals and carry them towards the
+            cell body.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Axon
+            </strong>
+
+            <br>
+
+            The axon is a long fibre that carries nerve
+            impulses away from the cell body.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Central Nervous System
+            </strong>
+
+            <br>
+
+            The central nervous system consists of the
+            brain and spinal cord.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Brain
+            </strong>
+
+            <br>
+
+            The brain is the main control centre of the
+            nervous system. It receives information,
+            processes it and coordinates responses.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Spinal Cord
+            </strong>
+
+            <br>
+
+            The spinal cord connects the brain with
+            peripheral nerves and plays an important
+            role in reflex actions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Reflex Action
+            </strong>
+
+            <br>
+
+            A reflex action is a rapid, automatic response
+            to a stimulus, generally occurring without
+            conscious control.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Reflex Arc
+            </strong>
+
+            <br>
+
+            A reflex arc is the pathway followed by a
+            nerve impulse during a reflex action.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Autonomic Nervous System
+            </strong>
+
+            <br>
+
+            The autonomic nervous system regulates
+            involuntary activities such as heartbeat,
+            digestion and breathing-related functions.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= IMPORTANT FACTS ================= -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Facts
+    </h2>
+
+    <div class="fact">
+
+        <strong>Neuron:</strong>
+
+        The neuron is the basic structural and functional
+        unit of the nervous system.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Dendrites:</strong>
+
+        Receive signals and carry them towards the
+        cell body.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Axon:</strong>
+
+        Carries nerve impulses away from the cell body.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Central Nervous System:</strong>
+
+        Consists mainly of the brain and spinal cord.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Cerebrum:</strong>
+
+        The largest part of the brain and associated
+        with higher mental functions.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Cerebellum:</strong>
+
+        Helps coordinate muscular activity and maintain
+        balance and posture.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Medulla Oblongata:</strong>
+
+        Helps regulate several involuntary functions.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Reflex Action:</strong>
+
+        A quick and automatic response to a stimulus.
+
+    </div>
+
+    <div class="fact">
+
+        <strong>Spinal Cord:</strong>
+
+        Carries nerve impulses between the brain and
+        peripheral parts of the body and participates
+        in reflex actions.
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Nervous System Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter16.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 16
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 15 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is the main function of the nervous system?",
+a:[
+"Control and coordination of body activities",
+"Digestion of food only",
+"Transport of oxygen only",
+"Removal of waste only"
+],
+correct:0
+},
+
+{
+q:"What is the structural and functional unit of the nervous system?",
+a:[
+"Neuron",
+"Nephron",
+"Alveolus",
+"Platelet"
+],
+correct:0
+},
+
+{
+q:"Which part of a neuron mainly receives signals?",
+a:[
+"Dendrites",
+"Axon",
+"Cell wall",
+"Nucleus only"
+],
+correct:0
+},
+
+{
+q:"Which part of a neuron carries impulses away from the cell body?",
+a:[
+"Axon",
+"Dendrite",
+"Nucleus",
+"Cell membrane"
+],
+correct:0
+},
+
+{
+q:"The cell body of a neuron contains:",
+a:[
+"Nucleus",
+"Only blood",
+"Only chlorophyll",
+"Only bone"
+],
+correct:0
+},
+
+{
+q:"The long fibre of a neuron is called:",
+a:[
+"Axon",
+"Dendrite",
+"Cell body",
+"Synapse"
+],
+correct:0
+},
+
+{
+q:"Which system receives information from the environment?",
+a:[
+"Nervous system",
+"Digestive system",
+"Excretory system",
+"Skeletal system"
+],
+correct:0
+},
+
+{
+q:"A change in the environment that produces a response is called:",
+a:[
+"Stimulus",
+"Reflex",
+"Impulse",
+"Synapse"
+],
+correct:0
+},
+
+{
+q:"The response of an organism to a stimulus is called:",
+a:[
+"Response",
+"Digestion",
+"Respiration",
+"Circulation"
+],
+correct:0
+},
+
+{
+q:"The central nervous system consists of:",
+a:[
+"Brain and spinal cord",
+"Heart and lungs",
+"Kidneys and liver",
+"Eyes and ears"
+],
+correct:0
+},
+
+{
+q:"Which is the main control centre of the nervous system?",
+a:[
+"Brain",
+"Heart",
+"Kidney",
+"Stomach"
+],
+correct:0
+},
+
+{
+q:"The brain is protected by:",
+a:[
+"Skull",
+"Rib cage",
+"Pelvis",
+"Femur"
+],
+correct:0
+},
+
+{
+q:"The spinal cord is protected mainly by:",
+a:[
+"Vertebral column",
+"Skull",
+"Rib cage",
+"Pelvic girdle"
+],
+correct:0
+},
+
+{
+q:"Which part of the brain is the largest?",
+a:[
+"Cerebrum",
+"Cerebellum",
+"Medulla",
+"Spinal cord"
+],
+correct:0
+},
+
+{
+q:"Which part of the brain is mainly associated with thinking and memory?",
+a:[
+"Cerebrum",
+"Cerebellum",
+"Medulla",
+"Spinal cord"
+],
+correct:0
+},
+
+{
+q:"Which part of the brain helps maintain balance and coordination?",
+a:[
+"Cerebellum",
+"Cerebrum",
+"Medulla",
+"Spinal cord"
+],
+correct:0
+},
+
+{
+q:"Which part of the brain helps regulate several involuntary functions?",
+a:[
+"Medulla oblongata",
+"Cerebrum",
+"Cerebellum",
+"Dendrite"
+],
+correct:0
+},
+
+{
+q:"Which part of the nervous system connects the brain with the rest of the body?",
+a:[
+"Peripheral nervous system",
+"Digestive system",
+"Endocrine system only",
+"Skeletal system"
+],
+correct:0
+},
+
+{
+q:"A rapid and automatic response to a stimulus is called:",
+a:[
+"Reflex action",
+"Digestion",
+"Transpiration",
+"Circulation"
+],
+correct:0
+},
+
+{
+q:"Which structure is especially important in many reflex actions?",
+a:[
+"Spinal cord",
+"Stomach",
+"Kidney",
+"Liver"
+],
+correct:0
+},
+
+{
+q:"The pathway followed by a nerve impulse during a reflex action is called:",
+a:[
+"Reflex arc",
+"Blood vessel",
+"Neuron body",
+"Synovial joint"
+],
+correct:0
+},
+
+{
+q:"Which type of neuron carries impulses from receptors towards the central nervous system?",
+a:[
+"Sensory neuron",
+"Motor neuron",
+"Relay neuron",
+"Muscle cell"
+],
+correct:0
+},
+
+{
+q:"Which type of neuron carries impulses from the central nervous system to effectors?",
+a:[
+"Motor neuron",
+"Sensory neuron",
+"Receptor cell",
+"Blood cell"
+],
+correct:0
+},
+
+{
+q:"Relay neurons are mainly found within:",
+a:[
+"Central nervous system",
+"Heart",
+"Kidneys",
+"Skin only"
+],
+correct:0
+},
+
+{
+q:"Which structure receives sensory information?",
+a:[
+"Receptor",
+"Effector",
+"Muscle only",
+"Bone"
+],
+correct:0
+},
+
+{
+q:"A muscle or gland that produces a response is called:",
+a:[
+"Effector",
+"Receptor",
+"Neuron",
+"Stimulus"
+],
+correct:0
+},
+
+{
+q:"Which organ detects light?",
+a:[
+"Eye",
+"Ear",
+"Nose",
+"Tongue"
+],
+correct:0
+},
+
+{
+q:"Which sense organ detects sound?",
+a:[
+"Ear",
+"Eye",
+"Nose",
+"Skin"
+],
+correct:0
+},
+
+{
+q:"Which sense organ detects smell?",
+a:[
+"Nose",
+"Eye",
+"Ear",
+"Tongue"
+],
+correct:0
+},
+
+{
+q:"Which organ contains receptors for taste?",
+a:[
+"Tongue",
+"Eye",
+"Ear",
+"Nose"
+],
+correct:0
+},
+
+{
+q:"The skin contains receptors mainly for:",
+a:[
+"Touch, pressure, temperature and pain",
+"Only sound",
+"Only light",
+"Only smell"
+],
+correct:0
+},
+
+{
+q:"The movement of a nerve impulse occurs along:",
+a:[
+"Neuron",
+"Bone",
+"Blood vessel",
+"Muscle fibre only"
+],
+correct:0
+},
+
+{
+q:"The junction between two neurons is called:",
+a:[
+"Synapse",
+"Alveolus",
+"Capillary",
+"Stoma"
+],
+correct:0
+},
+
+{
+q:"Communication between neurons at a synapse commonly involves:",
+a:[
+"Chemical neurotransmitters",
+"Chlorophyll",
+"Haemoglobin only",
+"Digestive enzymes"
+],
+correct:0
+},
+
+{
+q:"Which system controls involuntary activities such as heartbeat?",
+a:[
+"Autonomic nervous system",
+"Somatic nervous system only",
+"Skeletal system",
+"Digestive system"
+],
+correct:0
+},
+
+{
+q:"Which of the following is an involuntary activity?",
+a:[
+"Heartbeat",
+"Writing",
+"Reading",
+"Walking on command"
+],
+correct:0
+},
+
+{
+q:"Which of the following is generally under conscious control?",
+a:[
+"Writing",
+"Heartbeat",
+"Digestion",
+"Automatic breathing regulation"
+],
+correct:0
+},
+
+{
+q:"Which part of the brain is associated with voluntary movements?",
+a:[
+"Cerebrum",
+"Medulla only",
+"Cerebellum only",
+"Spinal cord only"
+],
+correct:0
+},
+
+{
+q:"Which part of the brain coordinates muscular movements?",
+a:[
+"Cerebellum",
+"Cerebrum",
+"Medulla",
+"Spinal nerve"
+],
+correct:0
+},
+
+{
+q:"Which structure carries messages between the brain and the body?",
+a:[
+"Spinal cord and nerves",
+"Stomach",
+"Kidney",
+"Pancreas"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a protective response?",
+a:[
+"Pulling the hand away from a hot object",
+"Sleeping",
+"Growing taller",
+"Digesting food"
+],
+correct:0
+},
+
+{
+q:"Reflex actions are generally:",
+a:[
+"Rapid and automatic",
+"Slow and always conscious",
+"Only related to digestion",
+"Only related to growth"
+],
+correct:0
+},
+
+{
+q:"Which receptor detects changes in temperature?",
+a:[
+"Thermoreceptor",
+"Photoreceptor",
+"Chemoreceptor only",
+"Auditory receptor"
+],
+correct:0
+},
+
+{
+q:"Which receptors are involved in detecting light?",
+a:[
+"Photoreceptors",
+"Thermoreceptors",
+"Mechanoreceptors",
+"Pain receptors"
+],
+correct:0
+},
+
+{
+q:"Which sense organ is responsible for vision?",
+a:[
+"Eye",
+"Ear",
+"Nose",
+"Skin"
+],
+correct:0
+},
+
+{
+q:"Which sense organ is responsible for hearing and balance?",
+a:[
+"Ear",
+"Eye",
+"Nose",
+"Tongue"
+],
+correct:0
+},
+
+{
+q:"Which part of the nervous system consists of nerves outside the brain and spinal cord?",
+a:[
+"Peripheral nervous system",
+"Central nervous system",
+"Brain",
+"Spinal cord"
+],
+correct:0
+},
+
+{
+q:"Which statement about the spinal cord is correct?",
+a:[
+"It carries impulses and participates in reflex actions",
+"It pumps blood",
+"It digests food",
+"It produces bile"
+],
+correct:0
+},
+
+{
+q:"Which statement about the cerebrum is correct?",
+a:[
+"It is involved in higher mental activities",
+"It pumps blood",
+"It filters urine",
+"It absorbs nutrients"
+],
+correct:0
+},
+
+{
+q:"Which statement about the cerebellum is correct?",
+a:[
+"It helps maintain balance and coordinate movements",
+"It produces blood",
+"It digests proteins",
+"It absorbs water"
+],
+correct:0
+},
+
+{
+q:"Which statement about the nervous system is correct?",
+a:[
+"It helps the body detect stimuli and coordinate responses",
+"It only transports nutrients",
+"It only removes wastes",
+"It only produces hormones"
+],
+correct:0
+},
+
+{
+q:"What is the correct general pathway of a reflex action?",
+a:[
+"Receptor → sensory neuron → CNS → motor neuron → effector",
+"Effector → eye → heart → receptor",
+"Brain → stomach → blood → receptor",
+"Muscle → bone → kidney → brain"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch15_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch15_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Nervous System assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 15 - Nervous System",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter15",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter15"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter15_Nervous_System_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter15"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

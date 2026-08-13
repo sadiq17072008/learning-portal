@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 3 - Thermal Physics | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#f97316,#dc2626);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ffedd5;
+    line-height:1.7;
+}
+
+/* INFO */
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* CARD */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* STUDY LINKS */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* TOPICS */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* QUIZ */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* NAVIGATION */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* RESULT */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* STATUS */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a href="../subjects/science.html" class="back">
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <h1>
+        🌡️ Chapter 3: Thermal Physics
+    </h1>
+
+    <p>
+        Learn about heat, temperature, thermal expansion,
+        specific heat capacity, latent heat, change of state,
+        heat transfer, conduction, convection, radiation
+        and the applications of thermal physics.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STUDY -->
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study the chapter using the PDF notes and video
+        before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER3_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER3_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- TOPICS -->
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">
+        ✓ Heat and Temperature
+    </div>
+
+    <div class="topic">
+        ✓ Thermal Equilibrium
+    </div>
+
+    <div class="topic">
+        ✓ Thermal Expansion
+    </div>
+
+    <div class="topic">
+        ✓ Expansion of Solids
+    </div>
+
+    <div class="topic">
+        ✓ Expansion of Liquids
+    </div>
+
+    <div class="topic">
+        ✓ Expansion of Gases
+    </div>
+
+    <div class="topic">
+        ✓ Specific Heat Capacity
+    </div>
+
+    <div class="topic">
+        ✓ Heat Capacity
+    </div>
+
+    <div class="topic">
+        ✓ Latent Heat
+    </div>
+
+    <div class="topic">
+        ✓ Change of State
+    </div>
+
+    <div class="topic">
+        ✓ Conduction
+    </div>
+
+    <div class="topic">
+        ✓ Convection
+    </div>
+
+    <div class="topic">
+        ✓ Radiation
+    </div>
+
+    <div class="topic">
+        ✓ Applications of Heat Transfer
+    </div>
+
+    <div class="topic">
+        ✓ Thermal Insulation
+    </div>
+
+</div>
+
+
+<!-- QUIZ -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Thermal Physics Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div id="result" class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div id="score" class="score"></div>
+
+        <p id="resultMessage" class="result-message"></p>
+
+        <div id="xpReward" class="xp"></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter4.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 4
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   50 THERMAL PHYSICS QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"Heat is a form of:",
+    a:["Energy","Matter","Mass","Force"],
+    correct:0
+},
+
+{
+    q:"The SI unit of heat energy is:",
+    a:["Joule","Watt","Kelvin","Celsius"],
+    correct:0
+},
+
+{
+    q:"Temperature is a measure of:",
+    a:["Degree of hotness or coldness","Mass only","Volume only","Pressure only"],
+    correct:0
+},
+
+{
+    q:"The SI unit of temperature is:",
+    a:["Celsius","Kelvin","Joule","Calorie"],
+    correct:1
+},
+
+{
+    q:"The instrument used to measure temperature is:",
+    a:["Thermometer","Barometer","Ammeter","Voltmeter"],
+    correct:0
+},
+
+{
+    q:"Heat naturally flows from:",
+    a:["Hot body to cold body","Cold body to hot body","Low pressure to high pressure only","Small body to large body"],
+    correct:0
+},
+
+{
+    q:"Thermal equilibrium is reached when two bodies have:",
+    a:["The same temperature","The same mass","The same volume","The same pressure always"],
+    correct:0
+},
+
+{
+    q:"The expansion of a substance due to heating is called:",
+    a:["Thermal expansion","Thermal contraction","Condensation","Evaporation"],
+    correct:0
+},
+
+{
+    q:"Most substances generally expand when they are:",
+    a:["Heated","Cooled","Frozen only","Compressed"],
+    correct:0
+},
+
+{
+    q:"Solids mainly undergo:",
+    a:["Linear, superficial and cubical expansion","Only cubical expansion","Only liquid expansion","No expansion"],
+    correct:0
+},
+
+{
+    q:"The expansion of the length of a solid is called:",
+    a:["Linear expansion","Area expansion","Volume expansion","Thermal contraction"],
+    correct:0
+},
+
+{
+    q:"The SI unit of coefficient of linear expansion is:",
+    a:["K⁻¹","K","J","W"],
+    correct:0
+},
+
+{
+    q:"Gaps are provided between railway tracks mainly to allow for:",
+    a:["Thermal expansion","Electrical expansion","Magnetic expansion","Mass expansion"],
+    correct:0
+},
+
+{
+    q:"Expansion joints in bridges are provided because of:",
+    a:["Thermal expansion","Gravity","Magnetism","Sound"],
+    correct:0
+},
+
+{
+    q:"Liquids generally expand when:",
+    a:["Heated","Cooled","Compressed only","Frozen only"],
+    correct:0
+},
+
+{
+    q:"Gases generally show greater thermal expansion than:",
+    a:["Solids and liquids","Only gases","Vacuum","Light"],
+    correct:0
+},
+
+{
+    q:"The amount of heat required to raise the temperature of a body by 1°C is called:",
+    a:["Heat capacity","Specific heat capacity","Latent heat","Thermal conductivity"],
+    correct:0
+},
+
+{
+    q:"The SI unit of heat capacity is:",
+    a:["J K⁻¹","J kg⁻¹","W m⁻¹ K⁻¹","K J⁻¹"],
+    correct:0
+},
+
+{
+    q:"Specific heat capacity is the heat required to raise the temperature of:",
+    a:["Unit mass of a substance by 1°C","Any mass by 10°C","One mole by 100°C only","One litre by 1°C always"],
+    correct:0
+},
+
+{
+    q:"The SI unit of specific heat capacity is:",
+    a:["J kg⁻¹ K⁻¹","J K⁻¹","W","J kg"],
+    correct:0
+},
+
+{
+    q:"The formula for heat gained or lost is:",
+    a:["Q = mcΔT","Q = m/cΔT","Q = c/mΔT","Q = m+c+ΔT"],
+    correct:0
+},
+
+{
+    q:"In Q = mcΔT, m represents:",
+    a:["Mass","Momentum","Meter","Molarity"],
+    correct:0
+},
+
+{
+    q:"In Q = mcΔT, c represents:",
+    a:["Specific heat capacity","Speed","Charge","Current"],
+    correct:0
+},
+
+{
+    q:"In Q = mcΔT, ΔT represents:",
+    a:["Change in temperature","Total temperature only","Time","Thermal conductivity"],
+    correct:0
+},
+
+{
+    q:"Water has a relatively:",
+    a:["High specific heat capacity","Low specific heat capacity","Zero specific heat capacity","Negative specific heat capacity"],
+    correct:0
+},
+
+{
+    q:"The high specific heat capacity of water makes it useful as:",
+    a:["A coolant","An electrical conductor","A magnet","An insulator only"],
+    correct:0
+},
+
+{
+    q:"Heat absorbed or released during a change of state without temperature change is called:",
+    a:["Latent heat","Specific heat","Heat capacity","Thermal expansion"],
+    correct:0
+},
+
+{
+    q:"The SI unit of latent heat is:",
+    a:["J kg⁻¹","J K⁻¹","W","K"],
+    correct:0
+},
+
+{
+    q:"During melting, the temperature of a pure substance generally:",
+    a:["Remains constant","Always increases","Always decreases","Becomes zero"],
+    correct:0
+},
+
+{
+    q:"The change from solid to liquid is called:",
+    a:["Melting","Freezing","Condensation","Sublimation"],
+    correct:0
+},
+
+{
+    q:"The change from liquid to solid is called:",
+    a:["Freezing","Melting","Boiling","Evaporation"],
+    correct:0
+},
+
+{
+    q:"The change from liquid to gas is called:",
+    a:["Vaporisation","Freezing","Condensation","Deposition"],
+    correct:0
+},
+
+{
+    q:"The change from gas to liquid is called:",
+    a:["Condensation","Evaporation","Melting","Sublimation"],
+    correct:0
+},
+
+{
+    q:"The direct change from solid to gas is called:",
+    a:["Sublimation","Condensation","Freezing","Melting"],
+    correct:0
+},
+
+{
+    q:"Heat transfer through direct contact between particles is called:",
+    a:["Conduction","Convection","Radiation","Reflection"],
+    correct:0
+},
+
+{
+    q:"Conduction is most effective in:",
+    a:["Solids","Vacuum","Gases only","Empty space"],
+    correct:0
+},
+
+{
+    q:"Metals are generally good conductors of:",
+    a:["Heat","Sound only","Light only","Gravity"],
+    correct:0
+},
+
+{
+    q:"Materials such as wood and rubber are generally:",
+    a:["Poor conductors of heat","Excellent conductors of heat","Sources of heat","Liquids"],
+    correct:0
+},
+
+{
+    q:"Heat transfer by the actual movement of a fluid is called:",
+    a:["Convection","Conduction","Radiation","Reflection"],
+    correct:0
+},
+
+{
+    q:"Convection mainly occurs in:",
+    a:["Liquids and gases","Solids only","Vacuum only","Metals only"],
+    correct:0
+},
+
+{
+    q:"Warm air rises because it becomes:",
+    a:["Less dense","More dense","Heavier always","Solid"],
+    correct:0
+},
+
+{
+    q:"Sea breeze is mainly caused by:",
+    a:["Convection currents","Conduction only","Radiation only","Magnetism"],
+    correct:0
+},
+
+{
+    q:"Heat transfer that does not require a material medium is:",
+    a:["Radiation","Conduction","Convection","Diffusion"],
+    correct:0
+},
+
+{
+    q:"Heat from the Sun reaches Earth mainly through:",
+    a:["Radiation","Conduction","Convection","Evaporation"],
+    correct:0
+},
+
+{
+    q:"Dark and dull surfaces are generally good:",
+    a:["Absorbers and emitters of thermal radiation","Reflectors only","Conductors of electricity only","Insulators of radiation"],
+    correct:0
+},
+
+{
+    q:"Shiny and polished surfaces are generally good:",
+    a:["Reflectors of thermal radiation","Absorbers only","Emitters only","Conductors of water"],
+    correct:0
+},
+
+{
+    q:"A thermos flask is designed mainly to:",
+    a:["Reduce heat transfer","Increase heat transfer","Produce heat","Measure temperature"],
+    correct:0
+},
+
+{
+    q:"The vacuum in a thermos flask reduces:",
+    a:["Conduction and convection","Radiation completely","Mass","Temperature"],
+    correct:0
+},
+
+{
+    q:"The SI unit of thermal conductivity is:",
+    a:["W m⁻¹ K⁻¹","J kg⁻¹","J K⁻¹","W"],
+    correct:0
+},
+
+{
+    q:"If the mass of a substance is doubled while specific heat and temperature change remain the same, heat required:",
+    a:["Doubles","Halves","Becomes zero","Remains unchanged"],
+    correct:0
+},
+
+{
+    q:"If the temperature change is doubled while mass and specific heat remain constant, heat required:",
+    a:["Doubles","Halves","Becomes zero","Remains unchanged"],
+    correct:0
+},
+
+{
+    q:"A 2 kg substance with specific heat capacity 500 J kg⁻¹ K⁻¹ is heated through 10 K. The heat supplied is:",
+    a:["1000 J","5000 J","10000 J","20000 J"],
+    correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_ch3_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_ch3_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Thermal Physics assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETEST
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        chapter:
+            "Chapter 3 - Thermal Physics",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_chapter3",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD CSV
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter3"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_Chapter3_Thermal_Physics_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_chapter3"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
