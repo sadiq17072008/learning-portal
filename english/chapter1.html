@@ -1,0 +1,2473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit 1 - English | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.formula{
+    background:#312e81;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/english.html"
+        class="back">
+
+        ← English
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📖 Unit 1: English
+    </h1>
+
+    <p>
+
+        Learn the prose, supplementary reading,
+        poem, vocabulary, grammar, comprehension
+        and writing skills included in
+        Tamil Nadu 10th Standard English Unit 1.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the prose lesson, poem,
+        supplementary reader, vocabulary,
+        grammar and writing activities
+        of Unit 1.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ENGLISH_UNIT1_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_ENGLISH_UNIT1_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Prose
+    </div>
+
+    <div class="topic">
+        ✓ Poem
+    </div>
+
+    <div class="topic">
+        ✓ Supplementary Reader
+    </div>
+
+    <div class="topic">
+        ✓ Vocabulary
+    </div>
+
+    <div class="topic">
+        ✓ Grammar
+    </div>
+
+    <div class="topic">
+        ✓ Reading Comprehension
+    </div>
+
+    <div class="topic">
+        ✓ Writing Skills
+    </div>
+
+    <div class="topic">
+        ✓ Synonyms and Antonyms
+    </div>
+
+    <div class="topic">
+        ✓ Prefixes and Suffixes
+    </div>
+
+    <div class="topic">
+        ✓ Phrasal Verbs
+    </div>
+
+    <div class="topic">
+        ✓ Tenses
+    </div>
+
+    <div class="topic">
+        ✓ Sentence Transformation
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Reading
+            </strong>
+
+            <br><br>
+
+            Reading comprehension means
+            understanding the meaning,
+            ideas, facts and emotions
+            expressed in a passage.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Vocabulary
+            </strong>
+
+            <br><br>
+
+            Vocabulary refers to the words
+            a person knows and uses.
+            Learning synonyms, antonyms,
+            prefixes and suffixes helps
+            improve vocabulary.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Synonym
+            </strong>
+
+            <br><br>
+
+            A synonym is a word having
+            the same or nearly the same
+            meaning as another word.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Antonym
+            </strong>
+
+            <br><br>
+
+            An antonym is a word having
+            an opposite meaning.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Prefix
+            </strong>
+
+            <br><br>
+
+            A prefix is added to the beginning
+            of a word to modify its meaning.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Suffix
+            </strong>
+
+            <br><br>
+
+            A suffix is added to the end
+            of a word to modify its form
+            or meaning.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Grammar
+            </strong>
+
+            <br><br>
+
+            Grammar is the system of rules
+            used to form correct sentences.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Tense
+            </strong>
+
+            <br><br>
+
+            Tense shows the time of an
+            action or event.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Present Tense
+            </strong>
+
+            <br><br>
+
+            Present tense is generally used
+            for actions happening now,
+            regular actions and facts.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Past Tense
+            </strong>
+
+            <br><br>
+
+            Past tense is used for actions
+            that happened in the past.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Future Tense
+            </strong>
+
+            <br><br>
+
+            Future tense is used for actions
+            that are expected to happen later.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Phrasal Verb
+            </strong>
+
+            <br><br>
+
+            A phrasal verb is formed using
+            a verb together with one or more
+            particles.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Comprehension
+            </strong>
+
+            <br><br>
+
+            A comprehension exercise tests
+            how well a student understands
+            a given passage.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Writing Skill
+            </strong>
+
+            <br><br>
+
+            Good writing requires appropriate
+            vocabulary, grammar, organisation,
+            clarity and correct sentence
+            construction.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Poem Appreciation
+            </strong>
+
+            <br><br>
+
+            Appreciating a poem involves
+            understanding its theme,
+            imagery, message, poetic devices
+            and emotions.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LANGUAGE PRACTICE
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ✍️ Language Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Choose the synonym of
+        <b>brave</b>.
+
+        <br><br>
+
+        Answer:
+        <strong>courageous</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Choose the antonym of
+        <b>ancient</b>.
+
+        <br><br>
+
+        Answer:
+        <strong>modern</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Add a suitable prefix:
+
+        <br><br>
+
+        ___ possible
+
+        <br><br>
+
+        Answer:
+        <strong>impossible</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Identify the tense:
+
+        <br><br>
+
+        "She visited Chennai yesterday."
+
+        <br><br>
+
+        Answer:
+        <strong>Simple Past Tense</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        Identify the tense:
+
+        <br><br>
+
+        "They are studying English."
+
+        <br><br>
+
+        Answer:
+        <strong>Present Continuous Tense</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        Identify the phrasal verb:
+
+        <br><br>
+
+        "Please look after your brother."
+
+        <br><br>
+
+        Answer:
+        <strong>look after</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Unit 1 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        The assessment contains prose,
+        poetry, vocabulary, grammar,
+        comprehension and application-based
+        English questions.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/english.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Unit Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   UNIT 1 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is the main purpose of reading comprehension?",
+a:[
+"To understand the meaning and ideas in a passage",
+"To memorise every word",
+"To count the sentences",
+"To copy the passage"
+],
+correct:0
+},
+
+{
+q:"What is a synonym?",
+a:[
+"A word with the same or nearly the same meaning",
+"A word with the opposite meaning",
+"A punctuation mark",
+"A sentence"
+],
+correct:0
+},
+
+{
+q:"What is an antonym?",
+a:[
+"A word with an opposite meaning",
+"A word with the same meaning",
+"A verb",
+"A noun"
+],
+correct:0
+},
+
+{
+q:"Which is a synonym of 'happy'?",
+a:[
+"Joyful",
+"Angry",
+"Sad",
+"Dark"
+],
+correct:0
+},
+
+{
+q:"Which is an antonym of 'ancient'?",
+a:[
+"Modern",
+"Old",
+"Historic",
+"Former"
+],
+correct:0
+},
+
+{
+q:"What is a prefix?",
+a:[
+"A group of letters added to the beginning of a word",
+"A group of letters added to the end of a word",
+"A punctuation mark",
+"A complete sentence"
+],
+correct:0
+},
+
+{
+q:"What is a suffix?",
+a:[
+"A group of letters added to the end of a word",
+"A group of letters added to the beginning",
+"A paragraph",
+"A question"
+],
+correct:0
+},
+
+{
+q:"Which prefix forms 'impossible'?",
+a:[
+"im-",
+"un-",
+"re-",
+"dis-"
+],
+correct:0
+},
+
+{
+q:"Which word is formed using the suffix '-ness'?",
+a:[
+"Happiness",
+"Happying",
+"Happyed",
+"Happyful"
+],
+correct:0
+},
+
+{
+q:"What does grammar help us do?",
+a:[
+"Construct correct sentences",
+"Draw pictures",
+"Count words only",
+"Memorise poems only"
+],
+correct:0
+},
+
+{
+q:"Which tense shows an action happening now?",
+a:[
+"Present tense",
+"Past tense",
+"Future tense",
+"Past perfect only"
+],
+correct:0
+},
+
+{
+q:"Which tense generally describes an action that happened earlier?",
+a:[
+"Past tense",
+"Present tense",
+"Future tense",
+"Present continuous only"
+],
+correct:0
+},
+
+{
+q:"Which tense is used for an action expected later?",
+a:[
+"Future tense",
+"Past tense",
+"Present tense",
+"Past perfect"
+],
+correct:0
+},
+
+{
+q:"Identify the tense: 'She visited Chennai yesterday.'",
+a:[
+"Simple Past",
+"Simple Present",
+"Simple Future",
+"Present Continuous"
+],
+correct:0
+},
+
+{
+q:"Identify the tense: 'They are studying English.'",
+a:[
+"Present Continuous",
+"Simple Past",
+"Simple Future",
+"Past Perfect"
+],
+correct:0
+},
+
+{
+q:"Identify the tense: 'He will arrive tomorrow.'",
+a:[
+"Simple Future",
+"Simple Past",
+"Simple Present",
+"Present Perfect"
+],
+correct:0
+},
+
+{
+q:"Which is a phrasal verb?",
+a:[
+"Look after",
+"Beautiful",
+"Quickly",
+"Teacher"
+],
+correct:0
+},
+
+{
+q:"What does 'look after' mean?",
+a:[
+"Take care of",
+"Search for",
+"Run away",
+"Look at something"
+],
+correct:0
+},
+
+{
+q:"A poem can communicate:",
+a:[
+"Theme, emotions and ideas",
+"Only numbers",
+"Only grammar rules",
+"Only definitions"
+],
+correct:0
+},
+
+{
+q:"What should a student identify while appreciating a poem?",
+a:[
+"Theme and poetic devices",
+"Only page number",
+"Only word count",
+"Only punctuation"
+],
+correct:0
+},
+
+{
+q:"Which word means 'courageous'?",
+a:[
+"Brave",
+"Fearful",
+"Weak",
+"Quiet"
+],
+correct:0
+},
+
+{
+q:"Which is the antonym of 'victory'?",
+a:[
+"Defeat",
+"Success",
+"Triumph",
+"Achievement"
+],
+correct:0
+},
+
+{
+q:"Which is the synonym of 'rapid'?",
+a:[
+"Fast",
+"Slow",
+"Late",
+"Small"
+],
+correct:0
+},
+
+{
+q:"Which is the antonym of 'generous'?",
+a:[
+"Selfish",
+"Kind",
+"Helpful",
+"Charitable"
+],
+correct:0
+},
+
+{
+q:"Which word contains a prefix?",
+a:[
+"Unhappy",
+"Table",
+"Chair",
+"Book"
+],
+correct:0
+},
+
+{
+q:"Which word contains a suffix?",
+a:[
+"Careful",
+"Run",
+"Book",
+"Tree"
+],
+correct:0
+},
+
+{
+q:"What is the main purpose of a supplementary reader?",
+a:[
+"To provide additional literary reading",
+"To teach mathematics",
+"To replace grammar completely",
+"To teach only science"
+],
+correct:0
+},
+
+{
+q:"What does vocabulary mean?",
+a:[
+"The collection of words known or used by a person",
+"Only punctuation marks",
+"Only verbs",
+"Only sentences"
+],
+correct:0
+},
+
+{
+q:"Which sentence is grammatically correct?",
+a:[
+"She goes to school every day.",
+"She go to school every day.",
+"She going to school every day.",
+"She gone to school every day."
+],
+correct:0
+},
+
+{
+q:"Which sentence is in the simple present tense?",
+a:[
+"He plays cricket.",
+"He played cricket.",
+"He will play cricket.",
+"He is playing cricket."
+],
+correct:0
+},
+
+{
+q:"Which sentence is in the simple past tense?",
+a:[
+"They watched a movie.",
+"They watch a movie.",
+"They will watch a movie.",
+"They are watching a movie."
+],
+correct:0
+},
+
+{
+q:"Which sentence is in the simple future tense?",
+a:[
+"I will visit Chennai.",
+"I visited Chennai.",
+"I visit Chennai.",
+"I am visiting Chennai."
+],
+correct:0
+},
+
+{
+q:"Choose the correct form: 'She ___ a book every week.'",
+a:[
+"reads",
+"read",
+"reading",
+"will read"
+],
+correct:0
+},
+
+{
+q:"Choose the correct form: 'They ___ the match yesterday.'",
+a:[
+"won",
+"win",
+"will win",
+"winning"
+],
+correct:0
+},
+
+{
+q:"Choose the correct form: 'We ___ the project tomorrow.'",
+a:[
+"will complete",
+"completed",
+"complete yesterday",
+"completing"
+],
+correct:0
+},
+
+{
+q:"What does the prefix 're-' usually indicate?",
+a:[
+"Again",
+"Not",
+"Before",
+"Opposite"
+],
+correct:0
+},
+
+{
+q:"What does the prefix 'un-' often indicate?",
+a:[
+"Not or opposite",
+"Again",
+"Before",
+"Together"
+],
+correct:0
+},
+
+{
+q:"Which suffix can form a noun showing a quality or state?",
+a:[
+"-ness",
+"-ly",
+"-ing",
+"-ed"
+],
+correct:0
+},
+
+{
+q:"Which word is the opposite of 'difficult'?",
+a:[
+"Easy",
+"Hard",
+"Complex",
+"Challenging"
+],
+correct:0
+},
+
+{
+q:"Which word is the same or nearly the same as 'begin'?",
+a:[
+"Start",
+"Finish",
+"Stop",
+"End"
+],
+correct:0
+},
+
+{
+q:"What is the purpose of a title in a passage?",
+a:[
+"To indicate the main subject or idea",
+"To replace the passage",
+"To count paragraphs",
+"To show the answer"
+],
+correct:0
+},
+
+{
+q:"When answering comprehension questions, students should:",
+a:[
+"Read the passage carefully and use relevant information",
+"Guess every answer",
+"Ignore the passage",
+"Write unrelated information"
+],
+correct:0
+},
+
+{
+q:"If a passage has 5 paragraphs and you read 2 paragraphs, how many remain?",
+a:[
+"2",
+"3",
+"4",
+"5"
+],
+correct:1
+},
+
+{
+q:"A student answers 8 out of 10 questions correctly. What percentage is correct?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A vocabulary test contains 20 questions. A student gets 15 correct. How many are incorrect?",
+a:[
+"3",
+"4",
+"5",
+"6"
+],
+correct:2
+},
+
+{
+q:"A student learns 5 new words each day for 6 days. How many words are learned?",
+a:[
+"20",
+"25",
+"30",
+"35"
+],
+correct:2
+},
+
+{
+q:"A student reads 4 pages every day for 7 days. How many pages are read?",
+a:[
+"21",
+"24",
+"28",
+"32"
+],
+correct:2
+},
+
+{
+q:"A quiz has 50 questions. A student answers 40 correctly. What percentage is correct?",
+a:[
+"70%",
+"75%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A student gets 30 correct answers out of 50. What percentage is correct?",
+a:[
+"50%",
+"60%",
+"70%",
+"80%"
+],
+correct:1
+},
+
+{
+q:"If a student learns 12 words and forgets 3, how many words remain remembered?",
+a:[
+"7",
+"8",
+"9",
+"10"
+],
+correct:2
+},
+
+{
+q:"Which skill involves expressing ideas clearly through written language?",
+a:[
+"Writing",
+"Listening only",
+"Counting",
+"Drawing"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_english_unit1_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_english_unit1_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Unit Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Unit 1 English assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Unit 1 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard English",
+
+        chapter:
+            "Unit 1",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_english_unit1",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Unit Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit1"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere English Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Unit",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_English_Unit1_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_english_unit1"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+
