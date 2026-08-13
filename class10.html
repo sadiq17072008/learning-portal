@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 10 - EduSphere</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+background:#0f172a;
+color:white;
+
+}
+
+
+
+.header{
+
+background:#111827;
+
+padding:20px 30px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+color:#38bdf8;
+
+}
+
+
+
+.back-btn{
+
+text-decoration:none;
+
+background:#3b82f6;
+
+padding:12px 18px;
+
+border-radius:10px;
+
+color:white;
+
+}
+
+
+
+
+.container{
+
+width:95%;
+
+max-width:1400px;
+
+margin:auto;
+
+padding:30px 0;
+
+}
+
+
+
+
+
+.hero{
+
+background:
+linear-gradient(
+135deg,
+#1e293b,
+#334155
+);
+
+padding:40px;
+
+border-radius:25px;
+
+}
+
+
+
+.hero h1{
+
+font-size:2.3rem;
+
+margin-bottom:10px;
+
+}
+
+
+
+.hero p{
+
+color:#cbd5e1;
+
+}
+
+
+
+
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-top:30px;
+
+}
+
+
+
+.stat-card{
+
+background:#1e293b;
+
+padding:25px;
+
+border-radius:20px;
+
+}
+
+
+
+.stat-card h3{
+
+color:#94a3b8;
+
+}
+
+
+
+.stat-card h2{
+
+color:#38bdf8;
+
+font-size:35px;
+
+margin-top:10px;
+
+}
+
+
+
+
+.progress-box{
+
+background:#1e293b;
+
+padding:25px;
+
+border-radius:20px;
+
+margin-top:30px;
+
+}
+
+
+
+.progress-bar{
+
+width:100%;
+
+height:18px;
+
+background:#334155;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:15px;
+
+}
+
+
+
+.progress-fill{
+
+height:100%;
+
+width:0%;
+
+background:#22c55e;
+
+}
+
+
+
+
+
+.subjects{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+margin-top:25px;
+
+}
+
+
+
+.subject-card{
+
+background:#1e293b;
+
+padding:30px;
+
+border-radius:25px;
+
+transition:.3s;
+
+}
+
+
+
+.subject-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.subject-card p{
+
+color:#94a3b8;
+
+margin:15px 0;
+
+}
+
+
+
+.btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:
+
+linear-gradient(
+135deg,
+#3b82f6,
+#06b6d4
+);
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+
+
+
+.notice{
+
+background:#1e293b;
+
+padding:25px;
+
+border-radius:20px;
+
+margin-top:40px;
+
+}
+
+
+
+.notice li{
+
+margin:10px;
+
+color:#cbd5e1;
+
+}
+
+
+
+
+.footer{
+
+text-align:center;
+
+padding:30px;
+
+color:#64748b;
+
+}
+
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="header">
+
+
+<div class="logo">
+
+EduSphere 🎓
+
+</div>
+
+
+<a href="student-dashboard.html" class="back-btn">
+
+← Dashboard
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="hero">
+
+
+<h1>
+📘 Class 10 Learning Hub
+</h1>
+
+
+<p>
+Complete lessons, earn XP, attempt quizzes and build your knowledge.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="stats">
+
+
+<div class="stat-card">
+
+<h3>
+Total XP
+</h3>
+
+<h2>
+0 ⭐
+</h2>
+
+</div>
+
+
+
+
+<div class="stat-card">
+
+<h3>
+Lessons Completed
+</h3>
+
+<h2>
+0 📚
+</h2>
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+<h3>
+Quiz Score
+</h3>
+
+<h2>
+0 %
+</h2>
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+<h3>
+Current Rank
+</h3>
+
+<h2>
+#--
+</h2>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="progress-box">
+
+
+<h2>
+📈 Class Progress
+</h2>
+
+
+<div class="progress-bar">
+
+<div class="progress-fill">
+
+</div>
+
+</div>
+
+
+<p style="margin-top:10px">
+
+0% Completed
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<h2 style="margin-top:40px">
+
+📚 Subjects
+
+</h2>
+
+
+
+
+
+
+
+<div class="subjects">
+
+
+
+
+
+<div class="subject-card">
+
+
+<h2>
+📐 Mathematics
+</h2>
+
+
+<p>
+15 Chapters • Notes • Videos • Quiz
+</p>
+
+
+<button class="btn"
+onclick="openSubject('maths')">
+
+Open Mathematics
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="subject-card">
+
+
+<h2>
+🧪 Science
+</h2>
+
+
+<p>
+16 Chapters • Notes • Videos • Quiz
+</p>
+
+
+<button class="btn"
+onclick="openSubject('science')">
+
+Open Science
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="subject-card">
+
+
+<h2>
+📖 English
+</h2>
+
+
+<p>
+12 Chapters • Notes • Videos • Quiz
+</p>
+
+
+<button class="btn"
+onclick="openSubject('english')">
+
+Open English
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="subject-card">
+
+
+<h2>
+🌍 Social Science
+</h2>
+
+
+<p>
+14 Chapters • Notes • Videos • Quiz
+</p>
+
+
+<button class="btn"
+onclick="openSubject('social')">
+
+Open Social Science
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="notice">
+
+
+<h2>
+📢 Announcements
+</h2>
+
+
+<ul>
+
+<li>
+New chapters added every week.
+</li>
+
+<li>
+Complete lessons to earn XP.
+</li>
+
+<li>
+Quizzes unlock after learning.
+</li>
+
+<li>
+Top learners get badges.
+</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="footer">
+
+© 2026 EduSphere Learning Portal
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+function openSubject(subject){
+
+
+window.location.href =
+"subjects/"+subject+".html";
+
+
+}
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
