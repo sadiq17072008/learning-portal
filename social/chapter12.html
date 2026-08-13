@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 12 - Climate and Natural Vegetation of India | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌦️ Chapter 12: Climate and Natural Vegetation of India
+    </h1>
+
+    <p>
+
+        Learn about the factors affecting India's climate,
+        seasons, monsoon winds, rainfall distribution,
+        natural vegetation, wildlife and climatic regions.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the climate of India, monsoon mechanism,
+        rainfall patterns, natural vegetation and
+        wildlife.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER12_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER12_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Factors Affecting Climate
+    </div>
+
+    <div class="topic">
+        ✓ Latitude
+    </div>
+
+    <div class="topic">
+        ✓ Altitude
+    </div>
+
+    <div class="topic">
+        ✓ Distance from the Sea
+    </div>
+
+    <div class="topic">
+        ✓ Relief Features
+    </div>
+
+    <div class="topic">
+        ✓ Jet Streams
+    </div>
+
+    <div class="topic">
+        ✓ Indian Monsoon
+    </div>
+
+    <div class="topic">
+        ✓ South-West Monsoon
+    </div>
+
+    <div class="topic">
+        ✓ North-East Monsoon
+    </div>
+
+    <div class="topic">
+        ✓ Seasons of India
+    </div>
+
+    <div class="topic">
+        ✓ Cold Weather Season
+    </div>
+
+    <div class="topic">
+        ✓ Hot Weather Season
+    </div>
+
+    <div class="topic">
+        ✓ South-West Monsoon Season
+    </div>
+
+    <div class="topic">
+        ✓ Retreating Monsoon Season
+    </div>
+
+    <div class="topic">
+        ✓ Distribution of Rainfall
+    </div>
+
+    <div class="topic">
+        ✓ Natural Vegetation
+    </div>
+
+    <div class="topic">
+        ✓ Tropical Evergreen Forests
+    </div>
+
+    <div class="topic">
+        ✓ Tropical Deciduous Forests
+    </div>
+
+    <div class="topic">
+        ✓ Tropical Thorn Forests
+    </div>
+
+    <div class="topic">
+        ✓ Mountain Forests
+    </div>
+
+    <div class="topic">
+        ✓ Mangrove Forests
+    </div>
+
+    <div class="topic">
+        ✓ Wildlife
+    </div>
+
+    <div class="topic">
+        ✓ Climatic Regions of India
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Climate
+            </strong>
+
+            <br><br>
+
+            Climate refers to the average weather
+            conditions of a place over a long period.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Factors Affecting Climate
+            </strong>
+
+            <br><br>
+
+            India's climate is affected by latitude,
+            altitude, distance from the sea, relief
+            features, monsoon winds and jet streams.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Latitude
+            </strong>
+
+            <br><br>
+
+            India extends approximately from
+            8°4'N to 37°6'N. The Tropic of Cancer
+            divides the country into two nearly equal
+            halves.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Altitude
+            </strong>
+
+            <br><br>
+
+            Temperature decreases as altitude increases.
+            The normal lapse rate is about 6.5°C for
+            every 1000 metres of ascent.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Distance from the Sea
+            </strong>
+
+            <br><br>
+
+            Coastal areas experience a more moderate
+            climate, while areas farther from the sea
+            generally experience greater temperature
+            variations.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Relief Features
+            </strong>
+
+            <br><br>
+
+            The Himalayas influence India's climate by
+            preventing cold continental winds from
+            entering much of the country and helping
+            monsoon winds produce rainfall.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Jet Streams
+            </strong>
+
+            <br><br>
+
+            Jet streams are high-speed winds in the
+            upper atmosphere that influence weather
+            and the Indian monsoon.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Indian Monsoon
+            </strong>
+
+            <br><br>
+
+            India has a tropical monsoon climate.
+            Seasonal reversal of wind direction is
+            an important characteristic of the monsoon.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. South-West Monsoon
+            </strong>
+
+            <br><br>
+
+            The south-west monsoon brings the major
+            rainy season to most parts of India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. North-East Monsoon
+            </strong>
+
+            <br><br>
+
+            The north-east monsoon is especially
+            important for rainfall over Tamil Nadu
+            and parts of south-eastern India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Cold Weather Season
+            </strong>
+
+            <br><br>
+
+            The cold weather season generally occurs
+            from December to February.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Hot Weather Season
+            </strong>
+
+            <br><br>
+
+            The hot weather season generally occurs
+            from March to May.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. South-West Monsoon Season
+            </strong>
+
+            <br><br>
+
+            The south-west monsoon season generally
+            extends from June to September.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Retreating Monsoon
+            </strong>
+
+            <br><br>
+
+            The retreating monsoon season generally
+            occurs during October and November.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Rainfall Distribution
+            </strong>
+
+            <br><br>
+
+            Rainfall is unevenly distributed across
+            India because of differences in relief,
+            wind direction and other climatic factors.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Tropical Evergreen Forests
+            </strong>
+
+            <br><br>
+
+            These forests occur in areas receiving
+            high rainfall and remain green throughout
+            the year.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Tropical Deciduous Forests
+            </strong>
+
+            <br><br>
+
+            These forests are also called monsoon
+            forests and shed their leaves during
+            the dry season.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. Tropical Thorn Forests
+            </strong>
+
+            <br><br>
+
+            Thorn forests occur mainly in regions
+            with low rainfall and dry conditions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Mountain Forests
+            </strong>
+
+            <br><br>
+
+            Mountain vegetation changes with altitude
+            because temperature and moisture conditions
+            change as elevation increases.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Mangrove Forests
+            </strong>
+
+            <br><br>
+
+            Mangrove vegetation occurs in tidal coastal
+            areas, particularly around river deltas.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                21. Wildlife
+            </strong>
+
+            <br><br>
+
+            India's varied climate and vegetation
+            support diverse wildlife including
+            mammals, birds, reptiles and other species.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                22. Climatic Regions
+            </strong>
+
+            <br><br>
+
+            India's climatic regions vary according
+            to temperature, rainfall, altitude and
+            geographical location.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT NUMERICAL FACTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Important Numerical Facts
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Latitudinal Extent:
+        </strong>
+
+        India lies approximately between
+        8°4'N and 37°6'N.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Normal Lapse Rate:
+        </strong>
+
+        Temperature decreases by approximately
+        6.5°C for every 1000 metres of ascent.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Cold Weather Season:
+        </strong>
+
+        December to February.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Hot Weather Season:
+        </strong>
+
+        March to May.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            South-West Monsoon:
+        </strong>
+
+        June to September.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Retreating Monsoon:
+        </strong>
+
+        October to November.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example Calculation:
+        </strong>
+
+        If a place is 2000 metres higher than another
+        place, the approximate temperature decrease
+        based on the normal lapse rate is:
+
+        <br><br>
+
+        6.5 × 2 = <strong>13°C</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Percentage Calculation:
+        </strong>
+
+        If 40 out of 50 questions are answered correctly:
+
+        <br><br>
+
+        (40 ÷ 50) × 100 = <strong>80%</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 12 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and calculation-based questions
+        are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter13.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 13
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 12 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"Which term refers to the average weather conditions of a place over a long period?",
+a:[
+"Weather",
+"Climate",
+"Season",
+"Humidity"
+],
+correct:1
+},
+
+{
+q:"Which of the following affects the climate of India?",
+a:[
+"Latitude",
+"Altitude",
+"Distance from sea",
+"All of the above"
+],
+correct:3
+},
+
+{
+q:"India lies approximately between which latitudes?",
+a:[
+"8°4'N and 37°6'N",
+"5°4'N and 30°6'N",
+"10°4'S and 37°6'S",
+"20°4'N and 50°6'N"
+],
+correct:0
+},
+
+{
+q:"What happens to temperature as altitude increases?",
+a:[
+"It increases",
+"It decreases",
+"It remains constant",
+"It becomes zero"
+],
+correct:1
+},
+
+{
+q:"The normal lapse rate is approximately:",
+a:[
+"4.5°C per 1000 m",
+"5.5°C per 1000 m",
+"6.5°C per 1000 m",
+"7.5°C per 1000 m"
+],
+correct:2
+},
+
+{
+q:"Which factor gives coastal areas a moderate climate?",
+a:[
+"Altitude",
+"Distance from the sea",
+"Latitude only",
+"Jet streams"
+],
+correct:1
+},
+
+{
+q:"Which mountain system strongly influences India's climate?",
+a:[
+"Alps",
+"Himalayas",
+"Andes",
+"Rockies"
+],
+correct:1
+},
+
+{
+q:"India has mainly which type of climate?",
+a:[
+"Polar climate",
+"Tropical monsoon climate",
+"Desert climate",
+"Mediterranean climate"
+],
+correct:1
+},
+
+{
+q:"Which wind system is responsible for most of India's rainy season?",
+a:[
+"South-West Monsoon",
+"North-East Trade Wind only",
+"Polar winds",
+"Local winds"
+],
+correct:0
+},
+
+{
+q:"The major rainy season generally occurs during:",
+a:[
+"January to March",
+"June to September",
+"October to December",
+"December to February"
+],
+correct:1
+},
+
+{
+q:"Which monsoon is particularly important for Tamil Nadu?",
+a:[
+"North-East Monsoon",
+"South-West Monsoon only",
+"Western Disturbances",
+"Polar winds"
+],
+correct:0
+},
+
+{
+q:"The cold weather season generally occurs during:",
+a:[
+"March to May",
+"June to September",
+"December to February",
+"October to November"
+],
+correct:2
+},
+
+{
+q:"The hot weather season generally occurs during:",
+a:[
+"December to February",
+"March to May",
+"June to September",
+"October to November"
+],
+correct:1
+},
+
+{
+q:"The retreating monsoon season generally occurs during:",
+a:[
+"January and February",
+"March and April",
+"June and July",
+"October and November"
+],
+correct:3
+},
+
+{
+q:"What is a major characteristic of monsoon climate?",
+a:[
+"Seasonal reversal of winds",
+"No rainfall",
+"Constant temperature",
+"Permanent snowfall"
+],
+correct:0
+},
+
+{
+q:"Which region is generally influenced by the Arabian Sea branch of the South-West Monsoon?",
+a:[
+"Western coast",
+"Only north-east India",
+"Only Rajasthan",
+"Only Tamil Nadu"
+],
+correct:0
+},
+
+{
+q:"Which factor causes rainfall to vary greatly across India?",
+a:[
+"Relief",
+"Wind direction",
+"Location",
+"All of the above"
+],
+correct:3
+},
+
+{
+q:"Which type of forest remains green throughout the year?",
+a:[
+"Tropical Evergreen Forest",
+"Thorn Forest",
+"Deciduous Forest",
+"Desert scrub"
+],
+correct:0
+},
+
+{
+q:"Tropical deciduous forests are also called:",
+a:[
+"Monsoon forests",
+"Alpine forests",
+"Desert forests",
+"Mangrove forests"
+],
+correct:0
+},
+
+{
+q:"Which forests are commonly found in regions of low rainfall?",
+a:[
+"Tropical Thorn Forests",
+"Tropical Evergreen Forests",
+"Mangrove forests",
+"Alpine forests"
+],
+correct:0
+},
+
+{
+q:"Mangrove forests are mainly associated with:",
+a:[
+"Tidal coastal areas",
+"High mountains",
+"Dry deserts",
+"Cold deserts"
+],
+correct:0
+},
+
+{
+q:"Which vegetation changes with increasing altitude?",
+a:[
+"Mountain vegetation",
+"Mangrove vegetation",
+"Thorn vegetation only",
+"Desert vegetation"
+],
+correct:0
+},
+
+{
+q:"Which forest type is associated with high rainfall?",
+a:[
+"Tropical Evergreen",
+"Tropical Thorn",
+"Desert scrub",
+"Dry grassland"
+],
+correct:0
+},
+
+{
+q:"Which forest type sheds leaves during the dry season?",
+a:[
+"Tropical Deciduous",
+"Tropical Evergreen",
+"Mangrove",
+"Alpine"
+],
+correct:0
+},
+
+{
+q:"Which of the following is associated with tidal regions?",
+a:[
+"Mangrove forests",
+"Thorn forests",
+"Mountain forests",
+"Evergreen forests only"
+],
+correct:0
+},
+
+{
+q:"Why are mountains generally cooler than plains?",
+a:[
+"Temperature decreases with altitude",
+"Mountains receive no sunlight",
+"Mountains are closer to the sea",
+"Mountains have no vegetation"
+],
+correct:0
+},
+
+{
+q:"If the altitude increases by 1000 m, approximately how much does temperature decrease?",
+a:[
+"4.5°C",
+"5.5°C",
+"6.5°C",
+"8.5°C"
+],
+correct:2
+},
+
+{
+q:"If altitude increases by 2000 m, what is the approximate temperature decrease?",
+a:[
+"10°C",
+"11°C",
+"13°C",
+"15°C"
+],
+correct:2
+},
+
+{
+q:"If altitude increases by 3000 m, what is the approximate temperature decrease?",
+a:[
+"13°C",
+"16.5°C",
+"19.5°C",
+"22°C"
+],
+correct:2
+},
+
+{
+q:"If a mountain station is 1000 m higher than a plain, and the plain temperature is 30°C, what is the approximate mountain temperature?",
+a:[
+"23.5°C",
+"24.5°C",
+"25.5°C",
+"26.5°C"
+],
+correct:2
+},
+
+{
+q:"If a place is 2000 m higher and the lower place has a temperature of 30°C, what is the approximate temperature at the higher place?",
+a:[
+"15°C",
+"17°C",
+"18°C",
+"20°C"
+],
+correct:2
+},
+
+{
+q:"If a place is 3000 m higher than another place with a temperature of 30°C, what is the approximate temperature difference?",
+a:[
+"13°C",
+"16.5°C",
+"19.5°C",
+"22.5°C"
+],
+correct:2
+},
+
+{
+q:"What is 6.5 × 2?",
+a:[
+"11",
+"12",
+"13",
+"14"
+],
+correct:2
+},
+
+{
+q:"What is 6.5 × 3?",
+a:[
+"18.5",
+"19.5",
+"20.5",
+"21.5"
+],
+correct:1
+},
+
+{
+q:"What is 6.5 × 4?",
+a:[
+"24°C",
+"25°C",
+"26°C",
+"27°C"
+],
+correct:2
+},
+
+{
+q:"If 30 out of 50 questions are correct, what percentage is obtained?",
+a:[
+"50%",
+"55%",
+"60%",
+"65%"
+],
+correct:2
+},
+
+{
+q:"If 35 out of 50 questions are correct, what percentage is obtained?",
+a:[
+"65%",
+"70%",
+"75%",
+"80%"
+],
+correct:1
+},
+
+{
+q:"If 40 out of 50 questions are correct, what percentage is obtained?",
+a:[
+"70%",
+"75%",
+"80%",
+"85%"
+],
+correct:2
+},
+
+{
+q:"If 45 out of 50 questions are correct, what percentage is obtained?",
+a:[
+"80%",
+"85%",
+"90%",
+"95%"
+],
+correct:2
+},
+
+{
+q:"If 48 out of 50 questions are correct, what percentage is obtained?",
+a:[
+"94%",
+"95%",
+"96%",
+"98%"
+],
+correct:2
+},
+
+{
+q:"If a student gets 42 correct answers out of 50, how many are incorrect?",
+a:[
+"6",
+"7",
+"8",
+"9"
+],
+correct:2
+},
+
+{
+q:"If a student gets 37 correct answers out of 50, how many are incorrect?",
+a:[
+"11",
+"12",
+"13",
+"14"
+],
+correct:2
+},
+
+{
+q:"If each correct answer gives 2 XP, how much XP is earned for 40 correct answers?",
+a:[
+"60 XP",
+"70 XP",
+"80 XP",
+"90 XP"
+],
+correct:2
+},
+
+{
+q:"If each correct answer gives 2 XP, how much XP is earned for 45 correct answers?",
+a:[
+"80 XP",
+"90 XP",
+"100 XP",
+"110 XP"
+],
+correct:1
+},
+
+{
+q:"If a student scores 25 out of 50, how many more correct answers are needed to reach the pass mark of 30?",
+a:[
+"3",
+"4",
+"5",
+"6"
+],
+correct:2
+},
+
+{
+q:"Which season follows the hot weather season?",
+a:[
+"Cold weather season",
+"South-West Monsoon season",
+"Winter",
+"Retreating monsoon"
+],
+correct:1
+},
+
+{
+q:"Which season follows the South-West Monsoon season?",
+a:[
+"Retreating monsoon season",
+"Cold weather season immediately",
+"Hot weather season",
+"Spring"
+],
+correct:0
+},
+
+{
+q:"Which vegetation type is especially suited to saline and tidal environments?",
+a:[
+"Mangrove",
+"Thorn",
+"Evergreen",
+"Mountain"
+],
+correct:0
+},
+
+{
+q:"Which statement about India's rainfall is correct?",
+a:[
+"It is evenly distributed everywhere",
+"It varies considerably from region to region",
+"India receives no monsoon rainfall",
+"Only mountains receive rainfall"
+],
+correct:1
+},
+
+{
+q:"Which of the following best explains India's varied natural vegetation?",
+a:[
+"Variation in climate, rainfall, soil and relief",
+"Only population",
+"Only longitude",
+"Only rivers"
+],
+correct:0
+},
+
+{
+q:"If a student answers 32 out of 50 questions correctly, what percentage is obtained?",
+a:[
+"62%",
+"64%",
+"66%",
+"68%"
+],
+correct:1
+},
+
+{
+q:"Which climatic season generally includes October and November?",
+a:[
+"Cold weather season",
+"Hot weather season",
+"Retreating monsoon season",
+"South-West Monsoon season"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch12_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch12_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 12 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 12 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Geography Chapter 12 - Climate and Natural Vegetation of India",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter12",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter12"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Geography_Chapter12_Climate_Natural_Vegetation_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter12"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

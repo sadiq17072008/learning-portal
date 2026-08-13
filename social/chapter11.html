@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 11 - India Location, Relief and Drainage | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌍 Chapter 11: India Location, Relief and Drainage
+    </h1>
+
+    <p>
+
+        Learn about India's geographical location,
+        latitudinal and longitudinal extent,
+        major physical divisions, mountains, plains,
+        plateaus, coastal plains, islands and the
+        drainage systems of India.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study India's location, geographical extent,
+        physical divisions, major rivers and drainage
+        systems.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER11_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER11_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Location of India
+    </div>
+
+    <div class="topic">
+        ✓ Latitudinal Extent
+    </div>
+
+    <div class="topic">
+        ✓ Longitudinal Extent
+    </div>
+
+    <div class="topic">
+        ✓ Standard Meridian of India
+    </div>
+
+    <div class="topic">
+        ✓ India and the Indian Ocean
+    </div>
+
+    <div class="topic">
+        ✓ Physical Divisions of India
+    </div>
+
+    <div class="topic">
+        ✓ The Himalayan Mountains
+    </div>
+
+    <div class="topic">
+        ✓ The Northern Plains
+    </div>
+
+    <div class="topic">
+        ✓ The Peninsular Plateau
+    </div>
+
+    <div class="topic">
+        ✓ Indian Desert
+    </div>
+
+    <div class="topic">
+        ✓ Coastal Plains
+    </div>
+
+    <div class="topic">
+        ✓ Islands of India
+    </div>
+
+    <div class="topic">
+        ✓ Drainage Systems
+    </div>
+
+    <div class="topic">
+        ✓ Himalayan Rivers
+    </div>
+
+    <div class="topic">
+        ✓ Peninsular Rivers
+    </div>
+
+    <div class="topic">
+        ✓ Indus River System
+    </div>
+
+    <div class="topic">
+        ✓ Ganga River System
+    </div>
+
+    <div class="topic">
+        ✓ Brahmaputra River System
+    </div>
+
+    <div class="topic">
+        ✓ East-flowing Rivers
+    </div>
+
+    <div class="topic">
+        ✓ West-flowing Rivers
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Location of India
+            </strong>
+
+            <br><br>
+
+            India is located in the northern and eastern
+            hemispheres. It occupies a strategic position
+            in South Asia and is surrounded by the Arabian
+            Sea, Bay of Bengal and Indian Ocean.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Latitudinal Extent
+            </strong>
+
+            <br><br>
+
+            India's mainland extends from approximately
+            8°4'N to 37°6'N latitudes.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Longitudinal Extent
+            </strong>
+
+            <br><br>
+
+            India's mainland extends from approximately
+            68°7'E to 97°25'E longitudes.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Standard Meridian
+            </strong>
+
+            <br><br>
+
+            The Standard Meridian of India is
+            82°30'E longitude. Indian Standard Time
+            is based on this meridian.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Himalayas
+            </strong>
+
+            <br><br>
+
+            The Himalayas are young fold mountains
+            located along India's northern boundary.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Northern Plains
+            </strong>
+
+            <br><br>
+
+            The Northern Plains were formed mainly by
+            the deposition of sediments brought by
+            major Himalayan rivers.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Peninsular Plateau
+            </strong>
+
+            <br><br>
+
+            The Peninsular Plateau is an ancient
+            landmass composed mainly of hard rocks.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Indian Desert
+            </strong>
+
+            <br><br>
+
+            The Indian Desert, also known as the
+            Thar Desert, lies mainly in north-western
+            India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Coastal Plains
+            </strong>
+
+            <br><br>
+
+            India has western and eastern coastal
+            plains extending along the Arabian Sea
+            and Bay of Bengal respectively.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Islands
+            </strong>
+
+            <br><br>
+
+            India's major island groups include the
+            Andaman and Nicobar Islands and the
+            Lakshadweep Islands.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Drainage
+            </strong>
+
+            <br><br>
+
+            Drainage refers to the river system of
+            an area, including rivers and their
+            tributaries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Himalayan Rivers
+            </strong>
+
+            <br><br>
+
+            Major Himalayan river systems include
+            the Indus, Ganga and Brahmaputra systems.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Peninsular Rivers
+            </strong>
+
+            <br><br>
+
+            Important Peninsular rivers include
+            Mahanadi, Godavari, Krishna, Kaveri,
+            Narmada and Tapi.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Ganga River System
+            </strong>
+
+            <br><br>
+
+            The Ganga is one of India's major river
+            systems and has numerous tributaries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Brahmaputra
+            </strong>
+
+            <br><br>
+
+            The Brahmaputra is a major river of
+            north-eastern India and forms an important
+            drainage system.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. East-flowing Rivers
+            </strong>
+
+            <br><br>
+
+            Major east-flowing Peninsular rivers
+            include Mahanadi, Godavari, Krishna
+            and Kaveri.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. West-flowing Rivers
+            </strong>
+
+            <br><br>
+
+            Narmada and Tapi are important west-flowing
+            Peninsular rivers.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. River Basin
+            </strong>
+
+            <br><br>
+
+            A river basin is the area drained by a
+            river and its tributaries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Water Resources
+            </strong>
+
+            <br><br>
+
+            Rivers are important sources of water
+            for agriculture, drinking, industries
+            and hydroelectric power.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Physical Diversity
+            </strong>
+
+            <br><br>
+
+            India's physical landscape includes
+            mountains, plains, plateaus, deserts,
+            coastal regions and islands.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT NUMBERS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Important Numerical Facts
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Latitudinal Extent:
+        </strong>
+
+        Approximately 8°4'N to 37°6'N.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Longitudinal Extent:
+        </strong>
+
+        Approximately 68°7'E to 97°25'E.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Standard Meridian:
+        </strong>
+
+        82°30'E.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Time Difference:
+        </strong>
+
+        The longitudinal extent of India creates
+        approximately a two-hour difference in
+        local time from the western to eastern
+        parts of the country.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Tropic of Cancer:
+        </strong>
+
+        The Tropic of Cancer is located at
+        approximately 23°30'N latitude and passes
+        through India.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 11 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and geographical calculation
+        questions are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter12.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 12
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 11 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"In which hemispheres is India located?",
+a:[
+"Southern and Western",
+"Northern and Eastern",
+"Northern and Western",
+"Southern and Eastern"
+],
+correct:1
+},
+
+{
+q:"India is located in which region of Asia?",
+a:[
+"East Asia",
+"South Asia",
+"West Asia",
+"Central Asia"
+],
+correct:1
+},
+
+{
+q:"What is the approximate southernmost latitude of mainland India?",
+a:[
+"6°4'N",
+"8°4'N",
+"10°4'N",
+"12°4'N"
+],
+correct:1
+},
+
+{
+q:"What is the approximate northernmost latitude of mainland India?",
+a:[
+"35°6'N",
+"36°6'N",
+"37°6'N",
+"38°6'N"
+],
+correct:2
+},
+
+{
+q:"What is the approximate westernmost longitude of mainland India?",
+a:[
+"66°7'E",
+"68°7'E",
+"70°7'E",
+"72°7'E"
+],
+correct:1
+},
+
+{
+q:"What is the approximate easternmost longitude of mainland India?",
+a:[
+"95°25'E",
+"96°25'E",
+"97°25'E",
+"98°25'E"
+],
+correct:2
+},
+
+{
+q:"What is the Standard Meridian of India?",
+a:[
+"80°30'E",
+"81°30'E",
+"82°30'E",
+"83°30'E"
+],
+correct:2
+},
+
+{
+q:"Indian Standard Time is based on which longitude?",
+a:[
+"80°30'E",
+"82°30'E",
+"84°30'E",
+"86°30'E"
+],
+correct:1
+},
+
+{
+q:"Which ocean lies to the south of India?",
+a:[
+"Atlantic Ocean",
+"Indian Ocean",
+"Pacific Ocean",
+"Arctic Ocean"
+],
+correct:1
+},
+
+{
+q:"Which sea lies to the west of India?",
+a:[
+"Arabian Sea",
+"Red Sea",
+"Black Sea",
+"South China Sea"
+],
+correct:0
+},
+
+{
+q:"Which bay lies to the east of India?",
+a:[
+"Bay of Bengal",
+"Arabian Bay",
+"Persian Bay",
+"Hudson Bay"
+],
+correct:0
+},
+
+{
+q:"Which mountain system forms India's northern boundary?",
+a:[
+"Aravallis",
+"Western Ghats",
+"Himalayas",
+"Nilgiris"
+],
+correct:2
+},
+
+{
+q:"The Himalayas are what type of mountains?",
+a:[
+"Block mountains",
+"Young fold mountains",
+"Volcanic mountains",
+"Residual mountains"
+],
+correct:1
+},
+
+{
+q:"The Northern Plains were mainly formed by:",
+a:[
+"Lava",
+"River deposits",
+"Wind deposits only",
+"Glacial ice"
+],
+correct:1
+},
+
+{
+q:"Which landform is an ancient landmass?",
+a:[
+"Peninsular Plateau",
+"Northern Plains",
+"Coastal Delta",
+"Young Himalayas"
+],
+correct:0
+},
+
+{
+q:"Which desert lies mainly in north-western India?",
+a:[
+"Sahara",
+"Thar",
+"Gobi",
+"Kalahari"
+],
+correct:1
+},
+
+{
+q:"The western coastal plain lies along which sea?",
+a:[
+"Bay of Bengal",
+"Arabian Sea",
+"Indian Ocean only",
+"Red Sea"
+],
+correct:1
+},
+
+{
+q:"The eastern coastal plain lies along which water body?",
+a:[
+"Arabian Sea",
+"Bay of Bengal",
+"Persian Gulf",
+"Red Sea"
+],
+correct:1
+},
+
+{
+q:"Which island group lies in the Arabian Sea?",
+a:[
+"Andaman and Nicobar",
+"Lakshadweep",
+"Nicobar only",
+"Majuli"
+],
+correct:1
+},
+
+{
+q:"Which island group lies in the Bay of Bengal?",
+a:[
+"Lakshadweep",
+"Andaman and Nicobar",
+"Minicoy",
+"Maldives"
+],
+correct:1
+},
+
+{
+q:"Which is a major Himalayan river system?",
+a:[
+"Indus",
+"Narmada",
+"Tapi",
+"Godavari"
+],
+correct:0
+},
+
+{
+q:"Which is a major Peninsular river?",
+a:[
+"Godavari",
+"Indus",
+"Brahmaputra",
+"Jhelum"
+],
+correct:0
+},
+
+{
+q:"Which is one of India's major river systems?",
+a:[
+"Ganga",
+"Amazon",
+"Nile",
+"Danube"
+],
+correct:0
+},
+
+{
+q:"Which river is associated with north-eastern India?",
+a:[
+"Brahmaputra",
+"Kaveri",
+"Narmada",
+"Krishna"
+],
+correct:0
+},
+
+{
+q:"Which river flows westwards?",
+a:[
+"Godavari",
+"Krishna",
+"Narmada",
+"Kaveri"
+],
+correct:2
+},
+
+{
+q:"Which river is another major west-flowing Peninsular river?",
+a:[
+"Tapi",
+"Mahanadi",
+"Godavari",
+"Krishna"
+],
+correct:0
+},
+
+{
+q:"Which is an east-flowing river?",
+a:[
+"Narmada",
+"Tapi",
+"Godavari",
+"Luni"
+],
+correct:2
+},
+
+{
+q:"Which river is the longest Peninsular river?",
+a:[
+"Mahanadi",
+"Godavari",
+"Krishna",
+"Kaveri"
+],
+correct:1
+},
+
+{
+q:"Which river system is associated with the northern plains?",
+a:[
+"Indus-Ganga-Brahmaputra",
+"Narmada-Tapi",
+"Godavari-Krishna only",
+"Kaveri only"
+],
+correct:0
+},
+
+{
+q:"What is drainage?",
+a:[
+"River system of an area",
+"Mountain formation",
+"Ocean current",
+"Wind movement"
+],
+correct:0
+},
+
+{
+q:"What is a tributary?",
+a:[
+"A smaller river joining a main river",
+"A mountain",
+"A desert",
+"An island"
+],
+correct:0
+},
+
+{
+q:"What is a river basin?",
+a:[
+"Area drained by a river and its tributaries",
+"Only the river mouth",
+"Only a lake",
+"Only a mountain"
+],
+correct:0
+},
+
+{
+q:"Which physical division contains the Himalayas?",
+a:[
+"Northern Mountains",
+"Peninsular Plateau",
+"Coastal Plains",
+"Islands"
+],
+correct:0
+},
+
+{
+q:"Which physical division is composed mainly of ancient rocks?",
+a:[
+"Peninsular Plateau",
+"Northern Plains",
+"Coastal Plains",
+"River Delta"
+],
+correct:0
+},
+
+{
+q:"Which physical division contains the Thar Desert?",
+a:[
+"Indian Desert",
+"Northern Plains",
+"Himalayas",
+"Coastal Plains"
+],
+correct:0
+},
+
+{
+q:"What is the approximate longitudinal difference between 68°7'E and 97°25'E?",
+a:[
+"27°18'",
+"28°18'",
+"29°18'",
+"30°18'"
+],
+correct:1
+},
+
+{
+q:"What is the approximate latitudinal difference between 8°4'N and 37°6'N?",
+a:[
+"27°2'",
+"28°2'",
+"29°2'",
+"30°2'"
+],
+correct:2
+},
+
+{
+q:"If one degree of longitude represents about 4 minutes of time, what is the time difference for 30°?",
+a:[
+"60 minutes",
+"90 minutes",
+"120 minutes",
+"150 minutes"
+],
+correct:2
+},
+
+{
+q:"India's longitudinal extent is approximately how many degrees?",
+a:[
+"27°",
+"28°",
+"29°",
+"30°"
+],
+correct:2
+},
+
+{
+q:"If 30° longitude corresponds to 120 minutes, how many hours is that?",
+a:[
+"1 hour",
+"2 hours",
+"3 hours",
+"4 hours"
+],
+correct:1
+},
+
+{
+q:"What is the approximate difference between India's eastern and western longitudes?",
+a:[
+"27°18'",
+"28°18'",
+"29°18'",
+"30°18'"
+],
+correct:1
+},
+
+{
+q:"If a quiz has 50 questions and a student answers 30 correctly, what percentage is obtained?",
+a:[
+"50%",
+"55%",
+"60%",
+"65%"
+],
+correct:2
+},
+
+{
+q:"If a student scores 40 out of 50, what percentage is obtained?",
+a:[
+"70%",
+"75%",
+"80%",
+"85%"
+],
+correct:2
+},
+
+{
+q:"If a student scores 45 out of 50, how many answers are incorrect?",
+a:[
+"3",
+"4",
+"5",
+"6"
+],
+correct:2
+},
+
+{
+q:"If a student gets 42 correct answers out of 50, how many are incorrect?",
+a:[
+"6",
+"7",
+"8",
+"9"
+],
+correct:2
+},
+
+{
+q:"If the pass mark is 30 and a student scores 26, how many more correct answers are needed?",
+a:[
+"2",
+"3",
+"4",
+"5"
+],
+correct:2
+},
+
+{
+q:"If each correct answer gives 2 XP and a student answers 40 correctly, how much XP is earned?",
+a:[
+"60 XP",
+"70 XP",
+"80 XP",
+"90 XP"
+],
+correct:2
+},
+
+{
+q:"Which river is known as an important river of the Peninsular drainage system?",
+a:[
+"Kaveri",
+"Indus",
+"Brahmaputra",
+"Jhelum"
+],
+correct:0
+},
+
+{
+q:"Which of the following is NOT a major physical division of India?",
+a:[
+"Himalayas",
+"Northern Plains",
+"Peninsular Plateau",
+"Alps"
+],
+correct:3
+},
+
+{
+q:"Which factor makes India geographically diverse?",
+a:[
+"Mountains, plains, plateaus, deserts, coasts and islands",
+"Only mountains",
+"Only plains",
+"Only deserts"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch11_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch11_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 11 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 11 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Geography Chapter 11 - India Location, Relief and Drainage",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter11",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter11"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Geography_Chapter11_India_Location_Relief_Drainage_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter11"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

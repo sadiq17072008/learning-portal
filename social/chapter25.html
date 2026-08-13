@@ -1,0 +1,2753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 25 - Food Security and Nutrition | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.formula{
+    background:#312e81;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🍚 Chapter 25: Food Security and Nutrition
+    </h1>
+
+    <p>
+
+        Learn about food security, availability,
+        accessibility and affordability of food,
+        nutrition, malnutrition, poverty,
+        public distribution systems, buffer stock,
+        food security programmes and the
+        importance of balanced nutrition.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study food security, nutrition,
+        malnutrition, poverty, public
+        distribution systems, buffer stock
+        and government food security measures.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ECONOMICS_CHAPTER25_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_ECONOMICS_CHAPTER25_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Meaning of Food Security
+    </div>
+
+    <div class="topic">
+        ✓ Availability of Food
+    </div>
+
+    <div class="topic">
+        ✓ Accessibility of Food
+    </div>
+
+    <div class="topic">
+        ✓ Affordability of Food
+    </div>
+
+    <div class="topic">
+        ✓ Food Insecurity
+    </div>
+
+    <div class="topic">
+        ✓ Nutrition
+    </div>
+
+    <div class="topic">
+        ✓ Balanced Diet
+    </div>
+
+    <div class="topic">
+        ✓ Malnutrition
+    </div>
+
+    <div class="topic">
+        ✓ Undernutrition
+    </div>
+
+    <div class="topic">
+        ✓ Overnutrition
+    </div>
+
+    <div class="topic">
+        ✓ Poverty and Food Security
+    </div>
+
+    <div class="topic">
+        ✓ Public Distribution System
+    </div>
+
+    <div class="topic">
+        ✓ Buffer Stock
+    </div>
+
+    <div class="topic">
+        ✓ Minimum Support Price
+    </div>
+
+    <div class="topic">
+        ✓ Food Corporation of India
+    </div>
+
+    <div class="topic">
+        ✓ Government Food Security Programmes
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Food Security
+            </strong>
+
+            <br><br>
+
+            Food security means that all people,
+            at all times, have physical and
+            economic access to sufficient,
+            safe and nutritious food.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Availability
+            </strong>
+
+            <br><br>
+
+            Availability means that sufficient
+            quantities of food are present
+            through domestic production,
+            imports and stocks.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Accessibility
+            </strong>
+
+            <br><br>
+
+            Accessibility means that people
+            are able to obtain food without
+            physical or social barriers.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Affordability
+            </strong>
+
+            <br><br>
+
+            Affordability means that people
+            have enough income or purchasing
+            power to obtain adequate food.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Food Insecurity
+            </strong>
+
+            <br><br>
+
+            Food insecurity occurs when people
+            do not have reliable access to
+            sufficient and nutritious food.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Nutrition
+            </strong>
+
+            <br><br>
+
+            Nutrition is the process by which
+            the body obtains and uses nutrients
+            needed for growth, development,
+            energy and health.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Balanced Diet
+            </strong>
+
+            <br><br>
+
+            A balanced diet contains adequate
+            amounts of carbohydrates, proteins,
+            fats, vitamins, minerals, fibre
+            and water.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Malnutrition
+            </strong>
+
+            <br><br>
+
+            Malnutrition refers to an unhealthy
+            condition caused by inadequate,
+            excessive or imbalanced intake
+            of nutrients.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Undernutrition
+            </strong>
+
+            <br><br>
+
+            Undernutrition occurs when the body
+            does not receive enough energy or
+            essential nutrients.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Overnutrition
+            </strong>
+
+            <br><br>
+
+            Overnutrition occurs when nutrient
+            or energy intake is excessive.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Public Distribution System
+            </strong>
+
+            <br><br>
+
+            The Public Distribution System,
+            or PDS, supplies essential food
+            commodities to eligible people
+            through a network of fair price shops.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Buffer Stock
+            </strong>
+
+            <br><br>
+
+            Buffer stock is the stock of food
+            grains maintained by the government
+            to meet shortages and support
+            food security.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Minimum Support Price
+            </strong>
+
+            <br><br>
+
+            Minimum Support Price is a price
+            announced by the government to
+            provide price support to farmers
+            for selected agricultural products.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Food Corporation of India
+            </strong>
+
+            <br><br>
+
+            The Food Corporation of India
+            plays an important role in the
+            procurement, storage and distribution
+            of food grains.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Poverty and Food Security
+            </strong>
+
+            <br><br>
+
+            Poverty can reduce a household's
+            purchasing power and make it
+            difficult to obtain adequate
+            nutritious food.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Nutrition Security
+            </strong>
+
+            <br><br>
+
+            Nutrition security means having
+            access to adequate quantities of
+            nutritious food and the conditions
+            necessary for proper utilisation
+            of nutrients.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CALCULATIONS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧮 Important Calculations
+    </h2>
+
+
+    <div class="formula">
+
+        Food Requirement =
+        <strong>
+            Population × Food Requirement per Person
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Per Person Availability =
+        <strong>
+            Total Food Available ÷ Population
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Food Deficit =
+        <strong>
+            Required Food − Available Food
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Food Surplus =
+        <strong>
+            Available Food − Required Food
+        </strong>
+
+        when Available Food &gt; Required Food
+
+    </div>
+
+
+    <div class="formula">
+
+        Percentage Change =
+        <strong>
+            (Change ÷ Original Value) × 100
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Per Capita Availability =
+        <strong>
+            Total Quantity ÷ Total Population
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NUMERICAL SUMS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical Sums
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        A population of 1,000 people
+        requires 2 kg of food per person.
+
+        <br><br>
+
+        Total requirement =
+        1,000 × 2
+
+        <br>
+
+        = <strong>2,000 kg</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Total food available = 5,000 kg
+
+        <br>
+
+        Population = 2,000 people
+
+        <br><br>
+
+        Per person availability =
+        5,000 ÷ 2,000
+
+        <br>
+
+        = <strong>2.5 kg per person</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Required food = 8,000 kg
+
+        <br>
+
+        Available food = 6,500 kg
+
+        <br><br>
+
+        Food deficit =
+        8,000 − 6,500
+
+        <br>
+
+        = <strong>1,500 kg</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Required food = 7,000 kg
+
+        <br>
+
+        Available food = 8,500 kg
+
+        <br><br>
+
+        Food surplus =
+        8,500 − 7,000
+
+        <br>
+
+        = <strong>1,500 kg</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        A population of 5,000 people
+        requires 3 kg per person.
+
+        <br><br>
+
+        Requirement =
+        5,000 × 3
+
+        <br>
+
+        = <strong>15,000 kg</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        Food available = 20,000 kg
+
+        <br>
+
+        Population = 5,000 people
+
+        <br><br>
+
+        Per person availability =
+        20,000 ÷ 5,000
+
+        <br>
+
+        = <strong>4 kg</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 7:
+        </strong>
+
+        Required food = 12,000 kg
+
+        <br>
+
+        Available food = 10,000 kg
+
+        <br><br>
+
+        Deficit =
+        12,000 − 10,000
+
+        <br>
+
+        = <strong>2,000 kg</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 8:
+        </strong>
+
+        Original food stock = 10,000 tonnes
+
+        <br>
+
+        New stock = 12,000 tonnes
+
+        <br><br>
+
+        Increase =
+        12,000 − 10,000
+
+        <br>
+
+        = 2,000 tonnes
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 9:
+        </strong>
+
+        Original stock = 10,000 tonnes
+
+        <br>
+
+        Increase = 2,000 tonnes
+
+        <br><br>
+
+        Percentage increase =
+        2,000 ÷ 10,000 × 100
+
+        <br>
+
+        = <strong>20%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 10:
+        </strong>
+
+        Food requirement = 25,000 kg
+
+        <br>
+
+        Food available = 30,000 kg
+
+        <br><br>
+
+        Surplus =
+        30,000 − 25,000
+
+        <br>
+
+        = <strong>5,000 kg</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOD SECURITY FLOW
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🍚 Food Security System
+    </h2>
+
+    <p class="description">
+
+        Food security depends on the
+        availability of food, people's
+        ability to access it and their
+        purchasing power to obtain it.
+
+    </p>
+
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+            🌾 <strong>Production</strong>
+            → Food is produced through agriculture.
+        </div>
+
+        <div class="concept-item">
+            🏢 <strong>Procurement</strong>
+            → Government agencies can procure food grains.
+        </div>
+
+        <div class="concept-item">
+            🏬 <strong>Storage</strong>
+            → Food grains can be maintained as stocks.
+        </div>
+
+        <div class="concept-item">
+            🛒 <strong>Distribution</strong>
+            → Food reaches consumers through distribution systems.
+        </div>
+
+        <div class="concept-item">
+            👨‍👩‍👧 <strong>Consumption</strong>
+            → Households obtain food for their nutritional needs.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 25 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical sums and concept-based
+        questions are included.
+        You need at least 30 correct answers
+        to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/social-science.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 25 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is food security?",
+a:[
+"Access by all people at all times to sufficient, safe and nutritious food",
+"Only increasing food exports",
+"Only storing food grains",
+"Only increasing agricultural production"
+],
+correct:0
+},
+
+{
+q:"Which is an important dimension of food security?",
+a:[
+"Availability",
+"Entertainment",
+"Tourism",
+"Transportation only"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a dimension of food security?",
+a:[
+"Accessibility",
+"Industrialisation",
+"Urbanisation",
+"Privatisation"
+],
+correct:0
+},
+
+{
+q:"Affordability of food means:",
+a:[
+"People have enough purchasing power to obtain adequate food",
+"Food is always exported",
+"Food is stored only by government",
+"Food is produced only in cities"
+],
+correct:0
+},
+
+{
+q:"Food availability can depend on:",
+a:[
+"Domestic production, imports and stocks",
+"Only household income",
+"Only exports",
+"Only rainfall"
+],
+correct:0
+},
+
+{
+q:"What is food insecurity?",
+a:[
+"Lack of reliable access to sufficient and nutritious food",
+"Excess production of food",
+"Increase in exports",
+"Increase in food storage"
+],
+correct:0
+},
+
+{
+q:"What is nutrition?",
+a:[
+"The process of obtaining and using nutrients",
+"Only eating carbohydrates",
+"Only drinking water",
+"Only producing food"
+],
+correct:0
+},
+
+{
+q:"A balanced diet should contain:",
+a:[
+"Adequate amounts of essential nutrients",
+"Only carbohydrates",
+"Only proteins",
+"Only fats"
+],
+correct:0
+},
+
+{
+q:"Malnutrition refers to:",
+a:[
+"Inadequate, excessive or imbalanced nutrition",
+"Only hunger",
+"Only food production",
+"Only agricultural growth"
+],
+correct:0
+},
+
+{
+q:"Undernutrition occurs when:",
+a:[
+"The body does not receive enough energy or nutrients",
+"A person consumes excessive calories",
+"Food production increases",
+"Food prices decrease"
+],
+correct:0
+},
+
+{
+q:"Overnutrition occurs when:",
+a:[
+"Energy or nutrient intake is excessive",
+"There is no food production",
+"A person lacks all nutrients",
+"Food is unavailable"
+],
+correct:0
+},
+
+{
+q:"Which system distributes essential food commodities through fair price shops?",
+a:[
+"Public Distribution System",
+"Stock Exchange",
+"Banking System",
+"Transport System"
+],
+correct:0
+},
+
+{
+q:"PDS stands for:",
+a:[
+"Public Distribution System",
+"Private Development Scheme",
+"Public Development Service",
+"Production Distribution Scheme"
+],
+correct:0
+},
+
+{
+q:"What is buffer stock?",
+a:[
+"Food grain stock maintained to meet shortages and support food security",
+"Money kept in a bank",
+"Industrial machinery",
+"Imported consumer goods"
+],
+correct:0
+},
+
+{
+q:"Which institution plays an important role in procurement and storage of food grains?",
+a:[
+"Food Corporation of India",
+"Reserve Bank of India",
+"Election Commission",
+"Planning Commission"
+],
+correct:0
+},
+
+{
+q:"FCI stands for:",
+a:[
+"Food Corporation of India",
+"Food Council of India",
+"Federal Corporation of India",
+"Food Committee of India"
+],
+correct:0
+},
+
+{
+q:"What is Minimum Support Price?",
+a:[
+"A government-announced price support for selected agricultural products",
+"The retail price in every shop",
+"The price of imported goods",
+"The price of machinery"
+],
+correct:0
+},
+
+{
+q:"Which group can be particularly vulnerable to food insecurity?",
+a:[
+"Poor households",
+"Only wealthy households",
+"Only large companies",
+"Only exporters"
+],
+correct:0
+},
+
+{
+q:"Poverty can affect food security because it can reduce:",
+a:[
+"Purchasing power",
+"Rainfall",
+"Population",
+"Land area"
+],
+correct:0
+},
+
+{
+q:"Which is essential for good nutrition?",
+a:[
+"A balanced diet",
+"Only sweets",
+"Only fats",
+"Only rice"
+],
+correct:0
+},
+
+{
+q:"Which nutrient is an important source of energy?",
+a:[
+"Carbohydrates",
+"Minerals only",
+"Water only",
+"Vitamins only"
+],
+correct:0
+},
+
+{
+q:"Which nutrient is important for body growth and repair?",
+a:[
+"Protein",
+"Water only",
+"Minerals only",
+"Fibre only"
+],
+correct:0
+},
+
+{
+q:"Which is an example of food insecurity?",
+a:[
+"A household being unable to obtain enough nutritious food",
+"A household having a balanced diet",
+"A farmer producing enough food",
+"A store having adequate stock"
+],
+correct:0
+},
+
+{
+q:"Food security requires food to be:",
+a:[
+"Available, accessible and affordable",
+"Only exported",
+"Only stored",
+"Only produced"
+],
+correct:0
+},
+
+{
+q:"Which can affect food availability?",
+a:[
+"Agricultural production",
+"School uniforms",
+"Entertainment",
+"Tourism"
+],
+correct:0
+},
+
+{
+q:"Which can reduce a household's ability to buy food?",
+a:[
+"Low income",
+"High purchasing power",
+"Stable income",
+"Lower food prices"
+],
+correct:0
+},
+
+{
+q:"Which is an important function of food stocks?",
+a:[
+"Helping meet shortages",
+"Stopping agriculture",
+"Stopping food distribution",
+"Reducing nutrition"
+],
+correct:0
+},
+
+{
+q:"Public Distribution System mainly helps:",
+a:[
+"Provide essential commodities to eligible consumers",
+"Increase luxury imports",
+"Promote tourism",
+"Build highways"
+],
+correct:0
+},
+
+{
+q:"A fair price shop is associated with:",
+a:[
+"Public Distribution System",
+"Stock market",
+"Foreign exchange market",
+"Industrial market"
+],
+correct:0
+},
+
+{
+q:"Which is a consequence of inadequate nutrition?",
+a:[
+"Poor health and development",
+"Guaranteed good health",
+"Automatic increase in income",
+"Increase in food production"
+],
+correct:0
+},
+
+{
+q:"What is nutrition security concerned with?",
+a:[
+"Adequate nutritious food and proper utilisation of nutrients",
+"Only food exports",
+"Only food prices",
+"Only agricultural machinery"
+],
+correct:0
+},
+
+{
+q:"A population of 1,000 people requires 2 kg of food per person. What is the total requirement?",
+a:[
+"1,000 kg",
+"1,500 kg",
+"2,000 kg",
+"2,500 kg"
+],
+correct:2
+},
+
+{
+q:"A population of 2,000 people requires 3 kg per person. What is the total requirement?",
+a:[
+"4,000 kg",
+"5,000 kg",
+"6,000 kg",
+"7,000 kg"
+],
+correct:2
+},
+
+{
+q:"Food available is 5,000 kg for 2,000 people. What is availability per person?",
+a:[
+"1.5 kg",
+"2 kg",
+"2.5 kg",
+"3 kg"
+],
+correct:2
+},
+
+{
+q:"Required food is 8,000 kg and available food is 6,500 kg. What is the deficit?",
+a:[
+"500 kg",
+"1,000 kg",
+"1,500 kg",
+"2,000 kg"
+],
+correct:2
+},
+
+{
+q:"Required food is 7,000 kg and available food is 8,500 kg. What is the surplus?",
+a:[
+"500 kg",
+"1,000 kg",
+"1,500 kg",
+"2,000 kg"
+],
+correct:2
+},
+
+{
+q:"A population of 5,000 people requires 3 kg per person. What is the total food requirement?",
+a:[
+"10,000 kg",
+"12,000 kg",
+"15,000 kg",
+"18,000 kg"
+],
+correct:2
+},
+
+{
+q:"Food available is 20,000 kg and population is 5,000. What is availability per person?",
+a:[
+"2 kg",
+"3 kg",
+"4 kg",
+"5 kg"
+],
+correct:2
+},
+
+{
+q:"Required food is 12,000 kg and available food is 10,000 kg. What is the deficit?",
+a:[
+"1,000 kg",
+"1,500 kg",
+"2,000 kg",
+"2,500 kg"
+],
+correct:2
+},
+
+{
+q:"Original food stock is 10,000 tonnes and new stock is 12,000 tonnes. What is the increase?",
+a:[
+"1,000 tonnes",
+"1,500 tonnes",
+"2,000 tonnes",
+"2,500 tonnes"
+],
+correct:2
+},
+
+{
+q:"Original stock is 10,000 tonnes and the increase is 2,000 tonnes. What is the percentage increase?",
+a:[
+"10%",
+"15%",
+"20%",
+"25%"
+],
+correct:2
+},
+
+{
+q:"Required food is 25,000 kg and available food is 30,000 kg. What is the surplus?",
+a:[
+"3,000 kg",
+"4,000 kg",
+"5,000 kg",
+"6,000 kg"
+],
+correct:2
+},
+
+{
+q:"A population of 4,000 people requires 2.5 kg per person. What is the total requirement?",
+a:[
+"8,000 kg",
+"9,000 kg",
+"10,000 kg",
+"12,000 kg"
+],
+correct:2
+},
+
+{
+q:"Food available is 12,000 kg for 4,000 people. What is availability per person?",
+a:[
+"2 kg",
+"2.5 kg",
+"3 kg",
+"4 kg"
+],
+correct:2
+},
+
+{
+q:"Required food is 15,000 kg and available food is 12,000 kg. What is the deficit?",
+a:[
+"2,000 kg",
+"2,500 kg",
+"3,000 kg",
+"3,500 kg"
+],
+correct:2
+},
+
+{
+q:"Required food is 10,000 kg and available food is 13,000 kg. What is the surplus?",
+a:[
+"2,000 kg",
+"2,500 kg",
+"3,000 kg",
+"3,500 kg"
+],
+correct:2
+},
+
+{
+q:"Original stock is 20,000 tonnes and new stock is 25,000 tonnes. What is the increase?",
+a:[
+"3,000 tonnes",
+"4,000 tonnes",
+"5,000 tonnes",
+"6,000 tonnes"
+],
+correct:2
+},
+
+{
+q:"Original stock is 20,000 tonnes and the increase is 5,000 tonnes. What is the percentage increase?",
+a:[
+"15%",
+"20%",
+"25%",
+"30%"
+],
+correct:2
+},
+
+{
+q:"Food available is 18,000 kg and population is 6,000. What is per person availability?",
+a:[
+"2 kg",
+"2.5 kg",
+"3 kg",
+"4 kg"
+],
+correct:2
+},
+
+{
+q:"A population of 6,000 requires 3 kg per person. What is the requirement?",
+a:[
+"15,000 kg",
+"16,000 kg",
+"18,000 kg",
+"20,000 kg"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_economics_ch25_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_economics_ch25_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 25 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 25 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Economics Chapter 25 - Food Security and Nutrition",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_economics_chapter25",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_economics_chapter25"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Economics_Chapter25_Food_Security_Nutrition_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_economics_chapter25"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

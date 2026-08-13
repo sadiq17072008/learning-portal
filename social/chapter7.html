@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 7 - Anti-Colonial Movements and the Birth of Nationalism | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   IMPORTANT EVENTS
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+         Chapter 7: Anti-Colonial Movements and the Birth of Nationalism
+    </h1>
+
+    <p>
+        Learn about the major anti-colonial movements in India,
+        the Revolt of 1857, peasant and tribal resistance,
+        the growth of Indian nationalism, the economic critique
+        of colonial rule and the foundation of the Indian
+        National Congress.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the Revolt of 1857, peasant and tribal movements,
+        socio-religious reform, the growth of nationalism,
+        economic criticism of colonialism and the formation
+        of the Indian National Congress.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER7_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER7_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Anti-Colonial Movements
+    </div>
+
+    <div class="topic">
+        ✓ Revolt of 1857
+    </div>
+
+    <div class="topic">
+        ✓ Causes of the Revolt of 1857
+    </div>
+
+    <div class="topic">
+        ✓ Political Causes
+    </div>
+
+    <div class="topic">
+        ✓ Economic Causes
+    </div>
+
+    <div class="topic">
+        ✓ Social and Religious Causes
+    </div>
+
+    <div class="topic">
+        ✓ Military Causes
+    </div>
+
+    <div class="topic">
+        ✓ Immediate Cause of the Revolt
+    </div>
+
+    <div class="topic">
+        ✓ Course of the Revolt
+    </div>
+
+    <div class="topic">
+        ✓ Leaders of the Revolt
+    </div>
+
+    <div class="topic">
+        ✓ Causes for the Failure
+    </div>
+
+    <div class="topic">
+        ✓ Consequences of the Revolt
+    </div>
+
+    <div class="topic">
+        ✓ Peasant and Tribal Movements
+    </div>
+
+    <div class="topic">
+        ✓ Wahabi Movement
+    </div>
+
+    <div class="topic">
+        ✓ Farazi Movement
+    </div>
+
+    <div class="topic">
+        ✓ Tribal Uprisings
+    </div>
+
+    <div class="topic">
+        ✓ Growth of Nationalism
+    </div>
+
+    <div class="topic">
+        ✓ Economic Critique of Colonialism
+    </div>
+
+    <div class="topic">
+        ✓ Formation of the Indian National Congress
+    </div>
+
+    <div class="topic">
+        ✓ Early Nationalists
+    </div>
+
+    <div class="topic">
+        ✓ Methods and Objectives of the Congress
+    </div>
+
+    <div class="topic">
+        ✓ Rise of Extremist Nationalism
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Revolt of 1857
+            </strong>
+
+            <br><br>
+
+            The Revolt of 1857 was a major uprising against
+            British East India Company rule. It began at
+            Meerut and spread to several parts of northern
+            and central India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Immediate Cause
+            </strong>
+
+            <br><br>
+
+            The introduction of the new Enfield rifle cartridges
+            became the immediate cause of the revolt because
+            soldiers believed that the cartridges were greased
+            with cow and pig fat.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Mangal Pandey
+            </strong>
+
+            <br><br>
+
+            Mangal Pandey was an Indian soldier associated
+            with the early events that preceded the Revolt
+            of 1857.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Bahadur Shah II
+            </strong>
+
+            <br><br>
+
+            Bahadur Shah II was accepted as the symbolic
+            emperor by the rebels during the Revolt of 1857.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Rani Lakshmibai
+            </strong>
+
+            <br><br>
+
+            Rani Lakshmibai of Jhansi became one of the
+            prominent leaders of the Revolt of 1857.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Nana Sahib
+            </strong>
+
+            <br><br>
+
+            Nana Sahib was one of the important leaders
+            associated with the Revolt of 1857 at Kanpur.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Tantia Tope
+            </strong>
+
+            <br><br>
+
+            Tantia Tope was an important military leader
+            who continued resistance against British forces
+            during the revolt.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Begum Hazrat Mahal
+            </strong>
+
+            <br><br>
+
+            Begum Hazrat Mahal played a leading role in
+            the resistance at Lucknow during the Revolt
+            of 1857.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Peasant Movements
+            </strong>
+
+            <br><br>
+
+            Peasant resistance developed against oppressive
+            land revenue systems, landlords, moneylenders
+            and colonial economic policies.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Farazi Movement
+            </strong>
+
+            <br><br>
+
+            The Farazi Movement was launched by Haji
+            Shariatullah in East Bengal in 1818 and later
+            developed under Dudu Mian.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Dudu Mian
+            </strong>
+
+            <br><br>
+
+            Dudu Mian mobilised peasants and opposed
+            exploitation by landlords and colonial authorities.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Wahabi Movement
+            </strong>
+
+            <br><br>
+
+            The Wahabi movement became associated with
+            resistance to colonial authority and efforts
+            to reform Muslim society.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Tribal Uprisings
+            </strong>
+
+            <br><br>
+
+            Several tribal communities resisted British
+            policies, moneylenders, landlords and the
+            disruption of traditional systems.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Growth of Nationalism
+            </strong>
+
+            <br><br>
+
+            Political associations, newspapers, education,
+            social reform and economic criticism helped
+            develop a broader sense of Indian nationalism.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Economic Critique
+            </strong>
+
+            <br><br>
+
+            Indian nationalists criticised colonial economic
+            policies for causing poverty, exploitation and
+            the drain of wealth from India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Drain of Wealth
+            </strong>
+
+            <br><br>
+
+            Nationalist thinkers argued that wealth generated
+            in India was being transferred to Britain through
+            various colonial mechanisms.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Indian National Congress
+            </strong>
+
+            <br><br>
+
+            The Indian National Congress was founded in
+            1885 and became an important organisation in
+            the growth of Indian nationalism.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. Allan Octavian Hume
+            </strong>
+
+            <br><br>
+
+            Allan Octavian Hume played an important role
+            in the formation of the Indian National Congress.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. W.C. Bonnerjee
+            </strong>
+
+            <br><br>
+
+            W.C. Bonnerjee presided over the first session
+            of the Indian National Congress held in Bombay
+            in 1885.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Early Nationalists
+            </strong>
+
+            <br><br>
+
+            Early nationalists used constitutional methods
+            such as petitions, speeches, meetings and
+            representations to express Indian demands.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                21. Extremist Nationalism
+            </strong>
+
+            <br><br>
+
+            A more assertive form of nationalism emerged
+            in the late nineteenth and early twentieth
+            centuries, demanding stronger political action.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT DATES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🗓️ Important Dates and Events
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            1818:
+        </strong>
+
+        Haji Shariatullah launched the Farazi Movement
+        in East Bengal.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1857:
+        </strong>
+
+        The major Revolt of 1857 broke out against
+        British East India Company rule.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            10 May 1857:
+        </strong>
+
+        The revolt began at Meerut.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1858:
+        </strong>
+
+        The Government of India Act transferred
+        administration from the East India Company
+        to the British Crown.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1870–1885:
+        </strong>
+
+        Period associated with the growth of political
+        associations and the foundation of the Indian
+        National Congress.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1885:
+        </strong>
+
+        The Indian National Congress was founded.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1885:
+        </strong>
+
+        The first session of the Indian National Congress
+        was held at Bombay.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            72:
+        </strong>
+
+        The first session of the Indian National Congress
+        had 72 delegates.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 7 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and date-based questions are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter8.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 8
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 7 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What was one of the major anti-colonial uprisings discussed in this chapter?",
+a:[
+"Revolt of 1857",
+"Quit India Movement",
+"Non-Cooperation Movement",
+"Salt Satyagraha"
+],
+correct:0
+},
+
+{
+q:"Where did the Revolt of 1857 begin?",
+a:[
+"Meerut",
+"Delhi",
+"Kanpur",
+"Lucknow"
+],
+correct:0
+},
+
+{
+q:"On which date did the Revolt of 1857 begin at Meerut?",
+a:[
+"10 May 1857",
+"15 August 1857",
+"26 January 1857",
+"1 January 1857"
+],
+correct:0
+},
+
+{
+q:"What was the immediate cause of the Revolt of 1857?",
+a:[
+"Greased Enfield rifle cartridges",
+"Heavy railway fares",
+"Salt tax",
+"Partition of Bengal"
+],
+correct:0
+},
+
+{
+q:"Which rifle cartridges became controversial among Indian soldiers?",
+a:[
+"Enfield",
+"Lee-Metford",
+"Mauser",
+"Springfield"
+],
+correct:0
+},
+
+{
+q:"Why were the cartridges controversial?",
+a:[
+"They were believed to contain cow and pig fat",
+"They were very expensive",
+"They were imported from France",
+"They were too heavy"
+],
+correct:0
+},
+
+{
+q:"Who was associated with the early military resistance before the main revolt?",
+a:[
+"Mangal Pandey",
+"Allan Octavian Hume",
+"Surendranath Banerjee",
+"Dadabhai Naoroji"
+],
+correct:0
+},
+
+{
+q:"Who became the symbolic emperor of the rebels during the Revolt of 1857?",
+a:[
+"Bahadur Shah II",
+"Akbar II",
+"Shah Alam II",
+"Tipu Sultan"
+],
+correct:0
+},
+
+{
+q:"Which ruler led the resistance at Jhansi?",
+a:[
+"Rani Lakshmibai",
+"Begum Hazrat Mahal",
+"Velunachiyar",
+"Rani Mangammal"
+],
+correct:0
+},
+
+{
+q:"Who was associated with the revolt at Kanpur?",
+a:[
+"Nana Sahib",
+"Bahadur Shah II",
+"Kunwar Singh",
+"Bakht Khan"
+],
+correct:0
+},
+
+{
+q:"Who was an important military leader associated with the Revolt of 1857?",
+a:[
+"Tantia Tope",
+"Allan Octavian Hume",
+"W.C. Bonnerjee",
+"William Bentinck"
+],
+correct:0
+},
+
+{
+q:"Who led resistance at Lucknow?",
+a:[
+"Begum Hazrat Mahal",
+"Rani Lakshmibai",
+"Velunachiyar",
+"Kuyili"
+],
+correct:0
+},
+
+{
+q:"Which of the following was a political cause of the Revolt of 1857?",
+a:[
+"British annexation policies",
+"Introduction of railways",
+"Growth of newspapers",
+"Spread of education"
+],
+correct:0
+},
+
+{
+q:"Which British policy created resentment among Indian rulers?",
+a:[
+"Doctrine of Lapse",
+"Subsidiary Education Policy",
+"Permanent Railway Policy",
+"Factory Act"
+],
+correct:0
+},
+
+{
+q:"Which was an economic cause of the Revolt of 1857?",
+a:[
+"Exploitation of peasants and artisans",
+"Expansion of universities",
+"Development of newspapers",
+"Growth of Indian associations"
+],
+correct:0
+},
+
+{
+q:"Which group suffered from the decline of traditional industries?",
+a:[
+"Indian artisans",
+"British factory owners",
+"European soldiers",
+"British merchants"
+],
+correct:0
+},
+
+{
+q:"Which was a social and religious cause of the revolt?",
+a:[
+"Fear of interference with social and religious customs",
+"Expansion of railways",
+"Increase in Indian newspapers",
+"Formation of political associations"
+],
+correct:0
+},
+
+{
+q:"Which group was particularly affected by British military policies?",
+a:[
+"Indian sepoys",
+"European merchants",
+"British governors",
+"Indian zamindars only"
+],
+correct:0
+},
+
+{
+q:"What happened to East India Company rule after the Revolt of 1857?",
+a:[
+"It ended",
+"It became stronger under the same company",
+"It expanded into France",
+"It was transferred to the Mughal emperor"
+],
+correct:0
+},
+
+{
+q:"Which Act transferred the administration of India to the British Crown?",
+a:[
+"Government of India Act 1858",
+"Indian Councils Act 1861",
+"Regulating Act 1773",
+"Charter Act 1813"
+],
+correct:0
+},
+
+{
+q:"In which year did the British Crown take direct control of India?",
+a:[
+"1857",
+"1858",
+"1861",
+"1870"
+],
+correct:1
+},
+
+{
+q:"Which type of movements included resistance by cultivators against oppressive revenue systems?",
+a:[
+"Peasant movements",
+"Industrial movements",
+"Student movements",
+"Naval movements"
+],
+correct:0
+},
+
+{
+q:"Who launched the Farazi Movement in East Bengal?",
+a:[
+"Haji Shariatullah",
+"Dudu Mian",
+"Titu Mir",
+"Sidhu"
+],
+correct:0
+},
+
+{
+q:"In which year was the Farazi Movement launched?",
+a:[
+"1818",
+"1828",
+"1857",
+"1885"
+],
+correct:0
+},
+
+{
+q:"Who continued the Farazi Movement after Haji Shariatullah?",
+a:[
+"Dudu Mian",
+"Tantia Tope",
+"Nana Sahib",
+"Kunwar Singh"
+],
+correct:0
+},
+
+{
+q:"What did Dudu Mian emphasise regarding land?",
+a:[
+"Land belongs to God",
+"Land belongs only to landlords",
+"Land belongs to the British",
+"Land belongs to merchants"
+],
+correct:0
+},
+
+{
+q:"Which groups were involved in various tribal uprisings?",
+a:[
+"Tribal communities",
+"British soldiers",
+"European merchants",
+"Company officials"
+],
+correct:0
+},
+
+{
+q:"What was one major reason for tribal resistance?",
+a:[
+"Loss of traditional rights and exploitation",
+"Expansion of universities",
+"Growth of newspapers",
+"Formation of Congress"
+],
+correct:0
+},
+
+{
+q:"What helped spread political awareness among Indians?",
+a:[
+"Newspapers and education",
+"Only British officers",
+"Only military camps",
+"Only European merchants"
+],
+correct:0
+},
+
+{
+q:"What did Indian nationalists strongly criticise?",
+a:[
+"Colonial economic exploitation",
+"Indian education",
+"Indian literature",
+"Indian festivals"
+],
+correct:0
+},
+
+{
+q:"What is meant by the Drain of Wealth?",
+a:[
+"Transfer of wealth from India to Britain",
+"Transfer of British wealth to India",
+"Movement of peasants to cities",
+"Trade between Indian states"
+],
+correct:0
+},
+
+{
+q:"Which nationalist thinker is strongly associated with the Drain Theory?",
+a:[
+"Dadabhai Naoroji",
+"Allan Octavian Hume",
+"W.C. Bonnerjee",
+"Bal Gangadhar Tilak"
+],
+correct:0
+},
+
+{
+q:"Which book was written by Dadabhai Naoroji?",
+a:[
+"Poverty and Un-British Rule in India",
+"Hind Swaraj",
+"India Wins Freedom",
+"Discovery of India"
+],
+correct:0
+},
+
+{
+q:"What was one effect of colonial economic policies?",
+a:[
+"Decline of Indian handicrafts",
+"Rapid growth of all Indian industries",
+"End of poverty",
+"Complete economic independence"
+],
+correct:0
+},
+
+{
+q:"Which development helped Indians communicate across regions?",
+a:[
+"Railways and communication networks",
+"Only village fairs",
+"Only military camps",
+"Only temples"
+],
+correct:0
+},
+
+{
+q:"What did the growth of political associations contribute to?",
+a:[
+"Growth of nationalism",
+"End of education",
+"Decline of communication",
+"Expansion of Company monopoly"
+],
+correct:0
+},
+
+{
+q:"In which year was the Indian National Congress founded?",
+a:[
+"1870",
+"1885",
+"1905",
+"1919"
+],
+correct:1
+},
+
+{
+q:"Who played an important role in the formation of the Indian National Congress?",
+a:[
+"Allan Octavian Hume",
+"Lord Curzon",
+"Lord Canning",
+"Robert Clive"
+],
+correct:0
+},
+
+{
+q:"Where was the first session of the Indian National Congress held?",
+a:[
+"Bombay",
+"Calcutta",
+"Madras",
+"Delhi"
+],
+correct:0
+},
+
+{
+q:"Who presided over the first session of the Indian National Congress?",
+a:[
+"W.C. Bonnerjee",
+"Dadabhai Naoroji",
+"Surendranath Banerjee",
+"Gopal Krishna Gokhale"
+],
+correct:0
+},
+
+{
+q:"How many delegates attended the first session of the Indian National Congress?",
+a:[
+"52",
+"62",
+"72",
+"82"
+],
+correct:2
+},
+
+{
+q:"In which period did the foundation of the Indian National Congress take place?",
+a:[
+"1870–1885",
+"1857–1860",
+"1905–1910",
+"1919–1922"
+],
+correct:0
+},
+
+{
+q:"Which was a method used by early nationalists?",
+a:[
+"Petitions and constitutional methods",
+"Armed invasion of Europe",
+"Military dictatorship",
+"Foreign conquest"
+],
+correct:0
+},
+
+{
+q:"What was one objective of early nationalists?",
+a:[
+"Greater Indian participation in administration",
+"End of Indian education",
+"Expansion of British monopoly",
+"Suppression of newspapers"
+],
+correct:0
+},
+
+{
+q:"Which of the following contributed to the rise of Indian nationalism?",
+a:[
+"Modern education",
+"Decline of communication",
+"Isolation of regions",
+"End of newspapers"
+],
+correct:0
+},
+
+{
+q:"Which organisation became the major national political organisation founded in 1885?",
+a:[
+"Indian National Congress",
+"Muslim League",
+"Justice Party",
+"Home Rule League"
+],
+correct:0
+},
+
+{
+q:"How many years after the Revolt of 1857 was the Indian National Congress founded?",
+a:[
+"18 years",
+"28 years",
+"38 years",
+"48 years"
+],
+correct:1
+},
+
+{
+q:"If the first INC session had 72 delegates and 20 more delegates joined, how many delegates would there be?",
+a:[
+"82",
+"92",
+"102",
+"112"
+],
+correct:1
+},
+
+{
+q:"How many years passed between the Farazi Movement's launch in 1818 and the Revolt of 1857?",
+a:[
+"29 years",
+"39 years",
+"49 years",
+"59 years"
+],
+correct:1
+},
+
+{
+q:"How many years passed between the Revolt of 1857 and the foundation of the Indian National Congress in 1885?",
+a:[
+"18 years",
+"28 years",
+"38 years",
+"48 years"
+],
+correct:1
+},
+
+{
+q:"How many years after the Government of India Act 1858 was the Indian National Congress founded?",
+a:[
+"17 years",
+"27 years",
+"37 years",
+"47 years"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch7_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch7_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 7 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 7 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "History Chapter 7 - Anti-Colonial Movements and the Birth of Nationalism",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter7",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter7"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_History_Chapter7_Anti_Colonial_Movements_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter7"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

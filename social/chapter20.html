@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 20 - State Government | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🏛️ Chapter 20: State Government
+    </h1>
+
+    <p>
+
+        Learn about the State Government of India,
+        State Legislature, Governor,
+        Chief Minister and Council of Ministers,
+        Members of Legislative Assembly,
+        State Judiciary and the role of
+        State Government.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the State Government chapter
+        including the State Legislature,
+        Governor, Chief Minister,
+        Ministers, MLA and State Judiciary.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CIVICS_CHAPTER20_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_CIVICS_CHAPTER20_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ State Government
+    </div>
+
+    <div class="topic">
+        ✓ State Legislature
+    </div>
+
+    <div class="topic">
+        ✓ Legislative Assembly
+    </div>
+
+    <div class="topic">
+        ✓ Legislative Council
+    </div>
+
+    <div class="topic">
+        ✓ Governor
+    </div>
+
+    <div class="topic">
+        ✓ Appointment of Governor
+    </div>
+
+    <div class="topic">
+        ✓ Qualifications of Governor
+    </div>
+
+    <div class="topic">
+        ✓ Powers and Functions of Governor
+    </div>
+
+    <div class="topic">
+        ✓ Chief Minister
+    </div>
+
+    <div class="topic">
+        ✓ Powers and Functions of Chief Minister
+    </div>
+
+    <div class="topic">
+        ✓ Council of Ministers
+    </div>
+
+    <div class="topic">
+        ✓ Members of Legislative Assembly
+    </div>
+
+    <div class="topic">
+        ✓ State Judiciary
+    </div>
+
+    <div class="topic">
+        ✓ High Court
+    </div>
+
+    <div class="topic">
+        ✓ District Courts
+    </div>
+
+    <div class="topic">
+        ✓ Role of State Government
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. State Government
+            </strong>
+
+            <br><br>
+
+            State Government is the government
+            that administers a particular state
+            according to the Constitution of India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. State Legislature
+            </strong>
+
+            <br><br>
+
+            The State Legislature makes laws
+            for matters assigned to the state
+            under the Constitution.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Legislative Assembly
+            </strong>
+
+            <br><br>
+
+            The Legislative Assembly is the
+            directly elected House of the
+            State Legislature.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Legislative Council
+            </strong>
+
+            <br><br>
+
+            Some states have a Legislative
+            Council as the upper House of
+            the State Legislature.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Governor
+            </strong>
+
+            <br><br>
+
+            The Governor is the constitutional
+            head of a state.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Appointment of Governor
+            </strong>
+
+            <br><br>
+
+            The Governor of a state is appointed
+            by the President of India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Qualifications of Governor
+            </strong>
+
+            <br><br>
+
+            A person must be a citizen of India
+            and must have completed 35 years
+            of age to be appointed Governor.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Chief Minister
+            </strong>
+
+            <br><br>
+
+            The Chief Minister is the head of
+            the elected government in the state
+            and leads the Council of Ministers.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Council of Ministers
+            </strong>
+
+            <br><br>
+
+            The Council of Ministers assists
+            the Chief Minister in administering
+            the state.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Member of Legislative Assembly
+            </strong>
+
+            <br><br>
+
+            Members of the Legislative Assembly
+            are elected by the people of their
+            respective constituencies.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. State Judiciary
+            </strong>
+
+            <br><br>
+
+            The State Judiciary includes the
+            High Court and subordinate courts
+            functioning within the state.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. High Court
+            </strong>
+
+            <br><br>
+
+            The High Court is the highest
+            judicial authority at the state level.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Role of State Government
+            </strong>
+
+            <br><br>
+
+            The State Government performs
+            functions relating to areas such
+            as public health, agriculture,
+            education, police and local
+            administration.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Chief Minister and Governor
+            </strong>
+
+            <br><br>
+
+            The Governor is the constitutional
+            head while the Chief Minister leads
+            the elected government and Council
+            of Ministers.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NUMERICAL / FACT PRACTICE
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical & Fact Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        A quiz contains 50 questions.
+        A student answers 42 correctly.
+
+        <br><br>
+
+        Incorrect answers =
+        50 − 42 =
+        <strong>8</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        A student gets 45 correct answers
+        out of 50.
+
+        <br><br>
+
+        Percentage =
+        45 ÷ 50 × 100 =
+        <strong>90%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        The pass mark is 30 out of 50.
+
+        <br><br>
+
+        Percentage =
+        30 ÷ 50 × 100 =
+        <strong>60%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        If 20 students each answer
+        50 questions:
+
+        <br><br>
+
+        20 × 50 =
+        <strong>1,000 attempts</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        If a student gets 36 correct
+        answers out of 50:
+
+        <br><br>
+
+        36 ÷ 50 × 100 =
+        <strong>72%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        A Governor qualification question
+        asks for the minimum age.
+
+        <br><br>
+
+        Minimum age =
+        <strong>35 years</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 20 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and fact-based questions
+        are included.
+        You need at least 30 correct answers
+        to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter21.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 21
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 20 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"Who is the constitutional head of a state?",
+a:[
+"Governor",
+"Chief Minister",
+"Speaker",
+"Chief Justice"
+],
+correct:0
+},
+
+{
+q:"Who appoints the Governor of a state?",
+a:[
+"Prime Minister",
+"President of India",
+"Chief Minister",
+"Chief Justice"
+],
+correct:1
+},
+
+{
+q:"The minimum age required to become a Governor is:",
+a:[
+"25 years",
+"30 years",
+"35 years",
+"40 years"
+],
+correct:2
+},
+
+{
+q:"The Governor is appointed by the:",
+a:[
+"President",
+"Chief Minister",
+"State Legislature",
+"Prime Minister"
+],
+correct:0
+},
+
+{
+q:"Who is the real executive head of the state government?",
+a:[
+"Governor",
+"Chief Minister",
+"Speaker",
+"Chief Justice"
+],
+correct:1
+},
+
+{
+q:"The Chief Minister is appointed by the:",
+a:[
+"President",
+"Governor",
+"Speaker",
+"Chief Justice"
+],
+correct:1
+},
+
+{
+q:"The Council of Ministers in a state is headed by the:",
+a:[
+"Governor",
+"Chief Minister",
+"Speaker",
+"Chief Secretary"
+],
+correct:1
+},
+
+{
+q:"The State Legislature makes laws for:",
+a:[
+"Subjects assigned to the state",
+"Only foreign affairs",
+"Only defence",
+"Only currency"
+],
+correct:0
+},
+
+{
+q:"The directly elected House of the State Legislature is:",
+a:[
+"Legislative Assembly",
+"Rajya Sabha",
+"Lok Sabha",
+"Legislative Council"
+],
+correct:0
+},
+
+{
+q:"Members of the Legislative Assembly are called:",
+a:[
+"MPs",
+"MLAs",
+"Ministers",
+"Councillors"
+],
+correct:1
+},
+
+{
+q:"MLA stands for:",
+a:[
+"Member of Legislative Assembly",
+"Member of Local Administration",
+"Minister of Legislative Affairs",
+"Member of Local Assembly"
+],
+correct:0
+},
+
+{
+q:"Members of the Legislative Assembly are elected by:",
+a:[
+"The people",
+"The President",
+"The Governor",
+"The Chief Minister"
+],
+correct:0
+},
+
+{
+q:"The upper House in a state having a bicameral legislature is called:",
+a:[
+"Legislative Council",
+"Legislative Assembly",
+"Lok Sabha",
+"Rajya Sabha"
+],
+correct:0
+},
+
+{
+q:"A state legislature may consist of:",
+a:[
+"Only Legislative Assembly in every state",
+"Legislative Assembly and, in some states, Legislative Council",
+"Only Rajya Sabha",
+"Only Lok Sabha"
+],
+correct:1
+},
+
+{
+q:"The constitutional head of a state is the:",
+a:[
+"Chief Minister",
+"Governor",
+"Speaker",
+"Chief Justice"
+],
+correct:1
+},
+
+{
+q:"The political head of the state government is the:",
+a:[
+"Governor",
+"Chief Minister",
+"Speaker",
+"Advocate General"
+],
+correct:1
+},
+
+{
+q:"The Governor acts on the advice of the:",
+a:[
+"Chief Minister and Council of Ministers",
+"Chief Justice only",
+"Speaker only",
+"Election Commission"
+],
+correct:0
+},
+
+{
+q:"The Council of Ministers is collectively responsible to the:",
+a:[
+"Legislative Assembly",
+"Governor only",
+"High Court",
+"President"
+],
+correct:0
+},
+
+{
+q:"The highest court at the state level is the:",
+a:[
+"District Court",
+"High Court",
+"Supreme Court",
+"Sessions Court"
+],
+correct:1
+},
+
+{
+q:"The State Judiciary includes:",
+a:[
+"High Court and subordinate courts",
+"Only Supreme Court",
+"Only District Courts",
+"Only Lok Sabha"
+],
+correct:0
+},
+
+{
+q:"The High Court is headed by the:",
+a:[
+"Chief Justice",
+"Governor",
+"Chief Minister",
+"Speaker"
+],
+correct:0
+},
+
+{
+q:"The State Government is responsible for:",
+a:[
+"Various subjects assigned to the state",
+"Foreign affairs only",
+"Defence only",
+"Currency only"
+],
+correct:0
+},
+
+{
+q:"Which of the following is associated with State Government?",
+a:[
+"Public health",
+"Foreign policy",
+"Defence",
+"Currency"
+],
+correct:0
+},
+
+{
+q:"Which is generally a State subject?",
+a:[
+"Police",
+"Foreign affairs",
+"Defence",
+"Currency"
+],
+correct:0
+},
+
+{
+q:"Agriculture is primarily associated with:",
+a:[
+"State Government",
+"Foreign Government",
+"Supreme Court only",
+"United Nations"
+],
+correct:0
+},
+
+{
+q:"The Governor has a normal term of:",
+a:[
+"3 years",
+"4 years",
+"5 years",
+"6 years"
+],
+correct:2
+},
+
+{
+q:"The minimum age for becoming an MLA is:",
+a:[
+"18 years",
+"21 years",
+"25 years",
+"30 years"
+],
+correct:2
+},
+
+{
+q:"The normal term of a Legislative Assembly is:",
+a:[
+"3 years",
+"4 years",
+"5 years",
+"6 years"
+],
+correct:2
+},
+
+{
+q:"The minimum age required for membership of a Legislative Council is:",
+a:[
+"18 years",
+"21 years",
+"25 years",
+"30 years"
+],
+correct:3
+},
+
+{
+q:"The Governor of a state is appointed for a term of:",
+a:[
+"5 years",
+"6 years",
+"4 years",
+"3 years"
+],
+correct:0
+},
+
+{
+q:"The Chief Minister is normally the leader of the:",
+a:[
+"Majority party or coalition in the Legislative Assembly",
+"Supreme Court",
+"Election Commission",
+"High Court"
+],
+correct:0
+},
+
+{
+q:"Who summons and prorogues the State Legislature?",
+a:[
+"Governor",
+"Chief Minister",
+"Speaker",
+"Chief Justice"
+],
+correct:0
+},
+
+{
+q:"Who can dissolve the Legislative Assembly?",
+a:[
+"Governor, as provided by the Constitution",
+"Chief Justice alone",
+"Speaker alone",
+"High Court"
+],
+correct:0
+},
+
+{
+q:"The Governor can give assent to:",
+a:[
+"Bills passed by the State Legislature",
+"Only Supreme Court judgments",
+"Only central budgets",
+"Only election results"
+],
+correct:0
+},
+
+{
+q:"The State Council of Ministers is appointed by the Governor on the advice of the:",
+a:[
+"Chief Minister",
+"Speaker",
+"Chief Justice",
+"President"
+],
+correct:0
+},
+
+{
+q:"The Chief Minister communicates decisions of the Council of Ministers to the:",
+a:[
+"Governor",
+"Supreme Court",
+"Election Commission",
+"President only"
+],
+correct:0
+},
+
+{
+q:"The State Legislature exercises control over the:",
+a:[
+"State executive",
+"Foreign governments",
+"United Nations",
+"Supreme Court of India"
+],
+correct:0
+},
+
+{
+q:"The High Court can exercise:",
+a:[
+"Judicial powers within its jurisdiction",
+"Legislative powers",
+"Executive powers",
+"Military powers"
+],
+correct:0
+},
+
+{
+q:"A district court is a:",
+a:[
+"Subordinate court",
+"Supreme Court",
+"State Legislature",
+"Parliament"
+],
+correct:0
+},
+
+{
+q:"If a quiz contains 50 questions and a student gets 40 correct, the score percentage is:",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"If a student gets 35 correct answers out of 50, the percentage is:",
+a:[
+"60%",
+"65%",
+"70%",
+"75%"
+],
+correct:2
+},
+
+{
+q:"If the pass mark is 30 out of 50, the required percentage is:",
+a:[
+"50%",
+"55%",
+"60%",
+"65%"
+],
+correct:2
+},
+
+{
+q:"A student gets 44 correct answers out of 50. How many are incorrect?",
+a:[
+"4",
+"5",
+"6",
+"7"
+],
+correct:2
+},
+
+{
+q:"Five students each answer 50 questions. What is the total number of attempts?",
+a:[
+"150",
+"200",
+"250",
+"300"
+],
+correct:2
+},
+
+{
+q:"Ten students each score 40 correct answers. What is the total number of correct answers?",
+a:[
+"300",
+"400",
+"500",
+"600"
+],
+correct:1
+},
+
+{
+q:"If a student scores 45 out of 50, what is the percentage?",
+a:[
+"80%",
+"85%",
+"90%",
+"95%"
+],
+correct:2
+},
+
+{
+q:"If a student gets 32 correct answers out of 50, how many are incorrect?",
+a:[
+"16",
+"18",
+"20",
+"22"
+],
+correct:1
+},
+
+{
+q:"Two students each score 40 out of 50. What is their combined score?",
+a:[
+"60",
+"70",
+"80",
+"90"
+],
+correct:2
+},
+
+{
+q:"Twenty students each answer 50 questions. What is the total number of attempts?",
+a:[
+"500",
+"750",
+"1,000",
+"1,250"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_civics_ch20_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_civics_ch20_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 20 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 20 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Civics Chapter 20 - State Government",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_civics_chapter20",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_civics_chapter20"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Civics_Chapter20_State_Government_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_civics_chapter20"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

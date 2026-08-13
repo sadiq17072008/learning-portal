@@ -1,0 +1,2763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 24 - Globalization and Trade | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.formula{
+    background:#312e81;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌍 Chapter 24: Globalization and Trade
+    </h1>
+
+    <p>
+
+        Learn about globalization, international
+        trade, foreign trade, trade organisations,
+        multinational corporations, liberalization,
+        exports, imports and the impact of
+        globalization on the economy.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study globalization and international
+        trade, the role of multinational
+        corporations, liberalization,
+        exports, imports and international
+        trade organisations.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ECONOMICS_CHAPTER24_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_ECONOMICS_CHAPTER24_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Meaning of Globalization
+    </div>
+
+    <div class="topic">
+        ✓ Features of Globalization
+    </div>
+
+    <div class="topic">
+        ✓ International Trade
+    </div>
+
+    <div class="topic">
+        ✓ Foreign Trade
+    </div>
+
+    <div class="topic">
+        ✓ Exports
+    </div>
+
+    <div class="topic">
+        ✓ Imports
+    </div>
+
+    <div class="topic">
+        ✓ Balance of Trade
+    </div>
+
+    <div class="topic">
+        ✓ Liberalization
+    </div>
+
+    <div class="topic">
+        ✓ Privatization
+    </div>
+
+    <div class="topic">
+        ✓ Multinational Corporations
+    </div>
+
+    <div class="topic">
+        ✓ Foreign Direct Investment
+    </div>
+
+    <div class="topic">
+        ✓ World Trade Organization
+    </div>
+
+    <div class="topic">
+        ✓ Trade Barriers
+    </div>
+
+    <div class="topic">
+        ✓ Advantages of Globalization
+    </div>
+
+    <div class="topic">
+        ✓ Challenges of Globalization
+    </div>
+
+    <div class="topic">
+        ✓ Impact of Globalization on India
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Globalization
+            </strong>
+
+            <br><br>
+
+            Globalization refers to the increasing
+            integration and interdependence of
+            economies, markets, businesses and
+            people across countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. International Trade
+            </strong>
+
+            <br><br>
+
+            International trade is the exchange
+            of goods and services between
+            different countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Export
+            </strong>
+
+            <br><br>
+
+            An export is a good or service
+            sold by one country to another
+            country.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Import
+            </strong>
+
+            <br><br>
+
+            An import is a good or service
+            purchased by a country from
+            another country.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Foreign Trade
+            </strong>
+
+            <br><br>
+
+            Foreign trade refers to buying
+            and selling goods and services
+            between countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Liberalization
+            </strong>
+
+            <br><br>
+
+            Liberalization means reducing
+            restrictions and controls on
+            economic activities and trade.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Privatization
+            </strong>
+
+            <br><br>
+
+            Privatization involves increasing
+            the role of private ownership and
+            participation in economic activities.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Multinational Corporation
+            </strong>
+
+            <br><br>
+
+            A multinational corporation is
+            a company that operates in
+            more than one country.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Foreign Direct Investment
+            </strong>
+
+            <br><br>
+
+            Foreign direct investment refers
+            to investment made by a person
+            or company from one country in
+            a business located in another
+            country.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. WTO
+            </strong>
+
+            <br><br>
+
+            WTO stands for World Trade
+            Organization. It provides a
+            framework for international
+            trade between countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Trade Barrier
+            </strong>
+
+            <br><br>
+
+            A trade barrier is a restriction
+            placed on international trade,
+            such as tariffs or quotas.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Tariff
+            </strong>
+
+            <br><br>
+
+            A tariff is a tax imposed on
+            imported goods.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Balance of Trade
+            </strong>
+
+            <br><br>
+
+            Balance of trade is the difference
+            between the value of a country's
+            exports and imports of goods.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Trade Surplus
+            </strong>
+
+            <br><br>
+
+            A trade surplus occurs when the
+            value of exports is greater than
+            the value of imports.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Trade Deficit
+            </strong>
+
+            <br><br>
+
+            A trade deficit occurs when the
+            value of imports is greater than
+            the value of exports.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Global Market
+            </strong>
+
+            <br><br>
+
+            A global market allows goods,
+            services, investment and businesses
+            to operate across national borders.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FORMULAS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧮 Important Formulas
+    </h2>
+
+
+    <div class="formula">
+
+        Balance of Trade =
+        <strong>
+            Value of Exports − Value of Imports
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Trade Surplus =
+        <strong>
+            Exports − Imports
+        </strong>
+
+        when Exports &gt; Imports
+
+    </div>
+
+
+    <div class="formula">
+
+        Trade Deficit =
+        <strong>
+            Imports − Exports
+        </strong>
+
+        when Imports &gt; Exports
+
+    </div>
+
+
+    <div class="formula">
+
+        Export Share =
+        <strong>
+            (Exports ÷ Total Trade) × 100
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Import Share =
+        <strong>
+            (Imports ÷ Total Trade) × 100
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Total Trade =
+        <strong>
+            Exports + Imports
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NUMERICAL SUMS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical Sums
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Exports = ₹500 crore
+
+        <br>
+
+        Imports = ₹400 crore
+
+        <br><br>
+
+        Balance of Trade =
+        500 − 400
+
+        <br>
+
+        = <strong>₹100 crore surplus</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Exports = ₹300 crore
+
+        <br>
+
+        Imports = ₹450 crore
+
+        <br><br>
+
+        Trade deficit =
+        450 − 300
+
+        <br>
+
+        = <strong>₹150 crore</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Exports = ₹600 crore
+
+        <br>
+
+        Imports = ₹400 crore
+
+        <br><br>
+
+        Total trade =
+        600 + 400
+
+        <br>
+
+        = <strong>₹1,000 crore</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Exports = ₹600 crore
+
+        <br>
+
+        Total trade = ₹1,000 crore
+
+        <br><br>
+
+        Export share =
+        600 ÷ 1000 × 100
+
+        <br>
+
+        = <strong>60%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        Imports = ₹400 crore
+
+        <br>
+
+        Total trade = ₹1,000 crore
+
+        <br><br>
+
+        Import share =
+        400 ÷ 1000 × 100
+
+        <br>
+
+        = <strong>40%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        Exports = ₹800 crore
+
+        <br>
+
+        Imports = ₹600 crore
+
+        <br><br>
+
+        Balance of Trade =
+        800 − 600
+
+        <br>
+
+        = <strong>₹200 crore surplus</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 7:
+        </strong>
+
+        Exports = ₹750 crore
+
+        <br>
+
+        Imports = ₹900 crore
+
+        <br><br>
+
+        Trade deficit =
+        900 − 750
+
+        <br>
+
+        = <strong>₹150 crore</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 8:
+        </strong>
+
+        Exports = ₹1,200 crore
+
+        <br>
+
+        Imports = ₹800 crore
+
+        <br><br>
+
+        Total trade =
+        1,200 + 800
+
+        <br>
+
+        = <strong>₹2,000 crore</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 9:
+        </strong>
+
+        Exports = ₹1,200 crore
+
+        <br>
+
+        Total trade = ₹2,000 crore
+
+        <br><br>
+
+        Export share =
+        1,200 ÷ 2,000 × 100
+
+        <br>
+
+        = <strong>60%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 10:
+        </strong>
+
+        Imports = ₹800 crore
+
+        <br>
+
+        Total trade = ₹2,000 crore
+
+        <br><br>
+
+        Import share =
+        800 ÷ 2,000 × 100
+
+        <br>
+
+        = <strong>40%</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     GLOBALIZATION VISUALIZATION
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🌍 Global Trade Flow
+    </h2>
+
+    <p class="description">
+
+        Globalization connects producers,
+        consumers and businesses across
+        countries. Goods and services can
+        move across borders through
+        international trade.
+
+    </p>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+            🇮🇳 Country A → Exports → 🌍 International Market
+        </div>
+
+        <div class="concept-item">
+            🌍 International Market → Imports → 🇮🇳 Country A
+        </div>
+
+        <div class="concept-item">
+            🏢 Multinational Companies → Investment → 🌎 Different Countries
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 24 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical sums and concept-based
+        questions are included.
+        You need at least 30 correct answers
+        to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/social-science.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 24 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is globalization?",
+a:[
+"Increasing integration of economies and markets across countries",
+"Stopping international trade",
+"Reducing communication between countries",
+"Only increasing local production"
+],
+correct:0
+},
+
+{
+q:"What is international trade?",
+a:[
+"Exchange of goods and services between countries",
+"Exchange only within a village",
+"Exchange only within one company",
+"Exchange only between government departments"
+],
+correct:0
+},
+
+{
+q:"What is an export?",
+a:[
+"A good or service sold to another country",
+"A good purchased from another country",
+"A domestic tax",
+"A government subsidy"
+],
+correct:0
+},
+
+{
+q:"What is an import?",
+a:[
+"A good or service purchased from another country",
+"A good sold to another country",
+"A domestic product",
+"A local tax"
+],
+correct:0
+},
+
+{
+q:"Which organisation is associated with international trade?",
+a:[
+"World Trade Organization",
+"World Health Organization only",
+"International Olympic Committee",
+"UNICEF"
+],
+correct:0
+},
+
+{
+q:"WTO stands for:",
+a:[
+"World Trade Organization",
+"World Transport Organization",
+"World Tax Organization",
+"World Tourism Organization"
+],
+correct:0
+},
+
+{
+q:"Which organisation provides a framework for international trade?",
+a:[
+"WTO",
+"WHO",
+"UNICEF",
+"UNESCO"
+],
+correct:0
+},
+
+{
+q:"A company operating in several countries is called:",
+a:[
+"Multinational corporation",
+"Local corporation",
+"Village corporation",
+"Domestic cooperative"
+],
+correct:0
+},
+
+{
+q:"What is FDI?",
+a:[
+"Foreign Direct Investment",
+"Foreign Domestic Income",
+"Federal Development Investment",
+"Foreign Development Industry"
+],
+correct:0
+},
+
+{
+q:"FDI involves:",
+a:[
+"Investment by a foreign investor in a business or enterprise",
+"Only domestic taxation",
+"Only government borrowing",
+"Only local consumption"
+],
+correct:0
+},
+
+{
+q:"What is liberalization?",
+a:[
+"Reducing restrictions on economic activities",
+"Increasing all trade barriers",
+"Stopping private investment",
+"Stopping international trade"
+],
+correct:0
+},
+
+{
+q:"What is privatization?",
+a:[
+"Increasing the role of private ownership and participation",
+"Making every company government-owned",
+"Stopping private businesses",
+"Stopping foreign investment"
+],
+correct:0
+},
+
+{
+q:"A tax imposed on imported goods is called:",
+a:[
+"Tariff",
+"Dividend",
+"Salary",
+"Rent"
+],
+correct:0
+},
+
+{
+q:"Which is a trade barrier?",
+a:[
+"Tariff",
+"Salary",
+"Profit",
+"Wage"
+],
+correct:0
+},
+
+{
+q:"A quota generally refers to:",
+a:[
+"A limit on the quantity of a good that may be imported",
+"A tax on income",
+"A company profit",
+"A bank deposit"
+],
+correct:0
+},
+
+{
+q:"Trade between two or more countries is known as:",
+a:[
+"International trade",
+"Domestic trade",
+"Local trade",
+"Household trade"
+],
+correct:0
+},
+
+{
+q:"Which of the following can encourage globalization?",
+a:[
+"Improved communication and transportation",
+"Complete isolation",
+"Stopping trade",
+"Closing borders permanently"
+],
+correct:0
+},
+
+{
+q:"Globalization can increase:",
+a:[
+"International economic interdependence",
+"Isolation",
+"Trade restrictions only",
+"Domestic barriers only"
+],
+correct:0
+},
+
+{
+q:"Which is an example of an export?",
+a:[
+"A country selling textiles to another country",
+"A country buying machinery from another country",
+"A family buying vegetables locally",
+"A shop selling goods within a city"
+],
+correct:0
+},
+
+{
+q:"Which is an example of an import?",
+a:[
+"A country purchasing crude oil from another country",
+"A country selling rice abroad",
+"A farmer selling crops locally",
+"A shop selling locally produced goods"
+],
+correct:0
+},
+
+{
+q:"What is balance of trade?",
+a:[
+"Difference between exports and imports of goods",
+"Total population of a country",
+"Difference between wages and salaries",
+"Total government expenditure"
+],
+correct:0
+},
+
+{
+q:"A trade surplus occurs when:",
+a:[
+"Exports are greater than imports",
+"Imports are greater than exports",
+"Exports equal zero",
+"Imports equal zero"
+],
+correct:0
+},
+
+{
+q:"A trade deficit occurs when:",
+a:[
+"Imports are greater than exports",
+"Exports are greater than imports",
+"Exports equal imports",
+"Both exports and imports are zero"
+],
+correct:0
+},
+
+{
+q:"Which is a possible benefit of globalization?",
+a:[
+"Access to wider markets",
+"Complete elimination of competition",
+"End of international trade",
+"Reduction of all technology"
+],
+correct:0
+},
+
+{
+q:"Which can be a challenge of globalization?",
+a:[
+"Intense competition",
+"Complete elimination of competition",
+"No change in markets",
+"End of technological development"
+],
+correct:0
+},
+
+{
+q:"Multinational corporations usually operate:",
+a:[
+"In more than one country",
+"Only in one village",
+"Only inside one household",
+"Only in one government office"
+],
+correct:0
+},
+
+{
+q:"Which is an example of a service traded internationally?",
+a:[
+"Software service",
+"Only agricultural land",
+"Only local roads",
+"Only household furniture"
+],
+correct:0
+},
+
+{
+q:"Which factor has helped international trade grow?",
+a:[
+"Improved transportation",
+"Reduced communication",
+"Complete isolation",
+"Stopping technology"
+],
+correct:0
+},
+
+{
+q:"Which factor has helped globalization?",
+a:[
+"Information and communication technology",
+"Complete communication shutdown",
+"Reduced transportation",
+"Trade prohibition"
+],
+correct:0
+},
+
+{
+q:"What does a tariff directly affect?",
+a:[
+"The cost of imported goods",
+"Population size",
+"Rainfall",
+"School attendance"
+],
+correct:0
+},
+
+{
+q:"What is a trade barrier designed to do?",
+a:[
+"Restrict or regulate international trade",
+"Increase rainfall",
+"Increase population",
+"Measure GDP"
+],
+correct:0
+},
+
+{
+q:"If exports are greater than imports, the country has:",
+a:[
+"Trade surplus",
+"Trade deficit",
+"Zero trade",
+"No trade"
+],
+correct:0
+},
+
+{
+q:"If imports are greater than exports, the country has:",
+a:[
+"Trade deficit",
+"Trade surplus",
+"Balanced surplus",
+"No trade"
+],
+correct:0
+},
+
+{
+q:"Which is most closely associated with globalization?",
+a:[
+"Integration of economies",
+"Complete isolation",
+"Stopping trade",
+"Eliminating communication"
+],
+correct:0
+},
+
+{
+q:"Which can provide investment across national borders?",
+a:[
+"Foreign Direct Investment",
+"Local taxation only",
+"Domestic wages only",
+"Household savings only"
+],
+correct:0
+},
+
+{
+q:"Which is a multinational corporation characteristic?",
+a:[
+"Operations in multiple countries",
+"Operations only in one street",
+"No international activity",
+"No investment"
+],
+correct:0
+},
+
+{
+q:"Exports = ₹100 crore and imports = ₹80 crore. What is the balance of trade?",
+a:[
+"₹10 crore surplus",
+"₹20 crore surplus",
+"₹20 crore deficit",
+"₹30 crore surplus"
+],
+correct:1
+},
+
+{
+q:"Exports = ₹80 crore and imports = ₹100 crore. What is the trade balance?",
+a:[
+"₹20 crore surplus",
+"₹20 crore deficit",
+"₹10 crore surplus",
+"₹30 crore deficit"
+],
+correct:1
+},
+
+{
+q:"Exports = ₹500 crore and imports = ₹300 crore. What is the total trade?",
+a:[
+"₹700 crore",
+"₹800 crore",
+"₹900 crore",
+"₹1,000 crore"
+],
+correct:1
+},
+
+{
+q:"Exports = ₹600 crore and imports = ₹400 crore. What is the trade surplus?",
+a:[
+"₹100 crore",
+"₹200 crore",
+"₹300 crore",
+"₹400 crore"
+],
+correct:1
+},
+
+{
+q:"Exports = ₹400 crore and imports = ₹500 crore. What is the trade deficit?",
+a:[
+"₹50 crore",
+"₹100 crore",
+"₹150 crore",
+"₹200 crore"
+],
+correct:1
+},
+
+{
+q:"Exports = ₹600 crore and imports = ₹400 crore. What percentage of total trade is exports?",
+a:[
+"40%",
+"50%",
+"60%",
+"70%"
+],
+correct:2
+},
+
+{
+q:"Exports = ₹400 crore and imports = ₹600 crore. What percentage of total trade is imports?",
+a:[
+"40%",
+"50%",
+"60%",
+"70%"
+],
+correct:2
+},
+
+{
+q:"Exports = ₹750 crore and imports = ₹250 crore. What is total trade?",
+a:[
+"₹750 crore",
+"₹900 crore",
+"₹1,000 crore",
+"₹1,250 crore"
+],
+correct:2
+},
+
+{
+q:"Exports = ₹900 crore and imports = ₹600 crore. What is the balance of trade?",
+a:[
+"₹200 crore surplus",
+"₹300 crore surplus",
+"₹300 crore deficit",
+"₹400 crore surplus"
+],
+correct:1
+},
+
+{
+q:"Exports = ₹200 crore and imports = ₹500 crore. What is the trade deficit?",
+a:[
+"₹200 crore",
+"₹250 crore",
+"₹300 crore",
+"₹350 crore"
+],
+correct:2
+},
+
+{
+q:"Total trade is ₹1,000 crore and exports are ₹700 crore. What are imports?",
+a:[
+"₹200 crore",
+"₹300 crore",
+"₹400 crore",
+"₹500 crore"
+],
+correct:1
+},
+
+{
+q:"Total trade is ₹1,500 crore and imports are ₹600 crore. What are exports?",
+a:[
+"₹700 crore",
+"₹800 crore",
+"₹900 crore",
+"₹1,000 crore"
+],
+correct:2
+},
+
+{
+q:"Exports are ₹800 crore and imports are ₹200 crore. What percentage of total trade is exports?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"Exports are ₹300 crore and imports are ₹700 crore. What percentage of total trade is imports?",
+a:[
+"60%",
+"70%",
+"75%",
+"70%"
+],
+correct:1
+},
+
+{
+q:"If exports increase from ₹500 crore to ₹600 crore, what is the increase?",
+a:[
+"₹50 crore",
+"₹100 crore",
+"₹150 crore",
+"₹200 crore"
+],
+correct:1
+},
+
+{
+q:"If imports increase from ₹400 crore to ₹500 crore, what is the increase?",
+a:[
+"₹50 crore",
+"₹100 crore",
+"₹150 crore",
+"₹200 crore"
+],
+correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_economics_ch24_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_economics_ch24_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 24 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 24 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Economics Chapter 24 - Globalization and Trade",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_economics_chapter24",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_economics_chapter24"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Economics_Chapter24_Globalization_Trade_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_economics_chapter24"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

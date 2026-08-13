@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 13 - India: Agriculture | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌾 Chapter 13: India: Agriculture
+    </h1>
+
+    <p>
+
+        Learn about Indian agriculture, major crops,
+        cropping patterns, agricultural seasons,
+        irrigation, farming methods, agricultural
+        development and important agricultural regions.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study India's agricultural systems, major crops,
+        cropping seasons, irrigation methods and
+        agricultural development.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER13_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER13_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Importance of Agriculture
+    </div>
+
+    <div class="topic">
+        ✓ Types of Farming
+    </div>
+
+    <div class="topic">
+        ✓ Primitive Subsistence Farming
+    </div>
+
+    <div class="topic">
+        ✓ Intensive Subsistence Farming
+    </div>
+
+    <div class="topic">
+        ✓ Commercial Farming
+    </div>
+
+    <div class="topic">
+        ✓ Plantation Agriculture
+    </div>
+
+    <div class="topic">
+        ✓ Cropping Pattern
+    </div>
+
+    <div class="topic">
+        ✓ Kharif Crops
+    </div>
+
+    <div class="topic">
+        ✓ Rabi Crops
+    </div>
+
+    <div class="topic">
+        ✓ Zaid Crops
+    </div>
+
+    <div class="topic">
+        ✓ Rice
+    </div>
+
+    <div class="topic">
+        ✓ Wheat
+    </div>
+
+    <div class="topic">
+        ✓ Millets
+    </div>
+
+    <div class="topic">
+        ✓ Pulses
+    </div>
+
+    <div class="topic">
+        ✓ Sugarcane
+    </div>
+
+    <div class="topic">
+        ✓ Oilseeds
+    </div>
+
+    <div class="topic">
+        ✓ Tea
+    </div>
+
+    <div class="topic">
+        ✓ Coffee
+    </div>
+
+    <div class="topic">
+        ✓ Cotton
+    </div>
+
+    <div class="topic">
+        ✓ Jute
+    </div>
+
+    <div class="topic">
+        ✓ Rubber
+    </div>
+
+    <div class="topic">
+        ✓ Irrigation
+    </div>
+
+    <div class="topic">
+        ✓ Agricultural Development
+    </div>
+
+    <div class="topic">
+        ✓ Green Revolution
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Agriculture
+            </strong>
+
+            <br><br>
+
+            Agriculture is the cultivation of crops
+            and rearing of animals for food, raw
+            materials and other economic purposes.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Importance of Agriculture
+            </strong>
+
+            <br><br>
+
+            Agriculture provides food, raw materials
+            for industries and employment and
+            contributes to the Indian economy.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Primitive Subsistence Farming
+            </strong>
+
+            <br><br>
+
+            This type of farming is generally practiced
+            on small patches of land using simple tools
+            and family labour.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Intensive Subsistence Farming
+            </strong>
+
+            <br><br>
+
+            Intensive farming involves high levels of
+            labour and inputs on relatively small areas
+            of land to obtain higher production.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Commercial Farming
+            </strong>
+
+            <br><br>
+
+            Commercial farming is mainly undertaken
+            for producing crops for sale in the market.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Plantation Agriculture
+            </strong>
+
+            <br><br>
+
+            Plantation agriculture is a form of
+            commercial farming involving large-scale
+            cultivation of crops such as tea, coffee
+            and rubber.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Cropping Pattern
+            </strong>
+
+            <br><br>
+
+            Cropping pattern refers to the distribution
+            of cultivated crops over a region and the
+            way crops are grown during different seasons.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Kharif Crops
+            </strong>
+
+            <br><br>
+
+            Kharif crops are generally sown with the
+            beginning of the monsoon and harvested
+            after the rainy season.
+
+            Examples include rice, maize and cotton.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Rabi Crops
+            </strong>
+
+            <br><br>
+
+            Rabi crops are generally sown during the
+            winter season and harvested in spring.
+
+            Examples include wheat, gram and mustard.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Zaid Crops
+            </strong>
+
+            <br><br>
+
+            Zaid crops are grown between the Rabi
+            and Kharif seasons.
+
+            Examples include watermelon and cucumber.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Rice
+            </strong>
+
+            <br><br>
+
+            Rice is an important food crop and requires
+            relatively high temperature and adequate
+            water.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Wheat
+            </strong>
+
+            <br><br>
+
+            Wheat is an important Rabi crop and requires
+            a cool growing season and suitable moisture.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Millets
+            </strong>
+
+            <br><br>
+
+            Millets such as jowar, bajra and ragi are
+            important food crops and can grow in
+            relatively dry conditions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Pulses
+            </strong>
+
+            <br><br>
+
+            Pulses are important sources of protein.
+            Many pulse crops can also help improve
+            soil fertility through nitrogen fixation.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Sugarcane
+            </strong>
+
+            <br><br>
+
+            Sugarcane is an important commercial crop
+            used mainly for producing sugar and
+            related products.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Oilseeds
+            </strong>
+
+            <br><br>
+
+            Groundnut, mustard, soybean and sunflower
+            are examples of important oilseed crops.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Tea
+            </strong>
+
+            <br><br>
+
+            Tea is an important plantation crop.
+            It grows well in warm and humid conditions
+            with suitable rainfall.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. Coffee
+            </strong>
+
+            <br><br>
+
+            Coffee is an important plantation crop
+            cultivated mainly in suitable highland
+            regions of southern India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Cotton
+            </strong>
+
+            <br><br>
+
+            Cotton is an important fibre crop and is
+            an important raw material for the textile
+            industry.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Jute
+            </strong>
+
+            <br><br>
+
+            Jute is an important fibre crop that grows
+            well in warm and humid conditions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                21. Rubber
+            </strong>
+
+            <br><br>
+
+            Rubber is a plantation crop that requires
+            a warm and humid climate with adequate
+            rainfall.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                22. Irrigation
+            </strong>
+
+            <br><br>
+
+            Irrigation is the artificial supply of water
+            to agricultural land when rainfall is
+            insufficient.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                23. Green Revolution
+            </strong>
+
+            <br><br>
+
+            The Green Revolution introduced improved
+            agricultural practices, high-yielding
+            varieties, irrigation and modern inputs
+            to increase crop production.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                24. Agricultural Development
+            </strong>
+
+            <br><br>
+
+            Agricultural development involves improving
+            productivity, irrigation, technology,
+            infrastructure, markets and farming
+            practices.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT NUMERICAL FACTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        A farmer has 20 hectares of land and grows
+        rice on 8 hectares.
+
+        <br><br>
+
+        Percentage of land under rice:
+
+        <br><br>
+
+        (8 ÷ 20) × 100 = <strong>40%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        A farmer produces 5000 kg of wheat from
+        2 hectares.
+
+        <br><br>
+
+        Yield per hectare:
+
+        <br><br>
+
+        5000 ÷ 2 = <strong>2500 kg/hectare</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        A farm produces 8000 kg from 4 hectares.
+
+        <br><br>
+
+        Yield:
+
+        <br><br>
+
+        8000 ÷ 4 = <strong>2000 kg/hectare</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        A farmer's crop production increases from
+        4000 kg to 5000 kg.
+
+        <br><br>
+
+        Increase:
+
+        <br><br>
+
+        5000 − 4000 = <strong>1000 kg</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        Percentage increase from 4000 kg to 5000 kg:
+
+        <br><br>
+
+        (1000 ÷ 4000) × 100 =
+        <strong>25%</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 13 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and calculation-based questions
+        are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter14.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 14
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 13 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is agriculture?",
+a:[
+"The cultivation of crops and rearing of animals",
+"Only fishing",
+"Only forestry",
+"Only mining"
+],
+correct:0
+},
+
+{
+q:"Which sector provides food and raw materials through agriculture?",
+a:[
+"Primary sector",
+"Secondary sector",
+"Tertiary sector",
+"Quaternary sector"
+],
+correct:0
+},
+
+{
+q:"Which type of farming is generally practiced on small patches of land using simple tools?",
+a:[
+"Primitive subsistence farming",
+"Commercial farming",
+"Plantation farming",
+"Mechanised farming"
+],
+correct:0
+},
+
+{
+q:"Which farming system involves high labour and inputs on small areas?",
+a:[
+"Intensive subsistence farming",
+"Extensive farming",
+"Plantation farming",
+"Nomadic farming"
+],
+correct:0
+},
+
+{
+q:"Commercial farming is mainly carried out for:",
+a:[
+"Market sale",
+"Family consumption only",
+"Forest conservation",
+"Animal protection"
+],
+correct:0
+},
+
+{
+q:"Which is an example of plantation agriculture?",
+a:[
+"Tea",
+"Rice grown for family use",
+"Wheat grown in a small garden",
+"Millet grown for household use"
+],
+correct:0
+},
+
+{
+q:"What does cropping pattern refer to?",
+a:[
+"Distribution and sequence of crops",
+"Only irrigation",
+"Only soil colour",
+"Only farm machinery"
+],
+correct:0
+},
+
+{
+q:"Which crops are generally associated with the monsoon season?",
+a:[
+"Kharif crops",
+"Rabi crops",
+"Zaid crops only",
+"Winter crops"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a Kharif crop?",
+a:[
+"Rice",
+"Wheat",
+"Gram",
+"Mustard"
+],
+correct:0
+},
+
+{
+q:"Which of the following is generally a Rabi crop?",
+a:[
+"Wheat",
+"Rice",
+"Maize",
+"Cotton"
+],
+correct:0
+},
+
+{
+q:"Which crops are generally grown between Rabi and Kharif seasons?",
+a:[
+"Zaid crops",
+"Evergreen crops",
+"Winter crops",
+"Plantation crops"
+],
+correct:0
+},
+
+{
+q:"Which is an important food crop in India?",
+a:[
+"Rice",
+"Rubber",
+"Tea",
+"Coffee"
+],
+correct:0
+},
+
+{
+q:"Which crop generally requires high temperature and adequate water?",
+a:[
+"Rice",
+"Wheat",
+"Mustard",
+"Gram"
+],
+correct:0
+},
+
+{
+q:"Which is an important Rabi crop?",
+a:[
+"Wheat",
+"Rice",
+"Cotton",
+"Jute"
+],
+correct:0
+},
+
+{
+q:"Which group contains examples of millets?",
+a:[
+"Jowar, bajra and ragi",
+"Tea, coffee and rubber",
+"Rice, wheat and jute",
+"Cotton, jute and sugarcane"
+],
+correct:0
+},
+
+{
+q:"Which crop is an important source of protein?",
+a:[
+"Pulses",
+"Rubber",
+"Tea",
+"Cotton"
+],
+correct:0
+},
+
+{
+q:"Which crop is used mainly for sugar production?",
+a:[
+"Sugarcane",
+"Jute",
+"Cotton",
+"Tea"
+],
+correct:0
+},
+
+{
+q:"Which is an important oilseed crop?",
+a:[
+"Groundnut",
+"Jute",
+"Tea",
+"Rubber"
+],
+correct:0
+},
+
+{
+q:"Which crop is an important plantation crop?",
+a:[
+"Tea",
+"Wheat",
+"Rice",
+"Gram"
+],
+correct:0
+},
+
+{
+q:"Coffee cultivation is important in which broad part of India?",
+a:[
+"Southern India",
+"Extreme northern India only",
+"North-western desert only",
+"Central Himalayan region only"
+],
+correct:0
+},
+
+{
+q:"Cotton is mainly an important:",
+a:[
+"Fibre crop",
+"Pulse crop",
+"Oilseed crop",
+"Plantation crop"
+],
+correct:0
+},
+
+{
+q:"Jute is an important:",
+a:[
+"Fibre crop",
+"Food grain",
+"Oilseed",
+"Pulse"
+],
+correct:0
+},
+
+{
+q:"Rubber is generally classified as a:",
+a:[
+"Plantation crop",
+"Rabi cereal",
+"Pulse",
+"Millet"
+],
+correct:0
+},
+
+{
+q:"What is irrigation?",
+a:[
+"Artificial supply of water to agricultural land",
+"Harvesting crops",
+"Removing weeds",
+"Storing grains only"
+],
+correct:0
+},
+
+{
+q:"Which is an important purpose of irrigation?",
+a:[
+"Providing water when rainfall is insufficient",
+"Reducing crop production",
+"Removing soil",
+"Stopping farming"
+],
+correct:0
+},
+
+{
+q:"The Green Revolution mainly aimed to:",
+a:[
+"Increase agricultural production",
+"Reduce food production",
+"Stop irrigation",
+"Replace agriculture with mining"
+],
+correct:0
+},
+
+{
+q:"Which was associated with the Green Revolution?",
+a:[
+"High-yielding varieties",
+"Only traditional tools",
+"No irrigation",
+"No fertilizers"
+],
+correct:0
+},
+
+{
+q:"Which crop is generally associated with the Rabi season?",
+a:[
+"Wheat",
+"Rice",
+"Cotton",
+"Jute"
+],
+correct:0
+},
+
+{
+q:"Which crop is generally associated with the Kharif season?",
+a:[
+"Cotton",
+"Wheat",
+"Gram",
+"Mustard"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a Zaid crop?",
+a:[
+"Watermelon",
+"Wheat",
+"Mustard",
+"Gram"
+],
+correct:0
+},
+
+{
+q:"A farmer has 20 hectares of land and grows rice on 8 hectares. What percentage of land is under rice?",
+a:[
+"20%",
+"30%",
+"40%",
+"50%"
+],
+correct:2
+},
+
+{
+q:"A farmer has 50 hectares of land and grows wheat on 20 hectares. What percentage is under wheat?",
+a:[
+"20%",
+"30%",
+"40%",
+"50%"
+],
+correct:2
+},
+
+{
+q:"A farmer produces 5000 kg of wheat from 2 hectares. What is the yield per hectare?",
+a:[
+"1500 kg",
+"2000 kg",
+"2500 kg",
+"3000 kg"
+],
+correct:2
+},
+
+{
+q:"A farm produces 8000 kg of rice from 4 hectares. What is the yield per hectare?",
+a:[
+"1000 kg",
+"1500 kg",
+"2000 kg",
+"2500 kg"
+],
+correct:2
+},
+
+{
+q:"A farmer produces 6000 kg from 3 hectares. What is the yield per hectare?",
+a:[
+"1500 kg",
+"2000 kg",
+"2500 kg",
+"3000 kg"
+],
+correct:1
+},
+
+{
+q:"Production increases from 4000 kg to 5000 kg. What is the increase?",
+a:[
+"500 kg",
+"750 kg",
+"1000 kg",
+"1500 kg"
+],
+correct:2
+},
+
+{
+q:"Production increases from 4000 kg to 5000 kg. What is the percentage increase?",
+a:[
+"20%",
+"25%",
+"30%",
+"40%"
+],
+correct:1
+},
+
+{
+q:"A farmer produces 10000 kg and production increases by 20%. What is the increase?",
+a:[
+"1000 kg",
+"1500 kg",
+"2000 kg",
+"2500 kg"
+],
+correct:2
+},
+
+{
+q:"A farmer produces 10000 kg and production increases by 20%. What is the new production?",
+a:[
+"11000 kg",
+"11500 kg",
+"12000 kg",
+"12500 kg"
+],
+correct:2
+},
+
+{
+q:"A farm has 40 hectares and 10 hectares are used for cotton. What percentage is used for cotton?",
+a:[
+"15%",
+"20%",
+"25%",
+"30%"
+],
+correct:2
+},
+
+{
+q:"A farmer grows crops on 30 hectares and uses 12 hectares for rice. What percentage is used for rice?",
+a:[
+"30%",
+"35%",
+"40%",
+"45%"
+],
+correct:2
+},
+
+{
+q:"If 6000 kg is produced from 3 hectares, how much would be produced from 5 hectares at the same yield?",
+a:[
+"8000 kg",
+"9000 kg",
+"10000 kg",
+"12000 kg"
+],
+correct:2
+},
+
+{
+q:"If yield is 2000 kg per hectare, what is production from 6 hectares?",
+a:[
+"8000 kg",
+"10000 kg",
+"12000 kg",
+"14000 kg"
+],
+correct:2
+},
+
+{
+q:"A farmer has 100 hectares and allocates 35 hectares to wheat. What percentage is allocated to wheat?",
+a:[
+"25%",
+"30%",
+"35%",
+"40%"
+],
+correct:2
+},
+
+{
+q:"If 45 out of 50 quiz questions are answered correctly, what percentage is obtained?",
+a:[
+"80%",
+"85%",
+"90%",
+"95%"
+],
+correct:2
+},
+
+{
+q:"If 40 out of 50 questions are correct, what percentage is obtained?",
+a:[
+"70%",
+"75%",
+"80%",
+"85%"
+],
+correct:2
+},
+
+{
+q:"If 35 out of 50 questions are correct, what percentage is obtained?",
+a:[
+"60%",
+"65%",
+"70%",
+"75%"
+],
+correct:2
+},
+
+{
+q:"If each correct answer gives 2 XP, how much XP is earned for 40 correct answers?",
+a:[
+"60 XP",
+"70 XP",
+"80 XP",
+"90 XP"
+],
+correct:2
+},
+
+{
+q:"If each correct answer gives 2 XP, how much XP is earned for 45 correct answers?",
+a:[
+"80 XP",
+"90 XP",
+"100 XP",
+"110 XP"
+],
+correct:1
+},
+
+{
+q:"A student scores 25 out of 50. How many more correct answers are needed to reach 30?",
+a:[
+"3",
+"4",
+"5",
+"6"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch13_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch13_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 13 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 13 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Geography Chapter 13 - India: Agriculture",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter13",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter13"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Geography_Chapter13_India_Agriculture_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter13"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 3 - World War II | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   IMPORTANT EVENTS
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌍 Chapter 3: World War II
+    </h1>
+
+    <p>
+        Learn about the causes, course and effects of
+        World War II, the rise of aggressive powers,
+        the Axis and Allied powers, major events of the
+        war and the transformation of the world after 1945.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the causes, major events and consequences
+        of World War II before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER3_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER3_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Introduction to World War II
+    </div>
+
+    <div class="topic">
+        ✓ Causes of World War II
+    </div>
+
+    <div class="topic">
+        ✓ Treaty of Versailles
+    </div>
+
+    <div class="topic">
+        ✓ Failure of the League of Nations
+    </div>
+
+    <div class="topic">
+        ✓ Post-War Crisis and Germany
+    </div>
+
+    <div class="topic">
+        ✓ Rise of Adolf Hitler
+    </div>
+
+    <div class="topic">
+        ✓ Aggression of Italy and Japan
+    </div>
+
+    <div class="topic">
+        ✓ Rome-Berlin-Tokyo Axis
+    </div>
+
+    <div class="topic">
+        ✓ Munich Pact
+    </div>
+
+    <div class="topic">
+        ✓ Allied Powers
+    </div>
+
+    <div class="topic">
+        ✓ Axis Powers
+    </div>
+
+    <div class="topic">
+        ✓ Course of World War II
+    </div>
+
+    <div class="topic">
+        ✓ Invasion of Poland
+    </div>
+
+    <div class="topic">
+        ✓ Fall of France
+    </div>
+
+    <div class="topic">
+        ✓ Battle of Britain
+    </div>
+
+    <div class="topic">
+        ✓ Operation Barbarossa
+    </div>
+
+    <div class="topic">
+        ✓ Pearl Harbor
+    </div>
+
+    <div class="topic">
+        ✓ Entry of the United States
+    </div>
+
+    <div class="topic">
+        ✓ Defeat of Germany
+    </div>
+
+    <div class="topic">
+        ✓ Atomic Bombings of Hiroshima and Nagasaki
+    </div>
+
+    <div class="topic">
+        ✓ Surrender of Japan
+    </div>
+
+    <div class="topic">
+        ✓ Effects of World War II
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. World War II
+            </strong>
+
+            <br><br>
+
+            World War II began in 1939 and ended in
+            1945. It involved countries across Europe,
+            Asia and Africa and caused enormous
+            military and civilian casualties.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Treaty of Versailles
+            </strong>
+
+            <br><br>
+
+            The Treaty of Versailles was signed in
+            June 1919. Germany was required to give
+            up territories, reduce its armed forces
+            and pay reparations.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Failure of the League of Nations
+            </strong>
+
+            <br><br>
+
+            The League of Nations was intended to
+            maintain international peace, but it
+            lacked sufficient power to prevent
+            aggressive actions by major powers.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Rise of Adolf Hitler
+            </strong>
+
+            <br><br>
+
+            Adolf Hitler exploited German economic
+            and political dissatisfaction. He became
+            Chancellor in 1933 and established a
+            dictatorship.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. German Rearmament
+            </strong>
+
+            <br><br>
+
+            Hitler violated the restrictions of the
+            Treaty of Versailles by rebuilding and
+            expanding German armed forces.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Axis Powers
+            </strong>
+
+            <br><br>
+
+            Germany, Italy and Japan formed the
+            major Axis alliance during World War II.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Allied Powers
+            </strong>
+
+            <br><br>
+
+            Britain, France, the Soviet Union and
+            the United States were among the major
+            Allied powers that fought the Axis.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Munich Pact
+            </strong>
+
+            <br><br>
+
+            The Munich Agreement of 1938 allowed
+            Germany to acquire the Sudetenland
+            from Czechoslovakia.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Invasion of Poland
+            </strong>
+
+            <br><br>
+
+            Germany invaded Poland on
+            1 September 1939. Britain and France
+            subsequently declared war on Germany.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Pearl Harbor
+            </strong>
+
+            <br><br>
+
+            Japan attacked the United States naval
+            base at Pearl Harbor on 7 December 1941.
+            This led to the entry of the United States
+            into World War II.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Operation Barbarossa
+            </strong>
+
+            <br><br>
+
+            Germany launched Operation Barbarossa
+            against the Soviet Union in June 1941.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. End of the War
+            </strong>
+
+            <br><br>
+
+            Germany surrendered in May 1945.
+            Japan formally surrendered on
+            2 September 1945.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT EVENTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🗓️ Important Events
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            1919:
+        </strong>
+
+        Treaty of Versailles was signed.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1933:
+        </strong>
+
+        Adolf Hitler became Chancellor of Germany.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1935:
+        </strong>
+
+        Italy invaded Ethiopia.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1936:
+        </strong>
+
+        The Rome-Berlin Axis was formed.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1938:
+        </strong>
+
+        Germany annexed Austria and later acquired
+        the Sudetenland through the Munich Agreement.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1 September 1939:
+        </strong>
+
+        Germany invaded Poland.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1940:
+        </strong>
+
+        France fell and the Battle of Britain took place.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            June 1941:
+        </strong>
+
+        Germany launched Operation Barbarossa
+        against the Soviet Union.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            7 December 1941:
+        </strong>
+
+        Japan attacked Pearl Harbor.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1944:
+        </strong>
+
+        Allied forces landed in Normandy on
+        D-Day.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            May 1945:
+        </strong>
+
+        Germany surrendered.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            August 1945:
+        </strong>
+
+        Atomic bombs were dropped on Hiroshima
+        and Nagasaki.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            2 September 1945:
+        </strong>
+
+        Japan formally surrendered, bringing
+        World War II to an end.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 3 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        The assessment includes factual,
+        chronological and cause-and-effect questions.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter4.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 4
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 3 QUESTIONS
+   WORLD WAR II
+===================================================== */
+
+const questions = [
+
+{
+q:"When did World War II begin?",
+a:[
+"1914",
+"1918",
+"1939",
+"1945"
+],
+correct:2
+},
+
+{
+q:"When did World War II end?",
+a:[
+"1939",
+"1941",
+"1944",
+"1945"
+],
+correct:3
+},
+
+{
+q:"What was the immediate cause of World War II?",
+a:[
+"Germany's invasion of Poland",
+"Formation of the League of Nations",
+"Russian Revolution",
+"Great Depression"
+],
+correct:0
+},
+
+{
+q:"When did Germany invade Poland?",
+a:[
+"1 September 1939",
+"3 September 1939",
+"7 December 1941",
+"6 June 1944"
+],
+correct:0
+},
+
+{
+q:"Which countries declared war on Germany after its invasion of Poland?",
+a:[
+"Britain and France",
+"USA and Japan",
+"Italy and Japan",
+"Russia and Italy"
+],
+correct:0
+},
+
+{
+q:"In which year was the Treaty of Versailles signed?",
+a:[
+"1918",
+"1919",
+"1920",
+"1921"
+],
+correct:1
+},
+
+{
+q:"Which treaty created resentment among Germans?",
+a:[
+"Treaty of Versailles",
+"Treaty of Rome",
+"Treaty of Vienna",
+"Treaty of Paris"
+],
+correct:0
+},
+
+{
+q:"What did Germany have to do under the Treaty of Versailles?",
+a:[
+"Give up territories and reduce its armed forces",
+"Increase its army",
+"Expand its colonies",
+"Control France"
+],
+correct:0
+},
+
+{
+q:"Which organisation was established after World War I to promote international peace?",
+a:[
+"League of Nations",
+"NATO",
+"United Nations",
+"European Union"
+],
+correct:0
+},
+
+{
+q:"Who initiated the formation of the League of Nations?",
+a:[
+"Woodrow Wilson",
+"Adolf Hitler",
+"Benito Mussolini",
+"Winston Churchill"
+],
+correct:0
+},
+
+{
+q:"Why was the League of Nations ineffective?",
+a:[
+"It lacked sufficient power to stop aggression",
+"It controlled all armies",
+"It had unlimited resources",
+"It had complete military authority"
+],
+correct:0
+},
+
+{
+q:"Which major country did not become a member of the League of Nations?",
+a:[
+"United States",
+"France",
+"Britain",
+"Japan"
+],
+correct:0
+},
+
+{
+q:"Who became Chancellor of Germany in 1933?",
+a:[
+"Adolf Hitler",
+"Benito Mussolini",
+"Joseph Stalin",
+"Winston Churchill"
+],
+correct:0
+},
+
+{
+q:"Which political party did Hitler lead?",
+a:[
+"Nazi Party",
+"Labour Party",
+"Democratic Party",
+"Communist Party"
+],
+correct:0
+},
+
+{
+q:"What did Hitler do in violation of the Treaty of Versailles?",
+a:[
+"Rearmed Germany",
+"Disbanded Germany's army",
+"Reduced military production",
+"Ended nationalism"
+],
+correct:0
+},
+
+{
+q:"What was one effect of German rearmament?",
+a:[
+"Unemployment decreased",
+"Military production stopped",
+"Germany became weaker",
+"Industrial production disappeared"
+],
+correct:0
+},
+
+{
+q:"Which country was ruled by Benito Mussolini?",
+a:[
+"Italy",
+"Germany",
+"Japan",
+"France"
+],
+correct:0
+},
+
+{
+q:"Which country was invaded by Italy in 1935?",
+a:[
+"Ethiopia",
+"France",
+"Poland",
+"Austria"
+],
+correct:0
+},
+
+{
+q:"Which alliance was formed between Germany and Italy in 1936?",
+a:[
+"Rome-Berlin Axis",
+"Triple Entente",
+"League Alliance",
+"Atlantic Pact"
+],
+correct:0
+},
+
+{
+q:"Which country later joined the Rome-Berlin Axis?",
+a:[
+"Japan",
+"France",
+"Britain",
+"Canada"
+],
+correct:0
+},
+
+{
+q:"What was the alliance of Germany, Italy and Japan known as?",
+a:[
+"Rome-Berlin-Tokyo Axis",
+"Triple Entente",
+"Allied Council",
+"European Union"
+],
+correct:0
+},
+
+{
+q:"Which country did Hitler invade in 1938?",
+a:[
+"Austria",
+"Canada",
+"India",
+"Sweden"
+],
+correct:0
+},
+
+{
+q:"What was the Sudetenland?",
+a:[
+"A German-speaking region of Czechoslovakia",
+"A region of France",
+"A Japanese island",
+"An Italian colony"
+],
+correct:0
+},
+
+{
+q:"Which agreement allowed Germany to acquire the Sudetenland?",
+a:[
+"Munich Agreement",
+"Treaty of Versailles",
+"Atlantic Charter",
+"Paris Agreement"
+],
+correct:0
+},
+
+{
+q:"What policy did Britain and France initially follow towards aggressive expansion?",
+a:[
+"Non-intervention and appeasement",
+"Immediate total war",
+"Complete military invasion",
+"Permanent blockade"
+],
+correct:0
+},
+
+{
+q:"Which country invaded Poland in September 1939?",
+a:[
+"Germany",
+"Italy",
+"Japan",
+"France"
+],
+correct:0
+},
+
+{
+q:"Which two major groups fought in World War II?",
+a:[
+"Axis and Allied Powers",
+"NATO and Warsaw Pact",
+"Triple Alliance and Entente",
+"League and Axis"
+],
+correct:0
+},
+
+{
+q:"Which country was a major member of the Axis Powers?",
+a:[
+"Germany",
+"Britain",
+"France",
+"Soviet Union"
+],
+correct:0
+},
+
+{
+q:"Which country was a major Allied Power?",
+a:[
+"Britain",
+"Germany",
+"Italy",
+"Japan"
+],
+correct:0
+},
+
+{
+q:"Which country was invaded by Germany in 1940?",
+a:[
+"France",
+"Japan",
+"India",
+"Brazil"
+],
+correct:0
+},
+
+{
+q:"What was the Battle of Britain?",
+a:[
+"An air campaign between Germany and Britain",
+"A naval war between Japan and China",
+"A battle between Italy and Ethiopia",
+"A land battle in Poland"
+],
+correct:0
+},
+
+{
+q:"What was Operation Barbarossa?",
+a:[
+"Germany's invasion of the Soviet Union",
+"Japan's attack on Pearl Harbor",
+"Allied invasion of Normandy",
+"Germany's invasion of Poland"
+],
+correct:0
+},
+
+{
+q:"When did Germany launch Operation Barbarossa?",
+a:[
+"June 1941",
+"September 1939",
+"December 1941",
+"May 1945"
+],
+correct:0
+},
+
+{
+q:"Which country attacked Pearl Harbor?",
+a:[
+"Japan",
+"Germany",
+"Italy",
+"Russia"
+],
+correct:0
+},
+
+{
+q:"When did Japan attack Pearl Harbor?",
+a:[
+"7 December 1941",
+"1 September 1939",
+"6 June 1944",
+"2 September 1945"
+],
+correct:0
+},
+
+{
+q:"What was the major result of the attack on Pearl Harbor?",
+a:[
+"The United States entered World War II",
+"Germany surrendered",
+"Japan surrendered",
+"France left the war"
+],
+correct:0
+},
+
+{
+q:"Which Allied invasion took place in Normandy in 1944?",
+a:[
+"D-Day",
+"Operation Barbarossa",
+"Pearl Harbor",
+"Battle of Britain"
+],
+correct:0
+},
+
+{
+q:"What happened to Germany in May 1945?",
+a:[
+"It surrendered",
+"It invaded Britain",
+"It joined Japan",
+"It captured France"
+],
+correct:0
+},
+
+{
+q:"Which city was the first to be hit by an atomic bomb?",
+a:[
+"Hiroshima",
+"Tokyo",
+"Osaka",
+"Kyoto"
+],
+correct:0
+},
+
+{
+q:"Which city was the second Japanese city hit by an atomic bomb?",
+a:[
+"Nagasaki",
+"Tokyo",
+"Kyoto",
+"Yokohama"
+],
+correct:0
+},
+
+{
+q:"When did Japan formally surrender?",
+a:[
+"2 September 1945",
+"15 August 1945",
+"6 August 1945",
+"9 August 1945"
+],
+correct:0
+},
+
+{
+q:"Which event brought World War II to a final end?",
+a:[
+"Japan's formal surrender",
+"Germany's invasion of Poland",
+"Formation of Axis",
+"Munich Agreement"
+],
+correct:0
+},
+
+{
+q:"Which country suffered a German invasion at the beginning of World War II?",
+a:[
+"Poland",
+"India",
+"Canada",
+"Australia"
+],
+correct:0
+},
+
+{
+q:"Which country was invaded by Germany in 1941?",
+a:[
+"Soviet Union",
+"United States",
+"Japan",
+"India"
+],
+correct:0
+},
+
+{
+q:"What was one major effect of World War II?",
+a:[
+"Large-scale loss of life and destruction",
+"End of all conflicts",
+"Complete economic prosperity",
+"End of nationalism everywhere"
+],
+correct:0
+},
+
+{
+q:"What happened to many European cities during World War II?",
+a:[
+"They suffered extensive destruction",
+"They experienced complete prosperity",
+"They were unaffected",
+"They expanded rapidly"
+],
+correct:0
+},
+
+{
+q:"Which country emerged as a major world power after World War II?",
+a:[
+"United States",
+"Belgium",
+"Portugal",
+"Norway"
+],
+correct:0
+},
+
+{
+q:"Which other major power emerged strongly after World War II?",
+a:[
+"Soviet Union",
+"Spain",
+"Portugal",
+"Switzerland"
+],
+correct:0
+},
+
+{
+q:"What international organisation was created after World War II to promote peace and cooperation?",
+a:[
+"United Nations",
+"League of Nations",
+"NATO only",
+"European Union"
+],
+correct:0
+},
+
+{
+q:"Which statement best explains the main causes of World War II?",
+a:[
+"Treaty resentment, failure of collective security, economic crisis and aggressive expansion",
+"Only a disagreement over trade",
+"Only the Russian Revolution",
+"Only the Great Depression"
+],
+correct:0
+},
+
+{
+q:"Which sequence is correct?",
+a:[
+"Poland invasion → France falls → Pearl Harbor → Germany surrenders → Japan surrenders",
+"Pearl Harbor → Poland invasion → Germany surrenders → France falls",
+"Germany surrenders → Poland invasion → Pearl Harbor",
+"Japan surrenders → Poland invasion → France falls"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch3_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch3_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 3 World War II assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 3 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "History Chapter 3 - World War II",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter3",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter3"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_History_Chapter3_World_War_II_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter3"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,2738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 23 - Gross Domestic Product and Its Growth | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.formula{
+    background:#312e81;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📈 Chapter 23: Gross Domestic Product and Its Growth
+    </h1>
+
+    <p>
+
+        Learn about Gross Domestic Product,
+        national income, the composition of GDP,
+        economic sectors, employment and
+        economic growth.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study GDP, national income concepts,
+        the three sectors of the economy,
+        sectoral contribution, employment,
+        development and economic policies.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_ECONOMICS_CHAPTER23_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_ECONOMICS_CHAPTER23_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Meaning and Definition of GDP
+    </div>
+
+    <div class="topic">
+        ✓ National Income
+    </div>
+
+    <div class="topic">
+        ✓ Classical Definitions of National Income
+    </div>
+
+    <div class="topic">
+        ✓ Keynes Approach to National Income
+    </div>
+
+    <div class="topic">
+        ✓ Modern Definitions
+    </div>
+
+    <div class="topic">
+        ✓ National Income Aggregates
+    </div>
+
+    <div class="topic">
+        ✓ Gross Domestic Product at Market Price
+    </div>
+
+    <div class="topic">
+        ✓ Composition of GDP
+    </div>
+
+    <div class="topic">
+        ✓ Primary Sector
+    </div>
+
+    <div class="topic">
+        ✓ Secondary Sector
+    </div>
+
+    <div class="topic">
+        ✓ Tertiary Sector
+    </div>
+
+    <div class="topic">
+        ✓ Contribution of Different Sectors
+    </div>
+
+    <div class="topic">
+        ✓ Developmental Path based on GDP
+    </div>
+
+    <div class="topic">
+        ✓ GDP and Employment
+    </div>
+
+    <div class="topic">
+        ✓ Growth of GDP
+    </div>
+
+    <div class="topic">
+        ✓ Economic Policies
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Gross Domestic Product
+            </strong>
+
+            <br><br>
+
+            GDP is the market value of all
+            final goods and services produced
+            within the domestic territory of
+            a country during a specified period.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. National Income
+            </strong>
+
+            <br><br>
+
+            National income represents the
+            income earned by the factors of
+            production of a country during
+            a particular period.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. GDP at Market Price
+            </strong>
+
+            <br><br>
+
+            GDP at market price measures the
+            value of final goods and services
+            at market prices.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Primary Sector
+            </strong>
+
+            <br><br>
+
+            The primary sector is directly
+            dependent on natural resources.
+            Agriculture, fishing, forestry
+            and mining are examples.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Secondary Sector
+            </strong>
+
+            <br><br>
+
+            The secondary sector converts
+            raw materials into finished
+            or semi-finished products.
+
+            Manufacturing and construction
+            are examples.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Tertiary Sector
+            </strong>
+
+            <br><br>
+
+            The tertiary sector provides
+            services.
+
+            Banking, transport, education,
+            healthcare and communication
+            are examples.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. GDP Growth
+            </strong>
+
+            <br><br>
+
+            GDP growth refers to the increase
+            in the value of goods and services
+            produced by an economy over time.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Economic Development
+            </strong>
+
+            <br><br>
+
+            Economic development involves
+            improvement in income, employment,
+            living standards and other
+            socio-economic conditions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Employment
+            </strong>
+
+            <br><br>
+
+            Employment provides people with
+            opportunities to participate in
+            productive economic activities
+            and earn income.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Final Goods
+            </strong>
+
+            <br><br>
+
+            Final goods are goods purchased
+            for final use and are not intended
+            for further processing or resale
+            as intermediate goods.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Intermediate Goods
+            </strong>
+
+            <br><br>
+
+            Intermediate goods are used as
+            inputs in the production of other
+            goods and services.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Value Added
+            </strong>
+
+            <br><br>
+
+            Value added is the additional value
+            created during the production process.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Nominal GDP
+            </strong>
+
+            <br><br>
+
+            Nominal GDP measures production
+            using current market prices.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Real GDP
+            </strong>
+
+            <br><br>
+
+            Real GDP measures production using
+            constant prices, helping to identify
+            changes in actual output.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Per Capita Income
+            </strong>
+
+            <br><br>
+
+            Per capita income is calculated
+            by dividing national income by
+            the population.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Economic Policies
+            </strong>
+
+            <br><br>
+
+            Economic policies are measures
+            adopted by the government to
+            influence economic activity,
+            growth and development.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FORMULAS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧮 Important Formulas
+    </h2>
+
+
+    <div class="formula">
+
+        GDP Growth Rate =
+        <strong>
+            [(Current GDP − Previous GDP)
+            ÷ Previous GDP] × 100
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Per Capita Income =
+        <strong>
+            National Income ÷ Population
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Value Added =
+        <strong>
+            Value of Output − Intermediate Consumption
+        </strong>
+
+    </div>
+
+
+    <div class="formula">
+
+        Percentage =
+        <strong>
+            (Part ÷ Total) × 100
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NUMERICAL SUMS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical Sums
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        Previous GDP = ₹10 lakh crore
+
+        <br>
+
+        Current GDP = ₹11 lakh crore
+
+        <br><br>
+
+        Growth rate =
+        (11 − 10) ÷ 10 × 100
+
+        <br>
+
+        = 1 ÷ 10 × 100
+
+        <br>
+
+        = <strong>10%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        Previous GDP = ₹20 lakh crore
+
+        <br>
+
+        Current GDP = ₹22 lakh crore
+
+        <br><br>
+
+        Growth rate =
+        (22 − 20) ÷ 20 × 100
+
+        <br>
+
+        = <strong>10%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        National Income = ₹50,000 crore
+
+        <br>
+
+        Population = 10 crore
+
+        <br><br>
+
+        Per capita income =
+        50,000 ÷ 10
+
+        <br>
+
+        = <strong>₹5,000</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        Value of output = ₹10,000 crore
+
+        <br>
+
+        Intermediate consumption =
+        ₹4,000 crore
+
+        <br><br>
+
+        Value added =
+        10,000 − 4,000
+
+        <br>
+
+        = <strong>₹6,000 crore</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        Current GDP = ₹15 lakh crore
+
+        <br>
+
+        Previous GDP = ₹12 lakh crore
+
+        <br><br>
+
+        Growth rate =
+        (15 − 12) ÷ 12 × 100
+
+        <br>
+
+        = 3 ÷ 12 × 100
+
+        <br>
+
+        = <strong>25%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        Primary sector contribution =
+        ₹200 crore
+
+        <br>
+
+        Secondary sector contribution =
+        ₹300 crore
+
+        <br>
+
+        Tertiary sector contribution =
+        ₹500 crore
+
+        <br><br>
+
+        Total contribution =
+        200 + 300 + 500
+
+        <br>
+
+        = <strong>₹1,000 crore</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 7:
+        </strong>
+
+        Total GDP = ₹1,000 crore
+
+        <br>
+
+        Tertiary sector = ₹500 crore
+
+        <br><br>
+
+        Percentage contribution =
+        500 ÷ 1000 × 100
+
+        <br>
+
+        = <strong>50%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 8:
+        </strong>
+
+        Total GDP = ₹2,000 crore
+
+        <br>
+
+        Primary sector = ₹400 crore
+
+        <br><br>
+
+        Primary sector contribution =
+        400 ÷ 2000 × 100
+
+        <br>
+
+        = <strong>20%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 9:
+        </strong>
+
+        GDP increases from ₹50 crore
+        to ₹60 crore.
+
+        <br><br>
+
+        Increase =
+        60 − 50 = ₹10 crore
+
+        <br>
+
+        Growth rate =
+        10 ÷ 50 × 100
+
+        <br>
+
+        = <strong>20%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 10:
+        </strong>
+
+        Population = 5 crore
+
+        <br>
+
+        National Income = ₹25,000 crore
+
+        <br><br>
+
+        Per capita income =
+        25,000 ÷ 5
+
+        <br>
+
+        = <strong>₹5,000</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ECONOMIC GROWTH VISUALIZATION
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📈 GDP Growth
+    </h2>
+
+    <p class="description">
+
+        GDP growth measures how the production
+        of an economy changes over time.
+        Higher production can contribute to
+        economic growth, although GDP alone
+        does not capture every aspect of
+        people's well-being.
+
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 23 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical sums and fact-based
+        questions are included.
+        You need at least 30 correct answers
+        to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/social-science.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 23 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What does GDP stand for?",
+a:[
+"Gross Domestic Product",
+"General Domestic Production",
+"Gross Development Product",
+"Government Domestic Product"
+],
+correct:0
+},
+
+{
+q:"What does GDP measure?",
+a:[
+"The market value of final goods and services produced within a country",
+"Only agricultural production",
+"Only government income",
+"Only exports"
+],
+correct:0
+},
+
+{
+q:"GDP is generally measured for:",
+a:[
+"A specified period",
+"Only one day",
+"Only one hour",
+"No fixed period"
+],
+correct:0
+},
+
+{
+q:"Which word in GDP refers to production within a country's territory?",
+a:[
+"Domestic",
+"Gross",
+"Product",
+"Income"
+],
+correct:0
+},
+
+{
+q:"Which goods are included in GDP?",
+a:[
+"Final goods and services",
+"Only intermediate goods",
+"Only raw materials",
+"Only imported goods"
+],
+correct:0
+},
+
+{
+q:"Which sector is directly dependent on natural resources?",
+a:[
+"Primary sector",
+"Secondary sector",
+"Tertiary sector",
+"Quaternary sector"
+],
+correct:0
+},
+
+{
+q:"Which is an example of the primary sector?",
+a:[
+"Agriculture",
+"Banking",
+"Software services",
+"Retail"
+],
+correct:0
+},
+
+{
+q:"Which is an example of the secondary sector?",
+a:[
+"Manufacturing",
+"Fishing",
+"Banking",
+"Teaching"
+],
+correct:0
+},
+
+{
+q:"Which sector provides services?",
+a:[
+"Tertiary sector",
+"Primary sector",
+"Secondary sector",
+"Agricultural sector"
+],
+correct:0
+},
+
+{
+q:"Which is an example of the tertiary sector?",
+a:[
+"Banking",
+"Mining",
+"Fishing",
+"Farming"
+],
+correct:0
+},
+
+{
+q:"Which sector includes mining?",
+a:[
+"Primary sector",
+"Secondary sector",
+"Tertiary sector",
+"Service sector only"
+],
+correct:0
+},
+
+{
+q:"Which sector includes construction?",
+a:[
+"Secondary sector",
+"Primary sector",
+"Tertiary sector",
+"Agricultural sector"
+],
+correct:0
+},
+
+{
+q:"Which sector includes transport?",
+a:[
+"Tertiary sector",
+"Primary sector",
+"Secondary sector",
+"Mining sector"
+],
+correct:0
+},
+
+{
+q:"What are intermediate goods?",
+a:[
+"Goods used as inputs for producing other goods",
+"Goods purchased only for final consumption",
+"Only imported goods",
+"Only luxury goods"
+],
+correct:0
+},
+
+{
+q:"What are final goods?",
+a:[
+"Goods intended for final use",
+"Goods used only as raw materials",
+"Goods used only by factories",
+"Goods used only for exports"
+],
+correct:0
+},
+
+{
+q:"Why are intermediate goods excluded when calculating GDP using final goods?",
+a:[
+"To avoid double counting",
+"To increase imports",
+"To reduce employment",
+"To increase taxation"
+],
+correct:0
+},
+
+{
+q:"What is value added?",
+a:[
+"Value of output minus intermediate consumption",
+"Value of imports minus exports",
+"Income minus population",
+"Tax minus subsidy"
+],
+correct:0
+},
+
+{
+q:"Which is one of the approaches to measuring national income?",
+a:[
+"Income method",
+"Population method",
+"Geographical method",
+"Political method"
+],
+correct:0
+},
+
+{
+q:"Which approach calculates national income through expenditure?",
+a:[
+"Expenditure method",
+"Population method",
+"Employment method",
+"Geographical method"
+],
+correct:0
+},
+
+{
+q:"Which approach calculates income generated by factors of production?",
+a:[
+"Income method",
+"Trade method",
+"Population method",
+"Export method"
+],
+correct:0
+},
+
+{
+q:"GDP at market price measures final goods and services at:",
+a:[
+"Market prices",
+"Only wholesale prices",
+"Only factory prices",
+"Only export prices"
+],
+correct:0
+},
+
+{
+q:"Which sector includes agriculture?",
+a:[
+"Primary",
+"Secondary",
+"Tertiary",
+"Service"
+],
+correct:0
+},
+
+{
+q:"Which sector includes manufacturing industries?",
+a:[
+"Secondary",
+"Primary",
+"Tertiary",
+"Agricultural"
+],
+correct:0
+},
+
+{
+q:"Which sector includes education?",
+a:[
+"Tertiary",
+"Primary",
+"Secondary",
+"Mining"
+],
+correct:0
+},
+
+{
+q:"Which sector includes healthcare services?",
+a:[
+"Tertiary",
+"Primary",
+"Secondary",
+"Agricultural"
+],
+correct:0
+},
+
+{
+q:"What does GDP growth indicate?",
+a:[
+"Change in economic output over time",
+"Only population growth",
+"Only price changes",
+"Only imports"
+],
+correct:0
+},
+
+{
+q:"Economic development includes improvement in:",
+a:[
+"Living standards and socio-economic conditions",
+"Only imports",
+"Only exports",
+"Only population"
+],
+correct:0
+},
+
+{
+q:"Which factor is important for economic development?",
+a:[
+"Employment",
+"Only inflation",
+"Only imports",
+"Only population growth"
+],
+correct:0
+},
+
+{
+q:"Per capita income is calculated by:",
+a:[
+"National income ÷ population",
+"Population ÷ national income",
+"GDP × population",
+"GDP ÷ exports"
+],
+correct:0
+},
+
+{
+q:"Nominal GDP is measured using:",
+a:[
+"Current market prices",
+"Constant prices only",
+"Previous population",
+"Export prices only"
+],
+correct:0
+},
+
+{
+q:"Real GDP uses:",
+a:[
+"Constant prices",
+"Only current prices",
+"Only export prices",
+"Only import prices"
+],
+correct:0
+},
+
+{
+q:"Which can help compare actual changes in output over time?",
+a:[
+"Real GDP",
+"Only nominal GDP",
+"Population",
+"Exports only"
+],
+correct:0
+},
+
+{
+q:"Which is a component of the primary sector?",
+a:[
+"Fishing",
+"Banking",
+"Insurance",
+"Software"
+],
+correct:0
+},
+
+{
+q:"Which is a component of the secondary sector?",
+a:[
+"Manufacturing",
+"Fishing",
+"Banking",
+"Transport"
+],
+correct:0
+},
+
+{
+q:"Which is a component of the tertiary sector?",
+a:[
+"Communication",
+"Mining",
+"Farming",
+"Forestry"
+],
+correct:0
+},
+
+{
+q:"If previous GDP is ₹100 crore and current GDP is ₹110 crore, what is the growth rate?",
+a:[
+"5%",
+"10%",
+"15%",
+"20%"
+],
+correct:1
+},
+
+{
+q:"If previous GDP is ₹200 crore and current GDP is ₹220 crore, what is the growth rate?",
+a:[
+"5%",
+"10%",
+"15%",
+"20%"
+],
+correct:1
+},
+
+{
+q:"If previous GDP is ₹500 crore and current GDP is ₹550 crore, what is the growth rate?",
+a:[
+"5%",
+"10%",
+"15%",
+"20%"
+],
+correct:1
+},
+
+{
+q:"National income is ₹60,000 crore and population is 12 crore. What is per capita income?",
+a:[
+"₹4,000",
+"₹5,000",
+"₹6,000",
+"₹7,000"
+],
+correct:1
+},
+
+{
+q:"National income is ₹90,000 crore and population is 15 crore. What is per capita income?",
+a:[
+"₹4,000",
+"₹5,000",
+"₹6,000",
+"₹7,000"
+],
+correct:2
+},
+
+{
+q:"Value of output is ₹20,000 crore and intermediate consumption is ₹8,000 crore. What is value added?",
+a:[
+"₹10,000 crore",
+"₹12,000 crore",
+"₹14,000 crore",
+"₹16,000 crore"
+],
+correct:1
+},
+
+{
+q:"Value of output is ₹15,000 crore and intermediate consumption is ₹5,000 crore. What is value added?",
+a:[
+"₹5,000 crore",
+"₹8,000 crore",
+"₹10,000 crore",
+"₹12,000 crore"
+],
+correct:2
+},
+
+{
+q:"Primary sector contributes ₹200 crore and total GDP is ₹1,000 crore. What is its percentage contribution?",
+a:[
+"10%",
+"20%",
+"30%",
+"40%"
+],
+correct:1
+},
+
+{
+q:"Secondary sector contributes ₹300 crore and total GDP is ₹1,500 crore. What is its percentage contribution?",
+a:[
+"10%",
+"20%",
+"30%",
+"40%"
+],
+correct:1
+},
+
+{
+q:"Tertiary sector contributes ₹600 crore and total GDP is ₹1,000 crore. What is its percentage contribution?",
+a:[
+"40%",
+"50%",
+"60%",
+"70%"
+],
+correct:2
+},
+
+{
+q:"If GDP increases from ₹800 crore to ₹1,000 crore, what is the increase?",
+a:[
+"₹100 crore",
+"₹150 crore",
+"₹200 crore",
+"₹250 crore"
+],
+correct:2
+},
+
+{
+q:"If GDP increases from ₹800 crore to ₹1,000 crore, what is the growth rate?",
+a:[
+"20%",
+"25%",
+"30%",
+"35%"
+],
+correct:1
+},
+
+{
+q:"If a student's score is 42 out of 50, what is the percentage?",
+a:[
+"72%",
+"80%",
+"84%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"If a student gets 45 correct answers out of 50, how many are incorrect?",
+a:[
+"3",
+"4",
+"5",
+"6"
+],
+correct:2
+},
+
+{
+q:"If 20 students answer 50 questions each, how many total attempts are made?",
+a:[
+"500",
+"750",
+"1000",
+"1250"
+],
+correct:2
+},
+
+{
+q:"The pass mark is 30 out of 50. What percentage is required?",
+a:[
+"50%",
+"55%",
+"60%",
+"65%"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_economics_ch23_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_economics_ch23_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 23 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 23 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Economics Chapter 23 - Gross Domestic Product and Its Growth",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_economics_chapter23",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_economics_chapter23"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Economics_Chapter23_GDP_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_economics_chapter23"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+

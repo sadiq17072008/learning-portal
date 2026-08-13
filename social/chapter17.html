@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 17 - Human Geography of Tamil Nadu | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌾 Chapter 17: Human Geography of Tamil Nadu
+    </h1>
+
+    <p>
+
+        Learn about agriculture, major crops,
+        water resources, minerals, industries,
+        population, transport, communication,
+        trade and human-made disasters of
+        Tamil Nadu.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study agriculture, irrigation and water
+        resources, minerals, industries, population,
+        transport, communication and trade in
+        Tamil Nadu.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER17_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER17_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Human Geography
+    </div>
+
+    <div class="topic">
+        ✓ Agriculture
+    </div>
+
+    <div class="topic">
+        ✓ Factors Affecting Agriculture
+    </div>
+
+    <div class="topic">
+        ✓ Agricultural Seasons
+    </div>
+
+    <div class="topic">
+        ✓ Major Food Crops
+    </div>
+
+    <div class="topic">
+        ✓ Rice
+    </div>
+
+    <div class="topic">
+        ✓ Millets
+    </div>
+
+    <div class="topic">
+        ✓ Pulses
+    </div>
+
+    <div class="topic">
+        ✓ Sugarcane
+    </div>
+
+    <div class="topic">
+        ✓ Cotton
+    </div>
+
+    <div class="topic">
+        ✓ Plantation Crops
+    </div>
+
+    <div class="topic">
+        ✓ Fisheries
+    </div>
+
+    <div class="topic">
+        ✓ Water Resources
+    </div>
+
+    <div class="topic">
+        ✓ Dams and Irrigation
+    </div>
+
+    <div class="topic">
+        ✓ Minerals
+    </div>
+
+    <div class="topic">
+        ✓ Mineral-based Industries
+    </div>
+
+    <div class="topic">
+        ✓ Industrial Development
+    </div>
+
+    <div class="topic">
+        ✓ Population
+    </div>
+
+    <div class="topic">
+        ✓ Population Distribution
+    </div>
+
+    <div class="topic">
+        ✓ Transport
+    </div>
+
+    <div class="topic">
+        ✓ Communication
+    </div>
+
+    <div class="topic">
+        ✓ Trade
+    </div>
+
+    <div class="topic">
+        ✓ Ports
+    </div>
+
+    <div class="topic">
+        ✓ Man-made Disasters
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Human Geography
+            </strong>
+
+            <br><br>
+
+            Human geography studies the development
+            of human societies and their relationship
+            with the physical environment.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Agriculture
+            </strong>
+
+            <br><br>
+
+            Agriculture includes cultivation of crops,
+            rearing of animals and birds, forestry,
+            fisheries and related activities.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Agricultural Landforms
+            </strong>
+
+            <br><br>
+
+            The plains of Tamil Nadu are generally
+            more suitable for agriculture because
+            of favourable relief and fertile soils.
+            The Cauvery plains are an important
+            agricultural region.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Rice
+            </strong>
+
+            <br><br>
+
+            Rice is the major food crop of Tamil Nadu.
+            Important rice-growing areas include the
+            Cauvery delta and other suitable plains.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Millets
+            </strong>
+
+            <br><br>
+
+            Millets form an important food crop in
+            Tamil Nadu and are cultivated in several
+            relatively dry regions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Plantation Crops
+            </strong>
+
+            <br><br>
+
+            Tea, coffee, rubber, cashew and cinchona
+            are important plantation crops associated
+            with Tamil Nadu.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Tea
+            </strong>
+
+            <br><br>
+
+            Tea plantations are mainly found in the
+            hill regions, particularly the Nilgiris
+            and surrounding highlands.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Coffee
+            </strong>
+
+            <br><br>
+
+            Coffee is grown mainly in the hill regions
+            of the Western Ghats and Eastern Ghats.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Water Resources
+            </strong>
+
+            <br><br>
+
+            Tamil Nadu depends on rivers, reservoirs,
+            tanks, groundwater and rainfall for its
+            water requirements.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Dams
+            </strong>
+
+            <br><br>
+
+            Dams are used for irrigation, water
+            storage and, in suitable locations,
+            hydro-electric power generation.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Mettur Dam
+            </strong>
+
+            <br><br>
+
+            Mettur is an important dam associated
+            with the Cauvery River and plays an
+            important role in irrigation and
+            water management.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Sathanur Dam
+            </strong>
+
+            <br><br>
+
+            Sathanur Dam is constructed across
+            the Thenpennai River and is an
+            important irrigation project.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Mineral Resources
+            </strong>
+
+            <br><br>
+
+            Tamil Nadu has mineral resources such
+            as limestone, magnesite, granite,
+            lignite and other minerals that support
+            various industries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Lignite
+            </strong>
+
+            <br><br>
+
+            Neyveli is an important lignite-producing
+            region of Tamil Nadu.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Industries
+            </strong>
+
+            <br><br>
+
+            Important industries of Tamil Nadu include
+            textiles, automobiles, leather, cement,
+            sugar, engineering, chemicals and
+            information technology.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Textile Industry
+            </strong>
+
+            <br><br>
+
+            Tamil Nadu is an important textile and
+            garment-producing state. Coimbatore and
+            Tiruppur are major centres.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Automobile Industry
+            </strong>
+
+            <br><br>
+
+            Chennai and its surrounding industrial
+            region have developed into an important
+            automobile manufacturing centre.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. Population
+            </strong>
+
+            <br><br>
+
+            Population refers to the number of people
+            living in a particular area. Its
+            distribution depends on factors such as
+            relief, water, agriculture, industries
+            and employment opportunities.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Urbanisation
+            </strong>
+
+            <br><br>
+
+            Industrialisation and employment
+            opportunities encourage migration and
+            urban growth.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Transport
+            </strong>
+
+            <br><br>
+
+            Roadways, railways, waterways, airways
+            and seaways connect different parts of
+            Tamil Nadu and support economic activity.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                21. Ports
+            </strong>
+
+            <br><br>
+
+            Tamil Nadu has major and minor ports
+            along its eastern coastline. Ports
+            support imports, exports and international
+            trade.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                22. Communication
+            </strong>
+
+            <br><br>
+
+            Communication systems such as
+            telecommunications, internet services
+            and mass media support economic and
+            social development.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                23. Trade
+            </strong>
+
+            <br><br>
+
+            Trade involves the exchange of goods
+            and services. Tamil Nadu participates
+            in both internal and international trade.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                24. Fisheries
+            </strong>
+
+            <br><br>
+
+            Marine fishing is important along the
+            coastal areas while inland fishing is
+            practised in suitable rivers, reservoirs,
+            tanks and ponds.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                25. Man-made Disasters
+            </strong>
+
+            <br><br>
+
+            Industrial accidents, fires, chemical
+            accidents, pollution and transport
+            accidents are examples of disasters
+            caused or intensified by human activities.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NUMERICAL PRACTICE
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        A farmer owns 20 hectares of land.
+        If 60% is used for rice cultivation,
+        how much land is used for rice?
+
+        <br><br>
+
+        20 × 60 ÷ 100 =
+        <strong>12 hectares</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        A reservoir contains 80,000 million
+        litres of water. If 25% is used for
+        irrigation, how much water is used?
+
+        <br><br>
+
+        80,000 × 25 ÷ 100 =
+        <strong>20,000 million litres</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        A district has a population of
+        10 lakh people. If 40% live in
+        urban areas, how many people live
+        in urban areas?
+
+        <br><br>
+
+        10,00,000 × 40 ÷ 100 =
+        <strong>4,00,000 people</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        An industrial area produces
+        50,000 tonnes of goods. If 30%
+        are exported, how many tonnes
+        are exported?
+
+        <br><br>
+
+        50,000 × 30 ÷ 100 =
+        <strong>15,000 tonnes</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        A transport company travels
+        600 km in 10 hours. What is
+        its average speed?
+
+        <br><br>
+
+        Speed = Distance ÷ Time
+
+        <br>
+
+        600 ÷ 10 =
+        <strong>60 km/h</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        A farmer produces 4,000 kg of rice.
+        If 15% is used for seeds, how much
+        rice is used for seeds?
+
+        <br><br>
+
+        4,000 × 15 ÷ 100 =
+        <strong>600 kg</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 17 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and calculation-based questions
+        are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter18.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 18
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 17 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"Human geography studies the relationship between:",
+a:[
+"Human societies and their physical environment",
+"Only rocks and minerals",
+"Only rivers",
+"Only climate"
+],
+correct:0
+},
+
+{
+q:"Which activity is included in agriculture?",
+a:[
+"Crop cultivation",
+"Only mining",
+"Only transport",
+"Only banking"
+],
+correct:0
+},
+
+{
+q:"Which landform is generally most suitable for agriculture?",
+a:[
+"Plains",
+"Steep hills",
+"High mountains",
+"Rocky peaks"
+],
+correct:0
+},
+
+{
+q:"Which region is known as an important agricultural area of Tamil Nadu?",
+a:[
+"Cauvery plains",
+"Nilgiri peaks",
+"Coastal sand dunes only",
+"Rocky hills only"
+],
+correct:0
+},
+
+{
+q:"Which is the major food crop of Tamil Nadu?",
+a:[
+"Rice",
+"Tea",
+"Coffee",
+"Rubber"
+],
+correct:0
+},
+
+{
+q:"Which is considered an important second staple food crop?",
+a:[
+"Millets",
+"Tea",
+"Coffee",
+"Rubber"
+],
+correct:0
+},
+
+{
+q:"Which is a plantation crop?",
+a:[
+"Tea",
+"Rice",
+"Millet",
+"Groundnut"
+],
+correct:0
+},
+
+{
+q:"Tea plantations are especially important in:",
+a:[
+"Nilgiris",
+"Thar Desert",
+"Punjab plains",
+"Rajasthan desert"
+],
+correct:0
+},
+
+{
+q:"Coffee is mainly cultivated in:",
+a:[
+"Hill regions",
+"Desert regions",
+"Coastal sand dunes",
+"Dry salt pans"
+],
+correct:0
+},
+
+{
+q:"Which of the following is another plantation crop?",
+a:[
+"Coffee",
+"Rice",
+"Wheat",
+"Millet"
+],
+correct:0
+},
+
+{
+q:"Which is an important water resource?",
+a:[
+"Reservoir",
+"Only road",
+"Only railway",
+"Factory chimney"
+],
+correct:0
+},
+
+{
+q:"Mettur Dam is associated with which river?",
+a:[
+"Cauvery",
+"Vaigai",
+"Palar",
+"Thamirabarani"
+],
+correct:0
+},
+
+{
+q:"Sathanur Dam is constructed across:",
+a:[
+"Thenpennai River",
+"Cauvery River",
+"Vaigai River",
+"Bhavani River"
+],
+correct:0
+},
+
+{
+q:"Dams are mainly useful for:",
+a:[
+"Irrigation and water storage",
+"Only transportation",
+"Only communication",
+"Only tourism"
+],
+correct:0
+},
+
+{
+q:"Which is an important mineral resource of Tamil Nadu?",
+a:[
+"Limestone",
+"Gold only",
+"Diamond only",
+"Uranium only"
+],
+correct:0
+},
+
+{
+q:"Neyveli is famous for:",
+a:[
+"Lignite",
+"Gold",
+"Petroleum",
+"Natural gas"
+],
+correct:0
+},
+
+{
+q:"Which mineral is widely used in cement manufacturing?",
+a:[
+"Limestone",
+"Gold",
+"Silver",
+"Diamond"
+],
+correct:0
+},
+
+{
+q:"Which city is a major textile centre?",
+a:[
+"Coimbatore",
+"Delhi",
+"Patna",
+"Srinagar"
+],
+correct:0
+},
+
+{
+q:"Tiruppur is particularly famous for:",
+a:[
+"Textiles and garments",
+"Ship building only",
+"Coal mining",
+"Tea only"
+],
+correct:0
+},
+
+{
+q:"Chennai is an important centre of which industry?",
+a:[
+"Automobile industry",
+"Coal mining",
+"Tea plantation",
+"Jute only"
+],
+correct:0
+},
+
+{
+q:"Which is an important industry of Tamil Nadu?",
+a:[
+"Leather",
+"Only fishing",
+"Only forestry",
+"Only mining"
+],
+correct:0
+},
+
+{
+q:"Population means:",
+a:[
+"Number of people living in an area",
+"Number of roads",
+"Number of rivers",
+"Number of factories only"
+],
+correct:0
+},
+
+{
+q:"Which factor can influence population distribution?",
+a:[
+"Availability of employment",
+"Only mountain height",
+"Only rainfall",
+"Only soil colour"
+],
+correct:0
+},
+
+{
+q:"Industrialisation can encourage:",
+a:[
+"Urbanisation",
+"Desert formation",
+"Mountain formation",
+"River formation"
+],
+correct:0
+},
+
+{
+q:"Which is a mode of land transport?",
+a:[
+"Railways",
+"Airways",
+"Seaways",
+"Satellite"
+],
+correct:0
+},
+
+{
+q:"Which is a major form of road transport?",
+a:[
+"Roadways",
+"Airways",
+"Seaways",
+"Waterways only"
+],
+correct:0
+},
+
+{
+q:"Ports mainly support:",
+a:[
+"International and coastal trade",
+"Only farming",
+"Only forestry",
+"Only mining"
+],
+correct:0
+},
+
+{
+q:"Tamil Nadu's major ports are mainly located along:",
+a:[
+"Eastern coast",
+"Western Himalayan region",
+"Thar Desert",
+"Central plateau"
+],
+correct:0
+},
+
+{
+q:"Which is a communication system?",
+a:[
+"Telecommunication",
+"Irrigation canal",
+"Railway track",
+"Dam"
+],
+correct:0
+},
+
+{
+q:"Trade refers to:",
+a:[
+"Exchange of goods and services",
+"Only farming",
+"Only rainfall",
+"Only mining"
+],
+correct:0
+},
+
+{
+q:"Marine fishing is mainly carried out in:",
+a:[
+"Sea and coastal waters",
+"Mountains",
+"Deserts",
+"Dry plateaus"
+],
+correct:0
+},
+
+{
+q:"Inland fishing can be practised in:",
+a:[
+"Rivers and reservoirs",
+"Only oceans",
+"Only mountains",
+"Only deserts"
+],
+correct:0
+},
+
+{
+q:"Which is a man-made disaster?",
+a:[
+"Industrial accident",
+"Earthquake",
+"Natural cyclone",
+"Natural drought"
+],
+correct:0
+},
+
+{
+q:"Which activity can cause industrial pollution?",
+a:[
+"Improper disposal of industrial waste",
+"Rainfall",
+"Natural vegetation",
+"River flow"
+],
+correct:0
+},
+
+{
+q:"A farmer has 20 hectares and uses 60% for rice. How many hectares are used?",
+a:[
+"8 hectares",
+"10 hectares",
+"12 hectares",
+"15 hectares"
+],
+correct:2
+},
+
+{
+q:"A reservoir contains 80,000 million litres. If 25% is used for irrigation, how much is used?",
+a:[
+"10,000 million litres",
+"15,000 million litres",
+"20,000 million litres",
+"25,000 million litres"
+],
+correct:2
+},
+
+{
+q:"A district has 10,00,000 people. If 40% are urban residents, how many are urban residents?",
+a:[
+"2,00,000",
+"3,00,000",
+"4,00,000",
+"5,00,000"
+],
+correct:2
+},
+
+{
+q:"An industrial area produces 50,000 tonnes of goods. If 30% is exported, how much is exported?",
+a:[
+"10,000 tonnes",
+"15,000 tonnes",
+"20,000 tonnes",
+"25,000 tonnes"
+],
+correct:1
+},
+
+{
+q:"A vehicle travels 600 km in 10 hours. What is its average speed?",
+a:[
+"40 km/h",
+"50 km/h",
+"60 km/h",
+"70 km/h"
+],
+correct:2
+},
+
+{
+q:"A farmer produces 4,000 kg of rice. If 15% is used as seeds, how much is used?",
+a:[
+"400 kg",
+"500 kg",
+"600 kg",
+"800 kg"
+],
+correct:2
+},
+
+{
+q:"A tank contains 40,000 litres. If 20% is used, how much remains?",
+a:[
+"28,000 litres",
+"30,000 litres",
+"32,000 litres",
+"35,000 litres"
+],
+correct:2
+},
+
+{
+q:"A farm has 50 hectares. If 40% is used for sugarcane, how many hectares are used?",
+a:[
+"15 hectares",
+"20 hectares",
+"25 hectares",
+"30 hectares"
+],
+correct:1
+},
+
+{
+q:"A district produces 80,000 tonnes of goods. If 25% is sent to another state, how much is sent?",
+a:[
+"10,000 tonnes",
+"15,000 tonnes",
+"20,000 tonnes",
+"25,000 tonnes"
+],
+correct:2
+},
+
+{
+q:"A transport company travels 900 km in 15 hours. What is the average speed?",
+a:[
+"50 km/h",
+"60 km/h",
+"70 km/h",
+"80 km/h"
+],
+correct:1
+},
+
+{
+q:"A reservoir has 100,000 million litres. If 35% is used, how much is used?",
+a:[
+"25,000 million litres",
+"30,000 million litres",
+"35,000 million litres",
+"40,000 million litres"
+],
+correct:2
+},
+
+{
+q:"A town has 5,00,000 people. If 20% live in rural areas, how many live in rural areas?",
+a:[
+"50,000",
+"75,000",
+"1,00,000",
+"1,50,000"
+],
+correct:2
+},
+
+{
+q:"A textile factory produces 20,000 garments. If 10% are defective, how many are defective?",
+a:[
+"1,000",
+"2,000",
+"3,000",
+"4,000"
+],
+correct:1
+},
+
+{
+q:"A farmer's production increases from 4,000 kg to 5,000 kg. What is the increase?",
+a:[
+"500 kg",
+"750 kg",
+"1,000 kg",
+"1,500 kg"
+],
+correct:2
+},
+
+{
+q:"A student gets 40 correct answers out of 50. What is the percentage?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"If every correct answer gives 2 XP, how much XP is earned for 40 correct answers?",
+a:[
+"60 XP",
+"70 XP",
+"80 XP",
+"100 XP"
+],
+correct:2
+},
+
+{
+q:"If a student scores 30 out of 50, what percentage is obtained?",
+a:[
+"50%",
+"55%",
+"60%",
+"65%"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch17_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch17_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 17 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 17 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Geography Chapter 17 - Human Geography of Tamil Nadu",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter17",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter17"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Geography_Chapter17_Human_Geography_of_Tamil_Nadu_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter17"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

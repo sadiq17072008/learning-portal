@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 9 - Freedom Struggle in Tamil Nadu | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        Chapter 9: Freedom Struggle in Tamil Nadu
+    </h1>
+
+    <p>
+        Learn about the freedom struggle in Tamil Nadu,
+        the early resistance against British rule,
+        the Swadeshi movement, revolutionary activities,
+        the Non-Cooperation Movement, Civil Disobedience,
+        Quit India Movement and the contribution of
+        Tamil Nadu freedom fighters.
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the important personalities, movements,
+        organisations and events connected with the
+        freedom struggle in Tamil Nadu.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER9_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER9_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Early Resistance against British Rule
+    </div>
+
+    <div class="topic">
+        ✓ Poligar Resistance
+    </div>
+
+    <div class="topic">
+        ✓ Veerapandiya Kattabomman
+    </div>
+
+    <div class="topic">
+        ✓ Maruthu Brothers
+    </div>
+
+    <div class="topic">
+        ✓ Vellore Mutiny
+    </div>
+
+    <div class="topic">
+        ✓ South Indian Rebellion
+    </div>
+
+    <div class="topic">
+        ✓ Swadeshi Movement
+    </div>
+
+    <div class="topic">
+        ✓ V.O. Chidambaranar
+    </div>
+
+    <div class="topic">
+        ✓ Subramania Bharati
+    </div>
+
+    <div class="topic">
+        ✓ Subramania Siva
+    </div>
+
+    <div class="topic">
+        ✓ Bipin Chandra Pal
+    </div>
+
+    <div class="topic">
+        ✓ Swadeshi Steam Navigation Company
+    </div>
+
+    <div class="topic">
+        ✓ Home Rule Movement
+    </div>
+
+    <div class="topic">
+        ✓ Annie Besant
+    </div>
+
+    <div class="topic">
+        ✓ Non-Cooperation Movement
+    </div>
+
+    <div class="topic">
+        ✓ Rajaji and the Vedaranyam March
+    </div>
+
+    <div class="topic">
+        ✓ Civil Disobedience Movement
+    </div>
+
+    <div class="topic">
+        ✓ Quit India Movement
+    </div>
+
+    <div class="topic">
+        ✓ Tiruppur Kumaran
+    </div>
+
+    <div class="topic">
+        ✓ S. Satyamurti
+    </div>
+
+    <div class="topic">
+        ✓ K. Kamaraj
+    </div>
+
+    <div class="topic">
+        ✓ Tamil Nadu and the Freedom Struggle
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Poligar Resistance
+            </strong>
+
+            <br><br>
+
+            The Poligars resisted the expansion of
+            British authority in Tamil regions and
+            opposed the collection of revenue under
+            British control.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Veerapandiya Kattabomman
+            </strong>
+
+            <br><br>
+
+            Veerapandiya Kattabomman, the Poligar of
+            Panchalankurichi, resisted British authority
+            and became an important symbol of resistance.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Maruthu Brothers
+            </strong>
+
+            <br><br>
+
+            Periya Maruthu and Chinna Maruthu played
+            an important role in the resistance against
+            British rule in southern Tamil Nadu.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Vellore Mutiny
+            </strong>
+
+            <br><br>
+
+            The Vellore Mutiny of 1806 was one of the
+            earliest major military uprisings against
+            British rule in India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. South Indian Rebellion
+            </strong>
+
+            <br><br>
+
+            The South Indian Rebellion was an important
+            phase of early resistance against British
+            authority in the southern regions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Swadeshi Movement
+            </strong>
+
+            <br><br>
+
+            The Swadeshi movement encouraged Indians to
+            use indigenous products and oppose British
+            economic domination.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. V.O. Chidambaranar
+            </strong>
+
+            <br><br>
+
+            V.O. Chidambaranar played an important role
+            in the Swadeshi movement and founded the
+            Swadeshi Steam Navigation Company.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Swadeshi Steam Navigation Company
+            </strong>
+
+            <br><br>
+
+            The company was established to challenge
+            British control over coastal shipping and
+            encourage Indian enterprise.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Subramania Bharati
+            </strong>
+
+            <br><br>
+
+            Subramania Bharati used poetry and journalism
+            to promote nationalism, freedom and social
+            reform.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Subramania Siva
+            </strong>
+
+            <br><br>
+
+            Subramania Siva was a prominent nationalist
+            who spread the message of freedom through
+            speeches and public activities.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Home Rule Movement
+            </strong>
+
+            <br><br>
+
+            The Home Rule Movement demanded self-government
+            for India and attracted nationalist support
+            in different parts of the country.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Annie Besant
+            </strong>
+
+            <br><br>
+
+            Annie Besant played an important role in the
+            Home Rule Movement and nationalist politics.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Non-Cooperation Movement
+            </strong>
+
+            <br><br>
+
+            The Non-Cooperation Movement encouraged people
+            to withdraw cooperation from British institutions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Civil Disobedience Movement
+            </strong>
+
+            <br><br>
+
+            The Civil Disobedience Movement encouraged
+            people to peacefully break unjust colonial laws.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Vedaranyam Salt March
+            </strong>
+
+            <br><br>
+
+            C. Rajagopalachari led the Vedaranyam Salt
+            March in Tamil Nadu during the Civil
+            Disobedience Movement.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Tiruppur Kumaran
+            </strong>
+
+            <br><br>
+
+            Tiruppur Kumaran became a symbol of patriotism
+            and sacrifice during the freedom struggle.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. S. Satyamurti
+            </strong>
+
+            <br><br>
+
+            S. Satyamurti was an important Congress leader
+            from Tamil Nadu who worked for India's freedom.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. K. Kamaraj
+            </strong>
+
+            <br><br>
+
+            K. Kamaraj participated in the national movement
+            and became an important leader from Tamil Nadu.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Quit India Movement
+            </strong>
+
+            <br><br>
+
+            The Quit India Movement of 1942 demanded an
+            immediate end to British rule in India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Role of Tamil Nadu
+            </strong>
+
+            <br><br>
+
+            Tamil Nadu contributed significantly to the
+            Indian freedom struggle through political
+            movements, journalism, economic resistance,
+            protests and mass participation.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT DATES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🗓️ Important Dates and Events
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            1799:
+        </strong>
+
+        Veerapandiya Kattabomman was executed after
+        his resistance against British authority.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1801:
+        </strong>
+
+        The Maruthu Brothers issued a famous
+        proclamation calling for resistance against
+        British rule.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1806:
+        </strong>
+
+        Vellore Mutiny took place.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1906:
+        </strong>
+
+        V.O. Chidambaranar founded the Swadeshi
+        Steam Navigation Company.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1907:
+        </strong>
+
+        The nationalist activities of V.O.C.,
+        Subramania Bharati and Subramania Siva
+        gained importance in Tamil Nadu.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1916:
+        </strong>
+
+        The Home Rule Movement became an important
+        phase of the nationalist struggle.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1920:
+        </strong>
+
+        The Non-Cooperation Movement was launched.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1930:
+        </strong>
+
+        The Civil Disobedience Movement and
+        Vedaranyam Salt March took place.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1932:
+        </strong>
+
+        Civil disobedience activities continued
+        despite colonial repression.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1942:
+        </strong>
+
+        Quit India Movement was launched.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1947:
+        </strong>
+
+        India became independent.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 9 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and date-based questions are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter10.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 10
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 9 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"Who was the famous Poligar of Panchalankurichi?",
+a:[
+"Veerapandiya Kattabomman",
+"V.O. Chidambaranar",
+"S. Satyamurti",
+"K. Kamaraj"
+],
+correct:0
+},
+
+{
+q:"Veerapandiya Kattabomman resisted the authority of which power?",
+a:[
+"British",
+"French",
+"Dutch",
+"Portuguese"
+],
+correct:0
+},
+
+{
+q:"Which place was associated with Veerapandiya Kattabomman?",
+a:[
+"Panchalankurichi",
+"Vedaranyam",
+"Madurai",
+"Chennai"
+],
+correct:0
+},
+
+{
+q:"In which year was Veerapandiya Kattabomman executed?",
+a:[
+"1797",
+"1798",
+"1799",
+"1800"
+],
+correct:2
+},
+
+{
+q:"Who were the famous brothers associated with the resistance in Sivaganga?",
+a:[
+"Maruthu Brothers",
+"Alagappa Brothers",
+"Naicker Brothers",
+"Palayakarar Brothers"
+],
+correct:0
+},
+
+{
+q:"What were the names of the Maruthu Brothers?",
+a:[
+"Periya Maruthu and Chinna Maruthu",
+"Raja Maruthu and Siva Maruthu",
+"Velu Maruthu and Kattabomman",
+"Chinna Maruthu and VOC"
+],
+correct:0
+},
+
+{
+q:"In which year did the Maruthu proclamation appear?",
+a:[
+"1799",
+"1800",
+"1801",
+"1802"
+],
+correct:2
+},
+
+{
+q:"Which famous uprising took place in 1806?",
+a:[
+"Vellore Mutiny",
+"Quit India Movement",
+"Salt March",
+"Non-Cooperation Movement"
+],
+correct:0
+},
+
+{
+q:"Where did the 1806 military uprising take place?",
+a:[
+"Vellore",
+"Madurai",
+"Coimbatore",
+"Tiruchirappalli"
+],
+correct:0
+},
+
+{
+q:"The Vellore Mutiny took place in which year?",
+a:[
+"1804",
+"1805",
+"1806",
+"1807"
+],
+correct:2
+},
+
+{
+q:"Which movement encouraged the use of Indian-made goods?",
+a:[
+"Swadeshi Movement",
+"Quit India Movement",
+"Home Rule Movement",
+"Non-Cooperation Movement"
+],
+correct:0
+},
+
+{
+q:"Who founded the Swadeshi Steam Navigation Company?",
+a:[
+"V.O. Chidambaranar",
+"Subramania Bharati",
+"Rajaji",
+"Kamaraj"
+],
+correct:0
+},
+
+{
+q:"What does Swadeshi encourage?",
+a:[
+"Use of indigenous products",
+"Use of only British goods",
+"Military expansion",
+"Colonial taxation"
+],
+correct:0
+},
+
+{
+q:"In which year was the Swadeshi Steam Navigation Company founded?",
+a:[
+"1904",
+"1905",
+"1906",
+"1907"
+],
+correct:2
+},
+
+{
+q:"Who was popularly known as V.O.C.?",
+a:[
+"V.O. Chidambaranar",
+"V. Subramania Iyer",
+"V. Satyamurti",
+"V. Kamaraj"
+],
+correct:0
+},
+
+{
+q:"Who used poetry and journalism to promote nationalism in Tamil Nadu?",
+a:[
+"Subramania Bharati",
+"Lord Curzon",
+"General Dyer",
+"Lord Irwin"
+],
+correct:0
+},
+
+{
+q:"Which poet is closely associated with nationalist poetry in Tamil Nadu?",
+a:[
+"Subramania Bharati",
+"Rabindranath Tagore",
+"Bankim Chandra Chatterjee",
+"Maithili Sharan Gupt"
+],
+correct:0
+},
+
+{
+q:"Who was an important nationalist associated with speeches and political activities in Tamil Nadu?",
+a:[
+"Subramania Siva",
+"Robert Clive",
+"Lord Curzon",
+"General Dyer"
+],
+correct:0
+},
+
+{
+q:"Which movement demanded self-government for India?",
+a:[
+"Home Rule Movement",
+"Vellore Mutiny",
+"Salt Satyagraha",
+"Quit India Movement"
+],
+correct:0
+},
+
+{
+q:"Who played an important role in the Home Rule Movement in India?",
+a:[
+"Annie Besant",
+"General Dyer",
+"Lord Curzon",
+"Lord Mountbatten"
+],
+correct:0
+},
+
+{
+q:"In which year did the Home Rule Movement become prominent?",
+a:[
+"1914",
+"1915",
+"1916",
+"1917"
+],
+correct:2
+},
+
+{
+q:"Which movement was launched in 1920?",
+a:[
+"Non-Cooperation Movement",
+"Quit India Movement",
+"Civil Disobedience Movement",
+"Home Rule Movement"
+],
+correct:0
+},
+
+{
+q:"What was an important method of the Non-Cooperation Movement?",
+a:[
+"Boycott of colonial institutions",
+"Supporting British rule",
+"Joining British administration",
+"Promoting British goods"
+],
+correct:0
+},
+
+{
+q:"Who led the national movement using non-violent methods?",
+a:[
+"Mahatma Gandhi",
+"Lord Curzon",
+"General Dyer",
+"Robert Clive"
+],
+correct:0
+},
+
+{
+q:"Which movement began in 1930?",
+a:[
+"Civil Disobedience Movement",
+"Non-Cooperation Movement",
+"Quit India Movement",
+"Home Rule Movement"
+],
+correct:0
+},
+
+{
+q:"Who led the Vedaranyam Salt March?",
+a:[
+"C. Rajagopalachari",
+"V.O. Chidambaranar",
+"Subramania Bharati",
+"K. Kamaraj"
+],
+correct:0
+},
+
+{
+q:"Where did the famous Salt March in Tamil Nadu end?",
+a:[
+"Vedaranyam",
+"Vellore",
+"Panchalankurichi",
+"Madurai"
+],
+correct:0
+},
+
+{
+q:"The Vedaranyam March was associated with which movement?",
+a:[
+"Civil Disobedience Movement",
+"Quit India Movement",
+"Non-Cooperation Movement",
+"Home Rule Movement"
+],
+correct:0
+},
+
+{
+q:"In which year did the Vedaranyam Salt March take place?",
+a:[
+"1928",
+"1929",
+"1930",
+"1931"
+],
+correct:2
+},
+
+{
+q:"Who became known as Tiruppur Kumaran?",
+a:[
+"Kumaran who sacrificed his life during the freedom struggle",
+"A British officer",
+"A colonial governor",
+"A merchant"
+],
+correct:0
+},
+
+{
+q:"What did Tiruppur Kumaran symbolize?",
+a:[
+"Patriotism and sacrifice",
+"British administration",
+"Colonial trade",
+"Military expansion"
+],
+correct:0
+},
+
+{
+q:"Which leader from Tamil Nadu was an important Congress politician?",
+a:[
+"S. Satyamurti",
+"General Dyer",
+"Lord Irwin",
+"Robert Clive"
+],
+correct:0
+},
+
+{
+q:"Who was an important freedom fighter from Virudhunagar?",
+a:[
+"K. Kamaraj",
+"Lord Curzon",
+"General Dyer",
+"Annie Besant"
+],
+correct:0
+},
+
+{
+q:"Which movement was launched in 1942?",
+a:[
+"Quit India Movement",
+"Swadeshi Movement",
+"Home Rule Movement",
+"Vedaranyam Movement"
+],
+correct:0
+},
+
+{
+q:"What was the main demand of the Quit India Movement?",
+a:[
+"End British rule",
+"Increase British taxation",
+"Support colonial rule",
+"Expand British trade"
+],
+correct:0
+},
+
+{
+q:"In which year did India become independent?",
+a:[
+"1945",
+"1946",
+"1947",
+"1948"
+],
+correct:2
+},
+
+{
+q:"How many years passed between the Vellore Mutiny of 1806 and the Swadeshi Steam Navigation Company of 1906?",
+a:[
+"90 years",
+"100 years",
+"110 years",
+"120 years"
+],
+correct:1
+},
+
+{
+q:"How many years passed between the founding of the Swadeshi Steam Navigation Company in 1906 and the Home Rule Movement in 1916?",
+a:[
+"5 years",
+"10 years",
+"15 years",
+"20 years"
+],
+correct:1
+},
+
+{
+q:"How many years passed between the Home Rule Movement of 1916 and the Non-Cooperation Movement of 1920?",
+a:[
+"2 years",
+"3 years",
+"4 years",
+"5 years"
+],
+correct:2
+},
+
+{
+q:"How many years passed between the Non-Cooperation Movement of 1920 and the Civil Disobedience Movement of 1930?",
+a:[
+"5 years",
+"8 years",
+"10 years",
+"12 years"
+],
+correct:2
+},
+
+{
+q:"How many years passed between the Civil Disobedience Movement of 1930 and the Quit India Movement of 1942?",
+a:[
+"10 years",
+"11 years",
+"12 years",
+"13 years"
+],
+correct:2
+},
+
+{
+q:"How many years passed between the Quit India Movement of 1942 and independence in 1947?",
+a:[
+"3 years",
+"4 years",
+"5 years",
+"6 years"
+],
+correct:2
+},
+
+{
+q:"How many years passed between the execution of Kattabomman in 1799 and the Vellore Mutiny in 1806?",
+a:[
+"5 years",
+"6 years",
+"7 years",
+"8 years"
+],
+correct:2
+},
+
+{
+q:"How many years passed between the Maruthu proclamation of 1801 and the Vellore Mutiny of 1806?",
+a:[
+"3 years",
+"4 years",
+"5 years",
+"6 years"
+],
+correct:2
+},
+
+{
+q:"If a student scores 30 out of 50, what percentage is obtained?",
+a:[
+"50%",
+"60%",
+"70%",
+"80%"
+],
+correct:1
+},
+
+{
+q:"If a student scores 40 out of 50, what percentage is obtained?",
+a:[
+"70%",
+"75%",
+"80%",
+"85%"
+],
+correct:2
+},
+
+{
+q:"If a student scores 45 out of 50, how many answers are wrong?",
+a:[
+"3",
+"4",
+"5",
+"6"
+],
+correct:2
+},
+
+{
+q:"If a student gets 35 correct answers out of 50, what is the percentage?",
+a:[
+"60%",
+"70%",
+"75%",
+"80%"
+],
+correct:1
+},
+
+{
+q:"If a student gets 48 correct answers out of 50, how many questions are incorrect?",
+a:[
+"1",
+"2",
+"3",
+"4"
+],
+correct:1
+},
+
+{
+q:"From 1799 to 1947, how many years passed?",
+a:[
+"148 years",
+"150 years",
+"148 years",
+"158 years"
+],
+correct:0
+},
+
+{
+q:"From 1806 to 1947, how many years passed?",
+a:[
+"131 years",
+"141 years",
+"151 years",
+"161 years"
+],
+correct:1
+},
+
+{
+q:"From 1906 to 1947, how many years passed?",
+a:[
+"39 years",
+"40 years",
+"41 years",
+"42 years"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch9_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch9_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 9 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 9 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY QUIZ
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "History Chapter 9 - Freedom Struggle in Tamil Nadu",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter9",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter9"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_History_Chapter9_Freedom_Struggle_in_Tamil_Nadu_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter9"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

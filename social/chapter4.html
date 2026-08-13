@@ -1,0 +1,2586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 4 - The World after World War II | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   IMPORTANT EVENTS
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌍 Chapter 4: The World after World War II
+    </h1>
+
+    <p>
+        Learn about the political, economic and social
+        changes that shaped the world after World War II,
+        including the rise of China, the Cold War,
+        Korean War, Third World countries, Non-Aligned
+        Movement and Cuban Revolution.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the major developments after World War II
+        before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER4_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER4_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ The World after World War II
+    </div>
+
+    <div class="topic">
+        ✓ Post-War World
+    </div>
+
+    <div class="topic">
+        ✓ China after World War II
+    </div>
+
+    <div class="topic">
+        ✓ Chinese Communist Revolution
+    </div>
+
+    <div class="topic">
+        ✓ Mao Zedong
+    </div>
+
+    <div class="topic">
+        ✓ People's Republic of China
+    </div>
+
+    <div class="topic">
+        ✓ Cold War
+    </div>
+
+    <div class="topic">
+        ✓ Truman Doctrine
+    </div>
+
+    <div class="topic">
+        ✓ Marshall Plan
+    </div>
+
+    <div class="topic">
+        ✓ NATO
+    </div>
+
+    <div class="topic">
+        ✓ Warsaw Pact
+    </div>
+
+    <div class="topic">
+        ✓ Korean War
+    </div>
+
+    <div class="topic">
+        ✓ Third World Countries
+    </div>
+
+    <div class="topic">
+        ✓ Non-Aligned Movement
+    </div>
+
+    <div class="topic">
+        ✓ Bandung Conference
+    </div>
+
+    <div class="topic">
+        ✓ Belgrade Conference
+    </div>
+
+    <div class="topic">
+        ✓ Leaders of NAM
+    </div>
+
+    <div class="topic">
+        ✓ Cuban Revolution
+    </div>
+
+    <div class="topic">
+        ✓ Fidel Castro
+    </div>
+
+    <div class="topic">
+        ✓ Cuban Missile Crisis
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Post-War World
+            </strong>
+
+            <br><br>
+
+            World War II brought major political and
+            economic changes. European colonial powers
+            weakened and many Asian and African countries
+            moved towards independence.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Chinese Revolution
+            </strong>
+
+            <br><br>
+
+            The Chinese Communist Revolution resulted
+            in the establishment of the People's Republic
+            of China in 1949 under Mao Zedong.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Mao Zedong
+            </strong>
+
+            <br><br>
+
+            Mao Zedong was the leader of the Chinese
+            Communist movement and became the leading
+            figure of the People's Republic of China.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. People's Republic of China
+            </strong>
+
+            <br><br>
+
+            The People's Republic of China was established
+            in 1949 after the Communist victory in China.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Cold War
+            </strong>
+
+            <br><br>
+
+            The Cold War was a prolonged political,
+            ideological and military rivalry mainly
+            between the United States and the Soviet Union.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Truman Doctrine
+            </strong>
+
+            <br><br>
+
+            The Truman Doctrine represented the United
+            States policy of supporting countries resisting
+            the spread of communism.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Marshall Plan
+            </strong>
+
+            <br><br>
+
+            The Marshall Plan provided economic assistance
+            for the reconstruction of European countries
+            after World War II.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. NATO
+            </strong>
+
+            <br><br>
+
+            The North Atlantic Treaty Organization was
+            formed as a military alliance among Western
+            countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Warsaw Pact
+            </strong>
+
+            <br><br>
+
+            The Warsaw Pact was a military alliance formed
+            by the Soviet Union and its Eastern European
+            allies in response to Western military alliances.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Korean War
+            </strong>
+
+            <br><br>
+
+            Korea was divided into North and South.
+            The Korean War began in 1950 and continued
+            for three years.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Third World Countries
+            </strong>
+
+            <br><br>
+
+            Countries outside the two major Cold War
+            power blocs were generally described as
+            Third World countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Non-Aligned Movement
+            </strong>
+
+            <br><br>
+
+            The Non-Aligned Movement emerged from the
+            newly independent countries' desire to avoid
+            military alignment with either Cold War
+            superpower.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Bandung Conference
+            </strong>
+
+            <br><br>
+
+            The Bandung Conference was held in Indonesia
+            in 1955 and brought together newly independent
+            Asian and African countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Belgrade Conference
+            </strong>
+
+            <br><br>
+
+            The first formal conference of the
+            Non-Aligned Movement was held at Belgrade
+            in 1961.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Cuban Revolution
+            </strong>
+
+            <br><br>
+
+            The Cuban Revolution brought Fidel Castro
+            to power in Cuba and changed Cuba's relationship
+            with the United States and Soviet Union.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Cuban Missile Crisis
+            </strong>
+
+            <br><br>
+
+            The Cuban Missile Crisis occurred in 1962 when
+            the United States discovered Soviet nuclear
+            missiles being installed in Cuba.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT EVENTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🗓️ Important Events
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            1945:
+        </strong>
+
+        World War II ended and a new international
+        political order began to emerge.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1947:
+        </strong>
+
+        The Truman Doctrine was announced and the
+        United States adopted a policy of containment
+        towards communism.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1948:
+        </strong>
+
+        The Marshall Plan was implemented to assist
+        European reconstruction.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1949:
+        </strong>
+
+        The People's Republic of China was established.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1949:
+        </strong>
+
+        NATO was established.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1950:
+        </strong>
+
+        The Korean War began.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1953:
+        </strong>
+
+        The Korean War ended with an armistice.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1955:
+        </strong>
+
+        The Bandung Conference was held in Indonesia.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1961:
+        </strong>
+
+        The first Non-Aligned Movement conference
+        was held at Belgrade.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1961:
+        </strong>
+
+        The Bay of Pigs invasion took place in Cuba.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1962:
+        </strong>
+
+        The Cuban Missile Crisis brought the United
+        States and Soviet Union close to nuclear conflict.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 4 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter5.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 5
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 4 QUESTIONS
+   THE WORLD AFTER WORLD WAR II
+===================================================== */
+
+const questions = [
+
+{
+q:"What major change occurred in the world after World War II?",
+a:[
+"European colonial powers weakened",
+"All countries became monarchies",
+"Colonialism became stronger everywhere",
+"International organisations disappeared"
+],
+correct:0
+},
+
+{
+q:"Which country became a communist state in 1949?",
+a:[
+"China",
+"Japan",
+"India",
+"France"
+],
+correct:0
+},
+
+{
+q:"Who was the major leader of the Chinese Communist Revolution?",
+a:[
+"Mao Zedong",
+"Chiang Kai-Shek",
+"Harry Truman",
+"Joseph Kennedy"
+],
+correct:0
+},
+
+{
+q:"When was the People's Republic of China established?",
+a:[
+"1945",
+"1947",
+"1949",
+"1955"
+],
+correct:2
+},
+
+{
+q:"Who was the leader of the Chinese Nationalist government?",
+a:[
+"Chiang Kai-Shek",
+"Mao Zedong",
+"Fidel Castro",
+"Kim Il Sung"
+],
+correct:0
+},
+
+{
+q:"What was the main political rivalry after World War II?",
+a:[
+"USA and Soviet Union",
+"France and India",
+"Japan and Britain",
+"China and Italy"
+],
+correct:0
+},
+
+{
+q:"What was the Cold War?",
+a:[
+"A prolonged rivalry between the USA and USSR",
+"A direct war between Britain and France",
+"A war between India and China",
+"A civil war in Germany"
+],
+correct:0
+},
+
+{
+q:"Which two countries were the main superpowers during the Cold War?",
+a:[
+"USA and USSR",
+"France and Italy",
+"India and Japan",
+"China and Germany"
+],
+correct:0
+},
+
+{
+q:"Which American President announced the Truman Doctrine?",
+a:[
+"Harry Truman",
+"Woodrow Wilson",
+"John Kennedy",
+"Franklin Roosevelt"
+],
+correct:0
+},
+
+{
+q:"What was the main purpose of the Truman Doctrine?",
+a:[
+"Contain the spread of communism",
+"Promote German expansion",
+"End the United Nations",
+"Support colonialism everywhere"
+],
+correct:0
+},
+
+{
+q:"What was the Marshall Plan?",
+a:[
+"An economic recovery programme for Europe",
+"A military alliance",
+"A peace treaty with Japan",
+"A Chinese economic plan"
+],
+correct:0
+},
+
+{
+q:"Who proposed the Marshall Plan?",
+a:[
+"George C. Marshall",
+"Harry Truman",
+"Winston Churchill",
+"Joseph Stalin"
+],
+correct:0
+},
+
+{
+q:"Which organisation was formed in 1949 as a Western military alliance?",
+a:[
+"NATO",
+"Warsaw Pact",
+"League of Nations",
+"SEATO"
+],
+correct:0
+},
+
+{
+q:"What does NATO stand for?",
+a:[
+"North Atlantic Treaty Organization",
+"National Atlantic Trade Organization",
+"North Asian Treaty Organisation",
+"New Atlantic Territorial Organisation"
+],
+correct:0
+},
+
+{
+q:"Which organisation was formed by the Soviet Union and its allies?",
+a:[
+"Warsaw Pact",
+"NATO",
+"European Union",
+"League of Nations"
+],
+correct:0
+},
+
+{
+q:"When was the Warsaw Pact formed?",
+a:[
+"1945",
+"1949",
+"1955",
+"1961"
+],
+correct:2
+},
+
+{
+q:"What happened to Korea after World War II?",
+a:[
+"It was divided into North and South",
+"It became one united monarchy",
+"It became a French colony",
+"It became part of Japan"
+],
+correct:0
+},
+
+{
+q:"When did the Korean War begin?",
+a:[
+"1945",
+"1949",
+"1950",
+"1955"
+],
+correct:2
+},
+
+{
+q:"How long did the Korean War last approximately?",
+a:[
+"One year",
+"Three years",
+"Ten years",
+"Twenty years"
+],
+correct:1
+},
+
+{
+q:"Who was the leader of North Korea at the beginning of the Korean War?",
+a:[
+"Kim Il Sung",
+"Syngman Rhee",
+"Mao Zedong",
+"Fidel Castro"
+],
+correct:0
+},
+
+{
+q:"Who was the leader of South Korea?",
+a:[
+"Syngman Rhee",
+"Kim Il Sung",
+"Mao Zedong",
+"Joseph Stalin"
+],
+correct:0
+},
+
+{
+q:"What was one major result of the Korean War?",
+a:[
+"The division of Korea continued",
+"Korea became a single communist state",
+"Japan controlled Korea",
+"China became a monarchy"
+],
+correct:0
+},
+
+{
+q:"What were capitalist countries led by the USA sometimes called?",
+a:[
+"First World",
+"Second World",
+"Third World",
+"Fourth World"
+],
+correct:0
+},
+
+{
+q:"What were communist states led by the Soviet Union sometimes called?",
+a:[
+"Second World",
+"First World",
+"Third World",
+"Fourth World"
+],
+correct:0
+},
+
+{
+q:"What were countries outside the two major Cold War blocs called?",
+a:[
+"Third World",
+"First World",
+"Second World",
+"Axis World"
+],
+correct:0
+},
+
+{
+q:"What movement emerged from the desire of newly independent countries to avoid Cold War military alliances?",
+a:[
+"Non-Aligned Movement",
+"NATO",
+"Warsaw Pact",
+"Axis Movement"
+],
+correct:0
+},
+
+{
+q:"What does NAM stand for?",
+a:[
+"Non-Aligned Movement",
+"National Asian Movement",
+"New Allied Movement",
+"Non-American Movement"
+],
+correct:0
+},
+
+{
+q:"Where was the Bandung Conference held?",
+a:[
+"Indonesia",
+"India",
+"Egypt",
+"Yugoslavia"
+],
+correct:0
+},
+
+{
+q:"When was the Bandung Conference held?",
+a:[
+"1949",
+"1950",
+"1955",
+"1961"
+],
+correct:2
+},
+
+{
+q:"What was one important objective of the Bandung Conference?",
+a:[
+"Opposition to colonialism and imperialism",
+"Creation of NATO",
+"Formation of the Warsaw Pact",
+"Expansion of European colonialism"
+],
+correct:0
+},
+
+{
+q:"Where was the first Non-Aligned Movement conference held?",
+a:[
+"Belgrade",
+"Bandung",
+"Delhi",
+"Havana"
+],
+correct:0
+},
+
+{
+q:"When was the first NAM conference held?",
+a:[
+"1955",
+"1958",
+"1961",
+"1965"
+],
+correct:2
+},
+
+{
+q:"Which Indian leader played an important role in NAM?",
+a:[
+"Jawaharlal Nehru",
+"Subhas Chandra Bose",
+"Rajendra Prasad",
+"Sardar Patel"
+],
+correct:0
+},
+
+{
+q:"Which Egyptian leader was associated with NAM?",
+a:[
+"Gamal Abdel Nasser",
+"Anwar Sadat",
+"King Farouk",
+"Muhammad Ali"
+],
+correct:0
+},
+
+{
+q:"Which Yugoslav leader was associated with NAM?",
+a:[
+"Tito",
+"Stalin",
+"Lenin",
+"Gorbachev"
+],
+correct:0
+},
+
+{
+q:"Which Ghanaian leader was associated with NAM?",
+a:[
+"Kwame Nkrumah",
+"Jomo Kenyatta",
+"Patrice Lumumba",
+"Haile Selassie"
+],
+correct:0
+},
+
+{
+q:"Which Indonesian leader was associated with NAM?",
+a:[
+"Sukarno",
+"Suharto",
+"Habibie",
+"Abdurrahman Wahid"
+],
+correct:0
+},
+
+{
+q:"Which country experienced the Cuban Revolution?",
+a:[
+"Cuba",
+"Korea",
+"China",
+"Vietnam"
+],
+correct:0
+},
+
+{
+q:"Who became the leading figure of the Cuban Revolution?",
+a:[
+"Fidel Castro",
+"Che Guevara",
+"John Kennedy",
+"Nikita Khrushchev"
+],
+correct:0
+},
+
+{
+q:"What happened after Fidel Castro came to power in Cuba?",
+a:[
+"Cuba moved closer to the Soviet Union",
+"Cuba joined NATO",
+"Cuba became a British colony",
+"Cuba joined Germany"
+],
+correct:0
+},
+
+{
+q:"What was the Bay of Pigs invasion?",
+a:[
+"An attempt to overthrow Castro's government",
+"A Soviet invasion of Cuba",
+"A Chinese invasion of Korea",
+"A German invasion of Cuba"
+],
+correct:0
+},
+
+{
+q:"When did the Cuban Missile Crisis occur?",
+a:[
+"1955",
+"1960",
+"1962",
+"1968"
+],
+correct:2
+},
+
+{
+q:"Which country placed nuclear missiles in Cuba?",
+a:[
+"Soviet Union",
+"Germany",
+"France",
+"China"
+],
+correct:0
+},
+
+{
+q:"Which American President faced the Cuban Missile Crisis?",
+a:[
+"John F. Kennedy",
+"Harry Truman",
+"Richard Nixon",
+"Woodrow Wilson"
+],
+correct:0
+},
+
+{
+q:"What did the Soviet Union finally agree to do during the Cuban Missile Crisis?",
+a:[
+"Withdraw the missiles from Cuba",
+"Invade the United States",
+"Join NATO",
+"End communism"
+],
+correct:0
+},
+
+{
+q:"What did the United States agree to in relation to Cuba during the crisis?",
+a:[
+"Not to invade Cuba",
+"To invade Cuba",
+"To join the Soviet Union",
+"To give Cuba to Spain"
+],
+correct:0
+},
+
+{
+q:"Which event helped reduce tensions during the Cuban Missile Crisis?",
+a:[
+"Soviet withdrawal of missiles",
+"German invasion of Cuba",
+"Chinese invasion of Europe",
+"Formation of the Axis"
+],
+correct:0
+},
+
+{
+q:"Which statement best describes Non-Alignment?",
+a:[
+"Not joining military alliances led by either superpower",
+"Supporting only the USA",
+"Supporting only the USSR",
+"Joining NATO automatically"
+],
+correct:0
+},
+
+{
+q:"Which conference is closely associated with Asian and African solidarity?",
+a:[
+"Bandung Conference",
+"Munich Conference",
+"Paris Conference",
+"Yalta Conference"
+],
+correct:0
+},
+
+{
+q:"Which organisation represented the Western military bloc during the Cold War?",
+a:[
+"NATO",
+"Warsaw Pact",
+"NAM",
+"League of Nations"
+],
+correct:0
+},
+
+{
+q:"Which organisation represented the Soviet-led military bloc?",
+a:[
+"Warsaw Pact",
+"NATO",
+"NAM",
+"United Nations"
+],
+correct:0
+},
+
+{
+q:"Which event is correctly matched?",
+a:[
+"1949 - People's Republic of China",
+"1955 - Cuban Missile Crisis",
+"1961 - Korean War begins",
+"1962 - Bandung Conference"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch4_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch4_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 4 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 4 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "History Chapter 4 - The World after World War II",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter4",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter4"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_History_Chapter4_World_After_WWII_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter4"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

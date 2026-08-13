@@ -1,0 +1,2404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 2 - The World Between Two World Wars | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* =====================================================
+   STUDY BUTTONS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌍 Chapter 2: The World Between Two World Wars
+    </h1>
+
+    <p>
+        Learn about the political, economic and social
+        changes that took place between the First and
+        Second World Wars, including the Great Depression,
+        the rise of dictatorships and the growth of
+        aggressive nationalism.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the major political and economic developments
+        between the two World Wars before attempting
+        the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER2_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_SOCIAL_SCIENCE_CHAPTER2_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">
+        ✓ Post-World War I Situation
+    </div>
+
+    <div class="topic">
+        ✓ Treaty of Versailles
+    </div>
+
+    <div class="topic">
+        ✓ Formation of New States
+    </div>
+
+    <div class="topic">
+        ✓ Russian Revolution and its Impact
+    </div>
+
+    <div class="topic">
+        ✓ Rise of Fascism
+    </div>
+
+    <div class="topic">
+        ✓ Benito Mussolini
+    </div>
+
+    <div class="topic">
+        ✓ Rise of Nazism
+    </div>
+
+    <div class="topic">
+        ✓ Adolf Hitler
+    </div>
+
+    <div class="topic">
+        ✓ Weimar Republic
+    </div>
+
+    <div class="topic">
+        ✓ Great Depression
+    </div>
+
+    <div class="topic">
+        ✓ Economic Crisis
+    </div>
+
+    <div class="topic">
+        ✓ Rise of Dictatorships
+    </div>
+
+    <div class="topic">
+        ✓ Militarism and Expansion
+    </div>
+
+    <div class="topic">
+        ✓ Aggressive Nationalism
+    </div>
+
+    <div class="topic">
+        ✓ Road Towards the Second World War
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Post-War Problems
+            </strong>
+
+            <br><br>
+
+            The First World War left Europe with
+            enormous economic difficulties, political
+            instability, unemployment and social
+            tensions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Russian Revolution
+            </strong>
+
+            <br><br>
+
+            The Russian Revolution of 1917 resulted
+            in the overthrow of the Tsarist government
+            and eventually led to the establishment
+            of a communist government.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Fascism
+            </strong>
+
+            <br><br>
+
+            Fascism developed in Italy under
+            Benito Mussolini. It promoted dictatorship,
+            extreme nationalism and militarism.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Benito Mussolini
+            </strong>
+
+            <br><br>
+
+            Benito Mussolini became the leader of
+            Fascist Italy and established a
+            dictatorial regime.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Nazism
+            </strong>
+
+            <br><br>
+
+            Nazism developed in Germany under
+            Adolf Hitler. It promoted dictatorship,
+            extreme nationalism, militarism and
+            racial ideology.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Adolf Hitler
+            </strong>
+
+            <br><br>
+
+            Adolf Hitler became the leader of the
+            Nazi Party and later established a
+            dictatorship in Germany.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Great Depression
+            </strong>
+
+            <br><br>
+
+            The Great Depression was a severe
+            worldwide economic crisis that began
+            in 1929 and resulted in unemployment,
+            poverty and industrial decline.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Dictatorships
+            </strong>
+
+            <br><br>
+
+            Economic crisis and political instability
+            contributed to the rise of authoritarian
+            governments in several countries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Road to World War II
+            </strong>
+
+            <br><br>
+
+            Aggressive nationalism, militarism,
+            territorial expansion and the weakness
+            of collective security contributed to
+            the outbreak of the Second World War.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT EVENTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🗓️ Important Events
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            1917:
+        </strong>
+
+        Russian Revolution transformed the
+        political situation in Russia.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1919:
+        </strong>
+
+        Treaty of Versailles was signed and
+        the Weimar Republic was established
+        in Germany.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1922:
+        </strong>
+
+        Mussolini came to power in Italy.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1929:
+        </strong>
+
+        The Great Depression began with the
+        Wall Street Crash and spread internationally.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1933:
+        </strong>
+
+        Adolf Hitler became Chancellor of Germany
+        and the Nazi dictatorship developed.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            1930s:
+        </strong>
+
+        Aggressive expansion by dictatorships
+        increased international tensions.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 2 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        The assessment contains factual,
+        chronological, cause-and-effect and
+        application-based questions.
+        You need at least 30 correct answers
+        to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter3.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 3
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 2 QUESTIONS
+   THE WORLD BETWEEN TWO WORLD WARS
+===================================================== */
+
+const questions = [
+
+{
+q:"Which period is generally referred to as the period between the two World Wars?",
+a:[
+"1914–1918",
+"1919–1939",
+"1939–1945",
+"1945–1950"
+],
+correct:1
+},
+
+{
+q:"Which event marked the beginning of the period between the two World Wars?",
+a:[
+"End of World War I",
+"Beginning of World War II",
+"Russian Revolution only",
+"Great Depression"
+],
+correct:0
+},
+
+{
+q:"Which treaty imposed severe conditions on Germany after World War I?",
+a:[
+"Treaty of Versailles",
+"Treaty of Vienna",
+"Treaty of Rome",
+"Treaty of Paris"
+],
+correct:0
+},
+
+{
+q:"In which year was the Treaty of Versailles signed?",
+a:[
+"1918",
+"1919",
+"1920",
+"1921"
+],
+correct:1
+},
+
+{
+q:"Which country suffered particularly severe political and economic consequences from the Treaty of Versailles?",
+a:[
+"Germany",
+"Britain",
+"Japan",
+"Canada"
+],
+correct:0
+},
+
+{
+q:"What was one major problem faced by Germany after World War I?",
+a:[
+"Political and economic instability",
+"Complete economic prosperity",
+"Unlimited military power",
+"Expansion of its colonies"
+],
+correct:0
+},
+
+{
+q:"What was the name of the democratic government established in Germany after World War I?",
+a:[
+"Weimar Republic",
+"Third Republic",
+"Fascist Republic",
+"German Empire"
+],
+correct:0
+},
+
+{
+q:"Where did the German government meet when the Weimar Republic was established?",
+a:[
+"Weimar",
+"Berlin only",
+"Munich",
+"Frankfurt"
+],
+correct:0
+},
+
+{
+q:"Which revolution took place in Russia in 1917?",
+a:[
+"Russian Revolution",
+"French Revolution",
+"Industrial Revolution",
+"American Revolution"
+],
+correct:0
+},
+
+{
+q:"What was one major result of the Russian Revolution?",
+a:[
+"End of Tsarist rule",
+"Restoration of Tsarist rule",
+"Expansion of monarchy",
+"Formation of NATO"
+],
+correct:0
+},
+
+{
+q:"Who was the last Tsar of Russia?",
+a:[
+"Nicholas II",
+"Alexander I",
+"Peter III",
+"Napoleon"
+],
+correct:0
+},
+
+{
+q:"Which political ideology became associated with the Soviet state after the Russian Revolution?",
+a:[
+"Communism",
+"Fascism",
+"Monarchism",
+"Feudalism"
+],
+correct:0
+},
+
+{
+q:"Which country became the centre of the Fascist movement under Mussolini?",
+a:[
+"Italy",
+"Germany",
+"France",
+"Russia"
+],
+correct:0
+},
+
+{
+q:"Who was the leader of Fascist Italy?",
+a:[
+"Benito Mussolini",
+"Adolf Hitler",
+"Joseph Stalin",
+"Woodrow Wilson"
+],
+correct:0
+},
+
+{
+q:"What political system did Mussolini establish in Italy?",
+a:[
+"Fascist dictatorship",
+"Constitutional monarchy only",
+"Communist government",
+"Parliamentary democracy"
+],
+correct:0
+},
+
+{
+q:"What did Fascism strongly promote?",
+a:[
+"Extreme nationalism and dictatorship",
+"Complete political equality",
+"Abolition of the state",
+"Pacifism"
+],
+correct:0
+},
+
+{
+q:"Which movement became powerful in Germany during the 1920s and 1930s?",
+a:[
+"Nazism",
+"Fascism only",
+"Liberalism",
+"Feudalism"
+],
+correct:0
+},
+
+{
+q:"Who was the leader of the Nazi Party?",
+a:[
+"Adolf Hitler",
+"Benito Mussolini",
+"Joseph Stalin",
+"Winston Churchill"
+],
+correct:0
+},
+
+{
+q:"In which country did Nazism become the dominant political force?",
+a:[
+"Germany",
+"Italy",
+"France",
+"Spain"
+],
+correct:0
+},
+
+{
+q:"What was Hitler's political organisation called?",
+a:[
+"Nazi Party",
+"Labour Party",
+"Congress Party",
+"Democratic Party"
+],
+correct:0
+},
+
+{
+q:"In which year did Hitler become Chancellor of Germany?",
+a:[
+"1929",
+"1931",
+"1933",
+"1935"
+],
+correct:2
+},
+
+{
+q:"Which economic crisis began in 1929?",
+a:[
+"Great Depression",
+"Great War",
+"Oil Crisis",
+"Industrial Revolution"
+],
+correct:0
+},
+
+{
+q:"Where did the financial crash associated with the beginning of the Great Depression occur?",
+a:[
+"Wall Street",
+"London Stock Exchange only",
+"Paris",
+"Berlin"
+],
+correct:0
+},
+
+{
+q:"What was a major effect of the Great Depression?",
+a:[
+"Mass unemployment",
+"Full employment",
+"Rapid economic growth everywhere",
+"End of poverty"
+],
+correct:0
+},
+
+{
+q:"The Great Depression affected which region most severely?",
+a:[
+"Many parts of the world",
+"Only Antarctica",
+"Only Australia",
+"Only South America"
+],
+correct:0
+},
+
+{
+q:"How did the Great Depression affect Germany?",
+a:[
+"It increased unemployment and economic hardship",
+"It immediately ended unemployment",
+"It strengthened the economy completely",
+"It removed political instability"
+],
+correct:0
+},
+
+{
+q:"Why did economic crisis help extremist political movements?",
+a:[
+"People became dissatisfied with existing governments",
+"People became completely satisfied",
+"Political parties disappeared",
+"Military spending ended"
+],
+correct:0
+},
+
+{
+q:"Which political movement benefited from Germany's economic crisis?",
+a:[
+"Nazi Party",
+"Whig Party",
+"Labour Party",
+"Liberal Party"
+],
+correct:0
+},
+
+{
+q:"Which leader used propaganda extensively to gain political support in Germany?",
+a:[
+"Adolf Hitler",
+"Woodrow Wilson",
+"Lenin only",
+"George Washington"
+],
+correct:0
+},
+
+{
+q:"What does dictatorship mean?",
+a:[
+"Government in which power is concentrated in one ruler or small group",
+"Government with unlimited elections",
+"Government without leaders",
+"Government controlled by foreign countries"
+],
+correct:0
+},
+
+{
+q:"Which feature was common to Fascist and Nazi regimes?",
+a:[
+"Authoritarian rule",
+"Complete political freedom",
+"Pacifism",
+"Abolition of nationalism"
+],
+correct:0
+},
+
+{
+q:"Which country followed an aggressive Fascist policy under Mussolini?",
+a:[
+"Italy",
+"Canada",
+"Sweden",
+"Norway"
+],
+correct:0
+},
+
+{
+q:"What was one major feature of Nazi ideology?",
+a:[
+"Extreme nationalism",
+"International pacifism",
+"Complete religious equality",
+"Opposition to militarism"
+],
+correct:0
+},
+
+{
+q:"What role did propaganda play in dictatorships?",
+a:[
+"It was used to influence public opinion",
+"It was used only for education",
+"It eliminated political control",
+"It ended censorship"
+],
+correct:0
+},
+
+{
+q:"Why were democratic governments weakened in some countries during the interwar period?",
+a:[
+"Economic crises and political instability",
+"Complete prosperity",
+"Absence of political conflict",
+"Strong international cooperation"
+],
+correct:0
+},
+
+{
+q:"Which organisation was created after World War I to maintain international peace?",
+a:[
+"League of Nations",
+"NATO",
+"United Nations",
+"European Union"
+],
+correct:0
+},
+
+{
+q:"Why was the League of Nations unable to prevent future aggression effectively?",
+a:[
+"It lacked sufficient power to enforce collective security",
+"It controlled every country's army",
+"It had unlimited military resources",
+"It eliminated all dictatorships"
+],
+correct:0
+},
+
+{
+q:"Which policy contributed to growing international tensions during the 1930s?",
+a:[
+"Territorial expansion",
+"Disarmament everywhere",
+"International cooperation",
+"Peace education"
+],
+correct:0
+},
+
+{
+q:"Which countries pursued aggressive expansion before World War II?",
+a:[
+"Germany, Italy and Japan",
+"Canada, Australia and India",
+"Britain, France and Canada",
+"Sweden, Norway and Denmark"
+],
+correct:0
+},
+
+{
+q:"What was one aim of Nazi Germany's foreign policy?",
+a:[
+"Territorial expansion",
+"Complete disarmament",
+"Ending nationalism",
+"Giving up military power"
+],
+correct:0
+},
+
+{
+q:"What did militarism encourage during the interwar period?",
+a:[
+"Expansion of armed forces",
+"Reduction of armies everywhere",
+"Complete pacifism",
+"End of military technology"
+],
+correct:0
+},
+
+{
+q:"Which country invaded Ethiopia in 1935 under Mussolini?",
+a:[
+"Italy",
+"Germany",
+"Japan",
+"France"
+],
+correct:0
+},
+
+{
+q:"Which country expanded into Manchuria in 1931?",
+a:[
+"Japan",
+"Germany",
+"Italy",
+"France"
+],
+correct:0
+},
+
+{
+q:"What was the general effect of aggressive expansion in the 1930s?",
+a:[
+"It increased international tension",
+"It created permanent peace",
+"It ended militarism",
+"It strengthened the League completely"
+],
+correct:0
+},
+
+{
+q:"Which country remilitarised the Rhineland in 1936?",
+a:[
+"Germany",
+"Italy",
+"Japan",
+"Russia"
+],
+correct:0
+},
+
+{
+q:"Which ideology was associated with Hitler's Germany?",
+a:[
+"Nazism",
+"Communism",
+"Liberalism",
+"Social democracy"
+],
+correct:0
+},
+
+{
+q:"Which ideology was associated with Mussolini's Italy?",
+a:[
+"Fascism",
+"Communism",
+"Liberalism",
+"Feudalism"
+],
+correct:0
+},
+
+{
+q:"What was one important social effect of the Great Depression?",
+a:[
+"Increased poverty and unemployment",
+"Universal prosperity",
+"End of social problems",
+"Complete economic equality"
+],
+correct:0
+},
+
+{
+q:"How did the interwar period contribute to World War II?",
+a:[
+"Political extremism, economic crisis and aggressive expansion increased tensions",
+"All nations completely disarmed",
+"The League prevented every conflict",
+"Nationalism disappeared"
+],
+correct:0
+},
+
+{
+q:"Which statement best describes the world between the two World Wars?",
+a:[
+"It was marked by economic crises, political instability and the rise of dictatorships",
+"It was a period of complete peace",
+"It had no political changes",
+"It was a period without economic problems"
+],
+correct:0
+},
+
+{
+q:"Which combination best explains the rise of dictatorships in the interwar period?",
+a:[
+"Economic hardship, political instability and popular dissatisfaction",
+"Peace, prosperity and political stability",
+"Disarmament and economic growth",
+"Colonial independence alone"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch2_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch2_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 2 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 2 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "History Chapter 2 - The World Between Two World Wars",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter2",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter2"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_History_Chapter2_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter2"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START QUIZ
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

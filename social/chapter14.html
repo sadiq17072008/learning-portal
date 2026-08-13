@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 14 - India: Resources and Industries | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌍 Chapter 14: India: Resources and Industries
+    </h1>
+
+    <p>
+
+        Learn about India's natural resources,
+        mineral resources, energy resources,
+        industries, industrial regions, major
+        industries and factors affecting industrial
+        development.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study India's natural resources, mineral
+        resources, energy resources and important
+        industries.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER14_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_GEOGRAPHY_CHAPTER14_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Natural Resources
+    </div>
+
+    <div class="topic">
+        ✓ Renewable Resources
+    </div>
+
+    <div class="topic">
+        ✓ Non-Renewable Resources
+    </div>
+
+    <div class="topic">
+        ✓ Mineral Resources
+    </div>
+
+    <div class="topic">
+        ✓ Metallic Minerals
+    </div>
+
+    <div class="topic">
+        ✓ Non-Metallic Minerals
+    </div>
+
+    <div class="topic">
+        ✓ Iron Ore
+    </div>
+
+    <div class="topic">
+        ✓ Manganese
+    </div>
+
+    <div class="topic">
+        ✓ Bauxite
+    </div>
+
+    <div class="topic">
+        ✓ Mica
+    </div>
+
+    <div class="topic">
+        ✓ Limestone
+    </div>
+
+    <div class="topic">
+        ✓ Coal
+    </div>
+
+    <div class="topic">
+        ✓ Petroleum
+    </div>
+
+    <div class="topic">
+        ✓ Natural Gas
+    </div>
+
+    <div class="topic">
+        ✓ Electricity
+    </div>
+
+    <div class="topic">
+        ✓ Thermal Power
+    </div>
+
+    <div class="topic">
+        ✓ Hydroelectric Power
+    </div>
+
+    <div class="topic">
+        ✓ Nuclear Energy
+    </div>
+
+    <div class="topic">
+        ✓ Industrial Development
+    </div>
+
+    <div class="topic">
+        ✓ Agro-Based Industries
+    </div>
+
+    <div class="topic">
+        ✓ Mineral-Based Industries
+    </div>
+
+    <div class="topic">
+        ✓ Cotton Textile Industry
+    </div>
+
+    <div class="topic">
+        ✓ Iron and Steel Industry
+    </div>
+
+    <div class="topic">
+        ✓ Major Industrial Regions
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Natural Resources
+            </strong>
+
+            <br><br>
+
+            Natural resources are materials and
+            substances obtained from nature that
+            are useful to human beings.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Renewable Resources
+            </strong>
+
+            <br><br>
+
+            Renewable resources can be naturally
+            replenished over time.
+
+            Examples include sunlight, wind and
+            water.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Non-Renewable Resources
+            </strong>
+
+            <br><br>
+
+            Non-renewable resources are available
+            in limited quantities and take a very
+            long time to form.
+
+            Examples include coal, petroleum and
+            minerals.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Mineral Resources
+            </strong>
+
+            <br><br>
+
+            Minerals are naturally occurring
+            substances found in the Earth's crust
+            and are important raw materials for
+            many industries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Metallic Minerals
+            </strong>
+
+            <br><br>
+
+            Metallic minerals contain metals and
+            can be processed to obtain useful
+            metallic materials.
+
+            Examples include iron ore, manganese
+            and bauxite.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Non-Metallic Minerals
+            </strong>
+
+            <br><br>
+
+            Non-metallic minerals do not yield metals
+            as their main product.
+
+            Limestone and mica are examples.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Iron Ore
+            </strong>
+
+            <br><br>
+
+            Iron ore is an important mineral resource
+            used as a basic raw material for the
+            iron and steel industry.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Manganese
+            </strong>
+
+            <br><br>
+
+            Manganese is an important mineral used
+            in metallurgical industries, especially
+            in steel production.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Bauxite
+            </strong>
+
+            <br><br>
+
+            Bauxite is the principal ore used for
+            obtaining aluminium.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Mica
+            </strong>
+
+            <br><br>
+
+            Mica is a non-metallic mineral with
+            excellent insulating properties and
+            is useful in electrical and electronic
+            applications.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Limestone
+            </strong>
+
+            <br><br>
+
+            Limestone is an important raw material
+            used in cement manufacturing.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Coal
+            </strong>
+
+            <br><br>
+
+            Coal is an important fossil fuel and
+            is widely used for power generation
+            and industrial purposes.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Petroleum
+            </strong>
+
+            <br><br>
+
+            Petroleum is a major fossil fuel used
+            for transportation, industry and the
+            production of many petroleum products.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Natural Gas
+            </strong>
+
+            <br><br>
+
+            Natural gas is a relatively clean fossil
+            fuel used for electricity generation,
+            industrial purposes and domestic needs.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Thermal Power
+            </strong>
+
+            <br><br>
+
+            Thermal power is generated by using
+            heat energy, commonly from fuels such
+            as coal.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Hydroelectric Power
+            </strong>
+
+            <br><br>
+
+            Hydroelectricity is generated using the
+            energy of flowing or falling water.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Nuclear Energy
+            </strong>
+
+            <br><br>
+
+            Nuclear energy is released through
+            nuclear reactions and can be used
+            to generate electricity.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. Industry
+            </strong>
+
+            <br><br>
+
+            Industry refers to economic activities
+            involved in processing raw materials
+            and producing goods.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Agro-Based Industries
+            </strong>
+
+            <br><br>
+
+            Agro-based industries use agricultural
+            products as their main raw materials.
+
+            Cotton textile, sugar and food-processing
+            industries are examples.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Mineral-Based Industries
+            </strong>
+
+            <br><br>
+
+            Mineral-based industries use minerals
+            as their major raw materials.
+
+            Iron and steel is an important example.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                21. Cotton Textile Industry
+            </strong>
+
+            <br><br>
+
+            The cotton textile industry uses cotton
+            fibre as its major raw material and
+            produces yarn, cloth and other textile
+            products.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                22. Iron and Steel Industry
+            </strong>
+
+            <br><br>
+
+            Iron and steel is a basic industry because
+            its products are used as raw materials
+            by many other industries.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                23. Industrial Location
+            </strong>
+
+            <br><br>
+
+            Industries are located based on factors
+            such as raw materials, power, labour,
+            transport, markets and capital.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                24. Industrial Development
+            </strong>
+
+            <br><br>
+
+            Industrial development contributes to
+            employment, production, infrastructure,
+            trade and economic growth.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NUMERICAL PRACTICE
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        A factory produces 8,000 tonnes of steel
+        in a year and increases production by
+        1,500 tonnes.
+
+        <br><br>
+
+        New production:
+
+        <br><br>
+
+        8,000 + 1,500 =
+        <strong>9,500 tonnes</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        A factory produces 12,000 units using
+        4 production lines.
+
+        <br><br>
+
+        Production per line:
+
+        <br><br>
+
+        12,000 ÷ 4 =
+        <strong>3,000 units</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        A power plant generates 6,000 MW of
+        electricity from 3 plants.
+
+        <br><br>
+
+        Average generation:
+
+        <br><br>
+
+        6,000 ÷ 3 =
+        <strong>2,000 MW</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        A mineral reserve contains 50,000 tonnes.
+        If 20,000 tonnes are extracted, how much
+        remains?
+
+        <br><br>
+
+        50,000 − 20,000 =
+        <strong>30,000 tonnes</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        Industrial production increases from
+        20,000 tonnes to 25,000 tonnes.
+
+        <br><br>
+
+        Increase:
+
+        <br><br>
+
+        25,000 − 20,000 =
+        <strong>5,000 tonnes</strong>
+
+        <br><br>
+
+        Percentage increase:
+
+        <br><br>
+
+        (5,000 ÷ 20,000) × 100 =
+        <strong>25%</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 14 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and calculation-based questions
+        are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter15.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 15
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 14 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What are natural resources?",
+a:[
+"Materials and substances obtained from nature",
+"Only manufactured products",
+"Only industrial products",
+"Only agricultural machines"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a renewable resource?",
+a:[
+"Solar energy",
+"Coal",
+"Petroleum",
+"Natural gas"
+],
+correct:0
+},
+
+{
+q:"Which is a non-renewable resource?",
+a:[
+"Coal",
+"Wind",
+"Sunlight",
+"Water"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a metallic mineral?",
+a:[
+"Iron ore",
+"Limestone",
+"Mica",
+"Coal"
+],
+correct:0
+},
+
+{
+q:"Which of the following is a non-metallic mineral?",
+a:[
+"Limestone",
+"Iron ore",
+"Manganese",
+"Bauxite"
+],
+correct:0
+},
+
+{
+q:"Which mineral is the principal ore of aluminium?",
+a:[
+"Bauxite",
+"Mica",
+"Manganese",
+"Limestone"
+],
+correct:0
+},
+
+{
+q:"Which mineral is an important raw material for the iron and steel industry?",
+a:[
+"Iron ore",
+"Mica",
+"Limestone",
+"Salt"
+],
+correct:0
+},
+
+{
+q:"Manganese is particularly important in:",
+a:[
+"Steel production",
+"Tea production",
+"Textile printing only",
+"Paper production only"
+],
+correct:0
+},
+
+{
+q:"Which mineral has good insulating properties?",
+a:[
+"Mica",
+"Iron ore",
+"Bauxite",
+"Manganese"
+],
+correct:0
+},
+
+{
+q:"Limestone is an important raw material for:",
+a:[
+"Cement industry",
+"Tea industry",
+"Cotton farming",
+"Fishing"
+],
+correct:0
+},
+
+{
+q:"Which is a fossil fuel?",
+a:[
+"Coal",
+"Wind",
+"Solar energy",
+"Hydropower"
+],
+correct:0
+},
+
+{
+q:"Which fossil fuel is widely used for transportation?",
+a:[
+"Petroleum",
+"Wind",
+"Solar energy",
+"Hydropower"
+],
+correct:0
+},
+
+{
+q:"Which gas is used as a source of energy and industrial fuel?",
+a:[
+"Natural gas",
+"Oxygen",
+"Nitrogen",
+"Helium"
+],
+correct:0
+},
+
+{
+q:"Thermal power is mainly generated using:",
+a:[
+"Heat energy",
+"Wind energy only",
+"Solar radiation only",
+"Tidal energy only"
+],
+correct:0
+},
+
+{
+q:"Hydroelectric power is generated using:",
+a:[
+"Flowing or falling water",
+"Coal only",
+"Petroleum only",
+"Natural gas only"
+],
+correct:0
+},
+
+{
+q:"Nuclear energy is produced through:",
+a:[
+"Nuclear reactions",
+"Plant growth",
+"Rainfall",
+"Wind movement"
+],
+correct:0
+},
+
+{
+q:"What is an industry?",
+a:[
+"An economic activity involving production or processing of goods",
+"Only farming",
+"Only fishing",
+"Only transportation"
+],
+correct:0
+},
+
+{
+q:"Which is an agro-based industry?",
+a:[
+"Cotton textile industry",
+"Iron and steel industry",
+"Aluminium industry",
+"Cement industry"
+],
+correct:0
+},
+
+{
+q:"Which is a mineral-based industry?",
+a:[
+"Iron and steel industry",
+"Sugar industry",
+"Cotton textile industry",
+"Food-processing industry"
+],
+correct:0
+},
+
+{
+q:"The cotton textile industry mainly uses:",
+a:[
+"Cotton",
+"Iron ore",
+"Bauxite",
+"Coal"
+],
+correct:0
+},
+
+{
+q:"The iron and steel industry is called a basic industry because:",
+a:[
+"It supplies materials to many other industries",
+"It produces only food",
+"It uses only agricultural labour",
+"It requires no raw materials"
+],
+correct:0
+},
+
+{
+q:"Which factor is important in locating an industry?",
+a:[
+"Availability of raw materials",
+"Distance from all resources",
+"Absence of transport",
+"Absence of labour"
+],
+correct:0
+},
+
+{
+q:"Which factor helps industries reach consumers?",
+a:[
+"Market",
+"Mountain height",
+"Forest density",
+"Rainfall alone"
+],
+correct:0
+},
+
+{
+q:"Which infrastructure is important for industrial development?",
+a:[
+"Transport",
+"Only forests",
+"Only rainfall",
+"Only soil"
+],
+correct:0
+},
+
+{
+q:"Which resource is used as an important raw material for aluminium?",
+a:[
+"Bauxite",
+"Coal",
+"Mica",
+"Iron ore"
+],
+correct:0
+},
+
+{
+q:"Which mineral is associated with cement manufacturing?",
+a:[
+"Limestone",
+"Bauxite",
+"Manganese",
+"Mica"
+],
+correct:0
+},
+
+{
+q:"Which resource is mainly used for thermal power generation?",
+a:[
+"Coal",
+"Wind",
+"Sunlight",
+"Water only"
+],
+correct:0
+},
+
+{
+q:"Which is an example of renewable energy?",
+a:[
+"Hydroelectric power",
+"Coal",
+"Petroleum",
+"Natural gas"
+],
+correct:0
+},
+
+{
+q:"Which is an example of non-renewable energy?",
+a:[
+"Coal",
+"Wind",
+"Solar",
+"Hydroelectricity"
+],
+correct:0
+},
+
+{
+q:"Which industry is directly connected with agricultural production?",
+a:[
+"Sugar industry",
+"Iron and steel",
+"Cement",
+"Aluminium"
+],
+correct:0
+},
+
+{
+q:"A factory produces 8,000 tonnes and increases production by 1,500 tonnes. What is the new production?",
+a:[
+"8,500 tonnes",
+"9,000 tonnes",
+"9,500 tonnes",
+"10,000 tonnes"
+],
+correct:2
+},
+
+{
+q:"A factory produces 12,000 units using 4 production lines. What is the average production per line?",
+a:[
+"2,000 units",
+"3,000 units",
+"4,000 units",
+"5,000 units"
+],
+correct:1
+},
+
+{
+q:"A power plant produces 6,000 MW from 3 plants. What is the average production per plant?",
+a:[
+"1,000 MW",
+"1,500 MW",
+"2,000 MW",
+"3,000 MW"
+],
+correct:2
+},
+
+{
+q:"A mineral reserve contains 50,000 tonnes and 20,000 tonnes are extracted. How much remains?",
+a:[
+"20,000 tonnes",
+"25,000 tonnes",
+"30,000 tonnes",
+"35,000 tonnes"
+],
+correct:2
+},
+
+{
+q:"Industrial production increases from 20,000 tonnes to 25,000 tonnes. What is the increase?",
+a:[
+"3,000 tonnes",
+"4,000 tonnes",
+"5,000 tonnes",
+"6,000 tonnes"
+],
+correct:2
+},
+
+{
+q:"Industrial production increases from 20,000 tonnes to 25,000 tonnes. What is the percentage increase?",
+a:[
+"20%",
+"25%",
+"30%",
+"35%"
+],
+correct:1
+},
+
+{
+q:"A factory produces 10,000 units and increases production by 20%. What is the increase?",
+a:[
+"1,000 units",
+"1,500 units",
+"2,000 units",
+"2,500 units"
+],
+correct:2
+},
+
+{
+q:"A factory produces 10,000 units and increases production by 20%. What is the new production?",
+a:[
+"11,000 units",
+"12,000 units",
+"13,000 units",
+"14,000 units"
+],
+correct:1
+},
+
+{
+q:"A mineral reserve is 80,000 tonnes. If 25% is extracted, how much is extracted?",
+a:[
+"10,000 tonnes",
+"15,000 tonnes",
+"20,000 tonnes",
+"25,000 tonnes"
+],
+correct:2
+},
+
+{
+q:"A factory produces 5,000 units per month. How many units does it produce in 6 months?",
+a:[
+"20,000",
+"25,000",
+"30,000",
+"35,000"
+],
+correct:2
+},
+
+{
+q:"A plant produces 2,500 units per day. How many units will it produce in 4 days?",
+a:[
+"7,500",
+"8,000",
+"10,000",
+"12,500"
+],
+correct:2
+},
+
+{
+q:"A factory has 10 production lines. Each produces 1,500 units. What is total production?",
+a:[
+"10,000",
+"12,500",
+"15,000",
+"20,000"
+],
+correct:2
+},
+
+{
+q:"A mine has 100,000 tonnes of mineral and extracts 40,000 tonnes. What percentage remains?",
+a:[
+"40%",
+"50%",
+"60%",
+"70%"
+],
+correct:2
+},
+
+{
+q:"A factory's production rises from 15,000 to 18,000 units. What is the increase?",
+a:[
+"2,000",
+"3,000",
+"4,000",
+"5,000"
+],
+correct:1
+},
+
+{
+q:"A factory's production rises from 15,000 to 18,000 units. What is the percentage increase?",
+a:[
+"15%",
+"20%",
+"25%",
+"30%"
+],
+correct:1
+},
+
+{
+q:"If 60% of a 50,000 tonne mineral reserve is available, how much is available?",
+a:[
+"20,000 tonnes",
+"25,000 tonnes",
+"30,000 tonnes",
+"35,000 tonnes"
+],
+correct:2
+},
+
+{
+q:"A student gets 40 correct answers out of 50. What percentage is this?",
+a:[
+"70%",
+"75%",
+"80%",
+"85%"
+],
+correct:2
+},
+
+{
+q:"A student gets 35 correct answers out of 50. What percentage is this?",
+a:[
+"60%",
+"65%",
+"70%",
+"75%"
+],
+correct:2
+},
+
+{
+q:"If every correct answer gives 2 XP, how much XP is earned for 40 correct answers?",
+a:[
+"60 XP",
+"70 XP",
+"80 XP",
+"90 XP"
+],
+correct:2
+},
+
+{
+q:"If every correct answer gives 2 XP, how much XP is earned for 45 correct answers?",
+a:[
+"80 XP",
+"90 XP",
+"100 XP",
+"110 XP"
+],
+correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_social_ch14_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_social_ch14_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 14 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 14 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Geography Chapter 14 - India: Resources and Industries",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_social_chapter14",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter14"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Geography_Chapter14_India_Resources_and_Industries_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_social_chapter14"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

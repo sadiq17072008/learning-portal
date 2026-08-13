@@ -1,0 +1,2697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 18 - Indian Constitution | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   SAME DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #8b5cf6;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#a78bfa;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#a78bfa;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#a78bfa;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#8b5cf6;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:300px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    line-height:1.5;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#a78bfa;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/social-science.html"
+        class="back">
+
+        ← Social Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🏛️ Chapter 18: Indian Constitution
+    </h1>
+
+    <p>
+
+        Learn about the need for a Constitution,
+        the making of the Indian Constitution,
+        the Preamble, salient features,
+        citizenship, Fundamental Rights and Duties,
+        Directive Principles, Centre-State relations,
+        official language, amendments and
+        emergency provisions.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the Indian Constitution chapter
+        including the Preamble, Constituent Assembly,
+        Fundamental Rights, Fundamental Duties,
+        Directive Principles, citizenship,
+        Centre-State relations and emergency
+        provisions.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CIVICS_CHAPTER18_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_CIVICS_CHAPTER18_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Introduction to Indian Constitution
+    </div>
+
+    <div class="topic">
+        ✓ Need for a Constitution
+    </div>
+
+    <div class="topic">
+        ✓ Making of the Constitution
+    </div>
+
+    <div class="topic">
+        ✓ Constituent Assembly
+    </div>
+
+    <div class="topic">
+        ✓ Preamble
+    </div>
+
+    <div class="topic">
+        ✓ Salient Features
+    </div>
+
+    <div class="topic">
+        ✓ Citizenship
+    </div>
+
+    <div class="topic">
+        ✓ Citizenship Act, 1955
+    </div>
+
+    <div class="topic">
+        ✓ Acquisition of Citizenship
+    </div>
+
+    <div class="topic">
+        ✓ Loss of Citizenship
+    </div>
+
+    <div class="topic">
+        ✓ Fundamental Rights
+    </div>
+
+    <div class="topic">
+        ✓ Right to Equality
+    </div>
+
+    <div class="topic">
+        ✓ Right to Freedom
+    </div>
+
+    <div class="topic">
+        ✓ Right against Exploitation
+    </div>
+
+    <div class="topic">
+        ✓ Right to Freedom of Religion
+    </div>
+
+    <div class="topic">
+        ✓ Cultural and Educational Rights
+    </div>
+
+    <div class="topic">
+        ✓ Right to Constitutional Remedies
+    </div>
+
+    <div class="topic">
+        ✓ Directive Principles of State Policy
+    </div>
+
+    <div class="topic">
+        ✓ Fundamental Duties
+    </div>
+
+    <div class="topic">
+        ✓ Centre-State Relations
+    </div>
+
+    <div class="topic">
+        ✓ Legislative Relations
+    </div>
+
+    <div class="topic">
+        ✓ Administrative Relations
+    </div>
+
+    <div class="topic">
+        ✓ Financial Relations
+    </div>
+
+    <div class="topic">
+        ✓ Official Language
+    </div>
+
+    <div class="topic">
+        ✓ Constitutional Amendments
+    </div>
+
+    <div class="topic">
+        ✓ Emergency Provisions
+    </div>
+
+    <div class="topic">
+        ✓ Constitutional Committees and Commissions
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Constitution
+            </strong>
+
+            <br><br>
+
+            A Constitution is the fundamental law
+            of a country. It defines the structure
+            and powers of government and protects
+            the rights of citizens.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Need for a Constitution
+            </strong>
+
+            <br><br>
+
+            A Constitution provides a framework for
+            government, limits governmental power,
+            protects citizens' rights and establishes
+            the basic principles of governance.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Constituent Assembly
+            </strong>
+
+            <br><br>
+
+            The Constituent Assembly was responsible
+            for framing the Constitution of India.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Drafting Committee
+            </strong>
+
+            <br><br>
+
+            Dr. B. R. Ambedkar served as the Chairman
+            of the Drafting Committee.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Adoption of the Constitution
+            </strong>
+
+            <br><br>
+
+            The Constitution was adopted on
+            26 November 1949.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Constitution Came into Force
+            </strong>
+
+            <br><br>
+
+            The Constitution came into force on
+            26 January 1950.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Preamble
+            </strong>
+
+            <br><br>
+
+            The Preamble expresses the ideals and
+            objectives of the Constitution.
+
+            It describes India as a
+            Sovereign, Socialist, Secular,
+            Democratic Republic.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Justice
+            </strong>
+
+            <br><br>
+
+            The Preamble promises social,
+            economic and political justice.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Liberty
+            </strong>
+
+            <br><br>
+
+            The Preamble assures liberty of thought,
+            expression, belief, faith and worship.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Equality
+            </strong>
+
+            <br><br>
+
+            The Constitution seeks equality of
+            status and opportunity.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Fundamental Rights
+            </strong>
+
+            <br><br>
+
+            Fundamental Rights protect important
+            freedoms and rights of citizens.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Right to Constitutional Remedies
+            </strong>
+
+            <br><br>
+
+            Article 32 provides the Right to
+            Constitutional Remedies.
+
+            It enables citizens to approach the
+            Supreme Court for enforcement of
+            Fundamental Rights.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Directive Principles
+            </strong>
+
+            <br><br>
+
+            Directive Principles of State Policy
+            provide guidelines to the State for
+            establishing social and economic justice.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Fundamental Duties
+            </strong>
+
+            <br><br>
+
+            Fundamental Duties remind citizens of
+            their responsibilities towards the
+            nation and society.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Citizenship
+            </strong>
+
+            <br><br>
+
+            Citizenship establishes the legal
+            relationship between an individual
+            and the State.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                16. Citizenship Act, 1955
+            </strong>
+
+            <br><br>
+
+            The Citizenship Act, 1955 deals with
+            matters relating to Indian citizenship.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                17. Acquisition of Citizenship
+            </strong>
+
+            <br><br>
+
+            Indian citizenship may be acquired
+            through methods provided by law,
+            including birth, descent, registration,
+            naturalisation and incorporation of
+            territory.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                18. Loss of Citizenship
+            </strong>
+
+            <br><br>
+
+            Citizenship can be lost according
+            to provisions of law, including
+            renunciation, termination and
+            deprivation.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                19. Federal Features
+            </strong>
+
+            <br><br>
+
+            India has a federal system with
+            constitutional division of powers
+            between the Union and the States.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                20. Centre-State Relations
+            </strong>
+
+            <br><br>
+
+            Centre-State relations include
+            legislative, administrative and
+            financial relations.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                21. Legislative Relations
+            </strong>
+
+            <br><br>
+
+            Legislative powers are distributed
+            between the Union and States through
+            constitutional provisions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                22. Administrative Relations
+            </strong>
+
+            <br><br>
+
+            Administrative relations determine
+            how the Union and States coordinate
+            in administration.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                23. Financial Relations
+            </strong>
+
+            <br><br>
+
+            Financial relations concern the
+            distribution of revenues and financial
+            responsibilities between the Union
+            and States.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                24. Official Language
+            </strong>
+
+            <br><br>
+
+            The Constitution contains provisions
+            concerning the official language of
+            the Union and the use of languages
+            in administration.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                25. Constitutional Amendment
+            </strong>
+
+            <br><br>
+
+            The Constitution provides a procedure
+            for making amendments so that it can
+            adapt to changing circumstances.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                26. Emergency Provisions
+            </strong>
+
+            <br><br>
+
+            The Constitution contains provisions
+            for dealing with extraordinary
+            situations through different types
+            of emergencies.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                27. Constitutional Committees
+            </strong>
+
+            <br><br>
+
+            Various committees and commissions
+            have contributed to constitutional
+            governance and institutional development.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NUMERICAL / FACT PRACTICE
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🔢 Numerical & Fact Practice
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1:
+        </strong>
+
+        The Constitution was adopted in 1949.
+        How many years passed between adoption
+        and the Constitution coming into force
+        in 1950?
+
+        <br><br>
+
+        1950 − 1949 =
+        <strong>1 year</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2:
+        </strong>
+
+        The Constitution came into force in 1950.
+        How many years had passed by 2026?
+
+        <br><br>
+
+        2026 − 1950 =
+        <strong>76 years</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3:
+        </strong>
+
+        Article 32 is associated with the
+        Right to Constitutional Remedies.
+        If a student remembers Articles 1 to 32,
+        how many article numbers are included
+        when counted inclusively?
+
+        <br><br>
+
+        32 − 1 + 1 =
+        <strong>32 articles</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4:
+        </strong>
+
+        The Citizenship Act was enacted in 1955.
+        How many years had passed by 2026?
+
+        <br><br>
+
+        2026 − 1955 =
+        <strong>71 years</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5:
+        </strong>
+
+        A quiz contains 50 questions.
+        If a student answers 40 correctly,
+        what percentage is scored?
+
+        <br><br>
+
+        40 ÷ 50 × 100 =
+        <strong>80%</strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 6:
+        </strong>
+
+        The pass mark is 30 out of 50.
+        What percentage is required?
+
+        <br><br>
+
+        30 ÷ 50 × 100 =
+        <strong>60%</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Chapter 18 Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Numerical and fact-based questions
+        are included.
+        You need at least 30 correct answers to pass.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter19.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 19
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 18 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is a Constitution?",
+a:[
+"The fundamental law of a country",
+"Only a collection of government speeches",
+"A school rule book",
+"A political party manifesto"
+],
+correct:0
+},
+
+{
+q:"Why does a country need a Constitution?",
+a:[
+"To establish the framework of government",
+"To control only sports",
+"To regulate only trade",
+"To select school teachers"
+],
+correct:0
+},
+
+{
+q:"Who was the Chairman of the Drafting Committee?",
+a:[
+"Dr. B. R. Ambedkar",
+"Jawaharlal Nehru",
+"Sardar Patel",
+"Rajendra Prasad"
+],
+correct:0
+},
+
+{
+q:"Which body framed the Indian Constitution?",
+a:[
+"Constituent Assembly",
+"Parliament",
+"Supreme Court",
+"Election Commission"
+],
+correct:0
+},
+
+{
+q:"When was the Constitution of India adopted?",
+a:[
+"15 August 1947",
+"26 November 1949",
+"26 January 1950",
+"2 October 1950"
+],
+correct:1
+},
+
+{
+q:"When did the Constitution come into force?",
+a:[
+"15 August 1947",
+"26 November 1949",
+"26 January 1950",
+"14 April 1950"
+],
+correct:2
+},
+
+{
+q:"Which document contains the ideals and objectives of the Constitution?",
+a:[
+"Preamble",
+"Budget",
+"Election manifesto",
+"Government order"
+],
+correct:0
+},
+
+{
+q:"India is described in the Preamble as a:",
+a:[
+"Sovereign Socialist Secular Democratic Republic",
+"Monarchical Republic",
+"Military State",
+"Colonial State"
+],
+correct:0
+},
+
+{
+q:"Which ideal is included in the Preamble?",
+a:[
+"Justice",
+"Monarchy",
+"Colonialism",
+"Dictatorship"
+],
+correct:0
+},
+
+{
+q:"The Preamble promises liberty of:",
+a:[
+"Thought and expression",
+"Only trade",
+"Only movement",
+"Only taxation"
+],
+correct:0
+},
+
+{
+q:"The Preamble promises equality of:",
+a:[
+"Status and opportunity",
+"Income only",
+"Property only",
+"Education only"
+],
+correct:0
+},
+
+{
+q:"Which is a Fundamental Right?",
+a:[
+"Right to Equality",
+"Right to own unlimited land",
+"Right to avoid taxes",
+"Right to ignore laws"
+],
+correct:0
+},
+
+{
+q:"Article 32 is associated with:",
+a:[
+"Right to Constitutional Remedies",
+"Right to Property",
+"Emergency",
+"Citizenship"
+],
+correct:0
+},
+
+{
+q:"Who can approach the Supreme Court for enforcement of Fundamental Rights under Article 32?",
+a:[
+"Citizens",
+"Only ministers",
+"Only governors",
+"Only judges"
+],
+correct:0
+},
+
+{
+q:"Which of the following is NOT a Fundamental Right?",
+a:[
+"Right to Freedom",
+"Right to Equality",
+"Right against Exploitation",
+"Right to unlimited wealth"
+],
+correct:3
+},
+
+{
+q:"The Right to Freedom of Religion protects:",
+a:[
+"Freedom of conscience and religion",
+"Only one religion",
+"Only government employees",
+"Only political parties"
+],
+correct:0
+},
+
+{
+q:"Cultural and Educational Rights protect the interests of:",
+a:[
+"Minorities",
+"Only ministers",
+"Only judges",
+"Only government departments"
+],
+correct:0
+},
+
+{
+q:"Directive Principles are mainly:",
+a:[
+"Guidelines to the State",
+"Criminal laws",
+"Election symbols",
+"Tax receipts"
+],
+correct:0
+},
+
+{
+q:"Fundamental Duties are:",
+a:[
+"Responsibilities of citizens",
+"Orders of political parties",
+"Judicial punishments",
+"Tax rules only"
+],
+correct:0
+},
+
+{
+q:"Which is a Fundamental Duty?",
+a:[
+"To respect the Constitution",
+"To avoid voting",
+"To disobey laws",
+"To damage public property"
+],
+correct:0
+},
+
+{
+q:"Citizenship establishes a legal relationship between:",
+a:[
+"An individual and the State",
+"Two schools",
+"Two companies",
+"Two villages"
+],
+correct:0
+},
+
+{
+q:"Which Act deals with Indian citizenship?",
+a:[
+"Citizenship Act, 1955",
+"Education Act, 1950",
+"Forest Act, 1947",
+"Factory Act, 1960"
+],
+correct:0
+},
+
+{
+q:"Which is a method of acquiring citizenship?",
+a:[
+"Birth",
+"Only voting",
+"Only taxation",
+"Only employment"
+],
+correct:0
+},
+
+{
+q:"Which is a method of losing citizenship?",
+a:[
+"Renunciation",
+"Voting",
+"Studying",
+"Paying taxes"
+],
+correct:0
+},
+
+{
+q:"India has:",
+a:[
+"Single citizenship",
+"Separate citizenship for every State",
+"No citizenship",
+"Only temporary citizenship"
+],
+correct:0
+},
+
+{
+q:"India has a:",
+a:[
+"Federal system with constitutional division of powers",
+"Pure monarchy",
+"Military dictatorship",
+"Colonial administration"
+],
+correct:0
+},
+
+{
+q:"Centre-State relations include:",
+a:[
+"Legislative, administrative and financial relations",
+"Only military relations",
+"Only cultural relations",
+"Only sports relations"
+],
+correct:0
+},
+
+{
+q:"Legislative relations concern:",
+a:[
+"Distribution of law-making powers",
+"Only taxation",
+"Only elections",
+"Only education"
+],
+correct:0
+},
+
+{
+q:"Financial relations concern:",
+a:[
+"Distribution of financial resources and responsibilities",
+"Only court cases",
+"Only language",
+"Only elections"
+],
+correct:0
+},
+
+{
+q:"Administrative relations concern:",
+a:[
+"Coordination between Union and States",
+"Only trade",
+"Only agriculture",
+"Only sports"
+],
+correct:0
+},
+
+{
+q:"The Constitution contains provisions concerning:",
+a:[
+"Official language",
+"Only cricket",
+"Only tourism",
+"Only cinema"
+],
+correct:0
+},
+
+{
+q:"A constitutional amendment is:",
+a:[
+"A formal change made according to the constitutional procedure",
+"An ordinary school rule",
+"A newspaper article",
+"A political speech"
+],
+correct:0
+},
+
+{
+q:"Why are constitutional amendments necessary?",
+a:[
+"To adapt the Constitution to changing circumstances",
+"To remove all laws",
+"To abolish citizenship",
+"To stop elections"
+],
+correct:0
+},
+
+{
+q:"The Constitution contains provisions for:",
+a:[
+"Emergency situations",
+"Only sports events",
+"Only cultural festivals",
+"Only trade fairs"
+],
+correct:0
+},
+
+{
+q:"Which is an example of a constitutional emergency provision?",
+a:[
+"National Emergency",
+"School Emergency",
+"Market Emergency",
+"Sports Emergency"
+],
+correct:0
+},
+
+{
+q:"The Indian Constitution protects:",
+a:[
+"Rights and freedoms",
+"Only government property",
+"Only political parties",
+"Only businesses"
+],
+correct:0
+},
+
+{
+q:"The Constitution establishes:",
+a:[
+"Institutions and powers of government",
+"Only private companies",
+"Only schools",
+"Only banks"
+],
+correct:0
+},
+
+{
+q:"The Constitution came into force in which year?",
+a:[
+"1947",
+"1948",
+"1949",
+"1950"
+],
+correct:3
+},
+
+{
+q:"The Constitution was adopted in which year?",
+a:[
+"1947",
+"1948",
+"1949",
+"1950"
+],
+correct:2
+},
+
+{
+q:"How many years passed between 1949 and 1950?",
+a:[
+"1 year",
+"2 years",
+"5 years",
+"10 years"
+],
+correct:0
+},
+
+{
+q:"How many years passed between 1950 and 2026?",
+a:[
+"66 years",
+"70 years",
+"76 years",
+"80 years"
+],
+correct:2
+},
+
+{
+q:"How many years passed between 1955 and 2026?",
+a:[
+"61 years",
+"71 years",
+"81 years",
+"91 years"
+],
+correct:1
+},
+
+{
+q:"A quiz has 50 questions. A student gets 40 correct. What is the percentage?",
+a:[
+"60%",
+"70%",
+"80%",
+"90%"
+],
+correct:2
+},
+
+{
+q:"A student gets 35 correct out of 50. What is the percentage?",
+a:[
+"60%",
+"65%",
+"70%",
+"75%"
+],
+correct:2
+},
+
+{
+q:"The pass mark is 30 out of 50. What percentage is required?",
+a:[
+"50%",
+"55%",
+"60%",
+"65%"
+],
+correct:2
+},
+
+{
+q:"A student gets 45 out of 50. How many answers are incorrect?",
+a:[
+"3",
+"4",
+"5",
+"10"
+],
+correct:2
+},
+
+{
+q:"If one question carries 2 marks and a student answers 20 questions correctly, what is the score?",
+a:[
+"20 marks",
+"30 marks",
+"40 marks",
+"50 marks"
+],
+correct:2
+},
+
+{
+q:"If a student gets 42 correct answers out of 50, how many are incorrect?",
+a:[
+"6",
+"7",
+"8",
+"9"
+],
+correct:2
+},
+
+{
+q:"If 30 students each answer 50 questions, how many total question attempts are made?",
+a:[
+"1,000",
+"1,250",
+"1,500",
+"2,000"
+],
+correct:2
+},
+
+{
+q:"If 25 students score 40 correct answers each, how many correct answers are there in total?",
+a:[
+"800",
+"900",
+"1,000",
+"1,200"
+],
+correct:2
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_civics_ch18_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1)
+            / questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion]
+            === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `</div>`;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display = "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            questions.length) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_civics_ch18_attempts",
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= 60
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Chapter 18 assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 18 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= 60
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        subject:
+            "10th Standard Social Science",
+
+        chapter:
+            "Civics Chapter 18 - Indian Constitution",
+
+        score:
+            score + "/" +
+            questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "edusphere_civics_chapter18",
+        JSON.stringify(progress)
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_civics_chapter18"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Social Science Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+
+    link.download =
+        "EduSphere_10th_Social_Science_Civics_Chapter18_Indian_Constitution_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            "edusphere_civics_chapter18"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    updateStatus(
+        data.status,
+        parseInt(data.score),
+        parseInt(data.percentage)
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
+
