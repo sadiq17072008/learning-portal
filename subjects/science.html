@@ -1,0 +1,2649 @@
+# EduSphere Science Hub — Complete Locked Mission System
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduSphere Science Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+.header{
+background:#111827;
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+color:#38bdf8;
+}
+
+.back-btn{
+text-decoration:none;
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+padding:12px 22px;
+border-radius:12px;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+.back-btn:hover{
+transform:translateY(-2px);
+}
+
+.container{
+width:95%;
+max-width:1500px;
+margin:auto;
+padding:30px 0;
+}
+
+.hero{
+background:linear-gradient(135deg,#1e3a8a,#0f766e);
+border-radius:30px;
+padding:45px;
+margin-bottom:35px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+color:#dbeafe;
+margin-bottom:25px;
+}
+
+.hero button{
+padding:15px 35px;
+border:none;
+border-radius:15px;
+background:white;
+color:#0f172a;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:40px;
+}
+
+.stat-card{
+background:#1e293b;
+padding:25px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+
+.stat-card:hover{
+transform:translateY(-5px);
+}
+
+.stat-card h2{
+font-size:40px;
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.stat-card p{
+color:#94a3b8;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:25px;
+}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+margin-bottom:50px;
+}
+
+.category-card{
+padding:35px;
+border-radius:25px;
+cursor:pointer;
+transition:.3s;
+}
+
+.category-card:hover{
+transform:translateY(-8px);
+}
+
+.physics{
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+.chemistry{
+background:linear-gradient(135deg,#ea580c,#f97316);
+}
+
+.biology{
+background:linear-gradient(135deg,#16a34a,#15803d);
+}
+
+.category-card h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.category-card p{
+line-height:1.8;
+color:#f8fafc;
+}
+
+.missions{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+gap:25px;
+
+margin-bottom:50px;
+
+}
+
+.mission-card{
+
+background:#1e293b;
+
+padding:25px;
+
+border-radius:22px;
+
+transition:.3s;
+
+box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.mission-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.mission-card.locked{
+
+opacity:.65;
+
+filter:saturate(.6);
+
+}
+
+.mission-card.locked:hover{
+
+transform:none;
+
+}
+
+.mission-top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
+
+margin-bottom:15px;
+
+}
+
+.mission-top h2{
+
+font-size:18px;
+
+color:#38bdf8;
+
+}
+
+.mission-top h3{
+
+margin-top:8px;
+
+font-size:24px;
+
+}
+
+.easy,
+.medium,
+.hard{
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.easy{
+
+background:#166534;
+
+}
+
+.medium{
+
+background:#a16207;
+
+}
+
+.hard{
+
+background:#991b1b;
+
+}
+
+.reward{
+
+display:flex;
+
+justify-content:space-between;
+
+margin:20px 0;
+
+font-weight:600;
+
+color:#cbd5e1;
+
+}
+
+.progress-bar{
+
+height:10px;
+
+background:#334155;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+
+}
+
+.progress-fill{
+
+height:100%;
+
+width:0%;
+
+background:#22c55e;
+
+transition:.5s;
+
+}
+
+.start-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.start-btn:hover{
+
+transform:scale(1.02);
+
+}
+
+.start-btn.locked-btn{
+
+background:#475569;
+
+cursor:not-allowed;
+
+}
+
+.start-btn.locked-btn:hover{
+
+transform:none;
+
+}
+
+.lessonContainer{
+
+display:none;
+
+margin-top:50px;
+
+background:#1e293b;
+
+padding:35px;
+
+border-radius:25px;
+
+}
+
+.lessonContainer.active{
+
+display:block;
+
+}
+
+.lessonContainer iframe{
+
+width:100%;
+
+height:500px;
+
+border:none;
+
+border-radius:15px;
+
+margin:20px 0;
+
+}
+
+.task{
+
+margin:15px 0;
+
+font-size:18px;
+
+}
+
+.task input{
+
+margin-right:10px;
+
+transform:scale(1.3);
+
+}
+
+.lessonBtn{
+
+margin-top:20px;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:12px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+.lock-message{
+
+background:#0f172a;
+
+border:1px solid #475569;
+
+padding:15px;
+
+border-radius:12px;
+
+margin-top:15px;
+
+color:#cbd5e1;
+
+text-align:center;
+
+}
+
+.unlock-message{
+
+background:#14532d;
+
+border:1px solid #22c55e;
+
+padding:15px;
+
+border-radius:12px;
+
+margin-top:15px;
+
+color:#dcfce7;
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="header">
+
+<div class="logo">
+EduSphere 🧪
+</div>
+
+<a href="student-dashboard.html" class="back-btn">
+⬅ Dashboard
+</a>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="hero">
+
+<h1>
+🧪 Science Mission Hub
+</h1>
+
+<p>
+Complete missions, pass quizzes, earn XP, unlock badges and master Science.
+</p>
+
+<button onclick="document.getElementById('physics').scrollIntoView({behavior:'smooth'})">
+🚀 Start Learning
+</button>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat-card">
+<h2 id="xp">0</h2>
+<p>Total XP</p>
+</div>
+
+<div class="stat-card">
+<h2 id="completed">0/23</h2>
+<p>Missions Completed</p>
+</div>
+
+<div class="stat-card">
+<h2 id="streak">0 🔥</h2>
+<p>Learning Streak</p>
+</div>
+
+<div class="stat-card">
+<h2 id="badges">0</h2>
+<p>Badges Earned</p>
+</div>
+
+</div>
+
+
+<h2 class="section-title">
+📚 Mission Categories
+</h2>
+
+
+<div class="categories">
+
+
+<div class="category-card physics"
+onclick="document.getElementById('physics').scrollIntoView({behavior:'smooth'})">
+
+<h2>⚛ Physics</h2>
+
+<p>
+6 Missions<br>
+Mechanics • Optics • Electricity • Nuclear Physics
+</p>
+
+</div>
+
+
+<div class="category-card chemistry"
+onclick="document.getElementById('chemistry').scrollIntoView({behavior:'smooth'})">
+
+<h2>⚗ Chemistry</h2>
+
+<p>
+6 Missions<br>
+Atoms • Solutions • Carbon • Organic Chemistry
+</p>
+
+</div>
+
+
+<div class="category-card biology"
+onclick="document.getElementById('biology').scrollIntoView({behavior:'smooth'})">
+
+<h2>🌱 Biology</h2>
+
+<p>
+11 Missions<br>
+Nutrition • Respiration • Heredity • Environment
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= PHYSICS ================= -->
+
+<div id="physics">
+
+<h2 class="section-title">
+⚛ Physics Missions
+</h2>
+
+<div class="missions">
+
+
+<!-- Mission 1 -->
+
+<div class="mission-card" id="mission1">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🚀 Mission 01</h2>
+
+<h3>Laws of Motion</h3>
+
+</div>
+
+<span class="easy">🟢 Beginner</span>
+
+</div>
+
+<p>
+Force • Newton's Laws • Momentum • Friction • Applications
+</p>
+
+<div class="reward">
+
+⭐ 80 XP
+
+<span>⏱ 35 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn"
+onclick="openMission(1,'../science/chapter1.html')">
+
+▶ Start Mission
+
+</button>
+
+</div>
+
+
+<!-- Mission 2 -->
+
+<div class="mission-card locked" id="mission2">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🚀 Mission 02</h2>
+
+<h3>Optics</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Reflection • Refraction • Mirrors • Lenses • Human Eye
+</p>
+
+<div class="reward">
+
+⭐ 100 XP
+
+<span>⏱ 40 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(2,'../science/chapter2.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 3 -->
+
+<div class="mission-card locked" id="mission3">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🚀 Mission 03</h2>
+
+<h3>Thermal Physics</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Heat • Temperature • Latent Heat • Expansion • Heat Transfer
+</p>
+
+<div class="reward">
+
+⭐ 120 XP
+
+<span>⏱ 45 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(3,'../science/chapter3.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 4 -->
+
+<div class="mission-card locked" id="mission4">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🚀 Mission 04</h2>
+
+<h3>Electricity</h3>
+
+</div>
+
+<span class="hard">🔴 Advanced</span>
+
+</div>
+
+<p>
+Current • Resistance • Ohm's Law • Circuits • Electric Power
+</p>
+
+<div class="reward">
+
+⭐ 150 XP
+
+<span>⏱ 50 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(4,'../science/chapter4.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 5 -->
+
+<div class="mission-card locked" id="mission5">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🚀 Mission 05</h2>
+
+<h3>Acoustics</h3>
+
+</div>
+
+<span class="easy">🟢 Beginner</span>
+
+</div>
+
+<p>
+Sound • Echo • SONAR • Ultrasonic Waves
+</p>
+
+<div class="reward">
+
+⭐ 90 XP
+
+<span>⏱ 30 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(5,'../science/chapter5.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 6 -->
+
+<div class="mission-card locked" id="mission6">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🚀 Mission 06</h2>
+
+<h3>Nuclear Physics</h3>
+
+</div>
+
+<span class="hard">🔴 Expert</span>
+
+</div>
+
+<p>
+Radioactivity • Fission • Fusion • Half-life • Radiation
+</p>
+
+<div class="reward">
+
+⭐ 180 XP
+
+<span>⏱ 55 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(6,'../science/chapter6.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ================= CHEMISTRY ================= -->
+
+<div id="chemistry">
+
+<h2 class="section-title">
+⚗ Chemistry Missions
+</h2>
+
+<div class="missions">
+
+
+<!-- Mission 7 -->
+
+<div class="mission-card locked" id="mission7">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🧪 Mission 07</h2>
+
+<h3>Atoms and Molecules</h3>
+
+</div>
+
+<span class="easy">🟢 Beginner</span>
+
+</div>
+
+<p>
+Laws of Chemical Combination • Dalton's Theory • Mole Concept • Avogadro Number
+</p>
+
+<div class="reward">
+
+⭐ 80 XP
+
+<span>⏱ 35 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(7,'../science/chapter7.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 8 -->
+
+<div class="mission-card locked" id="mission8">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🧪 Mission 08</h2>
+
+<h3>Periodic Classification</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Triads • Octaves • Mendeleev • Modern Periodic Table • Periodic Trends
+</p>
+
+<div class="reward">
+
+⭐ 100 XP
+
+<span>⏱ 40 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(8,'../science/chapter8.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 9 -->
+
+<div class="mission-card locked" id="mission9">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🧪 Mission 09</h2>
+
+<h3>Solutions</h3>
+
+</div>
+
+<span class="easy">🟢 Beginner</span>
+
+</div>
+
+<p>
+Types • Solubility • Concentration • Saturated Solutions
+</p>
+
+<div class="reward">
+
+⭐ 70 XP
+
+<span>⏱ 30 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(9,'../science/chapter9.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 10 -->
+
+<div class="mission-card locked" id="mission10">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🧪 Mission 10</h2>
+
+<h3>Chemical Reactions</h3>
+
+</div>
+
+<span class="hard">🔴 Advanced</span>
+
+</div>
+
+<p>
+Combination • Decomposition • Redox • Corrosion • Rancidity
+</p>
+
+<div class="reward">
+
+⭐ 130 XP
+
+<span>⏱ 50 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(10,'../science/chapter10.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 11 -->
+
+<div class="mission-card locked" id="mission11">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🧪 Mission 11</h2>
+
+<h3>Carbon & Compounds</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Allotropes • Hydrocarbons • Functional Groups • Soaps & Detergents
+</p>
+
+<div class="reward">
+
+⭐ 120 XP
+
+<span>⏱ 45 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(11,'../science/chapter11.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 12 -->
+
+<div class="mission-card locked" id="mission12">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🧪 Mission 12</h2>
+
+<h3>Organic Chemistry</h3>
+
+</div>
+
+<span class="hard">🔴 Expert</span>
+
+</div>
+
+<p>
+Organic Compounds • Isomerism • Polymerisation • Petrochemicals
+</p>
+
+<div class="reward">
+
+⭐ 150 XP
+
+<span>⏱ 55 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(12,'../science/chapter12.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ================= BIOLOGY ================= -->
+
+<div id="biology">
+
+<h2 class="section-title">
+🌱 Biology Missions
+</h2>
+
+<div class="missions">
+
+
+<!-- Mission 13 -->
+
+<div class="mission-card locked" id="mission13">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 13</h2>
+
+<h3>Nutrition & Transport in Plants</h3>
+
+</div>
+
+<span class="easy">🟢 Beginner</span>
+
+</div>
+
+<p>
+Photosynthesis • Xylem • Phloem • Transpiration
+</p>
+
+<div class="reward">
+
+⭐ 80 XP
+
+<span>⏱ 35 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(13,'../science/chapter13.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 14 -->
+
+<div class="mission-card locked" id="mission14">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 14</h2>
+
+<h3>Respiration</h3>
+
+</div>
+
+<span class="easy">🟢 Beginner</span>
+
+</div>
+
+<p>
+Aerobic • Anaerobic • Human Respiratory System
+</p>
+
+<div class="reward">
+
+⭐ 90 XP
+
+<span>⏱ 35 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(14,'../science/chapter14.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 15 -->
+
+<div class="mission-card locked" id="mission15">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 15</h2>
+
+<h3>Nervous System</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Neuron • Brain • Reflex Action • Sense Organs
+</p>
+
+<div class="reward">
+
+⭐ 120 XP
+
+<span>⏱ 45 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(15,'../science/chapter15.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 16 -->
+
+<div class="mission-card locked" id="mission16">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 16</h2>
+
+<h3>Plant & Animal Hormones</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Pituitary • Thyroid • Adrenal • Plant Hormones
+</p>
+
+<div class="reward">
+
+⭐ 130 XP
+
+<span>⏱ 45 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(16,'../science/chapter16.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 17 -->
+
+<div class="mission-card locked" id="mission17">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 17</h2>
+
+<h3>Reproduction in Plants & Animals</h3>
+
+</div>
+
+<span class="hard">🔴 Advanced</span>
+
+</div>
+
+<p>
+Asexual • Sexual • Fertilisation • Menstrual Cycle
+</p>
+
+<div class="reward">
+
+⭐ 150 XP
+
+<span>⏱ 55 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(17,'../science/chapter17.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 18 -->
+
+<div class="mission-card locked" id="mission18">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 18</h2>
+
+<h3>Heredity</h3>
+
+</div>
+
+<span class="hard">🔴 Advanced</span>
+
+</div>
+
+<p>
+Genes • Mendel • Chromosomes • Evolution
+</p>
+
+<div class="reward">
+
+⭐ 160 XP
+
+<span>⏱ 60 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(18,'../science/chapter18.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 19 -->
+
+<div class="mission-card locked" id="mission19">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 19</h2>
+
+<h3>Origin & Evolution of Life</h3>
+
+</div>
+
+<span class="hard">🔴 Expert</span>
+
+</div>
+
+<p>
+Natural Selection • Fossils • Human Evolution
+</p>
+
+<div class="reward">
+
+⭐ 180 XP
+
+<span>⏱ 60 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(19,'../science/chapter19.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 20 -->
+
+<div class="mission-card locked" id="mission20">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 20</h2>
+
+<h3>Breeding & Biotechnology</h3>
+
+</div>
+
+<span class="hard">🔴 Expert</span>
+
+</div>
+
+<p>
+Genetic Engineering • Tissue Culture • Biofertilisers
+</p>
+
+<div class="reward">
+
+⭐ 200 XP
+
+<span>⏱ 65 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(20,'../science/chapter20.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 21 -->
+
+<div class="mission-card locked" id="mission21">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 21</h2>
+
+<h3>Health & Diseases</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Immunity • Vaccination • First Aid • Diseases
+</p>
+
+<div class="reward">
+
+⭐ 120 XP
+
+<span>⏱ 40 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(21,'../science/chapter21.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 22 -->
+
+<div class="mission-card locked" id="mission22">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 22</h2>
+
+<h3>Environmental Management</h3>
+
+</div>
+
+<span class="medium">🟡 Intermediate</span>
+
+</div>
+
+<p>
+Ecosystem • Pollution • Biodiversity • Conservation
+</p>
+
+<div class="reward">
+
+⭐ 140 XP
+
+<span>⏱ 45 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(22,'../science/chapter22.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+<!-- Mission 23 -->
+
+<div class="mission-card locked" id="mission23">
+
+<div class="mission-top">
+
+<div>
+
+<h2>🌱 Mission 23</h2>
+
+<h3>Visual Communication</h3>
+
+</div>
+
+<span class="easy">🟢 Beginner</span>
+
+</div>
+
+<p>
+Photography • Television • Multimedia • Animation
+</p>
+
+<div class="reward">
+
+⭐ 100 XP
+
+<span>⏱ 30 mins</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<button class="start-btn locked-btn"
+onclick="openMission(23,'../science/chapter23.html')">
+
+🔒 Locked
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- Lesson container -->
+
+<div id="lessonContainer" class="lessonContainer"></div>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   EDUSPHERE SCIENCE MISSION SYSTEM
+   =====================================================
+
+   Chapter 1 = unlocked automatically.
+
+   Chapter N unlocks after Chapter N-1
+   is marked as PASSED.
+
+   Minimum passing percentage = 60%.
+
+   Progress is stored in localStorage.
+
+   ===================================================== */
+
+
+const TOTAL_MISSIONS = 23;
+
+const PASS_MARK = 60;
+
+
+/* -----------------------------------------------------
+   LOCAL STORAGE KEYS
+----------------------------------------------------- */
+
+const STORAGE_KEY =
+"edusphere_science_mission_progress";
+
+
+const XP_KEY =
+"edusphere_science_total_xp";
+
+
+const STREAK_KEY =
+"edusphere_science_streak";
+
+
+/* -----------------------------------------------------
+   MISSION DATA
+----------------------------------------------------- */
+
+const missionNames = [
+
+"",
+"Laws of Motion",
+"Optics",
+"Thermal Physics",
+"Electricity",
+"Acoustics",
+"Nuclear Physics",
+"Atoms and Molecules",
+"Periodic Classification",
+"Solutions",
+"Chemical Reactions",
+"Carbon & Compounds",
+"Organic Chemistry",
+"Nutrition & Transport in Plants",
+"Respiration",
+"Nervous System",
+"Plant & Animal Hormones",
+"Reproduction in Plants & Animals",
+"Heredity",
+"Origin & Evolution of Life",
+"Breeding & Biotechnology",
+"Health & Diseases",
+"Environmental Management",
+"Visual Communication"
+
+];
+
+
+const missionXP = [
+
+0,
+80,
+100,
+120,
+150,
+90,
+180,
+80,
+100,
+70,
+130,
+120,
+150,
+80,
+90,
+120,
+130,
+150,
+160,
+180,
+200,
+120,
+140,
+100
+
+];
+
+
+/* -----------------------------------------------------
+   GET SAVED PROGRESS
+----------------------------------------------------- */
+
+function getProgress(){
+
+    const saved =
+        localStorage.getItem(STORAGE_KEY);
+
+    if(saved){
+
+        try{
+
+            const data =
+                JSON.parse(saved);
+
+            if(
+                data &&
+                Array.isArray(data.completed)
+            ){
+
+                return data;
+
+            }
+
+        }
+        catch(error){
+
+            console.log(
+                "Progress data error:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /*
+       Chapter 1 is unlocked from the beginning.
+    */
+
+    return {
+
+        completed: [false],
+
+        scores: {},
+
+        xp: 0,
+
+        lastCompleted: 0
+
+    };
+
+}
+
+
+/* -----------------------------------------------------
+   SAVE PROGRESS
+----------------------------------------------------- */
+
+function saveProgress(progress){
+
+    localStorage.setItem(
+
+        STORAGE_KEY,
+
+        JSON.stringify(progress)
+
+    );
+
+}
+
+
+/* -----------------------------------------------------
+   IS MISSION UNLOCKED?
+----------------------------------------------------- */
+
+function isMissionUnlocked(id){
+
+    /*
+       Mission 1 is always unlocked.
+    */
+
+    if(id === 1){
+
+        return true;
+
+    }
+
+
+    const progress =
+        getProgress();
+
+
+    /*
+       Mission 2 unlocks when Mission 1
+       is completed.
+
+       Mission 3 unlocks when Mission 2
+       is completed.
+
+       etc.
+    */
+
+    return progress.completed[id - 1] === true;
+
+}
+
+
+/* -----------------------------------------------------
+   OPEN MISSION
+----------------------------------------------------- */
+
+function openMission(id,url){
+
+    if(!isMissionUnlocked(id)){
+
+        alert(
+
+            "🔒 Mission Locked!\n\n" +
+
+            "You must complete " +
+
+            missionNames[id - 1] +
+
+            " with at least 60% in the quiz first."
+
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Save the current mission so that
+       the chapter page can know which
+       chapter was opened.
+    */
+
+    localStorage.setItem(
+
+        "edusphere_current_science_mission",
+
+        String(id)
+
+    );
+
+
+    /*
+       Open chapter page.
+    */
+
+    window.location.href = url;
+
+}
+
+
+/* -----------------------------------------------------
+   UPDATE MISSION LOCKS
+----------------------------------------------------- */
+
+function updateMissionLocks(){
+
+    const progress =
+        getProgress();
+
+
+    let completedCount = 0;
+
+    let totalXP = 0;
+
+
+    for(
+        let i = 1;
+        i <= TOTAL_MISSIONS;
+        i++
+    ){
+
+        const card =
+            document.getElementById(
+                "mission" + i
+            );
+
+
+        if(!card){
+
+            continue;
+
+        }
+
+
+        const button =
+            card.querySelector(
+                ".start-btn"
+            );
+
+
+        const fill =
+            card.querySelector(
+                ".progress-fill"
+            );
+
+
+        /*
+           Mission unlocked
+        */
+
+        if(isMissionUnlocked(i)){
+
+            card.classList.remove(
+                "locked"
+            );
+
+
+            button.classList.remove(
+                "locked-btn"
+            );
+
+
+            /*
+               Completed mission
+            */
+
+            if(
+                progress.completed[i] === true
+            ){
+
+                completedCount++;
+
+                totalXP +=
+                    missionXP[i];
+
+
+                button.innerHTML =
+                    "✅ Completed • Review";
+
+
+                button.style.background =
+                    "linear-gradient(135deg,#16a34a,#22c55e)";
+
+
+                if(fill){
+
+                    fill.style.width =
+                        "100%";
+
+                }
+
+            }
+
+            else{
+
+                /*
+                   Unlocked but not completed
+                */
+
+                if(i === 1){
+
+                    button.innerHTML =
+                        "▶ Start Mission";
+
+                }
+                else{
+
+                    button.innerHTML =
+                        "🔓 Start Mission";
+
+                }
+
+
+                if(fill){
+
+                    fill.style.width =
+                        "0%";
+
+                }
+
+            }
+
+        }
+
+
+        /*
+           Mission locked
+        */
+
+        else{
+
+            card.classList.add(
+                "locked"
+            );
+
+
+            button.classList.add(
+                "locked-btn"
+            );
+
+
+            button.innerHTML =
+                "🔒 Locked";
+
+
+            if(fill){
+
+                fill.style.width =
+                    "0%";
+
+            }
+
+        }
+
+    }
+
+
+    /*
+       Update XP.
+    */
+
+    document.getElementById(
+        "xp"
+    ).textContent =
+        totalXP;
+
+
+    /*
+       Update completed missions.
+    */
+
+    document.getElementById(
+        "completed"
+    ).textContent =
+        completedCount +
+        "/" +
+        TOTAL_MISSIONS;
+
+
+    /*
+       Badges.
+
+       One badge for every 5 completed
+       missions, plus a final badge.
+    */
+
+    let badges = 0;
+
+
+    if(completedCount >= 5){
+
+        badges++;
+
+    }
+
+    if(completedCount >= 10){
+
+        badges++;
+
+    }
+
+    if(completedCount >= 15){
+
+        badges++;
+
+    }
+
+    if(completedCount >= 20){
+
+        badges++;
+
+    }
+
+    if(completedCount >= 23){
+
+        badges++;
+
+    }
+
+
+    document.getElementById(
+        "badges"
+    ).textContent =
+        badges;
+
+
+    /*
+       Simple streak value.
+    */
+
+    const streak =
+        localStorage.getItem(
+            STREAK_KEY
+        ) || 0;
+
+
+    document.getElementById(
+        "streak"
+    ).textContent =
+        streak + " 🔥";
+
+}
+
+
+/* -----------------------------------------------------
+   MARK CHAPTER AS PASSED
+-----------------------------------------------------
+
+   IMPORTANT:
+
+   Your chapter page quiz should call:
+
+   markChapterPassed(1, scorePercentage);
+
+   Example:
+
+   markChapterPassed(1, 80);
+
+----------------------------------------------------- */
+
+function markChapterPassed(
+    chapterNumber,
+    percentage
+){
+
+    percentage =
+        Number(percentage);
+
+
+    if(
+        percentage < PASS_MARK
+    ){
+
+        alert(
+
+            "❌ You scored " +
+
+            percentage +
+
+            "%.\n\n" +
+
+            "You need at least " +
+
+            PASS_MARK +
+
+            "% to unlock the next chapter."
+
+        );
+
+        return false;
+
+    }
+
+
+    const progress =
+        getProgress();
+
+
+    /*
+       Make sure the array is long enough.
+    */
+
+    while(
+        progress.completed.length
+        <= TOTAL_MISSIONS
+    ){
+
+        progress.completed.push(
+            false
+        );
+
+    }
+
+
+    /*
+       Mark this chapter completed.
+    */
+
+    progress.completed[
+        chapterNumber
+    ] = true;
+
+
+    progress.scores[
+        chapterNumber
+    ] = percentage;
+
+
+    progress.lastCompleted =
+        chapterNumber;
+
+
+    /*
+       Calculate XP.
+
+       Only award the chapter XP once.
+    */
+
+    if(
+        !progress.xpAwarded
+    ){
+
+        progress.xpAwarded = {};
+
+    }
+
+
+    if(
+        !progress.xpAwarded[
+            chapterNumber
+        ]
+    ){
+
+        progress.xpAwarded[
+            chapterNumber
+        ] = true;
+
+    }
+
+
+    saveProgress(progress);
+
+
+    /*
+       Update learning streak.
+    */
+
+    let streak =
+        Number(
+            localStorage.getItem(
+                STREAK_KEY
+            )
+        ) || 0;
+
+
+    streak++;
+
+
+    localStorage.setItem(
+        STREAK_KEY,
+        String(streak)
+    );
+
+
+    /*
+       Store chapter score separately.
+       This makes it easy for the hub
+       to check individual chapter results.
+    */
+
+    localStorage.setItem(
+
+        "edusphere_science_chapter_" +
+
+        chapterNumber +
+
+        "_score",
+
+        String(percentage)
+
+    );
+
+
+    localStorage.setItem(
+
+        "edusphere_science_chapter_" +
+
+        chapterNumber +
+
+        "_passed",
+
+        "true"
+
+    );
+
+
+    /*
+       Unlock next chapter automatically.
+    */
+
+    if(
+        chapterNumber <
+        TOTAL_MISSIONS
+    ){
+
+        alert(
+
+            "🎉 Chapter " +
+
+            chapterNumber +
+
+            " Passed!\n\n" +
+
+            "Score: " +
+
+            percentage +
+
+            "%\n\n" +
+
+            "🔓 Chapter " +
+
+            (chapterNumber + 1) +
+
+            " is now unlocked!"
+
+        );
+
+    }
+    else{
+
+        alert(
+
+            "🏆 Congratulations!\n\n" +
+
+            "You completed all 23 Science missions!"
+
+        );
+
+    }
+
+
+    updateMissionLocks();
+
+
+    return true;
+
+}
+
+
+/* -----------------------------------------------------
+   CHECK CHAPTER RESULTS
+-----------------------------------------------------
+
+   This function checks individual
+   chapter score records.
+
+   So even if the user:
+
+   - refreshes
+   - closes browser
+   - returns later
+   - opens GitHub Pages again
+
+   the progress remains on that device.
+----------------------------------------------------- */
+
+function syncChapterResults(){
+
+    const progress =
+        getProgress();
+
+
+    while(
+        progress.completed.length
+        <= TOTAL_MISSIONS
+    ){
+
+        progress.completed.push(
+            false
+        );
+
+    }
+
+
+    /*
+       Check every chapter's saved result.
+    */
+
+    for(
+        let i = 1;
+        i <= TOTAL_MISSIONS;
+        i++
+    ){
+
+        const passed =
+            localStorage.getItem(
+
+                "edusphere_science_chapter_" +
+
+                i +
+
+                "_passed"
+
+            );
+
+
+        const score =
+            Number(
+
+                localStorage.getItem(
+
+                    "edusphere_science_chapter_" +
+
+                    i +
+
+                    "_score"
+
+                )
+
+            );
+
+
+        if(
+            passed === "true" &&
+            score >= PASS_MARK
+        ){
+
+            progress.completed[i] =
+                true;
+
+
+            progress.scores[i] =
+                score;
+
+        }
+
+    }
+
+
+    saveProgress(progress);
+
+}
+
+
+/* -----------------------------------------------------
+   STARTUP
+----------------------------------------------------- */
+
+syncChapterResults();
+
+updateMissionLocks();
+
+
+/* -----------------------------------------------------
+   UPDATE WHEN USER RETURNS TO THIS PAGE
+----------------------------------------------------- */
+
+window.addEventListener(
+    "pageshow",
+    function(){
+
+        syncChapterResults();
+
+        updateMissionLocks();
+
+    }
+);
+
+
+/* -----------------------------------------------------
+   UPDATE WHEN ANOTHER TAB CHANGES
+   LOCAL STORAGE
+----------------------------------------------------- */
+
+window.addEventListener(
+    "storage",
+    function(event){
+
+        if(
+            event.key === STORAGE_KEY ||
+
+            (
+                event.key &&
+                event.key.includes(
+                    "edusphere_science_chapter_"
+                )
+            )
+        ){
+
+            syncChapterResults();
+
+            updateMissionLocks();
+
+        }
+
+    }
+);
+
+
+/* -----------------------------------------------------
+   OPTIONAL DEBUG FUNCTION
+
+   You can run this in browser console
+   if you want to reset the Science progress.
+
+   resetScienceProgress();
+
+----------------------------------------------------- */
+
+function resetScienceProgress(){
+
+    localStorage.removeItem(
+        STORAGE_KEY
+    );
+
+
+    localStorage.removeItem(
+        XP_KEY
+    );
+
+
+    localStorage.removeItem(
+        STREAK_KEY
+    );
+
+
+    for(
+        let i = 1;
+        i <= TOTAL_MISSIONS;
+        i++
+    ){
+
+        localStorage.removeItem(
+
+            "edusphere_science_chapter_" +
+
+            i +
+
+            "_score"
+
+        );
+
+
+        localStorage.removeItem(
+
+            "edusphere_science_chapter_" +
+
+            i +
+
+            "_passed"
+
+        );
+
+    }
+
+
+    location.reload();
+
+}
+
+</script>
+
+</body>
+
+</html>
+
