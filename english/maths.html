@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+EduSphere | 10th Standard Mathematics Mission Hub
+</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+
+    padding:22px 36px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.04);
+}
+
+
+.logo{
+    font-size:32px;
+    font-weight:800;
+    color:#38bdf8;
+    letter-spacing:-1px;
+}
+
+
+.dashboard-btn{
+    text-decoration:none;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-size:17px;
+    font-weight:700;
+
+    transition:.25s;
+}
+
+
+.dashboard-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37,99,235,.35);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:94%;
+    max-width:1500px;
+
+    margin:auto;
+
+    padding:
+        32px
+        0
+        50px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:290px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2448a5,
+            #117c79
+        );
+
+    border-radius:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:45px;
+
+    margin-bottom:36px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.22);
+}
+
+
+.hero h1{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+
+.hero p{
+
+    font-size:20px;
+
+    color:#e0f2fe;
+
+    max-width:850px;
+
+    line-height:1.6;
+
+}
+
+
+.start-learning{
+
+    margin-top:28px;
+
+    text-decoration:none;
+
+    background:white;
+
+    color:#0f172a;
+
+    padding:17px 30px;
+
+    border-radius:16px;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    transition:.25s;
+
+}
+
+
+.start-learning:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.02);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.25);
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:50px;
+}
+
+
+.stat-card{
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    min-height:145px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.15);
+}
+
+
+.stat-value{
+
+    color:#38bdf8;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+
+.stat-label{
+
+    color:#94a3b8;
+
+    font-size:17px;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    margin:
+        0
+        0
+        25px;
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    margin-bottom:55px;
+}
+
+
+.category-card{
+
+    min-height:180px;
+
+    padding:32px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(37,99,235,.18);
+}
+
+
+.category-card h2{
+
+    font-size:31px;
+
+    margin-bottom:15px;
+}
+
+
+.category-card p{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#dbeafe;
+}
+
+
+.category-count{
+
+    margin-top:15px;
+
+    font-size:17px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   MISSION SECTION
+===================================================== */
+
+.mission-section{
+
+    margin-top:10px;
+}
+
+
+.mission-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:26px;
+}
+
+
+/* =====================================================
+   MISSION CARD
+===================================================== */
+
+.mission-card{
+
+    background:#1e293b;
+
+    border-radius:24px;
+
+    padding:27px;
+
+    min-height:390px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.25s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.15);
+
+    position:relative;
+}
+
+
+.mission-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0,0,0,.30);
+}
+
+
+/* =====================================================
+   LOCKED CARD
+===================================================== */
+
+.mission-card.locked{
+
+    opacity:.72;
+
+}
+
+
+.mission-card.locked:hover{
+
+    transform:none;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.15);
+
+}
+
+
+.lock-overlay{
+
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    font-size:25px;
+
+}
+
+
+/* =====================================================
+   MISSION TOP
+===================================================== */
+
+.mission-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+
+.mission-number{
+
+    color:#38bdf8;
+
+    font-size:20px;
+
+    font-weight:800;
+}
+
+
+.difficulty{
+
+    padding:
+        8px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+.beginner{
+
+    background:#087f45;
+
+    color:#dcfce7;
+}
+
+
+.intermediate{
+
+    background:#b87900;
+
+    color:#fff7d6;
+}
+
+
+.advanced{
+
+    background:#b91c1c;
+
+    color:#fee2e2;
+}
+
+
+.expert{
+
+    background:#c81e1e;
+
+    color:#fee2e2;
+}
+
+
+/* =====================================================
+   MISSION CONTENT
+===================================================== */
+
+.mission-card h3{
+
+    font-size:25px;
+
+    line-height:1.3;
+
+    margin-bottom:16px;
+}
+
+
+.mission-description{
+
+    color:#e2e8f0;
+
+    font-size:16px;
+
+    line-height:1.65;
+
+    min-height:85px;
+}
+
+
+/* =====================================================
+   MISSION INFO
+===================================================== */
+
+.mission-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:
+        20px
+        0
+        17px;
+
+    color:#e2e8f0;
+
+    font-size:16px;
+
+    font-weight:700;
+}
+
+
+.xp-info{
+
+    color:#facc15;
+}
+
+
+.time-info{
+
+    color:#e2e8f0;
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-container{
+
+    width:100%;
+
+    height:10px;
+
+    background:#334155;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:22px;
+}
+
+
+.progress-bar{
+
+    height:100%;
+
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    border-radius:20px;
+
+    transition:.5s;
+}
+
+
+/* =====================================================
+   START MISSION
+===================================================== */
+
+.mission-btn{
+
+    width:100%;
+
+    margin-top:auto;
+
+    padding:
+        16px 20px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    display:block;
+
+    transition:.25s;
+}
+
+
+.mission-btn:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(6,182,212,.20);
+}
+
+
+/* =====================================================
+   LOCKED BUTTON
+===================================================== */
+
+.locked-btn{
+
+    background:#475569;
+
+    cursor:not-allowed;
+
+}
+
+
+.locked-btn:hover{
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+
+/* =====================================================
+   UNLOCK MESSAGE
+===================================================== */
+
+.unlock-message{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =====================================================
+   CHAPTER LIST
+===================================================== */
+
+.chapter-section{
+
+    margin-top:60px;
+}
+
+
+.chapter-list{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:12px;
+}
+
+
+.chapter-item{
+
+    background:#1e293b;
+
+    padding:
+        17px 20px;
+
+    border-radius:12px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+
+    border-left:
+        4px solid
+        #38bdf8;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    text-align:center;
+
+    color:#64748b;
+
+    padding:
+        40px 20px;
+
+    border-top:
+        1px solid
+        #1e293b;
+
+    margin-top:20px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1100px){
+
+    .mission-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+
+        padding:
+            18px 20px;
+
+    }
+
+
+    .logo{
+
+        font-size:25px;
+
+    }
+
+
+    .dashboard-btn{
+
+        padding:
+            11px 16px;
+
+        font-size:14px;
+
+    }
+
+
+    .container{
+
+        width:94%;
+
+        padding-top:22px;
+
+    }
+
+
+    .hero{
+
+        padding:
+            35px 20px;
+
+        min-height:300px;
+
+        border-radius:22px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:32px;
+
+        line-height:1.25;
+
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+
+    .section-title{
+
+        font-size:27px;
+
+    }
+
+
+    .mission-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .stats{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+
+    }
+
+
+    .stat-card{
+
+        min-height:120px;
+
+        padding:
+            20px 10px;
+
+    }
+
+
+    .stat-value{
+
+        font-size:32px;
+
+    }
+
+
+    .stat-label{
+
+        font-size:14px;
+
+    }
+
+
+    .category-card{
+
+        padding:25px;
+
+    }
+
+
+    .category-card h2{
+
+        font-size:26px;
+
+    }
+
+
+    .chapter-list{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:450px){
+
+    .header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+
+    .dashboard-btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
+    .hero h1{
+
+        font-size:27px;
+
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+
+    .stats{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .mission-card{
+
+        padding:22px;
+
+    }
+
+
+    .mission-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+    .mission-description{
+
+        min-height:auto;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+
+    <div class="logo">
+
+        EduSphere 🧪
+
+    </div>
+
+
+    <a
+        href="../index.html"
+        class="dashboard-btn">
+
+        ← Dashboard
+
+    </a>
+
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+    <h1>
+
+        🧮 10th Standard Mathematics Mission Hub
+
+    </h1>
+
+
+    <p>
+
+        Complete missions, pass quizzes,
+        earn XP, unlock badges and master
+        Mathematics.
+
+    </p>
+
+
+    <a
+        href="#missions"
+        class="start-learning">
+
+        🚀 Start Learning
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-value"
+            id="totalXP">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+
+            Total XP
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-value"
+            id="missionsCompleted">
+
+            0/8
+
+        </div>
+
+        <div class="stat-label">
+
+            Missions Completed
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-value">
+
+            0 🔥
+
+        </div>
+
+        <div class="stat-label">
+
+            Learning Streak
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-value"
+            id="badgesEarned">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+
+            Badges Earned
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORY
+===================================================== -->
+
+<section>
+
+
+    <h2 class="section-title">
+
+        📚 Mission Categories
+
+    </h2>
+
+
+    <div class="category-grid">
+
+
+        <div class="category-card">
+
+
+            <h2>
+
+                🧮 Mathematics
+
+            </h2>
+
+
+            <p>
+
+                Relations and Functions •
+                Numbers and Sequences •
+                Algebra • Geometry •
+                Coordinate Geometry •
+                Trigonometry • Mensuration •
+                Statistics and Probability
+
+            </p>
+
+
+            <div class="category-count">
+
+                8 Missions
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     MISSIONS
+===================================================== -->
+
+<section
+    class="mission-section"
+    id="missions">
+
+
+    <h2 class="section-title">
+
+        🧮 Mathematics Missions
+
+    </h2>
+
+
+    <div class="mission-grid">
+
+
+
+        <!-- =================================================
+             MISSION 1
+        ================================================== -->
+
+        <div
+            class="mission-card"
+            id="missionCard1">
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 01
+
+                </div>
+
+
+                <div class="difficulty beginner">
+
+                    🟢 Beginner
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Relations and Functions
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Relations, functions, domain,
+                range, types of functions and
+                graphical representation.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 80 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 35 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress1">
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="../maths/chapter1.html"
+                class="mission-btn"
+                id="button1">
+
+                ▶ Start Mission
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MISSION 2
+        ================================================== -->
+
+        <div
+            class="mission-card locked"
+            id="missionCard2">
+
+
+            <div class="lock-overlay">
+                🔒
+            </div>
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 02
+
+                </div>
+
+
+                <div class="difficulty intermediate">
+
+                    🟡 Intermediate
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Numbers and Sequences
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Numbers, sequences,
+                arithmetic progression,
+                geometric progression
+                and series.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 100 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 40 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress2">
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="unlock-message"
+                id="unlockMessage2">
+
+                🔒 Pass Chapter 1 with 60%
+                or more to unlock this mission.
+
+            </p>
+
+
+            <a
+                href="../maths/chapter2.html"
+                class="mission-btn locked-btn"
+                id="button2"
+                onclick="return checkChapterAccess(2)">
+
+                🔒 Locked
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MISSION 3
+        ================================================== -->
+
+        <div
+            class="mission-card locked"
+            id="missionCard3">
+
+
+            <div class="lock-overlay">
+                🔒
+            </div>
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 03
+
+                </div>
+
+
+                <div class="difficulty intermediate">
+
+                    🟡 Intermediate
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Algebra
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Polynomials, equations,
+                quadratic equations,
+                matrices and
+                algebraic applications.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 120 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 45 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress3">
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="unlock-message"
+                id="unlockMessage3">
+
+                🔒 Pass Chapter 2 with 60%
+                or more to unlock this mission.
+
+            </p>
+
+
+            <a
+                href="../maths/chapter3.html"
+                class="mission-btn locked-btn"
+                id="button3"
+                onclick="return checkChapterAccess(3)">
+
+                🔒 Locked
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MISSION 4
+        ================================================== -->
+
+        <div
+            class="mission-card locked"
+            id="missionCard4">
+
+
+            <div class="lock-overlay">
+                🔒
+            </div>
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 04
+
+                </div>
+
+
+                <div class="difficulty advanced">
+
+                    🔴 Advanced
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Geometry
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Similarity, Thales theorem,
+                angle bisector theorem,
+                Pythagoras theorem,
+                circles and tangents.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 150 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 50 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress4">
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="unlock-message"
+                id="unlockMessage4">
+
+                🔒 Pass Chapter 3 with 60%
+                or more to unlock this mission.
+
+            </p>
+
+
+            <a
+                href="../maths/chapter4.html"
+                class="mission-btn locked-btn"
+                id="button4"
+                onclick="return checkChapterAccess(4)">
+
+                🔒 Locked
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MISSION 5
+        ================================================== -->
+
+        <div
+            class="mission-card locked"
+            id="missionCard5">
+
+
+            <div class="lock-overlay">
+                🔒
+            </div>
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 05
+
+                </div>
+
+
+                <div class="difficulty beginner">
+
+                    🟢 Beginner
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Coordinate Geometry
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Coordinates, distance,
+                section formula, area,
+                slope and equations of
+                straight lines.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 100 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 45 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress5">
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="unlock-message"
+                id="unlockMessage5">
+
+                🔒 Pass Chapter 4 with 60%
+                or more to unlock this mission.
+
+            </p>
+
+
+            <a
+                href="../maths/chapter5.html"
+                class="mission-btn locked-btn"
+                id="button5"
+                onclick="return checkChapterAccess(5)">
+
+                🔒 Locked
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MISSION 6
+        ================================================== -->
+
+        <div
+            class="mission-card locked"
+            id="missionCard6">
+
+
+            <div class="lock-overlay">
+                🔒
+            </div>
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 06
+
+                </div>
+
+
+                <div class="difficulty advanced">
+
+                    🔴 Advanced
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Trigonometry
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Trigonometric ratios,
+                identities, heights and
+                distances, elevation and
+                depression.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 150 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 55 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress6">
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="unlock-message"
+                id="unlockMessage6">
+
+                🔒 Pass Chapter 5 with 60%
+                or more to unlock this mission.
+
+            </p>
+
+
+            <a
+                href="../maths/chapter6.html"
+                class="mission-btn locked-btn"
+                id="button6"
+                onclick="return checkChapterAccess(6)">
+
+                🔒 Locked
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MISSION 7
+        ================================================== -->
+
+        <div
+            class="mission-card locked"
+            id="missionCard7">
+
+
+            <div class="lock-overlay">
+                🔒
+            </div>
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 07
+
+                </div>
+
+
+                <div class="difficulty advanced">
+
+                    🔴 Advanced
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Mensuration
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Surface areas and volumes
+                of solids including cylinders,
+                cones, spheres and
+                combined solids.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 150 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 50 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress7">
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="unlock-message"
+                id="unlockMessage7">
+
+                🔒 Pass Chapter 6 with 60%
+                or more to unlock this mission.
+
+            </p>
+
+
+            <a
+                href="../maths/chapter7.html"
+                class="mission-btn locked-btn"
+                id="button7"
+                onclick="return checkChapterAccess(7)">
+
+                🔒 Locked
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MISSION 8
+        ================================================== -->
+
+        <div
+            class="mission-card locked"
+            id="missionCard8">
+
+
+            <div class="lock-overlay">
+                🔒
+            </div>
+
+
+            <div class="mission-top">
+
+                <div class="mission-number">
+
+                    🚀 Mission 08
+
+                </div>
+
+
+                <div class="difficulty expert">
+
+                    🔴 Expert
+
+                </div>
+
+            </div>
+
+
+            <h3>
+
+                Statistics and Probability
+
+            </h3>
+
+
+            <p class="mission-description">
+
+                Measures of dispersion,
+                coefficient of variation,
+                probability, events and
+                probability theorems.
+
+            </p>
+
+
+            <div class="mission-info">
+
+                <span class="xp-info">
+
+                    ⭐ 150 XP
+
+                </span>
+
+
+                <span class="time-info">
+
+                    ⏱ 55 mins
+
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progress8">
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="unlock-message"
+                id="unlockMessage8">
+
+                🔒 Pass Chapter 7 with 60%
+                or more to unlock this mission.
+
+            </p>
+
+
+            <a
+                href="../maths/chapter8.html"
+                class="mission-btn locked-btn"
+                id="button8"
+                onclick="return checkChapterAccess(8)">
+
+                🔒 Locked
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CHAPTER LIST
+===================================================== -->
+
+<section class="chapter-section">
+
+
+    <h2 class="section-title">
+
+        📖 Mathematics Chapters
+
+    </h2>
+
+
+    <div class="chapter-list">
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 1 – Relations and Functions
+
+        </div>
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 2 – Numbers and Sequences
+
+        </div>
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 3 – Algebra
+
+        </div>
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 4 – Geometry
+
+        </div>
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 5 – Coordinate Geometry
+
+        </div>
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 6 – Trigonometry
+
+        </div>
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 7 – Mensuration
+
+        </div>
+
+
+        <div class="chapter-item">
+
+            ✓ Chapter 8 – Statistics and Probability
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   CHAPTER DATA
+===================================================== */
+
+const chapters = [
+
+    {
+        id:1,
+        name:"Relations and Functions",
+        xp:80
+    },
+
+    {
+        id:2,
+        name:"Numbers and Sequences",
+        xp:100
+    },
+
+    {
+        id:3,
+        name:"Algebra",
+        xp:120
+    },
+
+    {
+        id:4,
+        name:"Geometry",
+        xp:150
+    },
+
+    {
+        id:5,
+        name:"Coordinate Geometry",
+        xp:100
+    },
+
+    {
+        id:6,
+        name:"Trigonometry",
+        xp:150
+    },
+
+    {
+        id:7,
+        name:"Mensuration",
+        xp:150
+    },
+
+    {
+        id:8,
+        name:"Statistics and Probability",
+        xp:150
+    }
+
+];
+
+
+/* =====================================================
+   CHECK IF CHAPTER WAS PASSED
+===================================================== */
+
+function isChapterPassed(chapterId){
+
+    const key =
+        "edusphere_10math_chapter_" +
+        chapterId;
+
+    const saved =
+        localStorage.getItem(key);
+
+
+    if(!saved){
+
+        return false;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(saved);
+
+
+        const percentage =
+            Number(
+                data.percentage
+            ) || 0;
+
+
+        return (
+            data.status === "PASSED" &&
+            percentage >= 60
+        );
+
+    }
+    catch(error){
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   CHECK CHAPTER ACCESS
+===================================================== */
+
+function checkChapterAccess(chapterId){
+
+    /*
+        Chapter 1 is always unlocked.
+    */
+
+    if(chapterId === 1){
+
+        return true;
+
+    }
+
+
+    /*
+        Every other chapter requires
+        the previous chapter to be passed.
+    */
+
+    const previousChapter =
+        chapterId - 1;
+
+
+    if(
+        isChapterPassed(
+            previousChapter
+        )
+    ){
+
+        return true;
+
+    }
+
+
+    alert(
+        "🔒 Chapter " +
+        previousChapter +
+        " must be passed with at least 60% before you can unlock Chapter " +
+        chapterId +
+        "."
+    );
+
+
+    return false;
+
+}
+
+
+/* =====================================================
+   UNLOCK CHAPTER
+===================================================== */
+
+function unlockChapter(chapterId){
+
+    const card =
+        document.getElementById(
+            "missionCard" +
+            chapterId
+        );
+
+
+    const button =
+        document.getElementById(
+            "button" +
+            chapterId
+        );
+
+
+    const message =
+        document.getElementById(
+            "unlockMessage" +
+            chapterId
+        );
+
+
+    if(!card || !button){
+
+        return;
+
+    }
+
+
+    card.classList.remove(
+        "locked"
+    );
+
+
+    const overlay =
+        card.querySelector(
+            ".lock-overlay"
+        );
+
+
+    if(overlay){
+
+        overlay.remove();
+
+    }
+
+
+    if(message){
+
+        message.innerHTML =
+            "✅ Mission unlocked! You can start this chapter.";
+
+        message.style.color =
+            "#4ade80";
+
+    }
+
+
+    button.classList.remove(
+        "locked-btn"
+    );
+
+
+    button.innerHTML =
+        "▶ Start Mission";
+
+
+    button.onclick =
+        null;
+
+}
+
+
+/* =====================================================
+   UPDATE ALL LOCKS
+===================================================== */
+
+function updateChapterLocks(){
+
+    /*
+        Chapter 1 is always unlocked.
+    */
+
+    unlockChapter(1);
+
+
+    /*
+        Chapters 2-8 unlock one by one.
+    */
+
+    for(
+        let chapterId = 2;
+        chapterId <= 8;
+        chapterId++
+    ){
+
+        const previousChapter =
+            chapterId - 1;
+
+
+        if(
+            isChapterPassed(
+                previousChapter
+            )
+        ){
+
+            unlockChapter(
+                chapterId
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD PROGRESS
+===================================================== */
+
+function loadProgress(){
+
+    let totalXP = 0;
+
+    let completed = 0;
+
+    let badges = 0;
+
+
+    chapters.forEach(
+        chapter => {
+
+            const key =
+                "edusphere_10math_chapter_" +
+                chapter.id;
+
+
+            const saved =
+                localStorage.getItem(key);
+
+
+            let percentage = 0;
+
+
+            if(saved){
+
+                try{
+
+                    const data =
+                        JSON.parse(saved);
+
+
+                    percentage =
+                        Number(
+                            data.percentage
+                        ) || 0;
+
+
+                    if(
+                        data.status ===
+                        "PASSED" &&
+                        percentage >= 60
+                    ){
+
+                        completed++;
+
+
+                        totalXP +=
+                            chapter.xp;
+
+
+                        badges++;
+
+                    }
+
+                }
+                catch(error){
+
+                    percentage = 0;
+
+                }
+
+            }
+
+
+            const progress =
+                document.getElementById(
+                    "progress" +
+                    chapter.id
+                );
+
+
+            if(progress){
+
+                progress.style.width =
+                    percentage +
+                    "%";
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "totalXP"
+    ).textContent =
+        totalXP;
+
+
+    document.getElementById(
+        "missionsCompleted"
+    ).textContent =
+        completed +
+        "/8";
+
+
+    document.getElementById(
+        "badgesEarned"
+    ).textContent =
+        badges;
+
+
+    /*
+        Important:
+        Update the locks AFTER
+        loading progress.
+    */
+
+    updateChapterLocks();
+
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadProgress();
+
+
+/* =====================================================
+   UPDATE WHEN RETURNING TO PAGE
+===================================================== */
+
+window.addEventListener(
+    "pageshow",
+    function(){
+
+        loadProgress();
+
+    }
+);
+
+
+/* =====================================================
+   UPDATE WHEN PAGE BECOMES VISIBLE AGAIN
+===================================================== */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(
+            document.visibilityState ===
+            "visible"
+        ){
+
+            loadProgress();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+
+
