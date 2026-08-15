@@ -5,14 +5,9 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-EduSphere | 10th Standard English Mission Hub
-</title>
+<title>EduSphere | 10th Standard English Mission Hub</title>
 
 <style>
 
@@ -45,7 +40,6 @@ body{
 
 .header{
     background:#111827;
-
     padding:22px 36px;
 
     display:flex;
@@ -57,9 +51,7 @@ body{
 
     z-index:1000;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.04);
+    border-bottom:1px solid rgba(255,255,255,.04);
 }
 
 
@@ -73,7 +65,6 @@ body{
 
 .dashboard-btn{
     text-decoration:none;
-
     color:white;
 
     background:
@@ -125,7 +116,6 @@ body{
 ===================================================== */
 
 .hero{
-
     min-height:290px;
 
     background:
@@ -138,11 +128,9 @@ body{
     border-radius:30px;
 
     display:flex;
-
     flex-direction:column;
 
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
@@ -158,18 +146,14 @@ body{
 
 
 .hero h1{
-
     font-size:48px;
-
     font-weight:800;
 
     margin-bottom:15px;
-
 }
 
 
 .hero p{
-
     font-size:20px;
 
     color:#e0f2fe;
@@ -177,12 +161,10 @@ body{
     max-width:850px;
 
     line-height:1.6;
-
 }
 
 
 .start-learning{
-
     margin-top:28px;
 
     text-decoration:none;
@@ -196,16 +178,13 @@ body{
     border-radius:16px;
 
     font-size:18px;
-
     font-weight:800;
 
     transition:.25s;
-
 }
 
 
 .start-learning:hover{
-
     transform:
         translateY(-3px)
         scale(1.02);
@@ -221,7 +200,6 @@ body{
 ===================================================== */
 
 .stats{
-
     display:grid;
 
     grid-template-columns:
@@ -234,7 +212,6 @@ body{
 
 
 .stat-card{
-
     background:#1e293b;
 
     border-radius:20px;
@@ -258,7 +235,6 @@ body{
 
 
 .stat-value{
-
     color:#38bdf8;
 
     font-size:42px;
@@ -270,7 +246,6 @@ body{
 
 
 .stat-label{
-
     color:#94a3b8;
 
     font-size:17px;
@@ -282,7 +257,6 @@ body{
 ===================================================== */
 
 .section-title{
-
     font-size:34px;
 
     font-weight:800;
@@ -299,17 +273,18 @@ body{
 ===================================================== */
 
 .category-grid{
-
     display:grid;
 
-    grid-template-columns:1fr;
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
 
     margin-bottom:55px;
 }
 
 
 .category-card{
-
     min-height:180px;
 
     padding:32px;
@@ -326,6 +301,39 @@ body{
     box-shadow:
         0 15px 35px
         rgba(37,99,235,.18);
+}
+
+
+.category-card:nth-child(2){
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f766e,
+            #0d9488
+        );
+}
+
+
+.category-card:nth-child(3){
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #6d28d9
+        );
+}
+
+
+.category-card:nth-child(4){
+
+    background:
+        linear-gradient(
+            135deg,
+            #b45309,
+            #d97706
+        );
 }
 
 
@@ -364,8 +372,14 @@ body{
 .mission-section{
 
     margin-top:10px;
+
+    margin-bottom:60px;
 }
 
+
+/* =====================================================
+   MISSION GRID
+===================================================== */
 
 .mission-grid{
 
@@ -423,8 +437,9 @@ body{
 
 .mission-card.locked{
 
-    opacity:.72;
+    opacity:.65;
 
+    filter:saturate(.55);
 }
 
 
@@ -435,17 +450,6 @@ body{
     box-shadow:
         0 10px 30px
         rgba(0,0,0,.15);
-}
-
-
-.lock-overlay{
-
-    position:absolute;
-
-    top:15px;
-    right:15px;
-
-    font-size:25px;
 }
 
 
@@ -530,9 +534,9 @@ body{
 
 .mission-card h3{
 
-    font-size:25px;
+    font-size:23px;
 
-    line-height:1.3;
+    line-height:1.35;
 
     margin-bottom:16px;
 }
@@ -581,12 +585,6 @@ body{
 }
 
 
-.time-info{
-
-    color:#e2e8f0;
-}
-
-
 /* =====================================================
    PROGRESS
 ===================================================== */
@@ -603,7 +601,7 @@ body{
 
     overflow:hidden;
 
-    margin-bottom:22px;
+    margin-bottom:10px;
 }
 
 
@@ -626,8 +624,22 @@ body{
 }
 
 
+.progress-text{
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-align:right;
+
+    margin-bottom:15px;
+}
+
+
 /* =====================================================
-   START MISSION
+   MISSION BUTTON
 ===================================================== */
 
 .mission-btn{
@@ -680,14 +692,18 @@ body{
 
 
 /* =====================================================
-   LOCKED BUTTON
+   LOCK BUTTON
 ===================================================== */
 
 .locked-btn{
 
-    background:#475569;
+    background:#334155;
+
+    color:#94a3b8;
 
     cursor:not-allowed;
+
+    box-shadow:none;
 }
 
 
@@ -700,23 +716,59 @@ body{
 
 
 /* =====================================================
-   UNLOCK MESSAGE
+   LOCK MESSAGE
 ===================================================== */
 
-.unlock-message{
+.lock-message{
 
-    color:#94a3b8;
+    margin-top:10px;
 
-    font-size:14px;
+    padding:9px 12px;
 
-    line-height:1.5;
+    border-radius:10px;
 
-    margin-bottom:15px;
+    background:#0f172a;
+
+    color:#fbbf24;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    line-height:1.4;
 }
 
 
 /* =====================================================
-   UNIT CONTENT
+   COMPLETED BADGE
+===================================================== */
+
+.completed-badge{
+
+    display:block;
+
+    margin-top:10px;
+
+    padding:7px 12px;
+
+    border-radius:20px;
+
+    background:#14532d;
+
+    color:#86efac;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    text-align:center;
+}
+
+
+/* =====================================================
+   CHAPTER LIST
 ===================================================== */
 
 .chapter-section{
@@ -753,7 +805,29 @@ body{
         4px solid
         #38bdf8;
 
-    line-height:1.6;
+    transition:.2s;
+}
+
+
+.chapter-item:hover{
+
+    background:#26364c;
+}
+
+
+.chapter-item.locked-list{
+
+    border-left-color:#475569;
+
+    color:#64748b;
+}
+
+
+.chapter-item.completed-list{
+
+    border-left-color:#22c55e;
+
+    color:#bbf7d0;
 }
 
 
@@ -788,7 +862,6 @@ body{
 
         grid-template-columns:
             repeat(2,1fr);
-
     }
 
 
@@ -796,14 +869,19 @@ body{
 
         grid-template-columns:
             repeat(2,1fr);
+    }
 
+
+    .category-grid{
+
+        grid-template-columns:
+            1fr;
     }
 
 
     .hero h1{
 
         font-size:42px;
-
     }
 
 }
@@ -819,14 +897,12 @@ body{
 
         padding:
             18px 20px;
-
     }
 
 
     .logo{
 
         font-size:25px;
-
     }
 
 
@@ -836,7 +912,6 @@ body{
             11px 16px;
 
         font-size:14px;
-
     }
 
 
@@ -845,7 +920,6 @@ body{
         width:94%;
 
         padding-top:22px;
-
     }
 
 
@@ -857,7 +931,6 @@ body{
         min-height:300px;
 
         border-radius:22px;
-
     }
 
 
@@ -866,21 +939,18 @@ body{
         font-size:32px;
 
         line-height:1.25;
-
     }
 
 
     .hero p{
 
         font-size:16px;
-
     }
 
 
     .section-title{
 
         font-size:27px;
-
     }
 
 
@@ -888,7 +958,6 @@ body{
 
         grid-template-columns:
             1fr;
-
     }
 
 
@@ -898,7 +967,6 @@ body{
             repeat(2,1fr);
 
         gap:12px;
-
     }
 
 
@@ -908,35 +976,30 @@ body{
 
         padding:
             20px 10px;
-
     }
 
 
     .stat-value{
 
         font-size:32px;
-
     }
 
 
     .stat-label{
 
         font-size:14px;
-
     }
 
 
     .category-card{
 
         padding:25px;
-
     }
 
 
     .category-card h2{
 
         font-size:26px;
-
     }
 
 
@@ -944,7 +1007,6 @@ body{
 
         grid-template-columns:
             1fr;
-
     }
 
 }
@@ -961,7 +1023,6 @@ body{
         flex-direction:column;
 
         gap:15px;
-
     }
 
 
@@ -970,36 +1031,24 @@ body{
         width:100%;
 
         text-align:center;
-
     }
 
 
     .hero h1{
 
         font-size:27px;
-
     }
 
 
     .hero p{
 
         font-size:14px;
-
-    }
-
-
-    .stats{
-
-        grid-template-columns:
-            1fr 1fr;
-
     }
 
 
     .mission-card{
 
         padding:22px;
-
     }
 
 
@@ -1008,14 +1057,12 @@ body{
         flex-direction:column;
 
         align-items:flex-start;
-
     }
 
 
     .mission-description{
 
         min-height:auto;
-
     }
 
 }
@@ -1036,13 +1083,13 @@ body{
 
     <div class="logo">
 
-        EduSphere 📚
+        EduSphere 🎓
 
     </div>
 
 
     <a
-        href="../index.html"
+        href="../login.html"
         class="dashboard-btn">
 
         ← Dashboard
@@ -1064,17 +1111,16 @@ body{
 
     <h1>
 
-        📚 10th Standard English Mission Hub
+        📘 10th Standard English Mission Hub
 
     </h1>
 
 
     <p>
 
-        Complete English missions, study prose,
-        poems and supplementary stories, pass
-        quizzes, earn XP, unlock badges and
-        master English.
+        Complete missions, pass quizzes,
+        earn XP, unlock badges and master
+        English.
 
     </p>
 
@@ -1140,7 +1186,9 @@ body{
 
     <div class="stat-card">
 
-        <div class="stat-value">
+        <div
+            class="stat-value"
+            id="learningStreak">
 
             0 🔥
 
@@ -1180,7 +1228,7 @@ body{
 
 
 <!-- =====================================================
-     CATEGORY
+     CATEGORIES
 ===================================================== -->
 
 <section>
@@ -1188,7 +1236,7 @@ body{
 
     <h2 class="section-title">
 
-        📚 Mission Categories
+        📚 English Mission Categories
 
     </h2>
 
@@ -1198,29 +1246,111 @@ body{
 
         <div class="category-card">
 
-
             <h2>
 
-                📖 English
+                📖 Prose
 
             </h2>
 
 
             <p>
 
-                Prose • Poetry • Supplementary
-                Reader • Grammar • Vocabulary •
-                Comprehension • Writing Skills
+                Study the prose lessons, understand
+                important ideas, characters, events,
+                vocabulary and answer questions.
 
             </p>
 
 
             <div class="category-count">
 
-                7 Unit Missions
+                Prose Lessons
 
             </div>
 
+        </div>
+
+
+
+        <div class="category-card">
+
+            <h2>
+
+                🎭 Poetry
+
+            </h2>
+
+
+            <p>
+
+                Explore poems, poetic devices,
+                themes, meanings, appreciation
+                and important questions.
+
+            </p>
+
+
+            <div class="category-count">
+
+                Poetry Lessons
+
+            </div>
+
+        </div>
+
+
+
+        <div class="category-card">
+
+            <h2>
+
+                📚 Supplementary
+
+            </h2>
+
+
+            <p>
+
+                Read supplementary stories and
+                practise comprehension, vocabulary
+                and important questions.
+
+            </p>
+
+
+            <div class="category-count">
+
+                Supplementary Lessons
+
+            </div>
+
+        </div>
+
+
+
+        <div class="category-card">
+
+            <h2>
+
+                ✍️ Grammar & Writing
+
+            </h2>
+
+
+            <p>
+
+                Practise grammar, vocabulary,
+                writing skills and examination
+                preparation.
+
+            </p>
+
+
+            <div class="category-count">
+
+                Grammar & Writing Practice
+
+            </div>
 
         </div>
 
@@ -1243,723 +1373,14 @@ body{
 
     <h2 class="section-title">
 
-        📚 English Missions
+        📘 English Missions
 
     </h2>
 
 
-    <div class="mission-grid">
-
-
-
-        <!-- =================================================
-             MISSION 1
-        ================================================== -->
-
-        <div
-            class="mission-card"
-            id="missionCard1">
-
-
-            <div class="mission-top">
-
-                <div class="mission-number">
-
-                    🚀 Mission 01
-
-                </div>
-
-
-                <div class="difficulty beginner">
-
-                    🟢 Beginner
-
-                </div>
-
-            </div>
-
-
-            <h3>
-
-                Unit 1 – His First Flight
-
-            </h3>
-
-
-            <p class="mission-description">
-
-                Prose: His First Flight •
-                Poem: Life •
-                Supplementary: The Tempest
-
-            </p>
-
-
-            <div class="mission-info">
-
-                <span class="xp-info">
-
-                    ⭐ 80 XP
-
-                </span>
-
-
-                <span class="time-info">
-
-                    ⏱ 35 mins
-
-                </span>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="progress1">
-
-                </div>
-
-            </div>
-
-
-            <a
-                href="../english/unit1.html"
-                class="mission-btn"
-                id="button1">
-
-                ▶ Start Mission
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             MISSION 2
-        ================================================== -->
-
-        <div
-            class="mission-card locked"
-            id="missionCard2">
-
-
-            <div class="lock-overlay">
-
-                🔒
-
-            </div>
-
-
-            <div class="mission-top">
-
-                <div class="mission-number">
-
-                    🚀 Mission 02
-
-                </div>
-
-
-                <div class="difficulty beginner">
-
-                    🟢 Beginner
-
-                </div>
-
-            </div>
-
-
-            <h3>
-
-                Unit 2 – The Night the Ghost Got in
-
-            </h3>
-
-
-            <p class="mission-description">
-
-                Prose: The Night the Ghost Got in •
-                Poem: The Grumble Family •
-                Supplementary: Zigzag
-
-            </p>
-
-
-            <div class="mission-info">
-
-                <span class="xp-info">
-
-                    ⭐ 100 XP
-
-                </span>
-
-
-                <span class="time-info">
-
-                    ⏱ 40 mins
-
-                </span>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="progress2">
-
-                </div>
-
-            </div>
-
-
-            <p
-                class="unlock-message"
-                id="unlockMessage2">
-
-                🔒 Pass Unit 1 with 60%
-                or more to unlock this mission.
-
-            </p>
-
-
-            <a
-                href="../english/unit2.html"
-                class="mission-btn locked-btn"
-                id="button2"
-                onclick="return checkChapterAccess(2)">
-
-                🔒 Locked
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             MISSION 3
-        ================================================== -->
-
-        <div
-            class="mission-card locked"
-            id="missionCard3">
-
-
-            <div class="lock-overlay">
-
-                🔒
-
-            </div>
-
-
-            <div class="mission-top">
-
-                <div class="mission-number">
-
-                    🚀 Mission 03
-
-                </div>
-
-
-                <div class="difficulty intermediate">
-
-                    🟡 Intermediate
-
-                </div>
-
-            </div>
-
-
-            <h3>
-
-                Unit 3 – Empowered Women
-
-            </h3>
-
-
-            <p class="mission-description">
-
-                Prose: Empowered Women Navigating The World •
-                Poem: I am Every Woman •
-                Supplementary: The Story of Mulan
-
-            </p>
-
-
-            <div class="mission-info">
-
-                <span class="xp-info">
-
-                    ⭐ 120 XP
-
-                </span>
-
-
-                <span class="time-info">
-
-                    ⏱ 45 mins
-
-                </span>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="progress3">
-
-                </div>
-
-            </div>
-
-
-            <p
-                class="unlock-message"
-                id="unlockMessage3">
-
-                🔒 Pass Unit 2 with 60%
-                or more to unlock this mission.
-
-            </p>
-
-
-            <a
-                href="../english/unit3.html"
-                class="mission-btn locked-btn"
-                id="button3"
-                onclick="return checkChapterAccess(3)">
-
-                🔒 Locked
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             MISSION 4
-        ================================================== -->
-
-        <div
-            class="mission-card locked"
-            id="missionCard4">
-
-
-            <div class="lock-overlay">
-
-                🔒
-
-            </div>
-
-
-            <div class="mission-top">
-
-                <div class="mission-number">
-
-                    🚀 Mission 04
-
-                </div>
-
-
-                <div class="difficulty intermediate">
-
-                    🟡 Intermediate
-
-                </div>
-
-            </div>
-
-
-            <h3>
-
-                Unit 4 – The Attic
-
-            </h3>
-
-
-            <p class="mission-description">
-
-                Prose: The Attic •
-                Poem: The Ant and the Cricket •
-                Supplementary: The Aged Mother
-
-            </p>
-
-
-            <div class="mission-info">
-
-                <span class="xp-info">
-
-                    ⭐ 140 XP
-
-                </span>
-
-
-                <span class="time-info">
-
-                    ⏱ 50 mins
-
-                </span>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="progress4">
-
-                </div>
-
-            </div>
-
-
-            <p
-                class="unlock-message"
-                id="unlockMessage4">
-
-                🔒 Pass Unit 3 with 60%
-                or more to unlock this mission.
-
-            </p>
-
-
-            <a
-                href="../english/unit4.html"
-                class="mission-btn locked-btn"
-                id="button4"
-                onclick="return checkChapterAccess(4)">
-
-                🔒 Locked
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             MISSION 5
-        ================================================== -->
-
-        <div
-            class="mission-card locked"
-            id="missionCard5">
-
-
-            <div class="lock-overlay">
-
-                🔒
-
-            </div>
-
-
-            <div class="mission-top">
-
-                <div class="mission-number">
-
-                    🚀 Mission 05
-
-                </div>
-
-
-                <div class="difficulty advanced">
-
-                    🔴 Advanced
-
-                </div>
-
-            </div>
-
-
-            <h3>
-
-                Unit 5 – Tech Bloomers
-
-            </h3>
-
-
-            <p class="mission-description">
-
-                Prose: Tech Bloomers •
-                Poem: The Secret of the Machines •
-                Supplementary: A day in 2889 of an American Journalist
-
-            </p>
-
-
-            <div class="mission-info">
-
-                <span class="xp-info">
-
-                    ⭐ 150 XP
-
-                </span>
-
-
-                <span class="time-info">
-
-                    ⏱ 50 mins
-
-                </span>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="progress5">
-
-                </div>
-
-            </div>
-
-
-            <p
-                class="unlock-message"
-                id="unlockMessage5">
-
-                🔒 Pass Unit 4 with 60%
-                or more to unlock this mission.
-
-            </p>
-
-
-            <a
-                href="../english/unit5.html"
-                class="mission-btn locked-btn"
-                id="button5"
-                onclick="return checkChapterAccess(5)">
-
-                🔒 Locked
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             MISSION 6
-        ================================================== -->
-
-        <div
-            class="mission-card locked"
-            id="missionCard6">
-
-
-            <div class="lock-overlay">
-
-                🔒
-
-            </div>
-
-
-            <div class="mission-top">
-
-                <div class="mission-number">
-
-                    🚀 Mission 06
-
-                </div>
-
-
-                <div class="difficulty advanced">
-
-                    🔴 Advanced
-
-                </div>
-
-            </div>
-
-
-            <h3>
-
-                Unit 6 – The Last Lesson
-
-            </h3>
-
-
-            <p class="mission-description">
-
-                Prose: The Last Lesson •
-                Poem: No Men Are Foreign •
-                Supplementary: The Little Hero of Holland
-
-            </p>
-
-
-            <div class="mission-info">
-
-                <span class="xp-info">
-
-                    ⭐ 150 XP
-
-                </span>
-
-
-                <span class="time-info">
-
-                    ⏱ 55 mins
-
-                </span>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="progress6">
-
-                </div>
-
-            </div>
-
-
-            <p
-                class="unlock-message"
-                id="unlockMessage6">
-
-                🔒 Pass Unit 5 with 60%
-                or more to unlock this mission.
-
-            </p>
-
-
-            <a
-                href="../english/unit6.html"
-                class="mission-btn locked-btn"
-                id="button6"
-                onclick="return checkChapterAccess(6)">
-
-                🔒 Locked
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             MISSION 7
-        ================================================== -->
-
-        <div
-            class="mission-card locked"
-            id="missionCard7">
-
-
-            <div class="lock-overlay">
-
-                🔒
-
-            </div>
-
-
-            <div class="mission-top">
-
-                <div class="mission-number">
-
-                    🚀 Mission 07
-
-                </div>
-
-
-                <div class="difficulty expert">
-
-                    🔴 Expert
-
-                </div>
-
-            </div>
-
-
-            <h3>
-
-                Unit 7 – The Dying Detective
-
-            </h3>
-
-
-            <p class="mission-description">
-
-                Prose: The Dying Detective •
-                Poem: The House on Elm Street •
-                Supplementary: A Dilemma
-
-            </p>
-
-
-            <div class="mission-info">
-
-                <span class="xp-info">
-
-                    ⭐ 180 XP
-
-                </span>
-
-
-                <span class="time-info">
-
-                    ⏱ 60 mins
-
-                </span>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div
-                    class="progress-bar"
-                    id="progress7">
-
-                </div>
-
-            </div>
-
-
-            <p
-                class="unlock-message"
-                id="unlockMessage7">
-
-                🔒 Pass Unit 6 with 60%
-                or more to unlock this mission.
-
-            </p>
-
-
-            <a
-                href="../english/unit7.html"
-                class="mission-btn locked-btn"
-                id="button7"
-                onclick="return checkChapterAccess(7)">
-
-                🔒 Locked
-
-            </a>
-
-
-        </div>
-
+    <div
+        class="mission-grid"
+        id="englishMissionGrid">
 
     </div>
 
@@ -1969,7 +1390,7 @@ body{
 
 
 <!-- =====================================================
-     UNIT LIST
+     CHAPTER LIST
 ===================================================== -->
 
 <section class="chapter-section">
@@ -1982,66 +1403,9 @@ body{
     </h2>
 
 
-    <div class="chapter-list">
-
-
-        <div class="chapter-item">
-
-            ✓ Unit 1 – His First Flight |
-            Life | The Tempest
-
-        </div>
-
-
-        <div class="chapter-item">
-
-            ✓ Unit 2 – The Night the Ghost Got in |
-            The Grumble Family | Zigzag
-
-        </div>
-
-
-        <div class="chapter-item">
-
-            ✓ Unit 3 – Empowered Women Navigating The World |
-            I am Every Woman | The Story of Mulan
-
-        </div>
-
-
-        <div class="chapter-item">
-
-            ✓ Unit 4 – The Attic |
-            The Ant and the Cricket | The Aged Mother
-
-        </div>
-
-
-        <div class="chapter-item">
-
-            ✓ Unit 5 – Tech Bloomers |
-            The Secret of the Machines |
-            A day in 2889 of an American Journalist
-
-        </div>
-
-
-        <div class="chapter-item">
-
-            ✓ Unit 6 – The Last Lesson |
-            No Men Are Foreign |
-            The Little Hero of Holland
-
-        </div>
-
-
-        <div class="chapter-item">
-
-            ✓ Unit 7 – The Dying Detective |
-            The House on Elm Street | A Dilemma
-
-        </div>
-
+    <div
+        class="chapter-list"
+        id="chapterList">
 
     </div>
 
@@ -2067,74 +1431,311 @@ body{
 
 <script>
 
-/* =====================================================
-   UNIT DATA
-===================================================== */
+/*
+=========================================================
+                 IMPORTANT SETTINGS
+=========================================================
+
+60% OR MORE = PASSED
+
+Your quiz gave you 73%.
+
+Therefore:
+
+73 >= 60
+
+So Unit 1 MUST be completed
+and Unit 2 MUST unlock.
+
+=========================================================
+*/
+
+const PASS_PERCENTAGE = 60;
+
+
+/*
+=========================================================
+CHAPTER DATA
+=========================================================
+*/
 
 const chapters = [
 
     {
         id:1,
-        name:"His First Flight",
-        xp:80
+        subject:"English",
+        name:"Unit 1",
+
+        description:
+            "Study Unit 1 English lessons, prose, poetry, supplementary content, grammar and important questions.",
+
+        xp:100,
+        time:"45 mins",
+
+        difficulty:"Beginner",
+        difficultyClass:"beginner"
     },
+
 
     {
         id:2,
-        name:"The Night the Ghost Got in",
-        xp:100
+        subject:"English",
+        name:"Unit 2",
+
+        description:
+            "Study Unit 2 lessons, vocabulary, grammar, poetry, supplementary content and examination questions.",
+
+        xp:110,
+        time:"45 mins",
+
+        difficulty:"Beginner",
+        difficultyClass:"beginner"
     },
+
 
     {
         id:3,
-        name:"Empowered Women Navigating The World",
-        xp:120
+        subject:"English",
+        name:"Unit 3",
+
+        description:
+            "Explore Unit 3 prose, poetry, supplementary lessons, grammar and writing practice.",
+
+        xp:120,
+        time:"50 mins",
+
+        difficulty:"Intermediate",
+        difficultyClass:"intermediate"
     },
+
 
     {
         id:4,
-        name:"The Attic",
-        xp:140
+        subject:"English",
+        name:"Unit 4",
+
+        description:
+            "Master Unit 4 lessons, literary concepts, vocabulary, grammar and important questions.",
+
+        xp:130,
+        time:"50 mins",
+
+        difficulty:"Intermediate",
+        difficultyClass:"intermediate"
     },
+
 
     {
         id:5,
-        name:"Tech Bloomers",
-        xp:150
+        subject:"English",
+        name:"Unit 5",
+
+        description:
+            "Learn Unit 5 prose, poetry, supplementary content, grammar and writing skills.",
+
+        xp:140,
+        time:"50 mins",
+
+        difficulty:"Advanced",
+        difficultyClass:"advanced"
     },
+
 
     {
         id:6,
-        name:"The Last Lesson",
-        xp:150
+        subject:"English",
+        name:"Unit 6",
+
+        description:
+            "Complete Unit 6 lessons and practise grammar, vocabulary, poetry and examination questions.",
+
+        xp:150,
+        time:"55 mins",
+
+        difficulty:"Advanced",
+        difficultyClass:"advanced"
     },
+
 
     {
         id:7,
-        name:"The Dying Detective",
-        xp:180
+        subject:"English",
+        name:"Unit 7",
+
+        description:
+            "Complete the final English mission with lessons, poetry, supplementary content and examination practice.",
+
+        xp:170,
+        time:"60 mins",
+
+        difficulty:"Expert",
+        difficultyClass:"expert"
     }
 
 ];
 
 
-/* =====================================================
-   CHECK IF UNIT WAS PASSED
-===================================================== */
+/*
+=========================================================
+ENGLISH UNLOCK ORDER
+=========================================================
 
-function isChapterPassed(chapterId){
+Unit 1
+   ↓
+Unit 2
+   ↓
+Unit 3
+   ↓
+Unit 4
+   ↓
+Unit 5
+   ↓
+Unit 6
+   ↓
+Unit 7
 
-    const key =
-        "edusphere_10english_unit_" +
-        chapterId;
+=========================================================
+*/
 
-    const saved =
-        localStorage.getItem(key);
+const subjectGroups = {
 
+    English:[
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+    ]
+
+};
+
+
+/*
+=========================================================
+ALL POSSIBLE STORAGE KEYS
+=========================================================
+
+The important one from your quiz is:
+
+edusphere_english_unit1
+
+The old hub was checking:
+
+edusphere_10english_chapter_1
+
+This code checks BOTH.
+
+=========================================================
+*/
+
+function getStorageKeys(id){
+
+    return [
+
+        "edusphere_english_unit" + id,
+
+        "edusphere_10english_chapter_" + id,
+
+        "edusphere_10english_unit_" + id,
+
+        "edusphere_10english_unit" + id
+
+    ];
+
+}
+
+
+/*
+=========================================================
+READ NUMBER SAFELY
+=========================================================
+*/
+
+function convertToNumber(value){
+
+    if(value === undefined || value === null){
+
+        return NaN;
+
+    }
+
+
+    let text =
+        String(value)
+        .trim()
+        .replace("%","");
+
+
+    return parseFloat(text);
+
+}
+
+
+/*
+=========================================================
+GET CHAPTER PROGRESS
+=========================================================
+*/
+
+function getChapterProgress(id){
+
+    const keys =
+        getStorageKeys(id);
+
+
+    let saved = null;
+
+    let foundKey = null;
+
+
+    /*
+    Search every possible key.
+    */
+
+    for(
+        let i = 0;
+        i < keys.length;
+        i++
+    ){
+
+        const value =
+            localStorage.getItem(
+                keys[i]
+            );
+
+
+        if(value){
+
+            saved = value;
+
+            foundKey = keys[i];
+
+            break;
+
+        }
+
+    }
+
+
+    /*
+    No result found.
+    */
 
     if(!saved){
 
-        return false;
+        return {
+
+            percentage:0,
+
+            status:"NOT_ATTEMPTED",
+
+            score:0,
+
+            total:0
+
+        };
 
     }
 
@@ -2145,38 +1746,309 @@ function isChapterPassed(chapterId){
             JSON.parse(saved);
 
 
-        const percentage =
-            Number(
-                data.percentage
-            ) || 0;
+        let percentage =
+            NaN;
 
 
-        return (
-            data.status === "PASSED" &&
-            percentage >= 60
+        /*
+        =================================================
+        FIRST:
+        Try percentage.
+        =================================================
+        */
+
+        if(
+            data.percentage !== undefined
+        ){
+
+            percentage =
+                convertToNumber(
+                    data.percentage
+                );
+
+        }
+
+
+        /*
+        =================================================
+        SECOND:
+        Try score / total.
+        =================================================
+        */
+
+        if(
+
+            !Number.isFinite(
+                percentage
+            )
+
+            &&
+
+            data.score !== undefined
+
+            &&
+
+            data.total !== undefined
+
+        ){
+
+            const score =
+                convertToNumber(
+                    data.score
+                );
+
+
+            const total =
+                convertToNumber(
+                    data.total
+                );
+
+
+            if(
+
+                Number.isFinite(score)
+
+                &&
+
+                Number.isFinite(total)
+
+                &&
+
+                total > 0
+
+            ){
+
+                percentage =
+                    (
+                        score /
+                        total
+                    ) * 100;
+
+            }
+
+        }
+
+
+        /*
+        =================================================
+        NO VALID PERCENTAGE
+        =================================================
+        */
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage = 0;
+
+        }
+
+
+        /*
+        Keep between 0 and 100.
+        */
+
+        percentage =
+            Math.max(
+                0,
+                Math.min(
+                    100,
+                    percentage
+                )
+            );
+
+
+        /*
+        =================================================
+        PASSING RULE
+        =================================================
+        */
+
+        let status =
+            String(
+                data.status || ""
+            ).toUpperCase();
+
+
+        if(
+            percentage >=
+            PASS_PERCENTAGE
+        ){
+
+            status =
+                "PASSED";
+
+        }
+
+        else{
+
+            status =
+                "FAILED";
+
+        }
+
+
+        /*
+        =================================================
+        SAVE NORMALIZED RESULT
+        =================================================
+
+        This copies your old result into the key used
+        by the new system.
+
+        =================================================
+        */
+
+        const normalizedData = {
+
+            ...data,
+
+            percentage:
+                Math.round(
+                    percentage
+                ),
+
+            status:
+                status
+
+        };
+
+
+        localStorage.setItem(
+
+            "edusphere_10english_chapter_" + id,
+
+            JSON.stringify(
+                normalizedData
+            )
+
         );
 
+
+        return {
+
+            percentage:
+                Math.round(
+                    percentage
+                ),
+
+            status:
+                status,
+
+            score:
+                data.score || 0,
+
+            total:
+                data.total || 0,
+
+            sourceKey:
+                foundKey
+
+        };
+
     }
+
+
     catch(error){
+
+        console.error(
+            "EduSphere progress error:",
+            error
+        );
+
+
+        return {
+
+            percentage:0,
+
+            status:"NOT_ATTEMPTED",
+
+            score:0,
+
+            total:0
+
+        };
+
+    }
+
+}
+
+
+/*
+=========================================================
+IS CHAPTER PASSED
+=========================================================
+*/
+
+function isChapterPassed(id){
+
+    const progress =
+        getChapterProgress(id);
+
+
+    return (
+
+        progress.percentage >=
+        PASS_PERCENTAGE
+
+    );
+
+}
+
+
+/*
+=========================================================
+IS CHAPTER UNLOCKED
+=========================================================
+*/
+
+function isChapterUnlocked(id){
+
+    /*
+    Unit 1 is always unlocked.
+    */
+
+    if(id === 1){
+
+        return true;
+
+    }
+
+
+    const current =
+        chapters.find(
+            chapter =>
+                chapter.id === id
+        );
+
+
+    if(!current){
 
         return false;
 
     }
 
-}
+
+    const group =
+        subjectGroups[
+            current.subject
+        ];
 
 
-/* =====================================================
-   CHECK UNIT ACCESS
-===================================================== */
+    if(!group){
 
-function checkChapterAccess(chapterId){
+        return false;
 
-    /*
-        Unit 1 is always unlocked.
-    */
+    }
 
-    if(chapterId === 1){
+
+    const index =
+        group.indexOf(id);
+
+
+    if(index <= 0){
 
         return true;
 
@@ -2184,166 +2056,586 @@ function checkChapterAccess(chapterId){
 
 
     /*
-        Every other unit requires
-        the previous unit to be passed.
+    Previous Unit.
     */
 
-    const previousChapter =
-        chapterId - 1;
+    const previousId =
+        group[
+            index - 1
+        ];
 
 
-    if(
-        isChapterPassed(
-            previousChapter
-        )
-    ){
+    /*
+    Previous Unit MUST have 60%.
+    */
 
-        return true;
-
-    }
-
-
-    alert(
-        "🔒 Unit " +
-        previousChapter +
-        " must be passed with at least 60% before you can unlock Unit " +
-        chapterId +
-        "."
+    return isChapterPassed(
+        previousId
     );
 
+}
 
-    return false;
+
+/*
+=========================================================
+GET PREVIOUS UNIT
+=========================================================
+*/
+
+function getPreviousChapterId(id){
+
+    if(id <= 1){
+
+        return null;
+
+    }
+
+
+    return id - 1;
 
 }
 
 
-/* =====================================================
-   UNLOCK UNIT
-===================================================== */
+/*
+=========================================================
+RENDER MISSION CARDS
+=========================================================
+*/
 
-function unlockChapter(chapterId){
+function renderMissions(){
 
-    const card =
+    const grid =
         document.getElementById(
-            "missionCard" +
-            chapterId
+            "englishMissionGrid"
         );
 
 
-    const button =
-        document.getElementById(
-            "button" +
-            chapterId
-        );
-
-
-    const message =
-        document.getElementById(
-            "unlockMessage" +
-            chapterId
-        );
-
-
-    if(!card || !button){
+    if(!grid){
 
         return;
 
     }
 
 
-    card.classList.remove(
-        "locked"
-    );
+    grid.innerHTML = "";
 
 
-    const overlay =
-        card.querySelector(
-            ".lock-overlay"
-        );
+    chapters.forEach(
+        chapter => {
 
 
-    if(overlay){
-
-        overlay.remove();
-
-    }
-
-
-    if(message){
-
-        message.innerHTML =
-            "✅ Mission unlocked! You can start this unit.";
-
-        message.style.color =
-            "#4ade80";
-
-    }
+            const progress =
+                getChapterProgress(
+                    chapter.id
+                );
 
 
-    button.classList.remove(
-        "locked-btn"
-    );
+            const unlocked =
+                isChapterUnlocked(
+                    chapter.id
+                );
 
 
-    button.innerHTML =
-        "▶ Start Mission";
+            const passed =
+                isChapterPassed(
+                    chapter.id
+                );
 
 
-    button.onclick =
-        null;
-
-}
-
-
-/* =====================================================
-   UPDATE ALL LOCKS
-===================================================== */
-
-function updateChapterLocks(){
-
-    /*
-        Unit 1 is always unlocked.
-    */
-
-    unlockChapter(1);
+            const card =
+                document.createElement(
+                    "div"
+                );
 
 
-    /*
-        Units 2-7 unlock one by one.
-    */
+            card.className =
+                "mission-card" +
 
-    for(
-        let chapterId = 2;
-        chapterId <= 7;
-        chapterId++
-    ){
+                (
 
-        const previousChapter =
-            chapterId - 1;
+                    unlocked
+
+                    ?
+
+                    ""
+
+                    :
+
+                    " locked"
+
+                );
 
 
-        if(
-            isChapterPassed(
-                previousChapter
-            )
-        ){
+            /*
+            Difficulty icon.
+            */
 
-            unlockChapter(
-                chapterId
+            let difficultyIcon =
+                "🔴";
+
+
+            if(
+                chapter.difficultyClass ===
+                "beginner"
+            ){
+
+                difficultyIcon =
+                    "🟢";
+
+            }
+
+            else if(
+                chapter.difficultyClass ===
+                "intermediate"
+            ){
+
+                difficultyIcon =
+                    "🟡";
+
+            }
+
+
+            /*
+            =================================================
+            BUTTON
+            =================================================
+            */
+
+            let buttonHTML = "";
+
+
+            if(unlocked){
+
+                buttonHTML = `
+
+                    <a
+
+                        href="../english/chapter${chapter.id}.html"
+
+                        class="mission-btn"
+
+                    >
+
+                        ${
+                            passed
+
+                            ?
+
+                            "🔄 Open Mission"
+
+                            :
+
+                            "▶ Start Mission"
+                        }
+
+                    </a>
+
+                `;
+
+            }
+
+
+            else{
+
+                const previousId =
+                    getPreviousChapterId(
+                        chapter.id
+                    );
+
+
+                buttonHTML = `
+
+                    <a
+
+                        href="#"
+
+                        class="mission-btn locked-btn"
+
+                        onclick="
+                            lockedMission(
+                                ${chapter.id}
+                            );
+                            return false;
+                        "
+
+                    >
+
+                        🔒 Locked
+
+                    </a>
+
+
+                    <div
+                        class="lock-message"
+                    >
+
+                        🔒 Complete English
+                        Unit ${previousId}
+                        with at least
+                        ${PASS_PERCENTAGE}%
+                        to unlock this unit.
+
+                    </div>
+
+                `;
+
+            }
+
+
+            /*
+            =================================================
+            COMPLETED BADGE
+            =================================================
+            */
+
+            let completedHTML = "";
+
+
+            if(passed){
+
+                completedHTML = `
+
+                    <div
+                        class="completed-badge"
+                    >
+
+                        ✅ Completed
+                        (${progress.percentage}%)
+
+                    </div>
+
+                `;
+
+            }
+
+
+            /*
+            =================================================
+            CARD
+            =================================================
+            */
+
+            card.innerHTML = `
+
+                <div class="mission-top">
+
+
+                    <div
+                        class="mission-number"
+                    >
+
+                        🚀 Mission
+
+                        ${
+                            String(
+                                chapter.id
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            )
+                        }
+
+                    </div>
+
+
+                    <div
+                        class="
+                            difficulty
+                            ${chapter.difficultyClass}
+                        "
+                    >
+
+                        ${difficultyIcon}
+
+                        ${chapter.difficulty}
+
+                    </div>
+
+
+                </div>
+
+
+                <h3>
+
+                    ${chapter.name}
+
+                </h3>
+
+
+                <p
+                    class="mission-description"
+                >
+
+                    ${chapter.description}
+
+                </p>
+
+
+                <div
+                    class="mission-info"
+                >
+
+
+                    <span
+                        class="xp-info"
+                    >
+
+                        ⭐ ${chapter.xp} XP
+
+                    </span>
+
+
+                    <span>
+
+                        ⏱ ${chapter.time}
+
+                    </span>
+
+
+                </div>
+
+
+                <div
+                    class="progress-container"
+                >
+
+                    <div
+
+                        class="progress-bar"
+
+                        style="
+                            width:
+                            ${progress.percentage}%;
+                        "
+
+                    >
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="progress-text"
+                >
+
+                    Progress:
+                    ${progress.percentage}%
+
+                </div>
+
+
+                ${buttonHTML}
+
+
+                ${completedHTML}
+
+            `;
+
+
+            grid.appendChild(
+                card
             );
 
         }
-
-    }
+    );
 
 }
 
 
-/* =====================================================
-   LOAD PROGRESS
-===================================================== */
+/*
+=========================================================
+LOCKED MISSION MESSAGE
+=========================================================
+*/
 
-function loadProgress(){
+function lockedMission(id){
+
+    const previousId =
+        getPreviousChapterId(
+            id
+        );
+
+
+    alert(
+
+        "🔒 English Unit " +
+
+        id +
+
+        " is locked.\n\n" +
+
+        "Complete English Unit " +
+
+        previousId +
+
+        " with at least " +
+
+        PASS_PERCENTAGE +
+
+        "% first."
+
+    );
+
+}
+
+
+/*
+=========================================================
+CHAPTER LIST
+=========================================================
+*/
+
+function renderChapterList(){
+
+    const list =
+        document.getElementById(
+            "chapterList"
+        );
+
+
+    if(!list){
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    chapters.forEach(
+        chapter => {
+
+
+            const progress =
+                getChapterProgress(
+                    chapter.id
+                );
+
+
+            const unlocked =
+                isChapterUnlocked(
+                    chapter.id
+                );
+
+
+            const passed =
+                isChapterPassed(
+                    chapter.id
+                );
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            /*
+            COMPLETED
+            */
+
+            if(passed){
+
+                item.className =
+                    "chapter-item completed-list";
+
+
+                item.innerHTML = `
+
+                    ✓ ${chapter.name}
+
+
+                    <strong
+
+                        style="
+                            float:right;
+                            color:#86efac;
+                        "
+
+                    >
+
+                        ${progress.percentage}%
+                        Completed
+
+                    </strong>
+
+                `;
+
+            }
+
+
+            /*
+            UNLOCKED
+            */
+
+            else if(unlocked){
+
+                item.className =
+                    "chapter-item";
+
+
+                item.innerHTML = `
+
+                    🔓 ${chapter.name}
+
+
+                    <strong
+
+                        style="
+                            float:right;
+                            color:#38bdf8;
+                        "
+
+                    >
+
+                        ${progress.percentage}%
+
+                    </strong>
+
+                `;
+
+            }
+
+
+            /*
+            LOCKED
+            */
+
+            else{
+
+                item.className =
+                    "chapter-item locked-list";
+
+
+                item.innerHTML = `
+
+                    🔒 ${chapter.name}
+
+                `;
+
+            }
+
+
+            list.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/*
+=========================================================
+CALCULATE STATS
+=========================================================
+*/
+
+function calculateStats(){
 
     let totalXP = 0;
 
@@ -2355,71 +2647,21 @@ function loadProgress(){
     chapters.forEach(
         chapter => {
 
-            const key =
-                "edusphere_10english_unit_" +
-                chapter.id;
 
-
-            const saved =
-                localStorage.getItem(key);
-
-
-            let percentage = 0;
-
-
-            if(saved){
-
-                try{
-
-                    const data =
-                        JSON.parse(saved);
-
-
-                    percentage =
-                        Number(
-                            data.percentage
-                        ) || 0;
-
-
-                    if(
-                        data.status ===
-                        "PASSED" &&
-                        percentage >= 60
-                    ){
-
-                        completed++;
-
-
-                        totalXP +=
-                            chapter.xp;
-
-
-                        badges++;
-
-                    }
-
-                }
-                catch(error){
-
-                    percentage = 0;
-
-                }
-
-            }
-
-
-            const progress =
-                document.getElementById(
-                    "progress" +
+            if(
+                isChapterPassed(
                     chapter.id
-                );
+                )
+            ){
+
+                completed++;
 
 
-            if(progress){
+                totalXP +=
+                    chapter.xp;
 
-                progress.style.width =
-                    percentage +
-                    "%";
+
+                badges++;
 
             }
 
@@ -2427,45 +2669,201 @@ function loadProgress(){
     );
 
 
-    document.getElementById(
-        "totalXP"
-    ).textContent =
-        totalXP;
+    const xpElement =
+        document.getElementById(
+            "totalXP"
+        );
 
 
-    document.getElementById(
-        "missionsCompleted"
-    ).textContent =
-        completed +
-        "/7";
+    const completedElement =
+        document.getElementById(
+            "missionsCompleted"
+        );
 
 
-    document.getElementById(
-        "badgesEarned"
-    ).textContent =
-        badges;
+    const badgesElement =
+        document.getElementById(
+            "badgesEarned"
+        );
 
 
-    /*
-        Update locks AFTER
-        loading progress.
-    */
+    if(xpElement){
 
-    updateChapterLocks();
+        xpElement.textContent =
+            totalXP;
+
+    }
+
+
+    if(completedElement){
+
+        completedElement.textContent =
+            completed + "/7";
+
+    }
+
+
+    if(badgesElement){
+
+        badgesElement.textContent =
+            badges;
+
+    }
 
 }
 
 
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
+/*
+=========================================================
+LEARNING STREAK
+=========================================================
+*/
+
+function calculateStreak(){
+
+    let completed = 0;
+
+
+    chapters.forEach(
+        chapter => {
+
+
+            if(
+                isChapterPassed(
+                    chapter.id
+                )
+            ){
+
+                completed++;
+
+            }
+
+        }
+    );
+
+
+    const streak =
+        Math.min(
+            completed,
+            7
+        );
+
+
+    const element =
+        document.getElementById(
+            "learningStreak"
+        );
+
+
+    if(element){
+
+        element.textContent =
+            streak + " 🔥";
+
+    }
+
+}
+
+
+/*
+=========================================================
+LOAD PROGRESS
+=========================================================
+*/
+
+function loadProgress(){
+
+    /*
+    IMPORTANT:
+
+    First read and normalize all saved results.
+
+    Then render the cards.
+
+    This guarantees that Unit 1's 73% is detected
+    BEFORE Unit 2 is checked.
+    */
+
+    chapters.forEach(
+        chapter => {
+
+            getChapterProgress(
+                chapter.id
+            );
+
+        }
+    );
+
+
+    renderMissions();
+
+    renderChapterList();
+
+    calculateStats();
+
+    calculateStreak();
+
+
+    /*
+    DEBUG INFORMATION
+
+    Open browser:
+    F12 → Console
+
+    You should see:
+
+    Unit 1:
+    percentage: 73
+    status: "PASSED"
+
+    Unit 2 unlocked:
+    true
+    */
+
+    console.log(
+        "=============================="
+    );
+
+    console.log(
+        "EduSphere English Progress"
+    );
+
+    console.log(
+        "PASS MARK:",
+        PASS_PERCENTAGE + "%"
+    );
+
+    console.log(
+        "Unit 1:",
+        getChapterProgress(1)
+    );
+
+    console.log(
+        "Unit 2 unlocked:",
+        isChapterUnlocked(2)
+    );
+
+    console.log(
+        "=============================="
+    );
+
+}
+
+
+/*
+=========================================================
+INITIAL LOAD
+=========================================================
+*/
 
 loadProgress();
 
 
-/* =====================================================
-   UPDATE WHEN RETURNING TO PAGE
-===================================================== */
+/*
+=========================================================
+PAGE SHOW
+=========================================================
+*/
 
 window.addEventListener(
     "pageshow",
@@ -2477,9 +2875,27 @@ window.addEventListener(
 );
 
 
-/* =====================================================
-   UPDATE WHEN PAGE BECOMES VISIBLE AGAIN
-===================================================== */
+/*
+=========================================================
+WINDOW FOCUS
+=========================================================
+*/
+
+window.addEventListener(
+    "focus",
+    function(){
+
+        loadProgress();
+
+    }
+);
+
+
+/*
+=========================================================
+VISIBILITY CHANGE
+=========================================================
+*/
 
 document.addEventListener(
     "visibilitychange",
@@ -2496,6 +2912,39 @@ document.addEventListener(
 
     }
 );
+
+
+/*
+=========================================================
+START LEARNING
+=========================================================
+*/
+
+const startLearning =
+    document.querySelector(
+        ".start-learning"
+    );
+
+
+if(startLearning){
+
+    startLearning.addEventListener(
+        "click",
+        function(){
+
+            setTimeout(
+                function(){
+
+                    loadProgress();
+
+                },
+                100
+            );
+
+        }
+    );
+
+}
 
 </script>
 
