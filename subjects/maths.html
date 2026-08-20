@@ -1,3380 +1,2738 @@
-<!DOCTYPE html> 
-<html lang="en"> 
- 
-<head> 
- 
-<meta charset="UTF-8"> 
- 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
- 
-<title>EduSphere | 10th Standard Mathematics Mission Hub</title> 
- 
-<style> 
- 
-/* ========================================================= 
-   RESET 
-========================================================= */ 
- 
-*{ 
-    margin:0; 
-    padding:0; 
-    box-sizing:border-box; 
-    font-family:Arial,sans-serif; 
-} 
- 
- 
-/* ========================================================= 
-   BODY 
-========================================================= */ 
- 
-body{ 
-    background:#0f172a; 
-    color:white; 
-    min-height:100vh; 
-} 
- 
- 
-/* ========================================================= 
-   HEADER 
-========================================================= */ 
- 
-.header{ 
-    background:#111827; 
- 
-    padding:22px 36px; 
- 
-    display:flex; 
-    justify-content:space-between; 
-    align-items:center; 
- 
-    position:sticky; 
-    top:0; 
- 
-    z-index:1000; 
- 
-    border-bottom:1px solid rgba(255,255,255,.05); 
-} 
- 
- 
-.logo{ 
-    font-size:32px; 
- 
-    font-weight:800; 
- 
-    color:#38bdf8; 
- 
-    letter-spacing:-1px; 
-} 
- 
- 
-.dashboard-btn{ 
-    text-decoration:none; 
- 
-    color:white; 
- 
-    background: 
-        linear-gradient( 
-            135deg, 
-            #2563eb, 
-            #06b6d4 
-        ); 
- 
-    padding:14px 24px; 
- 
-    border-radius:14px; 
- 
-    font-size:17px; 
- 
-    font-weight:700; 
- 
-    transition:.25s; 
-} 
- 
- 
-.dashboard-btn:hover{ 
-    transform:translateY(-2px); 
- 
-    box-shadow: 
-        0 10px 25px 
-        rgba(37,99,235,.35); 
-} 
- 
- 
-/* ========================================================= 
-   MAIN CONTAINER 
-========================================================= */ 
- 
-.container{ 
-    width:94%; 
- 
-    max-width:1500px; 
- 
-    margin:auto; 
- 
-    padding: 
-        32px 
-        0 
-        50px; 
-} 
- 
- 
-/* ========================================================= 
-   HERO 
-========================================================= */ 
- 
-.hero{ 
-    min-height:300px; 
- 
-    background: 
-        linear-gradient( 
-            135deg, 
-            #2448a5, 
-            #117c79 
-        ); 
- 
-    border-radius:30px; 
- 
-    display:flex; 
- 
-    flex-direction:column; 
- 
-    justify-content:center; 
- 
-    align-items:center; 
- 
-    text-align:center; 
- 
-    padding:45px; 
- 
-    margin-bottom:36px; 
- 
-    box-shadow: 
-        0 20px 50px 
-        rgba(0,0,0,.22); 
-} 
- 
- 
-.hero h1{ 
-    font-size:48px; 
- 
-    font-weight:800; 
- 
-    margin-bottom:15px; 
-} 
- 
- 
-.hero p{ 
-    font-size:20px; 
- 
-    color:#e0f2fe; 
- 
-    max-width:900px; 
- 
-    line-height:1.6; 
-} 
- 
- 
-.start-learning{ 
-    margin-top:28px; 
- 
-    text-decoration:none; 
- 
-    background:white; 
- 
-    color:#0f172a; 
- 
-    padding:17px 30px; 
- 
-    border-radius:16px; 
- 
-    font-size:18px; 
- 
-    font-weight:800; 
- 
-    transition:.25s; 
-} 
- 
- 
-.start-learning:hover{ 
-    transform: 
-        translateY(-3px) 
-        scale(1.02); 
- 
-    box-shadow: 
-        0 10px 30px 
-        rgba(0,0,0,.25); 
-} 
- 
- 
-/* ========================================================= 
-   STATS 
-========================================================= */ 
- 
-.stats{ 
-    display:grid; 
- 
-    grid-template-columns: 
-        repeat(4,1fr); 
- 
-    gap:20px; 
- 
-    margin-bottom:50px; 
-} 
- 
- 
-.stat-card{ 
-    background:#1e293b; 
- 
-    border-radius:20px; 
- 
-    padding:30px 20px; 
- 
-    text-align:center; 
- 
-    min-height:145px; 
- 
-    display:flex; 
- 
-    flex-direction:column; 
- 
-    justify-content:center; 
- 
-    box-shadow: 
-        0 8px 25px 
-        rgba(0,0,0,.15); 
-} 
- 
- 
-.stat-value{ 
-    color:#38bdf8; 
- 
-    font-size:42px; 
- 
-    font-weight:800; 
- 
-    margin-bottom:10px; 
-} 
- 
- 
-.stat-label{ 
-    color:#94a3b8; 
- 
-    font-size:17px; 
-} 
- 
- 
-/* ========================================================= 
-   SECTION TITLE 
-========================================================= */ 
- 
-.section-title{ 
-    font-size:34px; 
- 
-    font-weight:800; 
- 
-    margin: 
-        0 
-        0 
-        25px; 
-} 
- 
- 
-/* ========================================================= 
-   CATEGORY SECTION 
-========================================================= */ 
- 
-.category-grid{ 
-    display:grid; 
- 
-    grid-template-columns: 
-        repeat(4,1fr); 
- 
-    gap:20px; 
- 
-    margin-bottom:55px; 
-} 
- 
- 
-.category-card{ 
-    min-height:190px; 
- 
-    padding:30px; 
- 
-    border-radius:25px; 
- 
-    background: 
-        linear-gradient( 
-            135deg, 
-            #2563eb, 
-            #1d4ed8 
-        ); 
- 
-    box-shadow: 
-        0 15px 35px 
-        rgba(37,99,235,.18); 
- 
-    transition:.25s; 
-} 
- 
- 
-.category-card:hover{ 
-    transform:translateY(-5px); 
-} 
- 
- 
-.category-card:nth-child(2){ 
- 
-    background: 
-        linear-gradient( 
-            135deg, 
-            #0f766e, 
-            #0d9488 
-        ); 
-} 
- 
- 
-.category-card:nth-child(3){ 
- 
-    background: 
-        linear-gradient( 
-            135deg, 
-            #7c3aed, 
-            #6d28d9 
-        ); 
-} 
- 
- 
-.category-card:nth-child(4){ 
- 
-    background: 
-        linear-gradient( 
-            135deg, 
-            #b45309, 
-            #d97706 
-        ); 
-} 
- 
- 
-.category-card h2{ 
-    font-size:27px; 
- 
-    margin-bottom:14px; 
-} 
- 
- 
-.category-card p{ 
-    font-size:15px; 
- 
-    line-height:1.6; 
- 
-    color:#dbeafe; 
-} 
- 
- 
-.category-count{ 
-    margin-top:15px; 
- 
-    font-size:15px; 
- 
-    font-weight:700; 
-} 
- 
- 
-/* ========================================================= 
-   MISSION SECTION 
-========================================================= */ 
- 
-.mission-section{ 
-    margin-top:10px; 
- 
-    margin-bottom:60px; 
-} 
- 
- 
-/* ========================================================= 
-   MISSION GRID 
-========================================================= */ 
- 
-.mission-grid{ 
-    display:grid; 
- 
-    grid-template-columns: 
-        repeat(4,1fr); 
- 
-    gap:26px; 
-} 
- 
- 
-/* ========================================================= 
-   MISSION CARD 
-========================================================= */ 
- 
-.mission-card{ 
-    background:#1e293b; 
- 
-    border-radius:24px; 
- 
-    padding:27px; 
- 
-    min-height:430px; 
- 
-    display:flex; 
- 
-    flex-direction:column; 
- 
-    transition:.25s; 
- 
-    box-shadow: 
-        0 10px 30px 
-        rgba(0,0,0,.15); 
- 
-    position:relative; 
-} 
- 
- 
-.mission-card:hover{ 
-    transform:translateY(-6px); 
- 
-    box-shadow: 
-        0 18px 40px 
-        rgba(0,0,0,.30); 
-} 
- 
- 
-/* ========================================================= 
-   LOCKED CARD 
-========================================================= */ 
- 
-.mission-card.locked{ 
-    opacity:.65; 
- 
-    filter:saturate(.55); 
-} 
- 
- 
-.mission-card.locked:hover{ 
-    transform:none; 
- 
-    box-shadow: 
-        0 10px 30px 
-        rgba(0,0,0,.15); 
-} 
- 
- 
-/* ========================================================= 
-   MISSION TOP 
-========================================================= */ 
- 
-.mission-top{ 
-    display:flex; 
- 
-    justify-content:space-between; 
- 
-    align-items:flex-start; 
- 
-    gap:12px; 
- 
-    margin-bottom:18px; 
-} 
- 
- 
-.mission-number{ 
-    color:#38bdf8; 
- 
-    font-size:19px; 
- 
-    font-weight:800; 
-} 
- 
- 
-.difficulty{ 
-    padding: 
-        8px 13px; 
- 
-    border-radius:20px; 
- 
-    font-size:12px; 
- 
-    font-weight:800; 
- 
-    white-space:nowrap; 
-} 
- 
- 
-.beginner{ 
-    background:#087f45; 
- 
-    color:#dcfce7; 
-} 
- 
- 
-.intermediate{ 
-    background:#b87900; 
- 
-    color:#fff7d6; 
-} 
- 
- 
-.advanced{ 
-    background:#b91c1c; 
- 
-    color:#fee2e2; 
-} 
- 
- 
-.expert{ 
-    background:#7f1d1d; 
- 
-    color:#fee2e2; 
-} 
- 
- 
-/* ========================================================= 
-   MISSION CONTENT 
-========================================================= */ 
- 
-.mission-card h3{ 
-    font-size:23px; 
- 
-    line-height:1.35; 
- 
-    margin-bottom:15px; 
-} 
- 
- 
-.mission-description{ 
-    color:#e2e8f0; 
- 
-    font-size:15px; 
- 
-    line-height:1.65; 
- 
-    min-height:85px; 
-} 
- 
- 
-/* ========================================================= 
-   LESSON CARDS INSIDE MISSION 
-========================================================= */ 
- 
-.lesson-box{ 
-    background:#0f172a; 
- 
-    border:1px solid #334155; 
- 
-    border-radius:14px; 
- 
-    padding:13px; 
- 
-    margin-top:14px; 
-} 
- 
- 
-.lesson-box-title{ 
-    color:#38bdf8; 
- 
-    font-size:13px; 
- 
-    font-weight:800; 
- 
-    margin-bottom:7px; 
-} 
- 
- 
-.lesson-list{ 
-    display:flex; 
- 
-    flex-wrap:wrap; 
- 
-    gap:6px; 
-} 
- 
- 
-.lesson-tag{ 
-    background:#26364c; 
- 
-    color:#cbd5e1; 
- 
-    padding:5px 8px; 
- 
-    border-radius:7px; 
- 
-    font-size:11px; 
- 
-    font-weight:600; 
-} 
- 
- 
-/* ========================================================= 
-   MISSION INFO 
-========================================================= */ 
- 
-.mission-info{ 
-    display:flex; 
- 
-    justify-content:space-between; 
- 
-    align-items:center; 
- 
-    margin: 
-        20px 
-        0 
-        17px; 
- 
-    color:#e2e8f0; 
- 
-    font-size:15px; 
- 
-    font-weight:700; 
-} 
- 
- 
-.xp-info{ 
-    color:#facc15; 
-} 
- 
- 
-/* ========================================================= 
-   PROGRESS 
-========================================================= */ 
- 
-.progress-container{ 
-    width:100%; 
- 
-    height:10px; 
- 
-    background:#334155; 
- 
-    border-radius:20px; 
- 
-    overflow:hidden; 
- 
-    margin-bottom:9px; 
-} 
- 
- 
-.progress-bar{ 
-    height:100%; 
- 
-    width:0%; 
- 
-    background: 
-        linear-gradient( 
-            90deg, 
-            #2563eb, 
-            #06b6d4 
-        ); 
- 
-    border-radius:20px; 
- 
-    transition:.5s; 
-} 
- 
- 
-.progress-text{ 
-    color:#94a3b8; 
- 
-    font-size:13px; 
- 
-    font-weight:700; 
- 
-    text-align:right; 
- 
-    margin-bottom:15px; 
-} 
- 
- 
-/* ========================================================= 
-   MISSION BUTTON 
-========================================================= */ 
- 
-.mission-btn{ 
-    width:100%; 
- 
-    margin-top:auto; 
- 
-    padding: 
-        16px 20px; 
- 
-    border:none; 
- 
-    border-radius:13px; 
- 
-    background: 
-        linear-gradient( 
-            135deg, 
-            #2563eb, 
-            #06b6d4 
-        ); 
- 
-    color:white; 
- 
-    font-size:17px; 
- 
-    font-weight:800; 
- 
-    cursor:pointer; 
- 
-    text-decoration:none; 
- 
-    text-align:center; 
- 
-    display:block; 
- 
-    transition:.25s; 
-} 
- 
- 
-.mission-btn:hover{ 
-    transform:translateY(-2px); 
- 
-    box-shadow: 
-        0 8px 20px 
-        rgba(6,182,212,.20); 
-} 
- 
- 
-/* ========================================================= 
-   LOCK BUTTON 
-========================================================= */ 
- 
-.locked-btn{ 
-    background:#334155; 
- 
-    color:#94a3b8; 
- 
-    cursor:not-allowed; 
- 
-    box-shadow:none; 
-} 
- 
- 
-.locked-btn:hover{ 
-    transform:none; 
- 
-    box-shadow:none; 
-} 
- 
- 
-/* ========================================================= 
-   LOCK MESSAGE 
-========================================================= */ 
- 
-.lock-message{ 
-    margin-top:10px; 
- 
-    padding:9px 12px; 
- 
-    border-radius:10px; 
- 
-    background:#0f172a; 
- 
-    color:#fbbf24; 
- 
-    font-size:12px; 
- 
-    font-weight:700; 
- 
-    text-align:center; 
- 
-    line-height:1.4; 
-} 
- 
- 
-/* ========================================================= 
-   COMPLETED BADGE 
-========================================================= */ 
- 
-.completed-badge{ 
-    display:block; 
- 
-    margin-top:10px; 
- 
-    padding:8px 12px; 
- 
-    border-radius:20px; 
- 
-    background:#14532d; 
- 
-    color:#86efac; 
- 
-    font-size:13px; 
- 
-    font-weight:800; 
- 
-    text-align:center; 
-} 
- 
- 
-/* ========================================================= 
-   SCORE BADGE 
-========================================================= */ 
- 
-.score-badge{ 
-    margin-top:8px; 
- 
-    padding:7px; 
- 
-    border-radius:9px; 
- 
-    background:#172554; 
- 
-    color:#93c5fd; 
- 
-    font-size:12px; 
- 
-    text-align:center; 
- 
-    font-weight:700; 
-} 
- 
- 
-/* ========================================================= 
-   CHAPTER LIST 
-========================================================= */ 
- 
-.chapter-section{ 
-    margin-top:60px; 
-} 
- 
- 
-.chapter-list{ 
-    display:grid; 
- 
-    grid-template-columns: 
-        repeat(2,1fr); 
- 
-    gap:12px; 
-} 
- 
- 
-.chapter-item{ 
-    background:#1e293b; 
- 
-    padding: 
-        17px 20px; 
- 
-    border-radius:12px; 
- 
-    color:#cbd5e1; 
- 
-    font-size:16px; 
- 
-    border-left: 
-        4px solid 
-        #38bdf8; 
- 
-    transition:.2s; 
-} 
- 
- 
-.chapter-item:hover{ 
-    background:#26364c; 
-} 
- 
- 
-.chapter-item.locked-list{ 
-    border-left-color:#475569; 
- 
-    color:#64748b; 
-} 
- 
- 
-.chapter-item.completed-list{ 
-    border-left-color:#22c55e; 
- 
-    color:#bbf7d0; 
-} 
- 
- 
-/* ========================================================= 
-   FOOTER 
-========================================================= */ 
- 
-.footer{ 
-    text-align:center; 
- 
-    color:#64748b; 
- 
-    padding: 
-        40px 20px; 
- 
-    border-top: 
-        1px solid 
-        #1e293b; 
- 
-    margin-top:20px; 
-} 
- 
- 
-/* ========================================================= 
-   TABLET 
-========================================================= */ 
- 
-@media(max-width:1200px){ 
- 
-    .mission-grid{ 
-        grid-template-columns: 
-            repeat(2,1fr); 
-    } 
- 
- 
-    .category-grid{ 
-        grid-template-columns: 
-            repeat(2,1fr); 
-    } 
- 
- 
-    .stats{ 
-        grid-template-columns: 
-            repeat(2,1fr); 
-    } 
- 
- 
-    .hero h1{ 
-        font-size:42px; 
-    } 
- 
-} 
- 
- 
-/* ========================================================= 
-   MOBILE 
-========================================================= */ 
- 
-@media(max-width:700px){ 
- 
-    .header{ 
-        padding: 
-            18px 20px; 
-    } 
- 
- 
-    .logo{ 
-        font-size:25px; 
-    } 
- 
- 
-    .dashboard-btn{ 
-        padding: 
-            11px 16px; 
- 
-        font-size:14px; 
-    } 
- 
- 
-    .container{ 
-        width:94%; 
- 
-        padding-top:22px; 
-    } 
- 
- 
-    .hero{ 
-        padding: 
-            35px 20px; 
- 
-        min-height:300px; 
- 
-        border-radius:22px; 
-    } 
- 
- 
-    .hero h1{ 
-        font-size:32px; 
- 
-        line-height:1.25; 
-    } 
- 
- 
-    .hero p{ 
-        font-size:16px; 
-    } 
- 
- 
-    .section-title{ 
-        font-size:27px; 
-    } 
- 
- 
-    .mission-grid{ 
-        grid-template-columns:1fr; 
-    } 
- 
- 
-    .category-grid{ 
-        grid-template-columns:1fr; 
-    } 
- 
- 
-    .stats{ 
-        grid-template-columns: 
-            repeat(2,1fr); 
- 
-        gap:12px; 
-    } 
- 
- 
-    .stat-card{ 
-        min-height:120px; 
- 
-        padding: 
-            20px 10px; 
-    } 
- 
- 
-    .stat-value{ 
-        font-size:32px; 
-    } 
- 
- 
-    .stat-label{ 
-        font-size:14px; 
-    } 
- 
- 
-    .category-card{ 
-        padding:25px; 
-    } 
- 
- 
-    .category-card h2{ 
-        font-size:26px; 
-    } 
- 
- 
-    .chapter-list{ 
-        grid-template-columns:1fr; 
-    } 
- 
-} 
- 
- 
-/* ========================================================= 
-   SMALL MOBILE 
-========================================================= */ 
- 
-@media(max-width:450px){ 
- 
-    .header{ 
-        flex-direction:column; 
- 
-        gap:15px; 
-    } 
- 
- 
-    .dashboard-btn{ 
-        width:100%; 
- 
-        text-align:center; 
-    } 
- 
- 
-    .hero h1{ 
-        font-size:27px; 
-    } 
- 
- 
-    .hero p{ 
-        font-size:14px; 
-    } 
- 
- 
-    .mission-card{ 
-        padding:22px; 
-    } 
- 
- 
-    .mission-top{ 
-        flex-direction:column; 
- 
-        align-items:flex-start; 
-    } 
- 
- 
-    .mission-description{ 
-        min-height:auto; 
-    } 
- 
-} 
- 
-</style> 
- 
-</head> 
- 
- 
-<body> 
- 
- 
-<!-- ========================================================= 
-     HEADER 
-========================================================= --> 
- 
-<header class="header"> 
- 
-    <div class="logo"> 
- 
-        EduSphere 🧪 
- 
-    </div> 
- 
- 
-    <a 
-        href="../index.html" 
-        class="dashboard-btn"> 
- 
-        ← Dashboard 
- 
-    </a> 
- 
-</header> 
- 
- 
- 
-<main class="container"> 
- 
- 
-<!-- ========================================================= 
-     HERO 
-========================================================= --> 
- 
-<section class="hero"> 
- 
-    <h1> 
- 
-        🧮 10th Standard Mathematics Mission Hub 
- 
-    </h1> 
- 
- 
-    <p> 
- 
-        Complete Maths missions, solve numerical problems, 
-        pass quizzes, earn XP, unlock chapters and master 
-        Tamil Nadu State Board Mathematics. 
- 
-    </p> 
- 
- 
-    <a 
-        href="#missions" 
-        class="start-learning"> 
- 
-        🚀 Start Learning 
- 
-    </a> 
- 
-</section> 
- 
- 
- 
-<!-- ========================================================= 
-     STATS 
-========================================================= --> 
- 
-<section class="stats"> 
- 
- 
-    <div class="stat-card"> 
- 
-        <div 
-            class="stat-value" 
-            id="totalXP"> 
- 
-            0 
- 
-        </div> 
- 
-        <div class="stat-label"> 
- 
-            Total XP 
- 
-        </div> 
- 
-    </div> 
- 
- 
- 
-    <div class="stat-card"> 
- 
-        <div 
-            class="stat-value" 
-            id="missionsCompleted"> 
- 
-            0/8 
- 
-        </div> 
- 
-        <div class="stat-label"> 
- 
-            Missions Completed 
- 
-        </div> 
- 
-    </div> 
- 
- 
- 
-    <div class="stat-card"> 
- 
-        <div 
-            class="stat-value" 
-            id="learningStreak"> 
- 
-            0 🔥 
- 
-        </div> 
- 
-        <div class="stat-label"> 
- 
-            Learning Streak 
- 
-        </div> 
- 
-    </div> 
- 
- 
- 
-    <div class="stat-card"> 
- 
-        <div 
-            class="stat-value" 
-            id="badgesEarned"> 
- 
-            0 
- 
-        </div> 
- 
-        <div class="stat-label"> 
- 
-            Badges Earned 
- 
-        </div> 
- 
-    </div> 
- 
- 
-</section> 
- 
- 
- 
-<!-- ========================================================= 
-     CATEGORIES 
-========================================================= --> 
- 
-<section> 
- 
- 
-    <h2 class="section-title"> 
- 
-        📚 Mathematics Learning Categories 
- 
-    </h2> 
- 
- 
-    <div class="category-grid"> 
- 
- 
-        <div class="category-card"> 
- 
-            <h2> 
- 
-                🔢 Algebra 
- 
-            </h2> 
- 
- 
-            <p> 
- 
-                Learn algebraic expressions, equations, 
-                sequences and mathematical relationships. 
- 
-            </p> 
- 
- 
-            <div class="category-count"> 
- 
-                Algebra Practice 
- 
-            </div> 
- 
-        </div> 
- 
- 
- 
-        <div class="category-card"> 
- 
-            <h2> 
- 
-                📐 Geometry 
- 
-            </h2> 
- 
- 
-            <p> 
- 
-                Study geometry, coordinate geometry, 
-                constructions, theorems and applications. 
- 
-            </p> 
- 
- 
-            <div class="category-count"> 
- 
-                Geometry Practice 
- 
-            </div> 
- 
-        </div> 
- 
- 
- 
-        <div class="category-card"> 
- 
-            <h2> 
- 
-                📊 Statistics 
- 
-            </h2> 
- 
- 
-            <p> 
- 
-                Practise statistics, probability, 
-                data interpretation and numerical problems. 
- 
-            </p> 
- 
- 
-            <div class="category-count"> 
- 
-                Statistics & Probability 
- 
-            </div> 
- 
-        </div> 
- 
- 
- 
-        <div class="category-card"> 
- 
-            <h2> 
- 
-                📏 Measurement 
- 
-            </h2> 
- 
- 
-            <p> 
- 
-                Master trigonometry, mensuration, 
-                measurements and real-world applications. 
- 
-            </p> 
- 
- 
-            <div class="category-count"> 
- 
-                Mensuration & Trigonometry 
- 
-            </div> 
- 
-        </div> 
- 
- 
-    </div> 
- 
- 
-</section> 
- 
- 
- 
-<!-- ========================================================= 
-     MISSIONS 
-========================================================= --> 
- 
-<section 
-    class="mission-section" 
-    id="missions"> 
- 
- 
-    <h2 class="section-title"> 
- 
-        🧮 Mathematics Missions 
- 
-    </h2> 
- 
- 
-    <div 
-        class="mission-grid" 
-        id="mathsMissionGrid"> 
- 
-    </div> 
- 
- 
-</section> 
- 
- 
- 
-<!-- ========================================================= 
-     CHAPTER LIST 
-========================================================= --> 
- 
-<section class="chapter-section"> 
- 
- 
-    <h2 class="section-title"> 
- 
-        📖 Mathematics Chapters 
- 
-    </h2> 
- 
- 
-    <div 
-        class="chapter-list" 
-        id="chapterList"> 
- 
-    </div> 
- 
- 
-</section> 
- 
- 
-</main> 
- 
- 
- 
-<!-- ========================================================= 
-     FOOTER 
-========================================================= --> 
- 
-<footer class="footer"> 
- 
-    © 2026 EduSphere Learning Portal 
- 
-</footer> 
- 
- 
- 
-<script> 
- 
-/* 
-============================================================= 
-                 EDUSPHERE MATHEMATICS HUB 
-============================================================= 
- 
-FILE LOCATION: 
- 
-subjects/maths.html 
- 
- 
-CHAPTER FILE LOCATION: 
- 
-maths/chapter1.html 
-maths/chapter2.html 
-maths/chapter3.html 
-... 
- 
- 
-Therefore: 
- 
-subjects/maths.html 
- 
-must use: 
- 
-../maths/chapter1.html 
- 
-============================================================= 
-*/ 
- 
- 
-/* 
-============================================================= 
-PASS MARK 
-============================================================= 
-*/ 
- 
-const PASS_PERCENTAGE = 60; 
- 
- 
-/* 
-============================================================= 
-CHAPTER FILE LOCATION 
-============================================================= 
-*/ 
- 
-const CHAPTER_BASE_PATH = "../maths/"; 
- 
- 
-/* 
-============================================================= 
-MATHEMATICS CHAPTER DATA 
-============================================================= 
- 
-These are the 8 chapter names being used for the 
-10th Standard Tamil Nadu Mathematics structure. 
- 
-============================================================= 
-*/ 
- 
-const chapters = [ 
- 
-    { 
-        id:1, 
- 
-        subject:"Mathematics", 
- 
-        name:"Relations and Functions", 
- 
-        shortName:"Relations & Functions", 
- 
-        description: 
-            "Study relations, functions, domain, range, mappings and solve important mathematical problems.", 
- 
-        lessons:[ 
-            "Relations", 
-            "Functions", 
-            "Domain", 
-            "Range", 
-            "Mappings" 
-        ], 
- 
-        xp:100, 
- 
-        time:"45 mins", 
- 
-        difficulty:"Beginner", 
- 
-        difficultyClass:"beginner" 
-    }, 
- 
- 
-    { 
-        id:2, 
- 
-        subject:"Mathematics", 
- 
-        name:"Numbers and Sequences", 
- 
-        shortName:"Numbers & Sequences", 
- 
-        description: 
-            "Learn number patterns, sequences, progressions and solve numerical problems step by step.", 
- 
-        lessons:[ 
-            "Number Patterns", 
-            "Sequences", 
-            "Progressions", 
-            "Arithmetic Sequences", 
-            "Problems" 
-        ], 
- 
-        xp:110, 
- 
-        time:"45 mins", 
- 
-        difficulty:"Beginner", 
- 
-        difficultyClass:"beginner" 
-    }, 
- 
- 
-    { 
-        id:3, 
- 
-        subject:"Mathematics", 
- 
-        name:"Algebra", 
- 
-        shortName:"Algebra", 
- 
-        description: 
-            "Master algebraic concepts, equations, expressions and important numerical applications.", 
- 
-        lessons:[ 
-            "Algebraic Expressions", 
-            "Equations", 
-            "Identities", 
-            "Polynomials", 
-            "Applications" 
-        ], 
- 
-        xp:120, 
- 
-        time:"50 mins", 
- 
-        difficulty:"Intermediate", 
- 
-        difficultyClass:"intermediate" 
-    }, 
- 
- 
-    { 
-        id:4, 
- 
-        subject:"Mathematics", 
- 
-        name:"Geometry", 
- 
-        shortName:"Geometry", 
- 
-        description: 
-            "Explore geometric concepts, theorems, properties and solve examination-oriented problems.", 
- 
-        lessons:[ 
-            "Geometric Concepts", 
-            "Theorems", 
-            "Properties", 
-            "Proofs", 
-            "Applications" 
-        ], 
- 
-        xp:130, 
- 
-        time:"50 mins", 
- 
-        difficulty:"Intermediate", 
- 
-        difficultyClass:"intermediate" 
-    }, 
- 
- 
-    { 
-        id:5, 
- 
-        subject:"Mathematics", 
- 
-        name:"Coordinate Geometry", 
- 
-        shortName:"Coordinate Geometry", 
- 
-        description: 
-            "Learn coordinates, distance, section concepts and solve coordinate geometry problems.", 
- 
-        lessons:[ 
-            "Coordinates", 
-            "Distance", 
-            "Section Formula", 
-            "Coordinate Problems", 
-            "Applications" 
-        ], 
- 
-        xp:140, 
- 
-        time:"50 mins", 
- 
-        difficulty:"Advanced", 
- 
-        difficultyClass:"advanced" 
-    }, 
- 
- 
-    { 
-        id:6, 
- 
-        subject:"Mathematics", 
- 
-        name:"Trigonometry", 
- 
-        shortName:"Trigonometry", 
- 
-        description: 
-            "Study trigonometric ratios, identities, heights and distances and solve numerical problems.", 
- 
-        lessons:[ 
-            "Trigonometric Ratios", 
-            "Identities", 
-            "Angles", 
-            "Heights", 
-            "Distances" 
-        ], 
- 
-        xp:150, 
- 
-        time:"55 mins", 
- 
-        difficulty:"Advanced", 
- 
-        difficultyClass:"advanced" 
-    }, 
- 
- 
-    { 
-        id:7, 
- 
-        subject:"Mathematics", 
- 
-        name:"Mensuration", 
- 
-        shortName:"Mensuration", 
- 
-        description: 
-            "Calculate areas, surface areas, volumes and solve practical mensuration problems.", 
- 
-        lessons:[ 
-            "Area", 
-            "Surface Area", 
-            "Volume", 
-            "Solid Shapes", 
-            "Applications" 
-        ], 
- 
-        xp:160, 
- 
-        time:"55 mins", 
- 
-        difficulty:"Advanced", 
- 
-        difficultyClass:"advanced" 
-    }, 
- 
- 
-    { 
-        id:8, 
- 
-        subject:"Mathematics", 
- 
-        name:"Statistics and Probability", 
- 
-        shortName:"Statistics & Probability", 
- 
-        description: 
-            "Study statistics, probability, data analysis and solve important numerical questions.", 
- 
-        lessons:[ 
-            "Statistics", 
-            "Data", 
-            "Probability", 
-            "Mean", 
-            "Applications" 
-        ], 
- 
-        xp:170, 
- 
-        time:"60 mins", 
- 
-        difficulty:"Expert", 
- 
-        difficultyClass:"expert" 
-    } 
- 
-]; 
- 
- 
-/* 
-============================================================= 
-UNLOCK ORDER 
-============================================================= 
- 
-Chapter 1 
-   ↓ 
-Chapter 2 
-   ↓ 
-Chapter 3 
-   ↓ 
-Chapter 4 
-   ↓ 
-Chapter 5 
-   ↓ 
-Chapter 6 
-   ↓ 
-Chapter 7 
-   ↓ 
-Chapter 8 
- 
-Previous chapter must have at least 60%. 
- 
-============================================================= 
-*/ 
- 
- 
-const subjectGroups = { 
- 
-    Mathematics:[ 
-        1, 
-        2, 
-        3, 
-        4, 
-        5, 
-        6, 
-        7, 
-        8 
-    ] 
- 
-}; 
- 
- 
-/* 
-============================================================= 
-GET ALL POSSIBLE STORAGE KEYS 
-============================================================= 
- 
-This makes the hub compatible with different versions 
-of your quiz files. 
- 
-For Chapter 1 it checks: 
- 
-edusphere_maths_chapter1 
- 
-edusphere_maths_chapter_1 
- 
-edusphere_10maths_chapter_1 
- 
-edusphere_10maths_chapter1 
- 
-edusphere_math_chapter1 
- 
-edusphere_math_chapter_1 
- 
-============================================================= 
-*/ 
- 
-function getStorageKeys(id){ 
- 
-    return [ 
- 
-        "edusphere_maths_chapter" + id, 
- 
-        "edusphere_maths_chapter_" + id, 
- 
-        "edusphere_10maths_chapter_" + id, 
- 
-        "edusphere_10maths_chapter" + id, 
- 
-        "edusphere_math_chapter" + id, 
- 
-        "edusphere_math_chapter_" + id, 
- 
-        "edusphere_maths_unit" + id, 
- 
-        "edusphere_maths_unit_" + id, 
- 
-        "edusphere_10maths_unit_" + id, 
- 
-        "edusphere_10maths_unit" + id 
- 
-    ]; 
- 
-} 
- 
- 
-/* 
-============================================================= 
-CONVERT VALUE TO NUMBER 
-============================================================= 
-*/ 
- 
-function convertToNumber(value){ 
- 
-    if( 
-        value === undefined || 
-        value === null 
-    ){ 
- 
-        return NaN; 
- 
-    } 
- 
- 
-    let text = 
-        String(value) 
-        .trim() 
-        .replace("%",""); 
- 
- 
-    return parseFloat(text); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-GET CHAPTER PROGRESS 
-============================================================= 
-*/ 
- 
-function getChapterProgress(id){ 
- 
-    const keys = 
-        getStorageKeys(id); 
- 
- 
-    let saved = null; 
- 
-    let foundKey = null; 
- 
- 
-    /* 
-    Search all possible keys. 
-    */ 
- 
-    for( 
-        let i = 0; 
-        i < keys.length; 
-        i++ 
-    ){ 
- 
-        const value = 
-            localStorage.getItem( 
-                keys[i] 
-            ); 
- 
- 
-        if(value){ 
- 
-            saved = value; 
- 
-            foundKey = keys[i]; 
- 
-            break; 
- 
-        } 
- 
-    } 
- 
- 
-    /* 
-    Nothing saved. 
-    */ 
- 
-    if(!saved){ 
- 
-        return { 
- 
-            percentage:0, 
- 
-            status:"NOT_ATTEMPTED", 
- 
-            score:0, 
- 
-            total:0 
- 
-        }; 
- 
-    } 
- 
- 
-    try{ 
- 
-        const data = 
-            JSON.parse(saved); 
- 
- 
-        let percentage = 
-            NaN; 
- 
- 
-        /* 
-        ===================================================== 
-        TRY PERCENTAGE 
-        ===================================================== 
-        */ 
- 
-        if( 
-            data.percentage !== undefined 
-        ){ 
- 
-            percentage = 
-                convertToNumber( 
-                    data.percentage 
-                ); 
- 
-        } 
- 
- 
-        /* 
-        ===================================================== 
-        TRY PERCENT 
-        ===================================================== 
-        */ 
- 
-        if( 
-            !Number.isFinite( 
-                percentage 
-            ) 
-            && 
-            data.percent !== undefined 
-        ){ 
- 
-            percentage = 
-                convertToNumber( 
-                    data.percent 
-                ); 
- 
-        } 
- 
- 
-        /* 
-        ===================================================== 
-        TRY SCORE / TOTAL 
-        ===================================================== 
-        */ 
- 
-        if( 
- 
-            !Number.isFinite( 
-                percentage 
-            ) 
- 
-            && 
- 
-            data.score !== undefined 
- 
-            && 
- 
-            data.total !== undefined 
- 
-        ){ 
- 
-            const score = 
-                convertToNumber( 
-                    data.score 
-                ); 
- 
- 
-            const total = 
-                convertToNumber( 
-                    data.total 
-                ); 
- 
- 
-            if( 
- 
-                Number.isFinite(score) 
- 
-                && 
- 
-                Number.isFinite(total) 
- 
-                && 
- 
-                total > 0 
- 
-            ){ 
- 
-                percentage = 
-                    ( 
-                        score / 
-                        total 
-                    ) * 100; 
- 
-            } 
- 
-        } 
- 
- 
-        /* 
-        ===================================================== 
-        TRY CORRECT / TOTAL 
-        ===================================================== 
-        */ 
- 
-        if( 
- 
-            !Number.isFinite( 
-                percentage 
-            ) 
- 
-            && 
- 
-            data.correct !== undefined 
- 
-            && 
- 
-            data.total !== undefined 
- 
-        ){ 
- 
-            const correct = 
-                convertToNumber( 
-                    data.correct 
-                ); 
- 
- 
-            const total = 
-                convertToNumber( 
-                    data.total 
-                ); 
- 
- 
-            if( 
- 
-                Number.isFinite(correct) 
- 
-                && 
- 
-                Number.isFinite(total) 
- 
-                && 
- 
-                total > 0 
- 
-            ){ 
- 
-                percentage = 
-                    ( 
-                        correct / 
-                        total 
-                    ) * 100; 
- 
-            } 
- 
-        } 
- 
- 
-        /* 
-        ===================================================== 
-        INVALID RESULT 
-        ===================================================== 
-        */ 
- 
-        if( 
-            !Number.isFinite( 
-                percentage 
-            ) 
-        ){ 
- 
-            percentage = 0; 
- 
-        } 
- 
- 
-        /* 
-        Keep between 0 and 100. 
-        */ 
- 
-        percentage = 
-            Math.max( 
-                0, 
-                Math.min( 
-                    100, 
-                    percentage 
-                ) 
-            ); 
- 
- 
-        percentage = 
-            Math.round( 
-                percentage 
-            ); 
- 
- 
-        /* 
-        ===================================================== 
-        PASS / FAIL 
-        ===================================================== 
-        */ 
- 
-        let status = 
-            String( 
-                data.status || "" 
-            ).toUpperCase(); 
- 
- 
-        if( 
-            percentage >= 
-            PASS_PERCENTAGE 
-        ){ 
- 
-            status = 
-                "PASSED"; 
- 
-        } 
-        else{ 
- 
-            status = 
-                "FAILED"; 
- 
-        } 
- 
- 
-        /* 
-        ===================================================== 
-        NORMALIZED DATA 
-        ===================================================== 
-        */ 
- 
-        const normalizedData = { 
- 
-            ...data, 
- 
-            percentage: 
-                percentage, 
- 
-            status: 
-                status 
- 
-        }; 
- 
- 
-        /* 
-        Save a standard Maths key. 
-        */ 
- 
-        localStorage.setItem( 
- 
-            "edusphere_maths_chapter_" + id, 
- 
-            JSON.stringify( 
-                normalizedData 
-            ) 
- 
-        ); 
- 
- 
-        return { 
- 
-            percentage: 
-                percentage, 
- 
-            status: 
-                status, 
- 
-            score: 
-                data.score || 0, 
- 
-            total: 
-                data.total || 0, 
- 
-            sourceKey: 
-                foundKey 
- 
-        }; 
- 
-    } 
- 
-    catch(error){ 
- 
-        console.error( 
-            "EduSphere Maths progress error:", 
-            error 
-        ); 
- 
- 
-        return { 
- 
-            percentage:0, 
- 
-            status:"NOT_ATTEMPTED", 
- 
-            score:0, 
- 
-            total:0 
- 
-        }; 
- 
-    } 
- 
-} 
- 
- 
-/* 
-============================================================= 
-IS CHAPTER PASSED 
-============================================================= 
-*/ 
- 
-function isChapterPassed(id){ 
- 
-    const progress = 
-        getChapterProgress(id); 
- 
- 
-    return ( 
- 
-        progress.percentage >= 
-        PASS_PERCENTAGE 
- 
-    ); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-IS CHAPTER UNLOCKED 
-============================================================= 
-*/ 
- 
-function isChapterUnlocked(id){ 
- 
-    /* 
-    Chapter 1 is always unlocked. 
-    */ 
- 
-    if(id === 1){ 
- 
-        return true; 
- 
-    } 
- 
- 
-    const current = 
-        chapters.find( 
-            chapter => 
-                chapter.id === id 
-        ); 
- 
- 
-    if(!current){ 
- 
-        return false; 
- 
-    } 
- 
- 
-    const group = 
-        subjectGroups[ 
-            current.subject 
-        ]; 
- 
- 
-    if(!group){ 
- 
-        return false; 
- 
-    } 
- 
- 
-    const index = 
-        group.indexOf(id); 
- 
- 
-    if(index <= 0){ 
- 
-        return true; 
- 
-    } 
- 
- 
-    const previousId = 
-        group[ 
-            index - 1 
-        ]; 
- 
- 
-    return isChapterPassed( 
-        previousId 
-    ); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-GET PREVIOUS CHAPTER 
-============================================================= 
-*/ 
- 
-function getPreviousChapterId(id){ 
- 
-    if(id <= 1){ 
- 
-        return null; 
- 
-    } 
- 
- 
-    return id - 1; 
- 
-} 
- 
- 
-/* 
-============================================================= 
-GET CHAPTER LINK 
-============================================================= 
-*/ 
- 
-function getChapterLink(id){ 
- 
-    return ( 
- 
-        CHAPTER_BASE_PATH + 
- 
-        "chapter" + 
- 
-        id + 
- 
-        ".html" 
- 
-    ); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-RENDER MISSION CARDS 
-============================================================= 
-*/ 
- 
-function renderMissions(){ 
- 
-    const grid = 
-        document.getElementById( 
-            "mathsMissionGrid" 
-        ); 
- 
- 
-    if(!grid){ 
- 
-        return; 
- 
-    } 
- 
- 
-    grid.innerHTML = ""; 
- 
- 
-    chapters.forEach( 
-        chapter => { 
- 
- 
-            const progress = 
-                getChapterProgress( 
-                    chapter.id 
-                ); 
- 
- 
-            const unlocked = 
-                isChapterUnlocked( 
-                    chapter.id 
-                ); 
- 
- 
-            const passed = 
-                isChapterPassed( 
-                    chapter.id 
-                ); 
- 
- 
-            const card = 
-                document.createElement( 
-                    "div" 
-                ); 
- 
- 
-            card.className = 
-                "mission-card" + 
- 
-                ( 
- 
-                    unlocked 
- 
-                    ? 
- 
-                    "" 
- 
-                    : 
- 
-                    " locked" 
- 
-                ); 
- 
- 
-            /* 
-            ================================================= 
-            DIFFICULTY ICON 
-            ================================================= 
-            */ 
- 
-            let difficultyIcon = 
-                "🔴"; 
- 
- 
-            if( 
-                chapter.difficultyClass === 
-                "beginner" 
-            ){ 
- 
-                difficultyIcon = 
-                    "🟢"; 
- 
-            } 
- 
-            else if( 
-                chapter.difficultyClass === 
-                "intermediate" 
-            ){ 
- 
-                difficultyIcon = 
-                    "🟡"; 
- 
-            } 
- 
-            else if( 
-                chapter.difficultyClass === 
-                "advanced" 
-            ){ 
- 
-                difficultyIcon = 
-                    "🟠"; 
- 
-            } 
- 
- 
-            /* 
-            ================================================= 
-            LESSON TAGS 
-            ================================================= 
-            */ 
- 
-            let lessonHTML = ""; 
- 
- 
-            chapter.lessons.forEach( 
-                lesson => { 
- 
-                    lessonHTML += ` 
- 
-                        <span 
-                            class="lesson-tag" 
-                        > 
- 
-                            ${lesson} 
- 
-                        </span> 
- 
-                    `; 
- 
-                } 
-            ); 
- 
- 
-            /* 
-            ================================================= 
-            BUTTON 
-            ================================================= 
-            */ 
- 
-            let buttonHTML = ""; 
- 
- 
-            if(unlocked){ 
- 
-                buttonHTML = ` 
- 
-                    <a 
- 
-                        href="${getChapterLink(chapter.id)}" 
- 
-                        class="mission-btn" 
- 
-                    > 
- 
-                        ${ 
-                            passed 
- 
-                            ? 
- 
-                            "🔄 Open Mission" 
- 
-                            : 
- 
-                            "▶ Start Mission" 
- 
-                        } 
- 
-                    </a> 
- 
-                `; 
- 
-            } 
- 
-            else{ 
- 
-                const previousId = 
-                    getPreviousChapterId( 
-                        chapter.id 
-                    ); 
- 
- 
-                buttonHTML = ` 
- 
-                    <a 
- 
-                        href="#" 
- 
-                        class="mission-btn locked-btn" 
- 
-                        onclick=" 
-                            lockedMission( 
-                                ${chapter.id} 
-                            ); 
-                            return false; 
-                        " 
- 
-                    > 
- 
-                        🔒 Locked 
- 
-                    </a> 
- 
- 
-                    <div 
-                        class="lock-message" 
-                    > 
- 
-                        🔒 Complete Chapter 
-                        ${previousId} 
-                        with at least 
-                        ${PASS_PERCENTAGE}% 
-                        to unlock. 
- 
-                    </div> 
- 
-                `; 
- 
-            } 
- 
- 
-            /* 
-            ================================================= 
-            COMPLETED BADGE 
-            ================================================= 
-            */ 
- 
-            let completedHTML = ""; 
- 
- 
-            if(passed){ 
- 
-                completedHTML = ` 
- 
-                    <div 
-                        class="completed-badge" 
-                    > 
- 
-                        ✅ Completed 
-                        (${progress.percentage}%) 
- 
-                    </div> 
- 
-                `; 
- 
-            } 
- 
- 
-            /* 
-            ================================================= 
-            SCORE BADGE 
-            ================================================= 
-            */ 
- 
-            let scoreHTML = ""; 
- 
- 
-            if( 
-                progress.percentage > 0 && 
-                !passed 
-            ){ 
- 
-                scoreHTML = ` 
- 
-                    <div 
-                        class="score-badge" 
-                    > 
- 
-                        📊 Previous Quiz: 
-                        ${progress.percentage}% 
- 
-                        — Need 
-                        ${PASS_PERCENTAGE}% 
-                        to unlock next chapter. 
- 
-                    </div> 
- 
-                `; 
- 
-            } 
- 
- 
-            /* 
-            ================================================= 
-            CARD HTML 
-            ================================================= 
-            */ 
- 
-            card.innerHTML = ` 
- 
-                <div class="mission-top"> 
- 
- 
-                    <div 
-                        class="mission-number" 
-                    > 
- 
-                        🚀 Mission 
- 
-                        ${ 
-                            String( 
-                                chapter.id 
-                            ) 
-                            .padStart( 
-                                2, 
-                                "0" 
-                            ) 
-                        } 
- 
-                    </div> 
- 
- 
-                    <div 
-                        class=" 
-                            difficulty 
-                            ${chapter.difficultyClass} 
-                        " 
-                    > 
- 
-                        ${difficultyIcon} 
- 
-                        ${chapter.difficulty} 
- 
-                    </div> 
- 
- 
-                </div> 
- 
- 
-                <h3> 
- 
-                    ${chapter.name} 
- 
-                </h3> 
- 
- 
-                <p 
-                    class="mission-description" 
-                > 
- 
-                    ${chapter.description} 
- 
-                </p> 
- 
- 
-                <div 
-                    class="lesson-box" 
-                > 
- 
-                    <div 
-                        class="lesson-box-title" 
-                    > 
- 
-                        📚 Lessons & Topics 
- 
-                    </div> 
- 
- 
-                    <div 
-                        class="lesson-list" 
-                    > 
- 
-                        ${lessonHTML} 
- 
-                    </div> 
- 
-                </div> 
- 
- 
-                <div 
-                    class="mission-info" 
-                > 
- 
-                    <span 
-                        class="xp-info" 
-                    > 
- 
-                        ⭐ ${chapter.xp} XP 
- 
-                    </span> 
- 
- 
-                    <span> 
- 
-                        ⏱ ${chapter.time} 
- 
-                    </span> 
- 
-                </div> 
- 
- 
-                <div 
-                    class="progress-container" 
-                > 
- 
-                    <div 
- 
-                        class="progress-bar" 
- 
-                        style=" 
-                            width: 
-                            ${progress.percentage}%; 
-                        " 
- 
-                    > 
- 
-                    </div> 
- 
-                </div> 
- 
- 
-                <div 
-                    class="progress-text" 
-                > 
- 
-                    Quiz Progress: 
-                    ${progress.percentage}% 
- 
-                </div> 
- 
- 
-                ${buttonHTML} 
- 
- 
-                ${scoreHTML} 
- 
- 
-                ${completedHTML} 
- 
-            `; 
- 
- 
-            grid.appendChild( 
-                card 
-            ); 
- 
-        } 
-    ); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-LOCKED MISSION MESSAGE 
-============================================================= 
-*/ 
- 
-function lockedMission(id){ 
- 
-    const previousId = 
-        getPreviousChapterId( 
-            id 
-        ); 
- 
- 
-    alert( 
- 
-        "🔒 Mathematics Chapter " + 
- 
-        id + 
- 
-        " is locked.\n\n" + 
- 
-        "Complete Mathematics Chapter " + 
- 
-        previousId + 
- 
-        " with at least " + 
- 
-        PASS_PERCENTAGE + 
- 
-        "% first." 
- 
-    ); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-RENDER CHAPTER LIST 
-============================================================= 
-*/ 
- 
-function renderChapterList(){ 
- 
-    const list = 
-        document.getElementById( 
-            "chapterList" 
-        ); 
- 
- 
-    if(!list){ 
- 
-        return; 
- 
-    } 
- 
- 
-    list.innerHTML = ""; 
- 
- 
-    chapters.forEach( 
-        chapter => { 
- 
- 
-            const progress = 
-                getChapterProgress( 
-                    chapter.id 
-                ); 
- 
- 
-            const unlocked = 
-                isChapterUnlocked( 
-                    chapter.id 
-                ); 
- 
- 
-            const passed = 
-                isChapterPassed( 
-                    chapter.id 
-                ); 
- 
- 
-            const item = 
-                document.createElement( 
-                    "div" 
-                ); 
- 
- 
-            /* 
-            ================================================= 
-            COMPLETED 
-            ================================================= 
-            */ 
- 
-            if(passed){ 
- 
-                item.className = 
-                    "chapter-item completed-list"; 
- 
- 
-                item.innerHTML = ` 
- 
-                    ✓ ${chapter.id}. 
-                    ${chapter.name} 
- 
- 
-                    <strong 
- 
-                        style=" 
-                            float:right; 
-                            color:#86efac; 
-                        " 
- 
-                    > 
- 
-                        ${progress.percentage}% 
-                        Completed 
- 
-                    </strong> 
- 
-                `; 
- 
-            } 
- 
- 
-            /* 
-            ================================================= 
-            UNLOCKED 
-            ================================================= 
-            */ 
- 
-            else if(unlocked){ 
- 
-                item.className = 
-                    "chapter-item"; 
- 
- 
-                item.innerHTML = ` 
- 
-                    🔓 ${chapter.id}. 
-                    ${chapter.name} 
- 
- 
-                    <strong 
- 
-                        style=" 
-                            float:right; 
-                            color:#38bdf8; 
-                        " 
- 
-                    > 
- 
-                        ${progress.percentage}% 
- 
-                    </strong> 
- 
-                `; 
- 
-            } 
- 
- 
-            /* 
-            ================================================= 
-            LOCKED 
-            ================================================= 
-            */ 
- 
-            else{ 
- 
-                item.className = 
-                    "chapter-item locked-list"; 
- 
- 
-                item.innerHTML = ` 
- 
-                    🔒 ${chapter.id}. 
-                    ${chapter.name} 
- 
-                `; 
- 
-            } 
- 
- 
-            list.appendChild( 
-                item 
-            ); 
- 
-        } 
-    ); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-CALCULATE STATS 
-============================================================= 
-*/ 
- 
-function calculateStats(){ 
- 
-    let totalXP = 0; 
- 
-    let completed = 0; 
- 
-    let badges = 0; 
- 
- 
-    chapters.forEach( 
-        chapter => { 
- 
- 
-            if( 
-                isChapterPassed( 
-                    chapter.id 
-                ) 
-            ){ 
- 
-                completed++; 
- 
- 
-                totalXP += 
-                    chapter.xp; 
- 
- 
-                badges++; 
- 
-            } 
- 
-        } 
-    ); 
- 
- 
-    const xpElement = 
-        document.getElementById( 
-            "totalXP" 
-        ); 
- 
- 
-    const completedElement = 
-        document.getElementById( 
-            "missionsCompleted" 
-        ); 
- 
- 
-    const badgesElement = 
-        document.getElementById( 
-            "badgesEarned" 
-        ); 
- 
- 
-    if(xpElement){ 
- 
-        xpElement.textContent = 
-            totalXP; 
- 
-    } 
- 
- 
-    if(completedElement){ 
- 
-        completedElement.textContent = 
-            completed + "/8"; 
- 
-    } 
- 
- 
-    if(badgesElement){ 
- 
-        badgesElement.textContent = 
-            badges; 
- 
-    } 
- 
-} 
- 
- 
-/* 
-============================================================= 
-LEARNING STREAK 
-============================================================= 
-*/ 
- 
-function calculateStreak(){ 
- 
-    let completed = 0; 
- 
- 
-    chapters.forEach( 
-        chapter => { 
- 
- 
-            if( 
-                isChapterPassed( 
-                    chapter.id 
-                ) 
-            ){ 
- 
-                completed++; 
- 
-            } 
- 
-        } 
-    ); 
- 
- 
-    const streak = 
-        Math.min( 
-            completed, 
-            8 
-        ); 
- 
- 
-    const element = 
-        document.getElementById( 
-            "learningStreak" 
-        ); 
- 
- 
-    if(element){ 
- 
-        element.textContent = 
-            streak + " 🔥"; 
- 
-    } 
- 
-} 
- 
- 
-/* 
-============================================================= 
-LOAD EVERYTHING 
-============================================================= 
-*/ 
- 
-function loadProgress(){ 
- 
-    /* 
-    ========================================================= 
-    FIRST NORMALIZE ALL SAVED QUIZ RESULTS 
-    ========================================================= 
-    */ 
- 
-    chapters.forEach( 
-        chapter => { 
- 
-            getChapterProgress( 
-                chapter.id 
-            ); 
- 
-        } 
-    ); 
- 
- 
-    /* 
-    ========================================================= 
-    THEN RENDER 
-    ========================================================= 
-    */ 
- 
-    renderMissions(); 
- 
-    renderChapterList(); 
- 
-    calculateStats(); 
- 
-    calculateStreak(); 
- 
- 
-    /* 
-    ========================================================= 
-    DEBUG 
-    ========================================================= 
-    */ 
- 
-    console.log( 
-        "======================================" 
-    ); 
- 
- 
-    console.log( 
-        "EduSphere Mathematics Mission Hub" 
-    ); 
- 
- 
-    console.log( 
-        "Pass Percentage:", 
-        PASS_PERCENTAGE + "%" 
-    ); 
- 
- 
-    chapters.forEach( 
-        chapter => { 
- 
-            console.log( 
- 
-                "Chapter " + 
-                chapter.id + 
-                ":", 
- 
-                getChapterProgress( 
-                    chapter.id 
-                ), 
- 
-                "Unlocked:", 
- 
-                isChapterUnlocked( 
-                    chapter.id 
-                ) 
- 
-            ); 
- 
-        } 
-    ); 
- 
- 
-    console.log( 
-        "======================================" 
-    ); 
- 
-} 
- 
- 
-/* 
-============================================================= 
-INITIAL LOAD 
-============================================================= 
-*/ 
- 
-loadProgress(); 
- 
- 
-/* 
-============================================================= 
-WHEN RETURNING TO THIS PAGE 
-============================================================= 
-*/ 
- 
-window.addEventListener( 
-    "pageshow", 
-    function(){ 
- 
-        loadProgress(); 
- 
-    } 
-); 
- 
- 
-/* 
-============================================================= 
-WHEN WINDOW GETS FOCUS 
-============================================================= 
-*/ 
- 
-window.addEventListener( 
-    "focus", 
-    function(){ 
- 
-        loadProgress(); 
- 
-    } 
-); 
- 
- 
-/* 
-============================================================= 
-WHEN TAB BECOMES VISIBLE 
-============================================================= 
-*/ 
- 
-document.addEventListener( 
-    "visibilitychange", 
-    function(){ 
- 
-        if( 
-            document.visibilityState === 
-            "visible" 
-        ){ 
- 
-            loadProgress(); 
- 
-        } 
- 
-    } 
-); 
- 
- 
-/* 
-============================================================= 
-START LEARNING BUTTON 
-============================================================= 
-*/ 
- 
-const startLearning = 
-    document.querySelector( 
-        ".start-learning" 
-    ); 
- 
- 
-if(startLearning){ 
- 
-    startLearning.addEventListener( 
-        "click", 
-        function(){ 
- 
-            setTimeout( 
-                function(){ 
- 
-                    loadProgress(); 
- 
-                }, 
-                100 
-            ); 
- 
-        } 
-    ); 
- 
-} 
- 
-</script> 
- 
- 
-</body> 
- 
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduSphere | 10th Standard Mathematics Mission Hub</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+    background:#111827;
+
+    padding:22px 36px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+
+.logo{
+    font-size:32px;
+
+    font-weight:800;
+
+    color:#38bdf8;
+
+    letter-spacing:-1px;
+}
+
+
+.dashboard-btn{
+    text-decoration:none;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    transition:.25s;
+}
+
+
+.dashboard-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37,99,235,.35);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container{
+    width:94%;
+
+    max-width:1500px;
+
+    margin:auto;
+
+    padding:
+        32px
+        0
+        50px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:300px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2448a5,
+            #117c79
+        );
+
+    border-radius:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:45px;
+
+    margin-bottom:36px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.22);
+}
+
+
+.hero h1{
+    font-size:48px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+
+.hero p{
+    font-size:20px;
+
+    color:#e0f2fe;
+
+    max-width:900px;
+
+    line-height:1.6;
+}
+
+
+.start-learning{
+    margin-top:28px;
+
+    text-decoration:none;
+
+    background:white;
+
+    color:#0f172a;
+
+    padding:17px 30px;
+
+    border-radius:16px;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    transition:.25s;
+}
+
+
+.start-learning:hover{
+    transform:
+        translateY(-3px)
+        scale(1.02);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:50px;
+}
+
+
+.stat-card{
+    background:#1e293b;
+
+    border-radius:20px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    min-height:145px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.15);
+}
+
+
+.stat-value{
+    color:#38bdf8;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+
+.stat-label{
+    color:#94a3b8;
+
+    font-size:17px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title{
+    font-size:34px;
+
+    font-weight:800;
+
+    margin:
+        0
+        0
+        25px;
+}
+
+
+/* =========================================================
+   CATEGORY SECTION
+========================================================= */
+
+.category-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:55px;
+}
+
+
+.category-card{
+    min-height:190px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(37,99,235,.18);
+
+    transition:.25s;
+}
+
+
+.category-card:hover{
+    transform:translateY(-5px);
+}
+
+
+.category-card:nth-child(2){
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f766e,
+            #0d9488
+        );
+}
+
+
+.category-card:nth-child(3){
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #6d28d9
+        );
+}
+
+
+.category-card:nth-child(4){
+
+    background:
+        linear-gradient(
+            135deg,
+            #b45309,
+            #d97706
+        );
+}
+
+
+.category-card h2{
+    font-size:27px;
+
+    margin-bottom:14px;
+}
+
+
+.category-card p{
+    font-size:15px;
+
+    line-height:1.6;
+
+    color:#dbeafe;
+}
+
+
+.category-count{
+    margin-top:15px;
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   MISSION SECTION
+========================================================= */
+
+.mission-section{
+    margin-top:10px;
+
+    margin-bottom:60px;
+}
+
+
+/* =========================================================
+   MISSION GRID
+========================================================= */
+
+.mission-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:26px;
+}
+
+
+/* =========================================================
+   MISSION CARD
+========================================================= */
+
+.mission-card{
+    background:#1e293b;
+
+    border-radius:24px;
+
+    padding:27px;
+
+    min-height:430px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:.25s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.15);
+
+    position:relative;
+}
+
+
+.mission-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   LOCKED CARD
+========================================================= */
+
+.mission-card.locked{
+    opacity:.65;
+
+    filter:saturate(.55);
+}
+
+
+.mission-card.locked:hover{
+    transform:none;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   MISSION TOP
+========================================================= */
+
+.mission-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+
+.mission-number{
+    color:#38bdf8;
+
+    font-size:19px;
+
+    font-weight:800;
+}
+
+
+.difficulty{
+    padding:
+        8px 13px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+.beginner{
+    background:#087f45;
+
+    color:#dcfce7;
+}
+
+
+.intermediate{
+    background:#b87900;
+
+    color:#fff7d6;
+}
+
+
+.advanced{
+    background:#b91c1c;
+
+    color:#fee2e2;
+}
+
+
+.expert{
+    background:#7f1d1d;
+
+    color:#fee2e2;
+}
+
+
+/* =========================================================
+   MISSION CONTENT
+========================================================= */
+
+.mission-card h3{
+    font-size:23px;
+
+    line-height:1.35;
+
+    margin-bottom:15px;
+}
+
+
+.mission-description{
+    color:#e2e8f0;
+
+    font-size:15px;
+
+    line-height:1.65;
+
+    min-height:85px;
+}
+
+
+/* =========================================================
+   LESSON CARDS
+========================================================= */
+
+.lesson-box{
+    background:#0f172a;
+
+    border:1px solid #334155;
+
+    border-radius:14px;
+
+    padding:13px;
+
+    margin-top:14px;
+}
+
+
+.lesson-box-title{
+    color:#38bdf8;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    margin-bottom:7px;
+}
+
+
+.lesson-list{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+}
+
+
+.lesson-tag{
+    background:#26364c;
+
+    color:#cbd5e1;
+
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    font-size:11px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   MISSION INFO
+========================================================= */
+
+.mission-info{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:
+        20px
+        0
+        17px;
+
+    color:#e2e8f0;
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+
+.xp-info{
+    color:#facc15;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-container{
+    width:100%;
+
+    height:10px;
+
+    background:#334155;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:9px;
+}
+
+
+.progress-bar{
+    height:100%;
+
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    border-radius:20px;
+
+    transition:.5s;
+}
+
+
+.progress-text{
+    color:#94a3b8;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-align:right;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================================================
+   MISSION BUTTON
+========================================================= */
+
+.mission-btn{
+    width:100%;
+
+    margin-top:auto;
+
+    padding:
+        16px 20px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    display:block;
+
+    transition:.25s;
+}
+
+
+.mission-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(6,182,212,.20);
+}
+
+
+/* =========================================================
+   COMPLETED BADGE
+========================================================= */
+
+.completed-badge{
+    display:block;
+
+    margin-top:10px;
+
+    padding:8px 12px;
+
+    border-radius:20px;
+
+    background:#14532d;
+
+    color:#86efac;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   SCORE BADGE
+========================================================= */
+
+.score-badge{
+    margin-top:8px;
+
+    padding:7px;
+
+    border-radius:9px;
+
+    background:#172554;
+
+    color:#93c5fd;
+
+    font-size:12px;
+
+    text-align:center;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   CHAPTER LIST
+========================================================= */
+
+.chapter-section{
+    margin-top:60px;
+}
+
+
+.chapter-list{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:12px;
+}
+
+
+.chapter-item{
+    background:#1e293b;
+
+    padding:
+        17px 20px;
+
+    border-radius:12px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+
+    border-left:
+        4px solid
+        #38bdf8;
+
+    transition:.2s;
+}
+
+
+.chapter-item:hover{
+    background:#26364c;
+}
+
+
+.chapter-item.completed-list{
+    border-left-color:#22c55e;
+
+    color:#bbf7d0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    text-align:center;
+
+    color:#64748b;
+
+    padding:
+        40px 20px;
+
+    border-top:
+        1px solid
+        #1e293b;
+
+    margin-top:20px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1200px){
+
+    .mission-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .category-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .hero h1{
+        font-size:42px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:
+            18px 20px;
+    }
+
+
+    .logo{
+        font-size:25px;
+    }
+
+
+    .dashboard-btn{
+        padding:
+            11px 16px;
+
+        font-size:14px;
+    }
+
+
+    .container{
+        width:94%;
+
+        padding-top:22px;
+    }
+
+
+    .hero{
+        padding:
+            35px 20px;
+
+        min-height:300px;
+
+        border-radius:22px;
+    }
+
+
+    .hero h1{
+        font-size:32px;
+
+        line-height:1.25;
+    }
+
+
+    .hero p{
+        font-size:16px;
+    }
+
+
+    .section-title{
+        font-size:27px;
+    }
+
+
+    .mission-grid{
+        grid-template-columns:1fr;
+    }
+
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+    }
+
+
+    .stat-card{
+        min-height:120px;
+
+        padding:
+            20px 10px;
+    }
+
+
+    .stat-value{
+        font-size:32px;
+    }
+
+
+    .stat-label{
+        font-size:14px;
+    }
+
+
+    .category-card{
+        padding:25px;
+    }
+
+
+    .category-card h2{
+        font-size:26px;
+    }
+
+
+    .chapter-list{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:450px){
+
+    .header{
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+
+    .dashboard-btn{
+        width:100%;
+
+        text-align:center;
+    }
+
+
+    .hero h1{
+        font-size:27px;
+    }
+
+
+    .hero p{
+        font-size:14px;
+    }
+
+
+    .mission-card{
+        padding:22px;
+    }
+
+
+    .mission-top{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+
+    .mission-description{
+        min-height:auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        EduSphere 🧪
+
+    </div>
+
+
+    <a
+        href="../login.html"
+        class="dashboard-btn">
+
+        ← Dashboard
+
+    </a>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <h1>
+
+        🧮 10th Standard Mathematics Mission Hub
+
+    </h1>
+
+
+    <p>
+
+        Complete Maths missions, solve numerical problems,
+        pass quizzes, earn XP and master Tamil Nadu State
+        Board Mathematics.
+
+    </p>
+
+
+    <a
+        href="#missions"
+        class="start-learning">
+
+        🚀 Start Learning
+
+    </a>
+
+</section>
+
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats">
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-value"
+            id="totalXP">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+
+            Total XP
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-value"
+            id="missionsCompleted">
+
+            0/8
+
+        </div>
+
+        <div class="stat-label">
+
+            Missions Completed
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-value"
+            id="learningStreak">
+
+            0 🔥
+
+        </div>
+
+        <div class="stat-label">
+
+            Learning Streak
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-value"
+            id="badgesEarned">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+
+            Badges Earned
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section>
+
+
+    <h2 class="section-title">
+
+        📚 Mathematics Learning Categories
+
+    </h2>
+
+
+    <div class="category-grid">
+
+
+        <div class="category-card">
+
+            <h2>
+
+                🔢 Algebra
+
+            </h2>
+
+
+            <p>
+
+                Learn algebraic expressions, equations,
+                sequences and mathematical relationships.
+
+            </p>
+
+
+            <div class="category-count">
+
+                Algebra Practice
+
+            </div>
+
+        </div>
+
+
+
+        <div class="category-card">
+
+            <h2>
+
+                📐 Geometry
+
+            </h2>
+
+
+            <p>
+
+                Study geometry, coordinate geometry,
+                constructions, theorems and applications.
+
+            </p>
+
+
+            <div class="category-count">
+
+                Geometry Practice
+
+            </div>
+
+        </div>
+
+
+
+        <div class="category-card">
+
+            <h2>
+
+                📊 Statistics
+
+            </h2>
+
+
+            <p>
+
+                Practise statistics, probability,
+                data interpretation and numerical problems.
+
+            </p>
+
+
+            <div class="category-count">
+
+                Statistics & Probability
+
+            </div>
+
+        </div>
+
+
+
+        <div class="category-card">
+
+            <h2>
+
+                📏 Measurement
+
+            </h2>
+
+
+            <p>
+
+                Master trigonometry, mensuration,
+                measurements and real-world applications.
+
+            </p>
+
+
+            <div class="category-count">
+
+                Mensuration & Trigonometry
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     MISSIONS
+========================================================= -->
+
+<section
+    class="mission-section"
+    id="missions">
+
+
+    <h2 class="section-title">
+
+        🧮 Mathematics Missions
+
+    </h2>
+
+
+    <div
+        class="mission-grid"
+        id="mathsMissionGrid">
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CHAPTER LIST
+========================================================= -->
+
+<section class="chapter-section">
+
+
+    <h2 class="section-title">
+
+        📖 Mathematics Chapters
+
+    </h2>
+
+
+    <div
+        class="chapter-list"
+        id="chapterList">
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   EDUSPHERE MATHEMATICS HUB
+========================================================= */
+
+const CHAPTER_BASE_PATH = "../maths/";
+
+
+/* =========================================================
+   MATHEMATICS CHAPTER DATA
+========================================================= */
+
+const chapters = [
+
+    {
+        id:1,
+
+        subject:"Mathematics",
+
+        name:"Relations and Functions",
+
+        shortName:"Relations & Functions",
+
+        description:
+            "Study relations, functions, domain, range, mappings and solve important mathematical problems.",
+
+        lessons:[
+            "Relations",
+            "Functions",
+            "Domain",
+            "Range",
+            "Mappings"
+        ],
+
+        xp:100,
+
+        time:"45 mins",
+
+        difficulty:"Beginner",
+
+        difficultyClass:"beginner"
+    },
+
+
+    {
+        id:2,
+
+        subject:"Mathematics",
+
+        name:"Numbers and Sequences",
+
+        shortName:"Numbers & Sequences",
+
+        description:
+            "Learn number patterns, sequences, progressions and solve numerical problems step by step.",
+
+        lessons:[
+            "Number Patterns",
+            "Sequences",
+            "Progressions",
+            "Arithmetic Sequences",
+            "Problems"
+        ],
+
+        xp:110,
+
+        time:"45 mins",
+
+        difficulty:"Beginner",
+
+        difficultyClass:"beginner"
+    },
+
+
+    {
+        id:3,
+
+        subject:"Mathematics",
+
+        name:"Algebra",
+
+        shortName:"Algebra",
+
+        description:
+            "Master algebraic concepts, equations, expressions and important numerical applications.",
+
+        lessons:[
+            "Algebraic Expressions",
+            "Equations",
+            "Identities",
+            "Polynomials",
+            "Applications"
+        ],
+
+        xp:120,
+
+        time:"50 mins",
+
+        difficulty:"Intermediate",
+
+        difficultyClass:"intermediate"
+    },
+
+
+    {
+        id:4,
+
+        subject:"Mathematics",
+
+        name:"Geometry",
+
+        shortName:"Geometry",
+
+        description:
+            "Explore geometric concepts, theorems, properties and solve examination-oriented problems.",
+
+        lessons:[
+            "Geometric Concepts",
+            "Theorems",
+            "Properties",
+            "Proofs",
+            "Applications"
+        ],
+
+        xp:130,
+
+        time:"50 mins",
+
+        difficulty:"Intermediate",
+
+        difficultyClass:"intermediate"
+    },
+
+
+    {
+        id:5,
+
+        subject:"Mathematics",
+
+        name:"Coordinate Geometry",
+
+        shortName:"Coordinate Geometry",
+
+        description:
+            "Learn coordinates, distance, section concepts and solve coordinate geometry problems.",
+
+        lessons:[
+            "Coordinates",
+            "Distance",
+            "Section Formula",
+            "Coordinate Problems",
+            "Applications"
+        ],
+
+        xp:140,
+
+        time:"50 mins",
+
+        difficulty:"Advanced",
+
+        difficultyClass:"advanced"
+    },
+
+
+    {
+        id:6,
+
+        subject:"Mathematics",
+
+        name:"Trigonometry",
+
+        shortName:"Trigonometry",
+
+        description:
+            "Study trigonometric ratios, identities, heights and distances and solve numerical problems.",
+
+        lessons:[
+            "Trigonometric Ratios",
+            "Identities",
+            "Angles",
+            "Heights",
+            "Distances"
+        ],
+
+        xp:150,
+
+        time:"55 mins",
+
+        difficulty:"Advanced",
+
+        difficultyClass:"advanced"
+    },
+
+
+    {
+        id:7,
+
+        subject:"Mathematics",
+
+        name:"Mensuration",
+
+        shortName:"Mensuration",
+
+        description:
+            "Calculate areas, surface areas, volumes and solve practical mensuration problems.",
+
+        lessons:[
+            "Area",
+            "Surface Area",
+            "Volume",
+            "Solid Shapes",
+            "Applications"
+        ],
+
+        xp:160,
+
+        time:"55 mins",
+
+        difficulty:"Advanced",
+
+        difficultyClass:"advanced"
+    },
+
+
+    {
+        id:8,
+
+        subject:"Mathematics",
+
+        name:"Statistics and Probability",
+
+        shortName:"Statistics & Probability",
+
+        description:
+            "Study statistics, probability, data analysis and solve important numerical questions.",
+
+        lessons:[
+            "Statistics",
+            "Data",
+            "Probability",
+            "Mean",
+            "Applications"
+        ],
+
+        xp:170,
+
+        time:"60 mins",
+
+        difficulty:"Expert",
+
+        difficultyClass:"expert"
+    }
+
+];
+
+
+/* =========================================================
+   GET STORAGE KEYS
+========================================================= */
+
+function getStorageKeys(id){
+
+    return [
+
+        "edusphere_maths_chapter" + id,
+
+        "edusphere_maths_chapter_" + id,
+
+        "edusphere_10maths_chapter_" + id,
+
+        "edusphere_10maths_chapter" + id,
+
+        "edusphere_math_chapter" + id,
+
+        "edusphere_math_chapter_" + id,
+
+        "edusphere_maths_unit" + id,
+
+        "edusphere_maths_unit_" + id,
+
+        "edusphere_10maths_unit_" + id,
+
+        "edusphere_10maths_unit" + id
+
+    ];
+
+}
+
+
+/* =========================================================
+   CONVERT VALUE TO NUMBER
+========================================================= */
+
+function convertToNumber(value){
+
+    if(
+        value === undefined ||
+        value === null
+    ){
+
+        return NaN;
+
+    }
+
+
+    let text =
+        String(value)
+        .trim()
+        .replace("%","");
+
+
+    return parseFloat(text);
+
+}
+
+
+/* =========================================================
+   GET CHAPTER PROGRESS
+========================================================= */
+
+function getChapterProgress(id){
+
+    const keys =
+        getStorageKeys(id);
+
+
+    let saved = null;
+
+
+    for(
+        let i = 0;
+        i < keys.length;
+        i++
+    ){
+
+        const value =
+            localStorage.getItem(
+                keys[i]
+            );
+
+
+        if(value){
+
+            saved = value;
+
+            break;
+
+        }
+
+    }
+
+
+    if(!saved){
+
+        return {
+
+            percentage:0,
+
+            status:"NOT_ATTEMPTED",
+
+            score:0,
+
+            total:0
+
+        };
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(saved);
+
+
+        let percentage = NaN;
+
+
+        if(
+            data.percentage !== undefined
+        ){
+
+            percentage =
+                convertToNumber(
+                    data.percentage
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            ) &&
+            data.percent !== undefined
+        ){
+
+            percentage =
+                convertToNumber(
+                    data.percent
+                );
+
+        }
+
+
+        if(
+
+            !Number.isFinite(
+                percentage
+            )
+
+            &&
+
+            data.score !== undefined
+
+            &&
+
+            data.total !== undefined
+
+        ){
+
+            const score =
+                convertToNumber(
+                    data.score
+                );
+
+
+            const total =
+                convertToNumber(
+                    data.total
+                );
+
+
+            if(
+
+                Number.isFinite(score)
+
+                &&
+
+                Number.isFinite(total)
+
+                &&
+
+                total > 0
+
+            ){
+
+                percentage =
+                    (
+                        score /
+                        total
+                    ) * 100;
+
+            }
+
+        }
+
+
+        if(
+
+            !Number.isFinite(
+                percentage
+            )
+
+            &&
+
+            data.correct !== undefined
+
+            &&
+
+            data.total !== undefined
+
+        ){
+
+            const correct =
+                convertToNumber(
+                    data.correct
+                );
+
+
+            const total =
+                convertToNumber(
+                    data.total
+                );
+
+
+            if(
+
+                Number.isFinite(correct)
+
+                &&
+
+                Number.isFinite(total)
+
+                &&
+
+                total > 0
+
+            ){
+
+                percentage =
+                    (
+                        correct /
+                        total
+                    ) * 100;
+
+            }
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage = 0;
+
+        }
+
+
+        percentage =
+            Math.max(
+                0,
+                Math.min(
+                    100,
+                    percentage
+                )
+            );
+
+
+        percentage =
+            Math.round(
+                percentage
+            );
+
+
+        let status =
+            String(
+                data.status || ""
+            ).toUpperCase();
+
+
+        if(
+            percentage >= 60
+        ){
+
+            status = "PASSED";
+
+        }
+        else{
+
+            status = "FAILED";
+
+        }
+
+
+        return {
+
+            percentage:percentage,
+
+            status:status,
+
+            score:data.score || 0,
+
+            total:data.total || 0
+
+        };
+
+    }
+
+    catch(error){
+
+        console.error(
+            "EduSphere Maths progress error:",
+            error
+        );
+
+
+        return {
+
+            percentage:0,
+
+            status:"NOT_ATTEMPTED",
+
+            score:0,
+
+            total:0
+
+        };
+
+    }
+
+}
+
+
+/* =========================================================
+   IS CHAPTER PASSED
+========================================================= */
+
+function isChapterPassed(id){
+
+    const progress =
+        getChapterProgress(id);
+
+
+    return (
+        progress.percentage >= 60
+    );
+
+}
+
+
+/* =========================================================
+   ALL CHAPTERS ARE ALWAYS UNLOCKED
+========================================================= */
+
+function isChapterUnlocked(id){
+
+    return true;
+
+}
+
+
+/* =========================================================
+   GET CHAPTER LINK
+========================================================= */
+
+function getChapterLink(id){
+
+    return (
+        CHAPTER_BASE_PATH +
+        "chapter" +
+        id +
+        ".html"
+    );
+
+}
+
+
+/* =========================================================
+   RENDER MISSION CARDS
+========================================================= */
+
+function renderMissions(){
+
+    const grid =
+        document.getElementById(
+            "mathsMissionGrid"
+        );
+
+
+    if(!grid){
+
+        return;
+
+    }
+
+
+    grid.innerHTML = "";
+
+
+    chapters.forEach(
+        chapter => {
+
+
+            const progress =
+                getChapterProgress(
+                    chapter.id
+                );
+
+
+            /*
+             * IMPORTANT:
+             * Every chapter is unlocked.
+             */
+
+            const unlocked = true;
+
+
+            const passed =
+                isChapterPassed(
+                    chapter.id
+                );
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "mission-card";
+
+
+            let difficultyIcon =
+                "🔴";
+
+
+            if(
+                chapter.difficultyClass ===
+                "beginner"
+            ){
+
+                difficultyIcon = "🟢";
+
+            }
+
+            else if(
+                chapter.difficultyClass ===
+                "intermediate"
+            ){
+
+                difficultyIcon = "🟡";
+
+            }
+
+            else if(
+                chapter.difficultyClass ===
+                "advanced"
+            ){
+
+                difficultyIcon = "🟠";
+
+            }
+
+
+            let lessonHTML = "";
+
+
+            chapter.lessons.forEach(
+                lesson => {
+
+                    lessonHTML += `
+
+                        <span
+                            class="lesson-tag"
+                        >
+
+                            ${lesson}
+
+                        </span>
+
+                    `;
+
+                }
+            );
+
+
+            let buttonHTML = `
+
+                <a
+
+                    href="${getChapterLink(chapter.id)}"
+
+                    class="mission-btn"
+
+                >
+
+                    ${
+                        passed
+                        ?
+                        "🔄 Open Mission"
+                        :
+                        "▶ Start Mission"
+                    }
+
+                </a>
+
+            `;
+
+
+            let completedHTML = "";
+
+
+            if(passed){
+
+                completedHTML = `
+
+                    <div
+                        class="completed-badge"
+                    >
+
+                        ✅ Completed
+                        (${progress.percentage}%)
+
+                    </div>
+
+                `;
+
+            }
+
+
+            let scoreHTML = "";
+
+
+            if(
+                progress.percentage > 0 &&
+                !passed
+            ){
+
+                scoreHTML = `
+
+                    <div
+                        class="score-badge"
+                    >
+
+                        📊 Previous Quiz:
+                        ${progress.percentage}%
+
+                    </div>
+
+                `;
+
+            }
+
+
+            card.innerHTML = `
+
+                <div class="mission-top">
+
+
+                    <div
+                        class="mission-number"
+                    >
+
+                        🚀 Mission
+
+                        ${
+                            String(
+                                chapter.id
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            )
+                        }
+
+                    </div>
+
+
+                    <div
+                        class="
+                            difficulty
+                            ${chapter.difficultyClass}
+                        "
+                    >
+
+                        ${difficultyIcon}
+
+                        ${chapter.difficulty}
+
+                    </div>
+
+
+                </div>
+
+
+                <h3>
+
+                    ${chapter.name}
+
+                </h3>
+
+
+                <p
+                    class="mission-description"
+                >
+
+                    ${chapter.description}
+
+                </p>
+
+
+                <div
+                    class="lesson-box"
+                >
+
+                    <div
+                        class="lesson-box-title"
+                    >
+
+                        📚 Lessons & Topics
+
+                    </div>
+
+
+                    <div
+                        class="lesson-list"
+                    >
+
+                        ${lessonHTML}
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="mission-info"
+                >
+
+                    <span
+                        class="xp-info"
+                    >
+
+                        ⭐ ${chapter.xp} XP
+
+                    </span>
+
+
+                    <span>
+
+                        ⏱ ${chapter.time}
+
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="progress-container"
+                >
+
+                    <div
+
+                        class="progress-bar"
+
+                        style="
+                            width:
+                            ${progress.percentage}%;
+                        "
+
+                    >
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="progress-text"
+                >
+
+                    Quiz Progress:
+                    ${progress.percentage}%
+
+                </div>
+
+
+                ${buttonHTML}
+
+
+                ${scoreHTML}
+
+
+                ${completedHTML}
+
+            `;
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   RENDER CHAPTER LIST
+========================================================= */
+
+function renderChapterList(){
+
+    const list =
+        document.getElementById(
+            "chapterList"
+        );
+
+
+    if(!list){
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    chapters.forEach(
+        chapter => {
+
+
+            const progress =
+                getChapterProgress(
+                    chapter.id
+                );
+
+
+            const passed =
+                isChapterPassed(
+                    chapter.id
+                );
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            if(passed){
+
+                item.className =
+                    "chapter-item completed-list";
+
+
+                item.innerHTML = `
+
+                    ✓ ${chapter.id}.
+                    ${chapter.name}
+
+
+                    <strong
+
+                        style="
+                            float:right;
+                            color:#86efac;
+                        "
+
+                    >
+
+                        ${progress.percentage}%
+                        Completed
+
+                    </strong>
+
+                `;
+
+            }
+
+            else{
+
+                /*
+                 * Every chapter is unlocked.
+                 */
+
+                item.className =
+                    "chapter-item";
+
+
+                item.innerHTML = `
+
+                    🔓 ${chapter.id}.
+                    ${chapter.name}
+
+
+                    <strong
+
+                        style="
+                            float:right;
+                            color:#38bdf8;
+                        "
+
+                    >
+
+                        ${progress.percentage}%
+
+                    </strong>
+
+                `;
+
+            }
+
+
+            list.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CALCULATE STATS
+========================================================= */
+
+function calculateStats(){
+
+    let totalXP = 0;
+
+    let completed = 0;
+
+    let badges = 0;
+
+
+    chapters.forEach(
+        chapter => {
+
+
+            if(
+                isChapterPassed(
+                    chapter.id
+                )
+            ){
+
+                completed++;
+
+
+                totalXP +=
+                    chapter.xp;
+
+
+                badges++;
+
+            }
+
+        }
+    );
+
+
+    const xpElement =
+        document.getElementById(
+            "totalXP"
+        );
+
+
+    const completedElement =
+        document.getElementById(
+            "missionsCompleted"
+        );
+
+
+    const badgesElement =
+        document.getElementById(
+            "badgesEarned"
+        );
+
+
+    if(xpElement){
+
+        xpElement.textContent =
+            totalXP;
+
+    }
+
+
+    if(completedElement){
+
+        completedElement.textContent =
+            completed + "/8";
+
+    }
+
+
+    if(badgesElement){
+
+        badgesElement.textContent =
+            badges;
+
+    }
+
+}
+
+
+/* =========================================================
+   LEARNING STREAK
+========================================================= */
+
+function calculateStreak(){
+
+    let completed = 0;
+
+
+    chapters.forEach(
+        chapter => {
+
+            if(
+                isChapterPassed(
+                    chapter.id
+                )
+            ){
+
+                completed++;
+
+            }
+
+        }
+    );
+
+
+    const streak =
+        Math.min(
+            completed,
+            8
+        );
+
+
+    const element =
+        document.getElementById(
+            "learningStreak"
+        );
+
+
+    if(element){
+
+        element.textContent =
+            streak + " 🔥";
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD EVERYTHING
+========================================================= */
+
+function loadProgress(){
+
+    renderMissions();
+
+    renderChapterList();
+
+    calculateStats();
+
+    calculateStreak();
+
+}
+
+
+/* =========================================================
+   INITIAL LOAD
+========================================================= */
+
+loadProgress();
+
+
+/* =========================================================
+   WHEN RETURNING TO PAGE
+========================================================= */
+
+window.addEventListener(
+    "pageshow",
+    function(){
+
+        loadProgress();
+
+    }
+);
+
+
+/* =========================================================
+   WINDOW FOCUS
+========================================================= */
+
+window.addEventListener(
+    "focus",
+    function(){
+
+        loadProgress();
+
+    }
+);
+
+
+/* =========================================================
+   TAB BECOMES VISIBLE
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(
+            document.visibilityState ===
+            "visible"
+        ){
+
+            loadProgress();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   START LEARNING
+========================================================= */
+
+const startLearning =
+    document.querySelector(
+        ".start-learning"
+    );
+
+
+if(startLearning){
+
+    startLearning.addEventListener(
+        "click",
+        function(){
+
+            setTimeout(
+                function(){
+
+                    loadProgress();
+
+                },
+                100
+            );
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
 
 
