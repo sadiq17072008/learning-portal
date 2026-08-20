@@ -16,10 +16,6 @@ EduSphere | 10th Standard Social Science Mission Hub
 
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
-
 *{
     margin:0;
     padding:0;
@@ -27,321 +23,182 @@ EduSphere | 10th Standard Social Science Mission Hub
     font-family:Arial,sans-serif;
 }
 
-
-/* =====================================================
-   BODY
-===================================================== */
-
 body{
     background:#0f172a;
     color:white;
     min-height:100vh;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
-
 .header{
     background:#111827;
-
     padding:22px 36px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     position:sticky;
     top:0;
-
     z-index:1000;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.04);
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
-
 
 .logo{
     font-size:32px;
     font-weight:800;
     color:#38bdf8;
-    letter-spacing:-1px;
 }
-
 
 .dashboard-btn{
     text-decoration:none;
-
     color:white;
-
     background:
         linear-gradient(
             135deg,
             #2563eb,
             #06b6d4
         );
-
     padding:14px 24px;
-
     border-radius:14px;
-
     font-size:17px;
     font-weight:700;
-
     transition:.25s;
 }
 
-
 .dashboard-btn:hover{
     transform:translateY(-2px);
-
     box-shadow:
         0 10px 25px
         rgba(37,99,235,.35);
 }
 
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
 .container{
     width:94%;
     max-width:1500px;
-
     margin:auto;
-
-    padding:
-        32px
-        0
-        50px;
+    padding:32px 0 50px;
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
-
 .hero{
-
-    min-height:290px;
-
+    min-height:300px;
     background:
         linear-gradient(
             135deg,
             #2448a5,
             #117c79
         );
-
     border-radius:30px;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     padding:45px;
-
     margin-bottom:36px;
-
     box-shadow:
         0 20px 50px
         rgba(0,0,0,.22);
 }
 
-
 .hero h1{
-
     font-size:48px;
-
     font-weight:800;
-
     margin-bottom:15px;
-
 }
 
-
 .hero p{
-
     font-size:20px;
-
     color:#e0f2fe;
-
-    max-width:850px;
-
+    max-width:950px;
     line-height:1.6;
 }
 
-
 .start-learning{
-
     margin-top:28px;
-
     text-decoration:none;
-
     background:white;
-
     color:#0f172a;
-
     padding:17px 30px;
-
     border-radius:16px;
-
     font-size:18px;
-
     font-weight:800;
-
     transition:.25s;
 }
 
-
 .start-learning:hover{
-
     transform:
         translateY(-3px)
         scale(1.02);
-
     box-shadow:
         0 10px 30px
         rgba(0,0,0,.25);
 }
 
-
-/* =====================================================
-   STATS
-===================================================== */
-
 .stats{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
-
     margin-bottom:50px;
 }
 
-
 .stat-card{
-
     background:#1e293b;
-
     border-radius:20px;
-
     padding:30px 20px;
-
     text-align:center;
-
     min-height:145px;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     box-shadow:
         0 8px 25px
         rgba(0,0,0,.15);
 }
 
-
 .stat-value{
-
     color:#38bdf8;
-
     font-size:42px;
-
     font-weight:800;
-
     margin-bottom:10px;
 }
 
-
 .stat-label{
-
     color:#94a3b8;
-
     font-size:17px;
 }
 
-
-/* =====================================================
-   SECTION TITLE
-===================================================== */
-
 .section-title{
-
     font-size:34px;
-
     font-weight:800;
-
-    margin:
-        0
-        0
-        25px;
+    margin:0 0 25px;
 }
-
-
-/* =====================================================
-   SUBJECT SECTION TITLE
-===================================================== */
-
-.subject-section-title{
-
-    margin-top:75px;
-}
-
-
-/* =====================================================
-   CATEGORY
-===================================================== */
 
 .category-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
-
     margin-bottom:55px;
 }
 
-
 .category-card{
-
-    min-height:180px;
-
-    padding:32px;
-
+    min-height:210px;
+    padding:30px;
     border-radius:25px;
-
     background:
         linear-gradient(
             135deg,
             #2563eb,
             #1d4ed8
         );
-
     box-shadow:
         0 15px 35px
         rgba(37,99,235,.18);
+    transition:.25s;
 }
 
+.category-card:hover{
+    transform:translateY(-5px);
+}
 
 .category-card:nth-child(2){
-
     background:
         linear-gradient(
             135deg,
@@ -350,9 +207,7 @@ body{
         );
 }
 
-
 .category-card:nth-child(3){
-
     background:
         linear-gradient(
             135deg,
@@ -361,9 +216,7 @@ body{
         );
 }
 
-
 .category-card:nth-child(4){
-
     background:
         linear-gradient(
             135deg,
@@ -372,760 +225,459 @@ body{
         );
 }
 
-
 .category-card h2{
-
-    font-size:31px;
-
-    margin-bottom:15px;
+    font-size:27px;
+    margin-bottom:14px;
 }
 
-
 .category-card p{
-
-    font-size:17px;
-
-    line-height:1.7;
-
+    font-size:15px;
+    line-height:1.6;
     color:#dbeafe;
 }
 
-
 .category-count{
-
     margin-top:15px;
-
-    font-size:17px;
-
+    font-size:15px;
     font-weight:700;
 }
 
-
-/* =====================================================
-   MISSION SECTION
-===================================================== */
-
-.mission-section{
-
-    margin-top:10px;
-
-    margin-bottom:60px;
+.subject-heading{
+    margin-top:45px;
+    margin-bottom:22px;
+    padding:20px 24px;
+    border-radius:18px;
+    background:#1e293b;
+    border-left:5px solid #38bdf8;
 }
 
+.subject-heading h2{
+    font-size:28px;
+    margin-bottom:6px;
+}
 
-/* =====================================================
-   MISSION GRID
-===================================================== */
+.subject-heading p{
+    color:#94a3b8;
+    font-size:15px;
+}
 
 .mission-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:26px;
 }
 
-
-/* =====================================================
-   MISSION CARD
-===================================================== */
-
 .mission-card{
-
     background:#1e293b;
-
     border-radius:24px;
-
     padding:27px;
-
-    min-height:390px;
-
+    min-height:470px;
     display:flex;
-
     flex-direction:column;
-
     transition:.25s;
-
     box-shadow:
         0 10px 30px
         rgba(0,0,0,.15);
-
     position:relative;
 }
 
-
 .mission-card:hover{
-
-    transform:
-        translateY(-6px);
-
+    transform:translateY(-6px);
     box-shadow:
         0 18px 40px
         rgba(0,0,0,.30);
 }
 
-
-/* =====================================================
-   LOCKED CARD
-===================================================== */
-
 .mission-card.locked{
-
     opacity:.65;
-
     filter:saturate(.55);
 }
 
-
 .mission-card.locked:hover{
-
     transform:none;
-
     box-shadow:
         0 10px 30px
         rgba(0,0,0,.15);
 }
 
-
-/* =====================================================
-   MISSION TOP
-===================================================== */
-
 .mission-top{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-start;
-
     gap:12px;
-
     margin-bottom:18px;
 }
 
-
 .mission-number{
-
     color:#38bdf8;
-
-    font-size:20px;
-
+    font-size:19px;
     font-weight:800;
 }
 
-
 .difficulty{
-
-    padding:
-        8px 14px;
-
+    padding:8px 13px;
     border-radius:20px;
-
-    font-size:13px;
-
+    font-size:12px;
     font-weight:800;
-
     white-space:nowrap;
 }
 
-
 .beginner{
-
     background:#087f45;
-
     color:#dcfce7;
 }
 
-
 .intermediate{
-
     background:#b87900;
-
     color:#fff7d6;
 }
 
-
 .advanced{
-
     background:#b91c1c;
-
     color:#fee2e2;
 }
-
 
 .expert{
-
-    background:#c81e1e;
-
+    background:#7f1d1d;
     color:#fee2e2;
 }
 
-
-/* =====================================================
-   MISSION CONTENT
-===================================================== */
-
 .mission-card h3{
-
     font-size:23px;
-
     line-height:1.35;
-
-    margin-bottom:16px;
+    margin-bottom:15px;
 }
-
 
 .mission-description{
-
     color:#e2e8f0;
-
-    font-size:16px;
-
+    font-size:15px;
     line-height:1.65;
-
-    min-height:85px;
+    min-height:90px;
 }
 
+.lesson-box{
+    background:#0f172a;
+    border:1px solid #334155;
+    border-radius:14px;
+    padding:13px;
+    margin-top:14px;
+}
 
-/* =====================================================
-   MISSION INFO
-===================================================== */
+.lesson-box-title{
+    color:#38bdf8;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.lesson-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+}
+
+.lesson-tag{
+    background:#26364c;
+    color:#cbd5e1;
+    padding:5px 8px;
+    border-radius:7px;
+    font-size:11px;
+    font-weight:600;
+}
 
 .mission-info{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
-    margin:
-        20px
-        0
-        17px;
-
+    margin:20px 0 17px;
     color:#e2e8f0;
-
-    font-size:16px;
-
+    font-size:15px;
     font-weight:700;
 }
 
-
 .xp-info{
-
     color:#facc15;
 }
 
-
-.time-info{
-
-    color:#e2e8f0;
-}
-
-
-/* =====================================================
-   PROGRESS
-===================================================== */
-
 .progress-container{
-
     width:100%;
-
     height:10px;
-
     background:#334155;
-
     border-radius:20px;
-
     overflow:hidden;
-
-    margin-bottom:22px;
+    margin-bottom:9px;
 }
-
 
 .progress-bar{
-
     height:100%;
-
     width:0%;
-
     background:
         linear-gradient(
             90deg,
             #2563eb,
             #06b6d4
         );
-
     border-radius:20px;
-
     transition:.5s;
 }
 
-
-/* =====================================================
-   MISSION BUTTON
-===================================================== */
+.progress-text{
+    color:#94a3b8;
+    font-size:13px;
+    font-weight:700;
+    text-align:right;
+    margin-bottom:15px;
+}
 
 .mission-btn{
-
     width:100%;
-
     margin-top:auto;
-
-    padding:
-        16px 20px;
-
+    padding:16px 20px;
     border:none;
-
     border-radius:13px;
-
     background:
         linear-gradient(
             135deg,
             #2563eb,
             #06b6d4
         );
-
     color:white;
-
     font-size:17px;
-
     font-weight:800;
-
     cursor:pointer;
-
     text-decoration:none;
-
     text-align:center;
-
     display:block;
-
     transition:.25s;
 }
 
-
 .mission-btn:hover{
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(6,182,212,.20);
+    transform:translateY(-2px);
 }
 
-
-/* =====================================================
-   LOCK BUTTON
-===================================================== */
-
-.mission-btn.locked-btn{
-
+.locked-btn{
     background:#334155;
-
     color:#94a3b8;
-
     cursor:not-allowed;
-
-    box-shadow:none;
 }
 
-
-.mission-btn.locked-btn:hover{
-
+.locked-btn:hover{
     transform:none;
-
-    box-shadow:none;
 }
-
-
-/* =====================================================
-   LOCK MESSAGE
-===================================================== */
 
 .lock-message{
-
     margin-top:10px;
-
     padding:9px 12px;
-
     border-radius:10px;
-
     background:#0f172a;
-
     color:#fbbf24;
-
-    font-size:13px;
-
+    font-size:12px;
     font-weight:700;
-
     text-align:center;
-
     line-height:1.4;
 }
 
-
-/* =====================================================
-   COMPLETED BADGE
-===================================================== */
-
 .completed-badge{
-
-    display:inline-block;
-
+    display:block;
     margin-top:10px;
-
-    padding:7px 12px;
-
+    padding:8px 12px;
     border-radius:20px;
-
     background:#14532d;
-
     color:#86efac;
-
     font-size:13px;
-
     font-weight:800;
-
     text-align:center;
 }
 
-
-/* =====================================================
-   CHAPTER LIST
-===================================================== */
+.score-badge{
+    margin-top:8px;
+    padding:7px;
+    border-radius:9px;
+    background:#172554;
+    color:#93c5fd;
+    font-size:12px;
+    text-align:center;
+    font-weight:700;
+}
 
 .chapter-section{
-
     margin-top:60px;
 }
 
+.chapter-subject{
+    font-size:24px;
+    margin:35px 0 15px;
+    color:#38bdf8;
+}
 
 .chapter-list{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:12px;
 }
 
-
 .chapter-item{
-
     background:#1e293b;
-
-    padding:
-        17px 20px;
-
+    padding:17px 20px;
     border-radius:12px;
-
     color:#cbd5e1;
-
     font-size:16px;
-
-    border-left:
-        4px solid
-        #38bdf8;
-
+    border-left:4px solid #38bdf8;
     transition:.2s;
 }
 
-
 .chapter-item:hover{
-
     background:#26364c;
 }
 
-
 .chapter-item.locked-list{
-
     border-left-color:#475569;
-
     color:#64748b;
 }
 
-
 .chapter-item.completed-list{
-
     border-left-color:#22c55e;
-
     color:#bbf7d0;
 }
 
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
 .footer{
-
     text-align:center;
-
     color:#64748b;
-
-    padding:
-        40px 20px;
-
-    border-top:
-        1px solid
-        #1e293b;
-
+    padding:40px 20px;
+    border-top:1px solid #1e293b;
     margin-top:20px;
 }
 
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media(max-width:1100px){
+@media(max-width:1200px){
 
     .mission-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
     }
-
-
-    .stats{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
 
     .category-grid{
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns:repeat(2,1fr);
     }
 
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
 
     .hero h1{
-
         font-size:42px;
-
     }
 
 }
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
 
 @media(max-width:700px){
 
     .header{
-
-        padding:
-            18px 20px;
-
+        padding:18px 20px;
     }
-
 
     .logo{
-
         font-size:25px;
-
     }
-
 
     .dashboard-btn{
-
-        padding:
-            11px 16px;
-
+        padding:11px 16px;
         font-size:14px;
-
     }
-
 
     .container{
-
         width:94%;
-
         padding-top:22px;
-
     }
-
 
     .hero{
-
-        padding:
-            35px 20px;
-
+        padding:35px 20px;
         min-height:300px;
-
         border-radius:22px;
-
     }
-
 
     .hero h1{
-
         font-size:32px;
-
         line-height:1.25;
-
     }
-
 
     .hero p{
-
         font-size:16px;
-
     }
-
 
     .section-title{
-
         font-size:27px;
-
     }
-
 
     .mission-grid{
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns:1fr;
     }
 
+    .category-grid{
+        grid-template-columns:1fr;
+    }
 
     .stats{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
         gap:12px;
-
     }
-
 
     .stat-card{
-
         min-height:120px;
-
-        padding:
-            20px 10px;
-
+        padding:20px 10px;
     }
-
 
     .stat-value{
-
         font-size:32px;
-
     }
-
 
     .stat-label{
-
         font-size:14px;
-
     }
-
 
     .category-card{
-
         padding:25px;
-
     }
-
 
     .category-card h2{
-
         font-size:26px;
-
     }
 
-
     .chapter-list{
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns:1fr;
     }
 
 }
 
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
 @media(max-width:450px){
 
     .header{
-
         flex-direction:column;
-
         gap:15px;
-
     }
-
 
     .dashboard-btn{
-
         width:100%;
-
         text-align:center;
-
     }
-
 
     .hero h1{
-
         font-size:27px;
-
     }
-
 
     .hero p{
-
         font-size:14px;
-
     }
-
-
-    .stats{
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
 
     .mission-card{
-
         padding:22px;
-
     }
-
 
     .mission-top{
-
         flex-direction:column;
-
         align-items:flex-start;
-
     }
 
-
     .mission-description{
-
         min-height:auto;
-
     }
 
 }
@@ -1138,22 +690,23 @@ body{
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
 <header class="header">
 
     <div class="logo">
 
-        EduSphere 🎓
+        EduSphere 🧪
 
     </div>
 
 
     <a
-        href="../index.html"
-        class="dashboard-btn">
+        href="../login.html"
+        class="dashboard-btn"
+    >
 
         ← Dashboard
 
@@ -1166,9 +719,10 @@ body{
 <main class="container">
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <section class="hero">
 
@@ -1181,16 +735,17 @@ body{
 
     <p>
 
-        Complete missions, pass quizzes,
-        earn XP, unlock badges and master
-        Social Science.
+        Complete History, Geography, Civics and Economics
+        missions, study Tamil Nadu State Board chapters,
+        pass quizzes, earn XP and track your learning progress.
 
     </p>
 
 
     <a
         href="#missions"
-        class="start-learning">
+        class="start-learning"
+    >
 
         🚀 Start Learning
 
@@ -1200,9 +755,9 @@ body{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      STATS
-===================================================== -->
+========================================================= -->
 
 <section class="stats">
 
@@ -1211,7 +766,8 @@ body{
 
         <div
             class="stat-value"
-            id="totalXP">
+            id="totalXP"
+        >
 
             0
 
@@ -1231,7 +787,8 @@ body{
 
         <div
             class="stat-value"
-            id="missionsCompleted">
+            id="missionsCompleted"
+        >
 
             0/27
 
@@ -1251,7 +808,8 @@ body{
 
         <div
             class="stat-value"
-            id="learningStreak">
+            id="learningStreak"
+        >
 
             0 🔥
 
@@ -1271,7 +829,8 @@ body{
 
         <div
             class="stat-value"
-            id="badgesEarned">
+            id="badgesEarned"
+        >
 
             0
 
@@ -1290,16 +849,16 @@ body{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      CATEGORIES
-===================================================== -->
+========================================================= -->
 
 <section>
 
 
     <h2 class="section-title">
 
-        📚 Mission Categories
+        📚 Social Science Learning Categories
 
     </h2>
 
@@ -1318,10 +877,9 @@ body{
 
             <p>
 
-                Study World War I, the inter-war period,
-                World War II, post-war developments,
-                reform movements, revolts against British
-                rule and the Indian freedom struggle.
+                Study the major historical events,
+                movements, personalities and developments
+                in India and the world.
 
             </p>
 
@@ -1340,7 +898,7 @@ body{
 
             <h2>
 
-                🌏 Geography
+                🌍 Geography
 
             </h2>
 
@@ -1348,9 +906,8 @@ body{
             <p>
 
                 Explore India's location, relief,
-                drainage, climate, agriculture,
-                resources, industries, population,
-                transport and Tamil Nadu geography.
+                climate, agriculture, resources,
+                industries, population and transport.
 
             </p>
 
@@ -1376,10 +933,9 @@ body{
 
             <p>
 
-                Learn about the Indian Constitution,
-                Central Government, State Government,
-                India's Foreign Policy and International
-                Relations.
+                Learn the Constitution, government,
+                foreign policy and international
+                relations.
 
             </p>
 
@@ -1405,10 +961,9 @@ body{
 
             <p>
 
-                Understand GDP, economic growth,
-                globalization, trade, food security,
-                taxation and industrial clusters
-                in Tamil Nadu.
+                Understand GDP, globalisation, trade,
+                industrial development and important
+                economic concepts.
 
             </p>
 
@@ -1429,86 +984,24 @@ body{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      MISSIONS
-===================================================== -->
+========================================================= -->
 
 <section
     class="mission-section"
-    id="missions">
+    id="missions"
+>
 
-
-    <!-- =================================================
-         HISTORY
-    ================================================= -->
 
     <h2 class="section-title">
 
-        📜 History Missions
+        🌍 Social Science Missions
 
     </h2>
 
 
-    <div
-        class="mission-grid"
-        id="historyMissionGrid">
-
-    </div>
-
-
-
-    <!-- =================================================
-         GEOGRAPHY
-    ================================================= -->
-
-    <h2 class="section-title subject-section-title">
-
-        🌏 Geography Missions
-
-    </h2>
-
-
-    <div
-        class="mission-grid"
-        id="geographyMissionGrid">
-
-    </div>
-
-
-
-    <!-- =================================================
-         CIVICS
-    ================================================= -->
-
-    <h2 class="section-title subject-section-title">
-
-        🏛️ Civics Missions
-
-    </h2>
-
-
-    <div
-        class="mission-grid"
-        id="civicsMissionGrid">
-
-    </div>
-
-
-
-    <!-- =================================================
-         ECONOMICS
-    ================================================= -->
-
-    <h2 class="section-title subject-section-title">
-
-        💰 Economics Missions
-
-    </h2>
-
-
-    <div
-        class="mission-grid"
-        id="economicsMissionGrid">
+    <div id="socialMissionContainer">
 
     </div>
 
@@ -1517,9 +1010,9 @@ body{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      CHAPTER LIST
-===================================================== -->
+========================================================= -->
 
 <section class="chapter-section">
 
@@ -1532,8 +1025,8 @@ body{
 
 
     <div
-        class="chapter-list"
-        id="chapterList">
+        id="chapterList"
+    >
 
     </div>
 
@@ -1545,9 +1038,9 @@ body{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
 <footer class="footer">
 
@@ -1559,376 +1052,709 @@ body{
 
 <script>
 
-/* =====================================================
-   CHAPTER DATA
-===================================================== */
+/* =========================================================
+   EDUSPHERE SOCIAL SCIENCE MISSION HUB
+========================================================= */
+
+
+/* =========================================================
+   PASS MARK
+========================================================= */
+
+const PASS_PERCENTAGE = 60;
+
+
+/* =========================================================
+   CHAPTER PATH
+========================================================= */
+
+const CHAPTER_BASE_PATH = "../social/";
+
+
+/* =========================================================
+   SOCIAL SCIENCE CHAPTER DATA
+========================================================= */
 
 const chapters = [
 
-    /* =================================================
-       HISTORY
-    ================================================= */
+/* =========================================================
+   HISTORY
+========================================================= */
 
-    {
-        id:1,
-        subject:"History",
-        name:"Outbreak of World War I and Its Aftermath",
-        description:
-            "Study the causes, course and consequences of World War I and its impact on the world.",
-        xp:80,
-        time:"35 mins",
-        difficulty:"Beginner",
-        difficultyClass:"beginner"
-    },
+{
+    id:1,
+    subject:"History",
 
-    {
-        id:2,
-        subject:"History",
-        name:"The World Between Two World Wars",
-        description:
-            "Explore political, economic and social developments between the two world wars.",
-        xp:90,
-        time:"40 mins",
-        difficulty:"Beginner",
-        difficultyClass:"beginner"
-    },
+    name:"Outbreak of World War I and Its Aftermath",
 
-    {
-        id:3,
-        subject:"History",
-        name:"World War II",
-        description:
-            "Learn the major causes, events, important developments and consequences of World War II.",
-        xp:100,
-        time:"40 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    description:
+        "Study the causes, major events and consequences of World War I and its aftermath.",
 
-    {
-        id:4,
-        subject:"History",
-        name:"The World After World War II",
-        description:
-            "Study the post-war world, major global developments and the emergence of new international relationships.",
-        xp:100,
-        time:"40 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    lessons:[
+        "World War I",
+        "Causes of the War",
+        "Triple Alliance",
+        "Triple Entente",
+        "Treaty of Versailles",
+        "League of Nations"
+    ],
 
-    {
-        id:5,
-        subject:"History",
-        name:"Social and Religious Reform Movements in the 19th Century",
-        description:
-            "Learn about important social and religious reform movements and their contribution to Indian society.",
-        xp:90,
-        time:"35 mins",
-        difficulty:"Beginner",
-        difficultyClass:"beginner"
-    },
-
-    {
-        id:6,
-        subject:"History",
-        name:"Early Revolts Against British Rule in Tamil Nadu",
-        description:
-            "Study the early resistance movements and revolts against British rule in Tamil Nadu.",
-        xp:110,
-        time:"45 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
-
-    {
-        id:7,
-        subject:"History",
-        name:"Anti-Colonial Movements and the Birth of Nationalism",
-        description:
-            "Explore anti-colonial movements and the development of Indian nationalism.",
-        xp:110,
-        time:"45 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
-
-    {
-        id:8,
-        subject:"History",
-        name:"Nationalism: Gandhian Phase",
-        description:
-            "Study the Gandhian phase of nationalism, major movements and the role of Gandhi in India's freedom struggle.",
-        xp:130,
-        time:"50 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
-
-    {
-        id:9,
-        subject:"History",
-        name:"Freedom Struggle in Tamil Nadu",
-        description:
-            "Learn about the role of Tamil Nadu in India's freedom struggle and important personalities.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
-
-    {
-        id:10,
-        subject:"History",
-        name:"Social Transformation in Tamil Nadu",
-        description:
-            "Study social transformation, reform movements and major changes in Tamil Nadu society.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
+    xp:100,
+    time:"45 mins",
+    difficulty:"Beginner",
+    difficultyClass:"beginner"
+},
 
 
-    /* =================================================
-       GEOGRAPHY
-    ================================================= */
+{
+    id:2,
+    subject:"History",
 
-    {
-        id:11,
-        subject:"Geography",
-        name:"India - Location, Relief and Drainage",
-        description:
-            "Study India's location, major physical divisions, relief features and drainage systems.",
-        xp:90,
-        time:"40 mins",
-        difficulty:"Beginner",
-        difficultyClass:"beginner"
-    },
+    name:"The World Between Two World Wars",
 
-    {
-        id:12,
-        subject:"Geography",
-        name:"Climate and Natural Vegetation of India",
-        description:
-            "Learn India's climate, monsoon system, climatic regions and natural vegetation.",
-        xp:100,
-        time:"40 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    description:
+        "Study the political, economic and social developments between the two World Wars.",
 
-    {
-        id:13,
-        subject:"Geography",
-        name:"India - Agriculture",
-        description:
-            "Explore types of agriculture, major crops, farming patterns and agricultural development.",
-        xp:100,
-        time:"40 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    lessons:[
+        "Great Depression",
+        "Fascism",
+        "Nazism",
+        "Rise of Dictatorships",
+        "World Politics"
+    ],
 
-    {
-        id:14,
-        subject:"Geography",
-        name:"India - Resources and Industries",
-        description:
-            "Study natural resources, mineral resources, power resources and major industries in India.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
-
-    {
-        id:15,
-        subject:"Geography",
-        name:"India - Population, Transport, Communication and Trade",
-        description:
-            "Learn population distribution, transport systems, communication networks and trade.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
-
-    {
-        id:16,
-        subject:"Geography",
-        name:"Physical Geography of Tamil Nadu",
-        description:
-            "Explore the physical divisions, relief, drainage and geographical features of Tamil Nadu.",
-        xp:110,
-        time:"40 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
-
-    {
-        id:17,
-        subject:"Geography",
-        name:"Human Geography of Tamil Nadu",
-        description:
-            "Study population, settlements, occupations and human geographical characteristics of Tamil Nadu.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
+    xp:110,
+    time:"45 mins",
+    difficulty:"Beginner",
+    difficultyClass:"beginner"
+},
 
 
-    /* =================================================
-       CIVICS
-    ================================================= */
+{
+    id:3,
+    subject:"History",
 
-    {
-        id:18,
-        subject:"Civics",
-        name:"Indian Constitution",
-        description:
-            "Learn the features, principles, fundamental rights, duties and importance of the Indian Constitution.",
-        xp:90,
-        time:"40 mins",
-        difficulty:"Beginner",
-        difficultyClass:"beginner"
-    },
+    name:"World War II",
 
-    {
-        id:19,
-        subject:"Civics",
-        name:"Central Government",
-        description:
-            "Study the President, Parliament, Prime Minister, Council of Ministers and central administration.",
-        xp:110,
-        time:"45 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    description:
+        "Learn the causes, major events and consequences of World War II.",
 
-    {
-        id:20,
-        subject:"Civics",
-        name:"State Government",
-        description:
-            "Learn the Governor, Chief Minister, State Legislature and functioning of state government.",
-        xp:110,
-        time:"45 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    lessons:[
+        "Causes",
+        "Axis Powers",
+        "Allied Powers",
+        "Major Events",
+        "Consequences"
+    ],
 
-    {
-        id:21,
-        subject:"Civics",
-        name:"India's Foreign Policy",
-        description:
-            "Study the principles, objectives and major features of India's foreign policy.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
-
-    {
-        id:22,
-        subject:"Civics",
-        name:"India's International Relations",
-        description:
-            "Explore India's relationships with other nations and its role in international organisations.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
+    xp:120,
+    time:"50 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
 
 
-    /* =================================================
-       ECONOMICS
-    ================================================= */
+{
+    id:4,
+    subject:"History",
 
-    {
-        id:23,
-        subject:"Economics",
-        name:"Gross Domestic Product and Its Growth: An Introduction",
-        description:
-            "Understand Gross Domestic Product, national income, economic growth and important economic indicators.",
-        xp:100,
-        time:"40 mins",
-        difficulty:"Beginner",
-        difficultyClass:"beginner"
-    },
+    name:"The World After World War II",
 
-    {
-        id:24,
-        subject:"Economics",
-        name:"Globalization and Trade",
-        description:
-            "Study globalization, international trade and the changing world economy.",
-        xp:110,
-        time:"45 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    description:
+        "Understand the major political changes that took place after World War II.",
 
-    {
-        id:25,
-        subject:"Economics",
-        name:"Food Security and Nutrition",
-        description:
-            "Learn about food security, nutrition, availability, accessibility and government measures.",
-        xp:110,
-        time:"40 mins",
-        difficulty:"Intermediate",
-        difficultyClass:"intermediate"
-    },
+    lessons:[
+        "Cold War",
+        "United Nations",
+        "Super Powers",
+        "Decolonisation",
+        "New World Order"
+    ],
 
-    {
-        id:26,
-        subject:"Economics",
-        name:"Government and Taxes",
-        description:
-            "Understand government revenue, taxation, public expenditure and the role of government in the economy.",
-        xp:120,
-        time:"45 mins",
-        difficulty:"Advanced",
-        difficultyClass:"advanced"
-    },
+    xp:130,
+    time:"50 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
 
-    {
-        id:27,
-        subject:"Economics",
-        name:"Industrial Clusters in Tamil Nadu",
-        description:
-            "Explore industrial clusters, major industries and their importance to Tamil Nadu's economy.",
-        xp:150,
-        time:"50 mins",
-        difficulty:"Expert",
-        difficultyClass:"expert"
-    }
+
+{
+    id:5,
+    subject:"History",
+
+    name:"Social and Religious Reform Movements in the 19th Century",
+
+    description:
+        "Learn about important social and religious reform movements in India.",
+
+    lessons:[
+        "Social Reform",
+        "Religious Reform",
+        "Brahmo Samaj",
+        "Arya Samaj",
+        "Ramakrishna Movement",
+        "Women Reform"
+    ],
+
+    xp:140,
+    time:"50 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
+
+
+{
+    id:6,
+    subject:"History",
+
+    name:"Early Revolts Against British Rule in Tamil Nadu",
+
+    description:
+        "Study early resistance movements against British rule in Tamil Nadu.",
+
+    lessons:[
+        "Poligar Rebellion",
+        "Puli Thevar",
+        "Kattabomman",
+        "Marudhu Brothers",
+        "Vellore Mutiny"
+    ],
+
+    xp:150,
+    time:"55 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:7,
+    subject:"History",
+
+    name:"Anti-Colonial Movements and the Birth of Nationalism",
+
+    description:
+        "Explore anti-colonial movements and the growth of Indian nationalism.",
+
+    lessons:[
+        "Indian Nationalism",
+        "Indian National Congress",
+        "Swadeshi Movement",
+        "Moderates",
+        "Extremists",
+        "Home Rule Movement"
+    ],
+
+    xp:160,
+    time:"55 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:8,
+    subject:"History",
+
+    name:"Nationalism: Gandhian Phase",
+
+    description:
+        "Study the major Gandhian movements in the Indian freedom struggle.",
+
+    lessons:[
+        "Gandhian Era",
+        "Non-Cooperation",
+        "Civil Disobedience",
+        "Salt Satyagraha",
+        "Quit India"
+    ],
+
+    xp:170,
+    time:"55 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:9,
+    subject:"History",
+
+    name:"Freedom Struggle in Tamil Nadu",
+
+    description:
+        "Learn about the role of Tamil Nadu in India's freedom struggle.",
+
+    lessons:[
+        "Tamil Nationalism",
+        "V.O. Chidambaram",
+        "Subramania Bharati",
+        "Subramania Siva",
+        "Freedom Fighters"
+    ],
+
+    xp:180,
+    time:"60 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:10,
+    subject:"History",
+
+    name:"Social Transformation in Tamil Nadu",
+
+    description:
+        "Study major social reforms and transformations in Tamil Nadu.",
+
+    lessons:[
+        "Social Reform",
+        "Self Respect Movement",
+        "Social Justice",
+        "Education",
+        "Tamil Renaissance"
+    ],
+
+    xp:190,
+    time:"60 mins",
+    difficulty:"Expert",
+    difficultyClass:"expert"
+},
+
+
+/* =========================================================
+   GEOGRAPHY
+========================================================= */
+
+{
+    id:11,
+    subject:"Geography",
+
+    name:"India – Location, Relief and Drainage",
+
+    description:
+        "Study India's location, major physical divisions, relief features and drainage.",
+
+    lessons:[
+        "Location",
+        "Physical Divisions",
+        "Himalayas",
+        "Northern Plains",
+        "Peninsular Plateau",
+        "Drainage"
+    ],
+
+    xp:100,
+    time:"45 mins",
+    difficulty:"Beginner",
+    difficultyClass:"beginner"
+},
+
+
+{
+    id:12,
+    subject:"Geography",
+
+    name:"Climate and Natural Vegetation of India",
+
+    description:
+        "Understand India's climate, monsoon system and natural vegetation.",
+
+    lessons:[
+        "Climate",
+        "Monsoon",
+        "Rainfall",
+        "Natural Vegetation",
+        "Forests",
+        "Wildlife"
+    ],
+
+    xp:110,
+    time:"45 mins",
+    difficulty:"Beginner",
+    difficultyClass:"beginner"
+},
+
+
+{
+    id:13,
+    subject:"Geography",
+
+    name:"India – Agriculture",
+
+    description:
+        "Learn about Indian agriculture, major crops and agricultural practices.",
+
+    lessons:[
+        "Agriculture",
+        "Types of Farming",
+        "Food Crops",
+        "Commercial Crops",
+        "Irrigation",
+        "Green Revolution"
+    ],
+
+    xp:120,
+    time:"50 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
+
+
+{
+    id:14,
+    subject:"Geography",
+
+    name:"India – Resources and Industries",
+
+    description:
+        "Study natural resources, minerals, energy resources and major industries.",
+
+    lessons:[
+        "Natural Resources",
+        "Mineral Resources",
+        "Energy Resources",
+        "Industries",
+        "Industrial Regions"
+    ],
+
+    xp:130,
+    time:"50 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
+
+
+{
+    id:15,
+    subject:"Geography",
+
+    name:"India – Population, Transport, Communication and Trade",
+
+    description:
+        "Learn population distribution, transport, communication and trade.",
+
+    lessons:[
+        "Population",
+        "Density",
+        "Roadways",
+        "Railways",
+        "Communication",
+        "Trade"
+    ],
+
+    xp:140,
+    time:"50 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:16,
+    subject:"Geography",
+
+    name:"Physical Geography of Tamil Nadu",
+
+    description:
+        "Explore the physical geography, relief, rivers and climatic features of Tamil Nadu.",
+
+    lessons:[
+        "Relief",
+        "Mountains",
+        "Plains",
+        "Rivers",
+        "Climate",
+        "Natural Vegetation"
+    ],
+
+    xp:150,
+    time:"50 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:17,
+    subject:"Geography",
+
+    name:"Human Geography of Tamil Nadu",
+
+    description:
+        "Study population, settlements, occupations and human geography of Tamil Nadu.",
+
+    lessons:[
+        "Population",
+        "Settlements",
+        "Occupations",
+        "Urbanisation",
+        "Migration"
+    ],
+
+    xp:160,
+    time:"55 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+/* =========================================================
+   CIVICS
+========================================================= */
+
+{
+    id:18,
+    subject:"Civics",
+
+    name:"Indian Constitution",
+
+    description:
+        "Learn the features, principles, rights and duties under the Indian Constitution.",
+
+    lessons:[
+        "Constitution",
+        "Preamble",
+        "Fundamental Rights",
+        "Fundamental Duties",
+        "Directive Principles"
+    ],
+
+    xp:100,
+    time:"45 mins",
+    difficulty:"Beginner",
+    difficultyClass:"beginner"
+},
+
+
+{
+    id:19,
+    subject:"Civics",
+
+    name:"Central Government",
+
+    description:
+        "Study the President, Parliament, Prime Minister and central administration.",
+
+    lessons:[
+        "President",
+        "Prime Minister",
+        "Parliament",
+        "Lok Sabha",
+        "Rajya Sabha",
+        "Supreme Court"
+    ],
+
+    xp:110,
+    time:"45 mins",
+    difficulty:"Beginner",
+    difficultyClass:"beginner"
+},
+
+
+{
+    id:20,
+    subject:"Civics",
+
+    name:"State Government",
+
+    description:
+        "Learn the structure and functions of state government.",
+
+    lessons:[
+        "Governor",
+        "Chief Minister",
+        "State Legislature",
+        "Legislative Assembly",
+        "High Court"
+    ],
+
+    xp:120,
+    time:"45 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
+
+
+{
+    id:21,
+    subject:"Civics",
+
+    name:"India's Foreign Policy",
+
+    description:
+        "Study India's foreign policy, diplomacy and international cooperation.",
+
+    lessons:[
+        "Foreign Policy",
+        "Non-Alignment",
+        "Panchsheel",
+        "Neighbouring Countries",
+        "International Cooperation"
+    ],
+
+    xp:130,
+    time:"50 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:22,
+    subject:"Civics",
+
+    name:"India's International Relations",
+
+    description:
+        "Explore India's relations with other countries and international organisations.",
+
+    lessons:[
+        "International Relations",
+        "United Nations",
+        "SAARC",
+        "Global Cooperation",
+        "International Organisations"
+    ],
+
+    xp:140,
+    time:"50 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+/* =========================================================
+   ECONOMICS
+========================================================= */
+
+{
+    id:23,
+    subject:"Economics",
+
+    name:"Gross Domestic Product and Its Growth",
+
+    description:
+        "Understand GDP, economic growth and national income.",
+
+    lessons:[
+        "GDP",
+        "National Income",
+        "Economic Growth",
+        "Economic Development",
+        "Per Capita Income"
+    ],
+
+    xp:100,
+    time:"45 mins",
+    difficulty:"Beginner",
+    difficultyClass:"beginner"
+},
+
+
+{
+    id:24,
+    subject:"Economics",
+
+    name:"Globalization and Trade",
+
+    description:
+        "Study globalisation, international trade and its impact on India.",
+
+    lessons:[
+        "Globalisation",
+        "International Trade",
+        "Liberalisation",
+        "Multinational Companies",
+        "Foreign Investment"
+    ],
+
+    xp:110,
+    time:"45 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
+
+
+{
+    id:25,
+    subject:"Economics",
+
+    name:"Industrial Clusters in Tamil Nadu",
+
+    description:
+        "Learn about industrial clusters and important industries in Tamil Nadu.",
+
+    lessons:[
+        "Industries",
+        "Industrial Clusters",
+        "Textile Industry",
+        "Automobile Industry",
+        "Industrial Development"
+    ],
+
+    xp:120,
+    time:"50 mins",
+    difficulty:"Intermediate",
+    difficultyClass:"intermediate"
+},
+
+
+{
+    id:26,
+    subject:"Economics",
+
+    name:"Government and Taxes",
+
+    description:
+        "Understand government revenue, taxation and public expenditure.",
+
+    lessons:[
+        "Government Revenue",
+        "Taxes",
+        "Direct Tax",
+        "Indirect Tax",
+        "Public Expenditure"
+    ],
+
+    xp:130,
+    time:"50 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+},
+
+
+{
+    id:27,
+    subject:"Economics",
+
+    name:"Food Security and Nutrition",
+
+    description:
+        "Study food security, nutrition, availability and government measures.",
+
+    lessons:[
+        "Food Security",
+        "Nutrition",
+        "Food Availability",
+        "Public Distribution",
+        "Government Measures"
+    ],
+
+    xp:140,
+    time:"50 mins",
+    difficulty:"Advanced",
+    difficultyClass:"advanced"
+}
 
 ];
 
 
-/* =====================================================
+/* =========================================================
    SUBJECT GROUPS
-
-   IMPORTANT:
-   Each subject has its OWN unlock chain.
-
-   History:
-   1 → 2 → 3 → ... → 10
-
-   Geography:
-   11 → 12 → ... → 17
-
-   Civics:
-   18 → 19 → ... → 22
-
-   Economics:
-   23 → 24 → ... → 27
-===================================================== */
+========================================================= */
 
 const subjectGroups = {
 
@@ -1951,34 +1777,107 @@ const subjectGroups = {
 };
 
 
-/* =====================================================
-   GET STORAGE KEY
-===================================================== */
+/* =========================================================
+   STORAGE KEYS
+========================================================= */
 
-function getStorageKey(id){
+function getStorageKeys(id){
 
-    return "edusphere_10social_chapter_" + id;
+    return [
+
+        "edusphere_social_chapter" + id,
+
+        "edusphere_social_chapter_" + id,
+
+        "edusphere_10social_chapter" + id,
+
+        "edusphere_10social_chapter_" + id,
+
+        "edusphere_social_unit" + id,
+
+        "edusphere_social_unit_" + id,
+
+        "edusphere_10social_unit" + id,
+
+        "edusphere_10social_unit_" + id
+
+    ];
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   CONVERT NUMBER
+========================================================= */
+
+function convertToNumber(value){
+
+    if(
+        value === undefined ||
+        value === null
+    ){
+
+        return NaN;
+
+    }
+
+    return parseFloat(
+        String(value)
+        .trim()
+        .replace("%","")
+    );
+
+}
+
+
+/* =========================================================
    GET CHAPTER PROGRESS
-===================================================== */
+========================================================= */
 
 function getChapterProgress(id){
 
-    const saved =
-        localStorage.getItem(
-            getStorageKey(id)
-        );
+    const keys =
+        getStorageKeys(id);
+
+    let saved = null;
+    let foundKey = null;
+
+
+    for(
+        let i=0;
+        i<keys.length;
+        i++
+    ){
+
+        const value =
+            localStorage.getItem(
+                keys[i]
+            );
+
+        if(value){
+
+            saved = value;
+            foundKey = keys[i];
+
+            break;
+
+        }
+
+    }
 
 
     if(!saved){
 
         return {
+
             percentage:0,
-            status:"NOT_ATTEMPTED"
+
+            status:"NOT_ATTEMPTED",
+
+            score:0,
+
+            total:0
+
         };
 
     }
@@ -1990,13 +1889,177 @@ function getChapterProgress(id){
             JSON.parse(saved);
 
 
+        let percentage = NaN;
+
+
+        if(
+            data.percentage !== undefined
+        ){
+
+            percentage =
+                convertToNumber(
+                    data.percentage
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            ) &&
+            data.percent !== undefined
+        ){
+
+            percentage =
+                convertToNumber(
+                    data.percent
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            ) &&
+            data.score !== undefined &&
+            data.total !== undefined
+        ){
+
+            const score =
+                convertToNumber(
+                    data.score
+                );
+
+            const total =
+                convertToNumber(
+                    data.total
+                );
+
+
+            if(
+                Number.isFinite(score) &&
+                Number.isFinite(total) &&
+                total > 0
+            ){
+
+                percentage =
+                    (
+                        score /
+                        total
+                    ) * 100;
+
+            }
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            ) &&
+            data.correct !== undefined &&
+            data.total !== undefined
+        ){
+
+            const correct =
+                convertToNumber(
+                    data.correct
+                );
+
+            const total =
+                convertToNumber(
+                    data.total
+                );
+
+
+            if(
+                Number.isFinite(correct) &&
+                Number.isFinite(total) &&
+                total > 0
+            ){
+
+                percentage =
+                    (
+                        correct /
+                        total
+                    ) * 100;
+
+            }
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage = 0;
+
+        }
+
+
+        percentage =
+            Math.round(
+                Math.max(
+                    0,
+                    Math.min(
+                        100,
+                        percentage
+                    )
+                )
+            );
+
+
+        const status =
+            percentage >= PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        const normalizedData = {
+
+            ...data,
+
+            percentage:
+                percentage,
+
+            status:
+                status
+
+        };
+
+
+        localStorage.setItem(
+
+            "edusphere_social_chapter_" + id,
+
+            JSON.stringify(
+                normalizedData
+            )
+
+        );
+
+
         return {
 
             percentage:
-                Number(data.percentage) || 0,
+                percentage,
 
             status:
-                data.status || "NOT_ATTEMPTED"
+                status,
+
+            score:
+                data.score || 0,
+
+            total:
+                data.total || 0,
+
+            sourceKey:
+                foundKey
 
         };
 
@@ -2004,11 +2067,21 @@ function getChapterProgress(id){
 
     catch(error){
 
+        console.error(
+            "EduSphere Social progress error:",
+            error
+        );
+
+
         return {
 
             percentage:0,
 
-            status:"NOT_ATTEMPTED"
+            status:"NOT_ATTEMPTED",
+
+            score:0,
+
+            total:0
 
         };
 
@@ -2017,698 +2090,777 @@ function getChapterProgress(id){
 }
 
 
-/* =====================================================
-   CHECK PASSED
-===================================================== */
+/* =========================================================
+   PASSED
+========================================================= */
 
 function isChapterPassed(id){
 
     const progress =
         getChapterProgress(id);
 
-
     return (
-        progress.status === "PASSED"
+        progress.percentage >=
+        PASS_PERCENTAGE
     );
 
 }
 
 
-/* =====================================================
-   CHECK CHAPTER UNLOCKED
-
-   THIS IS THE IMPORTANT PART.
-
-   The previous chapter is searched ONLY
-   inside the SAME SUBJECT.
-
-   Therefore:
-
-   Complete Geography 11
-   → Geography 12 unlocks.
-
-   History does NOT matter.
-
-   Complete Civics 18
-   → Civics 19 unlocks.
-
-   History and Geography do NOT matter.
-
-   Complete Economics 23
-   → Economics 24 unlocks.
-
-   Other subjects do NOT matter.
-===================================================== */
+/* =========================================================
+   UNLOCK SYSTEM
+   ALL 27 CHAPTERS ARE UNLOCKED
+========================================================= */
 
 function isChapterUnlocked(id){
 
-    const current =
-        chapters.find(
-            chapter =>
-                chapter.id === id
-        );
-
-
-    if(!current){
-
-        return false;
-
-    }
-
-
-    /*
-       Find the subject's chapter list.
-    */
-
-    const group =
-        subjectGroups[
-            current.subject
-        ];
-
-
-    if(!group){
-
-        return false;
-
-    }
-
-
-    /*
-       Find this chapter's position
-       inside its own subject.
-    */
-
-    const index =
-        group.indexOf(id);
-
-
-    /*
-       First chapter of every subject
-       is ALWAYS unlocked.
-    */
-
-    if(index === 0){
-
-        return true;
-
-    }
-
-
-    /*
-       Safety check.
-    */
-
-    if(index < 0){
-
-        return false;
-
-    }
-
-
-    /*
-       Get the previous chapter
-       ONLY from this subject.
-    */
-
-    const previousId =
-        group[index - 1];
-
-
-    /*
-       Previous chapter must be PASSED.
-    */
-
-    return isChapterPassed(
-        previousId
-    );
-
-}
-
-
-/* =====================================================
-   GET PREVIOUS CHAPTER ID
-===================================================== */
-
-function getPreviousChapterId(id){
-
-    const current =
-        chapters.find(
-            chapter =>
-                chapter.id === id
-        );
-
-
-    if(!current){
-
-        return null;
-
-    }
-
-
-    const group =
-        subjectGroups[
-            current.subject
-        ];
-
-
-    if(!group){
-
-        return null;
-
-    }
-
-
-    const index =
-        group.indexOf(id);
-
-
-    if(index <= 0){
-
-        return null;
-
-    }
-
-
-    return group[
-        index - 1
-    ];
-
-}
-
-
-/* =====================================================
-   GET SUBJECT NAME
-===================================================== */
-
-function getSubjectName(id){
-
     const chapter =
         chapters.find(
-            chapter =>
-                chapter.id === id
+            item =>
+                item.id === id
         );
 
 
     if(!chapter){
 
-        return "";
-
-    }
-
-
-    return chapter.subject;
-
-}
-
-
-/* =====================================================
-   CREATE MISSION CARDS
-===================================================== */
-
-function renderMissions(){
-
-    const historyGrid =
-        document.getElementById(
-            "historyMissionGrid"
-        );
-
-
-    const geographyGrid =
-        document.getElementById(
-            "geographyMissionGrid"
-        );
-
-
-    const civicsGrid =
-        document.getElementById(
-            "civicsMissionGrid"
-        );
-
-
-    const economicsGrid =
-        document.getElementById(
-            "economicsMissionGrid"
-        );
-
-
-    historyGrid.innerHTML = "";
-
-    geographyGrid.innerHTML = "";
-
-    civicsGrid.innerHTML = "";
-
-    economicsGrid.innerHTML = "";
-
-
-    chapters.forEach(
-        chapter => {
-
-            const progress =
-                getChapterProgress(
-                    chapter.id
-                );
-
-
-            const unlocked =
-                isChapterUnlocked(
-                    chapter.id
-                );
-
-
-            const passed =
-                progress.status ===
-                "PASSED";
-
-
-            const card =
-                document.createElement(
-                    "div"
-                );
-
-
-            card.className =
-                "mission-card" +
-                (
-                    unlocked
-                    ? ""
-                    : " locked"
-                );
-
-
-            let buttonHTML = "";
-
-
-            /* =========================================
-               UNLOCKED
-            ========================================= */
-
-            if(unlocked){
-
-                buttonHTML = `
-
-                    <a
-                        href="../social/chapter${chapter.id}.html"
-                        class="mission-btn">
-
-                        ${passed
-                            ? "🔄 Open Mission"
-                            : "▶ Start Mission"
-                        }
-
-                    </a>
-
-                `;
-
-            }
-
-
-            /* =========================================
-               LOCKED
-            ========================================= */
-
-            else{
-
-                const previousId =
-                    getPreviousChapterId(
-                        chapter.id
-                    );
-
-
-                buttonHTML = `
-
-                    <a
-                        href="#"
-                        class="mission-btn locked-btn"
-                        onclick="
-                            return lockedMission(
-                                ${chapter.id}
-                            )
-                        ">
-
-                        🔒 Locked
-
-                    </a>
-
-
-                    <div class="lock-message">
-
-                        🔒 Complete
-                        ${getSubjectName(
-                            previousId
-                        )}
-                        Chapter
-                        ${previousId}
-                        to unlock this lesson.
-
-                    </div>
-
-                `;
-
-            }
-
-
-            /* =========================================
-               COMPLETED BADGE
-            ========================================= */
-
-            let completedHTML = "";
-
-
-            if(passed){
-
-                completedHTML = `
-
-                    <div class="completed-badge">
-
-                        ✅ Completed
-
-                    </div>
-
-                `;
-
-            }
-
-
-            /* =========================================
-               CARD
-            ========================================= */
-
-            card.innerHTML = `
-
-                <div class="mission-top">
-
-                    <div class="mission-number">
-
-                        🚀 Mission
-                        ${String(
-                            chapter.id
-                        ).padStart(2,"0")}
-
-                    </div>
-
-
-                    <div
-                        class="
-                            difficulty
-                            ${chapter.difficultyClass}
-                        ">
-
-                        ${
-                            chapter.difficultyClass ===
-                            "beginner"
-
-                            ? "🟢"
-
-                            : chapter.difficultyClass ===
-                              "intermediate"
-
-                            ? "🟡"
-
-                            : "🔴"
-                        }
-
-                        ${chapter.difficulty}
-
-                    </div>
-
-                </div>
-
-
-                <h3>
-
-                    ${chapter.name}
-
-                </h3>
-
-
-                <p class="mission-description">
-
-                    ${chapter.description}
-
-                </p>
-
-
-                <div class="mission-info">
-
-                    <span class="xp-info">
-
-                        ⭐ ${chapter.xp} XP
-
-                    </span>
-
-
-                    <span class="time-info">
-
-                        ⏱ ${chapter.time}
-
-                    </span>
-
-                </div>
-
-
-                <div class="progress-container">
-
-                    <div
-                        class="progress-bar"
-                        style="
-                            width:
-                            ${Math.min(
-                                progress.percentage,
-                                100
-                            )}%;
-                        ">
-
-                    </div>
-
-                </div>
-
-
-                ${buttonHTML}
-
-
-                ${completedHTML}
-
-            `;
-
-
-            /* =========================================
-               PUT INTO SUBJECT GRID
-            ========================================= */
-
-            if(
-                chapter.subject ===
-                "History"
-            ){
-
-                historyGrid.appendChild(
-                    card
-                );
-
-            }
-
-
-            else if(
-                chapter.subject ===
-                "Geography"
-            ){
-
-                geographyGrid.appendChild(
-                    card
-                );
-
-            }
-
-
-            else if(
-                chapter.subject ===
-                "Civics"
-            ){
-
-                civicsGrid.appendChild(
-                    card
-                );
-
-            }
-
-
-            else if(
-                chapter.subject ===
-                "Economics"
-            ){
-
-                economicsGrid.appendChild(
-                    card
-                );
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   LOCKED MISSION
-===================================================== */
-
-function lockedMission(id){
-
-    const previousId =
-        getPreviousChapterId(
-            id
-        );
-
-
-    const subject =
-        getSubjectName(
-            id
-        );
-
-
-    if(!previousId){
-
         return false;
 
     }
 
 
-    alert(
+    /*
+       ALL SOCIAL SCIENCE CHAPTERS
+       ARE UNLOCKED FROM THE BEGINNING.
 
-        "🔒 " +
-        subject +
-        " Chapter " +
-        id +
-        " is locked.\n\n" +
+       History    : 1 - 10
+       Geography  : 11 - 17
+       Civics     : 18 - 22
+       Economics  : 23 - 27
+    */
 
-        "Complete " +
-        subject +
-        " Chapter " +
-        previousId +
-        " first."
-
-    );
-
-
-    return false;
+    return true;
 
 }
 
 
-/* =====================================================
-   CREATE CHAPTER LIST
-===================================================== */
+/* =========================================================
+   CHAPTER LINK
+========================================================= */
+
+function getChapterLink(id){
+
+    return (
+
+        CHAPTER_BASE_PATH +
+
+        "chapter" +
+
+        id +
+
+        ".html"
+
+    );
+
+}
+
+
+/* =========================================================
+   DIFFICULTY ICON
+========================================================= */
+
+function getDifficultyIcon(
+    difficultyClass
+){
+
+    if(
+        difficultyClass ===
+        "beginner"
+    ){
+
+        return "🟢";
+
+    }
+
+    if(
+        difficultyClass ===
+        "intermediate"
+    ){
+
+        return "🟡";
+
+    }
+
+    if(
+        difficultyClass ===
+        "advanced"
+    ){
+
+        return "🟠";
+
+    }
+
+    return "🔴";
+
+}
+
+
+/* =========================================================
+   RENDER SUBJECT
+========================================================= */
+
+function renderSubject(
+    subject,
+    container
+){
+
+    const group =
+        subjectGroups[
+            subject
+        ];
+
+
+    const heading =
+        document.createElement(
+            "div"
+        );
+
+
+    heading.className =
+        "subject-heading";
+
+
+    let icon = "🌍";
+
+
+    if(
+        subject ===
+        "History"
+    ){
+
+        icon = "📜";
+
+    }
+
+    else if(
+        subject ===
+        "Geography"
+    ){
+
+        icon = "🌍";
+
+    }
+
+    else if(
+        subject ===
+        "Civics"
+    ){
+
+        icon = "🏛️";
+
+    }
+
+    else if(
+        subject ===
+        "Economics"
+    ){
+
+        icon = "💰";
+
+    }
+
+
+    const first =
+        group[0];
+
+    const last =
+        group[
+            group.length - 1
+        ];
+
+
+    heading.innerHTML = `
+
+        <h2>
+
+            ${icon}
+            ${subject}
+            Missions
+
+        </h2>
+
+        <p>
+
+            Chapters
+            ${first}–${last}
+            •
+            ${group.length}
+            Missions
+
+        </p>
+
+    `;
+
+
+    container.appendChild(
+        heading
+    );
+
+
+    const grid =
+        document.createElement(
+            "div"
+        );
+
+
+    grid.className =
+        "mission-grid";
+
+
+    group.forEach(
+        id => {
+
+            const chapter =
+                chapters.find(
+                    item =>
+                        item.id === id
+                );
+
+
+            renderMissionCard(
+                chapter,
+                grid
+            );
+
+        }
+    );
+
+
+    container.appendChild(
+        grid
+    );
+
+}
+
+
+/* =========================================================
+   RENDER MISSION CARD
+========================================================= */
+
+function renderMissionCard(
+    chapter,
+    grid
+){
+
+    const progress =
+        getChapterProgress(
+            chapter.id
+        );
+
+
+    /*
+       Because every chapter is unlocked,
+       this will always be TRUE.
+    */
+
+    const unlocked =
+        isChapterUnlocked(
+            chapter.id
+        );
+
+
+    const passed =
+        isChapterPassed(
+            chapter.id
+        );
+
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+
+    card.className =
+        "mission-card";
+
+
+    let lessonHTML = "";
+
+
+    chapter.lessons.forEach(
+        lesson => {
+
+            lessonHTML += `
+
+                <span class="lesson-tag">
+
+                    ${lesson}
+
+                </span>
+
+            `;
+
+        }
+    );
+
+
+    /*
+       ALL CHAPTERS HAVE START/OPEN BUTTON
+    */
+
+    let buttonHTML = `
+
+        <a
+
+            href="${getChapterLink(
+                chapter.id
+            )}"
+
+            class="mission-btn"
+
+        >
+
+            ${
+                passed
+                ?
+                "🔄 Open Mission"
+                :
+                "▶ Start Mission"
+            }
+
+        </a>
+
+    `;
+
+
+    let completedHTML = "";
+
+
+    if(passed){
+
+        completedHTML = `
+
+            <div
+                class="completed-badge"
+            >
+
+                ✅ Completed
+                (${progress.percentage}%)
+
+            </div>
+
+        `;
+
+    }
+
+
+    let scoreHTML = "";
+
+
+    if(
+        progress.percentage > 0 &&
+        !passed
+    ){
+
+        scoreHTML = `
+
+            <div
+                class="score-badge"
+            >
+
+                📊 Previous Quiz:
+                ${progress.percentage}%
+
+                — Need
+                ${PASS_PERCENTAGE}%
+
+            </div>
+
+        `;
+
+    }
+
+
+    card.innerHTML = `
+
+        <div class="mission-top">
+
+
+            <div class="mission-number">
+
+                🌍 Mission
+
+                ${
+                    String(
+                        chapter.id
+                    ).padStart(
+                        2,
+                        "0"
+                    )
+                }
+
+            </div>
+
+
+            <div class="
+                difficulty
+                ${chapter.difficultyClass}
+            ">
+
+                ${
+                    getDifficultyIcon(
+                        chapter.difficultyClass
+                    )
+                }
+
+                ${chapter.difficulty}
+
+            </div>
+
+
+        </div>
+
+
+        <h3>
+
+            ${chapter.name}
+
+        </h3>
+
+
+        <p
+            class="mission-description"
+        >
+
+            ${chapter.description}
+
+        </p>
+
+
+        <div
+            class="lesson-box"
+        >
+
+            <div
+                class="lesson-box-title"
+            >
+
+                📚 Verified Lessons & Topics
+
+            </div>
+
+
+            <div
+                class="lesson-list"
+            >
+
+                ${lessonHTML}
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="mission-info"
+        >
+
+            <span class="xp-info">
+
+                ⭐
+                ${chapter.xp}
+                XP
+
+            </span>
+
+
+            <span>
+
+                ⏱
+                ${chapter.time}
+
+            </span>
+
+        </div>
+
+
+        <div
+            class="progress-container"
+        >
+
+            <div
+                class="progress-bar"
+                style="
+                    width:${progress.percentage}%;
+                "
+            >
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="progress-text"
+        >
+
+            Quiz Progress:
+            ${progress.percentage}%
+
+        </div>
+
+
+        ${buttonHTML}
+
+
+        ${scoreHTML}
+
+
+        ${completedHTML}
+
+    `;
+
+
+    grid.appendChild(
+        card
+    );
+
+}
+
+
+/* =========================================================
+   RENDER ALL MISSIONS
+========================================================= */
+
+function renderMissions(){
+
+    const container =
+        document.getElementById(
+            "socialMissionContainer"
+        );
+
+
+    if(!container){
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    renderSubject(
+        "History",
+        container
+    );
+
+
+    renderSubject(
+        "Geography",
+        container
+    );
+
+
+    renderSubject(
+        "Civics",
+        container
+    );
+
+
+    renderSubject(
+        "Economics",
+        container
+    );
+
+}
+
+
+/* =========================================================
+   CHAPTER LIST
+   ALL CHAPTERS UNLOCKED
+========================================================= */
 
 function renderChapterList(){
 
-    const chapterList =
+    const list =
         document.getElementById(
             "chapterList"
         );
 
 
-    chapterList.innerHTML = "";
+    if(!list){
+
+        return;
+
+    }
 
 
-    chapters.forEach(
-        chapter => {
-
-            const progress =
-                getChapterProgress(
-                    chapter.id
-                );
+    list.innerHTML = "";
 
 
-            const unlocked =
-                isChapterUnlocked(
-                    chapter.id
-                );
+    const subjects = [
+
+        "History",
+        "Geography",
+        "Civics",
+        "Economics"
+
+    ];
 
 
-            const item =
+    subjects.forEach(
+        subject => {
+
+
+            const heading =
                 document.createElement(
-                    "div"
+                    "h3"
                 );
 
 
-            /* =========================================
-               COMPLETED
-            ========================================= */
-
-            if(
-                progress.status ===
-                "PASSED"
-            ){
-
-                item.className =
-                    "chapter-item completed-list";
+            heading.className =
+                "chapter-subject";
 
 
-                item.innerHTML = `
+            heading.textContent =
 
-                    ✓ Chapter
-                    ${chapter.id}
-                    – ${chapter.name}
+                subject ===
+                "History"
 
-                    <strong
-                        style="
-                            float:right;
-                            color:#86efac;
-                        ">
+                ?
 
-                        Completed
+                "📜 History"
 
-                    </strong>
+                :
 
-                `;
+                subject ===
+                "Geography"
 
-            }
+                ?
 
+                "🌍 Geography"
 
-            /* =========================================
-               UNLOCKED
-            ========================================= */
+                :
 
-            else if(unlocked){
+                subject ===
+                "Civics"
 
-                item.className =
-                    "chapter-item";
+                ?
 
+                "🏛️ Civics"
 
-                item.innerHTML = `
+                :
 
-                    🔓 Chapter
-                    ${chapter.id}
-                    – ${chapter.name}
-
-                `;
-
-            }
+                "💰 Economics";
 
 
-            /* =========================================
-               LOCKED
-            ========================================= */
-
-            else{
-
-                item.className =
-                    "chapter-item locked-list";
+            list.appendChild(
+                heading
+            );
 
 
-                item.innerHTML = `
-
-                    🔒 Chapter
-                    ${chapter.id}
-                    – ${chapter.name}
-
-                `;
-
-            }
+            const group =
+                subjectGroups[
+                    subject
+                ];
 
 
-            chapterList.appendChild(
-                item
+            group.forEach(
+                id => {
+
+                    const chapter =
+                        chapters.find(
+                            item =>
+                                item.id === id
+                        );
+
+
+                    const progress =
+                        getChapterProgress(
+                            id
+                        );
+
+
+                    /*
+                       All chapters are unlocked.
+                    */
+
+                    const unlocked = true;
+
+
+                    const passed =
+                        isChapterPassed(
+                            id
+                        );
+
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    if(passed){
+
+                        item.className =
+                            "chapter-item completed-list";
+
+
+                        item.innerHTML = `
+
+                            ✓
+                            ${chapter.id}.
+                            ${chapter.name}
+
+                            <strong
+                                style="
+                                    float:right;
+                                    color:#86efac;
+                                "
+                            >
+
+                                ${progress.percentage}%
+
+                            </strong>
+
+                        `;
+
+                    }
+
+                    else{
+
+                        item.className =
+                            "chapter-item";
+
+
+                        item.innerHTML = `
+
+                            🔓
+                            ${chapter.id}.
+                            ${chapter.name}
+
+                            <strong
+                                style="
+                                    float:right;
+                                    color:#38bdf8;
+                                "
+                            >
+
+                                ${progress.percentage}%
+
+                            </strong>
+
+                        `;
+
+                    }
+
+
+                    list.appendChild(
+                        item
+                    );
+
+                }
             );
 
         }
@@ -2717,9 +2869,9 @@ function renderChapterList(){
 }
 
 
-/* =====================================================
-   CALCULATE TOTAL XP
-===================================================== */
+/* =========================================================
+   CALCULATE STATS
+========================================================= */
 
 function calculateStats(){
 
@@ -2733,15 +2885,10 @@ function calculateStats(){
     chapters.forEach(
         chapter => {
 
-            const progress =
-                getChapterProgress(
-                    chapter.id
-                );
-
-
             if(
-                progress.status ===
-                "PASSED"
+                isChapterPassed(
+                    chapter.id
+                )
             ){
 
                 completed++;
@@ -2759,72 +2906,82 @@ function calculateStats(){
     );
 
 
-    document.getElementById(
-        "totalXP"
-    ).textContent =
-        totalXP;
+    const xpElement =
+        document.getElementById(
+            "totalXP"
+        );
 
 
-    document.getElementById(
-        "missionsCompleted"
-    ).textContent =
-        completed + "/27";
+    const completedElement =
+        document.getElementById(
+            "missionsCompleted"
+        );
 
 
-    document.getElementById(
-        "badgesEarned"
-    ).textContent =
-        badges;
+    const badgesElement =
+        document.getElementById(
+            "badgesEarned"
+        );
+
+
+    const streakElement =
+        document.getElementById(
+            "learningStreak"
+        );
+
+
+    if(xpElement){
+
+        xpElement.textContent =
+            totalXP;
+
+    }
+
+
+    if(completedElement){
+
+        completedElement.textContent =
+            completed +
+            "/27";
+
+    }
+
+
+    if(badgesElement){
+
+        badgesElement.textContent =
+            badges;
+
+    }
+
+
+    if(streakElement){
+
+        streakElement.textContent =
+            completed +
+            " 🔥";
+
+    }
 
 }
 
 
-/* =====================================================
-   LEARNING STREAK
-===================================================== */
+/* =========================================================
+   LOAD EVERYTHING
+========================================================= */
 
-function calculateStreak(){
-
-    let completed = 0;
-
+function loadProgress(){
 
     chapters.forEach(
         chapter => {
 
-            if(
-                isChapterPassed(
-                    chapter.id
-                )
-            ){
-
-                completed++;
-
-            }
+            getChapterProgress(
+                chapter.id
+            );
 
         }
     );
 
-
-    const streak =
-        Math.min(
-            completed,
-            7
-        );
-
-
-    document.getElementById(
-        "learningStreak"
-    ).textContent =
-        streak + " 🔥";
-
-}
-
-
-/* =====================================================
-   LOAD EVERYTHING
-===================================================== */
-
-function loadProgress(){
 
     renderMissions();
 
@@ -2832,21 +2989,19 @@ function loadProgress(){
 
     calculateStats();
 
-    calculateStreak();
-
 }
 
 
-/* =====================================================
+/* =========================================================
    INITIAL LOAD
-===================================================== */
+========================================================= */
 
 loadProgress();
 
 
-/* =====================================================
-   UPDATE WHEN RETURNING TO PAGE
-===================================================== */
+/* =========================================================
+   PAGE SHOW
+========================================================= */
 
 window.addEventListener(
     "pageshow",
@@ -2858,23 +3013,9 @@ window.addEventListener(
 );
 
 
-/* =====================================================
-   UPDATE WHEN LOCAL STORAGE CHANGES
-===================================================== */
-
-window.addEventListener(
-    "storage",
-    function(){
-
-        loadProgress();
-
-    }
-);
-
-
-/* =====================================================
-   UPDATE WHEN TAB GETS FOCUS
-===================================================== */
+/* =========================================================
+   WINDOW FOCUS
+========================================================= */
 
 window.addEventListener(
     "focus",
@@ -2886,15 +3027,40 @@ window.addEventListener(
 );
 
 
-/* =====================================================
-   START LEARNING BUTTON
-===================================================== */
+/* =========================================================
+   VISIBILITY CHANGE
+========================================================= */
 
-document
-    .querySelector(
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(
+            document.visibilityState ===
+            "visible"
+        ){
+
+            loadProgress();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   START LEARNING
+========================================================= */
+
+const startLearning =
+    document.querySelector(
         ".start-learning"
-    )
-    .addEventListener(
+    );
+
+
+if(startLearning){
+
+    startLearning.addEventListener(
         "click",
         function(){
 
@@ -2904,15 +3070,15 @@ document
                     loadProgress();
 
                 },
-                300
+                100
             );
 
         }
     );
 
+}
 
 </script>
-
 
 </body>
 
