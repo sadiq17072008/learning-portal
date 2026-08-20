@@ -432,28 +432,6 @@ body{
 
 
 /* =====================================================
-   LOCKED CARD
-===================================================== */
-
-.mission-card.locked{
-
-    opacity:.65;
-
-    filter:saturate(.55);
-}
-
-
-.mission-card.locked:hover{
-
-    transform:none;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.15);
-}
-
-
-/* =====================================================
    MISSION TOP
 ===================================================== */
 
@@ -692,56 +670,6 @@ body{
 
 
 /* =====================================================
-   LOCK BUTTON
-===================================================== */
-
-.locked-btn{
-
-    background:#334155;
-
-    color:#94a3b8;
-
-    cursor:not-allowed;
-
-    box-shadow:none;
-}
-
-
-.locked-btn:hover{
-
-    transform:none;
-
-    box-shadow:none;
-}
-
-
-/* =====================================================
-   LOCK MESSAGE
-===================================================== */
-
-.lock-message{
-
-    margin-top:10px;
-
-    padding:9px 12px;
-
-    border-radius:10px;
-
-    background:#0f172a;
-
-    color:#fbbf24;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    text-align:center;
-
-    line-height:1.4;
-}
-
-
-/* =====================================================
    COMPLETED BADGE
 ===================================================== */
 
@@ -812,14 +740,6 @@ body{
 .chapter-item:hover{
 
     background:#26364c;
-}
-
-
-.chapter-item.locked-list{
-
-    border-left-color:#475569;
-
-    color:#64748b;
 }
 
 
@@ -1436,17 +1356,20 @@ body{
                  IMPORTANT SETTINGS
 =========================================================
 
-60% OR MORE = PASSED
+ALL 7 ENGLISH UNITS ARE ALWAYS UNLOCKED.
 
-Your quiz gave you 73%.
+Unit 1 → Unlocked
+Unit 2 → Unlocked
+Unit 3 → Unlocked
+Unit 4 → Unlocked
+Unit 5 → Unlocked
+Unit 6 → Unlocked
+Unit 7 → Unlocked
 
-Therefore:
+The 60% rule is ONLY used for marking a unit as
+PASSED / COMPLETED.
 
-73 >= 60
-
-So Unit 1 MUST be completed
-and Unit 2 MUST unlock.
-
+It is NOT used to lock any unit.
 =========================================================
 */
 
@@ -1577,56 +1500,7 @@ const chapters = [
 
 /*
 =========================================================
-ENGLISH UNLOCK ORDER
-=========================================================
-
-Unit 1
-   ↓
-Unit 2
-   ↓
-Unit 3
-   ↓
-Unit 4
-   ↓
-Unit 5
-   ↓
-Unit 6
-   ↓
-Unit 7
-
-=========================================================
-*/
-
-const subjectGroups = {
-
-    English:[
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7
-    ]
-
-};
-
-
-/*
-=========================================================
-ALL POSSIBLE STORAGE KEYS
-=========================================================
-
-The important one from your quiz is:
-
-edusphere_english_unit1
-
-The old hub was checking:
-
-edusphere_10english_chapter_1
-
-This code checks BOTH.
-
+GET STORAGE KEYS
 =========================================================
 */
 
@@ -1649,13 +1523,16 @@ function getStorageKeys(id){
 
 /*
 =========================================================
-READ NUMBER SAFELY
+CONVERT VALUE TO NUMBER
 =========================================================
 */
 
 function convertToNumber(value){
 
-    if(value === undefined || value === null){
+    if(
+        value === undefined ||
+        value === null
+    ){
 
         return NaN;
 
@@ -1691,7 +1568,7 @@ function getChapterProgress(id){
 
 
     /*
-    Search every possible key.
+    Search all supported storage keys.
     */
 
     for(
@@ -1720,7 +1597,7 @@ function getChapterProgress(id){
 
 
     /*
-    No result found.
+    No saved progress.
     */
 
     if(!saved){
@@ -1751,10 +1628,7 @@ function getChapterProgress(id){
 
 
         /*
-        =================================================
-        FIRST:
         Try percentage.
-        =================================================
         */
 
         if(
@@ -1770,10 +1644,7 @@ function getChapterProgress(id){
 
 
         /*
-        =================================================
-        SECOND:
         Try score / total.
-        =================================================
         */
 
         if(
@@ -1830,9 +1701,7 @@ function getChapterProgress(id){
 
 
         /*
-        =================================================
-        NO VALID PERCENTAGE
-        =================================================
+        If no valid percentage exists.
         */
 
         if(
@@ -1847,7 +1716,7 @@ function getChapterProgress(id){
 
 
         /*
-        Keep between 0 and 100.
+        Keep percentage between 0 and 100.
         */
 
         percentage =
@@ -1861,9 +1730,7 @@ function getChapterProgress(id){
 
 
         /*
-        =================================================
-        PASSING RULE
-        =================================================
+        Determine status.
         */
 
         let status =
@@ -1882,23 +1749,25 @@ function getChapterProgress(id){
 
         }
 
-        else{
+        else if(
+            percentage > 0
+        ){
 
             status =
                 "FAILED";
 
         }
 
+        else{
+
+            status =
+                "NOT_ATTEMPTED";
+
+        }
+
 
         /*
-        =================================================
-        SAVE NORMALIZED RESULT
-        =================================================
-
-        This copies your old result into the key used
-        by the new system.
-
-        =================================================
+        Normalize saved data.
         */
 
         const normalizedData = {
@@ -1915,6 +1784,10 @@ function getChapterProgress(id){
 
         };
 
+
+        /*
+        Save normalized result.
+        */
 
         localStorage.setItem(
 
@@ -2002,96 +1875,14 @@ function isChapterPassed(id){
 =========================================================
 IS CHAPTER UNLOCKED
 =========================================================
+
+EVERY CHAPTER IS ALWAYS UNLOCKED.
+=========================================================
 */
 
 function isChapterUnlocked(id){
 
-    /*
-    Unit 1 is always unlocked.
-    */
-
-    if(id === 1){
-
-        return true;
-
-    }
-
-
-    const current =
-        chapters.find(
-            chapter =>
-                chapter.id === id
-        );
-
-
-    if(!current){
-
-        return false;
-
-    }
-
-
-    const group =
-        subjectGroups[
-            current.subject
-        ];
-
-
-    if(!group){
-
-        return false;
-
-    }
-
-
-    const index =
-        group.indexOf(id);
-
-
-    if(index <= 0){
-
-        return true;
-
-    }
-
-
-    /*
-    Previous Unit.
-    */
-
-    const previousId =
-        group[
-            index - 1
-        ];
-
-
-    /*
-    Previous Unit MUST have 60%.
-    */
-
-    return isChapterPassed(
-        previousId
-    );
-
-}
-
-
-/*
-=========================================================
-GET PREVIOUS UNIT
-=========================================================
-*/
-
-function getPreviousChapterId(id){
-
-    if(id <= 1){
-
-        return null;
-
-    }
-
-
-    return id - 1;
+    return true;
 
 }
 
@@ -2130,10 +1921,11 @@ function renderMissions(){
                 );
 
 
-            const unlocked =
-                isChapterUnlocked(
-                    chapter.id
-                );
+            /*
+            Every unit is unlocked.
+            */
+
+            const unlocked = true;
 
 
             const passed =
@@ -2148,22 +1940,12 @@ function renderMissions(){
                 );
 
 
+            /*
+            Normal card only.
+            */
+
             card.className =
-                "mission-card" +
-
-                (
-
-                    unlocked
-
-                    ?
-
-                    ""
-
-                    :
-
-                    " locked"
-
-                );
+                "mission-card";
 
 
             /*
@@ -2196,96 +1978,34 @@ function renderMissions(){
 
 
             /*
-            =================================================
-            BUTTON
-            =================================================
+            Every mission gets an active button.
             */
 
-            let buttonHTML = "";
+            const buttonHTML = `
 
+                <a
 
-            if(unlocked){
+                    href="../english/chapter${chapter.id}.html"
 
-                buttonHTML = `
+                    class="mission-btn"
 
-                    <a
+                >
 
-                        href="../english/chapter${chapter.id}.html"
+                    ${
+                        passed
+                        ?
+                        "🔄 Open Mission"
+                        :
+                        "▶ Start Mission"
+                    }
 
-                        class="mission-btn"
+                </a>
 
-                    >
-
-                        ${
-                            passed
-
-                            ?
-
-                            "🔄 Open Mission"
-
-                            :
-
-                            "▶ Start Mission"
-                        }
-
-                    </a>
-
-                `;
-
-            }
-
-
-            else{
-
-                const previousId =
-                    getPreviousChapterId(
-                        chapter.id
-                    );
-
-
-                buttonHTML = `
-
-                    <a
-
-                        href="#"
-
-                        class="mission-btn locked-btn"
-
-                        onclick="
-                            lockedMission(
-                                ${chapter.id}
-                            );
-                            return false;
-                        "
-
-                    >
-
-                        🔒 Locked
-
-                    </a>
-
-
-                    <div
-                        class="lock-message"
-                    >
-
-                        🔒 Complete English
-                        Unit ${previousId}
-                        with at least
-                        ${PASS_PERCENTAGE}%
-                        to unlock this unit.
-
-                    </div>
-
-                `;
-
-            }
+            `;
 
 
             /*
-            =================================================
-            COMPLETED BADGE
-            =================================================
+            Completed badge.
             */
 
             let completedHTML = "";
@@ -2310,9 +2030,7 @@ function renderMissions(){
 
 
             /*
-            =================================================
-            CARD
-            =================================================
+            Mission card.
             */
 
             card.innerHTML = `
@@ -2409,9 +2127,7 @@ function renderMissions(){
                             ${progress.percentage}%;
                         "
 
-                    >
-
-                    </div>
+                    ></div>
 
                 </div>
 
@@ -2439,43 +2155,6 @@ function renderMissions(){
             );
 
         }
-    );
-
-}
-
-
-/*
-=========================================================
-LOCKED MISSION MESSAGE
-=========================================================
-*/
-
-function lockedMission(id){
-
-    const previousId =
-        getPreviousChapterId(
-            id
-        );
-
-
-    alert(
-
-        "🔒 English Unit " +
-
-        id +
-
-        " is locked.\n\n" +
-
-        "Complete English Unit " +
-
-        previousId +
-
-        " with at least " +
-
-        PASS_PERCENTAGE +
-
-        "% first."
-
     );
 
 }
@@ -2511,12 +2190,6 @@ function renderChapterList(){
 
             const progress =
                 getChapterProgress(
-                    chapter.id
-                );
-
-
-            const unlocked =
-                isChapterUnlocked(
                     chapter.id
                 );
 
@@ -2568,10 +2241,10 @@ function renderChapterList(){
 
 
             /*
-            UNLOCKED
+            AVAILABLE
             */
 
-            else if(unlocked){
+            else{
 
                 item.className =
                     "chapter-item";
@@ -2594,25 +2267,6 @@ function renderChapterList(){
                         ${progress.percentage}%
 
                     </strong>
-
-                `;
-
-            }
-
-
-            /*
-            LOCKED
-            */
-
-            else{
-
-                item.className =
-                    "chapter-item locked-list";
-
-
-                item.innerHTML = `
-
-                    🔒 ${chapter.name}
 
                 `;
 
@@ -2774,14 +2428,7 @@ LOAD PROGRESS
 function loadProgress(){
 
     /*
-    IMPORTANT:
-
-    First read and normalize all saved results.
-
-    Then render the cards.
-
-    This guarantees that Unit 1's 73% is detected
-    BEFORE Unit 2 is checked.
+    Normalize all saved results.
     */
 
     chapters.forEach(
@@ -2805,19 +2452,7 @@ function loadProgress(){
 
 
     /*
-    DEBUG INFORMATION
-
-    Open browser:
-    F12 → Console
-
-    You should see:
-
-    Unit 1:
-    percentage: 73
-    status: "PASSED"
-
-    Unit 2 unlocked:
-    true
+    Console information.
     */
 
     console.log(
@@ -2826,6 +2461,10 @@ function loadProgress(){
 
     console.log(
         "EduSphere English Progress"
+    );
+
+    console.log(
+        "ALL 7 UNITS ARE UNLOCKED"
     );
 
     console.log(
@@ -2839,8 +2478,33 @@ function loadProgress(){
     );
 
     console.log(
-        "Unit 2 unlocked:",
-        isChapterUnlocked(2)
+        "Unit 2:",
+        getChapterProgress(2)
+    );
+
+    console.log(
+        "Unit 3:",
+        getChapterProgress(3)
+    );
+
+    console.log(
+        "Unit 4:",
+        getChapterProgress(4)
+    );
+
+    console.log(
+        "Unit 5:",
+        getChapterProgress(5)
+    );
+
+    console.log(
+        "Unit 6:",
+        getChapterProgress(6)
+    );
+
+    console.log(
+        "Unit 7:",
+        getChapterProgress(7)
     );
 
     console.log(
@@ -2952,4 +2616,3 @@ if(startLearning){
 </body>
 
 </html>
-
