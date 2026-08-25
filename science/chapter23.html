@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Chapter 23 - Visual Communication | EduSphere
+</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:
+        rgba(15,23,42,.35);
+
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#7dd3fc;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#38bdf8;
+}
+
+.formula{
+    background:#0c4a6e;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+
+    /*
+    Prevent the browser from trying to reposition
+    this area when a radio button is touched.
+    */
+    overflow-anchor:none;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+
+    /*
+    Important touch fix.
+    */
+    touch-action:manipulation;
+
+    /*
+    Prevent accidental text selection
+    while tapping an option.
+    */
+    user-select:none;
+    -webkit-user-select:none;
+
+    /*
+    Prevent the option itself from causing
+    scroll anchoring jumps.
+    */
+    overflow-anchor:none;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option:active{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+    cursor:pointer;
+
+    /*
+    Do not allow browser focus behavior
+    to create a page jump.
+    */
+    scroll-margin:0;
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    touch-action:manipulation;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        📡 Chapter 23: Visual Communication
+    </h1>
+
+    <p>
+
+        Learn about visual communication, optical fibres,
+        communication systems, satellite communication,
+        radar, television, remote sensing, internet,
+        computer communication and important applications
+        of modern communication technology.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study Visual Communication using your chapter
+        notes and video before attempting the assessment.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER23_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+
+        <a
+            href="YOUR_CHAPTER23_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">
+        ✓ Visual Communication
+    </div>
+
+    <div class="topic">
+        ✓ Communication Systems
+    </div>
+
+    <div class="topic">
+        ✓ Basic Elements of Communication
+    </div>
+
+    <div class="topic">
+        ✓ Transmitter
+    </div>
+
+    <div class="topic">
+        ✓ Communication Channel
+    </div>
+
+    <div class="topic">
+        ✓ Receiver
+    </div>
+
+    <div class="topic">
+        ✓ Optical Fibre
+    </div>
+
+    <div class="topic">
+        ✓ Total Internal Reflection
+    </div>
+
+    <div class="topic">
+        ✓ Applications of Optical Fibre
+    </div>
+
+    <div class="topic">
+        ✓ Satellite Communication
+    </div>
+
+    <div class="topic">
+        ✓ Geostationary Satellites
+    </div>
+
+    <div class="topic">
+        ✓ Remote Sensing
+    </div>
+
+    <div class="topic">
+        ✓ RADAR
+    </div>
+
+    <div class="topic">
+        ✓ Television Communication
+    </div>
+
+    <div class="topic">
+        ✓ Internet Communication
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>🧠 Important Concepts</h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Visual Communication
+            </strong>
+
+            <br><br>
+
+            Visual communication is the process of
+            communicating information through visual
+            means such as images, symbols, diagrams,
+            photographs and electronic displays.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Communication System
+            </strong>
+
+            <br><br>
+
+            A communication system is a system used
+            to transmit information from one place to
+            another.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Basic Elements of Communication
+            </strong>
+
+            <br><br>
+
+            The basic elements are:
+
+            <br><br>
+
+            • Information source
+            <br>
+            • Transmitter
+            <br>
+            • Communication channel
+            <br>
+            • Receiver
+            <br>
+            • Destination
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Transmitter
+            </strong>
+
+            <br><br>
+
+            The transmitter converts the information
+            into a suitable signal and sends it through
+            the communication channel.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Communication Channel
+            </strong>
+
+            <br><br>
+
+            The communication channel is the medium
+            through which the signal travels from the
+            transmitter to the receiver.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Receiver
+            </strong>
+
+            <br><br>
+
+            The receiver receives the transmitted signal
+            and converts it back into useful information.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Optical Fibre
+            </strong>
+
+            <br><br>
+
+            An optical fibre is a thin flexible fibre
+            made of glass or plastic that carries
+            information in the form of light.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Total Internal Reflection
+            </strong>
+
+            <br><br>
+
+            Optical fibres work mainly on the principle
+            of total internal reflection of light.
+
+            <div class="formula">
+                Light travels through the fibre
+                by repeated total internal reflection.
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Applications of Optical Fibre
+            </strong>
+
+            <br><br>
+
+            Optical fibres are used in:
+
+            <br><br>
+
+            • Internet communication
+            <br>
+            • Telephone communication
+            <br>
+            • Cable television
+            <br>
+            • Medical endoscopy
+            <br>
+            • Computer networking
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Satellite Communication
+            </strong>
+
+            <br><br>
+
+            Satellite communication uses artificial
+            satellites to transmit communication
+            signals over large distances.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Geostationary Satellite
+            </strong>
+
+            <br><br>
+
+            A geostationary satellite appears stationary
+            with respect to an observer on Earth because
+            its orbital period is equal to the rotational
+            period of Earth.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Remote Sensing
+            </strong>
+
+            <br><br>
+
+            Remote sensing is the process of collecting
+            information about an object or area without
+            direct physical contact with it.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. RADAR
+            </strong>
+
+            <br><br>
+
+            RADAR stands for Radio Detection and Ranging.
+            It is used to detect the position and distance
+            of objects using radio waves.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Television Communication
+            </strong>
+
+            <br><br>
+
+            Television transmits audio and visual
+            information to viewers through communication
+            signals.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                15. Internet Communication
+            </strong>
+
+            <br><br>
+
+            The Internet is a worldwide network that
+            allows computers and other devices to exchange
+            information.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>🧮 Important Examples</h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1 – Optical Fibre
+        </strong>
+
+        <br><br>
+
+        An optical fibre transmits information using
+        light signals.
+
+        <div class="formula">
+            Principle → Total Internal Reflection
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2 – Communication System
+        </strong>
+
+        <br><br>
+
+        In a communication system, information is
+        converted into a signal by the transmitter,
+        transmitted through a channel and received
+        by the receiver.
+
+        <div class="formula">
+            Source → Transmitter → Channel → Receiver
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3 – RADAR
+        </strong>
+
+        <br><br>
+
+        RADAR uses radio waves to detect distant
+        objects and determine their distance and
+        position.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4 – Remote Sensing
+        </strong>
+
+        <br><br>
+
+        Satellites can collect information about
+        Earth's surface without physically touching
+        the objects being observed.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5 – Optical Fibre Communication
+        </strong>
+
+        <br><br>
+
+        Optical fibre communication is suitable for
+        high-speed transmission because information
+        can be carried as light signals.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUICK REVISION
+===================================================== -->
+
+<div class="card">
+
+    <h2>⚡ Quick Revision</h2>
+
+    <div class="topic">
+        ✓ Communication transfers information from one place to another.
+    </div>
+
+    <div class="topic">
+        ✓ A transmitter converts information into a suitable signal.
+    </div>
+
+    <div class="topic">
+        ✓ A communication channel carries the signal.
+    </div>
+
+    <div class="topic">
+        ✓ A receiver receives and processes the signal.
+    </div>
+
+    <div class="topic">
+        ✓ Optical fibres transmit information using light.
+    </div>
+
+    <div class="topic">
+        ✓ Optical fibres work on total internal reflection.
+    </div>
+
+    <div class="topic">
+        ✓ Satellites are used for long-distance communication.
+    </div>
+
+    <div class="topic">
+        ✓ Geostationary satellites appear stationary from Earth.
+    </div>
+
+    <div class="topic">
+        ✓ Remote sensing collects information without direct contact.
+    </div>
+
+    <div class="topic">
+        ✓ RADAR stands for Radio Detection and Ranging.
+    </div>
+
+    <div class="topic">
+        ✓ RADAR uses radio waves.
+    </div>
+
+    <div class="topic">
+        ✓ Internet connects computers and devices worldwide.
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Visual Communication Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            type="button"
+            onclick="previousQuestion()"
+            disabled
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            type="button"
+            onclick="nextQuestion()"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        type="button"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            type="button"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+
+        <button
+            class="result-btn download"
+            type="button"
+            onclick="downloadProgress()"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 23 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 23;
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_23";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter23";
+
+
+/* =====================================================
+   50 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"Visual communication mainly involves communicating information through:",
+    a:[
+        "Visual means",
+        "Only sound",
+        "Only smell",
+        "Only taste"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is an example of visual communication?",
+    a:[
+        "A diagram",
+        "A smell",
+        "A taste",
+        "A temperature"
+    ],
+    correct:0
+},
+
+{
+    q:"The main purpose of a communication system is to:",
+    a:[
+        "Transmit information",
+        "Increase mass",
+        "Produce heat",
+        "Measure temperature"
+    ],
+    correct:0
+},
+
+{
+    q:"Which component converts information into a suitable signal?",
+    a:[
+        "Transmitter",
+        "Receiver",
+        "Battery only",
+        "Destination"
+    ],
+    correct:0
+},
+
+{
+    q:"The medium through which a communication signal travels is called:",
+    a:[
+        "Communication channel",
+        "Transmitter",
+        "Source",
+        "Destination"
+    ],
+    correct:0
+},
+
+{
+    q:"Which component receives the transmitted signal?",
+    a:[
+        "Receiver",
+        "Transmitter",
+        "Source",
+        "Channel"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a communication medium?",
+    a:[
+        "Optical fibre",
+        "Thermometer",
+        "Spring balance",
+        "Measuring cylinder"
+    ],
+    correct:0
+},
+
+{
+    q:"Optical fibres transmit information mainly in the form of:",
+    a:[
+        "Light",
+        "Sound only",
+        "Heat",
+        "Mechanical motion"
+    ],
+    correct:0
+},
+
+{
+    q:"Optical fibre works mainly on the principle of:",
+    a:[
+        "Total internal reflection",
+        "Refraction only",
+        "Dispersion only",
+        "Diffusion"
+    ],
+    correct:0
+},
+
+{
+    q:"An optical fibre is generally made of:",
+    a:[
+        "Glass or plastic",
+        "Wood",
+        "Iron only",
+        "Copper only"
+    ],
+    correct:0
+},
+
+{
+    q:"The central part of an optical fibre through which light travels is called:",
+    a:[
+        "Core",
+        "Cladding",
+        "Coating only",
+        "Outer jacket only"
+    ],
+    correct:0
+},
+
+{
+    q:"The layer surrounding the core of an optical fibre is called:",
+    a:[
+        "Cladding",
+        "Battery",
+        "Transmitter",
+        "Receiver"
+    ],
+    correct:0
+},
+
+{
+    q:"The refractive index of the core of an optical fibre is generally:",
+    a:[
+        "Greater than that of the cladding",
+        "Less than that of the cladding",
+        "Equal to air",
+        "Zero"
+    ],
+    correct:0
+},
+
+{
+    q:"Which phenomenon keeps light travelling through an optical fibre?",
+    a:[
+        "Total internal reflection",
+        "Conduction",
+        "Convection",
+        "Electrolysis"
+    ],
+    correct:0
+},
+
+{
+    q:"Optical fibre communication is especially useful for:",
+    a:[
+        "High-speed communication",
+        "Cooking food",
+        "Measuring body temperature",
+        "Producing electricity"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is an application of optical fibre?",
+    a:[
+        "Internet communication",
+        "Making bricks",
+        "Producing petrol",
+        "Measuring mass"
+    ],
+    correct:0
+},
+
+{
+    q:"Optical fibres are used in medicine for:",
+    a:[
+        "Endoscopy",
+        "Boiling water",
+        "Measuring mass",
+        "Producing oxygen"
+    ],
+    correct:0
+},
+
+{
+    q:"A major advantage of optical fibre communication is:",
+    a:[
+        "High bandwidth",
+        "Very high weight",
+        "Very low speed",
+        "High electrical resistance only"
+    ],
+    correct:0
+},
+
+{
+    q:"Optical fibre communication is relatively resistant to:",
+    a:[
+        "Electromagnetic interference",
+        "Gravity",
+        "Mass",
+        "Temperature only"
+    ],
+    correct:0
+},
+
+{
+    q:"Satellite communication uses:",
+    a:[
+        "Artificial satellites",
+        "Only underground wires",
+        "Only water",
+        "Only magnets"
+    ],
+    correct:0
+},
+
+{
+    q:"A satellite used for communication receives and retransmits:",
+    a:[
+        "Communication signals",
+        "Soil",
+        "Water",
+        "Rocks"
+    ],
+    correct:0
+},
+
+{
+    q:"A satellite that appears stationary with respect to Earth is called:",
+    a:[
+        "Geostationary satellite",
+        "Polar satellite only",
+        "Natural satellite",
+        "Weather balloon"
+    ],
+    correct:0
+},
+
+{
+    q:"A geostationary satellite has an orbital period approximately equal to:",
+    a:[
+        "The rotational period of Earth",
+        "One hour",
+        "One week",
+        "One year"
+    ],
+    correct:0
+},
+
+{
+    q:"Geostationary satellites are particularly useful for:",
+    a:[
+        "Communication",
+        "Digging wells",
+        "Cooking",
+        "Measuring body mass"
+    ],
+    correct:0
+},
+
+{
+    q:"Satellite communication is useful for:",
+    a:[
+        "Long-distance communication",
+        "Only room-to-room communication",
+        "Only underwater communication",
+        "Only laboratory communication"
+    ],
+    correct:0
+},
+
+{
+    q:"Remote sensing means collecting information:",
+    a:[
+        "Without direct physical contact",
+        "Only by touching the object",
+        "Only by weighing the object",
+        "Only by heating the object"
+    ],
+    correct:0
+},
+
+{
+    q:"Remote sensing commonly uses:",
+    a:[
+        "Satellites and sensors",
+        "Only weighing machines",
+        "Only thermometers",
+        "Only microscopes"
+    ],
+    correct:0
+},
+
+{
+    q:"Remote sensing is useful for studying:",
+    a:[
+        "Earth's surface",
+        "Only classroom furniture",
+        "Only laboratory glassware",
+        "Only household utensils"
+    ],
+    correct:0
+},
+
+{
+    q:"RADAR stands for:",
+    a:[
+        "Radio Detection and Ranging",
+        "Radio Data and Reading",
+        "Radiation Detection and Recording",
+        "Radio Direction and Reception"
+    ],
+    correct:0
+},
+
+{
+    q:"RADAR mainly uses:",
+    a:[
+        "Radio waves",
+        "Sound waves only",
+        "Water waves",
+        "Seismic waves"
+    ],
+    correct:0
+},
+
+{
+    q:"RADAR can be used to determine the:",
+    a:[
+        "Position and distance of an object",
+        "Taste of an object",
+        "Mass of an object directly",
+        "Chemical composition of every object"
+    ],
+    correct:0
+},
+
+{
+    q:"RADAR is widely useful in:",
+    a:[
+        "Air traffic control",
+        "Cooking",
+        "Farming by hand",
+        "Making furniture"
+    ],
+    correct:0
+},
+
+{
+    q:"Television is mainly used to transmit:",
+    a:[
+        "Audio and visual information",
+        "Only electricity",
+        "Only heat",
+        "Only pressure"
+    ],
+    correct:0
+},
+
+{
+    q:"The Internet is best described as:",
+    a:[
+        "A worldwide network of interconnected computers and devices",
+        "A single computer",
+        "A television channel",
+        "A satellite only"
+    ],
+    correct:0
+},
+
+{
+    q:"The Internet allows users to:",
+    a:[
+        "Exchange information",
+        "Only measure temperature",
+        "Only produce electricity",
+        "Only detect earthquakes"
+    ],
+    correct:0
+},
+
+{
+    q:"Which device is commonly used to display visual information from a computer?",
+    a:[
+        "Monitor",
+        "Thermometer",
+        "Barometer",
+        "Ammeter"
+    ],
+    correct:0
+},
+
+{
+    q:"A photograph is an example of:",
+    a:[
+        "Visual information",
+        "Only audio information",
+        "Only thermal information",
+        "Only mechanical information"
+    ],
+    correct:0
+},
+
+{
+    q:"A diagram can help communicate information by:",
+    a:[
+        "Representing information visually",
+        "Increasing temperature",
+        "Changing mass",
+        "Producing electricity"
+    ],
+    correct:0
+},
+
+{
+    q:"A communication signal carries:",
+    a:[
+        "Information",
+        "Only mass",
+        "Only matter",
+        "Only temperature"
+    ],
+    correct:0
+},
+
+{
+    q:"Which sequence correctly represents a basic communication system?",
+    a:[
+        "Source → Transmitter → Channel → Receiver → Destination",
+        "Receiver → Source → Battery → Channel",
+        "Channel → Source → Receiver → Transmitter",
+        "Destination → Channel → Source → Battery"
+    ],
+    correct:0
+},
+
+{
+    q:"The source in a communication system is the place where:",
+    a:[
+        "Information originates",
+        "Information is destroyed",
+        "Electricity is measured",
+        "Light is absorbed completely"
+    ],
+    correct:0
+},
+
+{
+    q:"A microphone can act as a:",
+    a:[
+        "Transducer for converting sound into an electrical signal",
+        "Satellite",
+        "Optical fibre",
+        "RADAR antenna only"
+    ],
+    correct:0
+},
+
+{
+    q:"A speaker converts an electrical signal mainly into:",
+    a:[
+        "Sound",
+        "Light only",
+        "Heat only",
+        "Mass"
+    ],
+    correct:0
+},
+
+{
+    q:"Which technology is commonly used for transmitting large amounts of digital data?",
+    a:[
+        "Optical fibre",
+        "Wooden rod",
+        "Mechanical spring",
+        "Glass bottle"
+    ],
+    correct:0
+},
+
+{
+    q:"One important advantage of satellite communication is:",
+    a:[
+        "Wide coverage",
+        "Very short range only",
+        "No need for signals",
+        "It works only inside laboratories"
+    ],
+    correct:0
+},
+
+{
+    q:"Which technology is useful for observing large areas of Earth's surface?",
+    a:[
+        "Remote sensing",
+        "Microscope",
+        "Thermometer",
+        "Spring balance"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is NOT normally an application of optical fibre?",
+    a:[
+        "Measuring mass using a balance",
+        "Internet communication",
+        "Medical endoscopy",
+        "Telephone communication"
+    ],
+    correct:0
+},
+
+{
+    q:"The main purpose of a receiver is to:",
+    a:[
+        "Recover the information from the received signal",
+        "Create the original information",
+        "Destroy the signal",
+        "Increase the mass of the signal"
+    ],
+    correct:0
+},
+
+{
+    q:"Which communication technology is especially useful for broadcasting television signals over large areas?",
+    a:[
+        "Satellite communication",
+        "Spring balance",
+        "Thermometer",
+        "Microscope"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is an example of digital communication?",
+    a:[
+        "Sending a message through the Internet",
+        "Reading a printed book",
+        "Looking at a wall",
+        "Holding a stone"
+    ],
+    correct:0
+},
+
+{
+    q:"The information transmitted through a communication system may be:",
+    a:[
+        "Audio, video, text or data",
+        "Only water",
+        "Only metal",
+        "Only heat"
+    ],
+    correct:0
+},
+
+{
+    q:"Which technology uses reflected radio waves to detect objects?",
+    a:[
+        "RADAR",
+        "Optical fibre",
+        "Television screen",
+        "Microphone"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a major application of visual communication?",
+    a:[
+        "Sharing information through images and diagrams",
+        "Increasing the mass of an object",
+        "Changing the density of water",
+        "Producing chemical reactions"
+    ],
+    correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_science_ch23_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label
+                    class="option"
+                    data-option-index="${index}"
+                    onclick="optionClicked(event, ${index})"
+                >
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="selectAnswer(${index})"
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    const container =
+        document.getElementById(
+            "questionContainer"
+        );
+
+
+    /*
+    IMPORTANT FIX:
+
+    Save the current page position before
+    replacing the question HTML.
+    */
+
+    const currentScroll =
+        window.scrollY;
+
+
+    container.innerHTML =
+        html;
+
+
+    /*
+    Restore the exact same page position.
+    This prevents the page from jumping downward.
+    */
+
+    window.scrollTo(
+        0,
+        currentScroll
+    );
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   OPTION CLICK FIX
+===================================================== */
+
+function optionClicked(
+    event,
+    index
+){
+
+    /*
+    Prevent the label's default browser
+    behaviour from moving the page.
+    */
+
+    event.preventDefault();
+
+
+    const scrollPosition =
+        window.scrollY;
+
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+
+    /*
+    Manually check the selected radio button.
+    */
+
+    const radio =
+        event.currentTarget.querySelector(
+            "input[type='radio']"
+        );
+
+
+    if(radio){
+
+        radio.checked =
+            true;
+
+    }
+
+
+    /*
+    Restore scroll position after
+    the browser processes the touch.
+    */
+
+    requestAnimationFrame(
+        function(){
+
+            window.scrollTo(
+                0,
+                scrollPosition
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_science_ch23_attempts",
+        String(attempts)
+    );
+
+
+    /*
+    SAVE PROGRESS BEFORE SHOWING RESULT
+    */
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    console.log(
+        "Chapter 23 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Biology",
+
+        chapter:
+            "Chapter 23 - Visual Communication",
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    /*
+    MAIN LOCALSTORAGE KEY
+    */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    /*
+    COMPATIBILITY KEY
+    */
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 23 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Visual Communication assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 23 Visual Communication and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    /*
+    Scroll to the result only after
+    the quiz has actually been submitted.
+    */
+
+    result.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter23_Visual_Communication_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    /*
+    Compatibility fallback.
+    */
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        /*
+        Support old score format:
+        "35/50"
+        */
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 23 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            /*
+            Make sure the result exists before
+            leaving the chapter.
+            */
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                event.preventDefault();
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            /*
+            The href already points to the
+            Science Mission Hub.
+            */
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

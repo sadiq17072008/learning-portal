@@ -1,0 +1,3277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Chapter 22 - Environmental Management | EduSphere
+</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+html{
+    scroll-behavior:auto;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:
+        rgba(15,23,42,.35);
+
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+
+/* =====================================================
+   STUDY LINKS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+
+/* =====================================================
+   CONCEPTS
+===================================================== */
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#7dd3fc;
+}
+
+
+/* =====================================================
+   EXAMPLES
+===================================================== */
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#38bdf8;
+}
+
+
+/* =====================================================
+   FORMULA
+===================================================== */
+
+.formula{
+    background:#0c4a6e;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   QUIZ HEADER
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   QUIZ PROGRESS
+===================================================== */
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+
+    /*
+       IMPORTANT:
+       Prevent browser scroll anchoring
+       while changing questions.
+    */
+    scroll-margin-top:100px;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+
+    /*
+       Prevent the browser from using the
+       radio focus as a scroll target.
+    */
+    scroll-margin:0;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    touch-action:manipulation;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   RESULT BUTTONS
+===================================================== */
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🌍 Chapter 22: Environmental Management
+    </h1>
+
+    <p>
+
+        Learn about environmental management,
+        natural resources, biodiversity,
+        ecosystem conservation, pollution control,
+        sustainable development, renewable resources,
+        waste management, environmental protection
+        and important environmental practices in
+        Tamil Nadu 10th Standard Science.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+
+            <strong>
+                50
+            </strong>
+
+            Questions
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                30/50
+            </strong>
+
+            Pass Mark
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                60%
+            </strong>
+
+            Required
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                +80
+            </strong>
+
+            XP Reward
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study Environmental Management using the chapter
+        PDF notes and video before attempting the assessment.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER22_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+
+        <a
+            href="YOUR_CHAPTER22_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Environment and Environmental Management
+    </div>
+
+    <div class="topic">
+        ✓ Natural Resources
+    </div>
+
+    <div class="topic">
+        ✓ Forest Resources
+    </div>
+
+    <div class="topic">
+        ✓ Water Resources
+    </div>
+
+    <div class="topic">
+        ✓ Soil Resources
+    </div>
+
+    <div class="topic">
+        ✓ Mineral Resources
+    </div>
+
+    <div class="topic">
+        ✓ Energy Resources
+    </div>
+
+    <div class="topic">
+        ✓ Renewable Resources
+    </div>
+
+    <div class="topic">
+        ✓ Non-renewable Resources
+    </div>
+
+    <div class="topic">
+        ✓ Biodiversity
+    </div>
+
+    <div class="topic">
+        ✓ Conservation of Biodiversity
+    </div>
+
+    <div class="topic">
+        ✓ Deforestation
+    </div>
+
+    <div class="topic">
+        ✓ Pollution Control
+    </div>
+
+    <div class="topic">
+        ✓ Waste Management
+    </div>
+
+    <div class="topic">
+        ✓ Sustainable Development
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧠 Important Concepts
+    </h2>
+
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>
+                1. Environment
+            </strong>
+
+            <br><br>
+
+            Environment includes all living and non-living
+            components surrounding organisms and influencing
+            their life.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                2. Environmental Management
+            </strong>
+
+            <br><br>
+
+            Environmental management involves the responsible
+            use, protection and conservation of natural
+            resources while maintaining ecological balance.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                3. Natural Resources
+            </strong>
+
+            <br><br>
+
+            Natural resources are materials and substances
+            obtained from nature and used by humans.
+
+            <br><br>
+
+            Examples include water, forests, soil, minerals
+            and energy resources.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                4. Renewable Resources
+            </strong>
+
+            <br><br>
+
+            Renewable resources can be naturally replenished
+            within a relatively short period.
+
+            <br><br>
+
+            Examples:
+
+            <br>
+            • Solar energy
+            <br>
+            • Wind energy
+            <br>
+            • Water
+            <br>
+            • Biomass
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                5. Non-renewable Resources
+            </strong>
+
+            <br><br>
+
+            Non-renewable resources are available in limited
+            quantities and cannot be replaced quickly.
+
+            <br><br>
+
+            Examples:
+
+            <br>
+            • Coal
+            <br>
+            • Petroleum
+            <br>
+            • Natural gas
+            <br>
+            • Minerals
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                6. Biodiversity
+            </strong>
+
+            <br><br>
+
+            Biodiversity refers to the variety of living
+            organisms present in a particular region or on
+            Earth.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                7. Conservation
+            </strong>
+
+            <br><br>
+
+            Conservation means the protection and careful
+            management of natural resources and biodiversity
+            for present and future generations.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                8. Deforestation
+            </strong>
+
+            <br><br>
+
+            Deforestation is the large-scale removal of
+            forests for purposes such as agriculture,
+            construction and industrial development.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                9. Afforestation
+            </strong>
+
+            <br><br>
+
+            Afforestation is the process of establishing
+            forests on land that was previously not covered
+            by forests.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                10. Pollution
+            </strong>
+
+            <br><br>
+
+            Pollution is the undesirable change in the
+            physical, chemical or biological characteristics
+            of the environment.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                11. Waste Management
+            </strong>
+
+            <br><br>
+
+            Waste management includes the collection,
+            treatment, recycling and safe disposal of waste.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                12. Sustainable Development
+            </strong>
+
+            <br><br>
+
+            Sustainable development means meeting present
+            needs without compromising the ability of future
+            generations to meet their needs.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                13. Reduce, Reuse and Recycle
+            </strong>
+
+            <br><br>
+
+            The three important principles of waste reduction
+            are:
+
+            <br><br>
+
+            • Reduce consumption
+            <br>
+            • Reuse materials
+            <br>
+            • Recycle waste
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>
+                14. Rainwater Harvesting
+            </strong>
+
+            <br><br>
+
+            Rainwater harvesting is the collection and storage
+            of rainwater for future use and groundwater
+            recharge.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧮 Environmental Examples
+    </h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1 – Renewable Energy
+        </strong>
+
+        <br><br>
+
+        Solar energy is considered renewable because
+        sunlight is naturally replenished.
+
+        <div class="formula">
+            Solar Energy → Renewable Resource
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2 – Water Conservation
+        </strong>
+
+        <br><br>
+
+        Rainwater harvesting can collect rainwater and
+        help recharge groundwater.
+
+        <div class="formula">
+            Rainwater → Collection → Storage / Recharge
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3 – Waste Management
+        </strong>
+
+        <br><br>
+
+        Separating biodegradable and non-biodegradable
+        waste makes waste management easier.
+
+        <div class="formula">
+            Waste Segregation → Treatment → Safe Disposal
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4 – Conservation
+        </strong>
+
+        <br><br>
+
+        Protecting forests helps conserve biodiversity,
+        soil and water resources.
+
+        <div class="formula">
+            Forest Conservation → Biodiversity Protection
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5 – Sustainable Development
+        </strong>
+
+        <br><br>
+
+        Using resources carefully while protecting the
+        environment supports sustainable development.
+
+        <div class="formula">
+            Present Needs + Future Protection
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUICK REVISION
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        ⚡ Quick Revision
+    </h2>
+
+
+    <div class="topic">
+        ✓ Environment includes living and non-living components.
+    </div>
+
+    <div class="topic">
+        ✓ Natural resources are obtained from nature.
+    </div>
+
+    <div class="topic">
+        ✓ Solar and wind energy are renewable resources.
+    </div>
+
+    <div class="topic">
+        ✓ Coal and petroleum are non-renewable resources.
+    </div>
+
+    <div class="topic">
+        ✓ Biodiversity means variety of living organisms.
+    </div>
+
+    <div class="topic">
+        ✓ Deforestation causes loss of forest cover.
+    </div>
+
+    <div class="topic">
+        ✓ Afforestation helps increase forest cover.
+    </div>
+
+    <div class="topic">
+        ✓ Conservation protects natural resources.
+    </div>
+
+    <div class="topic">
+        ✓ Waste should be reduced, reused and recycled.
+    </div>
+
+    <div class="topic">
+        ✓ Rainwater harvesting helps conserve water.
+    </div>
+
+    <div class="topic">
+        ✓ Sustainable development protects future generations.
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Environmental Management Assessment
+        </h2>
+
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            type="button"
+            id="previousBtn"
+            class="nav-btn previous"
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            type="button"
+            id="nextBtn"
+            class="nav-btn next"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            type="button"
+            id="retryBtn"
+            class="result-btn retry"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create your
+            progress record.
+
+        </p>
+
+
+        <button
+            type="button"
+            class="result-btn download"
+            id="downloadBtn"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 22 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 22;
+
+const CHAPTER_NAME =
+    "Chapter 22 - Environmental Management";
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_22";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter22";
+
+const ATTEMPTS_KEY =
+    "edusphere_science_ch22_attempts";
+
+
+/* =====================================================
+   50 ENVIRONMENTAL MANAGEMENT QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"Environmental management mainly involves:",
+    a:[
+        "Protection and proper management of the environment",
+        "Only construction of buildings",
+        "Only industrial development",
+        "Only mining"
+    ],
+    correct:0
+},
+
+{
+    q:"The environment consists of:",
+    a:[
+        "Only living organisms",
+        "Only non-living things",
+        "Living and non-living components",
+        "Only plants"
+    ],
+    correct:2
+},
+
+{
+    q:"Which of the following is a natural resource?",
+    a:[
+        "Plastic bottle",
+        "Water",
+        "Computer",
+        "Cement"
+    ],
+    correct:1
+},
+
+{
+    q:"Which is a renewable resource?",
+    a:[
+        "Coal",
+        "Petroleum",
+        "Solar energy",
+        "Natural gas"
+    ],
+    correct:2
+},
+
+{
+    q:"Which is a non-renewable resource?",
+    a:[
+        "Wind",
+        "Solar energy",
+        "Coal",
+        "Sunlight"
+    ],
+    correct:2
+},
+
+{
+    q:"Biodiversity means:",
+    a:[
+        "Variety of living organisms",
+        "Only variety of plants",
+        "Only variety of animals",
+        "Only variety of microorganisms"
+    ],
+    correct:0
+},
+
+{
+    q:"The protection of biodiversity is called:",
+    a:[
+        "Conservation",
+        "Pollution",
+        "Deforestation",
+        "Urbanisation"
+    ],
+    correct:0
+},
+
+{
+    q:"The large-scale removal of forests is called:",
+    a:[
+        "Afforestation",
+        "Deforestation",
+        "Conservation",
+        "Irrigation"
+    ],
+    correct:1
+},
+
+{
+    q:"Planting trees on land that was previously not forested is called:",
+    a:[
+        "Deforestation",
+        "Afforestation",
+        "Pollution",
+        "Mining"
+    ],
+    correct:1
+},
+
+{
+    q:"Forests help in:",
+    a:[
+        "Preventing soil erosion",
+        "Increasing pollution",
+        "Destroying habitats",
+        "Increasing desertification"
+    ],
+    correct:0
+},
+
+{
+    q:"Which resource is essential for all known forms of life?",
+    a:[
+        "Gold",
+        "Water",
+        "Petroleum",
+        "Coal"
+    ],
+    correct:1
+},
+
+{
+    q:"Rainwater harvesting is mainly used for:",
+    a:[
+        "Water conservation",
+        "Air pollution",
+        "Noise reduction",
+        "Mining"
+    ],
+    correct:0
+},
+
+{
+    q:"Rainwater harvesting can help:",
+    a:[
+        "Recharge groundwater",
+        "Increase plastic waste",
+        "Increase air pollution",
+        "Destroy forests"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a fossil fuel?",
+    a:[
+        "Solar energy",
+        "Wind energy",
+        "Coal",
+        "Tidal energy"
+    ],
+    correct:2
+},
+
+{
+    q:"Petroleum is classified as:",
+    a:[
+        "Renewable resource",
+        "Non-renewable resource",
+        "Inexhaustible resource",
+        "Biological resource only"
+    ],
+    correct:1
+},
+
+{
+    q:"Which energy source uses moving air?",
+    a:[
+        "Solar energy",
+        "Wind energy",
+        "Geothermal energy",
+        "Nuclear energy"
+    ],
+    correct:1
+},
+
+{
+    q:"Solar energy is obtained from:",
+    a:[
+        "Moon",
+        "Sun",
+        "Coal",
+        "Petroleum"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following is a major cause of biodiversity loss?",
+    a:[
+        "Habitat destruction",
+        "Tree planting",
+        "Conservation",
+        "Rainwater harvesting"
+    ],
+    correct:0
+},
+
+{
+    q:"A species that is at high risk of extinction is called:",
+    a:[
+        "Common species",
+        "Endangered species",
+        "Domestic species",
+        "Artificial species"
+    ],
+    correct:1
+},
+
+{
+    q:"National parks are established mainly to:",
+    a:[
+        "Protect wildlife and natural habitats",
+        "Increase mining",
+        "Promote deforestation",
+        "Increase pollution"
+    ],
+    correct:0
+},
+
+{
+    q:"A protected area where wild animals and plants are conserved is called a:",
+    a:[
+        "Wildlife sanctuary",
+        "Factory",
+        "Mine",
+        "Industrial zone"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following causes air pollution?",
+    a:[
+        "Vehicle emissions",
+        "Tree planting",
+        "Rainwater harvesting",
+        "Recycling"
+    ],
+    correct:0
+},
+
+{
+    q:"Which gas is a major greenhouse gas?",
+    a:[
+        "Carbon dioxide",
+        "Oxygen",
+        "Nitrogen",
+        "Hydrogen"
+    ],
+    correct:0
+},
+
+{
+    q:"The increase in average temperature of Earth is called:",
+    a:[
+        "Global warming",
+        "Condensation",
+        "Precipitation",
+        "Transpiration"
+    ],
+    correct:0
+},
+
+{
+    q:"The trapping of heat by certain atmospheric gases is called:",
+    a:[
+        "Greenhouse effect",
+        "Water cycle",
+        "Nitrogen fixation",
+        "Photosynthesis"
+    ],
+    correct:0
+},
+
+{
+    q:"Which activity can increase carbon dioxide emissions?",
+    a:[
+        "Burning fossil fuels",
+        "Planting trees",
+        "Recycling paper",
+        "Using solar energy"
+    ],
+    correct:0
+},
+
+{
+    q:"Water pollution can be caused by:",
+    a:[
+        "Industrial waste",
+        "Tree planting",
+        "Solar panels",
+        "Afforestation"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following helps control water pollution?",
+    a:[
+        "Treatment of wastewater",
+        "Dumping sewage into rivers",
+        "Dumping chemicals into lakes",
+        "Throwing plastics into water"
+    ],
+    correct:0
+},
+
+{
+    q:"Noise pollution is commonly caused by:",
+    a:[
+        "Loudspeakers and vehicles",
+        "Trees",
+        "Rainwater",
+        "Solar panels"
+    ],
+    correct:0
+},
+
+{
+    q:"Excessive use of fertilizers can cause:",
+    a:[
+        "Water pollution",
+        "Forest conservation",
+        "Afforestation",
+        "Wildlife protection"
+    ],
+    correct:0
+},
+
+{
+    q:"The process of converting waste materials into reusable materials is called:",
+    a:[
+        "Recycling",
+        "Deforestation",
+        "Mining",
+        "Combustion"
+    ],
+    correct:0
+},
+
+{
+    q:"The three Rs of waste management are:",
+    a:[
+        "Reduce, Reuse and Recycle",
+        "Read, Repeat and Rewrite",
+        "Remove, Repair and Replace",
+        "Reduce, Remove and Return"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is biodegradable?",
+    a:[
+        "Vegetable waste",
+        "Plastic bottle",
+        "Glass",
+        "Aluminium can"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is generally non-biodegradable?",
+    a:[
+        "Food waste",
+        "Leaves",
+        "Plastic",
+        "Paper"
+    ],
+    correct:2
+},
+
+{
+    q:"Composting is mainly used for:",
+    a:[
+        "Organic waste",
+        "Glass waste",
+        "Metal waste",
+        "Plastic waste"
+    ],
+    correct:0
+},
+
+{
+    q:"A major advantage of recycling is:",
+    a:[
+        "Conservation of resources",
+        "Increase in waste",
+        "Increase in pollution",
+        "Destruction of habitats"
+    ],
+    correct:0
+},
+
+{
+    q:"Sustainable development means:",
+    a:[
+        "Meeting present needs without harming future generations",
+        "Using all resources immediately",
+        "Destroying forests for development",
+        "Ignoring environmental protection"
+    ],
+    correct:0
+},
+
+{
+    q:"Which practice supports sustainable development?",
+    a:[
+        "Efficient use of resources",
+        "Excessive resource consumption",
+        "Deforestation",
+        "Uncontrolled pollution"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following helps prevent soil erosion?",
+    a:[
+        "Planting trees",
+        "Deforestation",
+        "Overgrazing",
+        "Removing vegetation"
+    ],
+    correct:0
+},
+
+{
+    q:"Deforestation can result in:",
+    a:[
+        "Soil erosion",
+        "Increased biodiversity",
+        "Improved rainfall always",
+        "Increased forest cover"
+    ],
+    correct:0
+},
+
+{
+    q:"Overgrazing can contribute to:",
+    a:[
+        "Land degradation",
+        "Forest growth",
+        "Biodiversity increase",
+        "Water conservation"
+    ],
+    correct:0
+},
+
+{
+    q:"Which resource is obtained from forests?",
+    a:[
+        "Timber",
+        "Petroleum",
+        "Natural gas",
+        "Uranium"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a mineral resource?",
+    a:[
+        "Iron ore",
+        "Sunlight",
+        "Wind",
+        "Rainwater"
+    ],
+    correct:0
+},
+
+{
+    q:"Mineral resources are generally:",
+    a:[
+        "Non-renewable",
+        "Renewable",
+        "Unlimited",
+        "Replenished daily"
+    ],
+    correct:0
+},
+
+{
+    q:"Which energy source is considered clean and renewable?",
+    a:[
+        "Solar energy",
+        "Coal",
+        "Petroleum",
+        "Diesel"
+    ],
+    correct:0
+},
+
+{
+    q:"Which method helps conserve forests?",
+    a:[
+        "Afforestation",
+        "Illegal logging",
+        "Uncontrolled cutting",
+        "Forest burning"
+    ],
+    correct:0
+},
+
+{
+    q:"Wildlife conservation helps to:",
+    a:[
+        "Protect species and habitats",
+        "Increase extinction",
+        "Destroy ecosystems",
+        "Increase poaching"
+    ],
+    correct:0
+},
+
+{
+    q:"Illegal hunting of wild animals is called:",
+    a:[
+        "Poaching",
+        "Afforestation",
+        "Recycling",
+        "Composting"
+    ],
+    correct:0
+},
+
+{
+    q:"Which activity can reduce household waste?",
+    a:[
+        "Using reusable products",
+        "Using more disposable products",
+        "Throwing waste in open areas",
+        "Burning all waste"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is an environmentally friendly energy source?",
+    a:[
+        "Wind energy",
+        "Coal",
+        "Petrol",
+        "Diesel"
+    ],
+    correct:0
+},
+
+{
+    q:"The best approach to waste management is to:",
+    a:[
+        "Reduce waste generation",
+        "Dump waste anywhere",
+        "Burn all plastics",
+        "Throw waste into rivers"
+    ],
+    correct:0
+},
+
+{
+    q:"Conservation of water is important because:",
+    a:[
+        "Freshwater resources are limited",
+        "Water is unlimited everywhere",
+        "Water has no biological importance",
+        "Water cannot be polluted"
+    ],
+    correct:0
+},
+
+{
+    q:"Which practice helps conserve electricity?",
+    a:[
+        "Switching off unused electrical appliances",
+        "Leaving lights on all day",
+        "Using electricity unnecessarily",
+        "Keeping appliances running continuously"
+    ],
+    correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            ATTEMPTS_KEY
+        )
+    ) || 0;
+
+
+/* =====================================================
+   IMPORTANT SCROLL FIX
+===================================================== */
+
+/*
+    This function remembers exactly where the user is.
+
+    The old problem was that when the radio button was
+    touched/clicked, the browser could automatically move
+    the page to keep the focused radio button visible.
+
+    We restore the exact scroll position immediately and
+    again on the next animation frame.
+*/
+
+function preserveScrollPosition(
+    scrollPosition
+){
+
+    window.scrollTo(
+        0,
+        scrollPosition
+    );
+
+    requestAnimationFrame(
+        function(){
+
+            window.scrollTo(
+                0,
+                scrollPosition
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(
+    savedScrollPosition = null
+){
+
+    /*
+        If no position was supplied, remember the current
+        position before replacing the question.
+    */
+
+    if(
+        savedScrollPosition === null
+    ){
+
+        savedScrollPosition =
+            window.scrollY;
+
+    }
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (
+            currentQuestion + 1
+        ) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length
+            *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (
+            option,
+            index
+        )=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label
+                    class="option"
+                    data-option-index="${index}"
+                >
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    /*
+        Attach the answer listeners AFTER creating
+        the question.
+
+        We do not use inline onchange here because
+        we need complete control over the browser's
+        scrolling behaviour.
+    */
+
+    const radioButtons =
+        document.querySelectorAll(
+            'input[name="currentQuestion"]'
+        );
+
+
+    radioButtons.forEach(
+        radio=>{
+
+            radio.addEventListener(
+                "change",
+                function(){
+
+                    const position =
+                        window.scrollY;
+
+
+                    selectAnswer(
+                        Number(
+                            this.value
+                        )
+                    );
+
+
+                    /*
+                        Restore position after the
+                        radio button receives focus.
+                    */
+
+                    preserveScrollPosition(
+                        position
+                    );
+
+                }
+            );
+
+
+            /*
+                Prevent keyboard/focus behaviour from
+                causing unwanted scrolling.
+            */
+
+            radio.addEventListener(
+                "focus",
+                function(){
+
+                    const position =
+                        window.scrollY;
+
+
+                    requestAnimationFrame(
+                        function(){
+
+                            window.scrollTo(
+                                0,
+                                position
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /*
+        Previous button
+    */
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    /*
+        Last question
+    */
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+
+    /*
+        Restore the exact page position after the
+        new question has been rendered.
+    */
+
+    preserveScrollPosition(
+        savedScrollPosition
+    );
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(
+    index
+){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    const savedScrollPosition =
+        window.scrollY;
+
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        preserveScrollPosition(
+            savedScrollPosition
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+
+        loadQuestion(
+            savedScrollPosition
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    const savedScrollPosition =
+        window.scrollY;
+
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+
+        loadQuestion(
+            savedScrollPosition
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    const savedScrollPosition =
+        window.scrollY;
+
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        preserveScrollPosition(
+            savedScrollPosition
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        preserveScrollPosition(
+            savedScrollPosition
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        ATTEMPTS_KEY,
+        String(attempts)
+    );
+
+
+    /*
+        Save progress BEFORE displaying the result.
+    */
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    console.log(
+        "Chapter 22 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage,
+        savedScrollPosition
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Biology",
+
+        chapter:
+            CHAPTER_NAME,
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    /*
+        Main Chapter 22 key.
+    */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    /*
+        Compatibility key.
+    */
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 22 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage,
+    savedScrollPosition
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Environmental Management assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 22 Environmental Management and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    /*
+        IMPORTANT:
+
+        Do NOT use result.scrollIntoView().
+
+        That was one of the things that could cause the
+        page to suddenly move downward.
+
+        Instead, keep the user's current position.
+    */
+
+    preserveScrollPosition(
+        savedScrollPosition
+    );
+
+}
+
+
+/* =====================================================
+   RETRY QUIZ
+===================================================== */
+
+function retryQuiz(){
+
+    const savedScrollPosition =
+        window.scrollY;
+
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion(
+        savedScrollPosition
+    );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(
+            saved
+        );
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter22_Environmental_Management_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    /*
+        Compatibility fallback.
+    */
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        /*
+            Supports old score format:
+            "35/50"
+        */
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 22 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                event.preventDefault();
+
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            /*
+                Allow the normal link to return
+                to the Science Mission Hub.
+            */
+
+        }
+    );
+
+
+/* =====================================================
+   BUTTON EVENTS
+===================================================== */
+
+document
+    .getElementById(
+        "nextBtn"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            nextQuestion();
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "previousBtn"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            previousQuestion();
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "submitQuizBtn"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            submitQuiz();
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "retryBtn"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            retryQuiz();
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "downloadBtn"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            downloadProgress();
+
+        }
+    );
+
+
+/* =====================================================
+   START CHAPTER 22
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

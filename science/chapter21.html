@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Chapter 21 - Health and Diseases | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:
+        rgba(15,23,42,.35);
+
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#7dd3fc;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#38bdf8;
+}
+
+.formula{
+    background:#0c4a6e;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🩺 Chapter 21: Health and Diseases
+    </h1>
+
+    <p>
+        Learn about health, diseases, infectious and
+        non-infectious diseases, pathogens, modes of
+        transmission, prevention of diseases, immunity,
+        vaccination, common diseases and healthy living
+        practices in Tamil Nadu 10th Standard Science.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study Health and Diseases using your chapter
+        PDF notes and video before attempting the
+        assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER21_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+        <a
+            href="YOUR_CHAPTER21_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">
+        ✓ Health and its Importance
+    </div>
+
+    <div class="topic">
+        ✓ Physical and Mental Health
+    </div>
+
+    <div class="topic">
+        ✓ Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Infectious Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Non-infectious Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Pathogens
+    </div>
+
+    <div class="topic">
+        ✓ Bacteria
+    </div>
+
+    <div class="topic">
+        ✓ Viruses
+    </div>
+
+    <div class="topic">
+        ✓ Protozoans
+    </div>
+
+    <div class="topic">
+        ✓ Fungi
+    </div>
+
+    <div class="topic">
+        ✓ Modes of Disease Transmission
+    </div>
+
+    <div class="topic">
+        ✓ Air-borne Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Water-borne Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Vector-borne Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Prevention of Diseases
+    </div>
+
+    <div class="topic">
+        ✓ Immunity
+    </div>
+
+    <div class="topic">
+        ✓ Vaccination
+    </div>
+
+    <div class="topic">
+        ✓ Healthy Lifestyle
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>🧠 Important Concepts</h2>
+
+    <div class="concept-box">
+
+
+        <div class="concept-item">
+
+            <strong>1. Health</strong>
+
+            <br><br>
+
+            Health is a state of physical, mental and
+            social well-being. Good health allows a person
+            to perform daily activities effectively.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>2. Disease</strong>
+
+            <br><br>
+
+            A disease is a condition that affects the normal
+            functioning of the body or mind.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>3. Infectious Diseases</strong>
+
+            <br><br>
+
+            Infectious diseases are caused by disease-causing
+            organisms called pathogens and can spread from
+            one person to another directly or indirectly.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>4. Non-infectious Diseases</strong>
+
+            <br><br>
+
+            Non-infectious diseases do not normally spread
+            from one person to another. They may be caused by
+            genetic, nutritional, environmental or lifestyle
+            factors.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>5. Pathogens</strong>
+
+            <br><br>
+
+            Disease-causing organisms are called pathogens.
+            They include certain bacteria, viruses, fungi and
+            protozoans.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>6. Bacterial Diseases</strong>
+
+            <br><br>
+
+            Some diseases are caused by bacteria. Examples
+            include tuberculosis, typhoid and cholera.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>7. Viral Diseases</strong>
+
+            <br><br>
+
+            Viruses can cause diseases such as influenza,
+            dengue, measles and other viral infections.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>8. Water-borne Diseases</strong>
+
+            <br><br>
+
+            Diseases can spread through contaminated water.
+            Proper sanitation and safe drinking water help
+            prevent these diseases.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>9. Air-borne Diseases</strong>
+
+            <br><br>
+
+            Some diseases can spread through droplets or
+            particles released into the air by infected
+            persons.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>10. Vector-borne Diseases</strong>
+
+            <br><br>
+
+            Some diseases are transmitted by organisms called
+            vectors. Mosquitoes are important vectors of
+            several diseases.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>11. Immunity</strong>
+
+            <br><br>
+
+            Immunity is the ability of the body to resist
+            infection and protect itself against disease-causing
+            organisms.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>12. Vaccination</strong>
+
+            <br><br>
+
+            Vaccination helps the immune system develop
+            protection against particular infectious diseases.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>13. Prevention</strong>
+
+            <br><br>
+
+            Diseases can be prevented through personal
+            hygiene, sanitation, safe food and water,
+            vaccination, vector control and healthy habits.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>14. Healthy Lifestyle</strong>
+
+            <br><br>
+
+            A healthy lifestyle includes balanced nutrition,
+            regular physical activity, adequate sleep,
+            personal hygiene and avoidance of harmful habits.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     EXAMPLES
+===================================================== -->
+
+<div class="card">
+
+    <h2>🧮 Important Examples</h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1 – Infectious Disease
+        </strong>
+
+        <br><br>
+
+        A disease caused by a pathogen and capable of
+        spreading between individuals is called an
+        infectious disease.
+
+        <div class="formula">
+            Pathogen → Infection → Disease
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2 – Prevention
+        </strong>
+
+        <br><br>
+
+        Regular hand washing, safe drinking water and
+        proper sanitation can reduce the spread of
+        many infectious diseases.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3 – Immunity
+        </strong>
+
+        <br><br>
+
+        The immune system identifies harmful organisms
+        and helps protect the body against infections.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4 – Vaccination
+        </strong>
+
+        <br><br>
+
+        Vaccines stimulate the immune system to develop
+        protection against particular infectious diseases.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5 – Healthy Living
+        </strong>
+
+        <br><br>
+
+        A balanced diet, exercise, adequate sleep and
+        good hygiene are important for maintaining
+        good health.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUICK REVISION
+===================================================== -->
+
+<div class="card">
+
+    <h2>⚡ Quick Revision</h2>
+
+    <div class="topic">
+        ✓ Health includes physical, mental and social well-being.
+    </div>
+
+    <div class="topic">
+        ✓ Diseases can be infectious or non-infectious.
+    </div>
+
+    <div class="topic">
+        ✓ Disease-causing organisms are called pathogens.
+    </div>
+
+    <div class="topic">
+        ✓ Bacteria, viruses, fungi and protozoans can cause diseases.
+    </div>
+
+    <div class="topic">
+        ✓ Some diseases spread through contaminated water.
+    </div>
+
+    <div class="topic">
+        ✓ Some diseases spread through air or respiratory droplets.
+    </div>
+
+    <div class="topic">
+        ✓ Vectors can transmit infectious diseases.
+    </div>
+
+    <div class="topic">
+        ✓ Personal hygiene helps prevent infections.
+    </div>
+
+    <div class="topic">
+        ✓ Safe drinking water helps prevent water-borne diseases.
+    </div>
+
+    <div class="topic">
+        ✓ Vaccination helps develop protection against specific diseases.
+    </div>
+
+    <div class="topic">
+        ✓ Immunity helps the body resist infections.
+    </div>
+
+    <div class="topic">
+        ✓ Healthy food and regular exercise support good health.
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Health and Diseases Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <!--
+        IMPORTANT:
+        Continue always returns to Science Mission Hub.
+        It does NOT open Chapter 22.
+        -->
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CHAPTER PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SCIENCE CHAPTER 21 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 21;
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_21";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter21";
+
+
+/* =====================================================
+   50 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"Health is best described as:",
+    a:[
+        "Only the absence of disease",
+        "Physical, mental and social well-being",
+        "Only physical fitness",
+        "Only mental well-being"
+    ],
+    correct:1
+},
+
+{
+    q:"A disease-causing organism is called a:",
+    a:[
+        "Nutrient",
+        "Pathogen",
+        "Vitamin",
+        "Hormone"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following is an infectious disease?",
+    a:[
+        "Diabetes",
+        "Hypertension",
+        "Tuberculosis",
+        "Genetic disorder"
+    ],
+    correct:2
+},
+
+{
+    q:"Which of the following is generally a non-infectious disease?",
+    a:[
+        "Cholera",
+        "Tuberculosis",
+        "Diabetes",
+        "Influenza"
+    ],
+    correct:2
+},
+
+{
+    q:"Which organisms can cause infectious diseases?",
+    a:[
+        "Only plants",
+        "Only animals",
+        "Pathogens",
+        "Only minerals"
+    ],
+    correct:2
+},
+
+{
+    q:"Which of the following is a bacterial disease?",
+    a:[
+        "Typhoid",
+        "Measles",
+        "Dengue",
+        "Chickenpox"
+    ],
+    correct:0
+},
+
+{
+    q:"Tuberculosis is caused by a:",
+    a:[
+        "Bacterium",
+        "Virus",
+        "Fungus only",
+        "Protozoan"
+    ],
+    correct:0
+},
+
+{
+    q:"Which disease is commonly associated with contaminated water?",
+    a:[
+        "Cholera",
+        "Malaria",
+        "Rabies",
+        "Influenza"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a viral disease?",
+    a:[
+        "Typhoid",
+        "Measles",
+        "Cholera",
+        "Tuberculosis"
+    ],
+    correct:1
+},
+
+{
+    q:"Dengue is mainly transmitted by:",
+    a:[
+        "Mosquitoes",
+        "Houseflies",
+        "Earthworms",
+        "Fish"
+    ],
+    correct:0
+},
+
+{
+    q:"A mosquito that transmits a disease acts as a:",
+    a:[
+        "Vector",
+        "Nutrient",
+        "Hormone",
+        "Vaccine"
+    ],
+    correct:0
+},
+
+{
+    q:"Which is an important method of preventing mosquito-borne diseases?",
+    a:[
+        "Allowing stagnant water to collect",
+        "Controlling mosquito breeding",
+        "Drinking untreated water",
+        "Avoiding all exercise"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following helps prevent water-borne diseases?",
+    a:[
+        "Drinking contaminated water",
+        "Using safe drinking water",
+        "Avoiding hand washing",
+        "Storing waste in open areas"
+    ],
+    correct:1
+},
+
+{
+    q:"Diseases transmitted through droplets released during coughing or sneezing are often:",
+    a:[
+        "Air-borne diseases",
+        "Genetic diseases",
+        "Nutritional diseases",
+        "Hereditary diseases"
+    ],
+    correct:0
+},
+
+{
+    q:"Which practice helps reduce the spread of respiratory infections?",
+    a:[
+        "Covering the mouth and nose while coughing or sneezing",
+        "Sharing personal items",
+        "Ignoring hygiene",
+        "Drinking polluted water"
+    ],
+    correct:0
+},
+
+{
+    q:"The body's ability to resist disease is called:",
+    a:[
+        "Digestion",
+        "Immunity",
+        "Respiration",
+        "Excretion"
+    ],
+    correct:1
+},
+
+{
+    q:"Vaccines are mainly used to:",
+    a:[
+        "Cause disease",
+        "Develop protection against specific diseases",
+        "Replace food",
+        "Increase body temperature"
+    ],
+    correct:1
+},
+
+{
+    q:"Vaccination helps the immune system to:",
+    a:[
+        "Recognize and respond to specific pathogens",
+        "Stop all body functions",
+        "Destroy healthy cells",
+        "Prevent digestion"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is an important personal hygiene practice?",
+    a:[
+        "Washing hands regularly",
+        "Avoiding clean water",
+        "Sharing toothbrushes",
+        "Eating uncovered food"
+    ],
+    correct:0
+},
+
+{
+    q:"A balanced diet is important because it:",
+    a:[
+        "Provides essential nutrients",
+        "Always causes disease",
+        "Stops immunity",
+        "Eliminates the need for water"
+    ],
+    correct:0
+},
+
+{
+    q:"Which nutrient is especially important for body growth and repair?",
+    a:[
+        "Protein",
+        "Water only",
+        "Salt only",
+        "Carbon dioxide"
+    ],
+    correct:0
+},
+
+{
+    q:"Regular physical activity generally helps:",
+    a:[
+        "Maintain physical fitness",
+        "Cause all diseases",
+        "Stop immunity",
+        "Reduce the need for oxygen"
+    ],
+    correct:0
+},
+
+{
+    q:"Adequate sleep is important for:",
+    a:[
+        "Overall health and well-being",
+        "Causing infections",
+        "Reducing immunity",
+        "Stopping growth"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following can spread disease?",
+    a:[
+        "Pathogens",
+        "Clean air only",
+        "Pure water only",
+        "Exercise"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a protozoan disease?",
+    a:[
+        "Malaria",
+        "Tuberculosis",
+        "Influenza",
+        "Measles"
+    ],
+    correct:0
+},
+
+{
+    q:"Malaria is transmitted by:",
+    a:[
+        "Female Anopheles mosquito",
+        "Housefly",
+        "Honeybee",
+        "Earthworm"
+    ],
+    correct:0
+},
+
+{
+    q:"Which organism causes malaria?",
+    a:[
+        "Plasmodium",
+        "Bacterium causing tuberculosis",
+        "Virus causing measles",
+        "Fungus"
+    ],
+    correct:0
+},
+
+{
+    q:"Which disease can be transmitted by the bite of an infected dog?",
+    a:[
+        "Rabies",
+        "Cholera",
+        "Typhoid",
+        "Malaria"
+    ],
+    correct:0
+},
+
+{
+    q:"Rabies is caused by a:",
+    a:[
+        "Virus",
+        "Bacterium",
+        "Protozoan",
+        "Fungus"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following can help prevent rabies after a suspected exposure?",
+    a:[
+        "Ignoring the wound",
+        "Seeking immediate medical attention",
+        "Drinking contaminated water",
+        "Avoiding all treatment"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following is NOT normally an infectious disease?",
+    a:[
+        "Hypertension",
+        "Cholera",
+        "Tuberculosis",
+        "Influenza"
+    ],
+    correct:0
+},
+
+{
+    q:"Diseases caused by genetic abnormalities are generally:",
+    a:[
+        "Inherited or genetic conditions",
+        "Always infectious",
+        "Always caused by mosquitoes",
+        "Always water-borne"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following can contribute to lifestyle-related diseases?",
+    a:[
+        "Unhealthy diet and lack of physical activity",
+        "Regular exercise",
+        "Balanced nutrition",
+        "Adequate sleep"
+    ],
+    correct:0
+},
+
+{
+    q:"Which disease is associated with high blood sugar levels?",
+    a:[
+        "Diabetes mellitus",
+        "Malaria",
+        "Cholera",
+        "Tuberculosis"
+    ],
+    correct:0
+},
+
+{
+    q:"Hypertension refers to:",
+    a:[
+        "High blood pressure",
+        "Low body temperature",
+        "Low blood sugar only",
+        "Lack of oxygen only"
+    ],
+    correct:0
+},
+
+{
+    q:"Which habit can increase the risk of several lifestyle diseases?",
+    a:[
+        "Smoking",
+        "Regular exercise",
+        "Balanced diet",
+        "Adequate sleep"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following helps maintain a healthy heart?",
+    a:[
+        "Regular physical activity",
+        "Smoking regularly",
+        "Constant inactivity",
+        "Excessive unhealthy food"
+    ],
+    correct:0
+},
+
+{
+    q:"Proper sanitation is important because it:",
+    a:[
+        "Helps prevent the spread of infections",
+        "Increases pathogens",
+        "Pollutes water",
+        "Promotes mosquito breeding"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following can contaminate drinking water?",
+    a:[
+        "Untreated sewage",
+        "Proper filtration",
+        "Boiling",
+        "Safe storage"
+    ],
+    correct:0
+},
+
+{
+    q:"Boiling drinking water can help:",
+    a:[
+        "Kill many disease-causing microorganisms",
+        "Increase pathogens",
+        "Make water polluted",
+        "Create mosquitoes"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is important when handling food?",
+    a:[
+        "Maintain cleanliness",
+        "Leave food uncovered",
+        "Use dirty utensils",
+        "Ignore hand hygiene"
+    ],
+    correct:0
+},
+
+{
+    q:"Which disease is commonly transmitted through contaminated food or water?",
+    a:[
+        "Typhoid",
+        "Malaria",
+        "Rabies",
+        "Dengue"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a common symptom of many infectious diseases?",
+    a:[
+        "Fever",
+        "Increased height",
+        "Improved vision",
+        "Stronger bones immediately"
+    ],
+    correct:0
+},
+
+{
+    q:"Antibiotics are primarily effective against:",
+    a:[
+        "Bacterial infections",
+        "All viruses",
+        "All genetic diseases",
+        "All nutritional deficiencies"
+    ],
+    correct:0
+},
+
+{
+    q:"Antibiotics should be used:",
+    a:[
+        "Only appropriately and as advised by qualified healthcare professionals",
+        "For every viral infection without advice",
+        "Whenever a person feels tired",
+        "Instead of vaccination"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is NOT a good method of disease prevention?",
+    a:[
+        "Poor sanitation",
+        "Vaccination",
+        "Personal hygiene",
+        "Safe drinking water"
+    ],
+    correct:0
+},
+
+{
+    q:"The immune system protects the body mainly against:",
+    a:[
+        "Harmful pathogens and abnormal cells",
+        "All nutrients",
+        "Oxygen",
+        "Water"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following can help prevent the spread of infectious diseases?",
+    a:[
+        "Good hygiene",
+        "Sharing contaminated needles",
+        "Using unsafe water",
+        "Ignoring symptoms"
+    ],
+    correct:0
+},
+
+{
+    q:"A disease that does not spread from one person to another is generally called:",
+    a:[
+        "Non-infectious disease",
+        "Infectious disease",
+        "Air-borne disease",
+        "Vector-borne disease"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is an example of a vector?",
+    a:[
+        "Mosquito",
+        "Vaccine",
+        "Antibody",
+        "Vitamin"
+    ],
+    correct:0
+},
+
+{
+    q:"Which action can help control mosquito breeding?",
+    a:[
+        "Removing stagnant water",
+        "Collecting stagnant water",
+        "Leaving containers uncovered",
+        "Increasing water accumulation"
+    ],
+    correct:0
+},
+
+{
+    q:"The best general approach to maintaining good health includes:",
+    a:[
+        "Balanced diet, exercise, hygiene and adequate rest",
+        "Avoiding all physical activity",
+        "Eating only processed foods",
+        "Ignoring personal hygiene"
+    ],
+    correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_science_ch21_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length
+            *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="
+                            selectAnswer(
+                                ${index}
+                            )
+                        "
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_science_ch21_attempts",
+        String(attempts)
+    );
+
+
+    /*
+    =================================================
+    SAVE RESULT BEFORE SHOWING RESULT
+    =================================================
+    */
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    /*
+    VERIFY STORAGE
+    */
+
+    console.log(
+        "Chapter 21 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Biology",
+
+        chapter:
+            "Chapter 21 - Health and Diseases",
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    /*
+    =================================================
+    MAIN KEY
+    =================================================
+    */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    /*
+    =================================================
+    COMPATIBILITY KEY
+    =================================================
+    */
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    /*
+    =================================================
+    ALSO SAVE A GENERAL CHAPTER PROGRESS KEY
+    FOR THE SCIENCE MISSION HUB
+    =================================================
+    */
+
+    localStorage.setItem(
+        "edusphere_science_chapter_21_progress",
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 21 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Health and Diseases assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 21 Health and Diseases and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Chapter ID",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.chapterId,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter21_Health_and_Diseases_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    /*
+    Compatibility fallback.
+    */
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        /*
+        Supports old score format:
+        "35/50"
+        */
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 21 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+/*
+IMPORTANT:
+
+The Continue button DOES NOT go to Chapter 22.
+
+It always returns to the Science Mission Hub.
+*/
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+
+            /*
+            Make absolutely sure the result
+            is saved before leaving the page.
+            */
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            /*
+            Return to Science Mission Hub.
+            */
+
+            window.location.href =
+                "../subjects/science.html";
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
