@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Chapter 5 - Acoustics | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #2563eb
+        );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#ede9fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:
+        rgba(15,23,42,.35);
+
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <h1>
+        🔊 Chapter 5: Acoustics
+    </h1>
+
+    <p>
+        Learn about sound waves, production and transmission
+        of sound, speed of sound, reflection of sound, echo,
+        Doppler effect and applications of acoustics.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STUDY -->
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study the chapter using the PDF notes and video
+        before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER5_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+        <a
+            href="YOUR_CHAPTER5_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- TOPICS -->
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">
+        ✓ Production of Sound
+    </div>
+
+    <div class="topic">
+        ✓ Sound Waves
+    </div>
+
+    <div class="topic">
+        ✓ Longitudinal Waves
+    </div>
+
+    <div class="topic">
+        ✓ Frequency, Wavelength and Velocity
+    </div>
+
+    <div class="topic">
+        ✓ Audible and Inaudible Sounds
+    </div>
+
+    <div class="topic">
+        ✓ Speed of Sound
+    </div>
+
+    <div class="topic">
+        ✓ Speed of Sound in Different Media
+    </div>
+
+    <div class="topic">
+        ✓ Factors Affecting Speed of Sound
+    </div>
+
+    <div class="topic">
+        ✓ Reflection of Sound
+    </div>
+
+    <div class="topic">
+        ✓ Laws of Reflection of Sound
+    </div>
+
+    <div class="topic">
+        ✓ Echo
+    </div>
+
+    <div class="topic">
+        ✓ Applications of Reflection of Sound
+    </div>
+
+    <div class="topic">
+        ✓ Doppler Effect
+    </div>
+
+    <div class="topic">
+        ✓ Applications of Doppler Effect
+    </div>
+
+</div>
+
+
+<!-- QUIZ -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Acoustics Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SCIENCE CHAPTER 5 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 5;
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_5";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter5";
+
+
+/* =====================================================
+   50 ACOUSTICS QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"Sound is produced by:",
+    a:[
+        "Stationary objects",
+        "Vibrating objects",
+        "Light rays",
+        "Electric charges only"
+    ],
+    correct:1
+},
+
+{
+    q:"Sound is a form of:",
+    a:[
+        "Energy",
+        "Matter",
+        "Force only",
+        "Mass"
+    ],
+    correct:0
+},
+
+{
+    q:"A sound wave travelling through air is generally:",
+    a:[
+        "Transverse",
+        "Longitudinal",
+        "Electromagnetic",
+        "Stationary"
+    ],
+    correct:1
+},
+
+{
+    q:"In a longitudinal sound wave, particles vibrate:",
+    a:[
+        "Perpendicular to wave direction",
+        "Along the direction of wave motion",
+        "In a circular path only",
+        "Without vibration"
+    ],
+    correct:1
+},
+
+{
+    q:"The SI unit of frequency is:",
+    a:[
+        "Metre",
+        "Hertz",
+        "Second",
+        "Decibel"
+    ],
+    correct:1
+},
+
+{
+    q:"Frequency is the number of vibrations completed in:",
+    a:[
+        "One second",
+        "One minute",
+        "One hour",
+        "One metre"
+    ],
+    correct:0
+},
+
+{
+    q:"The SI unit of wavelength is:",
+    a:[
+        "Hertz",
+        "Metre",
+        "Second",
+        "Decibel"
+    ],
+    correct:1
+},
+
+{
+    q:"The distance between two successive compressions is called:",
+    a:[
+        "Amplitude",
+        "Wavelength",
+        "Frequency",
+        "Time period"
+    ],
+    correct:1
+},
+
+{
+    q:"The distance between two successive rarefactions is:",
+    a:[
+        "One wavelength",
+        "Half wavelength",
+        "Zero",
+        "Two wavelengths only"
+    ],
+    correct:0
+},
+
+{
+    q:"The relation between velocity, frequency and wavelength is:",
+    a:[
+        "v = fλ",
+        "v = f/λ",
+        "v = λ/f",
+        "v = f + λ"
+    ],
+    correct:0
+},
+
+{
+    q:"The SI unit of time period is:",
+    a:[
+        "Hertz",
+        "Second",
+        "Metre",
+        "Watt"
+    ],
+    correct:1
+},
+
+{
+    q:"Frequency and time period are:",
+    a:[
+        "Directly proportional",
+        "Inversely proportional",
+        "Always equal",
+        "Unrelated"
+    ],
+    correct:1
+},
+
+{
+    q:"The audible frequency range for a normal human ear is approximately:",
+    a:[
+        "2 Hz to 200 Hz",
+        "20 Hz to 20 kHz",
+        "20 kHz to 200 kHz",
+        "200 Hz to 2 kHz"
+    ],
+    correct:1
+},
+
+{
+    q:"Sounds with frequency below 20 Hz are called:",
+    a:[
+        "Ultrasonic",
+        "Infrasonic",
+        "Audible",
+        "Supersonic"
+    ],
+    correct:1
+},
+
+{
+    q:"Sounds with frequency above 20 kHz are called:",
+    a:[
+        "Infrasonic",
+        "Ultrasonic",
+        "Audible",
+        "Subsonic"
+    ],
+    correct:1
+},
+
+{
+    q:"The loudness of sound is mainly related to:",
+    a:[
+        "Amplitude",
+        "Frequency only",
+        "Wavelength only",
+        "Speed only"
+    ],
+    correct:0
+},
+
+{
+    q:"The pitch of a sound depends mainly on:",
+    a:[
+        "Frequency",
+        "Amplitude",
+        "Speed",
+        "Density only"
+    ],
+    correct:0
+},
+
+{
+    q:"A high-frequency sound has:",
+    a:[
+        "Low pitch",
+        "High pitch",
+        "No pitch",
+        "Zero amplitude"
+    ],
+    correct:1
+},
+
+{
+    q:"A sound of greater amplitude is generally perceived as:",
+    a:[
+        "Louder",
+        "Softer",
+        "Lower in frequency",
+        "Slower"
+    ],
+    correct:0
+},
+
+{
+    q:"The speed of sound is generally greatest in:",
+    a:[
+        "Gases",
+        "Liquids",
+        "Solids",
+        "Vacuum"
+    ],
+    correct:2
+},
+
+{
+    q:"Sound cannot travel through:",
+    a:[
+        "Air",
+        "Water",
+        "Steel",
+        "Vacuum"
+    ],
+    correct:3
+},
+
+{
+    q:"The approximate speed of sound in air at room temperature is:",
+    a:[
+        "3 m/s",
+        "330 m/s",
+        "3000 m/s",
+        "30 m/s"
+    ],
+    correct:1
+},
+
+{
+    q:"The speed of sound in air generally increases when:",
+    a:[
+        "Temperature increases",
+        "Temperature decreases",
+        "Pressure becomes zero",
+        "Density always increases"
+    ],
+    correct:0
+},
+
+{
+    q:"In a gaseous medium, the speed of sound depends mainly on:",
+    a:[
+        "Temperature",
+        "Colour",
+        "Shape of container",
+        "Brightness"
+    ],
+    correct:0
+},
+
+{
+    q:"If pressure is increased at constant temperature, the speed of sound in an ideal gas:",
+    a:[
+        "Increases four times",
+        "Decreases",
+        "Remains approximately unchanged",
+        "Becomes zero"
+    ],
+    correct:2
+},
+
+{
+    q:"Sound travels faster in steel than in air because:",
+    a:[
+        "Steel has greater elasticity",
+        "Steel is lighter than air",
+        "Air has no particles",
+        "Steel produces light"
+    ],
+    correct:0
+},
+
+{
+    q:"When sound travels from one medium to another, its:",
+    a:[
+        "Frequency changes always",
+        "Frequency remains determined by source",
+        "Source disappears",
+        "Energy becomes zero"
+    ],
+    correct:1
+},
+
+{
+    q:"Reflection of sound occurs when sound:",
+    a:[
+        "Is absorbed completely",
+        "Returns after striking a surface",
+        "Stops vibrating",
+        "Becomes light"
+    ],
+    correct:1
+},
+
+{
+    q:"For good reflection of sound, the reflecting surface should be:",
+    a:[
+        "Soft and porous",
+        "Hard and smooth",
+        "Very thin",
+        "Made only of cloth"
+    ],
+    correct:1
+},
+
+{
+    q:"The law of reflection of sound states that angle of incidence is:",
+    a:[
+        "Greater than reflection",
+        "Equal to angle of reflection",
+        "Less than reflection always",
+        "Zero"
+    ],
+    correct:1
+},
+
+{
+    q:"An echo is produced due to:",
+    a:[
+        "Refraction of sound",
+        "Reflection of sound",
+        "Absorption of sound",
+        "Interference only"
+    ],
+    correct:1
+},
+
+{
+    q:"For a distinct echo, the reflected sound should reach the ear after at least about:",
+    a:[
+        "0.01 s",
+        "0.1 s",
+        "1 s",
+        "10 s"
+    ],
+    correct:1
+},
+
+{
+    q:"The minimum distance required between a listener and a reflecting surface for a distinct echo is approximately:",
+    a:[
+        "1.7 m",
+        "17 m",
+        "170 m",
+        "0.17 m"
+    ],
+    correct:1
+},
+
+{
+    q:"The speed of sound in air is 340 m/s. If an echo is heard after 2 seconds, the distance of the reflecting surface is:",
+    a:[
+        "170 m",
+        "340 m",
+        "680 m",
+        "85 m"
+    ],
+    correct:1
+},
+
+{
+    q:"In an echo experiment, the sound travels:",
+    a:[
+        "Only from source to reflector",
+        "From source to reflector and back",
+        "Only from reflector to source",
+        "In a vacuum"
+    ],
+    correct:1
+},
+
+{
+    q:"SONAR is based mainly on:",
+    a:[
+        "Reflection of sound",
+        "Refraction of light",
+        "Heating effect",
+        "Electric resistance"
+    ],
+    correct:0
+},
+
+{
+    q:"SONAR is used to determine:",
+    a:[
+        "Depth of the sea",
+        "Temperature of the Sun",
+        "Electric current",
+        "Mass of air"
+    ],
+    correct:0
+},
+
+{
+    q:"Ultrasonic waves are used in SONAR because they:",
+    a:[
+        "Can travel through water and be detected after reflection",
+        "Cannot travel through water",
+        "Are visible to the eye",
+        "Have zero frequency"
+    ],
+    correct:0
+},
+
+{
+    q:"The phenomenon in which the apparent frequency changes due to relative motion between source and observer is:",
+    a:[
+        "Echo",
+        "Doppler effect",
+        "Reflection",
+        "Resonance"
+    ],
+    correct:1
+},
+
+{
+    q:"The Doppler effect can occur when there is relative motion between:",
+    a:[
+        "Source and observer",
+        "Two stationary walls only",
+        "A battery and resistor",
+        "Light and mirror only"
+    ],
+    correct:0
+},
+
+{
+    q:"When a sound source approaches a stationary observer, the observed frequency:",
+    a:[
+        "Decreases",
+        "Increases",
+        "Becomes zero",
+        "Never changes"
+    ],
+    correct:1
+},
+
+{
+    q:"When a sound source moves away from a stationary observer, the observed frequency:",
+    a:[
+        "Increases",
+        "Decreases",
+        "Doubles always",
+        "Becomes infinite"
+    ],
+    correct:1
+},
+
+{
+    q:"The Doppler effect is used in:",
+    a:[
+        "Astronomy",
+        "Only cooking",
+        "Only measuring mass",
+        "Making batteries"
+    ],
+    correct:0
+},
+
+{
+    q:"The Doppler effect can be used to determine the:",
+    a:[
+        "Relative motion of celestial objects",
+        "Colour of a battery",
+        "Mass of a resistor",
+        "Melting point of iron"
+    ],
+    correct:0
+},
+
+{
+    q:"A sound wave needs a medium because sound is:",
+    a:[
+        "Electromagnetic",
+        "Mechanical",
+        "A light wave",
+        "A static charge"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following is a mechanical wave?",
+    a:[
+        "Sound wave",
+        "Radio wave",
+        "Visible light",
+        "X-ray"
+    ],
+    correct:0
+},
+
+{
+    q:"Compression in a longitudinal wave is a region of:",
+    a:[
+        "High pressure and high density",
+        "Low pressure only",
+        "Zero density",
+        "No particles"
+    ],
+    correct:0
+},
+
+{
+    q:"Rarefaction in a longitudinal wave is a region of:",
+    a:[
+        "High pressure",
+        "Low pressure and low density",
+        "Maximum density",
+        "No vibration"
+    ],
+    correct:1
+},
+
+{
+    q:"If frequency increases while speed remains constant, wavelength:",
+    a:[
+        "Increases",
+        "Decreases",
+        "Remains infinite",
+        "Becomes zero always"
+    ],
+    correct:1
+},
+
+{
+    q:"If the wavelength of a sound wave is 2 m and its frequency is 170 Hz, its speed is:",
+    a:[
+        "85 m/s",
+        "340 m/s",
+        "172 m/s",
+        "680 m/s"
+    ],
+    correct:1
+},
+
+{
+    q:"A sound wave has frequency 100 Hz. Its time period is:",
+    a:[
+        "0.01 s",
+        "0.1 s",
+        "1 s",
+        "10 s"
+    ],
+    correct:0
+},
+
+{
+    q:"The branch of physics dealing with production, transmission, reception and effects of sound is called:",
+    a:[
+        "Optics",
+        "Acoustics",
+        "Thermodynamics",
+        "Electrostatics"
+    ],
+    correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_science_ch5_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length
+            *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="
+                            selectAnswer(
+                                ${index}
+                            )
+                        "
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_science_ch5_attempts",
+        String(attempts)
+    );
+
+
+    /*
+    =================================================
+    SAVE RESULT BEFORE SHOWING RESULT
+    =================================================
+    */
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    /*
+    VERIFY STORAGE
+    */
+
+    console.log(
+        "Chapter 5 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Physics",
+
+        chapter:
+            "Chapter 5 - Acoustics",
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    /*
+    MAIN KEY
+    */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    /*
+    COMPATIBILITY KEY
+    */
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 5 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Acoustics assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 5 Acoustics and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter5_Acoustics_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    /*
+    Compatibility fallback.
+    */
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        /*
+        Supports old score format:
+        "35/50"
+        */
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 5 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            /*
+            Make absolutely sure the result
+            is saved before leaving the page.
+            */
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                event.preventDefault();
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            /*
+            Return to Science Mission Hub.
+            */
+
+            window.location.href =
+                "../subjects/science.html";
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

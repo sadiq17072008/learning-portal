@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Chapter 13 - Plant Anatomy and Physiology | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:
+        rgba(15,23,42,.35);
+
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#7dd3fc;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#38bdf8;
+}
+
+.formula{
+    background:#0c4a6e;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="hero">
+
+    <h1>
+        🌱 Chapter 13: Plant Anatomy and Physiology
+    </h1>
+
+    <p>
+        Learn about the internal structure of plants,
+        plant tissues, meristematic and permanent tissues,
+        xylem, phloem, root anatomy, stem anatomy, leaf
+        anatomy, photosynthesis, respiration, transpiration,
+        transport of water and minerals, and important
+        physiological processes in plants.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study Plant Anatomy and Physiology using the
+        chapter PDF notes and video before attempting
+        the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER13_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+        <a
+            href="YOUR_CHAPTER13_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">✓ Plant Anatomy</div>
+    <div class="topic">✓ Plant Tissues</div>
+    <div class="topic">✓ Meristematic Tissue</div>
+    <div class="topic">✓ Permanent Tissue</div>
+    <div class="topic">✓ Simple Permanent Tissue</div>
+    <div class="topic">✓ Complex Permanent Tissue</div>
+    <div class="topic">✓ Xylem</div>
+    <div class="topic">✓ Phloem</div>
+    <div class="topic">✓ Root Anatomy</div>
+    <div class="topic">✓ Stem Anatomy</div>
+    <div class="topic">✓ Leaf Anatomy</div>
+    <div class="topic">✓ Stomata</div>
+    <div class="topic">✓ Photosynthesis</div>
+    <div class="topic">✓ Respiration</div>
+    <div class="topic">✓ Transpiration</div>
+    <div class="topic">✓ Transport of Water and Minerals</div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧠 Important Concepts</h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>1. Plant Anatomy</strong>
+
+            <br><br>
+
+            Plant anatomy is the study of the internal
+            structure of plants and their organs such as
+            roots, stems and leaves.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>2. Plant Tissues</strong>
+
+            <br><br>
+
+            A tissue is a group of cells that are similar
+            in structure and perform a particular function.
+
+            <br><br>
+
+            Plant tissues are broadly classified into:
+
+            <br>
+            • Meristematic tissue
+            <br>
+            • Permanent tissue
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>3. Meristematic Tissue</strong>
+
+            <br><br>
+
+            Meristematic tissues consist of actively dividing
+            cells. They are responsible for the growth of
+            plants.
+
+            <br><br>
+
+            Important types include:
+
+            <br>
+            • Apical meristem
+            <br>
+            • Lateral meristem
+            <br>
+            • Intercalary meristem
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>4. Apical Meristem</strong>
+
+            <br><br>
+
+            Apical meristem is present at the tips of roots
+            and shoots. It is responsible mainly for
+            increase in the length of the plant.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>5. Lateral Meristem</strong>
+
+            <br><br>
+
+            Lateral meristem is responsible mainly for the
+            increase in the girth or thickness of stems and
+            roots.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>6. Permanent Tissue</strong>
+
+            <br><br>
+
+            Permanent tissues are formed from meristematic
+            cells that have lost the ability to divide and
+            become specialized to perform specific functions.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>7. Parenchyma</strong>
+
+            <br><br>
+
+            Parenchyma is a simple permanent tissue. Its
+            cells are generally living and perform functions
+            such as storage and photosynthesis.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>8. Collenchyma</strong>
+
+            <br><br>
+
+            Collenchyma provides mechanical support to
+            growing parts of plants while allowing
+            flexibility.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>9. Sclerenchyma</strong>
+
+            <br><br>
+
+            Sclerenchyma provides strength and mechanical
+            support. Its cells generally have thick,
+            lignified walls.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>10. Xylem</strong>
+
+            <br><br>
+
+            Xylem is a complex permanent tissue that mainly
+            transports water and minerals from the roots
+            towards other parts of the plant.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>11. Phloem</strong>
+
+            <br><br>
+
+            Phloem is a complex permanent tissue that
+            transports prepared food from leaves to other
+            parts of the plant.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>12. Stomata</strong>
+
+            <br><br>
+
+            Stomata are tiny pores generally present in the
+            epidermis of leaves. They help in gaseous
+            exchange and transpiration.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>13. Photosynthesis</strong>
+
+            <br><br>
+
+            Photosynthesis is the process by which green
+            plants prepare food using carbon dioxide and
+            water in the presence of sunlight and chlorophyll.
+
+            <div class="formula">
+                6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>14. Transpiration</strong>
+
+            <br><br>
+
+            Transpiration is the loss of water in the form of
+            water vapour from the aerial parts of plants,
+            mainly through stomata.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>15. Respiration</strong>
+
+            <br><br>
+
+            Respiration is the process in which food
+            molecules are broken down to release energy
+            required for various life processes.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧮 Important Facts</h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1 – Photosynthesis
+        </strong>
+
+        <br><br>
+
+        Green plants prepare glucose using carbon dioxide
+        and water in the presence of sunlight and chlorophyll.
+
+        <div class="formula">
+            Carbon dioxide + Water → Glucose + Oxygen
+        </div>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2 – Xylem
+        </strong>
+
+        <br><br>
+
+        Xylem transports water and dissolved mineral
+        nutrients mainly from the roots towards the aerial
+        parts of the plant.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3 – Phloem
+        </strong>
+
+        <br><br>
+
+        Phloem transports the organic food materials
+        produced by photosynthesis to different parts
+        of the plant.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4 – Transpiration
+        </strong>
+
+        <br><br>
+
+        Water vapour is lost from the aerial parts of plants,
+        especially through stomata.
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5 – Stomata
+        </strong>
+
+        <br><br>
+
+        Stomata help plants exchange gases with the
+        atmosphere and also play an important role in
+        transpiration.
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>⚡ Quick Revision</h2>
+
+    <div class="topic">
+        ✓ Plant anatomy deals with internal plant structure.
+    </div>
+
+    <div class="topic">
+        ✓ Plant tissues are groups of specialized cells.
+    </div>
+
+    <div class="topic">
+        ✓ Meristematic cells actively divide.
+    </div>
+
+    <div class="topic">
+        ✓ Apical meristem increases plant length.
+    </div>
+
+    <div class="topic">
+        ✓ Lateral meristem increases thickness.
+    </div>
+
+    <div class="topic">
+        ✓ Parenchyma is a simple permanent tissue.
+    </div>
+
+    <div class="topic">
+        ✓ Collenchyma provides flexible support.
+    </div>
+
+    <div class="topic">
+        ✓ Sclerenchyma provides mechanical strength.
+    </div>
+
+    <div class="topic">
+        ✓ Xylem transports water and minerals.
+    </div>
+
+    <div class="topic">
+        ✓ Phloem transports prepared food.
+    </div>
+
+    <div class="topic">
+        ✓ Stomata help in gaseous exchange.
+    </div>
+
+    <div class="topic">
+        ✓ Photosynthesis produces food in green plants.
+    </div>
+
+    <div class="topic">
+        ✓ Transpiration is loss of water vapour.
+    </div>
+
+    <div class="topic">
+        ✓ Respiration releases energy from food.
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Plant Anatomy and Physiology Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SCIENCE CHAPTER 13 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 13;
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_13";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter13";
+
+
+/* =====================================================
+   50 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"The study of the internal structure of plants is called:",
+    a:[
+        "Plant anatomy",
+        "Plant taxonomy",
+        "Ecology",
+        "Genetics"
+    ],
+    correct:0
+},
+
+{
+    q:"A group of cells performing a specific function is called:",
+    a:[
+        "Organ",
+        "Tissue",
+        "Organism",
+        "System"
+    ],
+    correct:1
+},
+
+{
+    q:"Plant tissues are broadly classified into:",
+    a:[
+        "Meristematic and permanent tissues",
+        "Animal and plant tissues",
+        "Blood and vascular tissues",
+        "Muscle and nervous tissues"
+    ],
+    correct:0
+},
+
+{
+    q:"Meristematic tissues contain cells that:",
+    a:[
+        "Do not divide",
+        "Actively divide",
+        "Are always dead",
+        "Contain no nucleus"
+    ],
+    correct:1
+},
+
+{
+    q:"The meristem present at the tips of roots and shoots is:",
+    a:[
+        "Lateral meristem",
+        "Apical meristem",
+        "Intercalary meristem",
+        "Permanent tissue"
+    ],
+    correct:1
+},
+
+{
+    q:"Apical meristem mainly increases:",
+    a:[
+        "Thickness",
+        "Length",
+        "Weight",
+        "Colour"
+    ],
+    correct:1
+},
+
+{
+    q:"Lateral meristem mainly increases:",
+    a:[
+        "Length",
+        "Girth",
+        "Number of leaves",
+        "Flower colour"
+    ],
+    correct:1
+},
+
+{
+    q:"Intercalary meristem is commonly found:",
+    a:[
+        "At the base of leaves or internodes",
+        "Inside fruits only",
+        "In seeds only",
+        "In flowers only"
+    ],
+    correct:0
+},
+
+{
+    q:"Permanent tissues are formed from:",
+    a:[
+        "Meristematic tissues",
+        "Blood",
+        "Muscle cells",
+        "Nerve cells"
+    ],
+    correct:0
+},
+
+{
+    q:"Which is a simple permanent tissue?",
+    a:[
+        "Xylem",
+        "Phloem",
+        "Parenchyma",
+        "Vascular bundle"
+    ],
+    correct:2
+},
+
+{
+    q:"Parenchyma cells are generally:",
+    a:[
+        "Living",
+        "Always dead",
+        "Without cell walls",
+        "Without cytoplasm"
+    ],
+    correct:0
+},
+
+{
+    q:"The main function of parenchyma is often:",
+    a:[
+        "Storage",
+        "Blood circulation",
+        "Nerve transmission",
+        "Bone formation"
+    ],
+    correct:0
+},
+
+{
+    q:"Chlorenchyma is parenchyma containing:",
+    a:[
+        "Haemoglobin",
+        "Chlorophyll",
+        "Keratin",
+        "Calcium"
+    ],
+    correct:1
+},
+
+{
+    q:"Aerenchyma contains:",
+    a:[
+        "Large air spaces",
+        "Blood vessels",
+        "Bones",
+        "Muscles"
+    ],
+    correct:0
+},
+
+{
+    q:"Collenchyma mainly provides:",
+    a:[
+        "Flexible support",
+        "Food digestion",
+        "Blood circulation",
+        "Reproduction only"
+    ],
+    correct:0
+},
+
+{
+    q:"Sclerenchyma mainly provides:",
+    a:[
+        "Mechanical strength",
+        "Photosynthesis only",
+        "Water absorption only",
+        "Gas exchange only"
+    ],
+    correct:0
+},
+
+{
+    q:"Sclerenchyma cells generally have:",
+    a:[
+        "Thin primary walls only",
+        "Thick lignified walls",
+        "No cell wall",
+        "Only a cell membrane"
+    ],
+    correct:1
+},
+
+{
+    q:"Xylem is a:",
+    a:[
+        "Simple permanent tissue",
+        "Complex permanent tissue",
+        "Meristematic tissue",
+        "Animal tissue"
+    ],
+    correct:1
+},
+
+{
+    q:"Xylem mainly transports:",
+    a:[
+        "Water and minerals",
+        "Food only",
+        "Oxygen only",
+        "Hormones only"
+    ],
+    correct:0
+},
+
+{
+    q:"Phloem mainly transports:",
+    a:[
+        "Water only",
+        "Prepared food",
+        "Carbon dioxide only",
+        "Mineral salts only"
+    ],
+    correct:1
+},
+
+{
+    q:"Phloem is classified as:",
+    a:[
+        "Complex permanent tissue",
+        "Simple permanent tissue",
+        "Meristematic tissue",
+        "Epidermal tissue"
+    ],
+    correct:0
+},
+
+{
+    q:"The outer protective tissue of young plant parts is:",
+    a:[
+        "Epidermis",
+        "Xylem",
+        "Phloem",
+        "Pith"
+    ],
+    correct:0
+},
+
+{
+    q:"Stomata are mainly present in the:",
+    a:[
+        "Epidermis of leaves",
+        "Xylem",
+        "Pith",
+        "Root cap only"
+    ],
+    correct:0
+},
+
+{
+    q:"Stomata help in:",
+    a:[
+        "Gas exchange",
+        "Bone formation",
+        "Blood circulation",
+        "Seed digestion"
+    ],
+    correct:0
+},
+
+{
+    q:"The cells surrounding a stoma are called:",
+    a:[
+        "Guard cells",
+        "Companion cells",
+        "Root cells",
+        "Cork cells"
+    ],
+    correct:0
+},
+
+{
+    q:"Photosynthesis mainly occurs in:",
+    a:[
+        "Chloroplasts",
+        "Mitochondria",
+        "Ribosomes",
+        "Nucleus"
+    ],
+    correct:0
+},
+
+{
+    q:"The green pigment required for photosynthesis is:",
+    a:[
+        "Haemoglobin",
+        "Chlorophyll",
+        "Melanin",
+        "Keratin"
+    ],
+    correct:1
+},
+
+{
+    q:"The main raw materials for photosynthesis are:",
+    a:[
+        "Carbon dioxide and water",
+        "Oxygen and glucose",
+        "Nitrogen and oxygen",
+        "Protein and fat"
+    ],
+    correct:0
+},
+
+{
+    q:"The energy source for photosynthesis is:",
+    a:[
+        "Sunlight",
+        "Sound",
+        "Wind",
+        "Heat from soil"
+    ],
+    correct:0
+},
+
+{
+    q:"One major product of photosynthesis is:",
+    a:[
+        "Glucose",
+        "Urea",
+        "Protein only",
+        "Nitrogen"
+    ],
+    correct:0
+},
+
+{
+    q:"Oxygen released during photosynthesis mainly comes from:",
+    a:[
+        "Water",
+        "Glucose",
+        "Carbon dioxide only",
+        "Soil"
+    ],
+    correct:0
+},
+
+{
+    q:"The process of loss of water vapour from aerial parts of plants is:",
+    a:[
+        "Respiration",
+        "Transpiration",
+        "Photosynthesis",
+        "Digestion"
+    ],
+    correct:1
+},
+
+{
+    q:"Transpiration mainly occurs through:",
+    a:[
+        "Stomata",
+        "Seeds",
+        "Roots only",
+        "Fruits only"
+    ],
+    correct:0
+},
+
+{
+    q:"Transpiration helps in:",
+    a:[
+        "Cooling the plant",
+        "Stopping photosynthesis",
+        "Producing blood",
+        "Destroying chlorophyll"
+    ],
+    correct:0
+},
+
+{
+    q:"Water is mainly absorbed from the soil by:",
+    a:[
+        "Root hairs",
+        "Flowers",
+        "Fruits",
+        "Leaves"
+    ],
+    correct:0
+},
+
+{
+    q:"Root hairs are important because they:",
+    a:[
+        "Increase the surface area for absorption",
+        "Produce seeds",
+        "Make flowers",
+        "Produce fruits"
+    ],
+    correct:0
+},
+
+{
+    q:"Water and minerals move mainly through:",
+    a:[
+        "Xylem",
+        "Phloem",
+        "Epidermis only",
+        "Cork"
+    ],
+    correct:0
+},
+
+{
+    q:"Food produced in leaves is transported mainly through:",
+    a:[
+        "Xylem",
+        "Phloem",
+        "Root cap",
+        "Epidermis"
+    ],
+    correct:1
+},
+
+{
+    q:"The movement of food through phloem is called:",
+    a:[
+        "Translocation",
+        "Transpiration",
+        "Diffusion only",
+        "Respiration"
+    ],
+    correct:0
+},
+
+{
+    q:"Respiration is the process of:",
+    a:[
+        "Releasing energy from food",
+        "Producing only oxygen",
+        "Absorbing minerals",
+        "Making soil"
+    ],
+    correct:0
+},
+
+{
+    q:"Aerobic respiration generally requires:",
+    a:[
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide only",
+        "Chlorophyll"
+    ],
+    correct:0
+},
+
+{
+    q:"The main energy currency of cells is:",
+    a:[
+        "ATP",
+        "DNA",
+        "RNA",
+        "Water"
+    ],
+    correct:0
+},
+
+{
+    q:"The opening and closing of stomata are controlled by:",
+    a:[
+        "Guard cells",
+        "Xylem cells",
+        "Root hairs",
+        "Sclerenchyma"
+    ],
+    correct:0
+},
+
+{
+    q:"Which tissue transports water upward in plants?",
+    a:[
+        "Xylem",
+        "Phloem",
+        "Parenchyma",
+        "Collenchyma"
+    ],
+    correct:0
+},
+
+{
+    q:"Which tissue transports food to different parts of the plant?",
+    a:[
+        "Phloem",
+        "Xylem",
+        "Sclerenchyma",
+        "Epidermis"
+    ],
+    correct:0
+},
+
+{
+    q:"The tissue responsible for primary growth is mainly:",
+    a:[
+        "Apical meristem",
+        "Sclerenchyma",
+        "Phloem",
+        "Cork"
+    ],
+    correct:0
+},
+
+{
+    q:"Secondary growth is mainly associated with:",
+    a:[
+        "Lateral meristem",
+        "Apical meristem only",
+        "Epidermis",
+        "Root hairs"
+    ],
+    correct:0
+},
+
+{
+    q:"The central region of many stems is called:",
+    a:[
+        "Pith",
+        "Stoma",
+        "Guard cell",
+        "Root hair"
+    ],
+    correct:0
+},
+
+{
+    q:"The main function of roots is to:",
+    a:[
+        "Anchor the plant and absorb water and minerals",
+        "Produce only oxygen",
+        "Transport food from leaves only",
+        "Make flowers"
+    ],
+    correct:0
+},
+
+{
+    q:"The main function of leaves is:",
+    a:[
+        "Photosynthesis",
+        "Anchoring",
+        "Water absorption from soil",
+        "Seed dispersal only"
+    ],
+    correct:0
+},
+
+{
+    q:"The main function of stems includes:",
+    a:[
+        "Support and transport",
+        "Only photosynthesis",
+        "Only water absorption",
+        "Only reproduction"
+    ],
+    correct:0
+},
+
+{
+    q:"Which structure contains chlorophyll and is mainly responsible for photosynthesis?",
+    a:[
+        "Chloroplast",
+        "Nucleus",
+        "Vacuole",
+        "Cell wall"
+    ],
+    correct:0
+},
+
+{
+    q:"Which process involves the conversion of light energy into chemical energy?",
+    a:[
+        "Photosynthesis",
+        "Respiration",
+        "Transpiration",
+        "Absorption"
+    ],
+    correct:0
+},
+
+{
+    q:"The equation 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ represents:",
+    a:[
+        "Photosynthesis",
+        "Respiration",
+        "Transpiration",
+        "Protein synthesis"
+    ],
+    correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_science_ch13_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length
+            *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="
+                            selectAnswer(
+                                ${index}
+                            )
+                        "
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_science_ch13_attempts",
+        String(attempts)
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    console.log(
+        "Chapter 13 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Biology",
+
+        chapter:
+            "Chapter 13 - Plant Anatomy and Physiology",
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 13 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Plant Anatomy and Physiology assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 13 Plant Anatomy and Physiology and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter13_Plant_Anatomy_and_Physiology_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 13 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                event.preventDefault();
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            window.location.href =
+                "../subjects/science.html";
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

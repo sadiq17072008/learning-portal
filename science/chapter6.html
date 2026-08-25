@@ -1,0 +1,2605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Chapter 6 - Nuclear Physics | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#7dd3fc;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#38bdf8;
+}
+
+.formula{
+    background:#0c4a6e;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="hero">
+
+    <h1>
+        ☢️ Chapter 6: Nuclear Physics
+    </h1>
+
+    <p>
+        Learn about atomic nucleus, radioactivity,
+        alpha particles, beta particles, gamma rays,
+        nuclear reactions, nuclear fission, nuclear fusion,
+        half-life, nuclear energy and applications of
+        nuclear physics.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study Nuclear Physics using the chapter PDF
+        notes and video before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER6_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+        <a
+            href="YOUR_CHAPTER6_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">✓ Atomic Nucleus</div>
+    <div class="topic">✓ Nuclear Composition</div>
+    <div class="topic">✓ Isotopes</div>
+    <div class="topic">✓ Radioactivity</div>
+    <div class="topic">✓ Alpha Radiation</div>
+    <div class="topic">✓ Beta Radiation</div>
+    <div class="topic">✓ Gamma Radiation</div>
+    <div class="topic">✓ Nuclear Reactions</div>
+    <div class="topic">✓ Nuclear Fission</div>
+    <div class="topic">✓ Nuclear Fusion</div>
+    <div class="topic">✓ Nuclear Energy</div>
+    <div class="topic">✓ Half-Life</div>
+    <div class="topic">✓ Applications of Radioisotopes</div>
+    <div class="topic">✓ Nuclear Safety</div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧠 Important Concepts</h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>1. Atomic Nucleus</strong>
+
+            <br><br>
+
+            The nucleus is the small, dense central part
+            of an atom. It contains protons and neutrons.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>2. Proton</strong>
+
+            <br><br>
+
+            A proton is a positively charged particle
+            present inside the nucleus.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>3. Neutron</strong>
+
+            <br><br>
+
+            A neutron is an electrically neutral particle
+            present inside the nucleus.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>4. Isotopes</strong>
+
+            <br><br>
+
+            Isotopes are atoms of the same element having
+            the same atomic number but different mass numbers.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>5. Radioactivity</strong>
+
+            <br><br>
+
+            Radioactivity is the spontaneous disintegration
+            of an unstable atomic nucleus with the emission
+            of radiation.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>6. Alpha Radiation</strong>
+
+            <br><br>
+
+            Alpha radiation consists of helium nuclei.
+            It has relatively low penetrating power.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>7. Beta Radiation</strong>
+
+            <br><br>
+
+            Beta radiation consists of high-speed electrons
+            or positrons emitted during radioactive decay.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>8. Gamma Radiation</strong>
+
+            <br><br>
+
+            Gamma radiation is electromagnetic radiation
+            with very high penetrating power.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>9. Nuclear Fission</strong>
+
+            <br><br>
+
+            Nuclear fission is the splitting of a heavy
+            nucleus into smaller nuclei with the release
+            of energy.
+
+            <div class="formula">
+                Heavy nucleus → Smaller nuclei + Energy
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>10. Nuclear Fusion</strong>
+
+            <br><br>
+
+            Nuclear fusion is the combination of light nuclei
+            to form a heavier nucleus with the release of
+            a large amount of energy.
+
+            <div class="formula">
+                Light nuclei → Heavy nucleus + Energy
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>11. Half-Life</strong>
+
+            <br><br>
+
+            Half-life is the time required for half of the
+            radioactive nuclei in a sample to decay.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>12. Nuclear Energy</strong>
+
+            <br><br>
+
+            Nuclear energy is the energy released during
+            nuclear reactions.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧮 Numerical Examples</h2>
+
+    <div class="example">
+
+        <strong>
+            Example 1 – Half-Life
+        </strong>
+
+        <br><br>
+
+        A radioactive substance has a half-life of
+        10 years. If its initial amount is 100 g,
+        the amount after one half-life is:
+
+        <div class="formula">
+            Remaining amount = 100 ÷ 2
+        </div>
+
+        <strong>
+            Answer: 50 g
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2 – Second Half-Life
+        </strong>
+
+        <br><br>
+
+        A sample initially contains 80 g of radioactive
+        material. Its half-life is 5 years. Find the
+        amount remaining after 10 years.
+
+        <div class="formula">
+            After 5 years = 80 ÷ 2 = 40 g
+        </div>
+
+        <div class="formula">
+            After 10 years = 40 ÷ 2 = 20 g
+        </div>
+
+        <strong>
+            Answer: 20 g
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3 – Half-Life
+        </strong>
+
+        <br><br>
+
+        If the half-life of a substance is 2 hours,
+        how many half-lives occur in 6 hours?
+
+        <div class="formula">
+            Number of half-lives = 6 ÷ 2
+        </div>
+
+        <strong>
+            Answer: 3 half-lives
+        </strong>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>⚡ Quick Revision</h2>
+
+    <div class="topic">
+        ✓ The nucleus contains protons and neutrons.
+    </div>
+
+    <div class="topic">
+        ✓ Isotopes have the same atomic number but different mass numbers.
+    </div>
+
+    <div class="topic">
+        ✓ Radioactivity is spontaneous nuclear disintegration.
+    </div>
+
+    <div class="topic">
+        ✓ Alpha radiation has relatively low penetrating power.
+    </div>
+
+    <div class="topic">
+        ✓ Gamma radiation has very high penetrating power.
+    </div>
+
+    <div class="topic">
+        ✓ Fission means splitting a heavy nucleus.
+    </div>
+
+    <div class="topic">
+        ✓ Fusion means combining light nuclei.
+    </div>
+
+    <div class="topic">
+        ✓ Nuclear reactions can release large amounts of energy.
+    </div>
+
+    <div class="topic">
+        ✓ Half-life is the time required for half the radioactive nuclei to decay.
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Nuclear Physics Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER 6 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 6;
+
+/*
+ IMPORTANT:
+ Chapter 6 has its own LocalStorage keys.
+ It will NOT overwrite Chapter 1.
+*/
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_6";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter6";
+
+
+/* =====================================================
+   50 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"The central part of an atom is called:",
+    a:[
+        "Electron cloud",
+        "Nucleus",
+        "Shell",
+        "Orbit"
+    ],
+    correct:1
+},
+
+{
+    q:"The nucleus of an atom contains:",
+    a:[
+        "Only electrons",
+        "Protons and neutrons",
+        "Only neutrons",
+        "Only protons"
+    ],
+    correct:1
+},
+
+{
+    q:"A proton carries:",
+    a:[
+        "Positive charge",
+        "Negative charge",
+        "No charge",
+        "Variable charge"
+    ],
+    correct:0
+},
+
+{
+    q:"A neutron carries:",
+    a:[
+        "Positive charge",
+        "Negative charge",
+        "No electric charge",
+        "Double positive charge"
+    ],
+    correct:2
+},
+
+{
+    q:"The atomic number represents the number of:",
+    a:[
+        "Neutrons",
+        "Protons",
+        "Protons and neutrons",
+        "Electrons and neutrons"
+    ],
+    correct:1
+},
+
+{
+    q:"The mass number is equal to:",
+    a:[
+        "Protons + neutrons",
+        "Protons - neutrons",
+        "Electrons + protons",
+        "Electrons + neutrons"
+    ],
+    correct:0
+},
+
+{
+    q:"Atoms of the same element having different mass numbers are called:",
+    a:[
+        "Isobars",
+        "Isotopes",
+        "Ions",
+        "Molecules"
+    ],
+    correct:1
+},
+
+{
+    q:"Isotopes have the same:",
+    a:[
+        "Mass number",
+        "Atomic number",
+        "Number of neutrons",
+        "Physical mass"
+    ],
+    correct:1
+},
+
+{
+    q:"Radioactivity is the:",
+    a:[
+        "Artificial heating of atoms",
+        "Spontaneous disintegration of unstable nuclei",
+        "Formation of molecules",
+        "Movement of electrons only"
+    ],
+    correct:1
+},
+
+{
+    q:"Radioactive decay takes place in the:",
+    a:[
+        "Nucleus",
+        "Electron shell",
+        "Outer surface",
+        "Chemical bond"
+    ],
+    correct:0
+},
+
+{
+    q:"Which radiation consists of helium nuclei?",
+    a:[
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "X-ray"
+    ],
+    correct:0
+},
+
+{
+    q:"An alpha particle contains:",
+    a:[
+        "Two protons and two neutrons",
+        "One electron",
+        "Two electrons",
+        "Only one proton"
+    ],
+    correct:0
+},
+
+{
+    q:"The charge of an alpha particle is:",
+    a:[
+        "Positive",
+        "Negative",
+        "Zero",
+        "Variable"
+    ],
+    correct:0
+},
+
+{
+    q:"Beta radiation commonly consists of high-speed:",
+    a:[
+        "Neutrons",
+        "Electrons",
+        "Protons",
+        "Alpha particles"
+    ],
+    correct:1
+},
+
+{
+    q:"Gamma radiation is:",
+    a:[
+        "A stream of helium nuclei",
+        "Electromagnetic radiation",
+        "A stream of neutrons only",
+        "A stream of protons"
+    ],
+    correct:1
+},
+
+{
+    q:"Which radiation generally has the highest penetrating power?",
+    a:[
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "Visible light"
+    ],
+    correct:2
+},
+
+{
+    q:"Which radiation generally has the lowest penetrating power?",
+    a:[
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "X-ray"
+    ],
+    correct:0
+},
+
+{
+    q:"Which radiation can be stopped by a sheet of paper?",
+    a:[
+        "Alpha",
+        "Beta",
+        "Gamma",
+        "Neutron radiation"
+    ],
+    correct:0
+},
+
+{
+    q:"A material commonly used to shield gamma radiation is:",
+    a:[
+        "Paper",
+        "Thin plastic",
+        "Lead",
+        "Cloth"
+    ],
+    correct:2
+},
+
+{
+    q:"Nuclear fission means:",
+    a:[
+        "Joining light nuclei",
+        "Splitting a heavy nucleus",
+        "Removing electrons",
+        "Heating an atom"
+    ],
+    correct:1
+},
+
+{
+    q:"Nuclear fusion means:",
+    a:[
+        "Splitting a heavy nucleus",
+        "Combining light nuclei",
+        "Removing neutrons",
+        "Removing electrons"
+    ],
+    correct:1
+},
+
+{
+    q:"A large amount of energy is released during:",
+    a:[
+        "Nuclear reactions",
+        "Simple mixing",
+        "Melting ice",
+        "Mechanical motion only"
+    ],
+    correct:0
+},
+
+{
+    q:"Nuclear fission is used in:",
+    a:[
+        "Nuclear reactors",
+        "Ordinary batteries only",
+        "Magnifying glasses",
+        "Thermometers"
+    ],
+    correct:0
+},
+
+{
+    q:"The energy of the Sun is mainly due to:",
+    a:[
+        "Nuclear fusion",
+        "Nuclear fission",
+        "Chemical combustion",
+        "Friction"
+    ],
+    correct:0
+},
+
+{
+    q:"Fusion involves mainly:",
+    a:[
+        "Light nuclei",
+        "Heavy nuclei only",
+        "Electrons only",
+        "Neutrons only"
+    ],
+    correct:0
+},
+
+{
+    q:"Fission involves mainly:",
+    a:[
+        "Heavy nuclei",
+        "Light electrons",
+        "Chemical molecules",
+        "Photons only"
+    ],
+    correct:0
+},
+
+{
+    q:"The time required for half the radioactive nuclei in a sample to decay is called:",
+    a:[
+        "Mean life",
+        "Half-life",
+        "Full-life",
+        "Decay period"
+    ],
+    correct:1
+},
+
+{
+    q:"If the initial radioactive sample is 100 g, after one half-life it becomes:",
+    a:[
+        "100 g",
+        "75 g",
+        "50 g",
+        "25 g"
+    ],
+    correct:2
+},
+
+{
+    q:"If 80 g of a radioactive substance remains initially, after one half-life the amount is:",
+    a:[
+        "80 g",
+        "60 g",
+        "40 g",
+        "20 g"
+    ],
+    correct:2
+},
+
+{
+    q:"If a substance has a half-life of 5 years, after 10 years the number of half-lives is:",
+    a:[
+        "1",
+        "2",
+        "5",
+        "10"
+    ],
+    correct:1
+},
+
+{
+    q:"If 100 g of a substance has a half-life of 10 years, after 20 years it becomes:",
+    a:[
+        "75 g",
+        "50 g",
+        "25 g",
+        "10 g"
+    ],
+    correct:2
+},
+
+{
+    q:"Radioisotopes are used in:",
+    a:[
+        "Medicine",
+        "Agriculture",
+        "Industry",
+        "All of these"
+    ],
+    correct:3
+},
+
+{
+    q:"Radioisotopes can be used to diagnose:",
+    a:[
+        "Certain diseases",
+        "Only mechanical faults",
+        "Only weather conditions",
+        "Only sound"
+    ],
+    correct:0
+},
+
+{
+    q:"Radiation is useful in medicine for:",
+    a:[
+        "Cancer treatment",
+        "Making food taste sweeter",
+        "Increasing gravity",
+        "Changing mass"
+    ],
+    correct:0
+},
+
+{
+    q:"Nuclear radiation should be handled:",
+    a:[
+        "Without protection",
+        "With appropriate safety measures",
+        "Only in sunlight",
+        "With bare hands"
+    ],
+    correct:1
+},
+
+{
+    q:"The process of splitting a heavy nucleus can produce:",
+    a:[
+        "Smaller nuclei and energy",
+        "Only electrons",
+        "Only light",
+        "Only heat without particles"
+    ],
+    correct:0
+},
+
+{
+    q:"A chain reaction is associated strongly with:",
+    a:[
+        "Nuclear fission",
+        "Evaporation",
+        "Reflection",
+        "Refraction"
+    ],
+    correct:0
+},
+
+{
+    q:"A controlled nuclear chain reaction is used in:",
+    a:[
+        "Nuclear reactors",
+        "Simple electric bulbs",
+        "Thermometers",
+        "Magnets"
+    ],
+    correct:0
+},
+
+{
+    q:"Nuclear energy originates mainly from:",
+    a:[
+        "Changes in atomic nuclei",
+        "Chemical bonds only",
+        "Sound waves",
+        "Friction"
+    ],
+    correct:0
+},
+
+{
+    q:"Which particle has approximately one atomic mass unit?",
+    a:[
+        "Proton",
+        "Electron only",
+        "Photon",
+        "None"
+    ],
+    correct:0
+},
+
+{
+    q:"Which particle is electrically neutral?",
+    a:[
+        "Proton",
+        "Electron",
+        "Neutron",
+        "Positron"
+    ],
+    correct:2
+},
+
+{
+    q:"Which particle has a negative electric charge?",
+    a:[
+        "Proton",
+        "Electron",
+        "Neutron",
+        "Alpha particle"
+    ],
+    correct:1
+},
+
+{
+    q:"The nucleus occupies:",
+    a:[
+        "A very small region of the atom",
+        "The entire atom",
+        "Only the outer shell",
+        "No region"
+    ],
+    correct:0
+},
+
+{
+    q:"Most of the mass of an atom is concentrated in its:",
+    a:[
+        "Nucleus",
+        "Electron cloud",
+        "Outer shell",
+        "Chemical bonds"
+    ],
+    correct:0
+},
+
+{
+    q:"The spontaneous emission of radiation from unstable nuclei is called:",
+    a:[
+        "Radioactivity",
+        "Reflection",
+        "Refraction",
+        "Conduction"
+    ],
+    correct:0
+},
+
+{
+    q:"Gamma rays have:",
+    a:[
+        "Very high penetrating power",
+        "Very low penetrating power",
+        "No energy",
+        "Mass greater than a nucleus"
+    ],
+    correct:0
+},
+
+{
+    q:"Alpha particles are deflected by electric and magnetic fields because they are:",
+    a:[
+        "Charged",
+        "Neutral",
+        "Sound waves",
+        "Photons"
+    ],
+    correct:0
+},
+
+{
+    q:"Gamma rays are not deflected by electric fields because they:",
+    a:[
+        "Have no electric charge",
+        "Have positive charge",
+        "Have negative charge",
+        "Have large mass"
+    ],
+    correct:0
+},
+
+{
+    q:"Nuclear fusion requires extremely high:",
+    a:[
+        "Temperature and pressure",
+        "Humidity",
+        "Sound intensity",
+        "Light intensity only"
+    ],
+    correct:0
+},
+
+{
+    q:"The Sun is a natural example of a system where:",
+    a:[
+        "Nuclear fusion occurs",
+        "Nuclear fission alone occurs",
+        "Chemical combustion alone occurs",
+        "No nuclear process occurs"
+    ],
+    correct:0
+},
+
+{
+    q:"After two half-lives, the fraction of radioactive material remaining is:",
+    a:[
+        "1/2",
+        "1/3",
+        "1/4",
+        "1/8"
+    ],
+    correct:2
+},
+
+{
+    q:"After three half-lives, the fraction remaining is:",
+    a:[
+        "1/2",
+        "1/4",
+        "1/6",
+        "1/8"
+    ],
+    correct:3
+},
+
+{
+    q:"The main difference between fission and fusion is that:",
+    a:[
+        "Fission splits nuclei while fusion combines nuclei",
+        "Both always split nuclei",
+        "Both only remove electrons",
+        "Fusion has no energy release"
+    ],
+    correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_science_ch6_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="selectAnswer(${index})"
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_science_ch6_attempts",
+        String(attempts)
+    );
+
+
+    /*
+     SAVE PROGRESS BEFORE SHOWING RESULT
+    */
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    console.log(
+        "Chapter 6 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Physics",
+
+        chapter:
+            "Chapter 6 - Nuclear Physics",
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    /*
+    MAIN KEY
+    */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    /*
+    COMPATIBILITY KEY
+    */
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 6 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter 6 Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Nuclear Physics assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 6 Nuclear Physics and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY QUIZ
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter 6 Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Chapter ID",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.chapterId,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter6_Nuclear_Physics_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    /*
+    Compatibility fallback
+    */
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        /*
+        Support old score format:
+        "35/50"
+        */
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 6 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            /*
+            Make absolutely sure the result
+            exists before leaving.
+            */
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            /*
+            Return to Science Mission Hub.
+            */
+
+            window.location.href =
+                "../subjects/science.html";
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

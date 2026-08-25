@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Chapter 11 - Carbon and Its Compounds | EduSphere
+</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#f5f3ff;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+
+/* =====================================================
+   STUDY LINKS
+===================================================== */
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+
+/* =====================================================
+   IMPORTANT CONCEPTS
+===================================================== */
+
+.carbon-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.carbon-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+.carbon-item strong{
+    color:#38bdf8;
+}
+
+
+/* =====================================================
+   FORMULAE
+===================================================== */
+
+.formula{
+    padding:15px;
+    margin:10px 0;
+    background:#0f172a;
+    border-radius:10px;
+    line-height:1.7;
+    color:#e2e8f0;
+}
+
+.formula strong{
+    color:#38bdf8;
+}
+
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:2%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        🧪 Chapter 11: Carbon and Its Compounds
+    </h1>
+
+    <p>
+
+        Learn about carbon, covalent bonding, versatile
+        nature of carbon, hydrocarbons, homologous series,
+        nomenclature, functional groups, chemical properties
+        of carbon compounds, ethanol, ethanoic acid, soaps
+        and detergents.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+
+            <strong>
+                50
+            </strong>
+
+            Questions
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                30/50
+            </strong>
+
+            Pass Mark
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                60%
+            </strong>
+
+            Required
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                +80
+            </strong>
+
+            XP Reward
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter before attempting the assessment.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER11_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="YOUR_CHAPTER11_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Carbon and Its Properties
+    </div>
+
+    <div class="topic">
+        ✓ Tetravalency of Carbon
+    </div>
+
+    <div class="topic">
+        ✓ Catenation
+    </div>
+
+    <div class="topic">
+        ✓ Covalent Bonding
+    </div>
+
+    <div class="topic">
+        ✓ Electron Sharing
+    </div>
+
+    <div class="topic">
+        ✓ Saturated Hydrocarbons
+    </div>
+
+    <div class="topic">
+        ✓ Unsaturated Hydrocarbons
+    </div>
+
+    <div class="topic">
+        ✓ Alkanes
+    </div>
+
+    <div class="topic">
+        ✓ Alkenes
+    </div>
+
+    <div class="topic">
+        ✓ Alkynes
+    </div>
+
+    <div class="topic">
+        ✓ Homologous Series
+    </div>
+
+    <div class="topic">
+        ✓ Nomenclature
+    </div>
+
+    <div class="topic">
+        ✓ Functional Groups
+    </div>
+
+    <div class="topic">
+        ✓ Chemical Properties
+    </div>
+
+    <div class="topic">
+        ✓ Ethanol
+    </div>
+
+    <div class="topic">
+        ✓ Ethanoic Acid
+    </div>
+
+    <div class="topic">
+        ✓ Soaps and Detergents
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     IMPORTANT CONCEPTS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧪 Important Concepts
+    </h2>
+
+
+    <div class="carbon-box">
+
+
+        <div class="carbon-item">
+
+            <strong>
+                1. Tetravalency
+            </strong>
+
+            <br>
+
+            Carbon has four valence electrons and generally
+            forms four covalent bonds.
+
+        </div>
+
+
+        <div class="carbon-item">
+
+            <strong>
+                2. Catenation
+            </strong>
+
+            <br>
+
+            The ability of carbon atoms to form bonds with
+            other carbon atoms and produce chains and rings.
+
+        </div>
+
+
+        <div class="carbon-item">
+
+            <strong>
+                3. Covalent Bond
+            </strong>
+
+            <br>
+
+            A chemical bond formed by sharing electrons
+            between atoms.
+
+        </div>
+
+
+        <div class="carbon-item">
+
+            <strong>
+                4. Hydrocarbons
+            </strong>
+
+            <br>
+
+            Compounds containing only carbon and hydrogen.
+
+        </div>
+
+
+        <div class="carbon-item">
+
+            <strong>
+                5. Homologous Series
+            </strong>
+
+            <br>
+
+            A family of organic compounds having the same
+            functional group and similar chemical properties.
+
+        </div>
+
+
+        <div class="carbon-item">
+
+            <strong>
+                6. Functional Group
+            </strong>
+
+            <br>
+
+            An atom or group of atoms responsible for the
+            characteristic chemical properties of an organic
+            compound.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     IMPORTANT FORMULAE
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        🧮 Important Formulae
+    </h2>
+
+
+    <div class="formula">
+
+        <strong>
+            Methane:
+        </strong>
+
+        CH₄
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            Ethane:
+        </strong>
+
+        C₂H₆
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            Ethene:
+        </strong>
+
+        C₂H₄
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            Ethyne:
+        </strong>
+
+        C₂H₂
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            Ethanol:
+        </strong>
+
+        C₂H₅OH
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            Ethanoic Acid:
+        </strong>
+
+        CH₃COOH
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            General formula of Alkanes:
+        </strong>
+
+        CₙH₂ₙ₊₂
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            General formula of Alkenes:
+        </strong>
+
+        CₙH₂ₙ
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            General formula of Alkynes:
+        </strong>
+
+        CₙH₂ₙ₋₂
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Carbon and Its Compounds Assessment
+        </h2>
+
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled
+        >
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()"
+        >
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+
+        📝 Submit Assessment
+
+    </button>
+
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter12.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+
+            🚀 Continue to Chapter 12
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()"
+        >
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   CHAPTER 11 SETTINGS
+===================================================== */
+
+const CHAPTER_ID = 11;
+
+const CHAPTER_NAME =
+    "Chapter 11 - Carbon and Its Compounds";
+
+const PROGRESS_KEY =
+    "edusphere_science_chapter_11";
+
+const OLD_PROGRESS_KEY =
+    "edusphere_chapter11";
+
+const ATTEMPTS_KEY =
+    "edusphere_ch11_attempts";
+
+const PASS_PERCENTAGE = 60;
+
+const XP_REWARD = 80;
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+q:"What is the atomic number of carbon?",
+a:[
+"6",
+"8",
+"12",
+"14"
+],
+correct:0
+},
+
+{
+q:"The electronic configuration of carbon is:",
+a:[
+"2,4",
+"2,6",
+"4,2",
+"6,2"
+],
+correct:0
+},
+
+{
+q:"How many valence electrons does carbon have?",
+a:[
+"4",
+"2",
+"6",
+"8"
+],
+correct:0
+},
+
+{
+q:"The valency of carbon is:",
+a:[
+"4",
+"2",
+"1",
+"3"
+],
+correct:0
+},
+
+{
+q:"The ability of carbon to form bonds with other carbon atoms is called:",
+a:[
+"Catenation",
+"Oxidation",
+"Reduction",
+"Polymerisation"
+],
+correct:0
+},
+
+{
+q:"Carbon mainly forms:",
+a:[
+"Covalent bonds",
+"Ionic bonds only",
+"Metallic bonds",
+"Hydrogen bonds only"
+],
+correct:0
+},
+
+{
+q:"A covalent bond is formed by:",
+a:[
+"Sharing of electrons",
+"Complete loss of electrons",
+"Complete gain of electrons",
+"Sharing of protons"
+],
+correct:0
+},
+
+{
+q:"Which compound contains only carbon and hydrogen?",
+a:[
+"Hydrocarbon",
+"Alcohol",
+"Carboxylic acid",
+"Salt"
+],
+correct:0
+},
+
+{
+q:"Methane has the formula:",
+a:[
+"CH₄",
+"C₂H₆",
+"C₂H₄",
+"C₂H₂"
+],
+correct:0
+},
+
+{
+q:"Ethane has the formula:",
+a:[
+"C₂H₆",
+"CH₄",
+"C₂H₄",
+"C₃H₈"
+],
+correct:0
+},
+
+{
+q:"Ethene has the formula:",
+a:[
+"C₂H₄",
+"C₂H₆",
+"C₂H₂",
+"CH₄"
+],
+correct:0
+},
+
+{
+q:"Ethyne has the formula:",
+a:[
+"C₂H₂",
+"C₂H₄",
+"C₂H₆",
+"CH₄"
+],
+correct:0
+},
+
+{
+q:"Which hydrocarbon contains only single bonds?",
+a:[
+"Alkane",
+"Alkene",
+"Alkyne",
+"None"
+],
+correct:0
+},
+
+{
+q:"Which hydrocarbon contains a carbon-carbon double bond?",
+a:[
+"Alkene",
+"Alkane",
+"Alkyne",
+"Alcohol"
+],
+correct:0
+},
+
+{
+q:"Which hydrocarbon contains a carbon-carbon triple bond?",
+a:[
+"Alkyne",
+"Alkane",
+"Alkene",
+"Alcohol"
+],
+correct:0
+},
+
+{
+q:"The general formula of alkanes is:",
+a:[
+"CₙH₂ₙ₊₂",
+"CₙH₂ₙ",
+"CₙH₂ₙ₋₂",
+"CₙHₙ"
+],
+correct:0
+},
+
+{
+q:"The general formula of alkenes is:",
+a:[
+"CₙH₂ₙ",
+"CₙH₂ₙ₊₂",
+"CₙH₂ₙ₋₂",
+"CₙHₙ"
+],
+correct:0
+},
+
+{
+q:"The general formula of alkynes is:",
+a:[
+"CₙH₂ₙ₋₂",
+"CₙH₂ₙ",
+"CₙH₂ₙ₊₂",
+"CₙHₙ"
+],
+correct:0
+},
+
+{
+q:"The simplest alkane is:",
+a:[
+"Methane",
+"Ethane",
+"Propane",
+"Butane"
+],
+correct:0
+},
+
+{
+q:"The simplest alkene is:",
+a:[
+"Ethene",
+"Methane",
+"Propane",
+"Ethane"
+],
+correct:0
+},
+
+{
+q:"The simplest alkyne is:",
+a:[
+"Ethyne",
+"Methane",
+"Ethene",
+"Propane"
+],
+correct:0
+},
+
+{
+q:"A series of organic compounds with similar chemical properties is called:",
+a:[
+"Homologous series",
+"Periodic table",
+"Electrolyte",
+"Mixture"
+],
+correct:0
+},
+
+{
+q:"Successive members of a homologous series differ by:",
+a:[
+"CH₂",
+"CH₃",
+"COOH",
+"OH"
+],
+correct:0
+},
+
+{
+q:"Which functional group represents alcohol?",
+a:[
+"–OH",
+"–COOH",
+"–CHO",
+"–CO–"
+],
+correct:0
+},
+
+{
+q:"Which functional group represents carboxylic acid?",
+a:[
+"–COOH",
+"–OH",
+"–CHO",
+"–Cl"
+],
+correct:0
+},
+
+{
+q:"The functional group –CHO is called:",
+a:[
+"Aldehyde",
+"Alcohol",
+"Ketone",
+"Carboxylic acid"
+],
+correct:0
+},
+
+{
+q:"The functional group >C=O within a carbon chain is:",
+a:[
+"Ketone",
+"Alcohol",
+"Aldehyde",
+"Carboxylic acid"
+],
+correct:0
+},
+
+{
+q:"The functional group –Cl represents:",
+a:[
+"Chloro group",
+"Hydroxyl group",
+"Carboxyl group",
+"Aldehyde group"
+],
+correct:0
+},
+
+{
+q:"The IUPAC name of CH₄ is:",
+a:[
+"Methane",
+"Ethane",
+"Methanol",
+"Ethene"
+],
+correct:0
+},
+
+{
+q:"The IUPAC name of C₂H₆ is:",
+a:[
+"Ethane",
+"Ethene",
+"Ethyne",
+"Ethanol"
+],
+correct:0
+},
+
+{
+q:"The IUPAC name of C₂H₄ is:",
+a:[
+"Ethene",
+"Ethane",
+"Ethyne",
+"Ethanol"
+],
+correct:0
+},
+
+{
+q:"The IUPAC name of C₂H₂ is:",
+a:[
+"Ethyne",
+"Ethane",
+"Ethene",
+"Ethanol"
+],
+correct:0
+},
+
+{
+q:"The formula of ethanol is:",
+a:[
+"C₂H₅OH",
+"CH₃COOH",
+"C₂H₆",
+"C₂H₄"
+],
+correct:0
+},
+
+{
+q:"The formula of ethanoic acid is:",
+a:[
+"CH₃COOH",
+"C₂H₅OH",
+"C₂H₆",
+"C₂H₂"
+],
+correct:0
+},
+
+{
+q:"The common name of ethanoic acid is:",
+a:[
+"Acetic acid",
+"Formic acid",
+"Citric acid",
+"Carbonic acid"
+],
+correct:0
+},
+
+{
+q:"Ethanol reacts with sodium to produce:",
+a:[
+"Hydrogen gas",
+"Oxygen gas",
+"Carbon dioxide",
+"Nitrogen"
+],
+correct:0
+},
+
+{
+q:"Ethanoic acid reacts with sodium hydrogen carbonate to produce:",
+a:[
+"Carbon dioxide",
+"Hydrogen",
+"Oxygen",
+"Nitrogen"
+],
+correct:0
+},
+
+{
+q:"The reaction between an acid and an alcohol to form an ester is called:",
+a:[
+"Esterification",
+"Hydrogenation",
+"Combustion",
+"Substitution"
+],
+correct:0
+},
+
+{
+q:"Esters generally have:",
+a:[
+"Fruity smells",
+"No smell",
+"Metallic smell",
+"Very strong acidic smell"
+],
+correct:0
+},
+
+{
+q:"The reaction of an ester with an alkali to form soap is called:",
+a:[
+"Saponification",
+"Hydrogenation",
+"Combustion",
+"Oxidation"
+],
+correct:0
+},
+
+{
+q:"Soap molecules have:",
+a:[
+"A hydrophilic end and a hydrophobic end",
+"Only a hydrophobic end",
+"Only a hydrophilic end",
+"No polar region"
+],
+correct:0
+},
+
+{
+q:"The water-loving part of a soap molecule is called:",
+a:[
+"Hydrophilic end",
+"Hydrophobic end",
+"Carbon chain",
+"Hydrocarbon only"
+],
+correct:0
+},
+
+{
+q:"The water-repelling part of a soap molecule is called:",
+a:[
+"Hydrophobic end",
+"Hydrophilic end",
+"Carboxyl end",
+"Hydroxyl end"
+],
+correct:0
+},
+
+{
+q:"Soap is less effective in:",
+a:[
+"Hard water",
+"Soft water",
+"Distilled water",
+"Pure water"
+],
+correct:0
+},
+
+{
+q:"Hard water contains mainly salts of:",
+a:[
+"Calcium and magnesium",
+"Sodium and potassium",
+"Hydrogen and oxygen",
+"Carbon and nitrogen"
+],
+correct:0
+},
+
+{
+q:"The insoluble substance formed by soap in hard water is called:",
+a:[
+"Scum",
+"Foam",
+"Emulsion",
+"Solution"
+],
+correct:0
+},
+
+{
+q:"Detergents are generally more effective than soaps in:",
+a:[
+"Hard water",
+"Only distilled water",
+"Only rainwater",
+"Pure alcohol"
+],
+correct:0
+},
+
+{
+q:"Combustion of carbon compounds generally produces:",
+a:[
+"Carbon dioxide and water",
+"Only oxygen",
+"Only hydrogen",
+"Nitrogen and oxygen"
+],
+correct:0
+},
+
+{
+q:"When ethene reacts with hydrogen in the presence of a catalyst, the reaction is:",
+a:[
+"Addition reaction",
+"Substitution reaction",
+"Neutralisation",
+"Decomposition"
+],
+correct:0
+},
+
+{
+q:"Alkanes commonly undergo:",
+a:[
+"Substitution reactions",
+"Only addition reactions",
+"Only neutralisation",
+"Only precipitation"
+],
+correct:0
+},
+
+{
+q:"Alkenes commonly undergo:",
+a:[
+"Addition reactions",
+"Only substitution",
+"Only neutralisation",
+"Only decomposition"
+],
+correct:0
+},
+
+{
+q:"Which catalyst is commonly used in hydrogenation of vegetable oils?",
+a:[
+"Nickel",
+"Calcium",
+"Sodium chloride",
+"Copper sulphate"
+],
+correct:0
+},
+
+{
+q:"Hydrogenation of vegetable oils is used to produce:",
+a:[
+"Vanaspati or hardened fats",
+"Soap only",
+"Alcohol only",
+"Acetic acid only"
+],
+correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            ATTEMPTS_KEY
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                (currentQuestion + 1)
+                /
+                questions.length
+            ) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index) => {
+
+            const checked =
+                userAnswers[currentQuestion]
+                === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="selectAnswer(${index})"
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+   IMPORTANT:
+   NO AUTO SCROLL HERE
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+   IMPORTANT:
+   NO AUTO SCROLL HERE
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[currentQuestion]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer => {
+
+            if(answer === null){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index) => {
+
+            if(
+                userAnswers[index]
+                === question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) * 100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        ATTEMPTS_KEY,
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Chemistry",
+
+        chapter:
+            CHAPTER_NAME,
+
+        chapterId:
+            CHAPTER_ID,
+
+        score:
+            Number(score),
+
+        total:
+            questions.length,
+
+        percentage:
+            Number(percentage),
+
+        status:
+            status,
+
+        attempts:
+            Number(attempts),
+
+        xp:
+            status === "PASSED"
+            ? XP_REWARD
+            : 0,
+
+        date:
+            new Date().toLocaleString()
+
+    };
+
+
+    /*
+     * Primary Science Hub key
+     */
+
+    localStorage.setItem(
+        PROGRESS_KEY,
+        JSON.stringify(progress)
+    );
+
+
+    /*
+     * Old compatibility key
+     */
+
+    localStorage.setItem(
+        OLD_PROGRESS_KEY,
+        JSON.stringify(progress)
+    );
+
+
+    console.log(
+        "Chapter 11 progress saved:",
+        progress
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >= PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Carbon and Its Compounds assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    /*
+     * Keep result scrolling.
+     * This only happens after submitting.
+     */
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY QUIZ
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            PROGRESS_KEY
+        );
+
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                OLD_PROGRESS_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(saved);
+
+
+        updateStatus(
+            data.status,
+            Number(data.score),
+            Number(data.percentage)
+        );
+
+
+        console.log(
+            "Chapter 11 previous progress:",
+            data
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Could not load Chapter 11 progress:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    let saved =
+        localStorage.getItem(
+            PROGRESS_KEY
+        );
+
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                OLD_PROGRESS_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Chapter ID",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+
+            data.class,
+
+            data.subject,
+
+            data.scienceSubject,
+
+            data.chapter,
+
+            data.chapterId,
+
+            data.score,
+
+            data.total,
+
+            data.percentage + "%",
+
+            data.status,
+
+            data.attempts,
+
+            data.xp,
+
+            data.date
+
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row => {
+
+            csv +=
+                row
+                .map(
+                    value =>
+                        `"${String(value)
+                        .replace(/"/g,'""')}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_Chapter11_Carbon_and_Its_Compounds_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   START CHAPTER
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+
+</script>
+
+</body>
+
+</html>

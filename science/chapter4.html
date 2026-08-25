@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 4 - Electricity | EduSphere</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+}
+
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:92%;
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:30px 0;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:35px;
+
+    border-radius:22px;
+
+    margin-bottom:25px;
+}
+
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+
+.info-box{
+    background:rgba(15,23,42,.35);
+
+    padding:18px;
+
+    border-radius:15px;
+
+    text-align:center;
+}
+
+
+.info-box strong{
+    display:block;
+
+    font-size:24px;
+
+    margin-bottom:5px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:#1e293b;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+}
+
+
+.card h2{
+    color:#38bdf8;
+
+    margin-bottom:15px;
+}
+
+
+.description{
+    color:#94a3b8;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+
+/* =====================================================
+   STUDY LINKS
+===================================================== */
+
+.study-links{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+
+.study-btn{
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+
+.study-btn:hover{
+    transform:translateY(-3px);
+
+    background:#1d4ed8;
+}
+
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.topic{
+    padding:13px;
+
+    margin-bottom:8px;
+
+    background:#0f172a;
+
+    border-radius:10px;
+
+    color:#cbd5e1;
+}
+
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+}
+
+
+.question-counter{
+    background:#0f172a;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    color:#38bdf8;
+
+    font-weight:bold;
+}
+
+
+.progress-container{
+    width:100%;
+
+    height:10px;
+
+    background:#334155;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:25px;
+}
+
+
+.progress-bar{
+    height:100%;
+
+    width:2%;
+
+    background:#22c55e;
+
+    transition:.3s;
+}
+
+
+.quiz-question{
+    background:#0f172a;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    min-height:280px;
+}
+
+
+.quiz-question h3{
+    font-size:20px;
+
+    line-height:1.5;
+
+    margin-bottom:22px;
+}
+
+
+.option{
+    display:block;
+
+    background:#1e293b;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.option:hover{
+    background:#334155;
+}
+
+
+.option input{
+    margin-right:10px;
+
+    transform:scale(1.2);
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation{
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+
+.nav-btn{
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+
+.previous{
+    background:#475569;
+}
+
+
+.next{
+    background:#2563eb;
+}
+
+
+.submit{
+    background:#16a34a;
+}
+
+
+.nav-btn:disabled{
+    opacity:.4;
+
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    margin-top:25px;
+}
+
+
+.pass{
+    background:#14532d;
+
+    border:1px solid #22c55e;
+}
+
+
+.fail{
+    background:#7f1d1d;
+
+    border:1px solid #ef4444;
+}
+
+
+.result h2{
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+
+.score{
+    font-size:36px;
+
+    font-weight:bold;
+
+    margin:15px 0;
+}
+
+
+.xp{
+    color:#facc15;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-top:15px;
+}
+
+
+.result-message{
+    color:#d1d5db;
+
+    line-height:1.6;
+}
+
+
+.result-btn{
+    display:block;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:18px;
+
+    text-decoration:none;
+}
+
+
+.retry{
+    background:#dc2626;
+}
+
+
+.next-chapter{
+    background:#16a34a;
+}
+
+
+.download{
+    background:#475569;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-box{
+    text-align:center;
+
+    background:#0f172a;
+
+    padding:25px;
+
+    border-radius:15px;
+}
+
+
+.status-box h3{
+    color:#38bdf8;
+
+    margin-bottom:10px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    text-align:center;
+
+    color:#64748b;
+
+    padding:35px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .header{
+        padding:15px;
+    }
+
+
+    .logo{
+        font-size:21px;
+    }
+
+
+    .container{
+        width:94%;
+
+        padding-top:20px;
+    }
+
+
+    .hero{
+        padding:25px;
+    }
+
+
+    .hero h1{
+        font-size:28px;
+    }
+
+
+    .card{
+        padding:20px;
+    }
+
+
+    .quiz-question{
+        padding:18px;
+    }
+
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<div class="hero">
+
+    <h1>
+        ⚡ Chapter 4: Electricity
+    </h1>
+
+
+    <p>
+
+        Learn about electric charge, electric current,
+        potential difference, resistance, Ohm's law,
+        electrical circuits, electrical power, electrical
+        energy and the heating effect of electric current.
+
+    </p>
+
+
+    <div class="info">
+
+        <div class="info-box">
+
+            <strong>50</strong>
+
+            Questions
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>30/50</strong>
+
+            Pass Mark
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>60%</strong>
+
+            Required
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>+80</strong>
+
+            XP Reward
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     STUDY RESOURCES
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+
+    <p class="description">
+
+        Study the chapter using the PDF notes and video
+        before attempting the assessment.
+
+    </p>
+
+
+    <div class="study-links">
+
+        <a
+            href="#"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+
+        <a
+            href="#"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+
+    <div class="topic">
+        ✓ Electric Charge
+    </div>
+
+
+    <div class="topic">
+        ✓ Electric Current
+    </div>
+
+
+    <div class="topic">
+        ✓ Potential Difference
+    </div>
+
+
+    <div class="topic">
+        ✓ Electric Circuit
+    </div>
+
+
+    <div class="topic">
+        ✓ Resistance
+    </div>
+
+
+    <div class="topic">
+        ✓ Ohm's Law
+    </div>
+
+
+    <div class="topic">
+        ✓ Factors Affecting Resistance
+    </div>
+
+
+    <div class="topic">
+        ✓ Series and Parallel Circuits
+    </div>
+
+
+    <div class="topic">
+        ✓ Electrical Power
+    </div>
+
+
+    <div class="topic">
+        ✓ Electrical Energy
+    </div>
+
+
+    <div class="topic">
+        ✓ Heating Effect of Electric Current
+    </div>
+
+
+    <div class="topic">
+        ✓ Electrical Safety and Household Circuits
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Electricity Assessment
+        </h2>
+
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions.
+        Each question carries one mark.
+        You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+
+    <!-- =================================================
+         RESULT
+    ================================================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+
+        <div
+            id="score"
+            class="score">
+
+        </div>
+
+
+        <p
+            id="resultMessage"
+            class="result-message">
+
+        </p>
+
+
+        <div
+            id="xpReward"
+            class="xp">
+
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            ← Return to Science Mission Hub
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   CHAPTER INFORMATION
+===================================================== */
+
+const SUBJECT = "Physics";
+
+const CHAPTER_NUMBER = 4;
+
+const CHAPTER_NAME =
+    "Chapter 4 - Electricity";
+
+const PASS_PERCENTAGE = 60;
+
+const XP_REWARD = 80;
+
+
+/*
+   THIS IS THE IMPORTANT KEY.
+
+   Your Science Mission Hub uses:
+
+   edusphere_science_physics_chapter_4
+*/
+
+const PROGRESS_KEY =
+    "edusphere_science_physics_chapter_4";
+
+
+const ATTEMPT_KEY =
+    "edusphere_science_physics_chapter_4_attempts";
+
+
+const QUIZ_STATE_KEY =
+    "edusphere_science_physics_chapter_4_quiz_state";
+
+
+
+/* =====================================================
+   50 ELECTRICITY QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"The SI unit of electric current is:",
+    a:["Volt","Ampere","Ohm","Watt"],
+    correct:1
+},
+
+{
+    q:"Electric current is the rate of flow of:",
+    a:["Mass","Electric charge","Heat","Light"],
+    correct:1
+},
+
+{
+    q:"The SI unit of electric charge is:",
+    a:["Coulomb","Ampere","Volt","Ohm"],
+    correct:0
+},
+
+{
+    q:"One ampere is equal to:",
+    a:["One coulomb per second","One volt per second","One joule per second","One ohm per second"],
+    correct:0
+},
+
+{
+    q:"The instrument used to measure electric current is:",
+    a:["Voltmeter","Ammeter","Galvanometer only","Barometer"],
+    correct:1
+},
+
+{
+    q:"An ammeter is connected in a circuit:",
+    a:["In parallel","In series","Across the battery only","Outside the circuit"],
+    correct:1
+},
+
+{
+    q:"The SI unit of potential difference is:",
+    a:["Ampere","Ohm","Volt","Watt"],
+    correct:2
+},
+
+{
+    q:"Potential difference is measured using a:",
+    a:["Ammeter","Voltmeter","Thermometer","Barometer"],
+    correct:1
+},
+
+{
+    q:"A voltmeter is connected:",
+    a:["In series","In parallel","Only with a switch","Only with a resistor"],
+    correct:1
+},
+
+{
+    q:"The SI unit of resistance is:",
+    a:["Volt","Ampere","Ohm","Coulomb"],
+    correct:2
+},
+
+{
+    q:"The resistance of a conductor opposes the flow of:",
+    a:["Electric current","Light","Sound","Heat only"],
+    correct:0
+},
+
+{
+    q:"The symbol commonly used for resistance is:",
+    a:["V","I","R","P"],
+    correct:2
+},
+
+{
+    q:"Ohm's law states that, at constant temperature:",
+    a:["V = IR","V = I/R","R = VI","I = VR"],
+    correct:0
+},
+
+{
+    q:"According to Ohm's law, current is directly proportional to:",
+    a:["Resistance","Potential difference","Length only","Mass"],
+    correct:1
+},
+
+{
+    q:"If the potential difference is increased while resistance remains constant, current:",
+    a:["Decreases","Increases","Becomes zero","Remains exactly zero"],
+    correct:1
+},
+
+{
+    q:"If resistance is increased while voltage remains constant, current:",
+    a:["Increases","Decreases","Doubles automatically","Becomes infinite"],
+    correct:1
+},
+
+{
+    q:"Which material is generally a good conductor of electricity?",
+    a:["Copper","Rubber","Plastic","Wood"],
+    correct:0
+},
+
+{
+    q:"Which material is generally an electrical insulator?",
+    a:["Copper","Aluminium","Rubber","Silver"],
+    correct:2
+},
+
+{
+    q:"The resistance of a wire depends on its:",
+    a:["Length and cross-sectional area","Colour only","Mass only","Temperature only"],
+    correct:0
+},
+
+{
+    q:"When the length of a wire increases, its resistance generally:",
+    a:["Decreases","Increases","Becomes zero","Does not change"],
+    correct:1
+},
+
+{
+    q:"When the cross-sectional area of a wire increases, its resistance generally:",
+    a:["Increases","Decreases","Becomes infinite","Always becomes zero"],
+    correct:1
+},
+
+{
+    q:"The resistance of a conductor is also affected by its:",
+    a:["Material","Shape of the battery only","Sound","Pressure only"],
+    correct:0
+},
+
+{
+    q:"In a series circuit, the current through each component is:",
+    a:["Different always","The same","Zero","Infinite"],
+    correct:1
+},
+
+{
+    q:"In a parallel circuit, the potential difference across each parallel branch is:",
+    a:["The same","Always zero","Different in every case","Always infinite"],
+    correct:0
+},
+
+{
+    q:"The equivalent resistance of resistors connected in series is:",
+    a:["R₁ + R₂ + R₃","R₁/R₂","R₁ × R₂ only","Zero"],
+    correct:0
+},
+
+{
+    q:"For resistors connected in parallel, the equivalent resistance is generally:",
+    a:["Greater than every resistor","Less than the smallest resistor","Always equal to the largest resistor","Infinite"],
+    correct:1
+},
+
+{
+    q:"A fuse is used mainly to:",
+    a:["Increase voltage","Protect a circuit from excessive current","Store electricity","Measure current"],
+    correct:1
+},
+
+{
+    q:"A fuse wire has:",
+    a:["High melting point","Low melting point","No resistance","No current"],
+    correct:1
+},
+
+{
+    q:"The heating effect of electric current is used in:",
+    a:["Electric iron","Compass","Voltmeter only","Mirror"],
+    correct:0
+},
+
+{
+    q:"An electric heater converts electrical energy mainly into:",
+    a:["Heat energy","Sound energy","Chemical energy only","Nuclear energy"],
+    correct:0
+},
+
+{
+    q:"The electrical power of a device is measured in:",
+    a:["Joule","Watt","Volt","Coulomb"],
+    correct:1
+},
+
+{
+    q:"The formula for electrical power is:",
+    a:["P = VI","P = V/I","P = I/V","P = R/I"],
+    correct:0
+},
+
+{
+    q:"Another formula for electrical power is:",
+    a:["P = I²R","P = I/R","P = R/I²","P = V/R²"],
+    correct:0
+},
+
+{
+    q:"Electrical energy is commonly measured commercially in:",
+    a:["Kilowatt-hour","Newton","Ampere","Ohm"],
+    correct:0
+},
+
+{
+    q:"One kilowatt-hour is a unit of:",
+    a:["Power","Energy","Current","Resistance"],
+    correct:1
+},
+
+{
+    q:"The electrical energy consumed by an appliance depends on its power and:",
+    a:["Time of use","Colour","Shape only","Voltage only"],
+    correct:0
+},
+
+{
+    q:"A device rated 1000 W consumes more power than a device rated:",
+    a:["500 W","1500 W","2000 W","1000 W"],
+    correct:0
+},
+
+{
+    q:"The direction of conventional electric current is taken from:",
+    a:["Negative terminal to positive terminal","Positive terminal to negative terminal","Earth to battery only","Neutral to earth only"],
+    correct:1
+},
+
+{
+    q:"The source of electrical energy in a simple circuit can be a:",
+    a:["Cell","Switch only","Resistor only","Wire only"],
+    correct:0
+},
+
+{
+    q:"A switch is used in an electric circuit to:",
+    a:["Open or close the circuit","Increase resistance automatically","Measure voltage","Produce electricity"],
+    correct:0
+},
+
+{
+    q:"When a switch is open, the circuit is:",
+    a:["Complete","Incomplete","Short-circuited always","Generating electricity"],
+    correct:1
+},
+
+{
+    q:"When a switch is closed, current can:",
+    a:["Flow through a complete circuit","Never flow","Disappear","Turn into mass"],
+    correct:0
+},
+
+{
+    q:"A short circuit occurs when:",
+    a:["Current gets a very low resistance path","The circuit has a large resistor","The switch is open","The battery is removed"],
+    correct:0
+},
+
+{
+    q:"Excessive current in a circuit may cause:",
+    a:["Overheating","Cooling only","Zero voltage always","No effect"],
+    correct:0
+},
+
+{
+    q:"Household electrical appliances are generally connected in:",
+    a:["Series","Parallel","A single resistor","No circuit"],
+    correct:1
+},
+
+{
+    q:"Parallel connection in household circuits allows:",
+    a:["Each appliance to operate independently","All appliances to stop together","Only one appliance to work","Current to become zero"],
+    correct:0
+},
+
+{
+    q:"The earth wire is mainly used for:",
+    a:["Electrical safety","Increasing brightness","Increasing resistance","Measuring power"],
+    correct:0
+},
+
+{
+    q:"A three-pin plug commonly includes:",
+    a:["Live, neutral and earth connections","Three live wires","Three neutral wires","Only earth wires"],
+    correct:0
+},
+
+{
+    q:"The heating effect of current in a resistor is related to:",
+    a:["I²Rt","IR/t","V/Rt","I/R"],
+    correct:0
+},
+
+{
+    q:"The unit of electrical energy used in the SI system is:",
+    a:["Joule","Watt","Volt","Ampere"],
+    correct:0
+},
+
+
+
+];
+
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            ATTEMPT_KEY
+        )
+    ) || 0;
+
+
+
+/* =====================================================
+   SAVE QUIZ STATE
+===================================================== */
+
+function saveQuizState(){
+
+    const state = {
+
+        currentQuestion:
+            currentQuestion,
+
+        userAnswers:
+            userAnswers
+
+    };
+
+
+    localStorage.setItem(
+        QUIZ_STATE_KEY,
+        JSON.stringify(state)
+    );
+
+}
+
+
+
+/* =====================================================
+   LOAD QUIZ STATE
+===================================================== */
+
+function loadQuizState(){
+
+    const saved =
+        localStorage.getItem(
+            QUIZ_STATE_KEY
+        );
+
+
+    if(!saved){
+
+        return false;
+
+    }
+
+
+    try{
+
+        const state =
+            JSON.parse(saved);
+
+
+        if(
+            Array.isArray(
+                state.userAnswers
+            )
+            &&
+            state.userAnswers.length ===
+                questions.length
+        ){
+
+            userAnswers =
+                state.userAnswers;
+
+        }
+
+
+        if(
+            Number.isInteger(
+                state.currentQuestion
+            )
+            &&
+            state.currentQuestion >= 0
+            &&
+            state.currentQuestion <
+                questions.length
+        ){
+
+            currentQuestion =
+                state.currentQuestion;
+
+        }
+
+
+        return true;
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Quiz state error:",
+            error
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[
+            currentQuestion
+        ];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                (currentQuestion + 1)
+                /
+                questions.length
+            )
+            *
+            100
+        )
+        +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ?
+                "checked"
+                :
+                "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="
+                            selectAnswer(${index})
+                        "
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+
+    saveQuizState();
+
+}
+
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ]
+        === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        saveQuizState();
+
+        loadQuestion();
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        saveQuizState();
+
+        loadQuestion();
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ]
+        === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index]
+                ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            )
+            *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        ATTEMPT_KEY,
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    /*
+       Delete temporary quiz state
+       because the assessment is complete.
+    */
+
+    localStorage.removeItem(
+        QUIZ_STATE_KEY
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+
+/* =====================================================
+   SAVE SCIENCE HUB RESULT
+===================================================== */
+
+function saveScienceQuizResult(
+    subject,
+    subjectNumber,
+    percentage,
+    score,
+    total
+){
+
+    let pct = Number(percentage);
+
+    if(
+        !Number.isFinite(pct) &&
+        Number(total) > 0
+    ){
+        pct = (Number(score) / Number(total)) * 100;
+    }
+
+    if(!Number.isFinite(pct)){
+        pct = 0;
+    }
+
+    pct = Math.round(Math.max(0, Math.min(100, pct)));
+
+    const status =
+        pct >= PASS_PERCENTAGE ? "PASSED" : "FAILED";
+
+    const progress = {
+        class: "10th Standard",
+        subject: "Science",
+        scienceSubject: subject,
+        chapter: CHAPTER_NAME,
+        chapterId: CHAPTER_NUMBER,
+        score: Number(score) || 0,
+        total: Number(total) || 0,
+        percentage: pct,
+        status: status,
+        attempts: attempts,
+        xp: status === "PASSED" ? XP_REWARD : 0,
+        date: new Date().toLocaleString()
+    };
+
+    localStorage.setItem(
+        PROGRESS_KEY,
+        JSON.stringify(progress)
+    );
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(progress)
+    );
+
+    return progress;
+}
+
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter 4 Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Electricity assessment. Your Chapter 4 progress has been saved.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        /*
+           Continue to Chapter 5
+        */
+
+        next.href =
+            "chapter5.html";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 4 and take the assessment again.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    localStorage.removeItem(
+        QUIZ_STATE_KEY
+    );
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >= PASS_PERCENTAGE ? "PASSED" : "FAILED";
+
+    const progress = {
+        class: "10th Standard",
+        subject: "Science",
+        scienceSubject: SUBJECT,
+        chapter: CHAPTER_NAME,
+        chapterId: CHAPTER_NUMBER,
+        score: score,
+        total: questions.length,
+        percentage: percentage,
+        status: status,
+        attempts: attempts,
+        xp: status === "PASSED" ? XP_REWARD : 0,
+        date: new Date().toLocaleString()
+    };
+
+    /* Main standard key — same format as Chapter 1 */
+    localStorage.setItem(
+        PROGRESS_KEY,
+        JSON.stringify(progress)
+    );
+
+    /* Compatibility key — same format as Chapter 1 */
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(progress)
+    );
+
+    console.log(
+        "EduSphere Science Chapter 4 saved successfully."
+    );
+
+}
+
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            PROGRESS_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(
+            saved
+        );
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+
+                row
+                .map(
+                    value =>
+                        `"${String(value)
+                            .replace(
+                                /"/g,
+                                '""'
+                            )}"`
+                )
+                .join(",")
+                +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_Chapter4_Electricity_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    /*
+       First try the standard Science Hub key.
+    */
+
+    let saved =
+        localStorage.getItem(
+            PROGRESS_KEY
+        );
+
+
+    /*
+       Compatibility with your old
+       Chapter 4 key.
+    */
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            parseInt(
+                data.score
+            );
+
+
+        let percentage =
+            parseInt(
+                data.percentage
+            );
+
+
+        /*
+           If percentage was not stored correctly,
+           calculate it from score.
+        */
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+            &&
+            Number.isFinite(
+                score
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    )
+                    *
+                    100
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage = 0;
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ?
+            "PASSED"
+            :
+            "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Previous result error:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuizState();
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+
+</body>
+
+</html>

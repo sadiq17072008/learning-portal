@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 8 - Periodic Classification of Elements | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#0891b2,#2563eb);
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#e0f2fe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:rgba(15,23,42,.35);
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= STUDY LINKS ================= */
+
+.study-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* ================= TOPICS ================= */
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+/* ================= ELEMENT EXPLORER ================= */
+
+.element-box{
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.element-symbol{
+    font-size:75px;
+    margin-bottom:15px;
+}
+
+.element-box p{
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+/* ================= NAVIGATION ================= */
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+/* ================= STATUS ================= */
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.status-box p{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🧪
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back">
+
+        ← Science
+
+    </a>
+
+</div>
+
+
+<div class="container">
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        🧪 Chapter 8: Periodic Classification of Elements
+    </h1>
+
+    <p>
+        Learn about the classification of elements, periodic
+        trends, the modern periodic table, groups, periods,
+        atomic size, valency, metallic character and
+        properties of elements.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDY RESOURCES ================= -->
+
+<div class="card">
+
+    <h2>
+        📚 Study Resources
+    </h2>
+
+    <p class="description">
+
+        Study the chapter using the PDF notes and video
+        before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER8_PDF_LINK"
+            target="_blank"
+            class="study-btn">
+
+            📄 Open PDF Notes
+
+        </a>
+
+        <a
+            href="YOUR_CHAPTER8_VIDEO_LINK"
+            target="_blank"
+            class="study-btn">
+
+            🎥 Watch Video
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOPICS ================= -->
+
+<div class="card">
+
+    <h2>
+        📖 Topics Covered
+    </h2>
+
+    <div class="topic">✓ Classification of Elements</div>
+    <div class="topic">✓ Need for Classification</div>
+    <div class="topic">✓ Dobereiner's Triads</div>
+    <div class="topic">✓ Newlands' Law of Octaves</div>
+    <div class="topic">✓ Mendeleev's Periodic Table</div>
+    <div class="topic">✓ Modern Periodic Law</div>
+    <div class="topic">✓ Modern Periodic Table</div>
+    <div class="topic">✓ Groups and Periods</div>
+    <div class="topic">✓ Electronic Configuration</div>
+    <div class="topic">✓ Valency</div>
+    <div class="topic">✓ Atomic Size</div>
+    <div class="topic">✓ Metallic Character</div>
+    <div class="topic">✓ Non-Metallic Character</div>
+    <div class="topic">✓ Periodic Trends</div>
+    <div class="topic">✓ Group Properties</div>
+    <div class="topic">✓ Period Properties</div>
+    <div class="topic">✓ Noble Gases</div>
+    <div class="topic">✓ Metals and Non-Metals</div>
+    <div class="topic">✓ Position of Elements</div>
+
+</div>
+
+
+<!-- ================= ELEMENT EXPLORER ================= -->
+
+<div class="card">
+
+    <h2>
+        🔬 Element Explorer
+    </h2>
+
+    <p class="description">
+
+        The periodic table arranges elements according to
+        their atomic number and recurring chemical properties.
+
+    </p>
+
+    <div class="element-box">
+
+        <div class="element-symbol">
+            🧪
+        </div>
+
+        <p>
+
+            The modern periodic table contains 18 groups
+            and 7 periods. Elements in the same group often
+            have similar chemical properties.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ ================= -->
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Periodic Classification Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber">
+
+            Question 1 of 50
+
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress">
+        </div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        ">
+
+        📝 Submit Assessment
+
+    </button>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div
+        id="result"
+        class="result">
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score">
+        </div>
+
+        <p
+            id="resultMessage"
+            class="result-message">
+        </p>
+
+        <div
+            id="xpReward"
+            class="xp">
+        </div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;">
+
+            🔄 Retake Assessment
+
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="chapter9.html"
+            class="result-btn next-chapter"
+            style="display:none;">
+
+            🚀 Continue to Chapter 9
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<div class="card">
+
+    <h2>
+        📊 My Chapter Progress
+    </h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+
+            Complete the assessment to create
+            your progress record.
+
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()">
+
+            📥 Download Progress for Excel
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   CHAPTER CONFIGURATION
+===================================================== */
+
+const CHAPTER_ID = 8;
+
+const CHAPTER_NAME =
+    "Periodic Classification of Elements";
+
+const TOTAL_QUESTIONS = 50;
+
+const PASS_PERCENTAGE = 60;
+
+const XP_REWARD = 80;
+
+
+/*
+ * MAIN CHAPTER PROGRESS KEY
+ */
+const PROGRESS_KEY =
+    "edusphere_science_chapter8";
+
+
+/*
+ * ATTEMPT KEY
+ */
+const ATTEMPTS_KEY =
+    "edusphere_science_chapter8_attempts";
+
+
+/*
+ * COMPATIBILITY KEYS
+ *
+ * These are also saved so that the
+ * Science Mission Hub can read Chapter 8.
+ */
+
+const HUB_PROGRESS_KEY =
+    "chapter8Progress";
+
+const HUB_COMPLETED_KEY =
+    "chapter8Completed";
+
+
+/* =====================================================
+   50 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"The systematic arrangement of elements based on their properties is called:",
+    a:[
+        "Classification of elements",
+        "Atomic bonding",
+        "Chemical reaction",
+        "Molecular formation"
+    ],
+    correct:0
+},
+
+{
+    q:"The modern periodic table is based on:",
+    a:[
+        "Atomic mass",
+        "Atomic number",
+        "Mass number",
+        "Number of neutrons"
+    ],
+    correct:1
+},
+
+{
+    q:"The modern periodic law was proposed by:",
+    a:[
+        "Mendeleev",
+        "Moseley",
+        "Newlands",
+        "Dobereiner"
+    ],
+    correct:1
+},
+
+{
+    q:"Mendeleev arranged elements mainly according to increasing:",
+    a:[
+        "Atomic number",
+        "Atomic mass",
+        "Number of electrons",
+        "Number of shells"
+    ],
+    correct:1
+},
+
+{
+    q:"Newlands' law of octaves was based on:",
+    a:[
+        "Every eighth element having similar properties",
+        "Every fifth element having similar properties",
+        "Atomic number",
+        "Number of shells"
+    ],
+    correct:0
+},
+
+{
+    q:"Dobereiner classified elements into groups of:",
+    a:[
+        "Two",
+        "Three",
+        "Four",
+        "Eight"
+    ],
+    correct:1
+},
+
+{
+    q:"The horizontal rows in the modern periodic table are called:",
+    a:[
+        "Groups",
+        "Periods",
+        "Blocks",
+        "Families"
+    ],
+    correct:1
+},
+
+{
+    q:"The vertical columns in the periodic table are called:",
+    a:[
+        "Periods",
+        "Groups",
+        "Rows",
+        "Series"
+    ],
+    correct:1
+},
+
+{
+    q:"The modern periodic table has how many groups?",
+    a:[
+        "7",
+        "8",
+        "18",
+        "20"
+    ],
+    correct:2
+},
+
+{
+    q:"The modern periodic table has how many periods?",
+    a:[
+        "5",
+        "6",
+        "7",
+        "8"
+    ],
+    correct:2
+},
+
+{
+    q:"Elements in the same group generally have similar:",
+    a:[
+        "Chemical properties",
+        "Atomic masses",
+        "Number of neutrons",
+        "Mass numbers"
+    ],
+    correct:0
+},
+
+{
+    q:"The number of valence electrons mainly determines the:",
+    a:[
+        "Chemical properties of an element",
+        "Number of neutrons",
+        "Atomic mass",
+        "Nuclear size"
+    ],
+    correct:0
+},
+
+{
+    q:"The first period contains:",
+    a:[
+        "2 elements",
+        "4 elements",
+        "8 elements",
+        "18 elements"
+    ],
+    correct:0
+},
+
+{
+    q:"The second period contains:",
+    a:[
+        "2 elements",
+        "8 elements",
+        "18 elements",
+        "32 elements"
+    ],
+    correct:1
+},
+
+{
+    q:"The third period contains:",
+    a:[
+        "2 elements",
+        "8 elements",
+        "18 elements",
+        "32 elements"
+    ],
+    correct:1
+},
+
+{
+    q:"The maximum number of electrons that can occupy the first shell is:",
+    a:[
+        "2",
+        "4",
+        "8",
+        "18"
+    ],
+    correct:0
+},
+
+{
+    q:"The maximum number of electrons in the second shell is:",
+    a:[
+        "2",
+        "4",
+        "8",
+        "18"
+    ],
+    correct:2
+},
+
+{
+    q:"Elements of Group 1 are called:",
+    a:[
+        "Alkaline earth metals",
+        "Alkali metals",
+        "Halogens",
+        "Noble gases"
+    ],
+    correct:1
+},
+
+{
+    q:"Elements of Group 2 are called:",
+    a:[
+        "Alkali metals",
+        "Alkaline earth metals",
+        "Halogens",
+        "Noble gases"
+    ],
+    correct:1
+},
+
+{
+    q:"Group 17 elements are called:",
+    a:[
+        "Noble gases",
+        "Halogens",
+        "Alkali metals",
+        "Transition metals"
+    ],
+    correct:1
+},
+
+{
+    q:"Group 18 elements are called:",
+    a:[
+        "Halogens",
+        "Noble gases",
+        "Alkali metals",
+        "Alkaline earth metals"
+    ],
+    correct:1
+},
+
+{
+    q:"The first element in the periodic table is:",
+    a:[
+        "Helium",
+        "Hydrogen",
+        "Lithium",
+        "Carbon"
+    ],
+    correct:1
+},
+
+{
+    q:"The atomic number of hydrogen is:",
+    a:[
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    correct:0
+},
+
+{
+    q:"The atomic number of helium is:",
+    a:[
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    correct:1
+},
+
+{
+    q:"The atomic number of carbon is:",
+    a:[
+        "4",
+        "6",
+        "8",
+        "12"
+    ],
+    correct:1
+},
+
+{
+    q:"The atomic number of oxygen is:",
+    a:[
+        "6",
+        "7",
+        "8",
+        "16"
+    ],
+    correct:2
+},
+
+{
+    q:"The atomic number of sodium is:",
+    a:[
+        "10",
+        "11",
+        "12",
+        "23"
+    ],
+    correct:1
+},
+
+{
+    q:"The atomic number of chlorine is:",
+    a:[
+        "15",
+        "16",
+        "17",
+        "18"
+    ],
+    correct:2
+},
+
+{
+    q:"The atomic number of argon is:",
+    a:[
+        "16",
+        "17",
+        "18",
+        "19"
+    ],
+    correct:2
+},
+
+{
+    q:"Elements in the same period have the same number of:",
+    a:[
+        "Valence electrons",
+        "Electron shells",
+        "Protons",
+        "Neutrons"
+    ],
+    correct:1
+},
+
+{
+    q:"Elements in the same group generally have the same number of:",
+    a:[
+        "Electron shells",
+        "Valence electrons",
+        "Neutrons",
+        "Protons"
+    ],
+    correct:1
+},
+
+{
+    q:"Atomic size generally decreases from left to right across a period because:",
+    a:[
+        "Nuclear charge increases",
+        "Number of shells decreases",
+        "Neutrons disappear",
+        "Atomic number decreases"
+    ],
+    correct:0
+},
+
+{
+    q:"Atomic size generally increases down a group because:",
+    a:[
+        "New electron shells are added",
+        "Atomic number decreases",
+        "Nuclear charge disappears",
+        "Valence electrons decrease"
+    ],
+    correct:0
+},
+
+{
+    q:"Metallic character generally increases:",
+    a:[
+        "From left to right",
+        "From top to bottom in a group",
+        "Only across periods",
+        "Only in noble gases"
+    ],
+    correct:1
+},
+
+{
+    q:"Non-metallic character generally increases:",
+    a:[
+        "From left to right across a period",
+        "From bottom to top only",
+        "From right to left",
+        "Only in Group 1"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a metal?",
+    a:[
+        "Sodium",
+        "Chlorine",
+        "Oxygen",
+        "Neon"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a non-metal?",
+    a:[
+        "Sodium",
+        "Magnesium",
+        "Chlorine",
+        "Calcium"
+    ],
+    correct:2
+},
+
+{
+    q:"Which element belongs to Group 1?",
+    a:[
+        "Na",
+        "Mg",
+        "Cl",
+        "Ne"
+    ],
+    correct:0
+},
+
+{
+    q:"Which element belongs to Group 17?",
+    a:[
+        "Na",
+        "Mg",
+        "Cl",
+        "Ar"
+    ],
+    correct:2
+},
+
+{
+    q:"Which element belongs to Group 18?",
+    a:[
+        "Na",
+        "Cl",
+        "Ar",
+        "Mg"
+    ],
+    correct:2
+},
+
+{
+    q:"The valency of Group 1 elements is generally:",
+    a:[
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    correct:0
+},
+
+{
+    q:"The valency of Group 2 elements is generally:",
+    a:[
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    correct:1
+},
+
+{
+    q:"The valency of noble gases is generally:",
+    a:[
+        "1",
+        "2",
+        "3",
+        "0"
+    ],
+    correct:3
+},
+
+{
+    q:"Which element has the electronic configuration 2,8,1?",
+    a:[
+        "Sodium",
+        "Magnesium",
+        "Chlorine",
+        "Neon"
+    ],
+    correct:0
+},
+
+{
+    q:"Which element has the electronic configuration 2,8,7?",
+    a:[
+        "Sodium",
+        "Magnesium",
+        "Chlorine",
+        "Argon"
+    ],
+    correct:2
+},
+
+{
+    q:"Which element has the electronic configuration 2,8,8?",
+    a:[
+        "Sodium",
+        "Chlorine",
+        "Argon",
+        "Magnesium"
+    ],
+    correct:2
+},
+
+{
+    q:"The periodic table helps predict:",
+    a:[
+        "Chemical properties of elements",
+        "Only colour",
+        "Only melting point",
+        "Only density"
+    ],
+    correct:0
+},
+
+{
+    q:"Mendeleev left gaps in his periodic table for:",
+    a:[
+        "Unknown elements",
+        "Known gases",
+        "Electrons",
+        "Neutrons"
+    ],
+    correct:0
+},
+
+{
+    q:"Mendeleev's periodic table was an important improvement because elements with similar properties were placed in:",
+    a:[
+        "Different groups",
+        "The same groups",
+        "Random positions",
+        "Separate periods only"
+    ],
+    correct:1
+},
+
+{
+    q:"The periodic repetition of similar properties is called:",
+    a:[
+        "Periodicity",
+        "Radioactivity",
+        "Ionisation",
+        "Combustion"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a noble gas?",
+    a:[
+        "Sodium",
+        "Chlorine",
+        "Neon",
+        "Magnesium"
+    ],
+    correct:2
+},
+
+{
+    q:"Which of the following has the greatest tendency to form a positive ion?",
+    a:[
+        "Sodium",
+        "Chlorine",
+        "Oxygen",
+        "Fluorine"
+    ],
+    correct:0
+},
+
+{
+    q:"The modern periodic table arranges elements in increasing order of:",
+    a:[
+        "Atomic mass",
+        "Atomic number",
+        "Mass number",
+        "Number of neutrons"
+    ],
+    correct:1
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+let attempts =
+    Number(
+        localStorage.getItem(ATTEMPTS_KEY)
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            ((currentQuestion + 1) /
+            questions.length) * 100
+        ) + "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach((option,index)=>{
+
+        const checked =
+            userAnswers[currentQuestion] === index
+            ? "checked"
+            : "";
+
+
+        html += `
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="currentQuestion"
+                    value="${index}"
+                    ${checked}
+                    onchange="selectAnswer(${index})">
+
+                ${option}
+
+            </label>
+
+        `;
+
+    });
+
+
+    html += `
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[currentQuestion] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[currentQuestion] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(answer=>{
+
+        if(answer === null){
+
+            unanswered++;
+
+        }
+
+    });
+
+
+    if(unanswered > 0){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s). Please answer all questions before submitting."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (question,index)=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score / questions.length) * 100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        ATTEMPTS_KEY,
+        attempts
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const passed =
+        percentage >= PASS_PERCENTAGE;
+
+
+    /*
+     * Read previous result.
+     *
+     * This prevents a later failed retest
+     * from destroying an already completed chapter.
+     */
+
+    let previous = null;
+
+
+    const oldData =
+        localStorage.getItem(PROGRESS_KEY);
+
+
+    if(oldData){
+
+        try{
+
+            previous =
+                JSON.parse(oldData);
+
+        }
+        catch(error){
+
+            previous = null;
+
+        }
+
+    }
+
+
+    /*
+     * If the chapter was already passed,
+     * keep it completed even if the student
+     * gets a lower score on a later attempt.
+     */
+
+    const alreadyPassed =
+        previous &&
+        previous.completed === true;
+
+
+    const finalPassed =
+        passed || alreadyPassed;
+
+
+    const progress = {
+
+        chapterId:
+            CHAPTER_ID,
+
+        chapter:
+            "Chapter 8 - " +
+            CHAPTER_NAME,
+
+        subject:
+            "Science",
+
+        score:
+            score + "/" + questions.length,
+
+        percentage:
+            percentage + "%",
+
+        status:
+            finalPassed
+            ? "PASSED"
+            : "FAILED",
+
+        completed:
+            finalPassed,
+
+        attempts:
+            attempts,
+
+        xp:
+            finalPassed
+            ? XP_REWARD
+            : 0,
+
+        date:
+            new Date().toLocaleString()
+
+    };
+
+
+    /*
+     * Main progress record
+     */
+
+    localStorage.setItem(
+        PROGRESS_KEY,
+        JSON.stringify(progress)
+    );
+
+
+    /*
+     * Mission Hub compatibility
+     *
+     * Store ONLY the percentage here.
+     */
+
+    localStorage.setItem(
+        HUB_PROGRESS_KEY,
+        percentage
+    );
+
+
+    /*
+     * Completion status for Mission Hub
+     */
+
+    localStorage.setItem(
+        HUB_COMPLETED_KEY,
+        finalPassed
+        ? "true"
+        : "false"
+    );
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById("result");
+
+    const title =
+        document.getElementById("resultTitle");
+
+    const scoreText =
+        document.getElementById("score");
+
+    const message =
+        document.getElementById("resultMessage");
+
+    const xp =
+        document.getElementById("xpReward");
+
+    const retry =
+        document.getElementById("retryBtn");
+
+    const next =
+        document.getElementById("nextChapterBtn");
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.textContent =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    /*
+     * Check whether this attempt passed.
+     */
+
+    if(
+        percentage >= PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.textContent =
+            "🎉 Chapter Completed!";
+
+
+        message.textContent =
+            "Excellent! You have successfully passed the Periodic Classification of Elements assessment.";
+
+
+        xp.textContent =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.textContent =
+            "❌ Assessment Not Passed";
+
+
+        message.textContent =
+            "You scored below 60%. Review the chapter and take the retest.";
+
+
+        xp.textContent =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   UPDATE STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(status === "PASSED"){
+
+        title.textContent =
+            "✅ Chapter Completed";
+
+
+        text.textContent =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+    else if(status === "FAILED"){
+
+        title.textContent =
+            "❌ Retest Required";
+
+
+        text.textContent =
+            "Result: " +
+            score +
+            "/50 (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+    else{
+
+        title.textContent =
+            "Not Attempted";
+
+
+        text.textContent =
+            "Complete the assessment to create your progress record.";
+
+    }
+
+}
+
+
+/* =====================================================
+   RETRY QUIZ
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    const saved =
+        localStorage.getItem(
+            PROGRESS_KEY
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(saved);
+
+
+        const score =
+            parseInt(
+                data.score,
+                10
+            );
+
+
+        const percentage =
+            parseInt(
+                data.percentage,
+                10
+            );
+
+
+        if(
+            !isNaN(score) &&
+            !isNaN(percentage)
+        ){
+
+            updateStatus(
+                data.status,
+                score,
+                percentage
+            );
+
+        }
+
+    }
+    catch(error){
+
+        console.error(
+            "Unable to load Chapter 8 progress:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            PROGRESS_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    let data;
+
+
+    try{
+
+        data =
+            JSON.parse(saved);
+
+    }
+    catch(error){
+
+        alert(
+            "Progress data could not be read."
+        );
+
+        return;
+
+    }
+
+
+    const rows = [
+
+        [
+            "EduSphere Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Subject",
+            "Chapter",
+            "Score",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.subject,
+            data.chapter,
+            data.score,
+            data.percentage,
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(row=>{
+
+        csv +=
+            row
+            .map(
+                value =>
+                    `"${String(value)
+                    .replace(/"/g,'""')}"`
+            )
+            .join(",") +
+            "\n";
+
+    });
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_Chapter8_Periodic_Classification_Progress.csv";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   START CHAPTER
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,2739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Chapter 1 - Laws of Motion | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:
+        rgba(15,23,42,.35);
+
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#7dd3fc;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#38bdf8;
+}
+
+.formula{
+    background:#0c4a6e;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="hero">
+
+    <h1>
+        ⚙️ Chapter 1: Laws of Motion
+    </h1>
+
+    <p>
+        Learn about motion, force, inertia, momentum,
+        Newton's laws of motion, conservation of momentum,
+        action and reaction, balanced and unbalanced forces,
+        and important numerical problems based on the
+        Laws of Motion in Tamil Nadu 10th Standard Science.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study Laws of Motion using the chapter PDF notes
+        and video before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER1_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+        <a
+            href="YOUR_CHAPTER1_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">✓ Motion and Rest</div>
+    <div class="topic">✓ Force</div>
+    <div class="topic">✓ Effects of Force</div>
+    <div class="topic">✓ Balanced and Unbalanced Forces</div>
+    <div class="topic">✓ Inertia</div>
+    <div class="topic">✓ Types of Inertia</div>
+    <div class="topic">✓ Newton's First Law of Motion</div>
+    <div class="topic">✓ Newton's Second Law of Motion</div>
+    <div class="topic">✓ Newton's Third Law of Motion</div>
+    <div class="topic">✓ Momentum</div>
+    <div class="topic">✓ Conservation of Momentum</div>
+    <div class="topic">✓ Action and Reaction</div>
+    <div class="topic">✓ Applications of Newton's Laws</div>
+    <div class="topic">✓ Numerical Problems</div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧠 Important Concepts</h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>1. Force</strong>
+
+            <br><br>
+
+            Force is a push or pull acting on an object.
+            It can change the state of rest or motion of
+            an object or change its direction or shape.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>2. Effects of Force</strong>
+
+            <br><br>
+
+            A force can:
+
+            <br>
+            • Change the state of motion.
+            <br>
+            • Change the direction of motion.
+            <br>
+            • Change the speed of an object.
+            <br>
+            • Change the shape of an object.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>3. Balanced Forces</strong>
+
+            <br><br>
+
+            When the net force acting on an object is zero,
+            the forces are called balanced forces.
+
+            <div class="formula">
+                Net Force = 0
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>4. Unbalanced Forces</strong>
+
+            <br><br>
+
+            When the net force acting on an object is not
+            zero, the forces are called unbalanced forces.
+
+            <div class="formula">
+                Net Force ≠ 0
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>5. Inertia</strong>
+
+            <br><br>
+
+            Inertia is the tendency of an object to resist
+            any change in its state of rest or uniform motion.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>6. Types of Inertia</strong>
+
+            <br><br>
+
+            The three important types of inertia are:
+
+            <br><br>
+
+            • Inertia of rest
+            <br>
+            • Inertia of motion
+            <br>
+            • Inertia of direction
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>7. Newton's First Law</strong>
+
+            <br><br>
+
+            An object remains at rest or continues in
+            uniform motion in a straight line unless acted
+            upon by an external unbalanced force.
+
+            <div class="formula">
+                External unbalanced force = 0
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>8. Newton's Second Law</strong>
+
+            <br><br>
+
+            The rate of change of momentum of an object is
+            directly proportional to the applied force and
+            takes place in the direction of the force.
+
+            <div class="formula">
+                F = ma
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>9. Newton's Third Law</strong>
+
+            <br><br>
+
+            For every action, there is an equal and opposite
+            reaction.
+
+            <div class="formula">
+                Action = Reaction
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>10. Momentum</strong>
+
+            <br><br>
+
+            Momentum is the product of mass and velocity.
+
+            <div class="formula">
+                p = mv
+            </div>
+
+            p = momentum
+
+            <br>
+
+            m = mass
+
+            <br>
+
+            v = velocity
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>11. Conservation of Momentum</strong>
+
+            <br><br>
+
+            In the absence of external force, the total
+            momentum of an isolated system remains constant.
+
+            <div class="formula">
+                Total Initial Momentum =
+                Total Final Momentum
+            </div>
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>12. Action and Reaction</strong>
+
+            <br><br>
+
+            Action and reaction forces are equal in magnitude
+            and opposite in direction. They act on different
+            objects.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧮 Numerical Examples</h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1 – Force
+        </strong>
+
+        <br><br>
+
+        A body of mass 5 kg accelerates at 2 m/s².
+        Find the force.
+
+        <div class="formula">
+            F = ma
+        </div>
+
+        <div class="formula">
+            F = 5 × 2
+        </div>
+
+        <strong>
+            Answer: F = 10 N
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2 – Momentum
+        </strong>
+
+        <br><br>
+
+        A body of mass 10 kg moves with a velocity
+        of 5 m/s. Find its momentum.
+
+        <div class="formula">
+            p = mv
+        </div>
+
+        <div class="formula">
+            p = 10 × 5
+        </div>
+
+        <strong>
+            Answer: p = 50 kg m/s
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3 – Finding Acceleration
+        </strong>
+
+        <br><br>
+
+        A force of 20 N acts on a body of mass 4 kg.
+        Find its acceleration.
+
+        <div class="formula">
+            F = ma
+        </div>
+
+        <div class="formula">
+            a = F/m
+        </div>
+
+        <div class="formula">
+            a = 20/4
+        </div>
+
+        <strong>
+            Answer: a = 5 m/s²
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4 – Finding Mass
+        </strong>
+
+        <br><br>
+
+        A force of 30 N produces an acceleration of
+        6 m/s². Find the mass.
+
+        <div class="formula">
+            m = F/a
+        </div>
+
+        <div class="formula">
+            m = 30/6
+        </div>
+
+        <strong>
+            Answer: m = 5 kg
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5 – Momentum
+        </strong>
+
+        <br><br>
+
+        A 2 kg object moves with velocity 10 m/s.
+        Calculate its momentum.
+
+        <div class="formula">
+            p = mv
+        </div>
+
+        <div class="formula">
+            p = 2 × 10
+        </div>
+
+        <strong>
+            Answer: p = 20 kg m/s
+        </strong>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>⚡ Quick Revision</h2>
+
+    <div class="topic">
+        ✓ Force is a push or pull.
+    </div>
+
+    <div class="topic">
+        ✓ Balanced forces have zero net force.
+    </div>
+
+    <div class="topic">
+        ✓ Unbalanced forces produce a change in motion.
+    </div>
+
+    <div class="topic">
+        ✓ Inertia is resistance to change in motion.
+    </div>
+
+    <div class="topic">
+        ✓ Newton's First Law explains inertia.
+    </div>
+
+    <div class="topic">
+        ✓ Newton's Second Law gives F = ma.
+    </div>
+
+    <div class="topic">
+        ✓ Newton's Third Law deals with action and reaction.
+    </div>
+
+    <div class="topic">
+        ✓ Momentum is p = mv.
+    </div>
+
+    <div class="topic">
+        ✓ Momentum is conserved when external force is absent.
+    </div>
+
+    <div class="topic">
+        ✓ SI unit of force is newton (N).
+    </div>
+
+    <div class="topic">
+        ✓ SI unit of momentum is kg m/s.
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Laws of Motion Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <!--
+        IMPORTANT:
+
+        Continue returns to the Science Mission Hub.
+        The hub reads LocalStorage and unlocks Chapter 2.
+        -->
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SCIENCE CHAPTER 1 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 1;
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_1";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter1";
+
+
+/* =====================================================
+   50 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"A force is best described as:",
+    a:[
+        "A push or pull",
+        "Only a push",
+        "Only a pull",
+        "A form of energy"
+    ],
+    correct:0
+},
+
+{
+    q:"The SI unit of force is:",
+    a:[
+        "Joule",
+        "Newton",
+        "Watt",
+        "Pascal"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following can change the state of motion of an object?",
+    a:[
+        "Force",
+        "Mass only",
+        "Density only",
+        "Temperature only"
+    ],
+    correct:0
+},
+
+{
+    q:"Balanced forces have a net force of:",
+    a:[
+        "Zero",
+        "One newton",
+        "Maximum value",
+        "Infinite value"
+    ],
+    correct:0
+},
+
+{
+    q:"Unbalanced forces can produce:",
+    a:[
+        "A change in motion",
+        "No change at all",
+        "Only heat",
+        "Only sound"
+    ],
+    correct:0
+},
+
+{
+    q:"The tendency of an object to resist change in its state of motion is called:",
+    a:[
+        "Momentum",
+        "Inertia",
+        "Force",
+        "Acceleration"
+    ],
+    correct:1
+},
+
+{
+    q:"Inertia mainly depends on:",
+    a:[
+        "Mass",
+        "Velocity only",
+        "Colour",
+        "Temperature"
+    ],
+    correct:0
+},
+
+{
+    q:"The inertia of an object at rest is called:",
+    a:[
+        "Inertia of motion",
+        "Inertia of rest",
+        "Inertia of direction",
+        "Rotational inertia"
+    ],
+    correct:1
+},
+
+{
+    q:"A passenger falls backward when a stationary bus suddenly starts because of:",
+    a:[
+        "Inertia of rest",
+        "Inertia of motion",
+        "Inertia of direction",
+        "Gravity only"
+    ],
+    correct:0
+},
+
+{
+    q:"A passenger moves forward when a moving bus suddenly stops because of:",
+    a:[
+        "Inertia of motion",
+        "Inertia of rest",
+        "Inertia of direction",
+        "Magnetism"
+    ],
+    correct:0
+},
+
+{
+    q:"When a vehicle turns suddenly, passengers tend to move sideways due to:",
+    a:[
+        "Inertia of direction",
+        "Inertia of rest",
+        "Inertia of motion only",
+        "Friction only"
+    ],
+    correct:0
+},
+
+{
+    q:"Newton's First Law is also known as the law of:",
+    a:[
+        "Inertia",
+        "Momentum",
+        "Acceleration",
+        "Gravitation"
+    ],
+    correct:0
+},
+
+{
+    q:"Newton's First Law states that an object remains at rest or in uniform motion unless acted upon by:",
+    a:[
+        "An external unbalanced force",
+        "Gravity only",
+        "Mass",
+        "Temperature"
+    ],
+    correct:0
+},
+
+{
+    q:"Newton's Second Law relates force to:",
+    a:[
+        "Mass and acceleration",
+        "Mass and volume",
+        "Density and pressure",
+        "Temperature and heat"
+    ],
+    correct:0
+},
+
+{
+    q:"The mathematical expression of Newton's Second Law is:",
+    a:[
+        "F = ma",
+        "F = m/a",
+        "F = a/m",
+        "F = mv"
+    ],
+    correct:0
+},
+
+{
+    q:"If mass is doubled while acceleration remains constant, force:",
+    a:[
+        "Doubles",
+        "Halves",
+        "Becomes zero",
+        "Remains unchanged"
+    ],
+    correct:0
+},
+
+{
+    q:"If acceleration is doubled while mass remains constant, force:",
+    a:[
+        "Doubles",
+        "Halves",
+        "Becomes zero",
+        "Remains unchanged"
+    ],
+    correct:0
+},
+
+{
+    q:"Newton's Third Law states:",
+    a:[
+        "Every action has an equal and opposite reaction",
+        "Force equals mass",
+        "Objects always remain at rest",
+        "Momentum is always zero"
+    ],
+    correct:0
+},
+
+{
+    q:"Action and reaction forces act on:",
+    a:[
+        "The same object",
+        "Different objects",
+        "Only one object",
+        "No object"
+    ],
+    correct:1
+},
+
+{
+    q:"The SI unit of mass is:",
+    a:[
+        "Kilogram",
+        "Newton",
+        "Joule",
+        "Metre"
+    ],
+    correct:0
+},
+
+{
+    q:"The SI unit of acceleration is:",
+    a:[
+        "m/s",
+        "m/s²",
+        "kg m/s",
+        "N/m"
+    ],
+    correct:1
+},
+
+{
+    q:"The SI unit of momentum is:",
+    a:[
+        "kg m/s",
+        "N",
+        "J",
+        "m/s²"
+    ],
+    correct:0
+},
+
+{
+    q:"Momentum is given by:",
+    a:[
+        "p = mv",
+        "p = ma",
+        "p = m/v",
+        "p = v/m"
+    ],
+    correct:0
+},
+
+{
+    q:"A body of mass 5 kg moving at 4 m/s has momentum:",
+    a:[
+        "1.25 kg m/s",
+        "9 kg m/s",
+        "20 kg m/s",
+        "25 kg m/s"
+    ],
+    correct:2
+},
+
+{
+    q:"A body of mass 10 kg moving at 2 m/s has momentum:",
+    a:[
+        "5 kg m/s",
+        "12 kg m/s",
+        "20 kg m/s",
+        "40 kg m/s"
+    ],
+    correct:2
+},
+
+{
+    q:"If the velocity of an object is zero, its momentum is:",
+    a:[
+        "Zero",
+        "Maximum",
+        "Infinite",
+        "Always one"
+    ],
+    correct:0
+},
+
+{
+    q:"The momentum of an isolated system remains constant when:",
+    a:[
+        "No external force acts on it",
+        "Mass becomes zero",
+        "Velocity becomes infinite",
+        "Temperature changes"
+    ],
+    correct:0
+},
+
+{
+    q:"The principle that total momentum remains constant is called:",
+    a:[
+        "Law of inertia",
+        "Law of conservation of momentum",
+        "Law of gravitation",
+        "Law of energy only"
+    ],
+    correct:1
+},
+
+{
+    q:"A rocket moves upward mainly because of:",
+    a:[
+        "Newton's Third Law",
+        "Newton's First Law only",
+        "Inertia of rest",
+        "Density"
+    ],
+    correct:0
+},
+
+{
+    q:"Recoil of a gun is an example of:",
+    a:[
+        "Newton's Third Law",
+        "Newton's First Law only",
+        "Law of temperature",
+        "Law of density"
+    ],
+    correct:0
+},
+
+{
+    q:"A swimmer pushes water backward and moves forward due to:",
+    a:[
+        "Newton's Third Law",
+        "Newton's First Law only",
+        "Inertia of rest",
+        "Conservation of mass only"
+    ],
+    correct:0
+},
+
+{
+    q:"A force of 10 N acts on a 2 kg body. Its acceleration is:",
+    a:[
+        "2 m/s²",
+        "5 m/s²",
+        "10 m/s²",
+        "20 m/s²"
+    ],
+    correct:1
+},
+
+{
+    q:"A force of 20 N acts on a body of mass 5 kg. The acceleration is:",
+    a:[
+        "2 m/s²",
+        "4 m/s²",
+        "10 m/s²",
+        "25 m/s²"
+    ],
+    correct:1
+},
+
+{
+    q:"A force of 30 N acts on a body of mass 10 kg. The acceleration is:",
+    a:[
+        "3 m/s²",
+        "10 m/s²",
+        "20 m/s²",
+        "300 m/s²"
+    ],
+    correct:0
+},
+
+{
+    q:"If a body of mass 4 kg has an acceleration of 5 m/s², the force is:",
+    a:[
+        "9 N",
+        "20 N",
+        "25 N",
+        "40 N"
+    ],
+    correct:1
+},
+
+{
+    q:"If force is 24 N and acceleration is 6 m/s², the mass is:",
+    a:[
+        "2 kg",
+        "4 kg",
+        "6 kg",
+        "12 kg"
+    ],
+    correct:1
+},
+
+{
+    q:"Which law explains why a book remains on a table until an external force moves it?",
+    a:[
+        "Newton's First Law",
+        "Newton's Second Law",
+        "Newton's Third Law",
+        "Law of conservation of energy"
+    ],
+    correct:0
+},
+
+{
+    q:"Which law gives the relationship F = ma?",
+    a:[
+        "Newton's First Law",
+        "Newton's Second Law",
+        "Newton's Third Law",
+        "Law of inertia"
+    ],
+    correct:1
+},
+
+{
+    q:"Which law explains action and reaction forces?",
+    a:[
+        "Newton's First Law",
+        "Newton's Second Law",
+        "Newton's Third Law",
+        "Law of conservation of mass"
+    ],
+    correct:2
+},
+
+{
+    q:"The force required to accelerate a 2 kg object at 3 m/s² is:",
+    a:[
+        "5 N",
+        "6 N",
+        "8 N",
+        "9 N"
+    ],
+    correct:1
+},
+
+{
+    q:"A 10 kg object moving at 5 m/s has momentum:",
+    a:[
+        "2 kg m/s",
+        "15 kg m/s",
+        "50 kg m/s",
+        "100 kg m/s"
+    ],
+    correct:2
+},
+
+{
+    q:"A 3 kg object moving at 6 m/s has momentum:",
+    a:[
+        "2 kg m/s",
+        "9 kg m/s",
+        "18 kg m/s",
+        "36 kg m/s"
+    ],
+    correct:2
+},
+
+{
+    q:"Which quantity is the product of mass and velocity?",
+    a:[
+        "Force",
+        "Momentum",
+        "Acceleration",
+        "Energy"
+    ],
+    correct:1
+},
+
+{
+    q:"When a bus starts suddenly, a standing passenger tends to fall:",
+    a:[
+        "Backward",
+        "Forward",
+        "Upward",
+        "Downward"
+    ],
+    correct:0
+},
+
+{
+    q:"When a moving bus stops suddenly, a passenger tends to fall:",
+    a:[
+        "Backward",
+        "Forward",
+        "Sideways only",
+        "Upward"
+    ],
+    correct:1
+},
+
+{
+    q:"Seat belts in vehicles are mainly related to:",
+    a:[
+        "Inertia of motion",
+        "Inertia of rest only",
+        "Magnetic force",
+        "Electric force"
+    ],
+    correct:0
+},
+
+{
+    q:"Dust can be removed from a carpet by beating it because of:",
+    a:[
+        "Inertia of rest",
+        "Inertia of motion",
+        "Inertia of direction",
+        "Momentum conservation only"
+    ],
+    correct:0
+},
+
+{
+    q:"A person walking pushes the ground:",
+    a:[
+        "Backward",
+        "Forward",
+        "Upward only",
+        "Sideways only"
+    ],
+    correct:0
+},
+
+{
+    q:"The ground exerts a reaction force on the person's foot in the:",
+    a:[
+        "Same direction",
+        "Opposite direction",
+        "No direction",
+        "Vertical direction only"
+    ],
+    correct:1
+},
+
+{
+    q:"Which of the following is an example of Newton's Third Law?",
+    a:[
+        "Rocket propulsion",
+        "Object remaining at rest",
+        "Calculating density",
+        "Measuring temperature"
+    ],
+    correct:0
+},
+
+{
+    q:"A force of 50 N acts on a 10 kg body. The acceleration is:",
+    a:[
+        "2 m/s²",
+        "5 m/s²",
+        "10 m/s²",
+        "500 m/s²"
+    ],
+    correct:1
+},
+
+{
+    q:"If a 5 kg body has an acceleration of 4 m/s², the force is:",
+    a:[
+        "9 N",
+        "20 N",
+        "25 N",
+        "40 N"
+    ],
+    correct:1
+},
+
+{
+    q:"The total momentum before a collision is equal to the total momentum:",
+    a:[
+        "After the collision, when external force is absent",
+        "Only before the collision",
+        "Only during the collision",
+        "Never"
+    ],
+    correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_science_ch1_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length
+            *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="
+                            selectAnswer(
+                                ${index}
+                            )
+                        "
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_science_ch1_attempts",
+        String(attempts)
+    );
+
+
+    /*
+    =================================================
+    SAVE RESULT BEFORE SHOWING RESULT
+    =================================================
+    */
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    /*
+    VERIFY STORAGE
+    */
+
+    console.log(
+        "Chapter 1 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Physics",
+
+        chapter:
+            "Chapter 1 - Laws of Motion",
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    /*
+    MAIN KEY
+    */
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    /*
+    COMPATIBILITY KEY
+    */
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 1 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Laws of Motion assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 1 Laws of Motion and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter1_Laws_of_Motion_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    /*
+    Compatibility fallback.
+    */
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        /*
+        Supports old score format:
+        "35/50"
+        */
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 1 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            /*
+            Make absolutely sure the result
+            is saved before leaving the page.
+            */
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            /*
+            Return to Science Mission Hub.
+            */
+
+            window.location.href =
+                "../subjects/science.html";
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>

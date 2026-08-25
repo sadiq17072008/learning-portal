@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Chapter 9 - Solutions | EduSphere</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.header{
+    background:#111827;
+    padding:18px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.back{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    padding:35px;
+    border-radius:22px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.7;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    background:
+        rgba(15,23,42,.35);
+
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.info-box strong{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.card{
+    background:#1e293b;
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.description{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.study-links{
+    display:grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:15px;
+}
+
+.study-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.study-btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.topic{
+    padding:13px;
+    margin-bottom:8px;
+    background:#0f172a;
+    border-radius:10px;
+    color:#cbd5e1;
+}
+
+.concept-box{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+}
+
+.concept-item{
+    padding:15px;
+    margin:10px 0;
+    background:#1e293b;
+    border-left:4px solid #38bdf8;
+    border-radius:8px;
+    color:#e2e8f0;
+    line-height:1.8;
+}
+
+.concept-item strong{
+    color:#7dd3fc;
+}
+
+.example{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    line-height:1.8;
+}
+
+.example strong{
+    color:#38bdf8;
+}
+
+.formula{
+    background:#0c4a6e;
+    padding:18px;
+    border-radius:12px;
+    margin:12px 0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.question-counter{
+    background:#0f172a;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#38bdf8;
+    font-weight:bold;
+}
+
+.progress-container{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:.3s;
+}
+
+.quiz-question{
+    background:#0f172a;
+    padding:25px;
+    border-radius:16px;
+    min-height:280px;
+}
+
+.quiz-question h3{
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.option{
+    display:block;
+    background:#1e293b;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#334155;
+}
+
+.option input{
+    margin-right:10px;
+    transform:scale(1.2);
+}
+
+.navigation{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.nav-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.previous{
+    background:#475569;
+}
+
+.next{
+    background:#2563eb;
+}
+
+.submit{
+    background:#16a34a;
+}
+
+.nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    padding:30px;
+    border-radius:18px;
+    margin-top:25px;
+}
+
+.pass{
+    background:#14532d;
+    border:1px solid #22c55e;
+}
+
+.fail{
+    background:#7f1d1d;
+    border:1px solid #ef4444;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:36px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.xp{
+    color:#facc15;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.result-message{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.result-btn{
+    display:block;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:18px;
+    text-decoration:none;
+}
+
+.retry{
+    background:#dc2626;
+}
+
+.next-chapter{
+    background:#16a34a;
+}
+
+.download{
+    background:#475569;
+}
+
+.status-box{
+    text-align:center;
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+}
+
+.status-box h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:35px;
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .container{
+        width:94%;
+        padding-top:20px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .quiz-question{
+        padding:18px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="logo">
+        EduSphere 🎓
+    </div>
+
+    <a
+        href="../subjects/science.html"
+        class="back"
+    >
+        ← Science
+    </a>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="hero">
+
+    <h1>
+        🧪 Chapter 9: Solutions
+    </h1>
+
+    <p>
+        Learn about solutions, solute, solvent, concentration,
+        types of solutions, saturated and unsaturated solutions,
+        solubility, factors affecting solubility and important
+        numerical problems related to solutions in Tamil Nadu
+        10th Standard Science.
+    </p>
+
+    <div class="info">
+
+        <div class="info-box">
+            <strong>50</strong>
+            Questions
+        </div>
+
+        <div class="info-box">
+            <strong>30/50</strong>
+            Pass Mark
+        </div>
+
+        <div class="info-box">
+            <strong>60%</strong>
+            Required
+        </div>
+
+        <div class="info-box">
+            <strong>+80</strong>
+            XP Reward
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📚 Study Resources</h2>
+
+    <p class="description">
+
+        Study Chapter 9 - Solutions using the chapter PDF
+        notes and video before attempting the assessment.
+
+    </p>
+
+    <div class="study-links">
+
+        <a
+            href="YOUR_CHAPTER9_PDF_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            📄 Open PDF Notes
+        </a>
+
+        <a
+            href="YOUR_CHAPTER9_VIDEO_LINK"
+            target="_blank"
+            class="study-btn"
+        >
+            🎥 Watch Video
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📖 Topics Covered</h2>
+
+    <div class="topic">✓ Solutions</div>
+    <div class="topic">✓ Solute and Solvent</div>
+    <div class="topic">✓ Types of Solutions</div>
+    <div class="topic">✓ Homogeneous Solutions</div>
+    <div class="topic">✓ Heterogeneous Mixtures</div>
+    <div class="topic">✓ Concentration of Solutions</div>
+    <div class="topic">✓ Dilute Solutions</div>
+    <div class="topic">✓ Concentrated Solutions</div>
+    <div class="topic">✓ Saturated Solutions</div>
+    <div class="topic">✓ Unsaturated Solutions</div>
+    <div class="topic">✓ Supersaturated Solutions</div>
+    <div class="topic">✓ Solubility</div>
+    <div class="topic">✓ Factors Affecting Solubility</div>
+    <div class="topic">✓ Applications of Solutions</div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧠 Important Concepts</h2>
+
+    <div class="concept-box">
+
+        <div class="concept-item">
+
+            <strong>1. Solution</strong>
+
+            <br><br>
+
+            A solution is a homogeneous mixture of two or
+            more substances.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>2. Solute</strong>
+
+            <br><br>
+
+            The substance that is dissolved in a solution
+            is called the solute.
+
+            <br><br>
+
+            Example: In salt solution, salt is the solute.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>3. Solvent</strong>
+
+            <br><br>
+
+            The substance in which the solute dissolves is
+            called the solvent.
+
+            <br><br>
+
+            Example: In salt solution, water is the solvent.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>4. Aqueous Solution</strong>
+
+            <br><br>
+
+            A solution in which water acts as the solvent is
+            called an aqueous solution.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>5. Dilute Solution</strong>
+
+            <br><br>
+
+            A solution containing a relatively small amount
+            of solute is called a dilute solution.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>6. Concentrated Solution</strong>
+
+            <br><br>
+
+            A solution containing a relatively large amount
+            of solute is called a concentrated solution.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>7. Saturated Solution</strong>
+
+            <br><br>
+
+            A solution which contains the maximum amount of
+            solute that can dissolve at a particular
+            temperature is called a saturated solution.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>8. Unsaturated Solution</strong>
+
+            <br><br>
+
+            A solution which can dissolve more solute at a
+            particular temperature is called an unsaturated
+            solution.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>9. Supersaturated Solution</strong>
+
+            <br><br>
+
+            A solution containing more dissolved solute than
+            the normal saturation concentration at a given
+            temperature is called a supersaturated solution.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>10. Solubility</strong>
+
+            <br><br>
+
+            Solubility is the maximum amount of solute that
+            can dissolve in a given amount of solvent at a
+            specified temperature.
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>11. Factors Affecting Solubility</strong>
+
+            <br><br>
+
+            Important factors affecting solubility include:
+
+            <br><br>
+
+            • Nature of solute and solvent
+            <br>
+            • Temperature
+            <br>
+            • Pressure, especially for gases
+
+        </div>
+
+
+        <div class="concept-item">
+
+            <strong>12. Concentration</strong>
+
+            <br><br>
+
+            Concentration indicates the amount of solute
+            present in a given amount of solution or solvent.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>🧮 Numerical Examples</h2>
+
+
+    <div class="example">
+
+        <strong>
+            Example 1 – Mass Percentage
+        </strong>
+
+        <br><br>
+
+        A solution contains 10 g of solute and 90 g
+        of solvent. Find the mass percentage of solute.
+
+        <div class="formula">
+            Mass of solution = 10 + 90 = 100 g
+        </div>
+
+        <div class="formula">
+            Mass % = (Mass of solute / Mass of solution) × 100
+        </div>
+
+        <div class="formula">
+            Mass % = (10 / 100) × 100
+        </div>
+
+        <strong>
+            Answer: 10%
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 2 – Finding Solute Mass
+        </strong>
+
+        <br><br>
+
+        Find the mass of solute required to prepare
+        200 g of a 10% solution.
+
+        <div class="formula">
+            Mass of solute =
+            (10 / 100) × 200
+        </div>
+
+        <strong>
+            Answer: 20 g
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 3 – Finding Solution Mass
+        </strong>
+
+        <br><br>
+
+        A solution contains 25 g of solute and has
+        a concentration of 5% by mass. Find the
+        mass of the solution.
+
+        <div class="formula">
+            Mass % =
+            (Mass of solute / Mass of solution) × 100
+        </div>
+
+        <div class="formula">
+            5 = (25 / Mass of solution) × 100
+        </div>
+
+        <strong>
+            Answer: 500 g
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 4 – Percentage Concentration
+        </strong>
+
+        <br><br>
+
+        A solution contains 15 g of salt in 150 g
+        of solution. Calculate the mass percentage.
+
+        <div class="formula">
+            Mass % = (15 / 150) × 100
+        </div>
+
+        <strong>
+            Answer: 10%
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Example 5 – Solute and Solvent
+        </strong>
+
+        <br><br>
+
+        A solution contains 20 g of sugar and 180 g
+        of water. Find the mass percentage of sugar.
+
+        <div class="formula">
+            Mass of solution = 20 + 180 = 200 g
+        </div>
+
+        <div class="formula">
+            Mass % = (20 / 200) × 100
+        </div>
+
+        <strong>
+            Answer: 10%
+        </strong>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>⚡ Quick Revision</h2>
+
+    <div class="topic">
+        ✓ A solution is a homogeneous mixture.
+    </div>
+
+    <div class="topic">
+        ✓ Solute is the substance that gets dissolved.
+    </div>
+
+    <div class="topic">
+        ✓ Solvent is the substance in which the solute dissolves.
+    </div>
+
+    <div class="topic">
+        ✓ Water is a common solvent.
+    </div>
+
+    <div class="topic">
+        ✓ Aqueous solutions use water as the solvent.
+    </div>
+
+    <div class="topic">
+        ✓ Dilute solutions contain less solute.
+    </div>
+
+    <div class="topic">
+        ✓ Concentrated solutions contain more solute.
+    </div>
+
+    <div class="topic">
+        ✓ Saturated solutions contain the maximum dissolved solute at a given temperature.
+    </div>
+
+    <div class="topic">
+        ✓ Unsaturated solutions can dissolve more solute.
+    </div>
+
+    <div class="topic">
+        ✓ Solubility depends on several factors including temperature.
+    </div>
+
+    <div class="topic">
+        ✓ Gas solubility is affected by pressure.
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <div class="quiz-header">
+
+        <h2>
+            📝 Solutions Assessment
+        </h2>
+
+        <div
+            class="question-counter"
+            id="questionNumber"
+        >
+            Question 1 of 50
+        </div>
+
+    </div>
+
+
+    <p class="description">
+
+        Answer all 50 questions. Each question carries
+        one mark. You need at least 30 correct answers
+        to complete this chapter.
+
+    </p>
+
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="quizProgress"
+        ></div>
+
+    </div>
+
+
+    <div id="questionContainer"></div>
+
+
+    <div class="navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-btn previous"
+            onclick="previousQuestion()"
+            disabled
+        >
+            ← Previous
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="nav-btn next"
+            onclick="nextQuestion()"
+        >
+            Next →
+        </button>
+
+    </div>
+
+
+    <button
+        id="submitQuizBtn"
+        class="nav-btn submit"
+        onclick="submitQuiz()"
+        style="
+            width:100%;
+            margin-top:12px;
+            display:none;
+        "
+    >
+        📝 Submit Assessment
+    </button>
+
+
+    <div
+        id="result"
+        class="result"
+    >
+
+        <h2 id="resultTitle"></h2>
+
+        <div
+            id="score"
+            class="score"
+        ></div>
+
+        <p
+            id="resultMessage"
+            class="result-message"
+        ></p>
+
+        <div
+            id="xpReward"
+            class="xp"
+        ></div>
+
+
+        <button
+            id="retryBtn"
+            class="result-btn retry"
+            onclick="retryQuiz()"
+            style="display:none;"
+        >
+            🔄 Retake Assessment
+        </button>
+
+
+        <a
+            id="nextChapterBtn"
+            href="../subjects/science.html"
+            class="result-btn next-chapter"
+            style="display:none;"
+        >
+            Continue
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <h2>📊 My Chapter Progress</h2>
+
+    <div class="status-box">
+
+        <h3 id="statusTitle">
+            Not Attempted
+        </h3>
+
+        <p id="statusText">
+            Complete the assessment to create your progress record.
+        </p>
+
+        <button
+            class="result-btn download"
+            onclick="downloadProgress()"
+        >
+            📥 Download Progress for Excel
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+
+    © 2026 EduSphere Learning Portal
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SCIENCE CHAPTER 9 SETTINGS
+===================================================== */
+
+const PASS_PERCENTAGE = 60;
+
+const SCIENCE_CHAPTER_ID = 9;
+
+const STORAGE_KEY =
+    "edusphere_science_chapter_9";
+
+const COMPATIBILITY_STORAGE_KEY =
+    "edusphere_science_chapter9";
+
+
+/* =====================================================
+   50 QUESTIONS
+===================================================== */
+
+const questions = [
+
+{
+    q:"A solution is:",
+    a:[
+        "A homogeneous mixture",
+        "A heterogeneous mixture only",
+        "A pure element",
+        "A compound only"
+    ],
+    correct:0
+},
+
+{
+    q:"The substance that dissolves in a solution is called:",
+    a:[
+        "Solvent",
+        "Solute",
+        "Solution",
+        "Suspension"
+    ],
+    correct:1
+},
+
+{
+    q:"The substance in which the solute dissolves is called:",
+    a:[
+        "Solute",
+        "Solvent",
+        "Precipitate",
+        "Colloid"
+    ],
+    correct:1
+},
+
+{
+    q:"In a salt-water solution, salt is the:",
+    a:[
+        "Solvent",
+        "Solute",
+        "Indicator",
+        "Precipitate"
+    ],
+    correct:1
+},
+
+{
+    q:"In a salt-water solution, water is the:",
+    a:[
+        "Solute",
+        "Solvent",
+        "Suspension",
+        "Gas"
+    ],
+    correct:1
+},
+
+{
+    q:"A solution containing water as the solvent is called:",
+    a:[
+        "Aqueous solution",
+        "Solid solution",
+        "Gaseous solution",
+        "Colloid"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is an example of a solution?",
+    a:[
+        "Salt water",
+        "Sand and water",
+        "Oil and water",
+        "Mud"
+    ],
+    correct:0
+},
+
+{
+    q:"A homogeneous mixture has:",
+    a:[
+        "Uniform composition",
+        "Non-uniform composition",
+        "Only solids",
+        "Only gases"
+    ],
+    correct:0
+},
+
+{
+    q:"A solution containing a small amount of solute is called:",
+    a:[
+        "Concentrated solution",
+        "Dilute solution",
+        "Saturated solution only",
+        "Supersaturated solution"
+    ],
+    correct:1
+},
+
+{
+    q:"A solution containing a relatively large amount of solute is called:",
+    a:[
+        "Dilute solution",
+        "Concentrated solution",
+        "Pure solvent",
+        "Suspension"
+    ],
+    correct:1
+},
+
+{
+    q:"A solution that can dissolve more solute at a given temperature is:",
+    a:[
+        "Saturated",
+        "Unsaturated",
+        "Supersaturated",
+        "Pure"
+    ],
+    correct:1
+},
+
+{
+    q:"A solution containing the maximum amount of dissolved solute at a given temperature is:",
+    a:[
+        "Dilute",
+        "Unsaturated",
+        "Saturated",
+        "Pure"
+    ],
+    correct:2
+},
+
+{
+    q:"A supersaturated solution contains:",
+    a:[
+        "Less solute than normal",
+        "More dissolved solute than the normal saturation concentration",
+        "No solvent",
+        "Only water"
+    ],
+    correct:1
+},
+
+{
+    q:"Solubility is generally defined as:",
+    a:[
+        "Maximum amount of solute that dissolves in a given amount of solvent at a specified temperature",
+        "Mass of solvent only",
+        "Volume of solution only",
+        "Density of solution"
+    ],
+    correct:0
+},
+
+{
+    q:"Which factor commonly affects the solubility of solids in liquids?",
+    a:[
+        "Temperature",
+        "Colour",
+        "Shape of container only",
+        "Sound"
+    ],
+    correct:0
+},
+
+{
+    q:"The solubility of many solid substances in water generally:",
+    a:[
+        "Increases with increase in temperature",
+        "Always decreases with temperature",
+        "Becomes zero",
+        "Does not exist"
+    ],
+    correct:0
+},
+
+{
+    q:"The solubility of gases in liquids generally:",
+    a:[
+        "Increases with temperature",
+        "Decreases with increase in temperature",
+        "Is always zero",
+        "Does not depend on temperature"
+    ],
+    correct:1
+},
+
+{
+    q:"The solubility of a gas in a liquid is generally increased by:",
+    a:[
+        "Increasing pressure",
+        "Increasing temperature only",
+        "Removing the solvent",
+        "Adding sand"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is a common solvent?",
+    a:[
+        "Water",
+        "Sand",
+        "Iron",
+        "Glass"
+    ],
+    correct:0
+},
+
+{
+    q:"Sugar dissolved in water forms:",
+    a:[
+        "A solution",
+        "A suspension",
+        "A pure element",
+        "A precipitate"
+    ],
+    correct:0
+},
+
+{
+    q:"The components of a solution are:",
+    a:[
+        "Solute and solvent",
+        "Only solute",
+        "Only solvent",
+        "Only water"
+    ],
+    correct:0
+},
+
+{
+    q:"Which is usually present in a larger amount in a solution?",
+    a:[
+        "Solvent",
+        "Solute",
+        "Precipitate",
+        "Crystal"
+    ],
+    correct:0
+},
+
+{
+    q:"A solution containing very little solute is:",
+    a:[
+        "Dilute",
+        "Concentrated",
+        "Saturated",
+        "Supersaturated"
+    ],
+    correct:0
+},
+
+{
+    q:"A solution containing a high amount of solute compared with the solvent is:",
+    a:[
+        "Concentrated",
+        "Dilute",
+        "Unsaturated",
+        "Pure"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following is NOT generally a component of a solution?",
+    a:[
+        "Solute",
+        "Solvent",
+        "Both solute and solvent",
+        "Only precipitate"
+    ],
+    correct:3
+},
+
+{
+    q:"Mass percentage is calculated using:",
+    a:[
+        "(Mass of solute / Mass of solution) × 100",
+        "(Mass of solvent / Mass of solute) × 100",
+        "Mass × volume",
+        "Mass + volume"
+    ],
+    correct:0
+},
+
+{
+    q:"If 10 g of solute is present in 100 g of solution, the mass percentage is:",
+    a:[
+        "5%",
+        "10%",
+        "20%",
+        "100%"
+    ],
+    correct:1
+},
+
+{
+    q:"If 20 g of solute is present in 100 g of solution, the mass percentage is:",
+    a:[
+        "10%",
+        "20%",
+        "40%",
+        "80%"
+    ],
+    correct:1
+},
+
+{
+    q:"If 5 g of salt is dissolved in 95 g of water, the total mass of solution is:",
+    a:[
+        "90 g",
+        "95 g",
+        "100 g",
+        "105 g"
+    ],
+    correct:2
+},
+
+{
+    q:"If 10 g solute is mixed with 90 g solvent, the mass of solution is:",
+    a:[
+        "80 g",
+        "90 g",
+        "100 g",
+        "110 g"
+    ],
+    correct:2
+},
+
+{
+    q:"A 10% by mass solution contains 10 g solute in:",
+    a:[
+        "50 g solution",
+        "100 g solution",
+        "200 g solution",
+        "10 g solution"
+    ],
+    correct:1
+},
+
+{
+    q:"How much solute is present in 200 g of a 10% solution?",
+    a:[
+        "10 g",
+        "20 g",
+        "30 g",
+        "40 g"
+    ],
+    correct:1
+},
+
+{
+    q:"How much solute is present in 500 g of a 20% solution?",
+    a:[
+        "50 g",
+        "100 g",
+        "150 g",
+        "200 g"
+    ],
+    correct:1
+},
+
+{
+    q:"A 5% solution contains how much solute in 200 g of solution?",
+    a:[
+        "5 g",
+        "10 g",
+        "20 g",
+        "25 g"
+    ],
+    correct:1
+},
+
+{
+    q:"If 25 g of solute is present in 500 g of solution, its mass percentage is:",
+    a:[
+        "2%",
+        "5%",
+        "10%",
+        "20%"
+    ],
+    correct:1
+},
+
+{
+    q:"If 15 g solute is present in 150 g solution, the concentration by mass is:",
+    a:[
+        "5%",
+        "10%",
+        "15%",
+        "20%"
+    ],
+    correct:1
+},
+
+{
+    q:"If 30 g solute is present in 300 g solution, the mass percentage is:",
+    a:[
+        "5%",
+        "10%",
+        "20%",
+        "30%"
+    ],
+    correct:1
+},
+
+{
+    q:"Which solution has the greatest concentration?",
+    a:[
+        "5 g solute in 100 g solution",
+        "10 g solute in 100 g solution",
+        "20 g solute in 100 g solution",
+        "2 g solute in 100 g solution"
+    ],
+    correct:2
+},
+
+{
+    q:"When more solute is dissolved in a solution, its concentration generally:",
+    a:[
+        "Increases",
+        "Decreases",
+        "Becomes zero",
+        "Does not change"
+    ],
+    correct:0
+},
+
+{
+    q:"Adding more solvent to a solution generally makes it:",
+    a:[
+        "More dilute",
+        "More concentrated",
+        "Saturated immediately",
+        "Solid"
+    ],
+    correct:0
+},
+
+{
+    q:"Which method can increase the concentration of a solution?",
+    a:[
+        "Adding more solvent",
+        "Removing some solvent",
+        "Adding only water",
+        "Adding sand"
+    ],
+    correct:1
+},
+
+{
+    q:"A solution is called homogeneous because:",
+    a:[
+        "Its composition is uniform throughout",
+        "It contains only solids",
+        "It contains no solvent",
+        "It always contains water"
+    ],
+    correct:0
+},
+
+{
+    q:"Which mixture is heterogeneous?",
+    a:[
+        "Salt solution",
+        "Sugar solution",
+        "Sand and water",
+        "Copper sulphate solution"
+    ],
+    correct:2
+},
+
+{
+    q:"Which of the following can be separated easily by filtration?",
+    a:[
+        "Salt solution",
+        "Sugar solution",
+        "Sand and water",
+        "Alcohol and water"
+    ],
+    correct:2
+},
+
+{
+    q:"A true solution generally:",
+    a:[
+        "Has uniformly distributed particles",
+        "Has large visible particles",
+        "Always settles down",
+        "Can always be filtered"
+    ],
+    correct:0
+},
+
+{
+    q:"Which state can form a solution with another substance?",
+    a:[
+        "Solid",
+        "Liquid",
+        "Gas",
+        "All of these"
+    ],
+    correct:3
+},
+
+{
+    q:"Air is an example of:",
+    a:[
+        "A gaseous solution",
+        "A pure liquid",
+        "A suspension",
+        "A solid solution only"
+    ],
+    correct:0
+},
+
+{
+    q:"Brass is an example of:",
+    a:[
+        "Solid solution",
+        "Liquid solution",
+        "Gas solution",
+        "Suspension"
+    ],
+    correct:0
+},
+
+{
+    q:"The concentration of a solution describes:",
+    a:[
+        "The amount of solute present relative to the solution",
+        "Only the colour",
+        "Only the temperature",
+        "Only the volume of solvent"
+    ],
+    correct:0
+},
+
+{
+    q:"Which of the following affects the solubility of a gas in a liquid?",
+    a:[
+        "Pressure",
+        "Temperature",
+        "Both pressure and temperature",
+        "Neither pressure nor temperature"
+    ],
+    correct:2
+},
+
+{
+    q:"When a gas is dissolved in a liquid, increasing pressure generally:",
+    a:[
+        "Increases its solubility",
+        "Decreases its solubility",
+        "Makes it insoluble",
+        "Has no effect"
+    ],
+    correct:0
+},
+
+{
+    q:"The maximum quantity of solute that dissolves at a particular temperature represents:",
+    a:[
+        "Solubility",
+        "Density",
+        "Mass",
+        "Volume"
+    ],
+    correct:0
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(
+        questions.length
+    ).fill(null);
+
+
+let attempts =
+    Number(
+        localStorage.getItem(
+            "edusphere_science_ch9_attempts"
+        )
+    ) || 0;
+
+
+/* =====================================================
+   LOAD QUESTION
+===================================================== */
+
+function loadQuestion(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).innerHTML =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            ) /
+            questions.length
+            *
+            100
+        ) +
+        "%";
+
+
+    let html = `
+
+        <div class="quiz-question">
+
+            <h3>
+                ${currentQuestion + 1}.
+                ${q.q}
+            </h3>
+
+    `;
+
+
+    q.a.forEach(
+        (option,index)=>{
+
+            const checked =
+                userAnswers[
+                    currentQuestion
+                ] === index
+                ? "checked"
+                : "";
+
+
+            html += `
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="currentQuestion"
+                        value="${index}"
+                        ${checked}
+                        onchange="
+                            selectAnswer(
+                                ${index}
+                            )
+                        "
+                    >
+
+                    ${option}
+
+                </label>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById(
+        "questionContainer"
+    ).innerHTML =
+        html;
+
+
+    document.getElementById(
+        "previousBtn"
+    ).disabled =
+        currentQuestion === 0;
+
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "submitQuizBtn"
+        ).style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index){
+
+    userAnswers[
+        currentQuestion
+    ] =
+        index;
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextQuestion(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please select an answer before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        currentQuestion <
+        questions.length - 1
+    ){
+
+        currentQuestion++;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousQuestion(){
+
+    if(
+        currentQuestion > 0
+    ){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   SUBMIT QUIZ
+===================================================== */
+
+function submitQuiz(){
+
+    if(
+        userAnswers[
+            currentQuestion
+        ] === null
+    ){
+
+        alert(
+            "Please answer the final question."
+        );
+
+        return;
+
+    }
+
+
+    let unanswered = 0;
+
+
+    userAnswers.forEach(
+        answer=>{
+
+            if(
+                answer === null
+            ){
+
+                unanswered++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        unanswered > 0
+    ){
+
+        alert(
+            "You still have " +
+            unanswered +
+            " unanswered question(s)."
+        );
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        (
+            question,
+            index
+        )=>{
+
+            if(
+                userAnswers[index] ===
+                question.correct
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+
+
+    attempts++;
+
+
+    localStorage.setItem(
+        "edusphere_science_ch9_attempts",
+        String(attempts)
+    );
+
+
+    saveProgress(
+        score,
+        percentage
+    );
+
+
+    console.log(
+        "Chapter 9 result saved:",
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    );
+
+
+    showResult(
+        score,
+        percentage
+    );
+
+}
+
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(
+    score,
+    percentage
+){
+
+    const status =
+        percentage >=
+        PASS_PERCENTAGE
+        ? "PASSED"
+        : "FAILED";
+
+
+    const progress = {
+
+        class:
+            "10th Standard",
+
+        subject:
+            "Science",
+
+        scienceSubject:
+            "Chemistry",
+
+        chapter:
+            "Chapter 9 - Solutions",
+
+        chapterId:
+            SCIENCE_CHAPTER_ID,
+
+        score:
+            score,
+
+        total:
+            questions.length,
+
+        percentage:
+            percentage,
+
+        status:
+            status,
+
+        attempts:
+            attempts,
+
+        xp:
+            status === "PASSED"
+            ? 80
+            : 0,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    localStorage.setItem(
+        COMPATIBILITY_STORAGE_KEY,
+        JSON.stringify(
+            progress
+        )
+    );
+
+
+    console.log(
+        "EduSphere Science Chapter 9 saved successfully."
+    );
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult(
+    score,
+    percentage
+){
+
+    const result =
+        document.getElementById(
+            "result"
+        );
+
+
+    const title =
+        document.getElementById(
+            "resultTitle"
+        );
+
+
+    const scoreText =
+        document.getElementById(
+            "score"
+        );
+
+
+    const message =
+        document.getElementById(
+            "resultMessage"
+        );
+
+
+    const xp =
+        document.getElementById(
+            "xpReward"
+        );
+
+
+    const retry =
+        document.getElementById(
+            "retryBtn"
+        );
+
+
+    const next =
+        document.getElementById(
+            "nextChapterBtn"
+        );
+
+
+    result.style.display =
+        "block";
+
+
+    scoreText.innerHTML =
+        score +
+        " / " +
+        questions.length +
+        " (" +
+        percentage +
+        "%)";
+
+
+    if(
+        percentage >=
+        PASS_PERCENTAGE
+    ){
+
+        result.className =
+            "result pass";
+
+
+        title.innerHTML =
+            "🎉 Chapter Completed!";
+
+
+        message.innerHTML =
+            "Excellent! You have successfully passed the Solutions assessment.";
+
+
+        xp.innerHTML =
+            "⭐ +80 XP Earned";
+
+
+        retry.style.display =
+            "none";
+
+
+        next.style.display =
+            "block";
+
+
+        updateStatus(
+            "PASSED",
+            score,
+            percentage
+        );
+
+    }
+
+    else{
+
+        result.className =
+            "result fail";
+
+
+        title.innerHTML =
+            "❌ Assessment Not Passed";
+
+
+        message.innerHTML =
+            "You scored below 60%. Review Chapter 9 Solutions and take the retest.";
+
+
+        xp.innerHTML =
+            "💪 Keep practicing!";
+
+
+        retry.style.display =
+            "block";
+
+
+        next.style.display =
+            "none";
+
+
+        updateStatus(
+            "FAILED",
+            score,
+            percentage
+        );
+
+    }
+
+
+    result.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   RETRY
+===================================================== */
+
+function retryQuiz(){
+
+    currentQuestion = 0;
+
+
+    userAnswers =
+        new Array(
+            questions.length
+        ).fill(null);
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    loadQuestion();
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function updateStatus(
+    status,
+    score,
+    percentage
+){
+
+    const title =
+        document.getElementById(
+            "statusTitle"
+        );
+
+
+    const text =
+        document.getElementById(
+            "statusText"
+        );
+
+
+    if(
+        status === "PASSED"
+    ){
+
+        title.innerHTML =
+            "✅ Chapter Completed";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • +80 XP";
+
+    }
+
+    else{
+
+        title.innerHTML =
+            "❌ Retest Required";
+
+
+        text.innerHTML =
+            "Result: " +
+            score +
+            "/" +
+            questions.length +
+            " (" +
+            percentage +
+            "%) • 60% required";
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PROGRESS
+===================================================== */
+
+function downloadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        alert(
+            "Complete the quiz first to create your progress report."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    const rows = [
+
+        [
+            "EduSphere Science Chapter Progress"
+        ],
+
+        [],
+
+        [
+            "Class",
+            "Subject",
+            "Science Subject",
+            "Chapter",
+            "Score",
+            "Total",
+            "Percentage",
+            "Status",
+            "Attempts",
+            "XP",
+            "Date"
+        ],
+
+        [
+            data.class,
+            data.subject,
+            data.scienceSubject,
+            data.chapter,
+            data.score,
+            data.total,
+            data.percentage + "%",
+            data.status,
+            data.attempts,
+            data.xp,
+            data.date
+        ]
+
+    ];
+
+
+    let csv = "";
+
+
+    rows.forEach(
+        row=>{
+
+            csv +=
+                row
+                .map(
+                    value =>
+                    `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "EduSphere_10th_Science_Chapter9_Solutions_Progress.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS RESULT
+===================================================== */
+
+function loadPreviousResult(){
+
+    let saved =
+        localStorage.getItem(
+            STORAGE_KEY
+        );
+
+
+    if(!saved){
+
+        saved =
+            localStorage.getItem(
+                COMPATIBILITY_STORAGE_KEY
+            );
+
+    }
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(
+                saved
+            );
+
+
+        let score =
+            Number(
+                data.score
+            );
+
+
+        if(
+            typeof data.score ===
+            "string" &&
+            data.score.includes("/")
+        ){
+
+            score =
+                Number(
+                    data.score
+                    .split("/")[0]
+                );
+
+        }
+
+
+        if(
+            !Number.isFinite(
+                score
+            )
+        ){
+
+            score = 0;
+
+        }
+
+
+        let percentage =
+            Number(
+                String(
+                    data.percentage
+                )
+                .replace(
+                    "%",
+                    ""
+                )
+            );
+
+
+        if(
+            !Number.isFinite(
+                percentage
+            )
+        ){
+
+            percentage =
+                Math.round(
+                    (
+                        score /
+                        questions.length
+                    ) *
+                    100
+                );
+
+        }
+
+
+        const status =
+            percentage >=
+            PASS_PERCENTAGE
+            ? "PASSED"
+            : "FAILED";
+
+
+        updateStatus(
+            status,
+            score,
+            percentage
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Error loading Chapter 9 result:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+document
+    .getElementById(
+        "nextChapterBtn"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            const saved =
+                localStorage.getItem(
+                    STORAGE_KEY
+                );
+
+
+            if(!saved){
+
+                event.preventDefault();
+
+                alert(
+                    "Your quiz result was not saved. Please submit the assessment again."
+                );
+
+                return;
+
+            }
+
+
+            window.location.href =
+                "../subjects/science.html";
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadQuestion();
+
+loadPreviousResult();
+
+</script>
+
+</body>
+
+</html>
