@@ -7,12 +7,12 @@
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
 >
 
 <title>EduSphere - Login</title>
+
 
 <style>
 
@@ -21,10 +21,13 @@ content="width=device-width, initial-scale=1.0"
 ===================================================== */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
     font-family:'Segoe UI',Arial,sans-serif;
+
 }
 
 
@@ -561,61 +564,165 @@ button:disabled{
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-```
-<!-- =================================================
-     LEFT SECTION
-================================================== -->
 
-<div class="left">
+    <!-- =================================================
+         LEFT SECTION
+    ================================================== -->
+
+    <div class="left">
 
 
-    <div class="logo">
+        <div class="logo">
 
-        EduSphere 🧪
+            EduSphere 🧪
+
+        </div>
+
+
+        <h2>
+
+            Learn Smarter.
+            Achieve More.
+
+        </h2>
+
+
+        <p>
+
+            A complete learning ecosystem for
+            Class 10 and Class 12 students.
+
+        </p>
+
+
+        <div class="features">
+
+
+            <div>
+                📚 Digital Study Materials
+            </div>
+
+
+            <div>
+                📝 Smart Quizzes
+            </div>
+
+
+            <div>
+                📈 Track Your Progress
+            </div>
+
+
+            <div>
+                🏆 Build Your Future
+            </div>
+
+
+        </div>
+
 
     </div>
 
 
-    <h2>
 
-        Learn Smarter.
-        Achieve More.
+    <!-- =================================================
+         LOGIN SECTION
+    ================================================== -->
 
-    </h2>
-
-
-    <p>
-
-        A complete learning ecosystem for
-        Class 10 and Class 12 students.
-
-    </p>
+    <div class="login-box">
 
 
-    <div class="features">
+        <h2>
+
+            Welcome Back
+
+        </h2>
 
 
-        <div>
-            📚 Digital Study Materials
-        </div>
+        <p>
+
+            Login to continue your journey
+
+        </p>
 
 
-        <div>
-            📝 Smart Quizzes
-        </div>
+
+        <form
+            id="loginForm"
+        >
 
 
-        <div>
-            📈 Track Your Progress
-        </div>
+            <label for="email">
+
+                Email Address
+
+            </label>
 
 
-        <div>
-            🏆 Build Your Future
+            <input
+                id="email"
+                type="email"
+                placeholder="Enter your registered email"
+                autocomplete="email"
+                required
+            >
+
+
+
+            <label for="password">
+
+                Password
+
+            </label>
+
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+            >
+
+
+
+            <button
+                id="loginButton"
+                type="submit"
+            >
+
+                Login 🚀
+
+            </button>
+
+
+        </form>
+
+
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+
+
+        <div class="register">
+
+            New student?
+
+            <a href="register.html">
+
+                Create Account
+
+            </a>
+
         </div>
 
 
@@ -626,126 +733,127 @@ button:disabled{
 
 
 
-<!-- =================================================
-     LOGIN SECTION
-================================================== -->
+<!-- =====================================================
+     FIREBASE LOGIN SYSTEM
+===================================================== -->
 
-<div class="login-box">
+<script type="module">
 
-
-    <h2>
-
-        Welcome Back
-
-    </h2>
-
-
-    <p>
-
-        Login to continue your journey
-
-    </p>
-
-
-
-    <form
-        id="loginForm"
-        onsubmit="login(event)"
-    >
-
-
-        <label for="username">
-
-            Username
-
-        </label>
-
-
-        <input
-            id="username"
-            type="text"
-            placeholder="Enter username"
-            autocomplete="username"
-            required
-        >
-
-
-
-        <label for="password">
-
-            Password
-
-        </label>
-
-
-        <input
-            id="password"
-            type="password"
-            placeholder="Enter password"
-            autocomplete="current-password"
-            required
-        >
-
-
-
-        <button
-            id="loginButton"
-            type="submit"
-        >
-
-            Login 🚀
-
-        </button>
-
-
-    </form>
-
-
-
-    <div
-        id="message"
-        class="message"
-    ></div>
-
-
-
-    <div class="register">
-
-        New student?
-
-        <a href="register.html">
-
-            Create Account
-
-        </a>
-
-    </div>
-
-
-</div>
-```
-
-</div>
-
-<script>
 
 /* =====================================================
-   EDUSPHERE LOCAL LOGIN SYSTEM
+   FIREBASE IMPORTS
 ===================================================== */
 
+import {
+
+    initializeApp
+
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged
+
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+import {
+
+    getFirestore,
+    doc,
+    getDoc
+
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+
+/* =====================================================
+   FIREBASE CONFIGURATION
+===================================================== */
 
 /*
- * This login system is completely local.
+ * IMPORTANT:
  *
- * It does NOT use:
+ * These values MUST be replaced with the
+ * Firebase configuration from YOUR Firebase project.
  *
- * ❌ Google Sheets
- * ❌ Google Apps Script
- * ❌ API
- * ❌ Database
- *
- * Account information is read from localStorage.
+ * The configuration in login.html and register.html
+ * MUST be exactly the same.
  */
+
+const firebaseConfig = {
+
+    apiKey:
+        "YOUR_FIREBASE_API_KEY",
+
+    authDomain:
+        "YOUR_PROJECT.firebaseapp.com",
+
+    projectId:
+        "YOUR_PROJECT_ID",
+
+    storageBucket:
+        "YOUR_PROJECT.firebasestorage.app",
+
+    messagingSenderId:
+        "YOUR_MESSAGING_SENDER_ID",
+
+    appId:
+        "YOUR_FIREBASE_APP_ID"
+
+};
+
+
+
+/* =====================================================
+   INITIALIZE FIREBASE
+===================================================== */
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const auth =
+    getAuth(app);
+
+
+const db =
+    getFirestore(app);
+
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const loginForm =
+    document.getElementById("loginForm");
+
+
+const emailInput =
+    document.getElementById("email");
+
+
+const passwordInput =
+    document.getElementById("password");
+
+
+const loginButton =
+    document.getElementById("loginButton");
+
+
+const message =
+    document.getElementById("message");
+
 
 
 /* =====================================================
@@ -754,12 +862,7 @@ button:disabled{
 
 function showMessage(text,type){
 
-    const message =
-        document.getElementById("message");
-
-
     message.textContent = text;
-
 
     message.className =
         "message " + type;
@@ -767,302 +870,397 @@ function showMessage(text,type){
 }
 
 
+
 /* =====================================================
    LOGIN
 ===================================================== */
 
-function login(event){
+loginForm.addEventListener(
+    "submit",
+    async function(event){
 
-    event.preventDefault();
-
-
-    const usernameInput =
-        document.getElementById("username");
+        event.preventDefault();
 
 
-    const passwordInput =
-        document.getElementById("password");
+        const email =
+            emailInput.value.trim();
 
 
-    const loginButton =
-        document.getElementById("loginButton");
+        const password =
+            passwordInput.value;
 
 
-    const username =
-        usernameInput.value.trim();
+        /* ---------------------------------------------
+           VALIDATION
+        --------------------------------------------- */
+
+        if(!email){
+
+            showMessage(
+                "Please enter your email address.",
+                "error"
+            );
+
+            emailInput.focus();
+
+            return;
+
+        }
 
 
-    const password =
-        passwordInput.value;
+        if(!password){
+
+            showMessage(
+                "Please enter your password.",
+                "error"
+            );
+
+            passwordInput.focus();
+
+            return;
+
+        }
 
 
-    /* -----------------------------------------------
-       VALIDATE INPUT
-    ------------------------------------------------ */
+        /* ---------------------------------------------
+           DISABLE BUTTON
+        --------------------------------------------- */
 
-    if(username === ""){
+        loginButton.disabled = true;
 
-        showMessage(
-            "Please enter your username.",
-            "error"
-        );
-
-        usernameInput.focus();
-
-        return;
-
-    }
-
-
-    if(password === ""){
-
-        showMessage(
-            "Please enter your password.",
-            "error"
-        );
-
-        passwordInput.focus();
-
-        return;
-
-    }
-
-
-    /* -----------------------------------------------
-       DISABLE BUTTON
-    ------------------------------------------------ */
-
-    loginButton.disabled = true;
-
-    loginButton.textContent =
-        "Checking...";
-
-
-    /*
-     * Small delay makes the login feel natural
-     * and prevents accidental double-clicks.
-     */
-
-    setTimeout(function(){
-
-
-        /* =============================================
-           GET REGISTERED USERS
-        ============================================= */
-
-        let users = [];
+        loginButton.textContent =
+            "Checking...";
 
 
         try{
 
-            const storedUsers =
-                localStorage.getItem("edusphereUsers");
+
+            /* =========================================
+               FIREBASE AUTHENTICATION
+            ========================================= */
+
+            const userCredential =
+                await signInWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
 
 
-            if(storedUsers){
+            const user =
+                userCredential.user;
 
-                users =
-                    JSON.parse(storedUsers);
+
+            console.log(
+                "Firebase login successful:",
+                user.uid
+            );
+
+
+            /* =========================================
+               GET USER PROFILE FROM FIRESTORE
+            ========================================= */
+
+            const userRef =
+                doc(
+                    db,
+                    "users",
+                    user.uid
+                );
+
+
+            const userSnapshot =
+                await getDoc(userRef);
+
+
+            let userData = {
+
+                uid:
+                    user.uid,
+
+                email:
+                    user.email,
+
+                role:
+                    "Student"
+
+            };
+
+
+            if(userSnapshot.exists()){
+
+                userData = {
+
+                    ...userData,
+
+                    ...userSnapshot.data()
+
+                };
 
             }
 
+
+            /* =========================================
+               SAVE NON-SENSITIVE SESSION INFORMATION
+            ========================================= */
+
+            /*
+             * Firebase Authentication itself handles
+             * the authenticated session.
+             *
+             * We only save profile information here
+             * for other EduSphere pages that may need it.
+             *
+             * NEVER save the password.
+             */
+
+            localStorage.setItem(
+                "uid",
+                user.uid
+            );
+
+
+            localStorage.setItem(
+                "email",
+                user.email || ""
+            );
+
+
+            localStorage.setItem(
+                "username",
+                userData.username || ""
+            );
+
+
+            localStorage.setItem(
+                "name",
+                userData.name ||
+                userData.fullName ||
+                userData.username ||
+                user.email ||
+                "Student"
+            );
+
+
+            localStorage.setItem(
+                "role",
+                userData.role ||
+                "Student"
+            );
+
+
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify(userData)
+            );
+
+
+            /* =========================================
+               SUCCESS MESSAGE
+            ========================================= */
+
+            showMessage(
+                "Login successful! Redirecting...",
+                "success"
+            );
+
+
+            /* =========================================
+               REDIRECT
+            ========================================= */
+
+            setTimeout(function(){
+
+                const role =
+                    String(
+                        userData.role ||
+                        "Student"
+                    ).toLowerCase();
+
+
+                if(role === "admin"){
+
+                    window.location.href =
+                        "admin-dashboard.html";
+
+                }
+
+                else{
+
+                    window.location.href =
+                        "student-dashboard.html";
+
+                }
+
+            },700);
+
+
         }
+
         catch(error){
 
             console.error(
-                "Unable to read users:",
+                "Firebase login error:",
                 error
             );
 
 
-            showMessage(
-                "Unable to read account information.",
-                "error"
-            );
+            /* =========================================
+               FIREBASE ERROR HANDLING
+            ========================================= */
+
+            let errorMessage =
+                "Invalid email or password.";
 
 
-            loginButton.disabled = false;
+            if(
+                error.code ===
+                "auth/invalid-credential"
+            ){
 
-            loginButton.textContent =
-                "Login 🚀";
-
-            return;
-
-        }
-
-
-        /* =============================================
-           CHECK USER
-        ============================================= */
-
-        const user =
-            users.find(function(account){
-
-                return (
-                    String(account.username)
-                    .trim()
-                    .toLowerCase()
-                    ===
-                    username.toLowerCase()
-                );
-
-            });
-
-
-        /* =============================================
-           USER NOT FOUND
-        ============================================= */
-
-        if(!user){
-
-            showMessage(
-                "Invalid Username or Password",
-                "error"
-            );
-
-
-            loginButton.disabled = false;
-
-            loginButton.textContent =
-                "Login 🚀";
-
-            return;
-
-        }
-
-
-        /* =============================================
-           CHECK PASSWORD
-        ============================================= */
-
-        if(
-            String(user.password)
-            !==
-            String(password)
-        ){
-
-            showMessage(
-                "Invalid Username or Password",
-                "error"
-            );
-
-
-            loginButton.disabled = false;
-
-            loginButton.textContent =
-                "Login 🚀";
-
-            return;
-
-        }
-
-
-        /* =============================================
-           LOGIN SUCCESSFUL
-        ============================================= */
-
-
-        /*
-         * Save currently logged-in user.
-         *
-         * Other EduSphere pages can use these values.
-         */
-
-        localStorage.setItem(
-            "username",
-            user.username
-        );
-
-
-        localStorage.setItem(
-            "name",
-            user.name || user.username
-        );
-
-
-        localStorage.setItem(
-            "role",
-            user.role || "Student"
-        );
-
-
-        /*
-         * Also save the complete current user.
-         * This can be useful for the dashboard.
-         */
-
-        localStorage.setItem(
-            "currentUser",
-            JSON.stringify(user)
-        );
-
-
-        showMessage(
-            "Login successful! Redirecting...",
-            "success"
-        );
-
-
-        /* =============================================
-           REDIRECT
-        ============================================= */
-
-        setTimeout(function(){
-
-
-            const role =
-                String(
-                    user.role || "Student"
-                ).toLowerCase();
-
-
-            if(role === "admin"){
-
-                window.location.href =
-                    "admin-dashboard.html";
+                errorMessage =
+                    "Invalid email or password.";
 
             }
+
+
+            else if(
+                error.code ===
+                "auth/invalid-email"
+            ){
+
+                errorMessage =
+                    "Please enter a valid email address.";
+
+            }
+
+
+            else if(
+                error.code ===
+                "auth/user-not-found"
+            ){
+
+                errorMessage =
+                    "No account exists with this email.";
+
+            }
+
+
+            else if(
+                error.code ===
+                "auth/wrong-password"
+            ){
+
+                errorMessage =
+                    "Incorrect password.";
+
+            }
+
+
+            else if(
+                error.code ===
+                "auth/too-many-requests"
+            ){
+
+                errorMessage =
+                    "Too many failed attempts. Please try again later.";
+
+            }
+
+
+            else if(
+                error.code ===
+                "auth/network-request-failed"
+            ){
+
+                errorMessage =
+                    "Network error. Please check your internet connection.";
+
+            }
+
+
+            else if(
+                error.code ===
+                "auth/operation-not-allowed"
+            ){
+
+                errorMessage =
+                    "Email/Password login is not enabled in Firebase.";
+
+            }
+
+
+            else if(
+                error.code ===
+                "permission-denied"
+            ){
+
+                errorMessage =
+                    "Login worked, but your profile could not be accessed. Check Firestore rules.";
+
+            }
+
 
             else{
 
-                window.location.href =
-                    "student-dashboard.html";
+                errorMessage =
+                    "Login failed: " +
+                    (
+                        error.message ||
+                        "Unknown Firebase error."
+                    );
 
             }
 
 
-        },700);
+            showMessage(
+                errorMessage,
+                "error"
+            );
 
 
-    },250);
+            loginButton.disabled = false;
 
-}
+            loginButton.textContent =
+                "Login 🚀";
+
+        }
+
+    }
+);
 
 
 /* =====================================================
-   ENTER KEY SUPPORT
+   FIREBASE AUTH STATE
 ===================================================== */
 
-document
-    .getElementById("password")
-    .addEventListener(
-        "keydown",
-        function(event){
+onAuthStateChanged(
+    auth,
+    function(user){
 
-            if(event.key === "Enter"){
+        if(user){
 
-                event.preventDefault();
-
-                document
-                    .getElementById("loginForm")
-                    .requestSubmit();
-
-            }
+            console.log(
+                "Firebase authenticated user:",
+                user.uid
+            );
 
         }
-    );
+
+        else{
+
+            console.log(
+                "No Firebase user currently signed in."
+            );
+
+        }
+
+    }
+);
+
 
 </script>
+
 
 </body>
 
